@@ -1,0 +1,20 @@
+{
+  "name": "XMItoRDF",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
+  "license": "ISC",
+  "dependencies": {
+    "ecore": "^0.11.0",
+    "jhipster-uml": "^2.0.3",
+    "stream": "0.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
