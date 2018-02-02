@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>hello ecore-xmi</title>
+    <script src="../node_modules/underscore/underscore-min.js" type="text/javascript"></script>
+    <script src="../node_modules/sax/lib/sax.js" type="text/javascript"></script>
+    <!-- <script src="../node_modules/ecore/dist/ecore.xmi.js" type="text/javascript"></script> -->
+    <script src="../da-web/jquery.min.js"></script>
+    <script src="require.js"      ></script>
+
+    <script src="../node_modules/lodash/lodash"></script><script>modules["lodash"] = module.exports;</script>
+    <script>
+      modules["lodash/assign"] = module.exports.assign;
+      modules["lodash/create"] = module.exports.create;
+      modules["lodash/isObject"] = module.exports.isObject;
+    </script>
+
+    <script src="../node_modules/events/events.js"></script><script>modules["emitter"] = module.exports;</script>
+    <script src="../node_modules/stream/index.js"></script><script>modules["stream"] = module.exports;</script>
+    <script src="../node_modules/sax/lib/sax.js"></script><script>modules["sax"] = exports;</script>
+    <script src="../node_modules/events/events.js"></script><script>modules["events"] = module.exports;</script>
+    <script>
+      modules["xmlbuilder"] = null;
+      modules["timers"] = { setImmediate: setTimeout };
+    </script>
+    <script src="../node_modules/xml2js/lib/bom.js"></script><script>modules["./bom"] = exports;</script>
+    <script src="../node_modules/xml2js/lib/processors.js"></script><script>modules["./processors"] = module.exports;</script>
+    <script src="../node_modules/xml2js/lib/xml2js.js"></script><script>modules["xml2js"] = exports;</script>
+    <script>modules["chalk"] = {};</script>
+
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/../exceptions/exception_factory"></script><script>modules["../exceptions/exception_factory"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/../utils/object_utils"></script><script>modules["../utils/object_utils"] = module.exports;</script>
+    <script>
+      modules["../utils/jhipster_utils"] = {
+        checkForReservedClassName: () => false,
+        checkForReservedTableName: () => false,
+        checkForReservedFieldName: () => false,
+      };
+    </script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./class_data"></script><script>modules["./class_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./field_data"></script><script>modules["./field_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./type_data"></script><script>modules["./type_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./enum_data"></script><script>modules["./enum_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./association_data"></script><script>modules["./association_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/./validation_data"></script><script>modules["./validation_data"] = module.exports;</script>
+
+    <script src="../node_modules/jhipster-uml/lib/editors/../data/parsed_data"></script><script>modules["../data/parsed_data"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/./parser_helper"></script><script>modules["./parser_helper"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../cardinalities"></script><script>modules["../cardinalities"] = module.exports;</script>
+    <script src="../node_modules/jhipster-uml/lib/editors/../editors/canonical_parser"></script><script>modules["../../lib/editors/canonical_parser.js"] = module.exports;</script>
+
+    <script src="main.js" type="text/javascript"></script>
+    <style>
+      #loadform { float: left; border: thin solid #f77; }
+      .result { float:left; }
+      span { margin-left: .2em; }
+      .keyword { background-color: #ffd; }
+      .scalar { background-color: #eee; }
+    </style>
+  </head>
+  <body>
+    <div id="render">
+      <form id="loadform">
+        <p>
+          Select XMI files... <input id="myfile" name="files[]" multiple="multiple" type="file" />
+        </p>
+      </form>
+    </div>
+    <ul id="toc" style="clear:both"></ul>
+    <div id="loaded">
+      <hr/>
+      <h1>loaded resources:</h1>
+    </div>
+  </body>
+</html>
+
