@@ -47,7 +47,22 @@ function main() {
       });
 
       console.log(parsedData);
-      function nest (object, into) {
+
+      var structure = $("<ul/>");
+      structureToListItems(parsedData, structure);
+      collapse(structure);
+
+      var diagnostics = $("<ul/>")
+      reusedProperties(parsedData, diagnostics)
+      puns(parsedData, diagnostics);
+      collapse(diagnostics);
+
+      div.append($("<ul/>").append(
+        $("<li/>").text("structure").append(structure),
+        $("<li/>").text("diagnostics").append(diagnostics)
+      ));
+
+      function structureToListItems (object, into) {
         into.append(Object.keys(object).map(k => {
           var elt = object[k];
           var title =
@@ -61,19 +76,99 @@ function main() {
             if (elt.constructor === Array)
               title += ' (' + Object.keys(elt).length + ')';
             value = $("<ul/>");
-            nest(elt, value);
+            structureToListItems(elt, value);
           } else {
             if (object.constructor !== Array)
               title += ':';
-            value = $("<span/>").addClass("scalar").text(elt);
+            value = !elt
+              ? ""
+              : $(elt.length > 50 ? "<pre/>" : "<span/>").addClass("scalar").text(elt);
           }
           into.append($("<li/>").text(title).append(value));
         }));
       }
-      var ul = $("<ul/>");
-      nest(parsedData, ul);
-      collapse(ul);
-      div.append(ul);
+
+      function reusedProperties (object, into) {
+        // Object.keys(object.classes).reduce((acc, klass) => {
+        //   return acc.concat(object.classes[klass].fields.map(field => {
+        //     let a = field.split(/_/);
+        //     return a[a.length-1];
+        //   }));
+        // }, []);
+        const x = Object.keys(object.classes).reduce((acc, klass) => {
+          object.classes[klass].fields.forEach(
+            field => {
+              let a = field.split(/_/);
+              field = a[a.length-1];
+              if (!(field in acc.seen)) {
+                acc.seen[field] = [klass];
+              } else {
+                acc.seen[field].push(klass);
+                if (acc.duplicates.indexOf(field) === -1) {
+                  acc.duplicates.push(field);
+                }
+              }
+            }
+          );
+          return acc;
+        }, {seen: {}, duplicates: []});
+        into.append($("<li/>").append(
+          $("<span/>",
+            {title: "property names which are used in more than one class"})
+            .text('reused properties'),
+          ' (' + x.duplicates.length + ')',
+          $("<ul/>").append(
+          x.duplicates.sort(
+            (l, r) => x.seen[r].length - x.seen[l].length
+          ).map(dupe => {
+            return $("<li/>").append(
+              $("<span/>").text(dupe).addClass("scalar"),
+              " (" + x.seen[dupe].length + ")",
+              $("<ul/>").append(
+                x.seen[dupe].map(lookIn => $("<li/>").append(
+                  $("<a/>", { href:
+                              "http://lion.ddialliance.org/ddiobjects/"
+                              + lookIn.toLowerCase() + '#parent_properties' }
+                   ).text(lookIn)
+                ))
+              ));
+          })
+        )));
+      }
+
+      function puns (object, into) {
+        const lookIns = ["classes", "fields", "associations", "types", "enums"];
+        const x = lookIns.reduce((acc, lookIn) => {
+          Object.keys(object[lookIn]).forEach(
+            name => {
+              if (!(name in acc.seen)) {
+                acc.seen[name] = [lookIn];
+              } else {
+                acc.seen[name].push(lookIn);
+                if (acc.duplicates.indexOf(name) === -1) {
+                  acc.duplicates.push(name);
+                }
+              }
+            }
+          );
+          return acc;
+        }, {seen: {}, duplicates: []});
+        into.append($("<li/>").append(
+          $("<span/>",
+            {title: "names which appear in any two of " + lookIns})
+            .text('puns'),
+          ' (' + x.duplicates.length + ')',
+          $("<ul/>").append(
+          x.duplicates.map(dupe => {
+            return $("<li/>").append(
+              $("<span/>").text(dupe).addClass("scalar"),
+              $("<ul/>").append(
+                x.seen[dupe].map(lookIn => $("<li/>").text(lookIn))
+              ));
+          })
+        )));
+      }
+
     }
     parse();
   }
@@ -108,13 +203,15 @@ function main() {
       .click(function(event){
 	if (this == event.target) {
 	  $(this).css('list-style-image',
-		      (!$(this).children().is(':hidden')) ? 'url(plusbox.gif)' : 'url(minusbox.gif)');
-	  $(this).children().toggle(TOGGLE_TIME);
-	}
-	return false;
+		      (!$(this).children('ul').is(':hidden')) ? 'url(plusbox.gif)' : 'url(minusbox.gif)');
+	  $(this).children('ul').toggle(TOGGLE_TIME);
+	  return false;
+	} else {
+          return true;
+        }
       })
       .css({cursor:'pointer', 'list-style-image':'url(plusbox.gif)'})
-      .children().hide();
+      .children('ul').hide();
     from.find('li:not(:has(ul))').css({cursor:'default', 'list-style-image':'none'});
     return from;
   };
