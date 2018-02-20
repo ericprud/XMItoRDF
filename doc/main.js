@@ -78,6 +78,26 @@ function main() {
       status.text("indexing...");
       setTimeout(delay_index, RENDER_DELAY);
       var triples = {};
+      var roots = {};
+      var holders = {};
+      add('B', 'C');
+      add('D', 'E');
+      add('C', 'D');
+      add('A', 'B');
+      add('E', 'F');
+      function add (parent, child) {
+        var target = parent in holders
+            ? holders[parent]
+            : (holders[parent] = roots[parent] = {});
+        var value = child in holders
+            ? holders[child]
+            : (holders[child] = {});
+        target[child] = value;
+        if (child in roots)
+          delete roots[child];
+      }
+      console.dir(roots);
+      console.dir(holders);
 
       function delay_index () {
         // parsedData.index = {};
