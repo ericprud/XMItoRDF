@@ -1,66 +1,127 @@
 function main() {
 
   const TOGGLE_TIME = 50; // time in μsec to toggle collapsed lists.
+  const RENDER_DELAY = 10; // time to pause for display (horrible heuristics). .css("opacity", .99)
 
   const xml2js = require("xml2js");
   // var rs = Ecore.ResourceSet.create();
 
-  $("#myfile").on("change", function (changeEvent) {
+  $("#load-file").on("change", function (evt) {
     if (!window.FileReader) return; // not supported
-    for (var i = 0; i < changeEvent.target.files.length; ++i) {
+    for (var i = 0; i < evt.target.files.length; ++i) {
       (function (file) {
         // Give user some interface feedback before reading.
         var div = $("<div/>", {"id": file.name}).appendTo("#loaded");
         $("<li/>").append($("<a/>", {href: "#"+file.name}).text(file.name)).appendTo("#toc");
-        $("<h2/>").text(file.name).appendTo(div);
-        var loader = new FileReader();
-        loader.onload = function (loadEvent) {
-          if (loadEvent.target.readyState != 2)
-            return;
-          if (loadEvent.target.error) {
-            alert("Error while reading file " + file.name + ": " + loadEvent.target.error);
-            return;
-          }
-          // This may take a long time to render.
-          $("<textarea/>", {cols:60, rows:10}).val(loadEvent.target.result).appendTo(div);
-          render(loadEvent.target.result, file.name);
-        };
-        loader.readAsText(file);
-      })(changeEvent.target.files[i]);
+        var status = $("<span/>").addClass("status").text("loading");
+        $("<h2/>").append(file.name, status).appendTo(div);
+        setTimeout(() => {
+          var loader = new FileReader();
+          loader.onload = function (loadEvent) {
+            if (loadEvent.target.readyState != 2) {
+              console.dir(loadEvent);
+              return;
+            }
+            if (loadEvent.target.error) {
+              alert("Error while reading file " + file.name + ": " + loadEvent.target.error);
+              return;
+            }
+            // This may take a long time to render.
+            $("<textarea/>", {cols:60, rows:10}).val(loadEvent.target.result).appendTo(div);
+            render(loadEvent.target.result, file.name, status);
+          };
+          loader.readAsText(file);
+        }, RENDER_DELAY);
+      })(evt.target.files[i]);
     }
   });
 
-  function render (xmiText, title) {
+  $("#load-url").on("change", function (evt) {
+    var source = $(this).val();
+    // Give user some interface feedback before reading.
+    var div = $("<div/>", {"id": source}).appendTo("#loaded");
+    $("<li/>").append($("<a/>", {href: "#"+source}).text(source)).appendTo("#toc");
+    var status = $("<span/>").addClass("status").text("loading");
+    $("<h2/>").append(source, status).appendTo(div);
+    fetch(source).then(function(response) {
+      if (!response.ok)
+        throw "got " + response.status + " " + response.statusText;
+      return response.text();
+    }).then(function (text) {
+        setTimeout(() => {
+          $("<textarea/>", {cols:60, rows:10}).val(text).appendTo(div);
+          render(text, source, status);
+        }, RENDER_DELAY);
+    }).catch(function (error) {
+      div.append($("<pre/>").text(error)).addClass("error");
+    });
+    return true;
+  });
+
+  function render (xmiText, title, status) {
     var div = $("<div/>", {"id": title, "class": "result"}).appendTo("#render");
     var reparse = $("<button/>").text("reparse").on("click", parse);
     $("<h2/>").text(title).append(reparse).appendTo(div);
 
     function parse () {
       var XMIParser = require('../../lib/editors/canonical_parser.js');
-
+      var root = getRootElement(xmiText);
       var parsedData = XMIParser.parse({
-        root: getRootElement(xmiText),
+        root: root,
         databaseTypes: {
           contains: function (type) { return true; },
           getName: () => 'general'
         }
       });
-
-      console.log(parsedData);
-
+      parsedData.root = root;
       var structure = $("<ul/>");
-      structureToListItems(parsedData, structure);
-      collapse(structure);
+      status.text("indexing...");
+      setTimeout(delay_index, RENDER_DELAY);
 
-      var diagnostics = $("<ul/>")
-      reusedProperties(parsedData, diagnostics)
-      puns(parsedData, diagnostics);
-      collapse(diagnostics);
+      function delay_index () {
+        // parsedData.index = {};
+        var t = {};
+        indexXML(t, root, [])
+        console.dir(t);
+        console.log(parsedData);
 
-      div.append($("<ul/>").append(
-        $("<li/>").text("structure").append(structure),
-        $("<li/>").text("diagnostics").append(diagnostics)
-      ));
+        status.text("rendering structure...");
+        setTimeout(delay_render, RENDER_DELAY);
+      }
+
+      function delay_render () {
+        structureToListItems(parsedData, structure);
+        collapse(structure);
+
+        status.text("diagnostics...");
+        setTimeout(delay_diagnostics, RENDER_DELAY);
+      }
+
+      function delay_diagnostics () {
+        var diagnostics = $("<ul/>")
+        reusedProperties(parsedData, diagnostics)
+        puns(parsedData, diagnostics);
+        collapse(diagnostics);
+
+        div.append($("<ul/>").append(
+          $("<li/>").text("structure").append(structure),
+          $("<li/>").text("diagnostics").append(diagnostics)
+        ));
+
+        status.text("");
+      }
+
+      function indexXML (index, elt, parents) {debugger;
+        if ("xmi:id" in elt.$) {
+          var id = elt.$["xmi:id"];
+          index[id] = { element: elt, parents: parents };
+          Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
+            elt[k].forEach(sub => {
+              indexXML(index, sub, parents.concat(k));
+            });
+          });
+        }
+      }
 
       function structureToListItems (object, into) {
         into.append(Object.keys(object).map(k => {
@@ -75,6 +136,8 @@ function main() {
           } else if (typeof elt === 'object') {
             if (elt.constructor === Array)
               title += ' (' + Object.keys(elt).length + ')';
+            else if ("$" in elt && "xmi:id" in elt.$)
+              title += elt.$["xmi:id"];
             value = $("<ul/>");
             structureToListItems(elt, value);
           } else {
@@ -170,7 +233,8 @@ function main() {
       }
 
     }
-    parse();
+    status.text("parsing UML...");
+    setTimeout(parse, RENDER_DELAY);
   }
 
   function getRootElement(content) {

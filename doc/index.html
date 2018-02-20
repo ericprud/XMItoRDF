@@ -61,11 +61,10 @@
   </head>
   <body>
     <div id="render">
-      <form id="loadform">
-        <p>
-          Select XMI files... <input id="myfile" name="files[]" multiple="multiple" type="file" />
-        </p>
-      </form>
+      <div id="loadform">
+        <p style="float:left; text-align: right;">Load file:<br/>URL:</p>
+        <p style="float:left; margin-left: .5em;"><input id="load-file" name="files[]" multiple="multiple" type="file" /><br/><input size="35" id="load-url" value="ttp://localhost/DDI-xmi-2018-02-01-thin.xml"/></p>
+      </div>
     </div>
     <ul id="toc" style="clear:both"></ul>
     <div id="loaded">
