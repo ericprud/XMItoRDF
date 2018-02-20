@@ -77,16 +77,36 @@ function main() {
       var structure = $("<ul/>");
       status.text("indexing...");
       setTimeout(delay_index, RENDER_DELAY);
+      var triples = {};
 
       function delay_index () {
         // parsedData.index = {};
-        var t = {};
-        indexXML(t, root, [])
-        console.dir(t);
+        var index = {};
+        indexXML(root, [])
+        console.dir(index);
         console.log(parsedData);
 
         status.text("rendering structure...");
         setTimeout(delay_render, RENDER_DELAY);
+
+        function indexXML (elt, parents) {
+          if ("xmi:id" in elt.$) {
+            var id = elt.$["xmi:id"];
+            index[id] = { element: elt, parents: parents };
+            var m;
+            if ((m = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
+              if (!(m[2] in triples))
+                triples[m[2]] = [];
+              triples[m[2]].push(id);
+            }
+            Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
+              elt[k].forEach(sub => {
+                indexXML(sub, parents.concat(k));
+              });
+            });
+          }
+        }
+
       }
 
       function delay_render () {
@@ -101,6 +121,7 @@ function main() {
         var diagnostics = $("<ul/>")
         reusedProperties(parsedData, diagnostics)
         puns(parsedData, diagnostics);
+        addTriples(triples, diagnostics);
         collapse(diagnostics);
 
         div.append($("<ul/>").append(
@@ -109,18 +130,6 @@ function main() {
         ));
 
         status.text("");
-      }
-
-      function indexXML (index, elt, parents) {debugger;
-        if ("xmi:id" in elt.$) {
-          var id = elt.$["xmi:id"];
-          index[id] = { element: elt, parents: parents };
-          Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
-            elt[k].forEach(sub => {
-              indexXML(index, sub, parents.concat(k));
-            });
-          });
-        }
       }
 
       function structureToListItems (object, into) {
@@ -230,6 +239,25 @@ function main() {
               ));
           })
         )));
+      }
+
+      function addTriples (triples, into) {
+        into.append($("<li/>").append(
+          $("<span/>",
+            {title: "[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+"})
+            .text('triples'),
+          ' (' + Object.keys(triples).length + ')',
+          $("<ul/>").append(
+            Object.keys(triples).sort(
+              (l, r) => triples[r].length - triples[l].length
+            ).map(triple => {
+              return $("<li/>").append(
+                $("<span/>").text(triple + " (" + triples[triple].length + ")").addClass("scalar"),
+                $("<ul/>").append(
+                  triples[triple].map(lookIn => $("<li/>").text(lookIn))
+                ));
+            })
+          )));
       }
 
     }
