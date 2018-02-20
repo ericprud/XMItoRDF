@@ -64,7 +64,7 @@ function main() {
     $("<h2/>").text(title).append(reparse).appendTo(div);
 
     function parse () {
-      var XMIParser = require('../../lib/editors/canonical_parser.js');
+      var XMIParser = require('../node_modules/jhipster-uml/lib/editors/canonical_parser.js');
       var root = getRootElement(xmiText);
       var parsedData = XMIParser.parse({
         root: root,
