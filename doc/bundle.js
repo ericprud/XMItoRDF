@@ -44154,7 +44154,7 @@ function main() {
     function parse () {
       var structure = $("<ul/>");
       var triples = {};
-      // makeHierarchy.test();
+      makeHierarchy.test();
       var classHierarchy = makeHierarchy();
       var classes = {};
       var realized = makeHierarchy();
@@ -44422,25 +44422,29 @@ function main() {
     var holders = {};
     return {
       add: function (parent, child) {
-        if (!(child in parents)) {
-          parents[child] = []; children[child] = [];
-        }
-        if (!(parent in parents)) {
-          parents[parent] = []; children[parent] = [];
-        }
         var target = parent in holders
-            ? holders[parent]
-            : (holders[parent] = roots[parent] = {});
-        var value = child in holders
-            ? holders[child]
-            : (holders[child] = {});
+            ? getNode(parent)
+            : (roots[parent] = getNode(parent));
+        var value = getNode(child);
+
         target[child] = value;
         if (child in roots)
           delete roots[child];
+
+        // maintain hierarchy
         children[parent] = children[parent].concat(child, children[child]);
         children[child].forEach(c => parents[c] = parents[c].concat(parent, parents[parent]));
         parents[child] = parents[child].concat(parent, parents[parent]);
         parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]));
+
+        function getNode (node) {
+          if (!(node in holders)) {
+            parents[node] = [];
+            children[node] = [];
+            holders[node] = {};
+          }
+          return holders[node];
+        }
       },
       roots: roots,
       parents: parents,

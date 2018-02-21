@@ -335,11 +335,9 @@ function main() {
     return {
       add: function (parent, child) {
         var target = parent in holders
-            ? holders[parent]
-            : (roots[parent] = newNode(parent));
-        var value = child in holders
-            ? holders[child]
-            : newNode(child);
+            ? getNode(parent)
+            : (roots[parent] = getNode(parent));
+        var value = getNode(child);
 
         target[child] = value;
         if (child in roots)
@@ -351,10 +349,13 @@ function main() {
         parents[child] = parents[child].concat(parent, parents[parent]);
         parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]));
 
-        function newNode (node) {
-          parents[node] = [];
-          children[node] = [];
-          return holders[node] = {};
+        function getNode (node) {
+          if (!(node in holders)) {
+            parents[node] = [];
+            children[node] = [];
+            holders[node] = {};
+          }
+          return holders[node];
         }
       },
       roots: roots,
