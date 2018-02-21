@@ -64,6 +64,12 @@ function main() {
     $("<h2/>").text(title).append(reparse).appendTo(div);
 
     function parse () {
+      var structure = $("<ul/>");
+      var triples = {};
+      // makeHierarchy.test();
+      var classHierarchy = makeHierarchy();
+      var classes = {};
+      var realized = makeHierarchy();
       var XMIParser = require('../node_modules/jhipster-uml/lib/editors/canonical_parser.js');
       var root = getRootElement(xmiText);
       var parsedData = XMIParser.parse({
@@ -74,41 +80,15 @@ function main() {
         }
       });
       parsedData.root = root;
-      var structure = $("<ul/>");
       status.text("indexing...");
       setTimeout(delay_index, RENDER_DELAY);
-      var triples = {};
-      var classes = makeHierarchy();
-      // classes.add('B', 'C');
-      // classes.add('D', 'E');
-      // classes.add('C', 'D');
-      // classes.add('A', 'B');
-      // classes.add('E', 'F');
-      // console.dir(classes);
-      function makeHierarchy () {
-        var roots = {};
-        var holders = {};
-        return {
-          add: function (parent, child) {
-            var target = parent in holders
-                ? holders[parent]
-                : (holders[parent] = roots[parent] = {});
-            var value = child in holders
-                ? holders[child]
-                : (holders[child] = {});
-            target[child] = value;
-            if (child in roots)
-              delete roots[child];
-          },
-          roots: roots
-        };
-      }
 
       function delay_index () {
         // parsedData.index = {};
         var index = {};
         indexXML(root, [])
-        console.dir(classes.roots);
+        console.dir(classes);
+        console.dir(classHierarchy.roots);
         console.dir(index);
         console.log(parsedData);
 
@@ -116,6 +96,8 @@ function main() {
         setTimeout(delay_render, RENDER_DELAY);
 
         function indexXML (elt, parents) {
+          var parent = parents[parents.length-1];
+          let type = elt.$["xmi:type"];
           if ("xmi:id" in elt.$) {
             var id = elt.$["xmi:id"];
             index[id] = { element: elt, parents: parents };
@@ -128,16 +110,43 @@ function main() {
               triples[m[2]].push(id);
             }
 
-            // record class hierarchy
-            if ("generalization" in elt)
-              classes.add(elt.generalization[0].$.general, elt.$["xmi:id"]);
+            switch (type) {
+            case "uml:Class":
+              if (id in classes)
+                throw Error("already seen class id " + id);
+              classes[id] = {
+                properties: [],
+                realizes: [],
+                others: []
+              };
+              // record class hierarchy
+              if ("generalization" in elt)
+                classHierarchy.add(elt.generalization[0].$.general, id); // elt.$["xmi:id"]
+              break;
+            case "uml:Property":
+              if (elt.$.name === parent) {
+                if (m[2] === "realizes")
+                  classes[parent].realizes.push(elt.type[0].$["xmi:idref"]);
+                else
+                  classes[parent].others.push(m[2]);
+              } else if (!("name" in elt.$)) {
+                throw Error("expected name in " + JSON.stringify(elt.$) + " in " + parent);
+              } else if (elt.$.name.charAt(0).match(/[A-Z]/)) {
+                throw Error("unexpected property name " + elt.$.name + " in " + parent);
+              } else {
+                classes[parent].properties.push(id);
+              }
+              break;
+            }
 
-            // walk desendents
-            Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
-              elt[k].forEach(sub => {
-                indexXML(sub, parents.concat(k));
+            if (type !== "uml:Association") {
+              // walk desendents
+              Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
+                elt[k].forEach(sub => {
+                  indexXML(sub, parents.concat(id));
+                });
               });
-            });
+            }
           }
         }
 
@@ -316,6 +325,51 @@ function main() {
       }
     });
     return root;
+  }
+
+  function makeHierarchy () {
+    var roots = {};
+    var parents = {};
+    var children = {};
+    var holders = {};
+    return {
+      add: function (parent, child) {
+        if (!(child in parents)) {
+          parents[child] = []; children[child] = [];
+        }
+        if (!(parent in parents)) {
+          parents[parent] = []; children[parent] = [];
+        }
+        var target = parent in holders
+            ? holders[parent]
+            : (holders[parent] = roots[parent] = {});
+        var value = child in holders
+            ? holders[child]
+            : (holders[child] = {});
+        target[child] = value;
+        if (child in roots)
+          delete roots[child];
+        children[parent] = children[parent].concat(child, children[child]);
+        children[child].forEach(c => parents[c] = parents[c].concat(parent, parents[parent]));
+        parents[child] = parents[child].concat(parent, parents[parent]);
+        parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]));
+      },
+      roots: roots,
+      parents: parents,
+      children: children,
+      holders: holders
+    };
+  }
+  makeHierarchy.test = function () {
+    let t = makeHierarchy();
+    t.add('B', 'C');
+    t.add('C', 'D');
+    t.add('F', 'G');
+    t.add('E', 'F');
+    t.add('D', 'E');
+    t.add('A', 'B');
+    t.add('G', 'H');
+    console.dir(t);
   }
 
   // collapsable list from <from> element
