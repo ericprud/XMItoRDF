@@ -44168,6 +44168,8 @@ function main() {
         }
       });
       parsedData.root = root;
+      parsedData.myClasses = classes;
+      parsedData.hierarchy = classHierarchy.roots;
       status.text("indexing...");
       setTimeout(delay_index, RENDER_DELAY);
 
