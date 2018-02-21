@@ -44166,11 +44166,37 @@ function main() {
       status.text("indexing...");
       setTimeout(delay_index, RENDER_DELAY);
       var triples = {};
+      var classes = makeHierarchy();
+      // classes.add('B', 'C');
+      // classes.add('D', 'E');
+      // classes.add('C', 'D');
+      // classes.add('A', 'B');
+      // classes.add('E', 'F');
+      // console.dir(classes);
+      function makeHierarchy () {
+        var roots = {};
+        var holders = {};
+        return {
+          add: function (parent, child) {
+            var target = parent in holders
+                ? holders[parent]
+                : (holders[parent] = roots[parent] = {});
+            var value = child in holders
+                ? holders[child]
+                : (holders[child] = {});
+            target[child] = value;
+            if (child in roots)
+              delete roots[child];
+          },
+          roots: roots
+        };
+      }
 
       function delay_index () {
         // parsedData.index = {};
         var index = {};
         indexXML(root, [])
+        console.dir(classes.roots);
         console.dir(index);
         console.log(parsedData);
 
@@ -44182,11 +44208,19 @@ function main() {
             var id = elt.$["xmi:id"];
             index[id] = { element: elt, parents: parents };
             var m;
+
+            // record triples
             if ((m = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
               if (!(m[2] in triples))
                 triples[m[2]] = [];
               triples[m[2]].push(id);
             }
+
+            // record class hierarchy
+            if ("generalization" in elt)
+              classes.add(elt.generalization[0].$.general, elt.$["xmi:id"]);
+
+            // walk desendents
             Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
               elt[k].forEach(sub => {
                 indexXML(sub, parents.concat(k));
@@ -44365,9 +44399,7 @@ function main() {
         } else if (result.hasOwnProperty('xmi:XMI')) {
           root = result['xmi:XMI']['uml:Model'][0];
         } else {
-          throw new buildException(
-            exceptions.NoRoot,
-            'The passed document has no immediate root element.');
+          throw new Exception('The passed document has no immediate root element.');
         }
       }
     });
