@@ -618,14 +618,6 @@
           
           <!-- relationships -->
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" name="Agent" xmi:id="Agent" visibility="package" isAbstract="false">
-          <ownedAttribute xmi:type="uml:Property" name="agentId" xmi:id="Agent_agentId">
-            <type xmi:idref="AgentId"/>                                                                                                                            
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Agent_agentId_lower"/>
-
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Agent_agentId_upper" value="-1"/>
-          </ownedAttribute>
-        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="Primitives" name="Primitives">
         <!-- Datatypes -->
