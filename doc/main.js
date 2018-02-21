@@ -343,11 +343,19 @@ function main() {
         if (child in roots)
           delete roots[child];
 
-        // maintain hierarchy
-        children[parent] = children[parent].concat(child, children[child]);
-        children[child].forEach(c => parents[c] = parents[c].concat(parent, parents[parent]));
-        parents[child] = parents[child].concat(parent, parents[parent]);
-        parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]));
+        // // maintain hierarchy (direct and confusing)
+        // children[parent] = children[parent].concat(child, children[child]);
+        // children[child].forEach(c => parents[c] = parents[c].concat(parent, parents[parent]));
+        // parents[child] = parents[child].concat(parent, parents[parent]);
+        // parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]));
+
+        // maintain hierarchy (generic and confusing)
+        updateClosure(children, parents, child, parent);
+        updateClosure(parents, children, parent, child);
+        function updateClosure (container, members, near, far) {
+          container[far] = container[far].concat(near, container[near]);
+          container[near].forEach(n => members[n] = members[n].concat(far, members[far]));
+        }
 
         function getNode (node) {
           if (!(node in holders)) {
