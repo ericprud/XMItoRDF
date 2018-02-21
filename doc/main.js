@@ -336,7 +336,7 @@ function main() {
       add: function (parent, child) {
         var target = parent in holders
             ? getNode(parent)
-            : (roots[parent] = getNode(parent));
+            : (roots[parent] = getNode(parent)); // add new parents to roots.
         var value = getNode(child);
 
         target[child] = value;
