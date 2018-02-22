@@ -4,6 +4,7 @@ function main () {
 
   const xml2js = require('xml2js')
   // let rs = Ecore.ResourceSet.create()
+  let $ = window.jQuery
 
   $('#load-file').on('change', function (evt) {
     if (!window.FileReader) {
@@ -16,7 +17,7 @@ function main () {
         $('<li/>').append($('<a/>', {href: '#' + file.name}).text(file.name)).appendTo('#toc')
         let status = $('<span/>').addClass('status').text('loading')
         $('<h2/>').append(file.name, status).appendTo(div)
-        setTimeout(() => {
+        window.setTimeout(() => {
           let loader = new window.FileReader()
           loader.onload = function (loadEvent) {
             if (loadEvent.target.readyState !== 2) {
@@ -50,7 +51,7 @@ function main () {
       }
       return response.text()
     }).then(function (text) {
-      setTimeout(() => {
+      window.setTimeout(() => {
         $('<textarea/>', {cols: 60, rows: 10}).val(text).appendTo(div)
         render(text, source, status)
       }, RENDER_DELAY)
@@ -71,6 +72,7 @@ function main () {
       // makeHierarchy.test()
       let classHierarchy = makeHierarchy()
       let classes = {}
+      let properties = {}
       // let realized = makeHierarchy()
       let XMIParser = require('../node_modules/jhipster-uml/lib/editors/canonical_parser.js')
       let root = getRootElement(xmiText)
@@ -83,6 +85,7 @@ function main () {
       })
       parsedData.root = root
       parsedData.myClasses = classes
+      parsedData.myProperties = properties
       parsedData.hierarchy = classHierarchy.roots
       status.text('indexing...')
 
@@ -91,15 +94,26 @@ function main () {
           // parsedData.index = {}
           let index = {}
           indexXML(root, [])
+
+          Object.keys(properties).forEach(propName => {
+            let p = properties[propName]
+            let s = p.sources.reduce((acc, s) => {
+              let t = s.type || s.typeRef
+              return acc.indexOf(t) === -1 ? acc.concat(t) : acc
+            }, [])
+            p.uniformType = s
+          }, [])
+
           console.dir({
             classes: classes,
+            properties: properties,
             triples: triples,
             classHierarchy: classHierarchy,
             index: index,
             parsedData: parsedData})
 
           status.text('rendering structure...')
-          setTimeout(delay.render, RENDER_DELAY)
+          window.setTimeout(delay.render, RENDER_DELAY)
 
           function indexXML (elt, parents) {
             let parent = parents[parents.length - 1]
@@ -146,7 +160,19 @@ function main () {
                     throw Error('unexpected property name ' + elt.$.name + ' in ' + parent)
                   } else {
                     classes[parent].properties.push(id)
+                    if (!(elt.$.name in properties)) {
+                      properties[elt.$.name] = {sources: []}
+                    }
+                    properties[elt.$.name].sources.push({
+                      in: parent,
+                      id: id,
+                      typeRef: elt.type[0].$['xmi:idref'],
+                      type: elt.type[0].$['href'],
+                      min: 'value' in elt.lowerValue[0].$ ? elt.lowerValue[0].$.value : 0,
+                      max: 'value' in elt.upperValue[0].$ ? elt.upperValue[0].$.value : 99
+                    })
                   }
+
                   if (triple) {
                     if (['source', 'association'].indexOf(triple[3]) === -1) {
                       console.warn('unknown relationship: ', triple[3])
@@ -186,11 +212,12 @@ function main () {
           collapse(structure)
 
           status.text('diagnostics...')
-          setTimeout(delay.diagnostics, RENDER_DELAY)
+          window.setTimeout(delay.diagnostics, RENDER_DELAY)
         },
 
         diagnostics: function () {
           let diagnostics = $('<ul/>')
+          polymorphicProperties(properties, diagnostics)
           reusedProperties(parsedData, diagnostics)
           puns(parsedData, diagnostics)
           addTriples(triples, diagnostics)
@@ -204,7 +231,7 @@ function main () {
           status.text('')
         }
       }
-      setTimeout(delay.index, RENDER_DELAY)
+      window.setTimeout(delay.index, RENDER_DELAY)
 
       function structureToListItems (object, into) {
         into.append(Object.keys(object).map(k => {
@@ -219,6 +246,8 @@ function main () {
           } else if (typeof elt === 'object') {
             if (elt.constructor === Array) {
               title += ' (' + Object.keys(elt).length + ')'
+            } else if ('id' in elt) {
+              title += elt.id
             } else if ('$' in elt && 'xmi:id' in elt.$) {
               title += elt.$['xmi:id']
             }
@@ -234,6 +263,34 @@ function main () {
           }
           into.append($('<li/>').text(title).append(value))
         }))
+      }
+
+      function polymorphicProperties (properties, into) {
+        let x = Object.keys(properties).filter(
+          propName => properties[propName].uniformType.length !== 1
+        )
+        into.append($('<li/>').append(
+          $('<span/>',
+            {title: 'names of properties which have more than one type'})
+            .text('polymorphic properties'),
+          ' (' + x.length + ')',
+          $('<ul/>').append(
+            x.sort(
+              (l, r) => properties[r].uniformType.length - properties[l].uniformType.length
+            ).map(dupe => {
+              return $('<li/>').append(
+                dupe,
+                ' (' + properties[dupe].uniformType.length + ')',
+                $('<ul/>').append(
+                  properties[dupe].uniformType.map(lookIn => $('<li/>').append(
+                    $('<a/>', { href:
+                                'http://lion.ddialliance.org/ddiobjects/' +
+                                lookIn.toLowerCase() + '#parent_properties' })
+                      .text(lookIn)
+                  ))
+                ))
+            })
+          )))
       }
 
       function reusedProperties (object, into) {
@@ -262,7 +319,7 @@ function main () {
         }, {seen: {}, duplicates: []})
         into.append($('<li/>').append(
           $('<span/>',
-            {title: 'property names which are used in more than one class'})
+            {title: 'names of properties which are used in more than one class'})
             .text('reused properties'),
           ' (' + x.duplicates.length + ')',
           $('<ul/>').append(
@@ -337,7 +394,7 @@ function main () {
       }
     }
     status.text('parsing UML...')
-    setTimeout(parse, RENDER_DELAY)
+    window.setTimeout(parse, RENDER_DELAY)
   }
 
   function getRootElement (content) {
@@ -403,8 +460,7 @@ function main () {
       },
       roots: roots,
       parents: parents,
-      children: children,
-      holders: holders
+      children: children
     }
   }
   makeHierarchy.test = function () {
