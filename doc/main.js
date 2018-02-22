@@ -2,6 +2,11 @@ function main () {
   const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
   const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
 
+  function docURL (term) {
+    return 'http://lion.ddialliance.org/ddiobjects/' +
+      term.toLowerCase() + '#parent_properties'
+  }
+
   const xml2js = require('xml2js')
   // let rs = Ecore.ResourceSet.create()
   let $ = window.jQuery
@@ -303,10 +308,7 @@ function main () {
                 ' (' + x.seen[dupe].length + ')',
                 $('<ul/>').append(
                   x.seen[dupe].map(lookIn => $('<li/>').append(
-                    $('<a/>', { href:
-                                'http://lion.ddialliance.org/ddiobjects/' +
-                                lookIn.toLowerCase() + '#parent_properties' })
-                      .text(lookIn)
+                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
                   ))
                 ))
             })
@@ -331,10 +333,7 @@ function main () {
                 ' (' + properties[dupe].uniformType.length + ')',
                 $('<ul/>').append(
                   properties[dupe].uniformType.map(lookIn => $('<li/>').append(
-                    $('<a/>', { href:
-                                'http://lion.ddialliance.org/ddiobjects/' +
-                                lookIn.toLowerCase() + '#parent_properties' })
-                      .text(lookIn)
+                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
                   ))
                 ))
             })
