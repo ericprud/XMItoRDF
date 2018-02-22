@@ -44090,6 +44090,11 @@ function main () {
   const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
   const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
 
+  function docURL (term) {
+    return 'http://lion.ddialliance.org/ddiobjects/' +
+      term.toLowerCase() + '#parent_properties'
+  }
+
   const xml2js = __webpack_require__(104)
   // let rs = Ecore.ResourceSet.create()
   let $ = window.jQuery
@@ -44161,6 +44166,9 @@ function main () {
       let classHierarchy = makeHierarchy()
       let classes = {}
       let properties = {}
+      let owlm = []
+      let shexc = []
+      let index = {}
       // let realized = makeHierarchy()
       let XMIParser = __webpack_require__(226)
       let root = getRootElement(xmiText)
@@ -44171,7 +44179,7 @@ function main () {
           getName: () => 'general'
         }
       })
-      parsedData.root = root
+      // parsedData.root = root
       parsedData.myClasses = classes
       parsedData.myProperties = properties
       parsedData.hierarchy = classHierarchy.roots
@@ -44180,13 +44188,16 @@ function main () {
       let delay = {
         index: function () {
           // parsedData.index = {}
-          let index = {}
           indexXML(root, [])
 
           Object.keys(properties).forEach(propName => {
             let p = properties[propName]
             let s = p.sources.reduce((acc, s) => {
               let t = s.type || s.typeRef
+              if (acc.length > 0 && acc.indexOf(t) === -1) {
+                // debugger;
+                // a.find(i => b.indexOf(i) !== -1)
+              }
               return acc.indexOf(t) === -1 ? acc.concat(t) : acc
             }, [])
             p.uniformType = s
@@ -44307,6 +44318,7 @@ function main () {
           let diagnostics = $('<ul/>')
           reusedProperties(parsedData, diagnostics)
           polymorphicProperties(properties, diagnostics)
+          console.dir({owlm: owlm, shexc: shexc})
           puns(parsedData, diagnostics)
           addTriples(triples, diagnostics)
           collapse(diagnostics)
@@ -44391,10 +44403,7 @@ function main () {
                 ' (' + x.seen[dupe].length + ')',
                 $('<ul/>').append(
                   x.seen[dupe].map(lookIn => $('<li/>').append(
-                    $('<a/>', { href:
-                                'http://lion.ddialliance.org/ddiobjects/' +
-                                lookIn.toLowerCase() + '#parent_properties' })
-                      .text(lookIn)
+                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
                   ))
                 ))
             })
@@ -44419,14 +44428,71 @@ function main () {
                 ' (' + properties[dupe].uniformType.length + ')',
                 $('<ul/>').append(
                   properties[dupe].uniformType.map(lookIn => $('<li/>').append(
-                    $('<a/>', { href:
-                                'http://lion.ddialliance.org/ddiobjects/' +
-                                lookIn.toLowerCase() + '#parent_properties' })
-                      .text(lookIn)
+                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
                   ))
                 ))
             })
           )))
+        owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in x)).map(
+          propName => 'ObjectProperty ddi:' + propName + ': range dd:' + properties[propName].uniformType[0]
+        ))
+        owlm = owlm.concat(Object.keys(classes).map(
+          className => 'Class ddi:' + className + ' SubClassOf\n' +
+            classes[className].properties.map(
+              propId => {
+                let elt = propId
+                let propName = index[elt].element.$.name
+                return '    ddi:' + propName + ' only ' + pname(properties[propName].uniformType[0])
+              }
+            ).join('\n  and\n')
+        ))
+        shexc = shexc.concat(Object.keys(classes).map(
+          className => 'ddi:' + className + ' {\n' +
+            classes[className].properties.map(
+              propId => {
+                let elt = propId
+                let propName = index[elt].element.$.name
+                let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
+                let card = shexCardinality(index[elt].element)
+                return '  ddi:' + propName + ' ' + refChar + pname(properties[propName].uniformType[0]) + ' ' + card
+              }
+            ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
+        ))
+      }
+
+      function shexCardinality (elt) {
+        let lower = 'value' in elt.lowerValue[0].$ ? parseInt(elt.lowerValue[0].$.value) : 0
+        let upper = 'value' in elt.upperValue[0].$ ? parseInt(elt.upperValue[0].$.value) : -1
+        if (lower === 1 && upper === 1) {
+          return ''
+        } else if (lower === 1 && upper === -1) {
+          return '+'
+        } else if (lower === 0 && upper === -1) {
+          return '*'
+        } else if (lower === 0 && upper === 1) {
+          return '?'
+        } else {
+          return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
+        }
+      }
+
+      function pname (id) {
+        const m = [
+          {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd:'},
+          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'}
+        ]
+        let ret = m.map(pair =>
+          id.startsWith(pair.url)
+            ? pair.prefix + id.substr(pair.url.length)
+            : null
+        ).find(v => v)
+        if (ret) {
+          return ret
+        }
+        if (id.startsWith('http:')) {
+          console.warn('need namespace for ' + id)
+        }
+        return 'ddi:' + id
       }
 
       function puns (object, into) {
