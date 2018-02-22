@@ -89,10 +89,11 @@ function main() {
         // parsedData.index = {};
         var index = {};
         indexXML(root, [])
-        console.dir(classes);
-        console.dir(classHierarchy.roots);
-        console.dir(index);
-        console.log(parsedData);
+        console.dir({classes: classes,
+                     triples: triples,
+                     classHierarchy, classHierarchy,
+                     index: index,
+                     parsedData: parsedData});
 
         status.text("rendering structure...");
         setTimeout(delay_render, RENDER_DELAY);
@@ -100,16 +101,17 @@ function main() {
         function indexXML (elt, parents) {
           var parent = parents[parents.length-1];
           let type = elt.$["xmi:type"];
+          let recurse = true;
           if ("xmi:id" in elt.$) {
             var id = elt.$["xmi:id"];
             index[id] = { element: elt, parents: parents };
-            var m;
+            let triple;
 
             // record triples
-            if ((m = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
-              if (!(m[2] in triples))
-                triples[m[2]] = [];
-              triples[m[2]].push(id);
+            if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
+              if (!(triple[2] in triples))
+                triples[triple[2]] = [];
+              triples[triple[2]].push(id);
             }
 
             switch (type) {
@@ -127,10 +129,11 @@ function main() {
               break;
             case "uml:Property":
               if (elt.$.name === parent) {
-                if (m[2] === "realizes")
+                if (triple[2] === "realizes") {
                   classes[parent].realizes.push(elt.type[0].$["xmi:idref"]);
-                else
-                  classes[parent].others.push(m[2]);
+                } else {
+                  classes[parent].others.push(triple[2]);
+                }
               } else if (!("name" in elt.$)) {
                 throw Error("expected name in " + JSON.stringify(elt.$) + " in " + parent);
               } else if (elt.$.name.charAt(0).match(/[A-Z]/)) {
@@ -138,12 +141,29 @@ function main() {
               } else {
                 classes[parent].properties.push(id);
               }
+              if (triple) {
+              if (["source", "association"].indexOf(triple[3]) === -1)
+                console.warn("unknown relationship: ", triple[3]);
+              if (triple[1] !== parent)
+                console.warn("parent mismatch: ", triple, parent);
+              }
               break;
+            case "uml:Association":
+              recurse = false;
+              break;
+            case "uml:Model":
+            case "uml:Package":
+            case "uml:Enumeration":
+            case "uml:DataType":
+              break
+            default:
+              console.log("need handler for " + type);
             }
 
-            if (type !== "uml:Association") {
+            if (recurse) {
               // walk desendents
-              Object.keys(elt).filter(k => k !== "$" && k !== "lowerValue" && k !== "upperValue").forEach(k => {
+              let skipTheseElements = ["lowerValue", "upperValue", "generalization"];
+              Object.keys(elt).filter(k => k !== "$" && skipTheseElements.indexOf(k) === -1).forEach(k => {
                 elt[k].forEach(sub => {
                   indexXML(sub, parents.concat(id));
                 });
