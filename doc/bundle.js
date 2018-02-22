@@ -44331,8 +44331,12 @@ function main () {
           div.append($('<ul/>').append(
             $('<li/>').text('structure').append(structure),
             $('<li/>').text('diagnostics').append(diagnostics),
-            $('<li/>').text('OWL').on('click', () => download(shexc.join('\n\n'), 'text/plain', 'ddi.omn')),
-            $('<li/>').text('ShEx').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
+            $('<li/>').append(
+              $('<a/>', {href: ''}).text('OWL').on('click', () => download(shexc.join('\n\n'), 'text/plain', 'ddi.omn'))
+            ),
+            $('<li/>').append(
+              $('<a/>', {href: ''}).text('ShEx').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
+            )
           ))
 
           status.text('')
@@ -44670,6 +44674,7 @@ function main () {
     a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
     a.dispatchEvent(e)
+    return false
   }
 }
 
