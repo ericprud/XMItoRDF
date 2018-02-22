@@ -217,8 +217,8 @@ function main () {
 
         diagnostics: function () {
           let diagnostics = $('<ul/>')
-          polymorphicProperties(properties, diagnostics)
           reusedProperties(parsedData, diagnostics)
+          polymorphicProperties(properties, diagnostics)
           puns(parsedData, diagnostics)
           addTriples(triples, diagnostics)
           collapse(diagnostics)
@@ -265,34 +265,6 @@ function main () {
         }))
       }
 
-      function polymorphicProperties (properties, into) {
-        let x = Object.keys(properties).filter(
-          propName => properties[propName].uniformType.length !== 1
-        )
-        into.append($('<li/>').append(
-          $('<span/>',
-            {title: 'names of properties which have more than one type'})
-            .text('polymorphic properties'),
-          ' (' + x.length + ')',
-          $('<ul/>').append(
-            x.sort(
-              (l, r) => properties[r].uniformType.length - properties[l].uniformType.length
-            ).map(dupe => {
-              return $('<li/>').append(
-                dupe,
-                ' (' + properties[dupe].uniformType.length + ')',
-                $('<ul/>').append(
-                  properties[dupe].uniformType.map(lookIn => $('<li/>').append(
-                    $('<a/>', { href:
-                                'http://lion.ddialliance.org/ddiobjects/' +
-                                lookIn.toLowerCase() + '#parent_properties' })
-                      .text(lookIn)
-                  ))
-                ))
-            })
-          )))
-      }
-
       function reusedProperties (object, into) {
         // Object.keys(object.classes).reduce((acc, klass) => {
         //   return acc.concat(object.classes[klass].fields.map(field => {
@@ -331,6 +303,34 @@ function main () {
                 ' (' + x.seen[dupe].length + ')',
                 $('<ul/>').append(
                   x.seen[dupe].map(lookIn => $('<li/>').append(
+                    $('<a/>', { href:
+                                'http://lion.ddialliance.org/ddiobjects/' +
+                                lookIn.toLowerCase() + '#parent_properties' })
+                      .text(lookIn)
+                  ))
+                ))
+            })
+          )))
+      }
+
+      function polymorphicProperties (properties, into) {
+        let x = Object.keys(properties).filter(
+          propName => properties[propName].uniformType.length !== 1
+        )
+        into.append($('<li/>').append(
+          $('<span/>',
+            {title: 'names of properties which have more than one type'})
+            .text('polymorphic properties'),
+          ' (' + x.length + ')',
+          $('<ul/>').append(
+            x.sort(
+              (l, r) => properties[r].uniformType.length - properties[l].uniformType.length
+            ).map(dupe => {
+              return $('<li/>').append(
+                dupe,
+                ' (' + properties[dupe].uniformType.length + ')',
+                $('<ul/>').append(
+                  properties[dupe].uniformType.map(lookIn => $('<li/>').append(
                     $('<a/>', { href:
                                 'http://lion.ddialliance.org/ddiobjects/' +
                                 lookIn.toLowerCase() + '#parent_properties' })
