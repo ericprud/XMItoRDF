@@ -242,7 +242,9 @@ function main () {
 
           div.append($('<ul/>').append(
             $('<li/>').text('structure').append(structure),
-            $('<li/>').text('diagnostics').append(diagnostics)
+            $('<li/>').text('diagnostics').append(diagnostics),
+            $('<li/>').text('OWL').on('click', () => download(shexc.join('\n\n'), 'text/plain', 'ddi.omn')),
+            $('<li/>').text('ShEx').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
           ))
 
           status.text('')
@@ -396,7 +398,7 @@ function main () {
       function pname (id) {
         const m = [
           {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd:'},
-          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'}
+          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld:'}
         ]
         let ret = m.map(pair =>
           id.startsWith(pair.url)
@@ -568,6 +570,18 @@ function main () {
       .children('ul').hide()
     from.find('li:not(:has(ul))').css({cursor: 'default', 'list-style-image': 'none'})
     return from
+  }
+
+  function download (data, mediaType, filename) {
+    let blob = new window.Blob([data], {type: mediaType})
+    let e = document.createEvent('MouseEvents')
+    let a = document.createElement('a')
+
+    a.download = filename
+    a.href = window.URL.createObjectURL(blob)
+    a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
+    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+    a.dispatchEvent(e)
   }
 }
 
