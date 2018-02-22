@@ -44167,7 +44167,12 @@ function main () {
       let classes = {}
       let properties = {}
       let owlm = []
-      let shexc = []
+      let shexc = [
+        'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
+          'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+          'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+          'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n'
+      ]
       let index = {}
       // let realized = makeHierarchy()
       let XMIParser = __webpack_require__(226)
