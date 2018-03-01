@@ -74,16 +74,24 @@ function main () {
     function parse () {
       let structure = $('<ul/>')
       let triples = {}
-      // makeHierarchy.test()
+      makeHierarchy.test()
       let classHierarchy = makeHierarchy()
       let classes = {}
       let properties = {}
-      let owlm = []
+      let owlm = [
+        'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
+          'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+          'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+          'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+          'Ontology: <http://example.com/owl/families>\n' +
+          '\n'
+      ]
       let shexc = [
         'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
           'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
           'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
-          'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n'
+          'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+          '\n'
       ]
       let index = {}
       // let realized = makeHierarchy()
@@ -244,7 +252,7 @@ function main () {
             $('<li/>').text('structure').append(structure),
             $('<li/>').text('diagnostics').append(diagnostics),
             $('<li/>').append(
-              $('<a/>', {href: ''}).text('OWL').on('click', () => download(shexc.join('\n\n'), 'text/plain', 'ddi.omn'))
+              $('<a/>', {href: ''}).text('OWL').on('click', () => download(owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
             ),
             $('<li/>').append(
               $('<a/>', {href: ''}).text('ShEx').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
@@ -357,10 +365,14 @@ function main () {
             })
           )))
         owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in x)).map(
-          propName => 'ObjectProperty ddi:' + propName + ': range dd:' + properties[propName].uniformType[0]
+          propName => {
+            let p = properties[propName].uniformType[0]
+            let t = isObject(p) ? 'Object' : 'Datatype'
+            return t + 'Property: ddi:' + propName + ' Range: ' + pname(p)
+          }
         ))
         owlm = owlm.concat(Object.keys(classes).map(
-          className => 'Class ddi:' + className + ' SubClassOf\n' +
+          className => 'Class: ddi:' + className + ' SubClassOf:\n' +
             classes[className].properties.map(
               propId => {
                 let elt = propId
@@ -381,6 +393,9 @@ function main () {
               }
             ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
         ))
+        function isObject (term) {
+          return !pname(term).startsWith('ddi:')
+        }
       }
 
       function shexCardinality (elt) {
