@@ -183,7 +183,8 @@ function main () {
                   classes[id] = {
                     properties: [],
                     realizes: [],
-                    others: []
+                    others: [],
+                    parents: parents
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
@@ -435,11 +436,29 @@ function main () {
                   return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${className}"/>
         <${t}AllValuesFrom>
-            <${t}Property abbreviatedIRI="ddi:mimeType"/>
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
             <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
     </SubClassOf>`
                 }
+              ).concat(
+                (index[className].element.generalization || []).map(
+                  superClass =>
+                    `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${className}"/>
+        <Class abbreviatedIRI="ddi:${superClass.$.general}"/>
+    </SubClassOf>`
+                )
+              ).concat(
+                classes[className].parents.filter(
+                  parent => parent !== '42' // the ddi:42 confuses OWLAPI
+                ).map(
+                  parent =>
+                    `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${className}"/>
+        <Class abbreviatedIRI="ddi:${parent}"/>
+    </SubClassOf>`
+                )
               ).join('\n')
           ))
           owlm = owlm.concat(Object.keys(classes).map(
