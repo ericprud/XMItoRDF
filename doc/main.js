@@ -1,6 +1,7 @@
 function main () {
   const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
   const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
+  const BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
@@ -343,8 +344,14 @@ function main () {
 
       function polymorphicProperties (properties, into) {
         let x = Object.keys(properties).filter(
-          propName => properties[propName].uniformType.length !== 1
+          propName =>
+            properties[propName].uniformType.length !== 1 ||
+            properties[propName].uniformType[0] === undefined
         )
+        let xHash = x.reduce(
+          (acc, propName, idx) =>
+            addKey(acc, propName, idx)
+          , {})
         into.append($('<li/>').append(
           $('<span/>',
             {title: 'names of properties which have more than one type'})
@@ -359,40 +366,46 @@ function main () {
                 ' (' + properties[dupe].uniformType.length + ')',
                 $('<ul/>').append(
                   properties[dupe].uniformType.map(lookIn => $('<li/>').append(
-                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
+                    lookIn
+                      ? $('<a/>', { href: docURL(lookIn) }).text(lookIn)
+                      : $('<span/>').text('no stated type').addClass('scalar')
                   ))
                 ))
             })
           )))
-        owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in x)).map(
-          propName => {
-            let p = properties[propName].uniformType[0]
-            let t = isObject(p) ? 'Object' : 'Datatype'
-            return t + 'Property: ddi:' + propName + ' Range: ' + pname(p)
-          }
-        ))
-        owlm = owlm.concat(Object.keys(classes).map(
-          className => 'Class: ddi:' + className + ' SubClassOf:\n' +
-            classes[className].properties.map(
-              propId => {
-                let elt = propId
-                let propName = index[elt].element.$.name
-                return '    ddi:' + propName + ' only ' + pname(properties[propName].uniformType[0])
-              }
-            ).join('\n  and\n')
-        ))
-        shexc = shexc.concat(Object.keys(classes).map(
-          className => 'ddi:' + className + ' {\n' +
-            classes[className].properties.map(
-              propId => {
-                let elt = propId
-                let propName = index[elt].element.$.name
-                let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
-                let card = shexCardinality(index[elt].element)
-                return '  ddi:' + propName + ' ' + refChar + pname(properties[propName].uniformType[0]) + ' ' + card
-              }
-            ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
-        ))
+        if (BUILD_PRODUCTS) {
+          owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
+            propName => {
+              let p = properties[propName].uniformType[0]
+              let t = isObject(p) ? 'Object' : 'Datatype'
+              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p)
+            }
+          ))
+          owlm = owlm.concat(Object.keys(classes).map(
+            className => 'Class: ddi:' + className + ' SubClassOf:\n' +
+              classes[className].properties.map(
+                propId => {
+                  let elt = propId
+                  let propName = index[elt].element.$.name
+                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
+                  return '    ddi:' + propName + ' only ' + type
+                }
+              ).join('\n  and\n')
+          ))
+          shexc = shexc.concat(Object.keys(classes).map(
+            className => 'ddi:' + className + ' {\n' +
+              classes[className].properties.map(
+                propId => {
+                  let elt = propId
+                  let propName = index[elt].element.$.name
+                  let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
+                  let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
+                  let card = shexCardinality(index[elt].element)
+                  return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
+                }
+              ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
+          ))
+        }
         function isObject (term) {
           return !pname(term).startsWith('ddi:')
         }
@@ -602,6 +615,13 @@ function main () {
     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
     a.dispatchEvent(e)
     return false
+  }
+
+  // functional add key/val to object.
+  function addKey (obj, prop, val) {
+    var toAdd = {}
+    toAdd[prop] = val
+    return Object.assign({}, obj, toAdd)
   }
 }
 
