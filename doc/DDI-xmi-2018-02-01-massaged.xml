@@ -12686,4 +12686,535 @@
       </packagedElement>
     </packagedElement>
   </uml:Model>
+  <xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+    <diagrams>
+      <!-- Begin views diagrams -->
+      <diagram xmi:id="DescriptiveCodebookViewDiagram">
+        <model package="DescriptiveCodebookView" owner="DescriptiveCodebookView"/>
+        <properties name="DescriptiveCodebookView Diagram" />
+        <elements>
+          <element subject="Access" seqno="0"/>
+          <element subject="AlgorithmOverview" seqno="1"/>
+          <element subject="AttributeRole" seqno="2"/>
+          <element subject="AuthorizationSource" seqno="3"/>
+          <element subject="BoundingBox" seqno="4"/>
+          <element subject="Budget" seqno="5"/>
+          <element subject="Category" seqno="6"/>
+          <element subject="CategorySet" seqno="7"/>
+          <element subject="ClassificationRelationStructure" seqno="8"/>
+          <element subject="Code" seqno="9"/>
+          <element subject="CodeList" seqno="10"/>
+          <element subject="ComplianceStatement" seqno="11"/>
+          <element subject="Concept" seqno="12"/>
+          <element subject="Coverage" seqno="13"/>
+          <element subject="DataPoint" seqno="14"/>
+          <element subject="DataPointRelationStructure" seqno="15"/>
+          <element subject="DataStore" seqno="16"/>
+          <element subject="Datum" seqno="17"/>
+          <element subject="DesignOverview" seqno="18"/>
+          <element subject="Embargo" seqno="19"/>
+          <element subject="ExPostEvaluation" seqno="20"/>
+          <element subject="ExternalAid" seqno="21"/>
+          <element subject="ExternalMaterial" seqno="22"/>
+          <element subject="FundingInformation" seqno="23"/>
+          <element subject="GeographicExtent" seqno="24"/>
+          <element subject="GeographicUnit" seqno="25"/>
+          <element subject="IdentifierRole" seqno="26"/>
+          <element subject="ImplementedInstrument" seqno="27"/>
+          <element subject="Individual" seqno="28"/>
+          <element subject="InstanceVariable" seqno="29"/>
+          <element subject="InstanceVariableRelationStructure" seqno="30"/>
+          <element subject="Instruction" seqno="31"/>
+          <element subject="LevelStructure" seqno="32"/>
+          <element subject="LogicalRecordRelationStructure" seqno="33"/>
+          <element subject="Machine" seqno="34"/>
+          <element subject="MeasureRole" seqno="35"/>
+          <element subject="MethodologyOverview" seqno="36"/>
+          <element subject="Organization" seqno="37"/>
+          <element subject="PhysicalDataSet" seqno="38"/>
+          <element subject="PhysicalLayoutRelationStructure" seqno="39"/>
+          <element subject="PhysicalOrderRelationStructure" seqno="40"/>
+          <element subject="PhysicalRecordSegment" seqno="41"/>
+          <element subject="Population" seqno="42"/>
+          <element subject="ProcessOverview" seqno="43"/>
+          <element subject="QualityStatement" seqno="44"/>
+          <element subject="RecordRelation" seqno="45"/>
+          <element subject="RepresentedMeasurement" seqno="46"/>
+          <element subject="RepresentedQuestion" seqno="47"/>
+          <element subject="SamplingProcedure" seqno="48"/>
+          <element subject="SegmentByText" seqno="49"/>
+          <element subject="SentinelConceptualDomain" seqno="50"/>
+          <element subject="SentinelValueDomain" seqno="51"/>
+          <element subject="SpatialCoverage" seqno="52"/>
+          <element subject="Standard" seqno="53"/>
+          <element subject="StandardWeight" seqno="54"/>
+          <element subject="Study" seqno="55"/>
+          <element subject="StudyRelationStructure" seqno="56"/>
+          <element subject="StudySeries" seqno="57"/>
+          <element subject="SubstantiveConceptualDomain" seqno="58"/>
+          <element subject="SubstantiveValueDomain" seqno="59"/>
+          <element subject="TemporalCoverage" seqno="60"/>
+          <element subject="TopicalCoverage" seqno="61"/>
+          <element subject="Unit" seqno="62"/>
+          <element subject="UnitDataRecord" seqno="63"/>
+          <element subject="UnitDataViewpoint" seqno="64"/>
+          <element subject="UnitSegmentLayout" seqno="65"/>
+          <element subject="UnitType" seqno="66"/>
+          <element subject="Universe" seqno="67"/>
+          <element subject="ValueAndConceptDescription" seqno="68"/>
+          <element subject="ValueMapping" seqno="69"/>
+          <element subject="VariableCollection" seqno="70"/>
+          <element subject="VariableRelationStructure" seqno="71"/>
+          <element subject="VariableStatistics" seqno="72"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="SamplingViewDiagram">
+        <model package="SamplingView" owner="SamplingView"/>
+        <properties name="SamplingView Diagram" />
+        <elements>
+          <element subject="Access" seqno="0"/>
+          <element subject="AppliedUse" seqno="1"/>
+          <element subject="BoundingBox" seqno="2"/>
+          <element subject="Category" seqno="3"/>
+          <element subject="CategoryRelationStructure" seqno="4"/>
+          <element subject="CategorySet" seqno="5"/>
+          <element subject="ClassificationRelationStructure" seqno="6"/>
+          <element subject="Code" seqno="7"/>
+          <element subject="CodeList" seqno="8"/>
+          <element subject="ComputationAction" seqno="9"/>
+          <element subject="Concept" seqno="10"/>
+          <element subject="ConceptRelationStructure" seqno="11"/>
+          <element subject="ConceptSystem" seqno="12"/>
+          <element subject="ExternalMaterial" seqno="13"/>
+          <element subject="GeographicExtent" seqno="14"/>
+          <element subject="GeographicUnit" seqno="15"/>
+          <element subject="Goal" seqno="16"/>
+          <element subject="Guide" seqno="17"/>
+          <element subject="IfThenElse" seqno="18"/>
+          <element subject="Individual" seqno="19"/>
+          <element subject="LevelStructure" seqno="20"/>
+          <element subject="Loop" seqno="21"/>
+          <element subject="Machine" seqno="22"/>
+          <element subject="Organization" seqno="23"/>
+          <element subject="Parameter" seqno="24"/>
+          <element subject="Population" seqno="25"/>
+          <element subject="Precondition" seqno="26"/>
+          <element subject="RepeatUntil" seqno="27"/>
+          <element subject="RepeatWhile" seqno="28"/>
+          <element subject="SampleFrame" seqno="29"/>
+          <element subject="SamplePopulationResult" seqno="30"/>
+          <element subject="SamplingAlgorithm" seqno="31"/>
+          <element subject="SamplingDesign" seqno="32"/>
+          <element subject="SamplingGoal" seqno="33"/>
+          <element subject="SamplingProcedure" seqno="34"/>
+          <element subject="SamplingProcess" seqno="35"/>
+          <element subject="Split" seqno="36"/>
+          <element subject="SplitJoin" seqno="37"/>
+          <element subject="SubstantiveConceptualDomain" seqno="38"/>
+          <element subject="SubstantiveValueDomain" seqno="39"/>
+          <element subject="Unit" seqno="40"/>
+          <element subject="UnitType" seqno="41"/>
+          <element subject="Universe" seqno="42"/>
+          <element subject="ValueAndConceptDescription" seqno="43"/>
+          <element subject="WorkflowMasterSequence" seqno="44"/>
+          <element subject="WorkflowService" seqno="45"/>
+          <element subject="WorkflowStepSequence" seqno="46"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="StatisticalClassificationViewDiagram">
+        <model package="StatisticalClassificationView" owner="StatisticalClassificationView"/>
+        <properties name="StatisticalClassificationView Diagram" />
+        <elements>
+          <element subject="AuthorizationSource" seqno="0"/>
+          <element subject="Category" seqno="1"/>
+          <element subject="CategoryRelationStructure" seqno="2"/>
+          <element subject="CategorySet" seqno="3"/>
+          <element subject="ClassificationFamily" seqno="4"/>
+          <element subject="ClassificationIndex" seqno="5"/>
+          <element subject="ClassificationIndexEntry" seqno="6"/>
+          <element subject="ClassificationItem" seqno="7"/>
+          <element subject="ClassificationRelationStructure" seqno="8"/>
+          <element subject="ClassificationSeries" seqno="9"/>
+          <element subject="ClassificationSeriesRelationStructure" seqno="10"/>
+          <element subject="Concept" seqno="11"/>
+          <element subject="CorrespondenceTable" seqno="12"/>
+          <element subject="ExternalMaterial" seqno="13"/>
+          <element subject="IndexEntryRelationStructure" seqno="14"/>
+          <element subject="Individual" seqno="15"/>
+          <element subject="LevelStructure" seqno="16"/>
+          <element subject="Organization" seqno="17"/>
+          <element subject="StatisticalClassification" seqno="18"/>
+          <element subject="StatisticalClassificationRelationStructure" seqno="19"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="StructuredGeographyViewDiagram">
+        <model package="StructuredGeographyView" owner="StructuredGeographyView"/>
+        <properties name="StructuredGeographyView Diagram" />
+        <elements>
+          <element subject="BoundingBox" seqno="0"/>
+          <element subject="Concept" seqno="1"/>
+          <element subject="ConceptRelationStructure" seqno="2"/>
+          <element subject="ConceptSystem" seqno="3"/>
+          <element subject="ExternalMaterial" seqno="4"/>
+          <element subject="GeographicExtent" seqno="5"/>
+          <element subject="GeographicUnit" seqno="6"/>
+          <element subject="GeographicUnitClassification" seqno="7"/>
+          <element subject="GeographicUnitRelationStructure" seqno="8"/>
+          <element subject="GeographicUnitTypeClassification" seqno="9"/>
+          <element subject="GeographicUnitTypeRelationStructure" seqno="10"/>
+          <element subject="Individual" seqno="11"/>
+          <element subject="LevelStructure" seqno="12"/>
+          <element subject="Organization" seqno="13"/>
+          <element subject="UnitType" seqno="14"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="DataManagementViewDiagram">
+        <model package="DataManagementView" owner="DataManagementView"/>
+        <properties name="DataManagementView Diagram" />
+        <elements>
+          <element subject="AlgorithmOverview" seqno="0"/>
+          <element subject="BusinessAlgorithm" seqno="1"/>
+          <element subject="BusinessProcess" seqno="2"/>
+          <element subject="ComputationAction" seqno="3"/>
+          <element subject="DataPipeline" seqno="4"/>
+          <element subject="DataStore" seqno="5"/>
+          <element subject="DesignOverview" seqno="6"/>
+          <element subject="ExternalMaterial" seqno="7"/>
+          <element subject="IfThenElse" seqno="8"/>
+          <element subject="InstanceVariable" seqno="9"/>
+          <element subject="InstanceVariableRelationStructure" seqno="10"/>
+          <element subject="LogicalRecordRelationStructure" seqno="11"/>
+          <element subject="Loop" seqno="12"/>
+          <element subject="MetadataDrivenAction" seqno="13"/>
+          <element subject="MethodologyOverview" seqno="14"/>
+          <element subject="Parameter" seqno="15"/>
+          <element subject="RepeatUntil" seqno="16"/>
+          <element subject="RepeatWhile" seqno="17"/>
+          <element subject="Split" seqno="18"/>
+          <element subject="SplitJoin" seqno="19"/>
+          <element subject="StructuredWorkflowSteps" seqno="20"/>
+          <element subject="Study" seqno="21"/>
+          <element subject="UnitDataRecord" seqno="22"/>
+          <element subject="WorkflowMasterSequence" seqno="23"/>
+          <element subject="WorkflowStepRelationStructure" seqno="24"/>
+          <element subject="WorkflowStepSequence" seqno="25"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="DataDescriptionViewDiagram">
+        <model package="DataDescriptionView" owner="DataDescriptionView"/>
+        <properties name="DataDescriptionView Diagram" />
+        <elements>
+          <element subject="AttributeRole" seqno="0"/>
+          <element subject="Category" seqno="1"/>
+          <element subject="CategoryRelationStructure" seqno="2"/>
+          <element subject="CategorySet" seqno="3"/>
+          <element subject="ClassificationRelationStructure" seqno="4"/>
+          <element subject="Code" seqno="5"/>
+          <element subject="CodeList" seqno="6"/>
+          <element subject="Concept" seqno="7"/>
+          <element subject="ConceptRelationStructure" seqno="8"/>
+          <element subject="ConceptSystem" seqno="9"/>
+          <element subject="DataPoint" seqno="10"/>
+          <element subject="DataPointRelationStructure" seqno="11"/>
+          <element subject="DataStore" seqno="12"/>
+          <element subject="DataStoreLibrary" seqno="13"/>
+          <element subject="DataStoreRelationStructure" seqno="14"/>
+          <element subject="Datum" seqno="15"/>
+          <element subject="ExternalMaterial" seqno="16"/>
+          <element subject="IdentifierRole" seqno="17"/>
+          <element subject="InstanceVariable" seqno="18"/>
+          <element subject="InstanceVariableRelationStructure" seqno="19"/>
+          <element subject="LevelStructure" seqno="20"/>
+          <element subject="LogicalRecordRelationStructure" seqno="21"/>
+          <element subject="MeasureRole" seqno="22"/>
+          <element subject="PhysicalDataSet" seqno="23"/>
+          <element subject="PhysicalLayoutRelationStructure" seqno="24"/>
+          <element subject="PhysicalOrderRelationStructure" seqno="25"/>
+          <element subject="PhysicalRecordSegment" seqno="26"/>
+          <element subject="Population" seqno="27"/>
+          <element subject="RecordRelation" seqno="28"/>
+          <element subject="SegmentByText" seqno="29"/>
+          <element subject="SentinelConceptualDomain" seqno="30"/>
+          <element subject="SentinelValueDomain" seqno="31"/>
+          <element subject="SubstantiveConceptualDomain" seqno="32"/>
+          <element subject="SubstantiveValueDomain" seqno="33"/>
+          <element subject="UnitDataRecord" seqno="34"/>
+          <element subject="UnitDataViewpoint" seqno="35"/>
+          <element subject="UnitSegmentLayout" seqno="36"/>
+          <element subject="ValueAndConceptDescription" seqno="37"/>
+          <element subject="ValueMapping" seqno="38"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="ConceptualContentViewDiagram">
+        <model package="ConceptualContentView" owner="ConceptualContentView"/>
+        <properties name="ConceptualContentView Diagram" />
+        <elements>
+          <element subject="Category" seqno="0"/>
+          <element subject="CategoryRelationStructure" seqno="1"/>
+          <element subject="CategorySet" seqno="2"/>
+          <element subject="CodeList" seqno="3"/>
+          <element subject="Concept" seqno="4"/>
+          <element subject="ConceptRelationStructure" seqno="5"/>
+          <element subject="ConceptSystem" seqno="6"/>
+          <element subject="ConceptSystemCorrespondence" seqno="7"/>
+          <element subject="ConceptualVariable" seqno="8"/>
+          <element subject="ExternalMaterial" seqno="9"/>
+          <element subject="Individual" seqno="10"/>
+          <element subject="LevelStructure" seqno="11"/>
+          <element subject="Organization" seqno="12"/>
+          <element subject="Population" seqno="13"/>
+          <element subject="RepresentedVariable" seqno="14"/>
+          <element subject="SentinelConceptualDomain" seqno="15"/>
+          <element subject="SentinelValueDomain" seqno="16"/>
+          <element subject="SubstantiveConceptualDomain" seqno="17"/>
+          <element subject="SubstantiveValueDomain" seqno="18"/>
+          <element subject="Unit" seqno="19"/>
+          <element subject="UnitType" seqno="20"/>
+          <element subject="Universe" seqno="21"/>
+          <element subject="ValueAndConceptDescription" seqno="22"/>
+          <element subject="VariableCollection" seqno="23"/>
+          <element subject="VariableRelationStructure" seqno="24"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="ControlledVocabularyViewDiagram">
+        <model package="ControlledVocabularyView" owner="ControlledVocabularyView"/>
+        <properties name="ControlledVocabularyView Diagram" />
+        <elements>
+          <element subject="ControlledVocabulary" seqno="0"/>
+          <element subject="ExternalMaterial" seqno="1"/>
+          <element subject="VocabularyEntry" seqno="2"/>
+          <element subject="VocabularyRelationStructure" seqno="3"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="CustomMetadataViewDiagram">
+        <model package="CustomMetadataView" owner="CustomMetadataView"/>
+        <properties name="CustomMetadataView Diagram" />
+        <elements>
+          <element subject="Category" seqno="0"/>
+          <element subject="CategoryRelationStructure" seqno="1"/>
+          <element subject="CategorySet" seqno="2"/>
+          <element subject="CodeList" seqno="3"/>
+          <element subject="Concept" seqno="4"/>
+          <element subject="ConceptRelationStructure" seqno="5"/>
+          <element subject="ConceptSystem" seqno="6"/>
+          <element subject="ConceptualVariable" seqno="7"/>
+          <element subject="CustomInstance" seqno="8"/>
+          <element subject="CustomItem" seqno="9"/>
+          <element subject="CustomItemRelationStructure" seqno="10"/>
+          <element subject="CustomStructure" seqno="11"/>
+          <element subject="CustomValue" seqno="12"/>
+          <element subject="CustomValueRelationStructure" seqno="13"/>
+          <element subject="ExternalMaterial" seqno="14"/>
+          <element subject="InstanceVariable" seqno="15"/>
+          <element subject="LevelStructure" seqno="16"/>
+          <element subject="RepresentedVariable" seqno="17"/>
+          <element subject="SentinelConceptualDomain" seqno="18"/>
+          <element subject="SentinelValueDomain" seqno="19"/>
+          <element subject="SubstantiveConceptualDomain" seqno="20"/>
+          <element subject="SubstantiveValueDomain" seqno="21"/>
+          <element subject="UnitType" seqno="22"/>
+          <element subject="Universe" seqno="23"/>
+          <element subject="ValueAndConceptDescription" seqno="24"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="DataCaptureInstrumentViewDiagram">
+        <model package="DataCaptureInstrumentView" owner="DataCaptureInstrumentView"/>
+        <properties name="DataCaptureInstrumentView Diagram" />
+        <elements>
+          <element subject="BooleanResponseDomain" seqno="0"/>
+          <element subject="Category" seqno="1"/>
+          <element subject="CategorySet" seqno="2"/>
+          <element subject="ClassificationRelationStructure" seqno="3"/>
+          <element subject="Code" seqno="4"/>
+          <element subject="CodeList" seqno="5"/>
+          <element subject="CodeListResponseDomain" seqno="6"/>
+          <element subject="ComputationAction" seqno="7"/>
+          <element subject="Concept" seqno="8"/>
+          <element subject="ConceptualInstrument" seqno="9"/>
+          <element subject="ConceptualVariable" seqno="10"/>
+          <element subject="ExternalAid" seqno="11"/>
+          <element subject="ExternalMaterial" seqno="12"/>
+          <element subject="IfThenElse" seqno="13"/>
+          <element subject="ImplementedInstrument" seqno="14"/>
+          <element subject="InstanceMeasurement" seqno="15"/>
+          <element subject="InstanceQuestion" seqno="16"/>
+          <element subject="Instruction" seqno="17"/>
+          <element subject="InstrumentCode" seqno="18"/>
+          <element subject="LevelStructure" seqno="19"/>
+          <element subject="Loop" seqno="20"/>
+          <element subject="NumericResponseDomain" seqno="21"/>
+          <element subject="RankingResponseDomain" seqno="22"/>
+          <element subject="RepeatUntil" seqno="23"/>
+          <element subject="RepeatWhile" seqno="24"/>
+          <element subject="RepresentedMeasurement" seqno="25"/>
+          <element subject="RepresentedQuestion" seqno="26"/>
+          <element subject="RepresentedVariable" seqno="27"/>
+          <element subject="ScaleResponseDomain" seqno="28"/>
+          <element subject="Statement" seqno="29"/>
+          <element subject="TextResponseDomain" seqno="30"/>
+          <element subject="UnitType" seqno="31"/>
+          <element subject="Universe" seqno="32"/>
+          <element subject="WorkflowMasterSequence" seqno="33"/>
+          <element subject="WorkflowStepSequence" seqno="34"/>
+        </elements>
+      </diagram>
+      <diagram xmi:id="AgentRegistryViewDiagram">
+        <model package="AgentRegistryView" owner="AgentRegistryView"/>
+        <properties name="AgentRegistryView Diagram" />
+        <elements>
+          <element subject="AgentListing" seqno="0"/>
+          <element subject="AgentRelationStructure" seqno="1"/>
+          <element subject="ExternalMaterial" seqno="2"/>
+          <element subject="Individual" seqno="3"/>
+          <element subject="Machine" seqno="4"/>
+          <element subject="Organization" seqno="5"/>
+        </elements>
+      </diagram>
+      <!-- End views diagrams -->
+      
+      <!-- TODO: Generate a diagram for each package -->
+      <diagram>
+        <model package="ComplexDataTypes" localID="1" owner="ComplexDataTypes"/>
+        <properties name="ComplexDataTypes" type="Logical"/>
+        <elements>
+          <element subject="AccessLocation" seqno="1" />
+          <element subject="Address" seqno="2" />
+          <element subject="AgentAssociation" seqno="3" />
+          <element subject="AgentId" seqno="4" />
+          <element subject="AgentIndicator" seqno="5" />
+          <element subject="AgentRelation" seqno="6" />
+          <element subject="AnalyticMetadatumIndicator" seqno="7" />
+          <element subject="AnalyticMetadatumRelation" seqno="8" />
+          <element subject="Annotation" seqno="9" />
+          <element subject="AnnotationDate" seqno="10" />
+          <element subject="AreaCoverage" seqno="11" />
+          <element subject="AudioSegment" seqno="12" />
+          <element subject="BasedOnObjectInformation" seqno="13" />
+          <element subject="BibliographicName" seqno="14" />
+          <element subject="Binding" seqno="15" />
+          <element subject="BusinessProcessCondition" seqno="16" />
+          <element subject="BusinessProcessIndicator" seqno="17" />
+          <element subject="CDEIndicator" seqno="18" />
+          <element subject="CDERelation" seqno="19" />
+          <element subject="CatalogItemIndicator" seqno="20" />
+          <element subject="CatalogItemRelation" seqno="21" />
+          <element subject="CategoryIndicator" seqno="22" />
+          <element subject="CategoryRelation" seqno="23" />
+          <element subject="CategoryStatistic" seqno="24" />
+          <element subject="CharacterOffset" seqno="25" />
+          <element subject="ClassificationIndexEntryIndicator" seqno="26" />
+          <element subject="ClassificationItemIndicator" seqno="27" />
+          <element subject="ClassificationSeriesIndicator" seqno="28" />
+          <element subject="ClassificationSeriesRelation" seqno="29" />
+          <element subject="CodeIndicator" seqno="30" />
+          <element subject="Command" seqno="31" />
+          <element subject="CommandCode" seqno="32" />
+          <element subject="CommandFile" seqno="33" />
+          <element subject="ConceptIndicator" seqno="34" />
+          <element subject="ConceptRelation" seqno="35" />
+          <element subject="ConditionalText" seqno="36" />
+          <element subject="ContactInformation" seqno="37" />
+          <element subject="ContentDateOffset" seqno="38" />
+          <element subject="CorrespondenceType" seqno="39" />
+          <element subject="CustomItemIndicator" seqno="40" />
+          <element subject="CustomItemRelation" seqno="41" />
+          <element subject="CustomValueIndicator" seqno="42" />
+          <element subject="CustomValueRelation" seqno="43" />
+          <element subject="DataCollectionIndicator" seqno="44" />
+          <element subject="DataPointIndicator" seqno="45" />
+          <element subject="DataPointRelation" seqno="46" />
+          <element subject="DataStoreIndicator" seqno="47" />
+          <element subject="DataStoreRelation" seqno="48" />
+          <element subject="Date" seqno="49" />
+          <element subject="DateRange" seqno="50" />
+          <element subject="DescribedRelationship" seqno="51" />
+          <element subject="DoubleNumberRangeValue" seqno="52" />
+          <element subject="DynamicText" seqno="53" />
+          <element subject="DynamicTextContent" seqno="54" />
+          <element subject="ElectronicMessageSystem" seqno="55" />
+          <element subject="ElseIfAction" seqno="56" />
+          <element subject="Email" seqno="57" />
+          <element subject="ExternalControlledVocabularyEntry" seqno="58" />
+          <element subject="FixedText" seqno="59" />
+          <element subject="Form" seqno="60" />
+          <element subject="GeographicUnitIndicator" seqno="61" />
+          <element subject="GeographicUnitRelation" seqno="62" />
+          <element subject="GeographicUnitTypeIndicator" seqno="63" />
+          <element subject="GeographicUnitTypeRelation" seqno="64" />
+          <element subject="Image" seqno="65" />
+          <element subject="ImageArea" seqno="66" />
+          <element subject="IndexEntryRelation" seqno="67" />
+          <element subject="IndividualName" seqno="68" />
+          <element subject="InstanceVariableIndicator" seqno="69" />
+          <element subject="InstanceVariableRelation" seqno="70" />
+          <element subject="InstanceVariableValueMap" seqno="71" />
+          <element subject="InternationalIdentifier" seqno="72" />
+          <element subject="InternationalString" seqno="73" />
+          <element subject="InternationalStructuredString" seqno="74" />
+          <element subject="LabelForDisplay" seqno="75" />
+          <element subject="LanguageSpecificStringType" seqno="76" />
+          <element subject="LanguageSpecificStructuredStringType" seqno="77" />
+          <element subject="LayoutComponentRelation" seqno="78" />
+          <element subject="Level" seqno="79" />
+          <element subject="LineParameter" seqno="80" />
+          <element subject="LiteralText" seqno="81" />
+          <element subject="LocalIdFormat" seqno="82" />
+          <element subject="LocationName" seqno="83" />
+          <element subject="LogicalRecordIndicator" seqno="84" />
+          <element subject="LogicalRecordRelation" seqno="85" />
+          <element subject="LogicalResourceIndicator" seqno="86" />
+          <element subject="LogicalSegmentIndicator" seqno="87" />
+          <element subject="Map" seqno="88" />
+          <element subject="NonIsoDateType" seqno="89" />
+          <element subject="NumberRange" seqno="90" />
+          <element subject="NumberRangeValue" seqno="91" />
+          <element subject="ObjectName" seqno="92" />
+          <element subject="OrganizationName" seqno="93" />
+          <element subject="PairedExternalControlledVocabularyEntry" seqno="94" />
+          <element subject="PhysicalRecordSegmentIndicator" seqno="95" />
+          <element subject="PhysicalRecordSegmentRelation" seqno="96" />
+          <element subject="PhysicalSegmentIndicator" seqno="97" />
+          <element subject="Polygon" seqno="98" />
+          <element subject="PrivateImage" seqno="99" />
+          <element subject="RangeValue" seqno="100" />
+          <element subject="ReferenceDate" seqno="101" />
+          <element subject="ResourceIdentifier" seqno="102" />
+          <element subject="Segment" seqno="103" />
+          <element subject="SpatialCoordinate" seqno="104" />
+          <element subject="SpatialLine" seqno="105" />
+          <element subject="SpatialPoint" seqno="106" />
+          <element subject="SpatialRelationship" seqno="107" />
+          <element subject="StandardKeyValuePair" seqno="108" />
+          <element subject="Statistic" seqno="109" />
+          <element subject="StatisticalClassificationIndicator" seqno="110" />
+          <element subject="StatisticalClassificationRelation" seqno="111" />
+          <element subject="StudyIndicator" seqno="112" />
+          <element subject="StudyRelation" seqno="113" />
+          <element subject="SummaryStatistic" seqno="114" />
+          <element subject="TargetSample" seqno="115" />
+          <element subject="Telephone" seqno="116" />
+          <element subject="TextualSegment" seqno="117" />
+          <element subject="TypedDescriptiveText" seqno="118" />
+          <element subject="TypedString" seqno="119" />
+          <element subject="ValueMappingIndicator" seqno="120" />
+          <element subject="ValueMappingRelation" seqno="121" />
+          <element subject="ValueString" seqno="122" />
+          <element subject="VariableIndicator" seqno="123" />
+          <element subject="VariableRelation" seqno="124" />
+          <element subject="VideoSegment" seqno="125" />
+          <element subject="ViewpointRoleRelation" seqno="126" />
+          <element subject="VocabularyEntryIndicator" seqno="127" />
+          <element subject="VocabularyEntryRelation" seqno="128" />
+          <element subject="WebLink" seqno="129" />
+          <element subject="WorkflowStepIndicator" seqno="130" />
+          <element subject="WorkflowStepRelation" seqno="131" />
+          <element subject="WorkflowStepSequenceIndicator" seqno="132" />
+          <element subject="C" seqno="133" />
+          <element subject="8" seqno="134" />
+          <element subject="1" seqno="135" />
+        </elements>
+      </diagram>
+      <!-- TODO: Generate a diagram for each view -->
+    </diagrams>
+  </xmi:Extension>
 </xmi:XMI>
