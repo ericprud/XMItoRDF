@@ -81,6 +81,7 @@ function main () {
       let classes = {}
       let properties = {}
       let enums = {}
+      let datatypes = {}
       let owlx = [
         '<?xml version="1.0"?>\n' +
           '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
@@ -132,6 +133,7 @@ function main () {
       parsedData.myClasses = classes
       parsedData.myProperties = properties
       parsedData.enums = enums
+      parsedData.datatypes = datatypes
       parsedData.hierarchy = classHierarchy.roots
       status.text('indexing...')
 
@@ -251,9 +253,22 @@ function main () {
                     throw Error("need to handle inherited enumeration " + elt.generalization[0].$.general + " " + id)
                   }
                   break
+                case 'uml:DataType':
+                  if (id in datatypes) {
+                    throw Error('already seen class id ' + id)
+                  }
+                  datatypes[id] = {
+                    elements: [],
+                    parents: parents
+                  }
+                  // record class hierarchy
+                  if ('generalization' in elt) {
+                    throw Error("need to handle inherited datatype " + elt.generalization[0].$.general + " " + id)
+                  }
+                  break
                 case 'uml:Model':
                 case 'uml:Package':
-                case 'uml:DataType':
+                  // Pass through to get to nested goodies.
                   break
                 default:
                   console.log('need handler for ' + type)
@@ -418,10 +433,10 @@ function main () {
             })
           )))
 
-        // Build package hierarchy
-        let l = [enums, classes]
-        l.forEach(obj => Object.keys(obj).forEach(
-          className => {
+        // Build package hierarchy for classes and enums.
+        let p = [classes, enums, datatypes]
+        p.forEach(obj => Object.keys(obj).forEach(
+          className => { // packageHierarch reflects containership of packages.
             for (let i = 0; i < obj[className].parents.length - 1; ++i) {
               packageHierarchy.add(obj[className].parents[i], obj[className].parents[i + 1])
             }
@@ -535,6 +550,18 @@ function main () {
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${name}"/>
         <Class abbreviatedIRI="ddi:${enums[name].parents[enums[name].parents.length - 1]}_Package"/>
+    </SubClassOf>`).join('\n')))
+
+          // Add datatypes.
+          owlx = owlx.concat(Object.keys(datatypes).map(
+            name => [].concat(
+              `    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="ddi:${name}"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DatatypeDefinition>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${name}"/>
+        <Class abbreviatedIRI="ddi:${datatypes[name].parents[datatypes[name].parents.length - 1]}_Package"/>
     </SubClassOf>`).join('\n')))
 
           // Terminate the various forms:
