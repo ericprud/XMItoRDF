@@ -44165,17 +44165,19 @@ function main () {
       let triples = {}
       makeHierarchy.test()
       let classHierarchy = makeHierarchy()
+      let packageHierarchy = makeHierarchy()
       let classes = {}
       let properties = {}
+      let enums = {}
       let owlx = [
         '<?xml version="1.0"?>\n' +
           '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
-          '     xml:base="http://example.com/owl/families"\n' +
+          '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
           '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
           '     xmlns:xml="http://www.w3.org/XML/1998/namespace"\n' +
           '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n' +
           '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"\n' +
-          '     ontologyIRI="http://example.com/owl/families">\n' +
+          '     ontologyIRI="http://ddi-alliance.org/ns/ddi4">\n' +
           '    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>\n' +
           '    <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>\n' +
           '    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>\n' +
@@ -44183,13 +44185,15 @@ function main () {
           '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
           '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
           '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
-          '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n'
+          '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
+          '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
       ]
       let owlm = [
         'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
           'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
           'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
           'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+          'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
           'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
           '\n'
       ]
@@ -44198,6 +44202,7 @@ function main () {
           'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
           'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
           'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+          'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
           '\n'
       ]
       let index = {}
@@ -44214,6 +44219,7 @@ function main () {
       // parsedData.root = root
       parsedData.myClasses = classes
       parsedData.myProperties = properties
+      parsedData.enums = enums
       parsedData.hierarchy = classHierarchy.roots
       status.text('indexing...')
 
@@ -44317,9 +44323,24 @@ function main () {
                 case 'uml:Association':
                   recurse = false
                   break
+                case 'uml:Enumeration':
+                  if (id in enums) {
+                    throw Error('already seen class id ' + id)
+                  }
+                  enums[id] = {
+                    elements: [],
+                    values: elt.ownedLiteral.map(
+                      l => l.$.name
+                    ),
+                    parents: parents
+                  }
+                  // record class hierarchy
+                  if ('generalization' in elt) {
+                    throw Error("need to handle inherited enumeration " + elt.generalization[0].$.general + " " + id)
+                  }
+                  break
                 case 'uml:Model':
                 case 'uml:Package':
-                case 'uml:Enumeration':
                 case 'uml:DataType':
                   break
                 default:
@@ -44484,7 +44505,26 @@ function main () {
                 ))
             })
           )))
+
+        // Build package hierarchy
+        let l = [enums, classes]
+        l.forEach(obj => Object.keys(obj).forEach(
+          className => {
+            for (let i = 0; i < obj[className].parents.length - 1; ++i) {
+              packageHierarchy.add(obj[className].parents[i], obj[className].parents[i + 1])
+            }
+          }))
+
         if (BUILD_PRODUCTS) {
+          // Render package hierarchy.
+          owlx = owlx.concat(walkHierarchy(
+            packageHierarchy.roots['42']['ddi4_model'], 'By',
+            (c, p) => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${c}_Package"/>
+        <Class abbreviatedIRI="ddi:${p}_Package"/>
+    </SubClassOf>`
+          ))
+
           // Declare properties
           owlx = owlx.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
             propName => {
@@ -44518,8 +44558,8 @@ function main () {
                 propId => {
                   let elt = propId
                   let propName = index[elt].element.$.name
-              let p = properties[propName].uniformType[0]
-              let t = isObject(p) ? 'Object' : 'Data'
+                  let p = properties[propName].uniformType[0]
+                  let t = isObject(p) ? 'Object' : 'Data'
                   let type = propName in xHash ? 'owl:Thing' : pname(p)
                   return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${className}"/>
@@ -44537,17 +44577,12 @@ function main () {
         <Class abbreviatedIRI="ddi:${superClass.$.general}"/>
     </SubClassOf>`
                 )
-              ).concat(
-                classes[className].parents.filter(
-                  parent => parent !== '42' // the ddi:42 confuses OWLAPI
-                ).map(
-                  parent =>
-                    `    <SubClassOf>
+              ).concat([
+                `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${className}"/>
-        <Class abbreviatedIRI="ddi:${parent}"/>
+        <Class abbreviatedIRI="ddi:${classes[className].parents[classes[className].parents.length - 1]}_Package"/>
     </SubClassOf>`
-                )
-              ).join('\n')
+              ]).join('\n')
           ))
           owlm = owlm.concat(Object.keys(classes).map(
             className => 'Class: ddi:' + className + ' SubClassOf:\n' +
@@ -44573,6 +44608,22 @@ function main () {
                 }
               ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
           ))
+
+          // Enumerate enumerations (enumeratively).
+          owlx = owlx.concat(Object.keys(enums).map(
+            name => [].concat(
+              `    <EquivalentClasses>
+    <Class abbreviatedIRI="ddi:${name}"/>
+        <ObjectOneOf>`,
+              enums[name].values.map(
+                v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
+              ),
+              `       </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${name}"/>
+        <Class abbreviatedIRI="ddi:${enums[name].parents[enums[name].parents.length - 1]}_Package"/>
+    </SubClassOf>`).join('\n')))
 
           // Terminate the various forms:
           owlx = owlx.concat([
@@ -44603,7 +44654,8 @@ function main () {
       function pname (id) {
         const m = [
           {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd:'},
-          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld:'}
+          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld:'},
+          {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'}
         ]
         let ret = m.map(pair =>
           id.startsWith(pair.url)
@@ -44701,6 +44753,10 @@ function main () {
     let holders = {}
     return {
       add: function (parent, child) {
+        if (parent in children && children[parent].indexOf(child) !== -1) {
+          // already seen
+          return
+        }
         let target = parent in holders
           ? getNode(parent)
           : (roots[parent] = getNode(parent)) // add new parents to roots.
@@ -44751,6 +44807,11 @@ function main () {
     t.add('A', 'B')
     t.add('G', 'H')
     console.dir(t)
+  }
+  function walkHierarchy (n, p, f) {
+    return Object.keys(n).reduce((ret, k) => {
+      return ret.concat(walkHierarchy(n[k], k, f), f(k, p))
+    }, [])
   }
 
   // collapsable list from <from> element
