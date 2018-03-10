@@ -120,15 +120,8 @@ function main () {
       ]
       let index = {}
       // let realized = makeHierarchy()
-      let XMIParser = require('../node_modules/jhipster-uml/lib/editors/canonical_parser.js')
       let root = getRootElement(xmiText)
-      let parsedData = XMIParser.parse({
-        root: root,
-        databaseTypes: {
-          contains: function (type) { return true },
-          getName: () => 'general'
-        }
-      })
+      let parsedData = {}
       // parsedData.root = root
       parsedData.myClasses = classes
       parsedData.myProperties = properties
@@ -158,6 +151,8 @@ function main () {
           console.dir({
             classes: classes,
             properties: properties,
+            enums: enums,
+            datatypes: datatypes,
             triples: triples,
             classHierarchy: classHierarchy,
             index: index,
@@ -297,10 +292,10 @@ function main () {
 
         diagnostics: function () {
           let diagnostics = $('<ul/>')
-          reusedProperties(parsedData, diagnostics)
+          reusedProperties(classes, diagnostics)
           polymorphicProperties(properties, diagnostics)
           console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
-          puns(parsedData, diagnostics)
+          // puns(parsedData, diagnostics)
           addTriples(triples, diagnostics)
           collapse(diagnostics)
 
@@ -356,15 +351,9 @@ function main () {
         }))
       }
 
-      function reusedProperties (object, into) {
-        // Object.keys(object.classes).reduce((acc, klass) => {
-        //   return acc.concat(object.classes[klass].fields.map(field => {
-        //     let a = field.split(/_/)
-        //     return a[a.length-1]
-        //   }))
-        // }, [])
-        const x = Object.keys(object.classes).reduce((acc, klass) => {
-          object.classes[klass].fields.forEach(
+      function reusedProperties (classes, into) {
+        const x = Object.keys(classes).reduce((acc, klass) => {
+          classes[klass].properties.forEach(
             field => {
               let a = field.split(/_/)
               field = a[a.length - 1]
@@ -387,7 +376,8 @@ function main () {
           ' (' + x.duplicates.length + ')',
           $('<ul/>').append(
             x.duplicates.sort(
-              (l, r) => x.seen[r].length - x.seen[l].length
+              // sort first by number of duplicates, otherwise by name
+              (l, r) => x.seen[r].length - x.seen[l].length || l.localeCompare(r)
             ).map(dupe => {
               return $('<li/>').append(
                 $('<span/>').text(dupe).addClass('scalar'),
@@ -792,7 +782,7 @@ function main () {
 
   // functional add key/val to object.
   function addKey (obj, prop, val) {
-    var toAdd = {}
+    let toAdd = {}
     toAdd[prop] = val
     return Object.assign({}, obj, toAdd)
   }
