@@ -218,18 +218,20 @@ function main () {
                   } else if (name.charAt(0).match(/[A-Z]/)) {
                     throw Error('unexpected property name ' + name + ' in ' + parent)
                   } else {
-                    classes[parent].properties.push(id) // {id:id, name: name}
+                    let propertyRecord = {
+                      in: parent,
+                      id: id,
+                      name: name,
+                      typeRef: elt.type[0].$['xmi:idref'],
+                      type: elt.type[0].$['href'],
+                      lower: getValue(elt.lowerValue[0]) || 0,
+                      upper: getValue(elt.upperValue[0]) || 99
+                    }
+                    classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
                       properties[name] = {sources: []}
                     }
-                    properties[name].sources.push({
-                      in: parent,
-                      id: id,
-                      typeRef: elt.type[0].$['xmi:idref'],
-                      type: elt.type[0].$['href'],
-                      min: getValue(elt.lowerValue[0]) || 0,
-                      max: getValue(elt.upperValue[0]) || 99
-                    })
+                    properties[name].sources.push(propertyRecord)
                   }
 
                   if (triple) {
@@ -367,7 +369,7 @@ function main () {
         const x = Object.keys(classes).reduce((acc, klass) => {
           classes[klass].properties.forEach(
             field => {
-              let a = field.split(/_/)
+              let a = field.id.split(/_/)
               field = a[a.length - 1]
               if (!(field in acc.seen)) {
                 acc.seen[field] = [klass]
@@ -482,11 +484,10 @@ function main () {
         <Class abbreviatedIRI="ddi:${className}"/>
     </Declaration>\n` +
               classes[className].properties.filter(
-                propId => !(getName(index[propId].element) in xHash)
+                propertyRecord => !(propertyRecord.name in xHash)
               ).map(
-                propId => {
-                  let elt = propId
-                  let propName = getName(index[elt].element)
+                propertyRecord => {
+                  let propName = propertyRecord.name
                   let p = properties[propName].uniformType[0]
                   let t = isObject(p) ? 'Object' : 'Data'
                   let type = propName in xHash ? 'owl:Thing' : pname(p)
@@ -516,9 +517,8 @@ function main () {
           owlm = owlm.concat(Object.keys(classes).map(
             className => 'Class: ddi:' + className + ' SubClassOf:\n' +
               classes[className].properties.map(
-                propId => {
-                  let elt = propId
-                  let propName = getName(index[elt].element)
+                propertyRecord => {
+                  let propName = propertyRecord.name
                   let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
                   return '  ddi:' + propName + ' only ' + type
                 }
@@ -527,12 +527,11 @@ function main () {
           shexc = shexc.concat(Object.keys(classes).map(
             className => 'ddi:' + className + ' {\n' +
               classes[className].properties.map(
-                propId => {
-                  let elt = propId
-                  let propName = getName(index[elt].element)
+                propertyRecord => {
+                  let propName = propertyRecord.name
                   let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
                   let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
-                  let card = shexCardinality(index[elt].element)
+                  let card = shexCardinality(propertyRecord)
                   return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
                 }
               ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
@@ -576,9 +575,9 @@ function main () {
         }
       }
 
-      function shexCardinality (elt) {
-        let lower = parseInt(getValue(elt.lowerValue[0])) || 0
-        let upper = parseInt(getValue(elt.upperValue[0])) || -1
+      function shexCardinality (propertyRecord) {
+        let lower = parseInt(propertyRecord.lower || 0 )
+        let upper = parseInt(propertyRecord.upper || -1)
         if (lower === 1 && upper === 1) {
           return ''
         } else if (lower === 1 && upper === -1) {
