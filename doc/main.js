@@ -8,6 +8,18 @@ function main () {
       term.toLowerCase() + '#parent_properties'
   }
 
+  function getName (elt) {
+    return 'name' in elt.$ ? elt.$.name : null
+  }
+
+  function getValue (elt) {
+    return 'value' in elt.$ ? elt.$.value : null
+  }
+
+  function getGeneral (elt) {
+    return 'general' in elt.$ ? elt.$.general : null
+  }
+
   const xml2js = require('xml2js')
   // let rs = Ecore.ResourceSet.create()
   let $ = window.jQuery
@@ -155,8 +167,7 @@ function main () {
             datatypes: datatypes,
             triples: triples,
             classHierarchy: classHierarchy,
-            index: index,
-            parsedData: parsedData})
+            index: index})
 
           status.text('rendering structure...')
           window.setTimeout(delay.render, RENDER_DELAY)
@@ -167,6 +178,7 @@ function main () {
             let recurse = true
             if ('xmi:id' in elt.$) {
               let id = elt.$['xmi:id']
+              let name = getName(elt)
               index[id] = { element: elt, parents: parents }
               let triple
 
@@ -180,10 +192,10 @@ function main () {
 
               switch (type) {
                 case 'uml:Class':
-                  if (id in classes) {
-                    throw Error('already seen class id ' + id)
+                  if (name in classes) {
+                    throw Error('already seen class name ' + name)
                   }
-                  classes[id] = {
+                  classes[name] = {
                     properties: [],
                     realizes: [],
                     others: [],
@@ -191,32 +203,32 @@ function main () {
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    classHierarchy.add(elt.generalization[0].$.general, id) // elt.$['xmi:id']
+                    classHierarchy.add(getGeneral(elt.generalization[0]), name)
                   }
                   break
                 case 'uml:Property':
-                  if (elt.$.name === parent) {
+                  if (name === parent) {
                     if (triple[2] === 'realizes') {
                       classes[parent].realizes.push(elt.type[0].$['xmi:idref'])
                     } else {
                       classes[parent].others.push(triple[2])
                     }
-                  } else if (!('name' in elt.$)) {
-                    throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
-                  } else if (elt.$.name.charAt(0).match(/[A-Z]/)) {
-                    throw Error('unexpected property name ' + elt.$.name + ' in ' + parent)
+                  } else if (!name) {
+                    // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
+                  } else if (name.charAt(0).match(/[A-Z]/)) {
+                    throw Error('unexpected property name ' + name + ' in ' + parent)
                   } else {
-                    classes[parent].properties.push(id)
-                    if (!(elt.$.name in properties)) {
-                      properties[elt.$.name] = {sources: []}
+                    classes[parent].properties.push(id) // {id:id, name: name}
+                    if (!(name in properties)) {
+                      properties[name] = {sources: []}
                     }
-                    properties[elt.$.name].sources.push({
+                    properties[name].sources.push({
                       in: parent,
                       id: id,
                       typeRef: elt.type[0].$['xmi:idref'],
                       type: elt.type[0].$['href'],
-                      min: 'value' in elt.lowerValue[0].$ ? elt.lowerValue[0].$.value : 0,
-                      max: 'value' in elt.upperValue[0].$ ? elt.upperValue[0].$.value : 99
+                      min: getValue(elt.lowerValue[0]) || 0,
+                      max: getValue(elt.upperValue[0]) || 99
                     })
                   }
 
@@ -233,32 +245,32 @@ function main () {
                   recurse = false
                   break
                 case 'uml:Enumeration':
-                  if (id in enums) {
-                    throw Error('already seen class id ' + id)
+                  if (name in enums) {
+                    throw Error('already seen class name ' + name)
                   }
-                  enums[id] = {
+                  enums[name] = {
                     elements: [],
                     values: elt.ownedLiteral.map(
-                      l => l.$.name
+                      l => getName(l)
                     ),
                     parents: parents
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    throw Error("need to handle inherited enumeration " + elt.generalization[0].$.general + " " + id)
+                    throw Error("need to handle inherited enumeration " + getGeneral(elt.generalization[0]) + " " + name)
                   }
                   break
                 case 'uml:DataType':
-                  if (id in datatypes) {
-                    throw Error('already seen class id ' + id)
+                  if (name in datatypes) {
+                    throw Error('already seen class name ' + name)
                   }
-                  datatypes[id] = {
+                  datatypes[name] = {
                     elements: [],
                     parents: parents
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    throw Error("need to handle inherited datatype " + elt.generalization[0].$.general + " " + id)
+                    throw Error("need to handle inherited datatype " + getGeneral(elt.generalization[0]) + " " + name)
                   }
                   break
                 case 'uml:Model':
@@ -271,10 +283,10 @@ function main () {
 
               if (recurse) {
                 // walk desendents
-                let skipTheseElements = ['lowerValue', 'upperValue', 'generalization']
+                let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
                 Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
                   elt[k].forEach(sub => {
-                    indexXML(sub, parents.concat(id))
+                    indexXML(sub, parents.concat(name))
                   })
                 })
               }
@@ -435,7 +447,7 @@ function main () {
         if (BUILD_PRODUCTS) {
           // Render package hierarchy.
           owlx = owlx.concat(walkHierarchy(
-            packageHierarchy.roots['42']['ddi4_model'], 'By',
+            firstBranch(packageHierarchy.roots), 'By',
             (c, p) => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${c}_Package"/>
         <Class abbreviatedIRI="ddi:${p}_Package"/>
@@ -470,11 +482,11 @@ function main () {
         <Class abbreviatedIRI="ddi:${className}"/>
     </Declaration>\n` +
               classes[className].properties.filter(
-                propId => !(index[propId].element.$.name in xHash)
+                propId => !(getName(index[propId].element) in xHash)
               ).map(
                 propId => {
                   let elt = propId
-                  let propName = index[elt].element.$.name
+                  let propName = getName(index[elt].element)
                   let p = properties[propName].uniformType[0]
                   let t = isObject(p) ? 'Object' : 'Data'
                   let type = propName in xHash ? 'owl:Thing' : pname(p)
@@ -491,7 +503,7 @@ function main () {
                   superClass =>
                     `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${className}"/>
-        <Class abbreviatedIRI="ddi:${superClass.$.general}"/>
+        <Class abbreviatedIRI="ddi:${getGeneral(superClass)}"/>
     </SubClassOf>`
                 )
               ).concat([
@@ -506,7 +518,7 @@ function main () {
               classes[className].properties.map(
                 propId => {
                   let elt = propId
-                  let propName = index[elt].element.$.name
+                  let propName = getName(index[elt].element)
                   let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
                   return '  ddi:' + propName + ' only ' + type
                 }
@@ -517,7 +529,7 @@ function main () {
               classes[className].properties.map(
                 propId => {
                   let elt = propId
-                  let propName = index[elt].element.$.name
+                  let propName = getName(index[elt].element)
                   let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
                   let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
                   let card = shexCardinality(index[elt].element)
@@ -565,8 +577,8 @@ function main () {
       }
 
       function shexCardinality (elt) {
-        let lower = 'value' in elt.lowerValue[0].$ ? parseInt(elt.lowerValue[0].$.value) : 0
-        let upper = 'value' in elt.upperValue[0].$ ? parseInt(elt.upperValue[0].$.value) : -1
+        let lower = parseInt(getValue(elt.lowerValue[0])) || 0
+        let upper = parseInt(getValue(elt.upperValue[0])) || -1
         if (lower === 1 && upper === 1) {
           return ''
         } else if (lower === 1 && upper === -1) {
@@ -786,6 +798,14 @@ function main () {
     toAdd[prop] = val
     return Object.assign({}, obj, toAdd)
   }
+
+  function firstBranch (root) {
+    while (Object.keys(root).length === 1) {
+      root = root[Object.keys(root)[0]]
+    }
+    return root
+  }
+
 }
 
 window.onload = main
