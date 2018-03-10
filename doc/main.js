@@ -199,11 +199,13 @@ function main () {
                     properties: [],
                     realizes: [],
                     others: [],
-                    parents: parents
+                    parents: parents,
+                    superClasses: []
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
                     classHierarchy.add(getGeneral(elt.generalization[0]), name)
+                    classes[name].superClasses.push(elt.generalization[0])
                   }
                   break
                 case 'uml:Property':
@@ -500,7 +502,7 @@ function main () {
     </SubClassOf>`
                 }
               ).concat(
-                (index[className].element.generalization || []).map(
+                (classes[className].superClasses).map(
                   superClass =>
                     `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${className}"/>
