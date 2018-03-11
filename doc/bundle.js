@@ -7630,17 +7630,27 @@ function main () {
     let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
     let nameMap = {
       'Views (Exported from Drupal)': 'Views',
-      'Class Model (Exported from Drupal)': 'ddi4_model'
+      'Class Model (Exported from Drupal)': 'ddi4_model',
+      'ClassLibrary': 'ddi4_model', // minimize diffs
+      'FunctionalViews': 'Views',
+      'xsd:anyUri': 'xsd:anyURI'
     }
     return ret in nameMap ? nameMap[ret] : ret
   }
 
-  function getValue (elt) {
+  function getValue (elt, defawlt) {
     return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : null
   }
 
   function getGeneral (elt) {
     return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
+  }
+
+  function normalizeType (type) {
+    if (type === 'xs:language') {
+      return 'http://www.w3.org/2001/XMLSchema#language'
+    }
+    return type
   }
 
   const xml2js = __webpack_require__(71)
@@ -7717,6 +7727,7 @@ function main () {
       let properties = {}
       let enums = {}
       let datatypes = {}
+      let packages = {}
       let owlx = [
         '<?xml version="1.0"?>\n' +
           '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
@@ -7734,6 +7745,7 @@ function main () {
           '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
           '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
           '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
+          '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
           '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
       ]
       let owlm = [
@@ -7771,13 +7783,18 @@ function main () {
           indexXML(root, [])
 
           // Change relations to datatypes to be attributes.
+          // Change relations to the classes and enums to reference the name.
           Object.keys(properties).forEach(
             p => properties[p].sources.forEach(
               s => {
                 if (s.relation in datatypes) {
-                  console.log('changing property ' + p + ' to have attribute type ' + s.relation)
-                  s.attribute = s.relation
+                  console.log('changing property ' + p + ' to have attribute type ' + expandPrefix(datatypes[s.relation].name))
+                  s.attribute = expandPrefix(datatypes[s.relation].name)
                   s.relation = undefined
+                } else if (s.relation in classes) {
+                  s.relation = classes[s.relation].name
+                } else if (s.relation in enums) {
+                  s.relation = enums[s.relation].name
                 }
               }))
 
@@ -7826,10 +7843,12 @@ function main () {
 
               switch (type) {
                 case 'uml:Class':
-                  if (name in classes) {
-                    throw Error('already seen class name ' + name)
+                  if (id in classes) {
+                    throw Error('already seen class id ' + id)
                   }
-                  classes[name] = {
+                  classes[id] = {
+                    id: id,
+                    name: name,
                     properties: [],
                     realizes: [],
                     others: [],
@@ -7839,15 +7858,16 @@ function main () {
                   // record class hierarchy
                   if ('generalization' in elt) {
                     classHierarchy.add(getGeneral(elt.generalization[0]), name)
-                    classes[name].superClasses.push(elt.generalization[0])
+                    classes[id].superClasses.push(elt.generalization[0])
                   }
                   break
                 case 'uml:Property':
-                  if (name === parent) {
+                  let klass = classes[parent].name
+                  if (name === klass) {
                     if (triple[2] === 'realizes') {
-                      classes[parent].realizes.push(elt.type[0].$['xmi:idref'])
+                      classes[klass].realizes.push(elt.type[0].$['xmi:idref'])
                     } else {
-                      classes[parent].others.push(triple[2])
+                      classes[klass].others.push(triple[2])
                     }
                   } else if (!name) {
                     // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
@@ -7855,13 +7875,13 @@ function main () {
                     throw Error('unexpected property name ' + name + ' in ' + parent)
                   } else {
                     let propertyRecord = {
-                      in: parent,
+                      in: klass,
                       id: id,
                       name: name,
                       relation: elt.type[0].$['xmi:idref'],
-                      attribute: elt.type[0].$['href'] || expandPrefix(elt.type[0].$['xmi:type']),
+                      attribute: elt.type[0].$['href'] || normalizeType(elt.type[0].$['xmi:type']),
                       lower: getValue(elt.lowerValue[0]) || 0,
-                      upper: getValue(elt.upperValue[0]) || 99
+                      upper: getValue(elt.upperValue[0]) || '*'
                     }
                     classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
@@ -7874,8 +7894,8 @@ function main () {
                     if (['source', 'association'].indexOf(triple[3]) === -1) {
                       console.warn('unknown relationship: ', triple[3])
                     }
-                    if (triple[1] !== parent) {
-                      console.warn('parent mismatch: ', triple, parent)
+                    if (triple[1] !== klass) {
+                      console.warn('parent mismatch: ', triple, klass)
                     }
                   }
                   break
@@ -7883,11 +7903,12 @@ function main () {
                   recurse = false
                   break
                 case 'uml:Enumeration':
-                  if (name in enums) {
-                    throw Error('already seen class name ' + name)
+                  if (id in enums) {
+                    throw Error('already seen enum id ' + id)
                   }
-                  enums[name] = {
-                    declaration: id,
+                  enums[id] = {
+                    id: id,
+                    name: name,
                     values: elt.ownedLiteral.map(
                       l => getName(l)
                     ),
@@ -7899,11 +7920,13 @@ function main () {
                   }
                   break
                 case 'uml:DataType':
-                  if (name in datatypes) {
-                    throw Error('already seen class name ' + name)
+                case 'uml:PrimitiveType':
+                  if (id in datatypes) {
+                    throw Error('already seen datatype id ' + id)
                   }
-                  datatypes[name] = {
-                    declaration: id,
+                  datatypes[id] = {
+                    name: name,
+                    id: id,
                     parents: parents
                   }
                   // record class hierarchy
@@ -7913,8 +7936,17 @@ function main () {
                   break
                 case 'uml:Model':
                 case 'uml:Package':
-                  packageHierarchy.add(parent, name)
+                  packages[id] = {
+                    name: name,
+                    id: id,
+                    parents: parents
+                  }
+                  if (parents.length) {
+                    packageHierarchy.add(packages[parent].name, name)
+                  }
+                  break
                   // Pass through to get to nested goodies.
+                case 'uml:ElementImport':
                   break
                 default:
                   console.log('need handler for ' + type)
@@ -7925,7 +7957,7 @@ function main () {
                 let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
                 Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
                   elt[k].forEach(sub => {
-                    indexXML(sub, parents.concat(name))
+                    indexXML(sub, parents.concat(id))
                   })
                 })
               }
@@ -7984,7 +8016,12 @@ function main () {
             if (elt.constructor === Array) {
               title += ' (' + Object.keys(elt).length + ')'
             } else if ('id' in elt) {
-              title += elt.id
+              if (title === '') {
+                title = elt.id
+              } else if (title !== elt.id) {
+                console.log("differ: " + title + ' != ' + elt.id)
+                // title += ' ' + 'id=' + elt.id
+              }
             } else if ('$' in elt && 'xmi:id' in elt.$) {
               title += elt.$['xmi:id']
             }
@@ -8003,15 +8040,15 @@ function main () {
       }
 
       function reusedProperties (classes, into) {
-        const x = Object.keys(classes).reduce((acc, klass) => {
-          classes[klass].properties.forEach(
+        const x = Object.keys(classes).reduce((acc, classId) => {
+          classes[classId].properties.forEach(
             field => {
               let a = field.id.split(/_/)
               field = a[a.length - 1]
               if (!(field in acc.seen)) {
-                acc.seen[field] = [klass]
+                acc.seen[field] = [classId]
               } else {
-                acc.seen[field].push(klass)
+                acc.seen[field].push(classId)
                 if (acc.duplicates.indexOf(field) === -1) {
                   acc.duplicates.push(field)
                 }
@@ -8094,7 +8131,7 @@ function main () {
     </Declaration>
     <${t}PropertyRange>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
-        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p)}"/>
+        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p.sources[0][isObject(p) ? 'relation' : 'attribute'])}"/>
     </${t}PropertyRange>`
             }
           ))
@@ -8102,25 +8139,25 @@ function main () {
             propName => {
               let p = properties[propName]
               let t = isObject(p) ? 'Object' : 'Data'
-              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p)
+              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
             }
           ))
 
           // Create Classes/Shapes
           owlx = owlx.concat(Object.keys(classes).map(
-            className => `    <Declaration>
-        <Class abbreviatedIRI="ddi:${className}"/>
+            classId => `    <Declaration>
+        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
     </Declaration>\n` +
-              classes[className].properties.filter(
+              classes[classId].properties.filter(
                 propertyRecord => !(propertyRecord.name in xHash)
               ).map(
                 propertyRecord => {
                   let propName = propertyRecord.name
                   let p = properties[propName]
                   let t = isObject(p) ? 'Object' : 'Data'
-                  let type = propName in xHash ? 'owl:Thing' : pname(p)
+                  let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
                   return `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${className}"/>
+        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
             <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
@@ -8128,17 +8165,17 @@ function main () {
     </SubClassOf>`
                 }
               ).concat(
-                (classes[className].superClasses).map(
+                (classes[classId].superClasses).map(
                   superClass =>
                     `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${className}"/>
-        <Class abbreviatedIRI="ddi:${getGeneral(superClass)}"/>
+        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classes[getGeneral(superClass)].name}"/>
     </SubClassOf>`
                 )
               ).concat([
                 `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${className}"/>
-        <Class abbreviatedIRI="ddi:${classes[className].parents[classes[className].parents.length - 1]}_Package"/>
+        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${packages[classes[classId].parents[classes[classId].parents.length - 1]].name}_Package"/>
     </SubClassOf>`
               ]).join('\n')
           ))
@@ -8147,7 +8184,7 @@ function main () {
               classes[className].properties.map(
                 propertyRecord => {
                   let propName = propertyRecord.name
-                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName])
+                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
                   return '  ddi:' + propName + ' only ' + type
                 }
               ).join(',\n')
@@ -8157,7 +8194,7 @@ function main () {
               classes[className].properties.map(
                 propertyRecord => {
                   let propName = propertyRecord.name
-                  let type = propName in xHash ? '.' : pname(properties[propName])
+                  let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
                   let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
                   let card = shexCardinality(propertyRecord)
                   return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
@@ -8167,30 +8204,30 @@ function main () {
 
           // Enumerate enumerations (enumeratively).
           owlx = owlx.concat(Object.keys(enums).map(
-            name => [].concat(
+            id => [].concat(
               `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${name}"/>
+    <Class abbreviatedIRI="ddi:${enums[id].name}"/>
         <ObjectOneOf>`,
-              enums[name].values.map(
+              enums[id].values.map(
                 v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
               ),
               `       </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:${name}"/>
-        <Class abbreviatedIRI="ddi:${enums[name].parents[enums[name].parents.length - 1]}_Package"/>
+        <Class abbreviatedIRI="ddi:${enums[id].name}"/>
+        <Class abbreviatedIRI="ddi:${packages[enums[id].parents[enums[id].parents.length - 1]].name}_Package"/>
     </SubClassOf>`).join('\n')))
 
           // Add datatypes.
           owlx = owlx.concat(Object.keys(datatypes).map(
-            name => [].concat(
+            id => [].concat(
               `    <DatatypeDefinition>
-        <Datatype abbreviatedIRI="ddi:${name}"/>
+        <Datatype abbreviatedIRI="ddi:${datatypes[id].name}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DatatypeDefinition>` /* + `
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:${name}-is-a-datatype"/>
-        <Class abbreviatedIRI="ddi:${datatypes[name].parents[datatypes[name].parents.length - 1]}_Package"/>
+        <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
+        <Class abbreviatedIRI="ddi:${datatypes[id].parents[datatypes[id].parents.length - 1]}_Package"/>
     </SubClassOf>` */).join('\n')))
 
           // Terminate the various forms:
@@ -8220,16 +8257,17 @@ function main () {
         return !!propertyDecl.sources[0].relation
       }
 
-      function pname (propertyDecl) {
-        let id = propertyDecl.uniformType[0]
-        const m = [
-          {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd:'},
-          {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld:'},
-          {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'}
-        ]
-        let ret = m.map(pair =>
+      const KnownPrefixes = [
+        {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
+        {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
+        {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
+        {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
+      ]
+
+      function pname (id) {
+        let ret = KnownPrefixes.map(pair =>
           id.startsWith(pair.url)
-            ? pair.prefix + id.substr(pair.url.length)
+            ? pair.prefix + ':' + id.substr(pair.url.length)
             : null
         ).find(v => v)
         if (ret) {
@@ -8239,6 +8277,24 @@ function main () {
           console.warn('need namespace for ' + id)
         }
         return 'ddi:' + id
+      }
+
+      function expandPrefix (pname) {
+        let i = pname.indexOf(':')
+        if (i === -1) {
+          return pname // e.g. LanguageSpecification
+        }
+        let prefix = pname.substr(0, i)
+        let rest = pname.substr(i + 1)
+        let ret = KnownPrefixes.map(pair =>
+          pair.prefix === prefix
+            ? pair.url + rest
+            : null
+        ).find(v => v)
+        if (ret) {
+          return ret
+        }
+        throw Error('no prefix declaration found for ' + pname)
       }
 
       function puns (object, into) {
