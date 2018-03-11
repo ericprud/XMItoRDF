@@ -152,6 +152,17 @@ function main () {
           // parsedData.index = {}
           indexXML(root, [])
 
+          // Change relations to datatypes to be attributes.
+          Object.keys(properties).forEach(
+            p => properties[p].sources.forEach(
+              s => {
+                if (s.relation in datatypes) {
+                  console.log('changing property ' + p + ' to have attribute type ' + s.relation)
+                  s.attribute = s.relation
+                  s.relation = undefined
+                }
+              }))
+
           Object.keys(properties).forEach(propName => {
             let p = properties[propName]
             let s = p.sources.reduce((acc, s) => {
@@ -258,7 +269,7 @@ function main () {
                     throw Error('already seen class name ' + name)
                   }
                   enums[name] = {
-                    elements: [],
+                    declaration: id,
                     values: elt.ownedLiteral.map(
                       l => getName(l)
                     ),
@@ -274,7 +285,7 @@ function main () {
                     throw Error('already seen class name ' + name)
                   }
                   datatypes[name] = {
-                    elements: [],
+                    declaration: id,
                     parents: parents
                   }
                   // record class hierarchy
@@ -448,7 +459,7 @@ function main () {
         if (BUILD_PRODUCTS) {
           // Render package hierarchy.
           owlx = owlx.concat(walkHierarchy(
-            firstBranch(packageHierarchy.roots), 'By',
+            firstBranch(packageHierarchy.roots), 'DDI_outer',
             (c, p) => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${c}_Package"/>
         <Class abbreviatedIRI="ddi:${p}_Package"/>
@@ -458,7 +469,7 @@ function main () {
           // Declare properties
           owlx = owlx.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
             propName => {
-              let p = properties[propName].uniformType[0]
+              let p = properties[propName]
               let t = isObject(p) ? 'Object' : 'Data'
               return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
@@ -471,7 +482,7 @@ function main () {
           ))
           owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
             propName => {
-              let p = properties[propName].uniformType[0]
+              let p = properties[propName]
               let t = isObject(p) ? 'Object' : 'Data'
               return t + 'Property: ddi:' + propName + ' Range: ' + pname(p)
             }
@@ -487,7 +498,7 @@ function main () {
               ).map(
                 propertyRecord => {
                   let propName = propertyRecord.name
-                  let p = properties[propName].uniformType[0]
+                  let p = properties[propName]
                   let t = isObject(p) ? 'Object' : 'Data'
                   let type = propName in xHash ? 'owl:Thing' : pname(p)
                   return `    <SubClassOf>
@@ -518,7 +529,7 @@ function main () {
               classes[className].properties.map(
                 propertyRecord => {
                   let propName = propertyRecord.name
-                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
+                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName])
                   return '  ddi:' + propName + ' only ' + type
                 }
               ).join(',\n')
@@ -528,7 +539,7 @@ function main () {
               classes[className].properties.map(
                 propertyRecord => {
                   let propName = propertyRecord.name
-                  let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
+                  let type = propName in xHash ? '.' : pname(properties[propName])
                   let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
                   let card = shexCardinality(propertyRecord)
                   return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
@@ -558,24 +569,21 @@ function main () {
               `    <DatatypeDefinition>
         <Datatype abbreviatedIRI="ddi:${name}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DatatypeDefinition>`/* + `
+    </DatatypeDefinition>` /* + `
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${name}-is-a-datatype"/>
         <Class abbreviatedIRI="ddi:${datatypes[name].parents[datatypes[name].parents.length - 1]}_Package"/>
-    </SubClassOf>`*/).join('\n')))
+    </SubClassOf>` */).join('\n')))
 
           // Terminate the various forms:
           owlx = owlx.concat([
             '</Ontology>\n'
           ])
         }
-        function isObject (term) {
-          return pname(term).startsWith('ddi:')
-        }
       }
 
       function shexCardinality (propertyRecord) {
-        let lower = parseInt(propertyRecord.lower || 0 )
+        let lower = parseInt(propertyRecord.lower || 0)
         let upper = parseInt(propertyRecord.upper || -1)
         if (lower === 1 && upper === 1) {
           return ''
@@ -590,7 +598,12 @@ function main () {
         }
       }
 
-      function pname (id) {
+      function isObject (propertyDecl) {
+        return !!propertyDecl.sources[0].relation
+      }
+
+      function pname (propertyDecl) {
+        let id = propertyDecl.uniformType[0]
         const m = [
           {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd:'},
           {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld:'},
@@ -811,13 +824,14 @@ function main () {
           </ownedAttribute>
    */
   function expandPrefix (imALangauge) {
-    if (imALangauge === undefined)
+    if (imALangauge === undefined) {
       return undefined
-    if (imALangauge === 'xs:language')
+    }
+    if (imALangauge === 'xs:language') {
       return 'http://www.w3.org/2001/XMLSchema#langauge'
+    }
     throw Error('unexpected argument to expandPrefix(' + imALangauge + ')')
   }
-
 }
 
 window.onload = main
