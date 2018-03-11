@@ -9,7 +9,12 @@ function main () {
   }
 
   function getName (elt) {
-    return 'name' in elt.$ ? elt.$.name : null
+    let ret = 'name' in elt.$ ? elt.$.name : null
+    let nameMap = {
+      'Views (Exported from Drupal)': 'Views',
+      'Class Model (Exported from Drupal)': 'ddi4_model'
+    }
+    return ret in nameMap ? nameMap[ret] : ret
   }
 
   function getValue (elt) {
@@ -150,7 +155,7 @@ function main () {
           Object.keys(properties).forEach(propName => {
             let p = properties[propName]
             let s = p.sources.reduce((acc, s) => {
-              let t = s.type || s.typeRef
+              let t = s.attribute || s.relation
               if (acc.length > 0 && acc.indexOf(t) === -1) {
                 // debugger;
                 // a.find(i => b.indexOf(i) !== -1)
@@ -224,8 +229,8 @@ function main () {
                       in: parent,
                       id: id,
                       name: name,
-                      typeRef: elt.type[0].$['xmi:idref'],
-                      type: elt.type[0].$['href'],
+                      relation: elt.type[0].$['xmi:idref'],
+                      attribute: elt.type[0].$['href'] || expandPrefix(elt.type[0].$['xmi:type']),
                       lower: getValue(elt.lowerValue[0]) || 0,
                       upper: getValue(elt.upperValue[0]) || 99
                     }
@@ -279,6 +284,7 @@ function main () {
                   break
                 case 'uml:Model':
                 case 'uml:Package':
+                  packageHierarchy.add(parent, name)
                   // Pass through to get to nested goodies.
                   break
                 default:
@@ -361,7 +367,7 @@ function main () {
             }
             value = !elt
               ? ''
-              : $(elt.length > 50 ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
+              : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
           }
           into.append($('<li/>').text(title).append(value))
         }))
@@ -438,15 +444,6 @@ function main () {
                 ))
             })
           )))
-
-        // Build package hierarchy for classes and enums.
-        let p = [classes, enums, datatypes]
-        p.forEach(obj => Object.keys(obj).forEach(
-          className => { // packageHierarch reflects containership of packages.
-            for (let i = 0; i < obj[className].parents.length - 1; ++i) {
-              packageHierarchy.add(obj[className].parents[i], obj[className].parents[i + 1])
-            }
-          }))
 
         if (BUILD_PRODUCTS) {
           // Render package hierarchy.
@@ -561,11 +558,11 @@ function main () {
               `    <DatatypeDefinition>
         <Datatype abbreviatedIRI="ddi:${name}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DatatypeDefinition>
+    </DatatypeDefinition>`/* + `
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:${name}"/>
+        <Class abbreviatedIRI="ddi:${name}-is-a-datatype"/>
         <Class abbreviatedIRI="ddi:${datatypes[name].parents[datatypes[name].parents.length - 1]}_Package"/>
-    </SubClassOf>`).join('\n')))
+    </SubClassOf>`*/).join('\n')))
 
           // Terminate the various forms:
           owlx = owlx.concat([
@@ -800,11 +797,25 @@ function main () {
     return Object.assign({}, obj, toAdd)
   }
 
+  // Find the first nested object which has multiple children.
   function firstBranch (root) {
     while (Object.keys(root).length === 1) {
       root = root[Object.keys(root)[0]]
     }
     return root
+  }
+
+  /* Hack to deal with this special idiom:
+          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
+            <type xmi:type="xs:language"/>
+          </ownedAttribute>
+   */
+  function expandPrefix (imALangauge) {
+    if (imALangauge === undefined)
+      return undefined
+    if (imALangauge === 'xs:language')
+      return 'http://www.w3.org/2001/XMLSchema#langauge'
+    throw Error('unexpected argument to expandPrefix(' + imALangauge + ')')
   }
 
 }
