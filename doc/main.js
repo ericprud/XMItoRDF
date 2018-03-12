@@ -30,6 +30,18 @@ function main () {
     return 'general' in elt.$ ? elt.$.general : null
   }
 
+  function parseViews (document) {
+    return document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'].map(
+      diagram => { return {
+        id: '$' in diagram ? diagram['$']['xmi:id'] : null,
+        name: diagram.model[0].$.package,
+        members: diagram.elements[0].element.map(
+          member => member.$.subject
+        )
+      }}
+    )
+  }
+
   function normalizeType (type) {
     if (!type) {
       return type // pass undefined on
@@ -108,417 +120,532 @@ function main () {
     let div = $('<div/>', {'id': title, 'class': 'result'}).appendTo('#render')
     let reparse = $('<button/>').text('reparse').on('click', parse)
     $('<h2/>').text(title).append(reparse).appendTo(div)
-    let model = { }
-      let triples = {}
-    let root = getRootElement(xmiText)
-      let progress = $('<ul/>')
-      div.append(progress)
+    let model
+    let document
+    let triples = {}
+    let progress = $('<ul/>')
+    div.append(progress)
 
-      let delay = {
-        index: function () {
-          // parsedData.index = {}
-      makeHierarchy.test()
-      let classHierarchy = makeHierarchy()
-      let packageHierarchy = makeHierarchy()
-      let classes = {}
-      let properties = {}
-      let enums = {}
-      let datatypes = {}
-      let packages = {}
-      // let realized = makeHierarchy()
-      model.packages = packages
-      model.classes = classes
-      model.properties = properties
-      model.enums = enums
-      model.datatypes = datatypes
-      model.classHierarchy = classHierarchy.roots
-          model.packageHierarchy = { roots: packageHierarchy.roots }
-          indexXML(root, [])
+    xml2js.Parser().parseString(xmiText, function (err, result) {
+      if (err) {
+        console.error(err)
+      } else {
+        document = result
+        status.text('parsing UML...')
+        window.setTimeout(parse, RENDER_DELAY)
+      }
+    })
 
-          // Change relations to datatypes to be attributes.
-          // Change relations to the classes and enums to reference the name.
-          Object.keys(properties).forEach(
-            p => properties[p].sources.forEach(
-              s => {
-                if (s.relation in datatypes) {
-                  console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
-                  s.attribute = datatypes[s.relation].name
-                  s.relation = undefined
-                } else if (s.relation in classes) {
-                  s.relation = classes[s.relation].name
-                } else if (s.relation in enums) {
-                  s.relation = enums[s.relation].name
-                }
-              }))
+    function parse () {
+      status.text('indexing...')
+      window.setTimeout(index, RENDER_DELAY)
+    }
 
-          Object.keys(properties).forEach(propName => {
-            let p = properties[propName]
-            let s = p.sources.reduce((acc, s) => {
-              let t = s.attribute || s.relation
-              if (acc.length > 0 && acc.indexOf(t) === -1) {
-                // debugger;
-                // a.find(i => b.indexOf(i) !== -1)
-              }
-              return acc.indexOf(t) === -1 ? acc.concat(t) : acc
-            }, [])
-            p.uniformType = s
-          }, [])
+    function index () {
+      model = parseModel(document, triples)
+      status.text('rendering structure...')
+      window.setTimeout(render, RENDER_DELAY)
+    }
 
-          console.dir({
-            classes: classes,
-            properties: properties,
-            enums: enums,
-            datatypes: datatypes,
-            triples: triples,
-            classHierarchy: classHierarchy})
+    function render () {
+      let modelUL = $('<ul/>')
+      structureToListItems(model, modelUL)
+      collapse(modelUL)
+      progress.append($('<li/>').text('model').append(modelUL))
 
-          status.text('rendering structure...')
-          window.setTimeout(delay.render, RENDER_DELAY)
+      status.text('diagnostics...')
+      window.setTimeout(diagnostics, RENDER_DELAY)
+    }
 
-          function indexXML (elt, parents) {
-            let parent = parents[parents.length - 1]
-            let type = elt.$['xmi:type']
-            let recurse = true
-            if ('xmi:id' in elt.$) {
-              let id = elt.$['xmi:id']
-              let name = parseName(elt)
-              // Could keep id to elt map around with this:
-              // index[id] = { element: elt, parents: parents }
-              let triple
+    function diagnostics () {
+      let diagnostics = $('<ul/>')
+      reusedProperties(model.classes, diagnostics)
+      polymorphicProperties(model.properties, diagnostics)
+      // puns(parsedData, diagnostics)
+      addTriples(triples, diagnostics)
+      collapse(diagnostics)
 
-              // record triples
-              if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
-                if (!(triple[2] in triples)) {
-                  triples[triple[2]] = []
-                }
-                triples[triple[2]].push(id)
-              }
+      progress.append($('<li/>').text('diagnostics').append(diagnostics))
+      status.text('')
+      status.text('export all formats...')
+      window.setTimeout(exportAllFormats, RENDER_DELAY)
+    }
 
-              switch (type) {
-                case 'uml:Class':
-                  if (id in classes) {
-                    throw Error('already seen class id ' + id)
-                  }
-                  classes[id] = {
-                    id: id,
-                    name: name,
-                    properties: [],
-                    realizes: [],
-                    others: [],
-                    parents: parents,
-                    superClasses: []
-                  }
+    function exportAllFormats () {
+      if (!BUILD_PRODUCTS) {
+        return // skip format dump
+      }
+      let t = dumpFormats(model)
+      progress.append(
+        $('<li/>').append(
+          'OWL: ',
+          $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
+          ' | ',
+          $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
+        ),
+        $('<li/>').append(
+          'ShEx: ',
+          $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
+        )
+      )
+    }
+  }
 
-                  // record class hierarchy (allows multiple inheritance)
-                  if ('generalization' in elt) {
-                    elt.generalization.forEach(
-                      superClassElt => {
-                        superClassId = parseGeneral(superClassElt)
-                        classHierarchy.add(superClassId, name)
-                        classes[id].superClasses.push(superClassId)
-                      })
-                  }
-                  break
-                case 'uml:Property':
-                  let klass = classes[parent].name
-                  if (name === klass) {
-                    if (triple[2] === 'realizes') {
-                      classes[klass].realizes.push(elt.type[0].$['xmi:idref'])
-                    } else {
-                      classes[klass].others.push(triple[2])
-                    }
-                  } else if (!name) {
-                    // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
-                  } else if (name.charAt(0).match(/[A-Z]/)) {
-                    throw Error('unexpected property name ' + name + ' in ' + parent)
-                  } else {
-                    let propertyRecord = {
-                      in: klass,
-                      id: id,
-                      name: name,
-                      relation: elt.type[0].$['xmi:idref'],
-                      attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-                      lower: parseValue(elt.lowerValue[0], 0),
-                      upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
-                    }
-                    if (propertyRecord.upper === '-1') {
-                      propertyRecord.upper = UPPER_UNLIMITED
-                    }
-                    classes[parent].properties.push(propertyRecord)
-                    if (!(name in properties)) {
-                      properties[name] = {sources: []}
-                    }
-                    properties[name].sources.push(propertyRecord)
-                  }
+  function parseModel (document, triples) {
+    // makeHierarchy.test()
+    // convenience variables
+    let classHierarchy = makeHierarchy()
+    let packageHierarchy = makeHierarchy()
+    let classes = {}
+    let properties = {}
+    let enums = {}
+    let datatypes = {}
+    let packages = {}
 
-                  if (triple) {
-                    if (['source', 'association'].indexOf(triple[3]) === -1) {
-                      console.warn('unknown relationship: ', triple[3])
-                    }
-                    if (triple[1] !== klass) {
-                      console.warn('parent mismatch: ', triple, klass)
-                    }
-                  }
-                  break
-                case 'uml:Association':
-                  recurse = false
-                  break
-                case 'uml:Enumeration':
-                  if (id in enums) {
-                    throw Error('already seen enum id ' + id)
-                  }
-                  enums[id] = {
-                    id: id,
-                    name: name,
-                    values: elt.ownedLiteral.map(
-                      l => parseName(l)
-                    ),
-                    parents: parents
-                  }
-                  // record class hierarchy
-                  if ('generalization' in elt) {
-                    throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
-                  }
-                  break
-                case 'uml:DataType':
-                case 'uml:PrimitiveType':
-                  if (id in datatypes) {
-                    throw Error('already seen datatype id ' + id)
-                  }
-                  let name2 = parseName(elt)
-                  datatypes[id] = {
-                    name: name,
-                    id: id,
-                    parents: parents
-                  }
-                  // record class hierarchy
-                  if ('generalization' in elt) {
-                    throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
-                  }
-                  break
-                case 'uml:Model':
-                case 'uml:Package':
-                  packages[id] = {
-                    name: name,
-                    id: id,
-                    parents: parents
-                  }
-                  if (parents.length) {
-                    packageHierarchy.add(packages[parent].name, name)
-                  }
-                  break
-                  // Pass through to get to nested goodies.
-                case 'uml:ElementImport':
-                  break
-                default:
-                  console.log('need handler for ' + type)
-              }
+    // return structure
+    let model = {
+      packages: packages,
+      classes: classes,
+      properties: properties,
+      enums: enums,
+      datatypes: datatypes,
+      classHierarchy: classHierarchy.roots,
+      packageHierarchy: packageHierarchy.roots,
+      views: parseViews(document)
+    }
 
-              if (recurse) {
-                // walk desendents
-                let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
-                Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
-                  elt[k].forEach(sub => {
-                    indexXML(sub, parents.concat(id))
-                  })
+    // Build the model
+    indexXML(document['xmi:XMI']['uml:Model'][0], [])
+
+    // Change relations to datatypes to be attributes.
+    // Change relations to the classes and enums to reference the name.
+    Object.keys(properties).forEach(
+      p => properties[p].sources.forEach(
+        s => {
+          if (s.relation in datatypes) {
+            console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
+            s.attribute = datatypes[s.relation].name
+            s.relation = undefined
+          } else if (s.relation in classes) {
+            s.relation = classes[s.relation].name
+          } else if (s.relation in enums) {
+            s.relation = enums[s.relation].name
+          }
+        }))
+
+    Object.keys(properties).forEach(propName => {
+      let p = properties[propName]
+      let s = p.sources.reduce((acc, s) => {
+        let t = s.attribute || s.relation
+        if (acc.length > 0 && acc.indexOf(t) === -1) {
+          // debugger;
+          // a.find(i => b.indexOf(i) !== -1)
+        }
+        return acc.indexOf(t) === -1 ? acc.concat(t) : acc
+      }, [])
+      p.uniformType = s
+    }, [])
+
+    console.dir({
+      classes: classes,
+      properties: properties,
+      enums: enums,
+      datatypes: datatypes,
+      triples: triples,
+      classHierarchy: classHierarchy})
+    return model
+
+    function indexXML (elt, parents) {
+      let parent = parents[parents.length - 1]
+      let type = elt.$['xmi:type']
+      let recurse = true
+      if ('xmi:id' in elt.$) {
+        let id = elt.$['xmi:id']
+        let name = parseName(elt)
+        // Could keep id to elt map around with this:
+        // index[id] = { element: elt, parents: parents }
+        let triple
+
+        // record triples
+        if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
+          if (!(triple[2] in triples)) {
+            triples[triple[2]] = []
+          }
+          triples[triple[2]].push(id)
+        }
+
+        switch (type) {
+          case 'uml:Class':
+            if (id in classes) {
+              throw Error('already seen class id ' + id)
+            }
+            classes[id] = {
+              id: id,
+              name: name,
+              properties: [],
+              realizes: [],
+              others: [],
+              parents: parents,
+              superClasses: []
+            }
+
+            // record class hierarchy (allows multiple inheritance)
+            if ('generalization' in elt) {
+              elt.generalization.forEach(
+                superClassElt => {
+                  let superClassId = parseGeneral(superClassElt)
+                  classHierarchy.add(superClassId, name)
+                  classes[id].superClasses.push(superClassId)
                 })
+            }
+            break
+          case 'uml:Property':
+            let klass = classes[parent].name
+            if (name === klass) {
+              if (triple[2] === 'realizes') {
+                classes[klass].realizes.push(elt.type[0].$['xmi:idref'])
+              } else {
+                classes[klass].others.push(triple[2])
+              }
+            } else if (!name) {
+              // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
+            } else if (name.charAt(0).match(/[A-Z]/)) {
+              throw Error('unexpected property name ' + name + ' in ' + parent)
+            } else {
+              let propertyRecord = {
+                in: klass,
+                id: id,
+                name: name,
+                relation: elt.type[0].$['xmi:idref'],
+                attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
+                lower: parseValue(elt.lowerValue[0], 0),
+                upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
+              }
+              if (propertyRecord.upper === '-1') {
+                propertyRecord.upper = UPPER_UNLIMITED
+              }
+              classes[parent].properties.push(propertyRecord)
+              if (!(name in properties)) {
+                properties[name] = {sources: []}
+              }
+              properties[name].sources.push(propertyRecord)
+            }
+
+            if (triple) {
+              if (['source', 'association'].indexOf(triple[3]) === -1) {
+                console.warn('unknown relationship: ', triple[3])
+              }
+              if (triple[1] !== klass) {
+                console.warn('parent mismatch: ', triple, klass)
               }
             }
+            break
+          case 'uml:Association':
+            recurse = false
+            break
+          case 'uml:Enumeration':
+            if (id in enums) {
+              throw Error('already seen enum id ' + id)
+            }
+            enums[id] = {
+              id: id,
+              name: name,
+              values: elt.ownedLiteral.map(
+                l => parseName(l)
+              ),
+              parents: parents
+            }
+            // record class hierarchy
+            if ('generalization' in elt) {
+              throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
+            }
+            break
+          case 'uml:DataType':
+          case 'uml:PrimitiveType':
+            if (id in datatypes) {
+              throw Error('already seen datatype id ' + id)
+            }
+            datatypes[id] = {
+              name: name,
+              id: id,
+              parents: parents
+            }
+            // record class hierarchy
+            if ('generalization' in elt) {
+              throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
+            }
+            break
+          case 'uml:Model':
+          case 'uml:Package':
+            packages[id] = {
+              name: name,
+              id: id,
+              parents: parents
+            }
+            if (parents.length) {
+              packageHierarchy.add(packages[parent].name, name)
+            }
+            break
+            // Pass through to get to nested goodies.
+          case 'uml:ElementImport':
+            break
+          default:
+            console.log('need handler for ' + type)
+        }
+
+        if (recurse) {
+          // walk desendents
+          let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
+          Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
+            elt[k].forEach(sub => {
+              indexXML(sub, parents.concat(id))
+            })
+          })
+        }
+      }
+    }
+  }
+
+  function reusedProperties (classes, into) {
+    const x = Object.keys(classes).reduce((acc, classId) => {
+      classes[classId].properties.forEach(
+        field => {
+          let a = field.id.split(/_/)
+          field = a[a.length - 1]
+          if (!(field in acc.seen)) {
+            acc.seen[field] = [classId]
+          } else {
+            acc.seen[field].push(classId)
+            if (acc.duplicates.indexOf(field) === -1) {
+              acc.duplicates.push(field)
+            }
           }
-        },
+        }
+      )
+      return acc
+    }, {seen: {}, duplicates: []})
+    into.append($('<li/>').append(
+      $('<span/>',
+        {title: 'names of properties which are used in more than one class'})
+        .text('reused properties'),
+      ' (' + x.duplicates.length + ')',
+      $('<ul/>').append(
+        x.duplicates.sort(
+          // sort first by number of duplicates, otherwise by name
+          (l, r) => x.seen[r].length - x.seen[l].length || l.localeCompare(r)
+        ).map(dupe => {
+          return $('<li/>').append(
+            $('<span/>').text(dupe).addClass('scalar'),
+            ' (' + x.seen[dupe].length + ')',
+            $('<ul/>').append(
+              x.seen[dupe].map(lookIn => $('<li/>').append(
+                $('<a/>', { href: docURL(lookIn) }).text(lookIn)
+              ))
+            ))
+        })
+      )))
+  }
 
-        render: function () {
-          let modelUL = $('<ul/>')
-          structureToListItems(model, modelUL)
-          collapse(modelUL)
-          progress.append(
-            $('<li/>').text('model').append(modelUL)
-          )
+  function polymorphicProperties (properties, into) {
+    let x = Object.keys(properties).filter(
+      propName =>
+        properties[propName].uniformType.length !== 1 ||
+        properties[propName].uniformType[0] === undefined
+    )
+    into.append($('<li/>').append(
+      $('<span/>',
+        {title: 'names of properties which have more than one type'})
+        .text('polymorphic properties'),
+      ' (' + x.length + ')',
+      $('<ul/>').append(
+        x.sort(
+          (l, r) => properties[r].uniformType.length - properties[l].uniformType.length
+        ).map(dupe => {
+          return $('<li/>').append(
+            dupe,
+            ' (' + properties[dupe].uniformType.length + ')',
+            $('<ul/>').append(
+              properties[dupe].uniformType.map(lookIn => $('<li/>').append(
+                lookIn
+                  ? $('<a/>', { href: docURL(lookIn) }).text(lookIn)
+                  : $('<span/>').text('no stated type').addClass('scalar')
+              ))
+            ))
+        })
+      )))
+  }
 
-          status.text('diagnostics...')
-          window.setTimeout(delay.diagnostics, RENDER_DELAY)
-        },
+  function dumpFormats (model) {
+    let x = Object.keys(model.properties).filter(
+      propName =>
+        model.properties[propName].uniformType.length !== 1 ||
+        model.properties[propName].uniformType[0] === undefined
+    )
+    let xHash = x.reduce(
+      (acc, propName, idx) =>
+        addKey(acc, propName, idx)
+      , {})
+    let owlx = [
+      '<?xml version="1.0"?>\n' +
+        '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
+        '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
+        '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
+        '     xmlns:xml="http://www.w3.org/XML/1998/namespace"\n' +
+        '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n' +
+        '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"\n' +
+        '     ontologyIRI="http://ddi-alliance.org/ns/ddi4">\n' +
+        '    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>\n' +
+        '    <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>\n' +
+        '    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>\n' +
+        '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
+        '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
+        '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
+        '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
+        '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
+        '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
+        '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
+    ]
+    let owlm = [
+      'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
+        'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+        'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+        'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+        'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+        'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
+        '\n'
+    ]
+    let shexc = [
+      'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
+        'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+        'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+        'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+        'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+        '\n'
+    ]
+    console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
 
-        diagnostics: function () {
-          let diagnostics = $('<ul/>')
-          reusedProperties(model.classes, diagnostics)
-          polymorphicProperties(model.properties, diagnostics)
-          // puns(parsedData, diagnostics)
-          addTriples(triples, diagnostics)
-          collapse(diagnostics)
-
-          progress.append(
-            $('<li/>').text('diagnostics').append(diagnostics),
-          )
-
-          status.text('')
-
-
-          status.text('export all formats...')
-          window.setTimeout(delay.exportAllFormats, RENDER_DELAY)
-        },
-
-        exportAllFormats: function () {
-        let x = Object.keys(model.properties).filter(
-          propName =>
-            model.properties[propName].uniformType.length !== 1 ||
-            model.properties[propName].uniformType[0] === undefined
-        )
-        let xHash = x.reduce(
-          (acc, propName, idx) =>
-            addKey(acc, propName, idx)
-          , {})
-          let owlx = [
-            '<?xml version="1.0"?>\n' +
-              '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
-              '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
-              '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
-              '     xmlns:xml="http://www.w3.org/XML/1998/namespace"\n' +
-              '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n' +
-              '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"\n' +
-              '     ontologyIRI="http://ddi-alliance.org/ns/ddi4">\n' +
-              '    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>\n' +
-              '    <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>\n' +
-              '    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>\n' +
-              '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
-              '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
-              '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
-              '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
-              '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
-              '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
-              '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
-          ]
-          let owlm = [
-            'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
-              'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-              'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
-              'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-              'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
-              'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
-              '\n'
-          ]
-          let shexc = [
-            'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
-              'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-              'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
-              'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-              'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
-              '\n'
-          ]
-          console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
-        if (BUILD_PRODUCTS) {
-          // Render package hierarchy.
-          owlx = owlx.concat(walkHierarchy(
-            firstBranch(model.packageHierarchy.roots), 'DDI_outer',
-            (c, p) => `    <SubClassOf>
+    // Render package hierarchy.
+    owlx = owlx.concat(walkHierarchy(
+      firstBranch(model.packageHierarchy), 'DDI_outer',
+      (c, p) => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${c}_Package"/>
         <Class abbreviatedIRI="ddi:${p}_Package"/>
     </SubClassOf>`
-          ))
+    ))
 
-          // Declare properties
-          owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
-            propName => {
-              let p = model.properties[propName]
-              let t = isObject(p) ? 'Object' : 'Data'
-              return `    <Declaration>
+    // Render view hierarchy.
+    owlx = owlx.concat(model.views.reduce(
+      (acc, view) => { return acc.concat(view.members.map(
+        member => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${member}"/>
+        <Class abbreviatedIRI="ddi:${view.name}_Package"/>
+    </SubClassOf>`
+      ))}, []
+    ))
+
+    // Declare properties
+    owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+      propName => {
+        let p = model.properties[propName]
+        let t = isObject(p) ? 'Object' : 'Data'
+        return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
     <${t}PropertyRange>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
         <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p.sources[0][isObject(p) ? 'relation' : 'attribute'])}"/>
     </${t}PropertyRange>`
-            }
-          ))
-          owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
-            propName => {
-              let p = model.properties[propName]
-              let t = isObject(p) ? 'Object' : 'Data'
-              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
-            }
-          ))
+      }
+    ))
+    owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+      propName => {
+        let p = model.properties[propName]
+        let t = isObject(p) ? 'Object' : 'Data'
+        return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
+      }
+    ))
 
-          // Create Classes/Shapes
-          owlx = owlx.concat(Object.keys(model.classes).map(
-            classId => `    <Declaration>
+    // Create Classes/Shapes
+    owlx = owlx.concat(Object.keys(model.classes).map(
+      classId => `    <Declaration>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
     </Declaration>\n` +
-              model.classes[classId].properties.filter(
-                propertyRecord => !(propertyRecord.name in xHash)
-              ).map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let p = model.properties[propName]
-                  let t = isObject(p) ? 'Object' : 'Data'
-                  let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
-                  return `    <SubClassOf>
+        model.classes[classId].properties.filter(
+          propertyRecord => !(propertyRecord.name in xHash)
+        ).map(
+          propertyRecord => {
+            let propName = propertyRecord.name
+            let p = model.properties[propName]
+            let t = isObject(p) ? 'Object' : 'Data'
+            let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
+            return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
             <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
     </SubClassOf>`
-                }
-              ).concat(
-                (model.classes[classId].superClasses).map(
-                  superClass =>
-                    `    <SubClassOf>
+          }
+        ).concat(
+          (model.classes[classId].superClasses).map(
+            superClass =>
+              `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
     </SubClassOf>`
-                )
-              ).concat([
-                `    <SubClassOf>
+          )
+        ).concat([
+          `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]].name}_Package"/>
     </SubClassOf>`
-              ]).join('\n')
-          ))
-          owlm = owlm.concat(Object.keys(model.classes).map(
-            className => 'Class: ddi:' + className + ' SubClassOf:\n' +
-              model.classes[className].properties.map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let type = propName in xHash ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
-                  return '  ddi:' + propName + ' only ' + type
-                }
-              ).join(',\n')
-          ))
-          shexc = shexc.concat(Object.keys(model.classes).map(
-            className => 'ddi:' + className + ' {\n' +
-              model.classes[className].properties.map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
-                  let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
-                  let card = shexCardinality(propertyRecord)
-                  return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
-                }
-              ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
-          ))
+        ]).join('\n')
+    ))
+    owlm = owlm.concat(Object.keys(model.classes).map(
+      className => 'Class: ddi:' + className + ' SubClassOf:\n' +
+        model.classes[className].properties.map(
+          propertyRecord => {
+            let propName = propertyRecord.name
+            let type = propName in xHash ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
+            return '  ddi:' + propName + ' only ' + type
+          }
+        ).join(',\n')
+    ))
+    shexc = shexc.concat(Object.keys(model.classes).map(
+      className => 'ddi:' + className + ' {\n' +
+        model.classes[className].properties.map(
+          propertyRecord => {
+            let propName = propertyRecord.name
+            let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
+            let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
+            let card = shexCardinality(propertyRecord)
+            return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
+          }
+        ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
+    ))
 
-          // Enumerate enumerations (enumeratively).
-          owlx = owlx.concat(Object.keys(model.enums).map(
-            id => [].concat(
-              `    <EquivalentClasses>
+    // Enumerate enumerations (enumeratively).
+    owlx = owlx.concat(Object.keys(model.enums).map(
+      id => [].concat(
+        `    <EquivalentClasses>
     <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
         <ObjectOneOf>`,
-              model.enums[id].values.map(
-                v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
-              ),
-              `       </ObjectOneOf>
+        model.enums[id].values.map(
+          v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
+        ),
+        `       </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].parents[model.enums[id].parents.length - 1]].name}_Package"/>
     </SubClassOf>`).join('\n')))
 
-          // Add datatypes.
-          owlx = owlx.concat(Object.keys(model.datatypes).filter(
-            id => !pname(model.datatypes[id].name).startsWith('xsd')
-          ).map(
-            id => [].concat(
-              `    <DatatypeDefinition>
+    // Add datatypes.
+    owlx = owlx.concat(Object.keys(model.datatypes).filter(
+      id => !pname(model.datatypes[id].name).startsWith('xsd')
+    ).map(
+      id => [].concat(
+        `    <DatatypeDefinition>
         <Datatype abbreviatedIRI="${pname(model.datatypes[id].name)}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DatatypeDefinition>` /* + `
@@ -527,279 +654,131 @@ function main () {
         <Class abbreviatedIRI="ddi:${model.datatypes[id].parents[model.datatypes[id].parents.length - 1]}_Package"/>
     </SubClassOf>` */).join('\n')))
 
-          // Terminate the various forms:
-          owlx = owlx.concat([
-            '</Ontology>\n'
-          ])
-        }
-        progress.append(
-            $('<li/>').append(
-              'OWL: ',
-              $('<a/>', {href: ''}).text('XML').on('click', () => download(owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
-              ' | ',
-              $('<a/>', {href: ''}).text('Manchester').on('click', () => download(owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
-            ),
-            $('<li/>').append(
-              'ShEx: ',
-              $('<a/>', {href: ''}).text('Compact').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
-            )
-        )
-        }
-      }
+    // Terminate the various forms:
+    owlx = owlx.concat([
+      '</Ontology>\n'
+    ])
+    return {owlx: owlx, owlm: owlm, shexc: shexc}
+  }
 
-    function parse () {
-      status.text('indexing...')
-      window.setTimeout(delay.index, RENDER_DELAY)
-
+  function shexCardinality (propertyRecord) {
+    let lower = parseInt(propertyRecord.lower || 0)
+    let upper = parseInt(propertyRecord.upper || -1)
+    if (lower === 1 && upper === 1) {
+      return ''
+    } else if (lower === 1 && upper === -1) {
+      return '+'
+    } else if (lower === 0 && upper === -1) {
+      return '*'
+    } else if (lower === 0 && upper === 1) {
+      return '?'
+    } else {
+      return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
     }
-    status.text('parsing UML...')
-    window.setTimeout(parse, RENDER_DELAY)
   }
 
-  function getRootElement (content) {
-    let root
-    let parser = new xml2js.Parser()
-    parser.parseString(content, function (err, result) {
-      if (err) {
-        console.error(err)
-      } else {
-        if (result.hasOwnProperty('uml:Model')) {
-          root = result['uml:Model']
-        } else if (result.hasOwnProperty('xmi:XMI')) {
-          root = result['xmi:XMI']['uml:Model'][0]
-        } else {
-          throw new window.Exception('The passed document has no immediate root element.')
-        }
-      }
-    })
-    return root
+  function isObject (propertyDecl) {
+    return !!propertyDecl.sources[0].relation
   }
 
-      function structureToListItems (object, into) {
-        into.append(Object.keys(object).map(k => {
-          let elt = object[k]
-          let title = object.constructor === Array
-            ? ''
-            : k
-          let value
-          if (elt === null) {
-            title += ':'
-            value = $('<span/>').addClass('keyword').text('NULL')
-          } else if (typeof elt === 'object') {
-            if (elt.constructor === Array) {
-              title += ' (' + Object.keys(elt).length + ')'
-            } else if ('id' in elt) {
-              if (title === '') {
-                title = elt.id
-              } else if (title !== elt.id) {
-                console.log("differ: " + title + ' != ' + elt.id)
-                // title += ' ' + 'id=' + elt.id
-              }
-            } else if ('$' in elt && 'xmi:id' in elt.$) {
-              title += elt.$['xmi:id']
-            }
-            value = $('<ul/>')
-            structureToListItems(elt, value)
-          } else {
-            if (object.constructor !== Array) {
-              title += ':'
-            }
-            value = !elt
-              ? ''
-              : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
-          }
-          into.append($('<li/>').text(title).append(value))
-        }))
-      }
+  const KnownPrefixes = [
+    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
+    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
+    {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
+    {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
+    {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
+  ]
 
-      function reusedProperties (classes, into) {
-        const x = Object.keys(classes).reduce((acc, classId) => {
-          classes[classId].properties.forEach(
-            field => {
-              let a = field.id.split(/_/)
-              field = a[a.length - 1]
-              if (!(field in acc.seen)) {
-                acc.seen[field] = [classId]
-              } else {
-                acc.seen[field].push(classId)
-                if (acc.duplicates.indexOf(field) === -1) {
-                  acc.duplicates.push(field)
-                }
-              }
-            }
-          )
-          return acc
-        }, {seen: {}, duplicates: []})
-        into.append($('<li/>').append(
-          $('<span/>',
-            {title: 'names of properties which are used in more than one class'})
-            .text('reused properties'),
-          ' (' + x.duplicates.length + ')',
-          $('<ul/>').append(
-            x.duplicates.sort(
-              // sort first by number of duplicates, otherwise by name
-              (l, r) => x.seen[r].length - x.seen[l].length || l.localeCompare(r)
-            ).map(dupe => {
-              return $('<li/>').append(
-                $('<span/>').text(dupe).addClass('scalar'),
-                ' (' + x.seen[dupe].length + ')',
-                $('<ul/>').append(
-                  x.seen[dupe].map(lookIn => $('<li/>').append(
-                    $('<a/>', { href: docURL(lookIn) }).text(lookIn)
-                  ))
-                ))
-            })
-          )))
-      }
-
-      function polymorphicProperties (properties, into) {
-        let x = Object.keys(properties).filter(
-          propName =>
-            properties[propName].uniformType.length !== 1 ||
-            properties[propName].uniformType[0] === undefined
-        )
-        let xHash = x.reduce(
-          (acc, propName, idx) =>
-            addKey(acc, propName, idx)
-          , {})
-        into.append($('<li/>').append(
-          $('<span/>',
-            {title: 'names of properties which have more than one type'})
-            .text('polymorphic properties'),
-          ' (' + x.length + ')',
-          $('<ul/>').append(
-            x.sort(
-              (l, r) => properties[r].uniformType.length - properties[l].uniformType.length
-            ).map(dupe => {
-              return $('<li/>').append(
-                dupe,
-                ' (' + properties[dupe].uniformType.length + ')',
-                $('<ul/>').append(
-                  properties[dupe].uniformType.map(lookIn => $('<li/>').append(
-                    lookIn
-                      ? $('<a/>', { href: docURL(lookIn) }).text(lookIn)
-                      : $('<span/>').text('no stated type').addClass('scalar')
-                  ))
-                ))
-            })
-          )))
-      }
-
-      function shexCardinality (propertyRecord) {
-        let lower = parseInt(propertyRecord.lower || 0)
-        let upper = parseInt(propertyRecord.upper || -1)
-        if (lower === 1 && upper === 1) {
-          return ''
-        } else if (lower === 1 && upper === -1) {
-          return '+'
-        } else if (lower === 0 && upper === -1) {
-          return '*'
-        } else if (lower === 0 && upper === 1) {
-          return '?'
-        } else {
-          return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
-        }
-      }
-
-      function isObject (propertyDecl) {
-        return !!propertyDecl.sources[0].relation
-      }
-
-      const KnownPrefixes = [
-        {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
-        {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
-        {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
-        {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
-        {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
-      ]
-
-      function pname (id) {
-        let ret = KnownPrefixes.map(pair =>
-          id.startsWith(pair.url)
-            ? pair.prefix + ':' + id.substr(pair.url.length)
-            : null
-        ).find(v => v)
-        if (ret) {
-          return ret
-        }
-        if (id.startsWith('http:')) {
-          console.warn('need namespace for ' + id)
-        }
-        return 'ddi:' + id
-      }
+  function pname (id) {
+    let ret = KnownPrefixes.map(
+      pair =>
+        id.startsWith(pair.url)
+          ? pair.prefix + ':' + id.substr(pair.url.length)
+          : null
+    ).find(v => v)
+    if (ret) {
+      return ret
+    }
+    if (id.startsWith('http:')) {
+      console.warn('need namespace for ' + id)
+    }
+    return 'ddi:' + id
+  }
 
   /* Hack to deal with this special idiom:
-          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
-            <type xmi:type="xs:language"/>
-          </ownedAttribute>
-   */
+     <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
+     <type xmi:type="xs:language"/>
+     </ownedAttribute>
+  */
 
-      function expandPrefix (pname) {
-        let i = pname.indexOf(':')
-        if (i === -1) {
-          return pname // e.g. LanguageSpecification
-        }
-        let prefix = pname.substr(0, i)
-        let rest = pname.substr(i + 1)
-        let ret = KnownPrefixes.map(pair =>
-          pair.prefix === prefix
-            ? pair.url + rest
-            : null
-        ).find(v => v)
-        return ret ? ret : pname
-      }
+  function expandPrefix (pname) {
+    let i = pname.indexOf(':')
+    if (i === -1) {
+      return pname // e.g. LanguageSpecification
+    }
+    let prefix = pname.substr(0, i)
+    let rest = pname.substr(i + 1)
+    let ret = KnownPrefixes.map(
+      pair =>
+        pair.prefix === prefix
+          ? pair.url + rest
+          : null
+    ).find(v => v)
+    return ret || pname
+  }
 
-      function puns (object, into) {
-        const lookIns = ['classes', 'fields', 'associations', 'types', 'enums']
-        const x = lookIns.reduce((acc, lookIn) => {
-          Object.keys(object[lookIn]).forEach(
-            name => {
-              if (!(name in acc.seen)) {
-                acc.seen[name] = [lookIn]
-              } else {
-                acc.seen[name].push(lookIn)
-                if (acc.duplicates.indexOf(name) === -1) {
-                  acc.duplicates.push(name)
-                }
-              }
+  function puns (object, into) {
+    const lookIns = ['classes', 'fields', 'associations', 'types', 'enums']
+    const x = lookIns.reduce((acc, lookIn) => {
+      Object.keys(object[lookIn]).forEach(
+        name => {
+          if (!(name in acc.seen)) {
+            acc.seen[name] = [lookIn]
+          } else {
+            acc.seen[name].push(lookIn)
+            if (acc.duplicates.indexOf(name) === -1) {
+              acc.duplicates.push(name)
             }
-          )
-          return acc
-        }, {seen: {}, duplicates: []})
-        into.append($('<li/>').append(
-          $('<span/>',
-            {title: 'names which appear in any two of ' + lookIns})
-            .text('puns'),
-          ' (' + x.duplicates.length + ')',
-          $('<ul/>').append(
-            x.duplicates.map(dupe => {
-              return $('<li/>').append(
-                $('<span/>').text(dupe).addClass('scalar'),
-                $('<ul/>').append(
-                  x.seen[dupe].map(lookIn => $('<li/>').text(lookIn))
-                ))
-            })
-          )))
-      }
+          }
+        }
+      )
+      return acc
+    }, {seen: {}, duplicates: []})
+    into.append($('<li/>').append(
+      $('<span/>',
+        {title: 'names which appear in any two of ' + lookIns})
+        .text('puns'),
+      ' (' + x.duplicates.length + ')',
+      $('<ul/>').append(
+        x.duplicates.map(dupe => {
+          return $('<li/>').append(
+            $('<span/>').text(dupe).addClass('scalar'),
+            $('<ul/>').append(
+              x.seen[dupe].map(lookIn => $('<li/>').text(lookIn))
+            ))
+        })
+      )))
+  }
 
-      function addTriples (triples, into) {
-        into.append($('<li/>').append(
-          $('<span/>',
-            {title: '[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+'})
-            .text('triples'),
-          ' (' + Object.keys(triples).length + ')',
-          $('<ul/>').append(
-            Object.keys(triples).sort(
-              (l, r) => triples[r].length - triples[l].length
-            ).map(triple => {
-              return $('<li/>').append(
-                $('<span/>').text(triple + ' (' + triples[triple].length + ')').addClass('scalar'),
-                $('<ul/>').append(
-                  triples[triple].map(lookIn => $('<li/>').text(lookIn))
-                ))
-            })
-          )))
-      }
+  function addTriples (triples, into) {
+    into.append($('<li/>').append(
+      $('<span/>',
+        {title: '[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+'})
+        .text('triples'),
+      ' (' + Object.keys(triples).length + ')',
+      $('<ul/>').append(
+        Object.keys(triples).sort(
+          (l, r) => triples[r].length - triples[l].length
+        ).map(triple => {
+          return $('<li/>').append(
+            $('<span/>').text(triple + ' (' + triples[triple].length + ')').addClass('scalar'),
+            $('<ul/>').append(
+              triples[triple].map(lookIn => $('<li/>').text(lookIn))
+            ))
+        })
+      )))
+  }
+
   function makeHierarchy () {
     let roots = {}
     let parents = {}
@@ -866,6 +845,43 @@ function main () {
     return Object.keys(n).reduce((ret, k) => {
       return ret.concat(walkHierarchy(n[k], k, f), f(k, p))
     }, [])
+  }
+
+  function structureToListItems (object, into) {
+    into.append(Object.keys(object).map(k => {
+      let elt = object[k]
+      let title = object.constructor === Array
+        ? ''
+        : k
+      let value
+      if (elt === null) {
+        title += ':'
+        value = $('<span/>').addClass('keyword').text('NULL')
+      } else if (typeof elt === 'object') {
+        if (elt.constructor === Array) {
+          title += ' (' + Object.keys(elt).length + ')'
+        } else if ('id' in elt) {
+          if (title === '') {
+            title = elt.id
+          } else if (title !== elt.id) {
+            console.log("differ: " + title + ' != ' + elt.id)
+            // title += ' ' + 'id=' + elt.id
+          }
+        } else if ('$' in elt && 'xmi:id' in elt.$) {
+          title += elt.$['xmi:id']
+        }
+        value = $('<ul/>')
+        structureToListItems(elt, value)
+      } else {
+        if (object.constructor !== Array) {
+          title += ':'
+        }
+        value = !elt
+          ? ''
+          : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
+      }
+      into.append($('<li/>').text(title).append(value))
+    }))
   }
 
   // collapsable list from <from> element
