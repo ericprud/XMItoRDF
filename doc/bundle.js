@@ -7620,6 +7620,7 @@ function main () {
   const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
   const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
   const BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
+  const UPPER_UNLIMITED = '*'
 
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
@@ -7633,14 +7634,14 @@ function main () {
       'Class Model (Exported from Drupal)': 'ddi4_model',
       'ClassLibrary': 'ddi4_model', // minimize diffs
       'FunctionalViews': 'Views',
-      'xsd:anyUri': 'xsd:anyURI',
-      'xsd:anguage': 'xsd:language'
+      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
+      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
     }
-    return ret in nameMap ? nameMap[ret] : ret
+    return !ret ? ret : ret in nameMap ? nameMap[ret] : expandPrefix(ret)
   }
 
-  function parseValue (elt) {
-    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : null
+  function parseValue (elt, deflt) { // 'default' is a reserved word
+    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : deflt
   }
 
   function parseGeneral (elt) {
@@ -7690,7 +7691,7 @@ function main () {
             }
             // This may take a long time to render.
             $('<textarea/>', {cols: 60, rows: 10}).val(loadEvent.target.result).appendTo(div)
-            render(loadEvent.target.result, file.name, status)
+            processXMI(loadEvent.target.result, file.name, status)
           }
           loader.readAsText(file)
         }, RENDER_DELAY)
@@ -7713,7 +7714,7 @@ function main () {
     }).then(function (text) {
       window.setTimeout(() => {
         $('<textarea/>', {cols: 60, rows: 10}).val(text).appendTo(div)
-        render(text, source, status)
+        processXMI(text, source, status)
       }, RENDER_DELAY)
     }).catch(function (error) {
       div.append($('<pre/>').text(error)).addClass('error')
@@ -7721,14 +7722,19 @@ function main () {
     return true
   })
 
-  function render (xmiText, title, status) {
+  function processXMI (xmiText, title, status) {
     let div = $('<div/>', {'id': title, 'class': 'result'}).appendTo('#render')
     let reparse = $('<button/>').text('reparse').on('click', parse)
     $('<h2/>').text(title).append(reparse).appendTo(div)
-
-    function parse () {
-      let structure = $('<ul/>')
+    let model = { }
       let triples = {}
+    let root = getRootElement(xmiText)
+      let progress = $('<ul/>')
+      div.append(progress)
+
+      let delay = {
+        index: function () {
+          // parsedData.index = {}
       makeHierarchy.test()
       let classHierarchy = makeHierarchy()
       let packageHierarchy = makeHierarchy()
@@ -7737,58 +7743,16 @@ function main () {
       let enums = {}
       let datatypes = {}
       let packages = {}
-      let owlx = [
-        '<?xml version="1.0"?>\n' +
-          '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
-          '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
-          '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
-          '     xmlns:xml="http://www.w3.org/XML/1998/namespace"\n' +
-          '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n' +
-          '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"\n' +
-          '     ontologyIRI="http://ddi-alliance.org/ns/ddi4">\n' +
-          '    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>\n' +
-          '    <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>\n' +
-          '    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>\n' +
-          '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
-          '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
-          '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
-          '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
-          '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
-          '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
-          '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
-      ]
-      let owlm = [
-        'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
-          'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-          'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
-          'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-          'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
-          'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
-          '\n'
-      ]
-      let shexc = [
-        'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
-          'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-          'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
-          'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-          'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
-          '\n'
-      ]
-      let index = {}
+      let views = {}
       // let realized = makeHierarchy()
-      let root = getRootElement(xmiText)
-      let parsedData = {}
-      // parsedData.root = root
-      parsedData.myClasses = classes
-      parsedData.myProperties = properties
-      parsedData.enums = enums
-      parsedData.datatypes = datatypes
-      parsedData.hierarchy = classHierarchy.roots
-      status.text('indexing...')
-
-      let delay = {
-        index: function () {
-          // parsedData.index = {}
+      model.packages = packages
+      model.classes = classes
+      model.properties = properties
+      model.enums = enums
+      model.datatypes = datatypes
+      model.classHierarchy = classHierarchy.roots
+      model.packageHierarchy = { roots: packageHierarchy.roots }
+      model.views = views
           indexXML(root, [])
 
           // Change relations to datatypes to be attributes.
@@ -7797,8 +7761,8 @@ function main () {
             p => properties[p].sources.forEach(
               s => {
                 if (s.relation in datatypes) {
-                  console.log('changing property ' + p + ' to have attribute type ' + expandPrefix(datatypes[s.relation].name))
-                  s.attribute = expandPrefix(datatypes[s.relation].name)
+                  console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
+                  s.attribute = datatypes[s.relation].name
                   s.relation = undefined
                 } else if (s.relation in classes) {
                   s.relation = classes[s.relation].name
@@ -7826,8 +7790,7 @@ function main () {
             enums: enums,
             datatypes: datatypes,
             triples: triples,
-            classHierarchy: classHierarchy,
-            index: index})
+            classHierarchy: classHierarchy})
 
           status.text('rendering structure...')
           window.setTimeout(delay.render, RENDER_DELAY)
@@ -7839,7 +7802,8 @@ function main () {
             if ('xmi:id' in elt.$) {
               let id = elt.$['xmi:id']
               let name = parseName(elt)
-              index[id] = { element: elt, parents: parents }
+              // Could keep id to elt map around with this:
+              // index[id] = { element: elt, parents: parents }
               let triple
 
               // record triples
@@ -7864,10 +7828,15 @@ function main () {
                     parents: parents,
                     superClasses: []
                   }
-                  // record class hierarchy
+
+                  // record class hierarchy (allows multiple inheritance)
                   if ('generalization' in elt) {
-                    classHierarchy.add(parseGeneral(elt.generalization[0]), name)
-                    classes[id].superClasses.push(elt.generalization[0])
+                    elt.generalization.forEach(
+                      superClassElt => {
+                        let superClassId = parseGeneral(superClassElt)
+                        classHierarchy.add(superClassId, name)
+                        classes[id].superClasses.push(superClassId)
+                      })
                   }
                   break
                 case 'uml:Property':
@@ -7889,8 +7858,11 @@ function main () {
                       name: name,
                       relation: elt.type[0].$['xmi:idref'],
                       attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-                      lower: parseValue(elt.lowerValue[0]) || 0,
-                      upper: parseValue(elt.upperValue[0]) || '*'
+                      lower: parseValue(elt.lowerValue[0], 0),
+                      upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
+                    }
+                    if (propertyRecord.upper === '-1') {
+                      propertyRecord.upper = UPPER_UNLIMITED
                     }
                     classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
@@ -7975,8 +7947,10 @@ function main () {
         },
 
         render: function () {
-          structureToListItems(parsedData, structure)
-          collapse(structure)
+          let modelUL = $('<ul/>')
+          structureToListItems(model, modelUL)
+          collapse(modelUL)
+          progress.append($('<li/>').text('model').append(modelUL))
 
           status.text('diagnostics...')
           window.setTimeout(delay.diagnostics, RENDER_DELAY)
@@ -7984,16 +7958,196 @@ function main () {
 
         diagnostics: function () {
           let diagnostics = $('<ul/>')
-          reusedProperties(classes, diagnostics)
-          polymorphicProperties(properties, diagnostics)
-          console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
+          reusedProperties(model.classes, diagnostics)
+          polymorphicProperties(model.properties, diagnostics)
           // puns(parsedData, diagnostics)
           addTriples(triples, diagnostics)
           collapse(diagnostics)
 
-          div.append($('<ul/>').append(
-            $('<li/>').text('structure').append(structure),
-            $('<li/>').text('diagnostics').append(diagnostics),
+          progress.append($('<li/>').text('diagnostics').append(diagnostics))
+
+          status.text('')
+
+
+          status.text('export all formats...')
+          window.setTimeout(delay.exportAllFormats, RENDER_DELAY)
+        },
+
+        exportAllFormats: function () {
+        let x = Object.keys(model.properties).filter(
+          propName =>
+            model.properties[propName].uniformType.length !== 1 ||
+            model.properties[propName].uniformType[0] === undefined
+        )
+        let xHash = x.reduce(
+          (acc, propName, idx) =>
+            addKey(acc, propName, idx)
+          , {})
+          let owlx = [
+            '<?xml version="1.0"?>\n' +
+              '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
+              '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
+              '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
+              '     xmlns:xml="http://www.w3.org/XML/1998/namespace"\n' +
+              '     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n' +
+              '     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"\n' +
+              '     ontologyIRI="http://ddi-alliance.org/ns/ddi4">\n' +
+              '    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>\n' +
+              '    <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>\n' +
+              '    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>\n' +
+              '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
+              '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
+              '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
+              '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
+              '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
+              '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
+              '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
+          ]
+          let owlm = [
+            'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
+              'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+              'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+              'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+              'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+              'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
+              '\n'
+          ]
+          let shexc = [
+            'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
+              'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
+              'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
+              'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
+              'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+              '\n'
+          ]
+          console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
+        if (BUILD_PRODUCTS) {
+          // Render package hierarchy.
+          owlx = owlx.concat(walkHierarchy(
+            firstBranch(model.packageHierarchy.roots), 'DDI_outer',
+            (c, p) => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${c}_Package"/>
+        <Class abbreviatedIRI="ddi:${p}_Package"/>
+    </SubClassOf>`
+          ))
+
+          // Declare properties
+          owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+            propName => {
+              let p = model.properties[propName]
+              let t = isObject(p) ? 'Object' : 'Data'
+              return `    <Declaration>
+        <${t}Property abbreviatedIRI="ddi:${propName}"/>
+    </Declaration>
+    <${t}PropertyRange>
+        <${t}Property abbreviatedIRI="ddi:${propName}"/>
+        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p.sources[0][isObject(p) ? 'relation' : 'attribute'])}"/>
+    </${t}PropertyRange>`
+            }
+          ))
+          owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+            propName => {
+              let p = model.properties[propName]
+              let t = isObject(p) ? 'Object' : 'Data'
+              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
+            }
+          ))
+
+          // Create Classes/Shapes
+          owlx = owlx.concat(Object.keys(model.classes).map(
+            classId => `    <Declaration>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+    </Declaration>\n` +
+              model.classes[classId].properties.filter(
+                propertyRecord => !(propertyRecord.name in xHash)
+              ).map(
+                propertyRecord => {
+                  let propName = propertyRecord.name
+                  let p = model.properties[propName]
+                  let t = isObject(p) ? 'Object' : 'Data'
+                  let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
+                  return `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}AllValuesFrom>
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
+        </${t}AllValuesFrom>
+    </SubClassOf>`
+                }
+              ).concat(
+                (model.classes[classId].superClasses).map(
+                  superClass =>
+                    `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
+    </SubClassOf>`
+                )
+              ).concat([
+                `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]].name}_Package"/>
+    </SubClassOf>`
+              ]).join('\n')
+          ))
+          owlm = owlm.concat(Object.keys(model.classes).map(
+            className => 'Class: ddi:' + className + ' SubClassOf:\n' +
+              model.classes[className].properties.map(
+                propertyRecord => {
+                  let propName = propertyRecord.name
+                  let type = propName in xHash ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
+                  return '  ddi:' + propName + ' only ' + type
+                }
+              ).join(',\n')
+          ))
+          shexc = shexc.concat(Object.keys(model.classes).map(
+            className => 'ddi:' + className + ' {\n' +
+              model.classes[className].properties.map(
+                propertyRecord => {
+                  let propName = propertyRecord.name
+                  let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
+                  let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
+                  let card = shexCardinality(propertyRecord)
+                  return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
+                }
+              ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
+          ))
+
+          // Enumerate enumerations (enumeratively).
+          owlx = owlx.concat(Object.keys(model.enums).map(
+            id => [].concat(
+              `    <EquivalentClasses>
+    <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
+        <ObjectOneOf>`,
+              model.enums[id].values.map(
+                v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
+              ),
+              `       </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].parents[model.enums[id].parents.length - 1]].name}_Package"/>
+    </SubClassOf>`).join('\n')))
+
+          // Add datatypes.
+          owlx = owlx.concat(Object.keys(model.datatypes).filter(
+            id => !pname(model.datatypes[id].name).startsWith('xsd')
+          ).map(
+            id => [].concat(
+              `    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="${pname(model.datatypes[id].name)}"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DatatypeDefinition>` /* + `
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
+        <Class abbreviatedIRI="ddi:${model.datatypes[id].parents[model.datatypes[id].parents.length - 1]}_Package"/>
+    </SubClassOf>` */).join('\n')))
+
+          // Terminate the various forms:
+          owlx = owlx.concat([
+            '</Ontology>\n'
+          ])
+        }
+        progress.append(
             $('<li/>').append(
               'OWL: ',
               $('<a/>', {href: ''}).text('XML').on('click', () => download(owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
@@ -8004,12 +8158,37 @@ function main () {
               'ShEx: ',
               $('<a/>', {href: ''}).text('Compact').on('click', () => download(shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
             )
-          ))
-
-          status.text('')
+        )
         }
       }
+
+    function parse () {
+      status.text('indexing...')
       window.setTimeout(delay.index, RENDER_DELAY)
+    }
+
+    status.text('parsing UML...')
+    window.setTimeout(parse, RENDER_DELAY)
+  }
+
+  function getRootElement (content) {
+    let root
+    let parser = new xml2js.Parser()
+    parser.parseString(content, function (err, result) {
+      if (err) {
+        console.error(err)
+      } else {
+        if (result.hasOwnProperty('uml:Model')) {
+          root = result['uml:Model']
+        } else if (result.hasOwnProperty('xmi:XMI')) {
+          root = result['xmi:XMI']['uml:Model'][0]
+        } else {
+          throw new window.Exception('The passed document has no immediate root element.')
+        }
+      }
+    })
+    return root
+  }
 
       function structureToListItems (object, into) {
         into.append(Object.keys(object).map(k => {
@@ -8119,131 +8298,6 @@ function main () {
                 ))
             })
           )))
-
-        if (BUILD_PRODUCTS) {
-          // Render package hierarchy.
-          owlx = owlx.concat(walkHierarchy(
-            firstBranch(packageHierarchy.roots), 'DDI_outer',
-            (c, p) => `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${c}_Package"/>
-        <Class abbreviatedIRI="ddi:${p}_Package"/>
-    </SubClassOf>`
-          ))
-
-          // Declare properties
-          owlx = owlx.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
-            propName => {
-              let p = properties[propName]
-              let t = isObject(p) ? 'Object' : 'Data'
-              return `    <Declaration>
-        <${t}Property abbreviatedIRI="ddi:${propName}"/>
-    </Declaration>
-    <${t}PropertyRange>
-        <${t}Property abbreviatedIRI="ddi:${propName}"/>
-        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p.sources[0][isObject(p) ? 'relation' : 'attribute'])}"/>
-    </${t}PropertyRange>`
-            }
-          ))
-          owlm = owlm.concat(Object.keys(properties).filter(propName => !(propName in xHash)).map(
-            propName => {
-              let p = properties[propName]
-              let t = isObject(p) ? 'Object' : 'Data'
-              return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
-            }
-          ))
-
-          // Create Classes/Shapes
-          owlx = owlx.concat(Object.keys(classes).map(
-            classId => `    <Declaration>
-        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-    </Declaration>\n` +
-              classes[classId].properties.filter(
-                propertyRecord => !(propertyRecord.name in xHash)
-              ).map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let p = properties[propName]
-                  let t = isObject(p) ? 'Object' : 'Data'
-                  let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
-                  return `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-        <${t}AllValuesFrom>
-            <${t}Property abbreviatedIRI="ddi:${propName}"/>
-            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
-        </${t}AllValuesFrom>
-    </SubClassOf>`
-                }
-              ).concat(
-                (classes[classId].superClasses).map(
-                  superClass =>
-                    `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${classes[parseGeneral(superClass)].name}"/>
-    </SubClassOf>`
-                )
-              ).concat([
-                `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${packages[classes[classId].parents[classes[classId].parents.length - 1]].name}_Package"/>
-    </SubClassOf>`
-              ]).join('\n')
-          ))
-          owlm = owlm.concat(Object.keys(classes).map(
-            className => 'Class: ddi:' + className + ' SubClassOf:\n' +
-              classes[className].properties.map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let type = propName in xHash ? 'owl:Thing' : pname(properties[propName].uniformType[0])
-                  return '  ddi:' + propName + ' only ' + type
-                }
-              ).join(',\n')
-          ))
-          shexc = shexc.concat(Object.keys(classes).map(
-            className => 'ddi:' + className + ' {\n' +
-              classes[className].properties.map(
-                propertyRecord => {
-                  let propName = propertyRecord.name
-                  let type = propName in xHash ? '.' : pname(properties[propName].uniformType[0])
-                  let refChar = properties[propName].sources[0].type === undefined ? '@' : ''
-                  let card = shexCardinality(propertyRecord)
-                  return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
-                }
-              ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
-          ))
-
-          // Enumerate enumerations (enumeratively).
-          owlx = owlx.concat(Object.keys(enums).map(
-            id => [].concat(
-              `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${enums[id].name}"/>
-        <ObjectOneOf>`,
-              enums[id].values.map(
-                v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
-              ),
-              `       </ObjectOneOf>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${enums[id].name}"/>
-        <Class abbreviatedIRI="ddi:${packages[enums[id].parents[enums[id].parents.length - 1]].name}_Package"/>
-    </SubClassOf>`).join('\n')))
-
-          // Add datatypes.
-          owlx = owlx.concat(Object.keys(datatypes).map(
-            id => [].concat(
-              `    <DatatypeDefinition>
-        <Datatype abbreviatedIRI="ddi:${datatypes[id].name}"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DatatypeDefinition>` /* + `
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
-        <Class abbreviatedIRI="ddi:${datatypes[id].parents[datatypes[id].parents.length - 1]}_Package"/>
-    </SubClassOf>` */).join('\n')))
-
-          // Terminate the various forms:
-          owlx = owlx.concat([
-            '</Ontology>\n'
-          ])
-        }
       }
 
       function shexCardinality (propertyRecord) {
@@ -8268,6 +8322,7 @@ function main () {
 
       const KnownPrefixes = [
         {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
+        {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
         {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
         {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
         {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
@@ -8288,6 +8343,12 @@ function main () {
         return 'ddi:' + id
       }
 
+  /* Hack to deal with this special idiom:
+          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
+            <type xmi:type="xs:language"/>
+          </ownedAttribute>
+   */
+
       function expandPrefix (pname) {
         let i = pname.indexOf(':')
         if (i === -1) {
@@ -8300,10 +8361,7 @@ function main () {
             ? pair.url + rest
             : null
         ).find(v => v)
-        if (ret) {
-          return ret
-        }
-        throw Error('no prefix declaration found for ' + pname)
+        return ret ? ret : pname
       }
 
       function puns (object, into) {
@@ -8357,30 +8415,6 @@ function main () {
             })
           )))
       }
-    }
-    status.text('parsing UML...')
-    window.setTimeout(parse, RENDER_DELAY)
-  }
-
-  function getRootElement (content) {
-    let root
-    let parser = new xml2js.Parser()
-    parser.parseString(content, function (err, result) {
-      if (err) {
-        console.error(err)
-      } else {
-        if (result.hasOwnProperty('uml:Model')) {
-          root = result['uml:Model']
-        } else if (result.hasOwnProperty('xmi:XMI')) {
-          root = result['xmi:XMI']['uml:Model'][0]
-        } else {
-          throw new window.Exception('The passed document has no immediate root element.')
-        }
-      }
-    })
-    return root
-  }
-
   function makeHierarchy () {
     let roots = {}
     let parents = {}
@@ -8499,21 +8533,6 @@ function main () {
       root = root[Object.keys(root)[0]]
     }
     return root
-  }
-
-  /* Hack to deal with this special idiom:
-          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
-            <type xmi:type="xs:language"/>
-          </ownedAttribute>
-   */
-  function expandPrefix (imALanguage) {
-    if (imALanguage === undefined) {
-      return undefined
-    }
-    if (imALanguage === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    throw Error('unexpected argument to expandPrefix(' + imALanguage + ')')
   }
 }
 
