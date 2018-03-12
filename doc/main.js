@@ -2,6 +2,7 @@ function main () {
   const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
   const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
   const BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
+  const UPPER_UNLIMITED = '*'
 
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
@@ -15,10 +16,10 @@ function main () {
       'Class Model (Exported from Drupal)': 'ddi4_model',
       'ClassLibrary': 'ddi4_model', // minimize diffs
       'FunctionalViews': 'Views',
-      'xsd:anyUri': 'xsd:anyURI',
-      'xsd:anguage': 'xsd:language'
+      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
+      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
     }
-    return ret in nameMap ? nameMap[ret] : ret
+    return !ret ? ret : ret in nameMap ? nameMap[ret] : expandPrefix(ret)
   }
 
   function parseValue (elt, deflt) { // 'default' is a reserved word
@@ -140,8 +141,8 @@ function main () {
             p => properties[p].sources.forEach(
               s => {
                 if (s.relation in datatypes) {
-                  console.log('changing property ' + p + ' to have attribute type ' + expandPrefix(datatypes[s.relation].name))
-                  s.attribute = expandPrefix(datatypes[s.relation].name)
+                  console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
+                  s.attribute = datatypes[s.relation].name
                   s.relation = undefined
                 } else if (s.relation in classes) {
                   s.relation = classes[s.relation].name
@@ -238,7 +239,10 @@ function main () {
                       relation: elt.type[0].$['xmi:idref'],
                       attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
                       lower: parseValue(elt.lowerValue[0], 0),
-                      upper: parseValue(elt.upperValue[0], '*')
+                      upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
+                    }
+                    if (propertyRecord.upper === '-1') {
+                      propertyRecord.upper = UPPER_UNLIMITED
                     }
                     classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
@@ -281,6 +285,7 @@ function main () {
                   if (id in datatypes) {
                     throw Error('already seen datatype id ' + id)
                   }
+                  let name2 = parseName(elt)
                   datatypes[id] = {
                     name: name,
                     id: id,
@@ -509,10 +514,12 @@ function main () {
     </SubClassOf>`).join('\n')))
 
           // Add datatypes.
-          owlx = owlx.concat(Object.keys(model.datatypes).map(
+          owlx = owlx.concat(Object.keys(model.datatypes).filter(
+            id => !pname(model.datatypes[id].name).startsWith('xsd')
+          ).map(
             id => [].concat(
               `    <DatatypeDefinition>
-        <Datatype abbreviatedIRI="ddi:${model.datatypes[id].name}"/>
+        <Datatype abbreviatedIRI="${pname(model.datatypes[id].name)}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DatatypeDefinition>` /* + `
     <SubClassOf>
@@ -700,6 +707,7 @@ function main () {
 
       const KnownPrefixes = [
         {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
+        {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
         {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
         {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
         {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
@@ -720,6 +728,12 @@ function main () {
         return 'ddi:' + id
       }
 
+  /* Hack to deal with this special idiom:
+          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
+            <type xmi:type="xs:language"/>
+          </ownedAttribute>
+   */
+
       function expandPrefix (pname) {
         let i = pname.indexOf(':')
         if (i === -1) {
@@ -732,10 +746,7 @@ function main () {
             ? pair.url + rest
             : null
         ).find(v => v)
-        if (ret) {
-          return ret
-        }
-        throw Error('no prefix declaration found for ' + pname)
+        return ret ? ret : pname
       }
 
       function puns (object, into) {
@@ -907,22 +918,6 @@ function main () {
       root = root[Object.keys(root)[0]]
     }
     return root
-  }
-
-  /* Hack to deal with this special idiom:
-          <ownedAttribute xmi:type="uml:Property" name="language" xmi:id="LanguageSpecificStructuredStringType_language">
-            <type xmi:type="xs:language"/>
-          </ownedAttribute>
-   */
-  function expandPrefix (imALanguage) {
-    if (imALanguage === undefined) {
-      return undefined
-    }
-    if (imALanguage === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    return imALanguage
-    throw Error('unexpected argument to expandPrefix(' + imALanguage + ')')
   }
 }
 
