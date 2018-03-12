@@ -10,7 +10,7 @@ function main () {
   }
 
   function parseName (elt) {
-    let ret = 'name' in elt.$ ? elt.$.name : null
+    let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
     let nameMap = {
       'Views (Exported from Drupal)': 'Views',
       'Class Model (Exported from Drupal)': 'ddi4_model',
@@ -23,15 +23,15 @@ function main () {
   }
 
   function parseValue (elt, deflt) { // 'default' is a reserved word
-    return 'value' in elt.$ ? elt.$.value : deflt
+    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : deflt
   }
 
   function parseGeneral (elt) {
-    return 'general' in elt.$ ? elt.$.general : null
+    return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
   }
 
-  function parseViews (document) {
-    return document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'].map(
+  function parseViews (diagrams) {
+    return diagrams.map(
       diagram => { return {
         id: '$' in diagram ? diagram['$']['xmi:id'] : null,
         name: diagram.model[0].$.package,
@@ -201,6 +201,7 @@ function main () {
     let enums = {}
     let datatypes = {}
     let packages = {}
+    let views = []
 
     // return structure
     let model = {
@@ -211,11 +212,20 @@ function main () {
       datatypes: datatypes,
       classHierarchy: classHierarchy.roots,
       packageHierarchy: packageHierarchy.roots,
-      views: parseViews(document)
+      views: views
     }
 
     // Build the model
     indexXML(document['xmi:XMI']['uml:Model'][0], [])
+    if (document['xmi:XMI']['xmi:Extension'] && document['xmi:XMI']['xmi:Extension'][0]['diagrams']) {
+      model.views = parseViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
+    } else {
+      model.views.forEach(
+        view => {
+          view.members = view.members.map(
+            memberId => classes[memberId].name)
+        })
+    }
 
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
@@ -377,18 +387,28 @@ function main () {
             break
           case 'uml:Model':
           case 'uml:Package':
-            packages[id] = {
-              name: name,
-              id: id,
-              parents: parents
+            if (name.endsWith("View")) {
+              if ('elementImport' in elt)
+              views.push({
+                id: id,
+                name: name,
+                members: elt.elementImport.map(
+                  imp => imp.importedElement[0].$['xmi:idref']
+                )
+              })
+              recurse = false
+            } else {
+              packages[id] = {
+                name: name,
+                id: id,
+                parents: parents
+              }
             }
             if (parents.length) {
               packageHierarchy.add(packages[parent].name, name)
             }
             break
             // Pass through to get to nested goodies.
-          case 'uml:ElementImport':
-            break
           default:
             console.log('need handler for ' + type)
         }
@@ -534,14 +554,16 @@ function main () {
     ))
 
     // Render view hierarchy.
-    owlx = owlx.concat(model.views.reduce(
-      (acc, view) => { return acc.concat(view.members.map(
-        member => `    <SubClassOf>
+    if ('views' in model) {
+      owlx = owlx.concat(model.views.reduce(
+        (acc, view) => { return acc.concat(view.members.map(
+          member => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${member}"/>
         <Class abbreviatedIRI="ddi:${view.name}_Package"/>
     </SubClassOf>`
-      ))}, []
-    ))
+        ))}, []
+      ))
+    }
 
     // Declare properties
     owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
