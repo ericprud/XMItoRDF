@@ -8,29 +8,38 @@ function main () {
       term.toLowerCase() + '#parent_properties'
   }
 
-  function getName (elt) {
+  function parseName (elt) {
     let ret = 'name' in elt.$ ? elt.$.name : null
     let nameMap = {
       'Views (Exported from Drupal)': 'Views',
       'Class Model (Exported from Drupal)': 'ddi4_model',
       'ClassLibrary': 'ddi4_model', // minimize diffs
       'FunctionalViews': 'Views',
-      'xsd:anyUri': 'xsd:anyURI'
+      'xsd:anyUri': 'xsd:anyURI',
+      'xsd:anguage': 'xsd:language'
     }
     return ret in nameMap ? nameMap[ret] : ret
   }
 
-  function getValue (elt) {
+  function parseValue (elt) {
     return 'value' in elt.$ ? elt.$.value : null
   }
 
-  function getGeneral (elt) {
+  function parseGeneral (elt) {
     return 'general' in elt.$ ? elt.$.general : null
   }
 
   function normalizeType (type) {
+    if (!type) {
+      return type // pass undefined on
+    }
     if (type === 'xs:language') {
       return 'http://www.w3.org/2001/XMLSchema#language'
+    }
+    let umlp = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
+    let umld = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
+    if (type.startsWith(umlp)) {
+      return umld + type.substr(umlp.length)
     }
     return type
   }
@@ -211,7 +220,7 @@ function main () {
             let recurse = true
             if ('xmi:id' in elt.$) {
               let id = elt.$['xmi:id']
-              let name = getName(elt)
+              let name = parseName(elt)
               index[id] = { element: elt, parents: parents }
               let triple
 
@@ -239,7 +248,7 @@ function main () {
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    classHierarchy.add(getGeneral(elt.generalization[0]), name)
+                    classHierarchy.add(parseGeneral(elt.generalization[0]), name)
                     classes[id].superClasses.push(elt.generalization[0])
                   }
                   break
@@ -261,9 +270,9 @@ function main () {
                       id: id,
                       name: name,
                       relation: elt.type[0].$['xmi:idref'],
-                      attribute: elt.type[0].$['href'] || normalizeType(elt.type[0].$['xmi:type']),
-                      lower: getValue(elt.lowerValue[0]) || 0,
-                      upper: getValue(elt.upperValue[0]) || '*'
+                      attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
+                      lower: parseValue(elt.lowerValue[0]) || 0,
+                      upper: parseValue(elt.upperValue[0]) || '*'
                     }
                     classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
@@ -292,13 +301,13 @@ function main () {
                     id: id,
                     name: name,
                     values: elt.ownedLiteral.map(
-                      l => getName(l)
+                      l => parseName(l)
                     ),
                     parents: parents
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    throw Error("need to handle inherited enumeration " + getGeneral(elt.generalization[0]) + " " + name)
+                    throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
                   }
                   break
                 case 'uml:DataType':
@@ -313,7 +322,7 @@ function main () {
                   }
                   // record class hierarchy
                   if ('generalization' in elt) {
-                    throw Error("need to handle inherited datatype " + getGeneral(elt.generalization[0]) + " " + name)
+                    throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
                   }
                   break
                 case 'uml:Model':
@@ -551,7 +560,7 @@ function main () {
                   superClass =>
                     `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${classes[getGeneral(superClass)].name}"/>
+        <Class abbreviatedIRI="ddi:${classes[parseGeneral(superClass)].name}"/>
     </SubClassOf>`
                 )
               ).concat([
@@ -879,14 +888,14 @@ function main () {
             <type xmi:type="xs:language"/>
           </ownedAttribute>
    */
-  function expandPrefix (imALangauge) {
-    if (imALangauge === undefined) {
+  function expandPrefix (imALanguage) {
+    if (imALanguage === undefined) {
       return undefined
     }
-    if (imALangauge === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#langauge'
+    if (imALanguage === 'xs:language') {
+      return 'http://www.w3.org/2001/XMLSchema#language'
     }
-    throw Error('unexpected argument to expandPrefix(' + imALangauge + ')')
+    throw Error('unexpected argument to expandPrefix(' + imALanguage + ')')
   }
 }
 
