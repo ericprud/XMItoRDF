@@ -21,8 +21,8 @@ function main () {
     return ret in nameMap ? nameMap[ret] : ret
   }
 
-  function parseValue (elt) {
-    return 'value' in elt.$ ? elt.$.value : null
+  function parseValue (elt, deflt) { // 'default' is a reserved word
+    return 'value' in elt.$ ? elt.$.value : deflt
   }
 
   function parseGeneral (elt) {
@@ -156,16 +156,15 @@ function main () {
           'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
           '\n'
       ]
-      let index = {}
       // let realized = makeHierarchy()
       let root = getRootElement(xmiText)
       let parsedData = {}
       // parsedData.root = root
-      parsedData.myClasses = classes
-      parsedData.myProperties = properties
+      parsedData.classes = classes
+      parsedData.properties = properties
       parsedData.enums = enums
       parsedData.datatypes = datatypes
-      parsedData.hierarchy = classHierarchy.roots
+      parsedData.classHierarchy = classHierarchy.roots
       status.text('indexing...')
 
       let delay = {
@@ -208,8 +207,7 @@ function main () {
             enums: enums,
             datatypes: datatypes,
             triples: triples,
-            classHierarchy: classHierarchy,
-            index: index})
+            classHierarchy: classHierarchy})
 
           status.text('rendering structure...')
           window.setTimeout(delay.render, RENDER_DELAY)
@@ -221,7 +219,8 @@ function main () {
             if ('xmi:id' in elt.$) {
               let id = elt.$['xmi:id']
               let name = parseName(elt)
-              index[id] = { element: elt, parents: parents }
+              // Could keep id to elt map around with this:
+              // index[id] = { element: elt, parents: parents }
               let triple
 
               // record triples
@@ -246,10 +245,15 @@ function main () {
                     parents: parents,
                     superClasses: []
                   }
-                  // record class hierarchy
+
+                  // record class hierarchy (allows multiple inheritance)
                   if ('generalization' in elt) {
-                    classHierarchy.add(parseGeneral(elt.generalization[0]), name)
-                    classes[id].superClasses.push(elt.generalization[0])
+                    elt.generalization.forEach(
+                      superClassElt => {
+                        superClassId = parseGeneral(superClassElt)
+                        classHierarchy.add(superClassId, name)
+                        classes[id].superClasses.push(superClassId)
+                      })
                   }
                   break
                 case 'uml:Property':
@@ -271,8 +275,8 @@ function main () {
                       name: name,
                       relation: elt.type[0].$['xmi:idref'],
                       attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-                      lower: parseValue(elt.lowerValue[0]) || 0,
-                      upper: parseValue(elt.upperValue[0]) || '*'
+                      lower: parseValue(elt.lowerValue[0], 0),
+                      upper: parseValue(elt.upperValue[0], '*')
                     }
                     classes[parent].properties.push(propertyRecord)
                     if (!(name in properties)) {
@@ -560,7 +564,7 @@ function main () {
                   superClass =>
                     `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${classes[parseGeneral(superClass)].name}"/>
+        <Class abbreviatedIRI="ddi:${classes[superClass].name}"/>
     </SubClassOf>`
                 )
               ).concat([
