@@ -647,12 +647,18 @@ function main () {
         <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
     </SubClassOf>`
           )
-        ).concat([
-          `    <SubClassOf>
+        ).concat(
+          model.classes[classId].superClasses.find(
+            supercl => // if some superclass appears in the same package...
+              model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]] ===
+              model.packages[model.classes[supercl].parents[model.classes[supercl].parents.length - 1]]
+          )
+            ? []      // ... skip that package
+            : [`    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]].name}_Package"/>
     </SubClassOf>`
-        ]).join('\n')
+            ]).join('\n')
     ))
     owlm = owlm.concat(Object.keys(model.classes).map(
       className => 'Class: ddi:' + className + ' SubClassOf:\n' +
