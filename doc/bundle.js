@@ -7616,12 +7616,16 @@ module.exports = castPath;
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-function main () {
-  const TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
-  const RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
-  const BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
-  const UPPER_UNLIMITED = '*'
+// Convert DDI XMI to OWL and ShEx
 
+// Global configuration and control variables.
+var TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
+var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
+var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
+var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
+var UPPER_UNLIMITED = '*'
+
+function main () {
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
       term.toLowerCase() + '#parent_properties'
@@ -8267,7 +8271,8 @@ function main () {
           )
         ).concat(
           model.classes[classId].superClasses.find(
-            supercl => // if some superclass appears in the same package...
+            supercl =>
+              SUPPRESS_DUPLICATE_CLASSES && // if some superclass appears in the same package...
               model.packages[model.classes[classId].packages[model.classes[classId].packages.length - 1]] ===
               model.packages[model.classes[supercl].packages[model.classes[supercl].packages.length - 1]]
           )
