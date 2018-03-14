@@ -30,16 +30,32 @@ function main () {
     return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
   }
 
-  function parseViews (diagrams) {
-    return diagrams.map(
-      diagram => { return {
-        id: '$' in diagram ? diagram['$']['xmi:id'] : null,
-        name: diagram.model[0].$.package,
-        members: diagram.elements[0].element.map(
-          member => member.$.subject
-        )
-      }}
+  function parseEAViews (diagrams) {
+    return diagrams.filter(
+      diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
+    ).map(
+      diagram => {
+        return {
+          id: diagram['$']['xmi:id'],
+          name: diagram.model[0].$.package,
+          members: diagram.elements[0].element.map(
+            member => member.$.subject
+          )
+        }
+      }
     )
+  }
+
+  function parseCanonicalViews (elt) {
+    return elt.packagedElement.map(view => {
+      return {
+        id: view.$['xmi:id'],
+        name: parseName(view),
+        members: view.elementImport.map(
+          imp => imp.importedElement[0].$['xmi:idref']
+        )
+      }
+    })
   }
 
   function normalizeType (type) {
@@ -188,6 +204,45 @@ function main () {
           $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
         )
       )
+      let copy = strip(model, ['AgentRegistryView'])
+    }
+  }
+
+  function strip (model, viewLabels) {
+    if (viewLabels.constructor !== Array) {
+      viewLabels = [viewLabels]
+    }
+    let views = model.views.filter(
+      v => viewLabels.indexOf(v.name) !== -1
+    )
+    let classIds = views.reduce(
+      (classIds, view) =>
+        classIds.concat(view.members.reduce(
+          (x, member) => {
+            let parents = model.classHierarchy.parents[member]
+            return x.concat(member, parents.filter(
+              classId => x.indexOf(classId) === -1
+            ))
+          }, []))
+      , [])
+    let classes = classIds.reduce(
+      (classes, className) => addKey(classes, className, model.classes[className]), {}
+    )
+    let properties = Object.keys(model.properties).filter(
+      propName => model.properties[propName].sources.find(includedSource)
+    ).reduce(
+      (acc, propName) => {
+        let sources = model.properties[propName].sources.filter(includedSource)
+        return addKey(acc, propName, {
+          sources: sources,
+          uniformType: findMinimalTypes({sources: sources})
+        })
+      }, [])
+    return {}
+
+    function includedSource (source) {
+      // properties with a source in classIds
+      return classIds.indexOf(source.in) !== -1
     }
   }
 
@@ -201,7 +256,6 @@ function main () {
     let enums = {}
     let datatypes = {}
     let packages = {}
-    let views = []
 
     // return structure
     let model = {
@@ -210,22 +264,12 @@ function main () {
       properties: properties,
       enums: enums,
       datatypes: datatypes,
-      classHierarchy: classHierarchy.roots,
-      packageHierarchy: packageHierarchy.roots,
-      views: views
+      classHierarchy: classHierarchy,
+      packageHierarchy: packageHierarchy
     }
 
     // Build the model
     indexXML(document['xmi:XMI']['uml:Model'][0], [])
-    if (document['xmi:XMI']['xmi:Extension'] && document['xmi:XMI']['xmi:Extension'][0]['diagrams']) {
-      model.views = parseViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
-    } else {
-      model.views.forEach(
-        view => {
-          view.members = view.members.map(
-            memberId => classes[memberId].name)
-        })
-    }
 
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
@@ -245,24 +289,10 @@ function main () {
 
     Object.keys(properties).forEach(propName => {
       let p = properties[propName]
-      let s = p.sources.reduce((acc, s) => {
-        let t = s.attribute || s.relation
-        if (acc.length > 0 && acc.indexOf(t) === -1) {
-          // debugger;
-          // a.find(i => b.indexOf(i) !== -1)
-        }
-        return acc.indexOf(t) === -1 ? acc.concat(t) : acc
-      }, [])
-      p.uniformType = s
+      p.uniformType = findMinimalTypes(p)
     }, [])
 
-    console.dir({
-      classes: classes,
-      properties: properties,
-      enums: enums,
-      datatypes: datatypes,
-      triples: triples,
-      classHierarchy: classHierarchy})
+    console.dir(model)
     return model
 
     function indexXML (elt, parents) {
@@ -304,7 +334,7 @@ function main () {
               elt.generalization.forEach(
                 superClassElt => {
                   let superClassId = parseGeneral(superClassElt)
-                  classHierarchy.add(superClassId, name)
+                  classHierarchy.add(superClassId, id)
                   classes[id].superClasses.push(superClassId)
                 })
             }
@@ -387,25 +417,23 @@ function main () {
             break
           case 'uml:Model':
           case 'uml:Package':
-            if (name.endsWith("View")) {
-              if ('elementImport' in elt)
-              views.push({
-                id: id,
-                name: name,
-                members: elt.elementImport.map(
-                  imp => imp.importedElement[0].$['xmi:idref']
-                )
-              })
+            if (id === 'ddi4_views') {
+              model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
               recurse = false
-            } else {
-              packages[id] = {
-                name: name,
-                id: id,
-                parents: parents
-              }
+              break // elide EA views package in package hierarcy
+            }
+            if (id === 'DDI4-FunctionalViews') {
+              model.views = parseCanonicalViews(elt)
+              recurse = false
+              break // elide canonical views package in package hierarcy
+            }
+            packages[id] = {
+              name: name,
+              id: id,
+              parents: parents
             }
             if (parents.length) {
-              packageHierarchy.add(packages[parent].name, name)
+              packageHierarchy.add(parent, id)
             }
             break
             // Pass through to get to nested goodies.
@@ -545,23 +573,26 @@ function main () {
     console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
 
     // Render package hierarchy.
-    owlx = owlx.concat(walkHierarchy(
-      firstBranch(model.packageHierarchy), 'DDI_outer',
-      (c, p) => `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${c}_Package"/>
-        <Class abbreviatedIRI="ddi:${p}_Package"/>
+    let packages = firstBranch(model.packageHierarchy.roots)
+    owlx = owlx.concat(Object.keys(packages).map(
+      p => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.packages[p].name}_Package"/>
+        <Class abbreviatedIRI="ddi:Packages"/>
     </SubClassOf>`
     ))
 
     // Render view hierarchy.
     if ('views' in model) {
       owlx = owlx.concat(model.views.reduce(
-        (acc, view) => { return acc.concat(view.members.map(
+        (acc, view) => acc.concat([`    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${view.name}"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>`], view.members.map(
           member => `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${member}"/>
-        <Class abbreviatedIRI="ddi:${view.name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.classes[member].name}"/>
+        <Class abbreviatedIRI="ddi:${view.name}"/>
     </SubClassOf>`
-        ))}, []
+        )), []
       ))
     }
 
@@ -801,6 +832,19 @@ function main () {
       )))
   }
 
+  /** find the unique object types for a property
+   */
+  function findMinimalTypes (p) {
+    return p.sources.reduce((acc, s) => {
+      let t = s.attribute || s.relation
+      if (acc.length > 0 && acc.indexOf(t) === -1) {
+        // debugger;
+        // a.find(i => b.indexOf(i) !== -1)
+      }
+      return acc.indexOf(t) === -1 ? acc.concat(t) : acc
+    }, [])
+  }
+
   function makeHierarchy () {
     let roots = {}
     let parents = {}
@@ -863,14 +907,18 @@ function main () {
     t.add('G', 'H')
     console.dir(t)
   }
-  function walkHierarchy (n, p, f) {
+  function walkHierarchy (n, f, p) {
     return Object.keys(n).reduce((ret, k) => {
-      return ret.concat(walkHierarchy(n[k], k, f), f(k, p))
+      return ret.concat(
+        walkHierarchy(n[k], f, k),
+        p ? f(k, p) : []) // outer invocation can have null parent
     }, [])
   }
 
   function structureToListItems (object, into) {
-    into.append(Object.keys(object).map(k => {
+    into.append(Object.keys(object).filter(
+      k => typeof object[k] !== 'function'
+    ).map(k => {
       let elt = object[k]
       let title = object.constructor === Array
         ? ''
