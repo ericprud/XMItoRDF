@@ -303,7 +303,7 @@ function main () {
         let id = elt.$['xmi:id']
         let name = parseName(elt)
         // Could keep id to elt map around with this:
-        // index[id] = { element: elt, parents: parents }
+        // index[id] = { element: elt, packages: parents }
         let triple
 
         // record triples
@@ -325,7 +325,7 @@ function main () {
               properties: [],
               realizes: [],
               others: [],
-              parents: parents,
+              packages: parents,
               superClasses: []
             }
 
@@ -393,7 +393,7 @@ function main () {
               values: elt.ownedLiteral.map(
                 l => parseName(l)
               ),
-              parents: parents
+              packages: parents
             }
             // record class hierarchy
             if ('generalization' in elt) {
@@ -408,7 +408,7 @@ function main () {
             datatypes[id] = {
               name: name,
               id: id,
-              parents: parents
+              packages: parents
             }
             // record class hierarchy
             if ('generalization' in elt) {
@@ -430,7 +430,7 @@ function main () {
             packages[id] = {
               name: name,
               id: id,
-              parents: parents
+              packages: parents
             }
             if (parents.length) {
               packageHierarchy.add(parent, id)
@@ -650,13 +650,13 @@ function main () {
         ).concat(
           model.classes[classId].superClasses.find(
             supercl => // if some superclass appears in the same package...
-              model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]] ===
-              model.packages[model.classes[supercl].parents[model.classes[supercl].parents.length - 1]]
+              model.packages[model.classes[classId].packages[model.classes[classId].packages.length - 1]] ===
+              model.packages[model.classes[supercl].packages[model.classes[supercl].packages.length - 1]]
           )
-            ? []      // ... skip that package
+            ? [] //       ... skip that package
             : [`    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].parents[model.classes[classId].parents.length - 1]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[model.classes[classId].packages.length - 1]].name}_Package"/>
     </SubClassOf>`
             ]).join('\n')
     ))
@@ -696,7 +696,7 @@ function main () {
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].parents[model.enums[id].parents.length - 1]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].packages[model.enums[id].packages.length - 1]].name}_Package"/>
     </SubClassOf>`).join('\n')))
 
     // Add datatypes.
@@ -710,7 +710,7 @@ function main () {
     </DatatypeDefinition>` /* + `
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
-        <Class abbreviatedIRI="ddi:${model.datatypes[id].parents[model.datatypes[id].parents.length - 1]}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.datatypes[id].packages[model.datatypes[id].packages.length - 1]}_Package"/>
     </SubClassOf>` */).join('\n')))
 
     // Terminate the various forms:
