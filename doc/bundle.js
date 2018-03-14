@@ -7620,7 +7620,7 @@ module.exports = castPath;
 
 // Global configuration and control variables.
 var TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
-var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). .css('opacity', .99)
+var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). Could try: .css('opacity', .99)
 var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
 var UPPER_UNLIMITED = '*'
@@ -7764,19 +7764,19 @@ function main () {
     let progress = $('<ul/>')
     div.append(progress)
 
-    xml2js.Parser().parseString(xmiText, function (err, result) {
-      if (err) {
-        console.error(err)
-      } else {
-        document = result
-        status.text('parsing UML...')
-        window.setTimeout(parse, RENDER_DELAY)
-      }
-    })
+    status.text('parsing UML...')
+    window.setTimeout(parse, RENDER_DELAY)
 
     function parse () {
-      status.text('indexing...')
-      window.setTimeout(index, RENDER_DELAY)
+      xml2js.Parser().parseString(xmiText, function (err, result) {
+        if (err) {
+          console.error(err)
+        } else {
+          document = result
+          status.text('indexing...')
+          window.setTimeout(index, RENDER_DELAY)
+        }
+      })
     }
 
     function index () {
