@@ -7801,6 +7801,8 @@ function main () {
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
       addTriples(triples, diagnostics)
+      let allViews = strip(model, model.views.map(v => v.name))
+      console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
 
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
@@ -7826,7 +7828,13 @@ function main () {
           $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
         )
       )
-      let copy = strip(model, ['AgentRegistryView'])
+
+      model.views.map(v => v.name).forEach(
+        viewName => {
+          let s = strip(model, viewName)
+          console.log(viewName, s, Object.keys(s.classes).length, Object.keys(s.properties).length)
+        }
+      )
     }
   }
 
@@ -7834,33 +7842,143 @@ function main () {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
-    let views = model.views.filter(
-      v => viewLabels.indexOf(v.name) !== -1
-    )
-    let classIds = views.reduce(
+
+    let ret = {
+      packages: {},
+      classes: {},
+      properties: {},
+      enums: {},
+      datatypes: {},
+      classHierarchy: makeHierarchy(),
+      packageHierarchy: makeHierarchy(),
+      views: model.views.filter(
+        v => viewLabels.indexOf(v.name) !== -1
+      )
+    }
+
+    // ret.enums = Object.keys(model.enums).forEach(
+    //   enumId => copyEnum(ret, model, enumId)
+    // )
+    // ret.datatypes = Object.keys(model.datatypes).forEach(
+    //   datatypeId => copyDatatype(ret, model, datatypeId)
+    // )
+
+    let classIds = ret.views.reduce(
       (classIds, view) =>
         classIds.concat(view.members.reduce(
           (x, member) => {
-            let parents = model.classHierarchy.parents[member]
+            let parents = model.classHierarchy.parents[member] || [] // has no parents
             return x.concat(member, parents.filter(
               classId => x.indexOf(classId) === -1
             ))
           }, []))
       , [])
-    let classes = classIds.reduce(
-      (classes, className) => addKey(classes, className, model.classes[className]), {}
-    )
-    let properties = Object.keys(model.properties).filter(
-      propName => model.properties[propName].sources.find(includedSource)
-    ).reduce(
-      (acc, propName) => {
-        let sources = model.properties[propName].sources.filter(includedSource)
-        return addKey(acc, propName, {
-          sources: sources,
-          uniformType: findMinimalTypes({sources: sources})
-        })
-      }, [])
-    return {}
+    addDependentClasses(classIds)
+
+    return ret
+    // let properties = Object.keys(model.properties).filter(
+    //   propName => model.properties[propName].sources.find(includedSource)
+    // ).reduce(
+    //   (acc, propName) => {
+    //     let sources = model.properties[propName].sources.filter(includedSource)
+    //     return addKey(acc, propName, {
+    //       sources: sources,
+    //       uniformType: findMinimalTypes(ret, {sources: sources})
+    //     })
+    //   }, [])
+
+    function copyEnum (to, from, enumId) {
+      let old = from.enums[enumId]
+      if (old.id in to.enums) {
+        return
+      }
+
+      let e = {
+        id: old.id,
+        name: old.name,
+        values: old.values.slice(),
+        packages: old.packages.slice()
+      }
+      addPackages(to, model, e.packages)
+      to.enums[enumId] = e
+    }
+
+    function copyDatatype (to, from, datatypeId) {
+      let old = from.datatypes[datatypeId]
+      if (old.id in to.datatypes) {
+        return
+      }
+
+      let e = {
+        id: old.id,
+        name: old.name,
+        packages: old.packages.slice()
+      }
+      addPackages(to, model, e.packages)
+      to.datatypes[datatypeId] = e
+    }
+
+    function addDependentClasses (classIds) {
+      classIds.forEach(
+        classId => {
+          if (classId in ret.classes) { // a recursive walk of the superClasses
+            return //                      may result in redundant insertions.
+          }
+
+          let old = model.classes[classId]
+          let dependentClassIds = []
+          let c = {
+            id: old.id,
+            name: old.name,
+            properties: [],
+            realizes: old.realizes.slice(), // slice() shallow-copies and array
+            others: old.others.slice(),
+            packages: old.packages.slice(),
+            superClasses: old.superClasses.slice()
+          } // was deepCopy(old)
+          ret.classes[classId] = c
+          old.properties.forEach(
+            p => {
+              let id = p.relation || p.attribute
+              if (id in model.enums) {
+                copyEnum(ret, model, id)
+              }
+              if (id in model.datatypes) {
+                copyDatatype(ret, model, id)
+              }
+              if (id in model.classes) {
+                dependentClassIds.push(id)
+              }
+              addProperty(ret, c, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper)
+            }
+          )
+          addPackages(ret, model, c.packages)
+          c.superClasses.forEach(
+            suClass =>
+              ret.classHierarchy.add(suClass, c.id)
+          )
+          addDependentClasses(dependentClassIds.concat(c.superClasses))
+        }
+      )
+    }
+
+    function addPackages (to, from, packageIds) {
+      for (let i = 0; i < packageIds.length; ++i) {
+        let pid = packageIds[i]
+        let old = from.packages[pid]
+        let p = pid in to.packages ? to.packages[pid] : {
+          name: old.name,
+          id: pid,
+          packages: old.packages.slice()
+        }
+        if (!(pid in to.packages)) {
+          to.packages[pid] = p
+        }
+        if (i > 0) { // add [0],[1]  [1],[2]  [2],[3]...
+          to.packageHierarchy.add(packageIds[i - 1], pid)
+        }
+      }
+    }
 
     function includedSource (source) {
       // properties with a source in classIds
@@ -7871,13 +7989,13 @@ function main () {
   function parseModel (document, triples) {
     // makeHierarchy.test()
     // convenience variables
-    let classHierarchy = makeHierarchy()
-    let packageHierarchy = makeHierarchy()
+    let packages = {}
     let classes = {}
     let properties = {}
     let enums = {}
     let datatypes = {}
-    let packages = {}
+    let classHierarchy = makeHierarchy()
+    let packageHierarchy = makeHierarchy()
 
     // return structure
     let model = {
@@ -7899,19 +8017,20 @@ function main () {
       p => properties[p].sources.forEach(
         s => {
           if (s.relation in datatypes) {
-            console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
-            s.attribute = datatypes[s.relation].name
+            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
+            // s.attribute = datatypes[s.relation].name
+            s.attribute = s.relation
             s.relation = undefined
           } else if (s.relation in classes) {
-            s.relation = classes[s.relation].name
+            // s.relation = classes[s.relation].name
           } else if (s.relation in enums) {
-            s.relation = enums[s.relation].name
+            // s.relation = enums[s.relation].name
           }
         }))
 
     Object.keys(properties).forEach(propName => {
       let p = properties[propName]
-      p.uniformType = findMinimalTypes(p)
+      p.uniformType = findMinimalTypes(model, p)
     }, [])
 
     console.dir(model)
@@ -7962,43 +8081,30 @@ function main () {
             }
             break
           case 'uml:Property':
-            let klass = classes[parent].name
-            if (name === klass) {
+            let className = classes[parent].name
+            if (name === className) {
               if (triple[2] === 'realizes') {
-                classes[klass].realizes.push(elt.type[0].$['xmi:idref'])
+                classes[className].realizes.push(elt.type[0].$['xmi:idref'])
               } else {
-                classes[klass].others.push(triple[2])
+                classes[className].others.push(triple[2])
               }
             } else if (!name) {
+              // e.g. canonical *-owned-attribute-n properties.
               // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
             } else if (name.charAt(0).match(/[A-Z]/)) {
               throw Error('unexpected property name ' + name + ' in ' + parent)
             } else {
-              let propertyRecord = {
-                in: klass,
-                id: id,
-                name: name,
-                relation: elt.type[0].$['xmi:idref'],
-                attribute: normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-                lower: parseValue(elt.lowerValue[0], 0),
-                upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
-              }
-              if (propertyRecord.upper === '-1') {
-                propertyRecord.upper = UPPER_UNLIMITED
-              }
-              classes[parent].properties.push(propertyRecord)
-              if (!(name in properties)) {
-                properties[name] = {sources: []}
-              }
-              properties[name].sources.push(propertyRecord)
+              addProperty(model, model.classes[parent], className, id, name, elt.type[0].$['xmi:idref'],
+                normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
+                parseValue(elt.lowerValue[0], 0),
+                parseValue(elt.upperValue[0], UPPER_UNLIMITED))
             }
-
             if (triple) {
               if (['source', 'association'].indexOf(triple[3]) === -1) {
                 console.warn('unknown relationship: ', triple[3])
               }
-              if (triple[1] !== klass) {
-                console.warn('parent mismatch: ', triple, klass)
+              if (triple[1] !== className) {
+                console.warn('parent mismatch: ', triple, className)
               }
             }
             break
@@ -8049,6 +8155,10 @@ function main () {
               recurse = false
               break // elide canonical views package in package hierarcy
             }
+            if (id.match(/Pattern*/)) {
+              recurse = false
+              break // skip patterns
+            }
             packages[id] = {
               name: name,
               id: id,
@@ -8074,6 +8184,26 @@ function main () {
         }
       }
     }
+  }
+
+  function addProperty (model, classRecord, className, id, name, relation, attribute, lower, upper) {
+    let propertyRecord = {
+      in: className,
+      id: id,
+      name: name,
+      relation: relation,
+      attribute: attribute,
+      lower: lower,
+      upper: upper
+    }
+    if (propertyRecord.upper === '-1') {
+      propertyRecord.upper = UPPER_UNLIMITED
+    }
+    classRecord.properties.push(propertyRecord)
+    if (!(name in model.properties)) {
+      model.properties[name] = {sources: []}
+    }
+    model.properties[name].sources.push(propertyRecord)
   }
 
   function reusedProperties (classes, into) {
@@ -8223,12 +8353,16 @@ function main () {
       propName => {
         let p = model.properties[propName]
         let t = isObject(p) ? 'Object' : 'Data'
+        let src = p.sources[0]
+        let dt = isObject(p)
+          ? src.relation in model.classes ? model.classes[src.relation] : model.enums[src.relation]
+          : src.attribute in model.datatypes ? model.datatypes[src.attribute] : { name: src.attribute }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
     <${t}PropertyRange>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
-        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(p.sources[0][isObject(p) ? 'relation' : 'attribute'])}"/>
+        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(dt.name)}"/>
     </${t}PropertyRange>`
       }
     ))
@@ -8252,7 +8386,10 @@ function main () {
             let propName = propertyRecord.name
             let p = model.properties[propName]
             let t = isObject(p) ? 'Object' : 'Data'
-            let type = propName in xHash ? 'owl:Thing' : pname(p.uniformType[0])
+            let dt = isObject(p)
+              ? propertyRecord.relation in model.classes ? model.classes[propertyRecord.relation] : model.enums[propertyRecord.relation]
+              : propertyRecord.attribute in model.datatypes ? model.datatypes[propertyRecord.attribute] : { name: propertyRecord.attribute }
+            let type = propName in xHash ? 'owl:Thing' : pname(dt.name)
             return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <${t}AllValuesFrom>
@@ -8463,7 +8600,7 @@ function main () {
 
   /** find the unique object types for a property
    */
-  function findMinimalTypes (p) {
+  function findMinimalTypes (model, p) {
     return p.sources.reduce((acc, s) => {
       let t = s.attribute || s.relation
       if (acc.length > 0 && acc.indexOf(t) === -1) {
@@ -8625,6 +8762,10 @@ function main () {
     let toAdd = {}
     toAdd[prop] = val
     return Object.assign({}, obj, toAdd)
+  }
+
+  function deepCopy (obj) {
+    return JSON.parse(JSON.stringify(obj)) // startlingly efficient
   }
 
   // Find the first nested object which has multiple children.
