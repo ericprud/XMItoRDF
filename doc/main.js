@@ -431,6 +431,10 @@ function main () {
               recurse = false
               break // elide canonical views package in package hierarcy
             }
+          if (id.match(/Pattern*/)) {
+              recurse = false
+              break // skip patterns
+            }
             packages[id] = {
               name: name,
               id: id,
