@@ -7652,6 +7652,59 @@ function main () {
     return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
   }
 
+  function parseProperties (model, elts, className, triples) {
+    let ret = {
+      properties: [],
+      associations: [],
+      realizes: [],
+      others: []
+    }
+    elts.forEach(elt => {
+      let type = elt.$['xmi:type']
+      console.assert(type === 'uml:Property')
+      let id = elt.$['xmi:id']
+      let name = parseName(elt)
+      let triple
+
+      // record triples
+      if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
+        if (!(triple[2] in triples)) {
+          triples[triple[2]] = []
+        }
+        triples[triple[2]].push(id)
+      }
+      if (name === className) {
+        if (triple[2] === 'realizes') {
+          ret.realizes.push(elt.type[0].$['xmi:idref'])
+        } else {
+          ret.others.push(triple[2])
+        }
+      } else if (!name) {
+        // e.g. canonical *-owned-attribute-n properties.
+        // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
+      } else if (name.charAt(0).match(/[A-Z]/)) {
+        throw Error('unexpected property name ' + name + ' in ' + className)
+      } else {
+        ret.properties.push(
+          addProperty(
+            model, className, id, name, elt.type[0].$['xmi:idref'],
+            normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
+            parseValue(elt.lowerValue[0], 0),
+            parseValue(elt.upperValue[0], UPPER_UNLIMITED))
+        )
+      }
+      if (triple) {
+        if (['source', 'association'].indexOf(triple[3]) === -1) {
+          console.warn('unknown relationship: ', triple[3])
+        }
+        if (triple[1] !== className) {
+          console.warn('parent mismatch: ', triple, className)
+        }
+      }
+    })
+    return ret
+  }
+
   function parseEAViews (diagrams) {
     return diagrams.filter(
       diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
@@ -7949,7 +8002,7 @@ function main () {
               if (id in model.classes) {
                 dependentClassIds.push(id)
               }
-              addProperty(ret, c, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper)
+              c.properties.push(addProperty(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
             }
           )
           addPackages(ret, model, c.packages)
@@ -8009,7 +8062,7 @@ function main () {
     }
 
     // Build the model
-    indexXML(document['xmi:XMI']['uml:Model'][0], [])
+    visitPackage(document['xmi:XMI']['uml:Model'][0], [])
 
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
@@ -8036,36 +8089,27 @@ function main () {
     console.dir(model)
     return model
 
-    function indexXML (elt, parents) {
+    function visitPackage (elt, parents) {
       let parent = parents[0]
       let type = elt.$['xmi:type']
-      let recurse = true
       if ('xmi:id' in elt.$) {
         let id = elt.$['xmi:id']
         let name = parseName(elt)
         // Could keep id to elt map around with this:
         // index[id] = { element: elt, packages: parents }
-        let triple
-
-        // record triples
-        if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
-          if (!(triple[2] in triples)) {
-            triples[triple[2]] = []
-          }
-          triples[triple[2]].push(id)
-        }
 
         switch (type) {
           case 'uml:Class':
             if (id in classes) {
               throw Error('already seen class id ' + id)
             }
+            let ownedAttrs = parseProperties(model, elt.ownedAttribute || [], name, triples) // SentinelConceptualDomain has no props
             classes[id] = {
               id: id,
               name: name,
-              properties: [],
-              realizes: [],
-              others: [],
+              properties: ownedAttrs.properties,
+              realizes: ownedAttrs.realizes,
+              others: ownedAttrs.others,
               packages: parents,
               superClasses: []
             }
@@ -8079,37 +8123,6 @@ function main () {
                   classes[id].superClasses.push(superClassId)
                 })
             }
-            break
-          case 'uml:Property':
-            let className = classes[parent].name
-            if (name === className) {
-              if (triple[2] === 'realizes') {
-                classes[className].realizes.push(elt.type[0].$['xmi:idref'])
-              } else {
-                classes[className].others.push(triple[2])
-              }
-            } else if (!name) {
-              // e.g. canonical *-owned-attribute-n properties.
-              // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
-            } else if (name.charAt(0).match(/[A-Z]/)) {
-              throw Error('unexpected property name ' + name + ' in ' + parent)
-            } else {
-              addProperty(model, model.classes[parent], className, id, name, elt.type[0].$['xmi:idref'],
-                normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-                parseValue(elt.lowerValue[0], 0),
-                parseValue(elt.upperValue[0], UPPER_UNLIMITED))
-            }
-            if (triple) {
-              if (['source', 'association'].indexOf(triple[3]) === -1) {
-                console.warn('unknown relationship: ', triple[3])
-              }
-              if (triple[1] !== className) {
-                console.warn('parent mismatch: ', triple, className)
-              }
-            }
-            break
-          case 'uml:Association':
-            recurse = false
             break
           case 'uml:Enumeration':
             if (id in enums) {
@@ -8145,6 +8158,7 @@ function main () {
             break
           case 'uml:Model':
           case 'uml:Package':
+            let recurse = true
             if (id === 'ddi4_views') {
               model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
               recurse = false
@@ -8163,26 +8177,27 @@ function main () {
             if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
               packageHierarchy.add(parent, id)
             }
+            if (recurse) {
+              // walk desendents
+              let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
+              Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
+                elt[k].forEach(sub => {
+                  visitPackage(sub, [id].concat(parents))
+                })
+              })
+            }
             break
             // Pass through to get to nested goodies.
+          case 'uml:Association':
+            break
           default:
             console.log('need handler for ' + type)
-        }
-
-        if (recurse) {
-          // walk desendents
-          let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
-          Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
-            elt[k].forEach(sub => {
-              indexXML(sub, [id].concat(parents))
-            })
-          })
         }
       }
     }
   }
 
-  function addProperty (model, classRecord, className, id, name, relation, attribute, lower, upper) {
+  function addProperty (model, className, id, name, relation, attribute, lower, upper) {
     let propertyRecord = {
       in: className,
       id: id,
@@ -8195,11 +8210,11 @@ function main () {
     if (propertyRecord.upper === '-1') {
       propertyRecord.upper = UPPER_UNLIMITED
     }
-    classRecord.properties.push(propertyRecord)
     if (!(name in model.properties)) {
       model.properties[name] = {sources: []}
     }
     model.properties[name].sources.push(propertyRecord)
+    return propertyRecord
   }
 
   function reusedProperties (classes, into) {
