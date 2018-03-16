@@ -357,7 +357,7 @@ function main () {
           to.packages[pid] = p
         }
         if (i > 0) { // add [0],[1]  [1],[2]  [2],[3]...
-          to.packageHierarchy.add(packageIds[i - 1], pid)
+          to.packageHierarchy.add(pid, packageIds[i - 1])
         }
       }
     }
@@ -419,7 +419,7 @@ function main () {
     return model
 
     function indexXML (elt, parents) {
-      let parent = parents[parents.length - 1]
+      let parent = parents[0]
       let type = elt.$['xmi:type']
       let recurse = true
       if ('xmi:id' in elt.$) {
@@ -537,16 +537,12 @@ function main () {
               recurse = false
               break // elide canonical views package in package hierarcy
             }
-            if (id.match(/Pattern*/)) {
-              recurse = false
-              break // skip patterns
-            }
             packages[id] = {
               name: name,
               id: id,
               packages: parents
             }
-            if (parents.length) {
+            if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
               packageHierarchy.add(parent, id)
             }
             break
@@ -560,7 +556,7 @@ function main () {
           let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
           Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
             elt[k].forEach(sub => {
-              indexXML(sub, parents.concat(id))
+              indexXML(sub, [id].concat(parents))
             })
           })
         }
@@ -757,7 +753,9 @@ function main () {
     ))
 
     // Create Classes/Shapes
-    owlx = owlx.concat(Object.keys(model.classes).map(
+    owlx = owlx.concat(Object.keys(model.classes).filter(
+      classId => !model.classes[classId].packages[0].match(/Pattern/)
+    ).map(
       classId => `    <Declaration>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
     </Declaration>\n` +
@@ -792,37 +790,52 @@ function main () {
           model.classes[classId].superClasses.find(
             supercl =>
               SUPPRESS_DUPLICATE_CLASSES && // if some superclass appears in the same package...
-              model.packages[model.classes[classId].packages[model.classes[classId].packages.length - 1]] ===
-              model.packages[model.classes[supercl].packages[model.classes[supercl].packages.length - 1]]
+              model.classes[classId].packages[0] === model.classes[supercl].packages[0]
           )
             ? [] //       ... skip that package
             : [`    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[model.classes[classId].packages.length - 1]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
             ]).join('\n')
     ))
-    owlm = owlm.concat(Object.keys(model.classes).map(
-      className => 'Class: ddi:' + className + ' SubClassOf:\n' +
-        model.classes[className].properties.map(
+    owlm = owlm.concat(Object.keys(model.classes).filter(
+      classId => !model.classes[classId].packages[0].match(/Pattern/)
+    ).map(
+      classId => 'Class: ddi:' + classId + ' SubClassOf:\n' +
+        model.classes[classId].properties.map(
           propertyRecord => {
+            let propId = propertyRecord.id
             let propName = propertyRecord.name
             let type = propName in xHash ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
             return '  ddi:' + propName + ' only ' + type
           }
         ).join(',\n')
     ))
-    shexc = shexc.concat(Object.keys(model.classes).map(
-      className => 'ddi:' + className + ' {\n' +
-        model.classes[className].properties.map(
-          propertyRecord => {
-            let propName = propertyRecord.name
-            let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
-            let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
-            let card = shexCardinality(propertyRecord)
-            return '  ddi:' + propName + ' ' + refChar + type + ' ' + card
-          }
-        ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(className) + '>'
+    shexc = shexc.concat(Object.keys(model.classes).filter(
+      classId => !model.classes[classId].packages[0].match(/Pattern/)
+    ).map(
+      classId => {
+        let classRecord = model.classes[classId]
+        return 'ddi:' + classRecord.name +
+          classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + pname(name)).join('') +
+          ' {\n' +
+          classRecord.properties.map(
+            propertyRecord => {
+              let propId = propertyRecord.id
+              let propName = propertyRecord.name
+              let p = model.properties[propName]
+              let use = p.sources.find(s => s.id.indexOf(classId) === 0)
+              let dt = isObject(p)
+                ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
+                : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+              let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
+              let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
+              let card = shexCardinality(use)
+              return '  ddi:' + propName + ' ' + refChar + pname(dt.name) + ' ' + card
+            }
+          ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(classId) + '>'
+      }
     ))
 
     // Enumerate enumerations (enumeratively).
@@ -838,7 +851,7 @@ function main () {
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].packages[model.enums[id].packages.length - 1]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].packages[0]].name}_Package"/>
     </SubClassOf>`).join('\n')))
 
     // Add datatypes.
@@ -852,7 +865,7 @@ function main () {
     </DatatypeDefinition>` /* + `
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
-        <Class abbreviatedIRI="ddi:${model.datatypes[id].packages[model.datatypes[id].packages.length - 1]}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.datatypes[id].packages[0]}_Package"/>
     </SubClassOf>` */).join('\n')))
 
     // Terminate the various forms:
@@ -864,7 +877,7 @@ function main () {
 
   function shexCardinality (propertyRecord) {
     let lower = parseInt(propertyRecord.lower || 0)
-    let upper = parseInt(propertyRecord.upper || -1)
+    let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
     if (lower === 1 && upper === 1) {
       return ''
     } else if (lower === 1 && upper === -1) {
