@@ -59,11 +59,14 @@ function main () {
         }
         triples[triple[2]].push(id)
       }
-      if (name === className) {
-        if (triple[2] === 'realizes') {
-          ret.realizes.push(elt.type[0].$['xmi:idref'])
-        } else {
-          ret.others.push(triple[2])
+      let association = parseAssociation(elt)
+      if (association) {
+        if (triple) {
+          if (triple[2] === 'realizes') {
+            ret.realizes.push(elt.type[0].$['xmi:idref'])
+          } else {
+            ret.others.push(triple[2])
+          }
         }
         /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
              <type xmi:idref="Agent"/>
@@ -807,7 +810,6 @@ function main () {
         }
       })
 
-
     // Declare properties
     owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
       propName => {
@@ -1250,8 +1252,8 @@ function main () {
   }
 
   function emptyObject (obj) {
-    for (var x in obj) { return false; }
-    return true;
+    for (var x in obj) { return false }
+    return true
   }
 
   // Find the first nested object which has multiple children.

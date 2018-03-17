@@ -7652,10 +7652,14 @@ function main () {
     return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
   }
 
+  function parseAssociation (elt) {
+    return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
+  }
+
   function parseProperties (model, elts, className, triples) {
     let ret = {
       properties: [],
-      associations: [],
+      associations: {},
       realizes: [],
       others: []
     }
@@ -7673,11 +7677,27 @@ function main () {
         }
         triples[triple[2]].push(id)
       }
-      if (name === className) {
-        if (triple[2] === 'realizes') {
-          ret.realizes.push(elt.type[0].$['xmi:idref'])
-        } else {
-          ret.others.push(triple[2])
+      let association = parseAssociation(elt)
+      if (association) {
+        if (triple) {
+          if (triple[2] === 'realizes') {
+            ret.realizes.push(elt.type[0].$['xmi:idref'])
+          } else {
+            ret.others.push(triple[2])
+          }
+        }
+        /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
+             <type xmi:idref="Agent"/>
+             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
+             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
+           </ownedAttribute> */
+        ret.associations[id] = {
+          in: className,
+          id: id,
+          name: name,
+          type: elt.type[0].$['xmi:idref'],
+          lower: parseValue(elt.lowerValue[0], 0),
+          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
         }
       } else if (!name) {
         // e.g. canonical *-owned-attribute-n properties.
@@ -7882,6 +7902,7 @@ function main () {
         )
       )
 
+      console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       model.views.map(v => v.name).forEach(
         viewName => {
           let s = strip(model, viewName)
@@ -8050,6 +8071,9 @@ function main () {
     let classHierarchy = makeHierarchy()
     let packageHierarchy = makeHierarchy()
 
+    let associations = {}
+    let fixups = {}
+
     // return structure
     let model = {
       packages: packages,
@@ -8063,6 +8087,16 @@ function main () {
 
     // Build the model
     visitPackage(document['xmi:XMI']['uml:Model'][0], [])
+
+    Object.keys(associations).forEach(
+      assocId => {
+        let a = associations[assocId]
+        let f = fixups[a.from]
+        let c = classes[f.classId]
+        let aref = c.associations[a.from]
+        c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
+      }
+    )
 
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
@@ -8103,16 +8137,25 @@ function main () {
             if (id in classes) {
               throw Error('already seen class id ' + id)
             }
-            let ownedAttrs = parseProperties(model, elt.ownedAttribute || [], name, triples) // SentinelConceptualDomain has no props
-            classes[id] = {
+            let ownedAttrs = parseProperties(
+              model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
+              name, triples)
+
+            classes[id] = Object.assign({
               id: id,
-              name: name,
-              properties: ownedAttrs.properties,
-              realizes: ownedAttrs.realizes,
-              others: ownedAttrs.others,
+              name: name
+            }, ownedAttrs, {
               packages: parents,
               superClasses: []
-            }
+            })
+            Object.keys(ownedAttrs.associations).forEach(
+              assocSourceId => {
+                fixups[assocSourceId] = {
+                  classId: id,
+                  realizes: ownedAttrs.realizes[assocSourceId] // !!
+                }
+              }
+            )
 
             // record class hierarchy (allows multiple inheritance)
             if ('generalization' in elt) {
@@ -8189,6 +8232,24 @@ function main () {
             break
             // Pass through to get to nested goodies.
           case 'uml:Association':
+            let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
+            associations[id] = {
+              id: id,
+              name: name,
+              from: from
+              // type: elt.ownedEnd[0].type[0].$['xmi:idref']
+            }
+            /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
+                 <name>member</name>
+                 <memberEnd xmi:idref="AgentIndicator-member-source"/>
+                 <memberEnd xmi:idref="AgentIndicator-member-target"/>
+                 <ownedEnd xmi:id="AgentIndicator-member-target" xmi:type="uml:Property">
+                   <association xmi:idref="AgentIndicator-member-association"/>
+                   <type xmi:idref="AgentIndicator"/>
+                   <lower><value>1</value></lowerValue>
+                   <upper><value>1</value></uppervalue>
+                 </ownedEnd>
+               </packagedElement> */
             break
           default:
             console.log('need handler for ' + type)
@@ -8359,6 +8420,14 @@ function main () {
       ))
     }
 
+    // Missing classes expected to be repaired.
+    ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment'].forEach(
+      classId => {
+        if (!(classId in model)) { // !!
+          model.classes[classId] = { name: classId, packages: ['FooPattern'] }
+        }
+      })
+
     // Declare properties
     owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
       propName => {
@@ -8461,7 +8530,11 @@ function main () {
               let use = p.sources.find(s => s.id.indexOf(classId) === 0)
               let dt = isObject(p)
                 ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-                : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+                  : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+              if (dt === undefined) {
+                console.log(use.relation)
+                return ''
+              }
               let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
               let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
               let card = shexCardinality(use)
@@ -8794,6 +8867,11 @@ function main () {
 
   function deepCopy (obj) {
     return JSON.parse(JSON.stringify(obj)) // startlingly efficient
+  }
+
+  function emptyObject (obj) {
+    for (var x in obj) { return false }
+    return true
   }
 
   // Find the first nested object which has multiple children.
