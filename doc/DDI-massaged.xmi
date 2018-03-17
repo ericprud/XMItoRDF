@@ -542,11 +542,6 @@
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="BusinessProcessCondition" xmi:id="BusinessProcessCondition" visibility="package" >
-          <ownedAttribute xmi:type="uml:Property" name="dataset" xmi:id="BusinessProcessCondition_dataset">
-            <type xmi:idref="LogicalRecordIndicator"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_dataset_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_dataset_upper" value="1"/>
-          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="sql" xmi:id="BusinessProcessCondition_sql">
             <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_sql_lower"/>
@@ -562,11 +557,20 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_dataDescription_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BusinessProcessCondition_dataDescription_upper" value="-1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="annotation" xmi:id="BusinessProcessCondition_annotation">
-            <type xmi:idref="Annotation"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_annotation_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_annotation_upper" value="1"/>
+          <ownedAttribute xmi:type="uml:Property" name="BusinessProcessCondition" xmi:id="BusinessProcessCondition_usesLogicalRecord_source" association="BusinessProcessCondition_usesLogicalRecord_association">
+            <type xmi:idref="LogicalRecord"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_usesLogicalRecord_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BusinessProcessCondition_usesLogicalRecord_upper" value="-1"/>
           </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="BusinessProcessCondition_usesLogicalRecord_association" name="usesLogicalRecord">
+          <memberEnd xmi:idref="BusinessProcessCondition_usesLogicalRecord_source"/>
+          <memberEnd xmi:idref="BusinessProcessCondition_usesLogicalRecord_target"/>
+          <ownedEnd xmi:id="BusinessProcessCondition_usesLogicalRecord_target" xmi:type="uml:Property" association="BusinessProcessCondition_usesLogicalRecord_association" >
+            <type xmi:idref="BusinessProcessCondition"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_usesLogicalRecord_packagedElement_lower"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="BusinessProcessCondition_usesLogicalRecord_packagedElement_upper" value="1"/>
+          </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="BusinessProcessIndicator" xmi:id="BusinessProcessIndicator" visibility="package" >
           <ownedAttribute xmi:type="uml:Property" name="index" xmi:id="BusinessProcessIndicator_index">
@@ -5826,12 +5830,12 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ProcessStep" xmi:id="ProcessStep_hasInputParameter_source" association="ProcessStep_hasInputParameter_association">
             <type xmi:idref="Parameter"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasInputParameter_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasInputParameter_lower"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasInputParameter_upper" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ProcessStep" xmi:id="ProcessStep_hasOutputParameter_source" association="ProcessStep_hasOutputParameter_association">
             <type xmi:idref="Parameter"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasOutputParameter_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasOutputParameter_lower"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="ProcessStep_hasOutputParameter_upper" value="1"/>
           </ownedAttribute>
         </packagedElement>
@@ -6941,25 +6945,16 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_isOrdered_lower"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_isOrdered_upper" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="CustomInstance" xmi:id="CustomInstance_isStructuredBy_source" association="CustomInstance_isStructuredBy_association">
-            <type xmi:idref="CustomValueRelationStructure"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_isStructuredBy_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CustomInstance_isStructuredBy_upper" value="-1"/>
-          </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="CustomInstance" xmi:id="CustomInstance_realizes_source" association="CustomInstance_realizes_association">
-            <type xmi:idref="StructuredCollection"/>
+            <type xmi:idref="SimpleCollection"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_realizes_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CustomInstance_realizes_upper" value="-1"/>
           </ownedAttribute>
-        </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="CustomInstance_isStructuredBy_association" name="isStructuredBy">
-          <memberEnd xmi:idref="CustomInstance_isStructuredBy_source"/>
-          <memberEnd xmi:idref="CustomInstance_isStructuredBy_target"/>
-          <ownedEnd xmi:id="CustomInstance_isStructuredBy_target" xmi:type="uml:Property" association="CustomInstance_isStructuredBy_association"  aggregation="shared">
-            <type xmi:idref="CustomInstance"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_isStructuredBy_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CustomInstance_isStructuredBy_packagedElement_upper" value="-1"/>
-          </ownedEnd>
+          <ownedAttribute xmi:type="uml:Property" name="CustomInstance" xmi:id="CustomInstance_correspondsTo_source" association="CustomInstance_correspondsTo_association">
+            <type xmi:idref="CustomStructure"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_correspondsTo_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CustomInstance_correspondsTo_upper" value="-1"/>
+          </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="CustomInstance_realizes_association" name="realizes">
           <memberEnd xmi:idref="CustomInstance_realizes_source"/>
@@ -6968,6 +6963,15 @@
             <type xmi:idref="CustomInstance"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_realizes_packagedElement_lower" value="1"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_realizes_packagedElement_upper" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="CustomInstance_correspondsTo_association" name="correspondsTo">
+          <memberEnd xmi:idref="CustomInstance_correspondsTo_source"/>
+          <memberEnd xmi:idref="CustomInstance_correspondsTo_target"/>
+          <ownedEnd xmi:id="CustomInstance_correspondsTo_target" xmi:type="uml:Property" association="CustomInstance_correspondsTo_association" >
+            <type xmi:idref="CustomInstance"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_correspondsTo_packagedElement_lower"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CustomInstance_correspondsTo_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="CustomItem" xmi:id="CustomItem" visibility="package" >
@@ -9073,13 +9077,13 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="WorkflowStep" xmi:id="WorkflowStep_hasInputParameter_source" association="WorkflowStep_hasInputParameter_association">
             <type xmi:idref="Parameter"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasInputParameter_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasInputParameter_lower"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasInputParameter_upper" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="WorkflowStep" xmi:id="WorkflowStep_hasOutputParameter_source" association="WorkflowStep_hasOutputParameter_association">
             <type xmi:idref="Parameter"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasOutputParameter_lower" value="1"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasOutputParameter_upper" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowStep_hasOutputParameter_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="WorkflowStep_hasOutputParameter_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="WorkflowStep_isPerformedBy_association" name="isPerformedBy">
@@ -9244,10 +9248,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="DocumentInformation_hasPersistentAccessControl_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasPersistentAccessControl_upper" value="-1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="DocumentInformation" xmi:id="DocumentInformation_hasLocalAccessConrol_source" association="DocumentInformation_hasLocalAccessConrol_association">
+          <ownedAttribute xmi:type="uml:Property" name="DocumentInformation" xmi:id="DocumentInformation_hasLocalAccessControl_source" association="DocumentInformation_hasLocalAccessControl_association">
             <type xmi:idref="Access"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="DocumentInformation_hasLocalAccessConrol_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasLocalAccessConrol_upper" value="-1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="DocumentInformation_hasLocalAccessControl_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasLocalAccessControl_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="DocumentInformation" xmi:id="DocumentInformation_hasFundingSource_source" association="DocumentInformation_hasFundingSource_association">
             <type xmi:idref="FundingInformation"/>
@@ -9278,13 +9282,13 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasPersistentAccessControl_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
-        <packagedElement xmi:type="uml:Association" xmi:id="DocumentInformation_hasLocalAccessConrol_association" name="hasLocalAccessConrol">
-          <memberEnd xmi:idref="DocumentInformation_hasLocalAccessConrol_source"/>
-          <memberEnd xmi:idref="DocumentInformation_hasLocalAccessConrol_target"/>
-          <ownedEnd xmi:id="DocumentInformation_hasLocalAccessConrol_target" xmi:type="uml:Property" association="DocumentInformation_hasLocalAccessConrol_association" >
+        <packagedElement xmi:type="uml:Association" xmi:id="DocumentInformation_hasLocalAccessControl_association" name="hasLocalAccessControl">
+          <memberEnd xmi:idref="DocumentInformation_hasLocalAccessControl_source"/>
+          <memberEnd xmi:idref="DocumentInformation_hasLocalAccessControl_target"/>
+          <ownedEnd xmi:id="DocumentInformation_hasLocalAccessControl_target" xmi:type="uml:Property" association="DocumentInformation_hasLocalAccessControl_association" >
             <type xmi:idref="DocumentInformation"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="DocumentInformation_hasLocalAccessConrol_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasLocalAccessConrol_packagedElement_upper" value="-1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="DocumentInformation_hasLocalAccessControl_packagedElement_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="DocumentInformation_hasLocalAccessControl_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="DocumentInformation_hasFundingSource_association" name="hasFundingSource">
@@ -10101,7 +10105,7 @@
         <packagedElement xmi:type="uml:Association" xmi:id="CorrespondenceTable_hasPublication_association" name="hasPublication">
           <memberEnd xmi:idref="CorrespondenceTable_hasPublication_source"/>
           <memberEnd xmi:idref="CorrespondenceTable_hasPublication_target"/>
-          <ownedEnd xmi:id="CorrespondenceTable_hasPublication_target" xmi:type="uml:Property" association="CorrespondenceTable_hasPublication_association"  aggregation="composite">
+          <ownedEnd xmi:id="CorrespondenceTable_hasPublication_target" xmi:type="uml:Property" association="CorrespondenceTable_hasPublication_association" >
             <type xmi:idref="CorrespondenceTable"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CorrespondenceTable_hasPublication_packagedElement_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CorrespondenceTable_hasPublication_packagedElement_upper" value="-1"/>
@@ -11114,8 +11118,8 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="UnitDataViewpoint" xmi:id="UnitDataViewpoint_hasAttributeRole_source" association="UnitDataViewpoint_hasAttributeRole_association">
             <type xmi:idref="AttributeRole"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UnitDataViewpoint_hasAttributeRole_lower" value="1"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="UnitDataViewpoint_hasAttributeRole_upper" value="-1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="UnitDataViewpoint_hasAttributeRole_lower"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="UnitDataViewpoint_hasAttributeRole_upper" value="1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="UnitDataViewpoint_hasIdentifierRole_association" name="hasIdentifierRole">
@@ -12993,17 +12997,17 @@
           <element subject="Category" seqno="0"/>
           <element subject="CategoryRelationStructure" seqno="1"/>
           <element subject="CategorySet" seqno="2"/>
-          <element subject="CodeList" seqno="3"/>
-          <element subject="Concept" seqno="4"/>
-          <element subject="ConceptRelationStructure" seqno="5"/>
-          <element subject="ConceptSystem" seqno="6"/>
-          <element subject="ConceptualVariable" seqno="7"/>
-          <element subject="CustomInstance" seqno="8"/>
-          <element subject="CustomItem" seqno="9"/>
-          <element subject="CustomItemRelationStructure" seqno="10"/>
-          <element subject="CustomStructure" seqno="11"/>
-          <element subject="CustomValue" seqno="12"/>
-          <element subject="CustomValueRelationStructure" seqno="13"/>
+          <element subject="ClassificationRelationStructure" seqno="3"/>
+          <element subject="Code" seqno="4"/>
+          <element subject="CodeList" seqno="5"/>
+          <element subject="Concept" seqno="6"/>
+          <element subject="ConceptRelationStructure" seqno="7"/>
+          <element subject="ConceptSystem" seqno="8"/>
+          <element subject="CustomInstance" seqno="9"/>
+          <element subject="CustomItem" seqno="10"/>
+          <element subject="CustomItemRelationStructure" seqno="11"/>
+          <element subject="CustomStructure" seqno="12"/>
+          <element subject="CustomValue" seqno="13"/>
           <element subject="ExternalMaterial" seqno="14"/>
           <element subject="InstanceVariable" seqno="15"/>
           <element subject="LevelStructure" seqno="16"/>
