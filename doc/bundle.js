@@ -8088,13 +8088,16 @@ function main () {
     // Build the model
     visitPackage(document['xmi:XMI']['uml:Model'][0], [])
 
+    // Turn associations into properties.
     Object.keys(associations).forEach(
       assocId => {
         let a = associations[assocId]
         let f = fixups[a.from]
         let c = classes[f.classId]
         let aref = c.associations[a.from]
-        c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
+        if (a.name !== 'realizes') {
+          c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
+        }
       }
     )
 
@@ -8115,6 +8118,7 @@ function main () {
           }
         }))
 
+    // Find set of types for each property.
     Object.keys(properties).forEach(propName => {
       let p = properties[propName]
       p.uniformType = findMinimalTypes(model, p)
@@ -8530,7 +8534,7 @@ function main () {
               let use = p.sources.find(s => s.id.indexOf(classId) === 0)
               let dt = isObject(p)
                 ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-                  : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+                : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
               if (dt === undefined) {
                 console.log(use.relation)
                 return ''
