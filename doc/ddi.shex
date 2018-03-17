@@ -7,22 +7,22 @@ PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>
 
 
 ddi:AccessLocation {
-  ddi:uri @xsd:anyURI *;
+  ddi:uri xsd:anyURI *;
   ddi:mimeType @ddi:ExternalControlledVocabularyEntry ?;
   ddi:physicalLocation @ddi:InternationalString *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/accesslocation#parent_properties>
 
 ddi:Address {
   ddi:typeOfAddress @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:line @umld:String *;
-  ddi:cityPlaceLocal @umld:String ?;
-  ddi:stateProvince @umld:String ?;
-  ddi:postalCode @umld:String ?;
+  ddi:line umld:String *;
+  ddi:cityPlaceLocal umld:String ?;
+  ddi:stateProvince umld:String ?;
+  ddi:postalCode umld:String ?;
   ddi:countryCode @ddi:ExternalControlledVocabularyEntry ?;
   ddi:timeZone @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isPreferred @umld:Boolean ?;
+  ddi:isPreferred umld:Boolean ?;
   ddi:geographicPoint @ddi:SpatialPoint ?;
   ddi:regionalCoverage @ddi:ExternalControlledVocabularyEntry ?;
   ddi:typeOfLocation @ddi:ExternalControlledVocabularyEntry ?;
@@ -36,12 +36,12 @@ ddi:AgentAssociation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentassociation#parent_properties>
 
 ddi:AgentId {
-  ddi:agentIdValue @umld:String ;
-  ddi:agentIdType @umld:String ;
+  ddi:agentIdValue umld:String ;
+  ddi:agentIdType umld:String ;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentid#parent_properties>
 
 ddi:AgentIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentindicator#parent_properties>
 
@@ -55,7 +55,7 @@ ddi:AgentRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentrelation#parent_properties>
 
 ddi:AnalyticMetadatumIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:AnalyticMetadatum *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/analyticmetadatumindicator#parent_properties>
 
@@ -75,19 +75,19 @@ ddi:Annotation {
   ddi:publisher @ddi:AgentAssociation *;
   ddi:contributor @ddi:AgentAssociation *;
   ddi:date @ddi:AnnotationDate *;
-  ddi:languageOfObject @ddi:LanguageSpecification ?;
+  ddi:languageOfObject ddi:LanguageSpecification ?;
   ddi:identifier @ddi:InternationalIdentifier *;
   ddi:copyright @ddi:InternationalString *;
   ddi:typeOfResource @ddi:ExternalControlledVocabularyEntry *;
   ddi:informationSource @ddi:InternationalString *;
-  ddi:versionIdentification @umld:String ?;
+  ddi:versionIdentification umld:String ?;
   ddi:versioningAgent @ddi:AgentAssociation *;
   ddi:abstract @ddi:InternationalString ?;
   ddi:relatedResource @ddi:ResourceIdentifier *;
   ddi:provenance @ddi:InternationalString *;
   ddi:rights @ddi:InternationalString *;
-  ddi:recordCreationDate @ddi:IsoDateType ?;
-  ddi:recordLastRevisionDate @ddi:IsoDateType ?;
+  ddi:recordCreationDate ddi:IsoDateType ?;
+  ddi:recordLastRevisionDate ddi:IsoDateType ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotation#parent_properties>
 
 ddi:AnnotationDate EXTENDS ddi:Date {
@@ -97,13 +97,13 @@ ddi:AnnotationDate EXTENDS ddi:Date {
 ddi:AreaCoverage {
   ddi:typeOfArea @ddi:ExternalControlledVocabularyEntry ?;
   ddi:measurementUnit @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:areaMeasure @umld:Real ?;
+  ddi:areaMeasure umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/areacoverage#parent_properties>
 
 ddi:AudioSegment {
   ddi:typeOfAudioClip @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:audioClipBegin @umld:String ?;
-  ddi:audioClipEnd @umld:String ?;
+  ddi:audioClipBegin umld:String ?;
+  ddi:audioClipEnd umld:String ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/audiosegment#parent_properties>
 
 ddi:BasedOnObjectInformation {
@@ -113,7 +113,7 @@ ddi:BasedOnObjectInformation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/basedonobjectinformation#parent_properties>
 
 ddi:BibliographicName EXTENDS ddi:InternationalString {
-  ddi:affiliation @umld:String ?;
+  ddi:affiliation umld:String ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/bibliographicname#parent_properties>
 
 ddi:Binding {
@@ -122,19 +122,19 @@ ddi:Binding {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/binding#parent_properties>
 
 ddi:BusinessProcessCondition {
-  ddi:sql @umld:String ?;
+  ddi:sql umld:String ?;
   ddi:rejectionCriteria @ddi:CommandCode ?;
   ddi:dataDescription @ddi:InternationalStructuredString *;
   ddi:usesLogicalRecord @ddi:LogicalRecord *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessprocesscondition#parent_properties>
 
 ddi:BusinessProcessIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:BusinessProcess *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessprocessindicator#parent_properties>
 
 ddi:CDEIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:CommonDataElement *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/cdeindicator#parent_properties>
 
@@ -147,7 +147,7 @@ ddi:CDERelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/cderelation#parent_properties>
 
 ddi:CatalogItemIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:CatalogItem *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/catalogitemindicator#parent_properties>
 
@@ -160,7 +160,7 @@ ddi:CatalogItemRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/catalogitemrelation#parent_properties>
 
 ddi:CategoryIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:Category *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/categoryindicator#parent_properties>
 
@@ -181,24 +181,24 @@ ddi:CategoryStatistic {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/categorystatistic#parent_properties>
 
 ddi:CharacterOffset {
-  ddi:startCharOffset @umld:Integer ?;
-  ddi:endCharOffset @umld:Integer ?;
-  ddi:characterLength @umld:Integer ?;
+  ddi:startCharOffset umld:Integer ?;
+  ddi:endCharOffset umld:Integer ?;
+  ddi:characterLength umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/characteroffset#parent_properties>
 
 ddi:ClassificationIndexEntryIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:ClassificationIndexEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindexentryindicator#parent_properties>
 
 ddi:ClassificationItemIndicator {
-  ddi:index @umld:Integer ?;
-  ddi:hasLevel @umld:Integer ?;
+  ddi:index umld:Integer ?;
+  ddi:hasLevel umld:Integer ?;
   ddi:member @ddi:ClassificationItem *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationitemindicator#parent_properties>
 
 ddi:ClassificationSeriesIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:ClassificationSeries *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationseriesindicator#parent_properties>
 
@@ -211,14 +211,14 @@ ddi:ClassificationSeriesRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationseriesrelation#parent_properties>
 
 ddi:CodeIndicator {
-  ddi:index @umld:Integer ?;
-  ddi:isInLevel @umld:Integer ?;
+  ddi:index umld:Integer ?;
+  ddi:isInLevel umld:Integer ?;
   ddi:member @ddi:Code *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codeindicator#parent_properties>
 
 ddi:Command {
   ddi:programLanguage @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:commandContent @umld:String ?;
+  ddi:commandContent umld:String ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/command#parent_properties>
 
 ddi:CommandCode {
@@ -230,11 +230,11 @@ ddi:CommandCode {
 ddi:CommandFile {
   ddi:programLanguage @ddi:ExternalControlledVocabularyEntry ?;
   ddi:location @ddi:InternationalString ?;
-  ddi:uri @xsd:anyURI ?;
+  ddi:uri xsd:anyURI ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/commandfile#parent_properties>
 
 ddi:ConceptIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:Concept *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptindicator#parent_properties>
 
@@ -259,8 +259,8 @@ ddi:ContactInformation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contactinformation#parent_properties>
 
 ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
-  ddi:numberOfUnits @umld:Real ?;
-  ddi:isNegativeOffset @umld:Boolean ?;
+  ddi:numberOfUnits umld:Real ?;
+  ddi:isNegativeOffset umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contentdateoffset#parent_properties>
 
 ddi:CorrespondenceType {
@@ -271,7 +271,7 @@ ddi:CorrespondenceType {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetype#parent_properties>
 
 ddi:CustomItemIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:CustomItem *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customitemindicator#parent_properties>
 
@@ -284,7 +284,7 @@ ddi:CustomItemRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customitemrelation#parent_properties>
 
 ddi:CustomValueIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:CustomValue *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvalueindicator#parent_properties>
 
@@ -297,12 +297,12 @@ ddi:CustomValueRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvaluerelation#parent_properties>
 
 ddi:DataCollectionIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:DataCollection *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datacollectionindicator#parent_properties>
 
 ddi:DataPointIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:DataPoint *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapointindicator#parent_properties>
 
@@ -315,7 +315,7 @@ ddi:DataPointRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapointrelation#parent_properties>
 
 ddi:DataStoreIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:DataStore *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastoreindicator#parent_properties>
 
@@ -328,7 +328,7 @@ ddi:DataStoreRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastorerelation#parent_properties>
 
 ddi:Date {
-  ddi:isoDate @ddi:IsoDateType ?;
+  ddi:isoDate ddi:IsoDateType ?;
   ddi:nonIsoDate @ddi:NonIsoDateType *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/date#parent_properties>
 
@@ -343,27 +343,27 @@ ddi:DescribedRelationship {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/describedrelationship#parent_properties>
 
 ddi:DoubleNumberRangeValue {
-  ddi:isInclusive @umld:Boolean ?;
-  ddi:doubleValue @umld:Real ?;
+  ddi:isInclusive umld:Boolean ?;
+  ddi:doubleValue umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/doublenumberrangevalue#parent_properties>
 
 ddi:DynamicText {
   ddi:textContent @ddi:DynamicTextContent +;
-  ddi:isStructureRequired @umld:Boolean ?;
-  ddi:audienceLanguage @ddi:LanguageSpecification ?;
+  ddi:isStructureRequired umld:Boolean ?;
+  ddi:audienceLanguage ddi:LanguageSpecification ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictext#parent_properties>
 
 ddi:DynamicTextContent {
   ddi:purpose @ddi:InternationalStructuredString ?;
-  ddi:orderPosition @umld:Integer ?;
+  ddi:orderPosition umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictextcontent#parent_properties>
 
 ddi:ElectronicMessageSystem {
-  ddi:contactAddress @umld:String ?;
+  ddi:contactAddress umld:String ?;
   ddi:typeOfService @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isPreferred @umld:Boolean ?;
+  ddi:isPreferred umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/electronicmessagesystem#parent_properties>
 
 ddi:ElseIfAction {
@@ -372,22 +372,22 @@ ddi:ElseIfAction {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/elseifaction#parent_properties>
 
 ddi:Email {
-  ddi:internetEmail @umld:String ?;
+  ddi:internetEmail umld:String ?;
   ddi:typeOfEmail @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isPreferred @umld:Boolean ?;
+  ddi:isPreferred umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/email#parent_properties>
 
 ddi:ExternalControlledVocabularyEntry {
-  ddi:controlledVocabularyID @umld:String ?;
-  ddi:controlledVocabularyName @umld:String ?;
-  ddi:controlledVocabularyAgencyName @umld:String ?;
-  ddi:controlledVocabularyVersionID @umld:String ?;
-  ddi:otherValue @umld:String ?;
-  ddi:uri @xsd:anyURI ?;
-  ddi:content @umld:String ?;
-  ddi:language @xsd:language ?;
+  ddi:controlledVocabularyID umld:String ?;
+  ddi:controlledVocabularyName umld:String ?;
+  ddi:controlledVocabularyAgencyName umld:String ?;
+  ddi:controlledVocabularyVersionID umld:String ?;
+  ddi:otherValue umld:String ?;
+  ddi:uri xsd:anyURI ?;
+  ddi:content umld:String ?;
+  ddi:language xsd:language ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalcontrolledvocabularyentry#parent_properties>
 
 ddi:FixedText EXTENDS ddi:LanguageSpecificStructuredStringType {
@@ -395,15 +395,15 @@ ddi:FixedText EXTENDS ddi:LanguageSpecificStructuredStringType {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/fixedtext#parent_properties>
 
 ddi:Form {
-  ddi:formNumber @umld:String ?;
-  ddi:uri @xsd:anyURI ?;
+  ddi:formNumber umld:String ?;
+  ddi:uri xsd:anyURI ?;
   ddi:statement @ddi:InternationalString ?;
-  ddi:isRequired @umld:Boolean ?;
+  ddi:isRequired umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/form#parent_properties>
 
 ddi:GeographicUnitIndicator {
-  ddi:index @umld:Integer ?;
-  ddi:isInLevel @umld:Integer ?;
+  ddi:index umld:Integer ?;
+  ddi:isInLevel umld:Integer ?;
   ddi:member @ddi:GeographicUnit *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunitindicator#parent_properties>
 
@@ -417,15 +417,15 @@ ddi:GeographicUnitRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunitrelation#parent_properties>
 
 ddi:GeographicUnitTypeIndicator {
-  ddi:index @umld:Integer ?;
-  ddi:isInLevel @umld:Integer ?;
+  ddi:index umld:Integer ?;
+  ddi:isInLevel umld:Integer ?;
   ddi:member @ddi:UnitType *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunittypeindicator#parent_properties>
 
 ddi:GeographicUnitTypeRelation {
   ddi:hasRelationSpecification @ddi:RelationSpecification ;
   ddi:hasSpatialRelationSpecification @ddi:SpatialRelationSpecification ?;
-  ddi:isExhaustiveCoverage @umld:Boolean ?;
+  ddi:isExhaustiveCoverage umld:Boolean ?;
   ddi:semantic @ddi:ExternalControlledVocabularyEntry ?;
   ddi:totality @ddi:TotalityType ?;
   ddi:source @ddi:UnitType *;
@@ -433,14 +433,14 @@ ddi:GeographicUnitTypeRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunittyperelation#parent_properties>
 
 ddi:Image {
-  ddi:uri @xsd:anyURI ?;
+  ddi:uri xsd:anyURI ?;
   ddi:typeOfImage @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:dpi @umld:Integer ?;
-  ddi:languageOfImage @ddi:LanguageSpecification ?;
+  ddi:dpi umld:Integer ?;
+  ddi:languageOfImage ddi:LanguageSpecification ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/image#parent_properties>
 
 ddi:ImageArea {
-  ddi:coordinates @umld:String ?;
+  ddi:coordinates umld:String ?;
   ddi:shape @ddi:ShapeCoded ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/imagearea#parent_properties>
 
@@ -453,23 +453,23 @@ ddi:IndexEntryRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/indexentryrelation#parent_properties>
 
 ddi:IndividualName {
-  ddi:prefix @umld:String ?;
-  ddi:firstGiven @umld:String ?;
-  ddi:middle @umld:String *;
-  ddi:lastFamily @umld:String ?;
-  ddi:suffix @umld:String ?;
+  ddi:prefix umld:String ?;
+  ddi:firstGiven umld:String ?;
+  ddi:middle umld:String *;
+  ddi:lastFamily umld:String ?;
+  ddi:suffix umld:String ?;
   ddi:fullName @ddi:InternationalString ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:abbreviation @ddi:InternationalString ?;
   ddi:typeOfIndividualName @ddi:ExternalControlledVocabularyEntry ?;
   ddi:sex @ddi:SexSpecificationType ?;
-  ddi:isPreferred @umld:Boolean ?;
+  ddi:isPreferred umld:Boolean ?;
   ddi:context @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isFormal @umld:Boolean ?;
+  ddi:isFormal umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/individualname#parent_properties>
 
 ddi:InstanceVariableIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:InstanceVariable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariableindicator#parent_properties>
 
@@ -490,9 +490,9 @@ ddi:InstanceVariableValueMap {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariablevaluemap#parent_properties>
 
 ddi:InternationalIdentifier {
-  ddi:identifierContent @umld:String ?;
+  ddi:identifierContent umld:String ?;
   ddi:managingAgency @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isURI @umld:Boolean ?;
+  ddi:isURI umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalidentifier#parent_properties>
 
 ddi:InternationalString {
@@ -506,26 +506,26 @@ ddi:InternationalStructuredString {
 ddi:LabelForDisplay EXTENDS ddi:InternationalStructuredString {
   ddi:locationVariant @ddi:ExternalControlledVocabularyEntry ?;
   ddi:validDates @ddi:DateRange ?;
-  ddi:maxLength @umld:Integer ?;
+  ddi:maxLength umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/labelfordisplay#parent_properties>
 
 ddi:LanguageSpecificStringType {
-  ddi:content @umld:String ;
-  ddi:language @xsd:language ?;
-  ddi:isTranslated @umld:Boolean ?;
-  ddi:isTranslatable @umld:Boolean ?;
-  ddi:translationSourceLanguage @xsd:language *;
-  ddi:translationDate @umld:UnlimitedNatural ?;
+  ddi:content umld:String ;
+  ddi:language xsd:language ?;
+  ddi:isTranslated umld:Boolean ?;
+  ddi:isTranslatable umld:Boolean ?;
+  ddi:translationSourceLanguage xsd:language *;
+  ddi:translationDate umld:UnlimitedNatural ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstringtype#parent_properties>
 
 ddi:LanguageSpecificStructuredStringType {
-  ddi:formattedContent @xhtml:BlkNoForm.mix +;
-  ddi:language @xsd:language ?;
-  ddi:isTranslated @umld:Boolean ?;
-  ddi:isTranslatable @umld:Boolean ?;
-  ddi:translationSourceLanguage @xsd:language *;
-  ddi:translationDate @umld:UnlimitedNatural ?;
-  ddi:isPlainText @umld:Boolean ?;
+  ddi:formattedContent xhtml:BlkNoForm.mix +;
+  ddi:language xsd:language ?;
+  ddi:isTranslated umld:Boolean ?;
+  ddi:isTranslatable umld:Boolean ?;
+  ddi:translationSourceLanguage xsd:language *;
+  ddi:translationDate umld:UnlimitedNatural ?;
+  ddi:isPlainText umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstructuredstringtype#parent_properties>
 
 ddi:LayoutComponentRelation {
@@ -539,16 +539,16 @@ ddi:LayoutComponentRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/layoutcomponentrelation#parent_properties>
 
 ddi:Level {
-  ddi:levelNumber @umld:Integer ;
+  ddi:levelNumber umld:Integer ;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:definedBy @ddi:Concept *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/level#parent_properties>
 
 ddi:LineParameter {
-  ddi:startLine @umld:Integer ?;
-  ddi:startOffset @umld:Integer ?;
-  ddi:endLine @umld:Integer ?;
-  ddi:endOffset @umld:Integer ?;
+  ddi:startLine umld:Integer ?;
+  ddi:startOffset umld:Integer ?;
+  ddi:endLine umld:Integer ?;
+  ddi:endOffset umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/lineparameter#parent_properties>
 
 ddi:LiteralText EXTENDS ddi:DynamicTextContent {
@@ -556,9 +556,9 @@ ddi:LiteralText EXTENDS ddi:DynamicTextContent {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/literaltext#parent_properties>
 
 ddi:LocalIdFormat {
-  ddi:localIdValue @umld:String ;
-  ddi:localIdType @umld:String ;
-  ddi:localIdVersion @umld:String ?;
+  ddi:localIdValue umld:String ;
+  ddi:localIdType umld:String ;
+  ddi:localIdVersion umld:String ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/localidformat#parent_properties>
 
 ddi:LocationName EXTENDS ddi:ObjectName {
@@ -566,7 +566,7 @@ ddi:LocationName EXTENDS ddi:ObjectName {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/locationname#parent_properties>
 
 ddi:LogicalRecordIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:LogicalRecord *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalrecordindicator#parent_properties>
 
@@ -579,12 +579,12 @@ ddi:LogicalRecordRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalrecordrelation#parent_properties>
 
 ddi:LogicalResourceIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:LogicalResource *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalresourceindicator#parent_properties>
 
 ddi:LogicalSegmentIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:LogicalSegment *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalsegmentindicator#parent_properties>
 
@@ -598,7 +598,7 @@ ddi:Map {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/map#parent_properties>
 
 ddi:NonIsoDateType {
-  ddi:dateContent @umld:String ;
+  ddi:dateContent umld:String ;
   ddi:nonIsoDateFormat @ddi:ExternalControlledVocabularyEntry ?;
   ddi:calendar @ddi:ExternalControlledVocabularyEntry ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/nonisodatetype#parent_properties>
@@ -609,18 +609,18 @@ ddi:NumberRange {
   ddi:highCodeDouble @ddi:DoubleNumberRangeValue ?;
   ddi:lowCode @ddi:NumberRangeValue ?;
   ddi:lowCodeDouble @ddi:DoubleNumberRangeValue ?;
-  ddi:regExp @umld:String ?;
-  ddi:isTopCoded @umld:Boolean ;
-  ddi:isBottomCoded @umld:Boolean ;
+  ddi:regExp umld:String ?;
+  ddi:isTopCoded umld:Boolean ;
+  ddi:isBottomCoded umld:Boolean ;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numberrange#parent_properties>
 
 ddi:NumberRangeValue {
-  ddi:isInclusive @umld:Boolean ?;
-  ddi:decimalValue @umld:Real ?;
+  ddi:isInclusive umld:Boolean ?;
+  ddi:decimalValue umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numberrangevalue#parent_properties>
 
 ddi:ObjectName {
-  ddi:content @umld:String ?;
+  ddi:content umld:String ?;
   ddi:context @ddi:ExternalControlledVocabularyEntry ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/objectname#parent_properties>
 
@@ -628,7 +628,7 @@ ddi:OrganizationName EXTENDS ddi:ObjectName {
   ddi:abbreviation @ddi:InternationalString ?;
   ddi:typeOfOrganizationName @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
-  ddi:isFormal @umld:Boolean ?;
+  ddi:isFormal umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/organizationname#parent_properties>
 
 ddi:PairedExternalControlledVocabularyEntry {
@@ -637,7 +637,7 @@ ddi:PairedExternalControlledVocabularyEntry {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/pairedexternalcontrolledvocabularyentry#parent_properties>
 
 ddi:PhysicalRecordSegmentIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:PhysicalRecordSegment *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegmentindicator#parent_properties>
 
@@ -650,13 +650,13 @@ ddi:PhysicalRecordSegmentRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegmentrelation#parent_properties>
 
 ddi:PhysicalSegmentIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:PhysicalSegment *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentindicator#parent_properties>
 
 ddi:Polygon {
-  ddi:uri @xsd:anyURI ?;
-  ddi:polygonLinkCode @umld:String ?;
+  ddi:uri xsd:anyURI ?;
+  ddi:polygonLinkCode umld:String ?;
   ddi:shapeFileFormat @ddi:ExternalControlledVocabularyEntry ?;
   ddi:point @ddi:SpatialPoint {4,};
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/polygon#parent_properties>
@@ -667,7 +667,7 @@ ddi:PrivateImage EXTENDS ddi:Image {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/privateimage#parent_properties>
 
 ddi:RangeValue EXTENDS ddi:ValueString {
-  ddi:included @umld:Boolean ?;
+  ddi:included umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rangevalue#parent_properties>
 
 ddi:ReferenceDate EXTENDS ddi:AnnotationDate {
@@ -682,19 +682,19 @@ ddi:ResourceIdentifier EXTENDS ddi:InternationalIdentifier {
 ddi:Segment {
   ddi:usesAudioSegment @ddi:AudioSegment *;
   ddi:usesVideoSegment @ddi:VideoSegment *;
-  ddi:xml @umld:String *;
+  ddi:xml umld:String *;
   ddi:useseTextualSegment @ddi:TextualSegment *;
   ddi:usesImageArea @ddi:ImageArea *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/segment#parent_properties>
 
 ddi:SpatialCoordinate {
-  ddi:coordinateValue @umld:String ?;
+  ddi:coordinateValue umld:String ?;
   ddi:coordinateType @ddi:PointFormat ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialcoordinate#parent_properties>
 
 ddi:SpatialLine {
-  ddi:uri @xsd:anyURI ?;
-  ddi:lineLinkCode @umld:String ?;
+  ddi:uri xsd:anyURI ?;
+  ddi:lineLinkCode umld:String ?;
   ddi:shapeFileFormat @ddi:ExternalControlledVocabularyEntry ?;
   ddi:point @ddi:SpatialPoint {2,};
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialline#parent_properties>
@@ -717,14 +717,14 @@ ddi:StandardKeyValuePair {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/standardkeyvaluepair#parent_properties>
 
 ddi:Statistic {
-  ddi:isWeighted @umld:Boolean ?;
+  ddi:isWeighted umld:Boolean ?;
   ddi:computationBase @ddi:ComputationBaseList ?;
-  ddi:decimalValue @umld:Real ?;
-  ddi:doubleValue @umld:Real ?;
+  ddi:decimalValue umld:Real ?;
+  ddi:doubleValue umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statistic#parent_properties>
 
 ddi:StatisticalClassificationIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:StatisticalClassification *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statisticalclassificationindicator#parent_properties>
 
@@ -737,7 +737,7 @@ ddi:StatisticalClassificationRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statisticalclassificationrelation#parent_properties>
 
 ddi:StudyIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:Study *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyindicator#parent_properties>
 
@@ -755,19 +755,19 @@ ddi:SummaryStatistic {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/summarystatistic#parent_properties>
 
 ddi:TargetSample {
-  ddi:isPrimary @umld:Boolean ;
-  ddi:targetSize @umld:Integer ?;
-  ddi:targetPercent @umld:Real ?;
+  ddi:isPrimary umld:Boolean ;
+  ddi:targetSize umld:Integer ?;
+  ddi:targetPercent umld:Real ?;
   ddi:hasUnitType @ddi:UnitType *;
   ddi:fromUniverse @ddi:Universe *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/targetsample#parent_properties>
 
 ddi:Telephone {
-  ddi:telephoneNumber @umld:String ?;
+  ddi:telephoneNumber umld:String ?;
   ddi:typeOfTelephone @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:isPreferred @umld:Boolean ?;
+  ddi:isPreferred umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/telephone#parent_properties>
 
 ddi:TextualSegment {
@@ -782,11 +782,11 @@ ddi:TypedDescriptiveText {
 
 ddi:TypedString {
   ddi:typeOfContent @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:content @umld:String ;
+  ddi:content umld:String ;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/typedstring#parent_properties>
 
 ddi:ValueMappingIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:ValueMapping *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemappingindicator#parent_properties>
 
@@ -799,12 +799,12 @@ ddi:ValueMappingRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemappingrelation#parent_properties>
 
 ddi:ValueString {
-  ddi:content @umld:String ?;
+  ddi:content umld:String ?;
   ddi:whiteSpace @ddi:WhiteSpaceRule ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuestring#parent_properties>
 
 ddi:VariableIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:ConceptualVariable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/variableindicator#parent_properties>
 
@@ -818,8 +818,8 @@ ddi:VariableRelation {
 
 ddi:VideoSegment {
   ddi:typeOfVideoClip @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:videoClipBegin @umld:String ?;
-  ddi:videoClipEnd @umld:String ?;
+  ddi:videoClipBegin umld:String ?;
+  ddi:videoClipEnd umld:String ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/videosegment#parent_properties>
 
 ddi:ViewpointRoleRelation {
@@ -831,7 +831,7 @@ ddi:ViewpointRoleRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrolerelation#parent_properties>
 
 ddi:VocabularyEntryIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:VocabularyEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/vocabularyentryindicator#parent_properties>
 
@@ -844,15 +844,15 @@ ddi:VocabularyEntryRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/vocabularyentryrelation#parent_properties>
 
 ddi:WebLink {
-  ddi:isPreferred @umld:Boolean ?;
-  ddi:uri @xsd:anyURI ?;
+  ddi:isPreferred umld:Boolean ?;
+  ddi:uri xsd:anyURI ?;
   ddi:typeOfWebsite @ddi:ExternalControlledVocabularyEntry ?;
   ddi:effectiveDates @ddi:DateRange ?;
   ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/weblink#parent_properties>
 
 ddi:WorkflowStepIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:WorkflowStep *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepindicator#parent_properties>
 
@@ -866,7 +866,7 @@ ddi:WorkflowStepRelation {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowsteprelation#parent_properties>
 
 ddi:WorkflowStepSequenceIndicator {
-  ddi:index @umld:Integer ?;
+  ddi:index umld:Integer ?;
   ddi:member @ddi:WorkflowStepSequence *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequenceindicator#parent_properties>
 
@@ -904,7 +904,7 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:ConceptIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:ConceptRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystem#parent_properties>
 
@@ -954,7 +954,7 @@ ddi:Population EXTENDS ddi:Concept {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/population#parent_properties>
 
 ddi:RepresentedVariable EXTENDS ddi:ConceptualVariable {
-  ddi:unitOfMeasurement @umld:String ?;
+  ddi:unitOfMeasurement umld:String ?;
   ddi:hasIntendedDataType @ddi:ExternalControlledVocabularyEntry ?;
   ddi:takesSubstantiveValuesFrom @ddi:SubstantiveValueDomain *;
   ddi:measures @ddi:Universe *;
@@ -981,7 +981,7 @@ ddi:UnitType EXTENDS ddi:Concept {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unittype#parent_properties>
 
 ddi:Universe EXTENDS ddi:Concept {
-  ddi:isInclusive @umld:Boolean ?;
+  ddi:isInclusive umld:Boolean ?;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:descriptiveText @ddi:InternationalStructuredString ?;
   ddi:narrowsUnitType @ddi:UnitType *;
@@ -996,7 +996,7 @@ ddi:VariableCollection EXTENDS ddi:AnnotatedIdentifiable {
   ddi:usage @ddi:InternationalStructuredString ?;
   ddi:groupingSemantic @ddi:ExternalControlledVocabularyEntry ?;
   ddi:contains @ddi:VariableIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:VariableRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/variablecollection#parent_properties>
 
@@ -1008,11 +1008,11 @@ ddi:VariableRelationStructure EXTENDS ddi:Identifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/variablerelationstructure#parent_properties>
 
 ddi:StandardWeight EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:standardWeightValue @umld:Real ?;
+  ddi:standardWeightValue umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/standardweight#parent_properties>
 
 ddi:VariableStatistics EXTENDS ddi:Identifiable {
-  ddi:totalResponses @umld:Integer ?;
+  ddi:totalResponses umld:Integer ?;
   ddi:hasSummaryStatistic @ddi:SummaryStatistic *;
   ddi:hasCategoryStatistic @ddi:CategoryStatistic *;
   ddi:forInstanceVariable @ddi:InstanceVariable *;
@@ -1077,8 +1077,8 @@ ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
   ddi:contains @ddi:GeographicUnitIndicator *;
   ddi:releaseDate @ddi:Date ?;
   ddi:validDates @ddi:DateRange ?;
-  ddi:isCurrent @umld:Boolean ?;
-  ddi:isFloating @umld:Boolean ?;
+  ddi:isCurrent umld:Boolean ?;
+  ddi:isFloating umld:Boolean ?;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:usage @ddi:InternationalStructuredString ?;
   ddi:references @ddi:ConceptSystem *;
@@ -1100,8 +1100,8 @@ ddi:GeographicUnitTypeClassification EXTENDS ddi:CodeList {
   ddi:contains @ddi:GeographicUnitTypeIndicator *;
   ddi:releaseDate @ddi:Date ?;
   ddi:validDates @ddi:DateRange ?;
-  ddi:isCurrent @umld:Boolean ?;
-  ddi:isFloating @umld:Boolean ?;
+  ddi:isCurrent umld:Boolean ?;
+  ddi:isFloating umld:Boolean ?;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:usage @ddi:InternationalStructuredString ?;
   ddi:references @ddi:ConceptSystem *;
@@ -1139,8 +1139,8 @@ ddi:SampleFrame EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sampleframe#parent_properties>
 
 ddi:SamplePopulationResult EXTENDS ddi:Result {
-  ddi:sizeOfSample @umld:Integer ?;
-  ddi:strataName @umld:String ?;
+  ddi:sizeOfSample umld:Integer ?;
+  ddi:strataName umld:String ?;
   ddi:sampleDate @ddi:Date ?;
   ddi:sampleUnitType @ddi:UnitType *;
   ddi:populationSampled @ddi:Population *;
@@ -1157,8 +1157,8 @@ ddi:SamplingDesign EXTENDS ddi:DesignOverview {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingdesign#parent_properties>
 
 ddi:SamplingGoal EXTENDS ddi:Goal {
-  ddi:overallTargetSampleSize @umld:Integer ?;
-  ddi:overallTargetSamplePercent @umld:Real ?;
+  ddi:overallTargetSampleSize umld:Integer ?;
+  ddi:overallTargetSamplePercent umld:Real ?;
   ddi:targetSampleSize @ddi:TargetSample *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplinggoal#parent_properties>
 
@@ -1182,7 +1182,7 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:VocabularyEntryIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:VocabularyRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/controlledvocabulary#parent_properties>
 
@@ -1191,14 +1191,14 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:type @ddi:CollectionType ?;
   ddi:contains @ddi:CustomValueIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:correspondsTo @ddi:CustomStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/custominstance#parent_properties>
 
 ddi:CustomItem EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:maxOccurs @umld:Integer ?;
-  ddi:minOccurs @umld:Integer ?;
-  ddi:key @umld:String ?;
+  ddi:maxOccurs umld:Integer ?;
+  ddi:minOccurs umld:Integer ?;
+  ddi:key umld:String ?;
   ddi:uses @ddi:ValueDomain *;
   ddi:hasConcept @ddi:Concept *;
   ddi:comparesTo @ddi:RepresentedVariable *;
@@ -1219,13 +1219,13 @@ ddi:CustomStructure EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:CustomItemIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:CustomItemRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customstructure#parent_properties>
 
 ddi:CustomValue EXTENDS ddi:Identifiable {
   ddi:value @ddi:ValueString ?;
-  ddi:key @umld:String ?;
+  ddi:key umld:String ?;
   ddi:correspondsTo @ddi:CustomItem *;
   ddi:comparesTo @ddi:InstanceVariable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvalue#parent_properties>
@@ -1264,10 +1264,10 @@ ddi:DataPointRelationStructure EXTENDS ddi:Identifiable {
 
 ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?;
-  ddi:physicalFileName @umld:String ?;
-  ddi:numberOfSegments @umld:Integer ?;
+  ddi:physicalFileName umld:String ?;
+  ddi:numberOfSegments umld:Integer ?;
   ddi:contains @ddi:PhysicalRecordSegmentIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:type @ddi:CollectionType ?;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:formatsDataStore @ddi:DataStore *;
@@ -1290,9 +1290,9 @@ ddi:PhysicalOrderRelationStructure EXTENDS ddi:Identifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalorderrelationstructure#parent_properties>
 
 ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:physicalFileName @umld:String ?;
+  ddi:physicalFileName umld:String ?;
   ddi:contains @ddi:DataPointIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:hasPhysicalLayout @ddi:PhysicalSegmentLayout *;
   ddi:representsPopulation @ddi:Population ?;
   ddi:mapTo @ddi:LogicalRecord *;
@@ -1300,25 +1300,25 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegment#parent_properties>
 
 ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:isDelimited @umld:Boolean ;
-  ddi:delimiter @umld:String ?;
-  ddi:isFixedWidth @umld:Boolean ;
-  ddi:escapeCharacter @umld:String ?;
-  ddi:lineTerminator @umld:String *;
-  ddi:quoteCharacter @umld:String ?;
-  ddi:commentPrefix @umld:String ?;
+  ddi:isDelimited umld:Boolean ;
+  ddi:delimiter umld:String ?;
+  ddi:isFixedWidth umld:Boolean ;
+  ddi:escapeCharacter umld:String ?;
+  ddi:lineTerminator umld:String *;
+  ddi:quoteCharacter umld:String ?;
+  ddi:commentPrefix umld:String ?;
   ddi:encoding @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:hasHeader @umld:Boolean ?;
-  ddi:headerRowCount @umld:Integer ?;
-  ddi:skipBlankRows @umld:Boolean ?;
-  ddi:skipDataColumns @umld:Integer ?;
-  ddi:skipInitialSpace @umld:Boolean ?;
-  ddi:skipRows @umld:Integer ?;
+  ddi:hasHeader umld:Boolean ?;
+  ddi:headerRowCount umld:Integer ?;
+  ddi:skipBlankRows umld:Boolean ?;
+  ddi:skipDataColumns umld:Integer ?;
+  ddi:skipInitialSpace umld:Boolean ?;
+  ddi:skipRows umld:Integer ?;
   ddi:trim @ddi:TrimValues ?;
-  ddi:nullSequence @umld:String ?;
-  ddi:headerIsCaseSensitive @umld:Boolean ?;
-  ddi:arrayBase @umld:Integer ?;
-  ddi:treatConsecutiveDelimitersAsOne @umld:Boolean ?;
+  ddi:nullSequence umld:String ?;
+  ddi:headerIsCaseSensitive umld:Boolean ?;
+  ddi:arrayBase umld:Integer ?;
+  ddi:treatConsecutiveDelimitersAsOne umld:Boolean ?;
   ddi:overview @ddi:InternationalStructuredString ?;
   ddi:tableDirection @ddi:TableDirectionValues ?;
   ddi:textDirection @ddi:TextDirectionValues ?;
@@ -1326,7 +1326,7 @@ ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:ValueMappingIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:formatsLogicalRecord @ddi:LogicalRecord *;
   ddi:isStructuredBy @ddi:PhysicalLayoutRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout#parent_properties>
@@ -1335,11 +1335,11 @@ ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation#parent_properties>
 
 ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
-  ddi:startLine @umld:Integer ?;
-  ddi:endLine @umld:Integer ?;
-  ddi:startCharacterPosition @umld:Integer ?;
-  ddi:endCharacterPosition @umld:Integer ?;
-  ddi:characterLength @umld:Integer ?;
+  ddi:startLine umld:Integer ?;
+  ddi:endLine umld:Integer ?;
+  ddi:startCharacterPosition umld:Integer ?;
+  ddi:endCharacterPosition umld:Integer ?;
+  ddi:characterLength umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/segmentbytext#parent_properties>
 
 ddi:UnitSegmentLayout EXTENDS ddi:PhysicalSegmentLayout {
@@ -1347,18 +1347,18 @@ ddi:UnitSegmentLayout EXTENDS ddi:PhysicalSegmentLayout {
 
 ddi:ValueMapping EXTENDS ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:defaultDecimalSeparator @ddi:OneCharString ?;
-  ddi:defaultDigitGroupSeparator @ddi:OneCharString ?;
-  ddi:numberPattern @umld:String ?;
+  ddi:defaultDecimalSeparator ddi:OneCharString ?;
+  ddi:defaultDigitGroupSeparator ddi:OneCharString ?;
+  ddi:numberPattern umld:String ?;
   ddi:defaultValue @ddi:ValueString ?;
-  ddi:nullSequence @umld:String ?;
+  ddi:nullSequence umld:String ?;
   ddi:format @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:length @umld:Integer ?;
-  ddi:minimumLength @umld:Integer ?;
-  ddi:maximumLength @umld:Integer ?;
-  ddi:scale @umld:Integer ?;
-  ddi:decimalPositions @umld:Integer ?;
-  ddi:isRequired @umld:Boolean ?;
+  ddi:length umld:Integer ?;
+  ddi:minimumLength umld:Integer ?;
+  ddi:maximumLength umld:Integer ?;
+  ddi:scale umld:Integer ?;
+  ddi:decimalPositions umld:Integer ?;
+  ddi:isRequired umld:Boolean ?;
   ddi:formatsDataPoint @ddi:DataPoint *;
   ddi:describesSegmentLocation @ddi:PhysicalSegmentLocation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemapping#parent_properties>
@@ -1449,7 +1449,7 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:StudyIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:StudyRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyseries#parent_properties>
 
@@ -1467,7 +1467,7 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:BusinessProcessIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isInStudy @ddi:Study *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapipeline#parent_properties>
 
@@ -1502,13 +1502,13 @@ ddi:MetadataDrivenAction EXTENDS ddi:Act {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/metadatadrivenaction#parent_properties>
 
 ddi:Parameter {
-  ddi:alias @umld:UnlimitedNatural ?;
+  ddi:alias umld:UnlimitedNatural ?;
   ddi:defaultValue @ddi:ValueString ?;
-  ddi:isArray @umld:Boolean ?;
-  ddi:limitArrayIndex @umld:UnlimitedNatural ?;
-  ddi:agency @umld:String ;
-  ddi:id @umld:String ;
-  ddi:version @umld:String ;
+  ddi:isArray umld:Boolean ?;
+  ddi:limitArrayIndex umld:UnlimitedNatural ?;
+  ddi:agency umld:String ;
+  ddi:id umld:String ;
+  ddi:version umld:String ;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:valueRepresentation @ddi:ValueDomain *;
@@ -1578,13 +1578,13 @@ ddi:WorkflowStepSequence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contains @ddi:WorkflowStepIndicator *;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequence#parent_properties>
 
 ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contentCoverage @ddi:TypedDescriptiveText *;
-  ddi:isPublished @umld:Boolean ;
-  ddi:hasPrimaryContent @umld:UnlimitedNatural ?;
+  ddi:isPublished umld:Boolean ;
+  ddi:hasPrimaryContent umld:UnlimitedNatural ?;
   ddi:ofType @ddi:DDI4Version ;
   ddi:hasDocumentCoverage @ddi:Coverage *;
   ddi:hasPersistentAccessControl @ddi:Access *;
@@ -1596,7 +1596,7 @@ ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
 ddi:ExternalMaterial EXTENDS ddi:Identifiable {
   ddi:typeOfMaterial @ddi:ExternalControlledVocabularyEntry ?;
   ddi:descriptiveText @ddi:InternationalStructuredString ?;
-  ddi:uri @xsd:anyURI *;
+  ddi:uri xsd:anyURI *;
   ddi:relationshipDescription @ddi:InternationalStructuredString *;
   ddi:mimeType @ddi:ExternalControlledVocabularyEntry ?;
   ddi:usesSegment @ddi:Segment *;
@@ -1605,7 +1605,7 @@ ddi:ExternalMaterial EXTENDS ddi:Identifiable {
 
 ddi:FundingInformation EXTENDS ddi:Identifiable {
   ddi:funderRole @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:grantNumber @umld:String *;
+  ddi:grantNumber umld:String *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:hasFunder @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/fundinginformation#parent_properties>
@@ -1614,7 +1614,7 @@ ddi:Note EXTENDS ddi:AnnotatedIdentifiable {
   ddi:typeOfNote @ddi:ExternalControlledVocabularyEntry ?;
   ddi:noteSubject @ddi:ExternalControlledVocabularyEntry ?;
   ddi:relationship @ddi:DescribedRelationship *;
-  ddi:responsibility @umld:String ?;
+  ddi:responsibility umld:String ?;
   ddi:header @ddi:InternationalString ?;
   ddi:noteContent @ddi:InternationalStructuredString ?;
   ddi:proprietaryInfo @ddi:StandardKeyValuePair ?;
@@ -1633,21 +1633,21 @@ ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:ClassificationSeriesIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:hasClassificationIndex @ddi:ClassificationIndex *;
   ddi:isStructuredBy @ddi:ClassificationSeriesRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationfamily#parent_properties>
 
 ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   ddi:releaseDate @ddi:Date ?;
-  ddi:availableLanguage @ddi:LanguageSpecification ?;
+  ddi:availableLanguage ddi:LanguageSpecification ?;
   ddi:corrections @ddi:InternationalString *;
   ddi:codingInstruction @ddi:CommandCode *;
   ddi:type @ddi:CollectionType ?;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:ClassificationIndexEntryIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:hasPublication @ddi:ExternalMaterial *;
   ddi:isStructuredBy @ddi:IndexEntryRelationStructure *;
   ddi:maintenanceUnit @ddi:Agent *;
@@ -1661,8 +1661,8 @@ ddi:ClassificationIndexEntry EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindexentry#parent_properties>
 
 ddi:ClassificationItem EXTENDS ddi:Code {
-  ddi:isValid @umld:Boolean ?;
-  ddi:isGenerated @umld:Boolean ?;
+  ddi:isValid umld:Boolean ?;
+  ddi:isGenerated umld:Boolean ?;
   ddi:explanatoryNotes @ddi:InternationalStructuredString *;
   ddi:futureNotes @ddi:InternationalString *;
   ddi:changeLog @ddi:InternationalString ?;
@@ -1690,7 +1690,7 @@ ddi:ClassificationSeries EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:StatisticalClassificationIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:StatisticalClassificationRelationStructure *;
   ddi:owner @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationseries#parent_properties>
@@ -1712,7 +1712,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:CodeIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:references @ddi:CategorySet +;
   ddi:isStructuredBy @ddi:ClassificationRelationStructure *;
   ddi:usesLevelStructure @ddi:LevelStructure *;
@@ -1759,13 +1759,13 @@ ddi:SentinelValueDomain EXTENDS ddi:ValueDomain {
 ddi:StatisticalClassification EXTENDS ddi:CodeList {
   ddi:releaseDate @ddi:Date ?;
   ddi:validDates @ddi:DateRange ?;
-  ddi:isCurrent @umld:Boolean ?;
-  ddi:isFloating @umld:Boolean ?;
+  ddi:isCurrent umld:Boolean ?;
+  ddi:isFloating umld:Boolean ?;
   ddi:changeFromBase @ddi:InternationalStructuredString ?;
   ddi:purposeOfVariant @ddi:InternationalStructuredString ?;
   ddi:copyright @ddi:InternationalString *;
   ddi:updateChanges @ddi:InternationalStructuredString *;
-  ddi:availableLanguage @ddi:LanguageSpecification ?;
+  ddi:availableLanguage ddi:LanguageSpecification ?;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:rationale @ddi:InternationalStructuredString ?;
   ddi:usage @ddi:InternationalStructuredString ?;
@@ -1795,10 +1795,10 @@ ddi:ValueAndConceptDescription EXTENDS ddi:Identifiable {
   ddi:description @ddi:InternationalStructuredString ?;
   ddi:logicalExpression @ddi:ExternalControlledVocabularyEntry ?;
   ddi:regularExpression @ddi:TypedString ?;
-  ddi:minimumValueInclusive @umld:String ?;
-  ddi:maximumValueInclusive @umld:String ?;
-  ddi:minimumValueExclusive @umld:String ?;
-  ddi:maximumValueExclusive @umld:String ?;
+  ddi:minimumValueInclusive umld:String ?;
+  ddi:maximumValueInclusive umld:String ?;
+  ddi:minimumValueExclusive umld:String ?;
+  ddi:maximumValueExclusive umld:String ?;
   ddi:classificationLevel @ddi:CategoryRelationCode ?;
   ddi:formatPattern @ddi:ExternalControlledVocabularyEntry ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valueandconceptdescription#parent_properties>
@@ -1817,15 +1817,15 @@ ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapoint#parent_properties>
 
 ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:characterSet @umld:String ?;
+  ddi:characterSet umld:String ?;
   ddi:dataStoreType @ddi:ExternalControlledVocabularyEntry ?;
   ddi:type @ddi:CollectionType ?;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
-  ddi:recordCount @umld:Integer ?;
+  ddi:recordCount umld:Integer ?;
   ddi:aboutMissing @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:LogicalRecordIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:LogicalRecordRelationStructure *;
   ddi:isInStudy @ddi:Study ?;
   ddi:usesRecordRelation @ddi:RecordRelation *;
@@ -1836,7 +1836,7 @@ ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:DataStoreIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:DataStoreRelationStructure *;
   ddi:isInStudySeries @ddi:StudySeries *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastorelibrary#parent_properties>
@@ -1871,7 +1871,7 @@ ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:InstanceVariableIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalrecord#parent_properties>
 
 ddi:LogicalRecordRelationStructure EXTENDS ddi:Identifiable {
@@ -1908,7 +1908,7 @@ ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:InstanceVariableIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrole#parent_properties>
 
 ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
@@ -1949,7 +1949,7 @@ ddi:ExternalAid EXTENDS ddi:ExternalMaterial {
 ddi:ImplementedInstrument EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:typeOfInstrument @ddi:ExternalControlledVocabularyEntry ?;
-  ddi:uri @xsd:anyURI *;
+  ddi:uri xsd:anyURI *;
   ddi:name @ddi:ObjectName *;
   ddi:usage @ddi:InternationalStructuredString *;
   ddi:usesConceptualInstrument @ddi:ConceptualInstrument *;
@@ -1998,7 +1998,7 @@ ddi:RepresentedMeasurement EXTENDS ddi:Capture {
 ddi:RepresentedQuestion EXTENDS ddi:Capture {
   ddi:questionText @ddi:DynamicText *;
   ddi:questionIntent @ddi:InternationalStructuredString ?;
-  ddi:estimatedResponseTimeInSeconds @umld:Real ?;
+  ddi:estimatedResponseTimeInSeconds umld:Real ?;
   ddi:hasRepresentedVariable @ddi:RepresentedVariable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/representedquestion#parent_properties>
 
@@ -2017,8 +2017,8 @@ ddi:Statement EXTENDS ddi:InstrumentComponent {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statement#parent_properties>
 
 ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
-  ddi:maximumLength @umld:Integer ?;
-  ddi:minimumLength @umld:Integer ?;
+  ddi:maximumLength umld:Integer ?;
+  ddi:minimumLength umld:Integer ?;
   ddi:regularExpression @ddi:TypedString ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/textresponsedomain#parent_properties>
 
@@ -2036,10 +2036,10 @@ ddi:Access EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/access#parent_properties>
 
 ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:eastLongitude @umld:Real ;
-  ddi:westLongitude @umld:Real ;
-  ddi:northLatitude @umld:Real ;
-  ddi:southLatitude @umld:Real ;
+  ddi:eastLongitude umld:Real ;
+  ddi:westLongitude umld:Real ;
+  ddi:northLatitude umld:Real ;
+  ddi:southLatitude umld:Real ;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/boundingbox#parent_properties>
 
 ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
@@ -2077,14 +2077,14 @@ ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotatedidentifiable#parent_properties>
 
 ddi:Identifiable {
-  ddi:agency @umld:String ;
-  ddi:id @umld:String ;
-  ddi:version @umld:String ;
-  ddi:versionResponsibility @umld:String ?;
-  ddi:versionRationale @umld:String ?;
-  ddi:versionDate @ddi:IsoDateType ?;
-  ddi:isUniversallyUnique @umld:Boolean ;
-  ddi:isPersistent @umld:Boolean ;
+  ddi:agency umld:String ;
+  ddi:id umld:String ;
+  ddi:version umld:String ;
+  ddi:versionResponsibility umld:String ?;
+  ddi:versionRationale umld:String ?;
+  ddi:versionDate ddi:IsoDateType ?;
+  ddi:isUniversallyUnique umld:Boolean ;
+  ddi:isPersistent umld:Boolean ;
   ddi:localId @ddi:LocalIdFormat *;
   ddi:basedOnObject @ddi:BasedOnObjectInformation ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/identifiable#parent_properties>
@@ -2134,7 +2134,7 @@ ddi:AgentListing EXTENDS ddi:Identifiable {
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:contains @ddi:AgentIndicator *;
-  ddi:isOrdered @umld:Boolean ?;
+  ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:AgentRelationStructure *;
   ddi:maintenanceUnit @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentlisting#parent_properties>
@@ -2151,7 +2151,7 @@ ddi:AgentRelationStructure EXTENDS ddi:Identifiable {
 
 ddi:Individual EXTENDS ddi:Agent {
   ddi:hasIndividualName @ddi:IndividualName *;
-  ddi:ddiId @umld:String *;
+  ddi:ddiId umld:String *;
   ddi:hasContactInformation @ddi:ContactInformation ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/individual#parent_properties>
 
@@ -2166,6 +2166,143 @@ ddi:Machine EXTENDS ddi:Agent {
 
 ddi:Organization EXTENDS ddi:Agent {
   ddi:hasOrganizationName @ddi:OrganizationName +;
-  ddi:ddiId @umld:String *;
+  ddi:ddiId umld:String *;
   ddi:hasContactInformation @ddi:ContactInformation ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/organization#parent_properties>
+
+ddi:RelationSpecification [
+  ddi:Unordered
+  ddi:List
+  ddi:ParentChild
+  ddi:WholePart
+  ddi:AcyclicPrecedence
+  ddi:Equivalence
+  ddi:GeneralSpecfic
+]
+
+ddi:CategoryRelationCode [
+  ddi:Nominal
+  ddi:Ordinal
+  ddi:Interval
+  ddi:Ratio
+  ddi:Continuous
+]
+
+ddi:CollectionType [
+  ddi:Bag
+  ddi:Set
+]
+
+ddi:ComputationBaseList [
+  ddi:Total
+  ddi:ValidOnly
+  ddi:MissingOnly
+]
+
+ddi:MappingRelation [
+  ddi:ExactMatch
+  ddi:CloseMatch
+  ddi:Disjoint
+]
+
+ddi:PointFormat [
+  ddi:DecimalDegree
+  ddi:DegreesMinutesSeconds
+  ddi:DecimalMinutes
+  ddi:Meters
+  ddi:Feet
+]
+
+ddi:SexSpecificationType [
+  ddi:Masculine
+  ddi:Feminine
+  ddi:GenderNeutral
+]
+
+ddi:ShapeCoded [
+  ddi:Rectangle
+  ddi:Circle
+  ddi:Polygon
+  ddi:LinearRing
+]
+
+ddi:SpatialObjectPairs [
+  ddi:PointToPoint
+  ddi:PointToLine
+  ddi:PointToArea
+  ddi:LineToLine
+  ddi:LineToArea
+  ddi:AreaToArea
+]
+
+ddi:SpatialObjectType [
+  ddi:Point
+  ddi:Polygon
+  ddi:Line
+  ddi:LinearRing
+  ddi:Raster
+]
+
+ddi:SpatialRelationSpecification [
+  ddi:Equals
+  ddi:Disjoint
+  ddi:Intersects
+  ddi:Contains
+  ddi:Touches
+]
+
+ddi:TableDirectionValues [
+  ddi:Ltr
+  ddi:Rtl
+  ddi:Auto
+]
+
+ddi:TemporalRelationSpecification [
+  ddi:TemporalMeets
+  ddi:TemporalContains
+  ddi:TemporalFinishes
+  ddi:TemporalPrecedes
+  ddi:TemporalStarts
+  ddi:TemporalOverlaps
+  ddi:TemporalEquals
+]
+
+ddi:TextDirectionValues [
+  ddi:Ltr
+  ddi:Rtl
+  ddi:Auto
+  ddi:Inherit
+]
+
+ddi:TotalityType [
+  ddi:Total
+  ddi:Partial
+  ddi:Unknown
+]
+
+ddi:TrimValues [
+  ddi:Start
+  ddi:End
+  ddi:Both
+  ddi:Neither
+]
+
+ddi:ValueRelationshipType [
+  ddi:Equal
+  ddi:NotEqual
+  ddi:GreaterThan
+  ddi:GreaterThanOrEqualTo
+  ddi:LessThan
+  ddi:LessThanOrEqualTo
+]
+
+ddi:WhiteSpaceRule [
+  ddi:Preserve
+  ddi:Replace
+  ddi:collapse
+]
+
+ddi:DDI4Version [
+  ddi:DR0.2
+]
+

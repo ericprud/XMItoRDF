@@ -889,7 +889,7 @@ function main () {
                 return ''
               }
               let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
-              let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
+              let refChar = isObject(p) ? '@' : ''
               let card = shexCardinality(use)
               return '  ddi:' + propName + ' ' + refChar + pname(dt.name) + ' ' + card + ';\n'
             }
@@ -899,19 +899,24 @@ function main () {
 
     // Enumerate enumerations (enumeratively).
     owlx = owlx.concat(Object.keys(model.enums).map(
-      id => [].concat(
+      enumId => [].concat(
         `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
+    <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
         <ObjectOneOf>`,
-        model.enums[id].values.map(
+        model.enums[enumId].values.map(
           v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
         ),
         `       </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.enums[id].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.enums[id].packages[0]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.enums[enumId].packages[0]].name}_Package"/>
     </SubClassOf>`).join('\n')))
+    shexc = shexc.concat(Object.keys(model.enums).map(
+      enumId => 'ddi:' + model.enums[enumId].name + ' [\n' + model.enums[enumId].values.map(
+        v => '  ' + pname(v) + '\n'
+      ).join('') + ']'
+    ))
 
     // Add datatypes.
     owlx = owlx.concat(Object.keys(model.datatypes).filter(
@@ -921,16 +926,18 @@ function main () {
         `    <DatatypeDefinition>
         <Datatype abbreviatedIRI="${pname(model.datatypes[id].name)}"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DatatypeDefinition>` /* + `
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${dataypes[id].name}-is-a-datatype"/>
-        <Class abbreviatedIRI="ddi:${model.datatypes[id].packages[0]}_Package"/>
-    </SubClassOf>` */).join('\n')))
+    </DatatypeDefinition>`).join('\n')))
+    // shexc = shexc.concat(Object.keys(model.datatypes).filter(
+    //   id => !pname(model.datatypes[id].name).startsWith('xsd')
+    // ).map(
+    //   id => pname(model.datatypes[id].name) + ' LITERAL'
+    // ))
 
     // Terminate the various forms:
     owlx = owlx.concat([
       '</Ontology>\n'
     ])
+    shexc = shexc.concat(['']) // add a blank line
     return {owlx: owlx, owlm: owlm, shexc: shexc}
   }
 
