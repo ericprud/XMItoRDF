@@ -7656,11 +7656,10 @@ function main () {
     return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
   }
 
-  function parseProperties (model, elts, className, triples) {
+  function parseProperties (model, elts, className) {
     let ret = {
       properties: [],
       associations: {},
-      realizes: [],
       others: []
     }
     elts.forEach(elt => {
@@ -7668,24 +7667,9 @@ function main () {
       console.assert(type === 'uml:Property')
       let id = elt.$['xmi:id']
       let name = parseName(elt)
-      let triple
-
-      // record triples
-      if ((triple = id.match(/([a-zA-Z]+)_([a-zA-Z]+)_([a-zA-Z]+)/))) {
-        if (!(triple[2] in triples)) {
-          triples[triple[2]] = []
-        }
-        triples[triple[2]].push(id)
-      }
       let association = parseAssociation(elt)
+
       if (association) {
-        if (triple) {
-          if (triple[2] === 'realizes') {
-            ret.realizes.push(elt.type[0].$['xmi:idref'])
-          } else {
-            ret.others.push(triple[2])
-          }
-        }
         /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
              <type xmi:idref="Agent"/>
              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
@@ -7712,14 +7696,6 @@ function main () {
             parseValue(elt.lowerValue[0], 0),
             parseValue(elt.upperValue[0], UPPER_UNLIMITED))
         )
-      }
-      if (triple) {
-        if (['source', 'association'].indexOf(triple[3]) === -1) {
-          console.warn('unknown relationship: ', triple[3])
-        }
-        if (triple[1] !== className) {
-          console.warn('parent mismatch: ', triple, className)
-        }
       }
     })
     return ret
@@ -7833,7 +7809,6 @@ function main () {
     $('<h2/>').text(title).append(reparse).appendTo(div)
     let model
     let document
-    let triples = {}
     let progress = $('<ul/>')
     div.append(progress)
 
@@ -7853,7 +7828,7 @@ function main () {
     }
 
     function index () {
-      model = parseModel(document, triples)
+      model = parseModel(document)
       status.text('rendering structure...')
       window.setTimeout(render, RENDER_DELAY)
     }
@@ -7873,7 +7848,6 @@ function main () {
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
-      addTriples(triples, diagnostics)
       let allViews = strip(model, model.views.map(v => v.name))
       console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
@@ -8005,7 +7979,6 @@ function main () {
             id: old.id,
             name: old.name,
             properties: [],
-            realizes: old.realizes.slice(), // slice() shallow-copies and array
             others: old.others.slice(),
             packages: old.packages.slice(),
             superClasses: old.superClasses.slice()
@@ -8072,7 +8045,7 @@ function main () {
     let packageHierarchy = makeHierarchy()
 
     let associations = {}
-    let fixups = {}
+    let assocSrcToClass = {}
 
     // return structure
     let model = {
@@ -8092,8 +8065,7 @@ function main () {
     Object.keys(associations).forEach(
       assocId => {
         let a = associations[assocId]
-        let f = fixups[a.from]
-        let c = classes[f.classId]
+        let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
         if (a.name !== 'realizes') {
           c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
@@ -8153,12 +8125,7 @@ function main () {
               superClasses: []
             })
             Object.keys(ownedAttrs.associations).forEach(
-              assocSourceId => {
-                fixups[assocSourceId] = {
-                  classId: id,
-                  realizes: ownedAttrs.realizes[assocSourceId] // !!
-                }
-              }
+              assocSourceId => { assocSrcToClass[assocSourceId] = id }
             )
 
             // record class hierarchy (allows multiple inheritance)
@@ -8542,9 +8509,9 @@ function main () {
               let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
               let refChar = model.properties[propName].sources[0].type === undefined ? '@' : ''
               let card = shexCardinality(use)
-              return '  ddi:' + propName + ' ' + refChar + pname(dt.name) + ' ' + card
+              return '  ddi:' + propName + ' ' + refChar + pname(dt.name) + ' ' + card + ';\n'
             }
-          ).join(';\n') + '\n} // rdfs:definedBy <' + docURL(classId) + '>'
+          ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
       }
     ))
 
@@ -8679,25 +8646,6 @@ function main () {
             $('<span/>').text(dupe).addClass('scalar'),
             $('<ul/>').append(
               x.seen[dupe].map(lookIn => $('<li/>').text(lookIn))
-            ))
-        })
-      )))
-  }
-
-  function addTriples (triples, into) {
-    into.append($('<li/>').append(
-      $('<span/>',
-        {title: '[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+'})
-        .text('triples'),
-      ' (' + Object.keys(triples).length + ')',
-      $('<ul/>').append(
-        Object.keys(triples).sort(
-          (l, r) => triples[r].length - triples[l].length
-        ).map(triple => {
-          return $('<li/>').append(
-            $('<span/>').text(triple + ' (' + triples[triple].length + ')').addClass('scalar'),
-            $('<ul/>').append(
-              triples[triple].map(lookIn => $('<li/>').text(lookIn))
             ))
         })
       )))
