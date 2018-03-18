@@ -6,6 +6,17 @@ PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>
 
 
 
+# START ComplexDataTypes Package
+ddi:RelationSpecification [
+  ddi:Unordered
+  ddi:List
+  ddi:ParentChild
+  ddi:WholePart
+  ddi:AcyclicPrecedence
+  ddi:Equivalence
+  ddi:GeneralSpecfic
+]
+
 ddi:AccessLocation {
   ddi:uri xsd:anyURI *;
   ddi:mimeType @ddi:ExternalControlledVocabularyEntry ?;
@@ -869,7 +880,10 @@ ddi:WorkflowStepSequenceIndicator {
   ddi:index umld:Integer ?;
   ddi:member @ddi:WorkflowStepSequence *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequenceindicator#parent_properties>
+# END ComplexDataTypes Package
 
+
+# START Conceptual Package
 ddi:Category EXTENDS ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:descriptiveText @ddi:InternationalStructuredString ?;
@@ -1006,7 +1020,10 @@ ddi:VariableRelationStructure EXTENDS ddi:Identifiable {
   ddi:totality @ddi:TotalityType ?;
   ddi:hasMemberRelation @ddi:VariableRelation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/variablerelationstructure#parent_properties>
+# END Conceptual Package
 
+
+# START SimpleCodebook Package
 ddi:StandardWeight EXTENDS ddi:AnnotatedIdentifiable {
   ddi:standardWeightValue umld:Real ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/standardweight#parent_properties>
@@ -1020,7 +1037,10 @@ ddi:VariableStatistics EXTENDS ddi:Identifiable {
   ddi:applicableWeightVariable @ddi:InstanceVariable *;
   ddi:hasFilterVariable @ddi:InstanceVariable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/variablestatistics#parent_properties>
+# END SimpleCodebook Package
 
+
+# START SimpleMethodologyOverview Package
 ddi:AlgorithmOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:subjectOfAlgorithm @ddi:ExternalControlledVocabularyEntry ?;
   ddi:overview @ddi:InternationalStructuredString ?;
@@ -1054,7 +1074,10 @@ ddi:ProcessOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasProcessSequence @ddi:ProcessSequence *;
   ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/processoverview#parent_properties>
+# END SimpleMethodologyOverview Package
 
+
+# START GeographicClassification Package
 ddi:GeographicExtent EXTENDS ddi:AnnotatedIdentifiable {
   ddi:boundingPolygon @ddi:Polygon *;
   ddi:excludingPolygon @ddi:Polygon *;
@@ -1118,7 +1141,10 @@ ddi:GeographicUnitTypeRelationStructure EXTENDS ddi:Identifiable {
   ddi:totality @ddi:TotalityType ?;
   ddi:hasMemberRelation @ddi:GeographicUnitTypeRelation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunittyperelationstructure#parent_properties>
+# END GeographicClassification Package
 
+
+# START SamplingMethodology Package
 ddi:SampleFrame EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:displayLabel @ddi:LabelForDisplay *;
@@ -1176,7 +1202,139 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasResults @ddi:SamplePopulationResult *;
   ddi:implementsAlgorithm @ddi:SamplingAlgorithm *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocess#parent_properties>
+# END SamplingMethodology Package
 
+
+# START EnumerationsRegExp Package
+ddi:CategoryRelationCode [
+  ddi:Nominal
+  ddi:Ordinal
+  ddi:Interval
+  ddi:Ratio
+  ddi:Continuous
+]
+
+ddi:CollectionType [
+  ddi:Bag
+  ddi:Set
+]
+
+ddi:ComputationBaseList [
+  ddi:Total
+  ddi:ValidOnly
+  ddi:MissingOnly
+]
+
+ddi:IsoDateType xsd:string
+
+ddi:MappingRelation [
+  ddi:ExactMatch
+  ddi:CloseMatch
+  ddi:Disjoint
+]
+
+ddi:OneCharString xsd:string
+
+ddi:PointFormat [
+  ddi:DecimalDegree
+  ddi:DegreesMinutesSeconds
+  ddi:DecimalMinutes
+  ddi:Meters
+  ddi:Feet
+]
+
+ddi:SexSpecificationType [
+  ddi:Masculine
+  ddi:Feminine
+  ddi:GenderNeutral
+]
+
+ddi:ShapeCoded [
+  ddi:Rectangle
+  ddi:Circle
+  ddi:Polygon
+  ddi:LinearRing
+]
+
+ddi:SpatialObjectPairs [
+  ddi:PointToPoint
+  ddi:PointToLine
+  ddi:PointToArea
+  ddi:LineToLine
+  ddi:LineToArea
+  ddi:AreaToArea
+]
+
+ddi:SpatialObjectType [
+  ddi:Point
+  ddi:Polygon
+  ddi:Line
+  ddi:LinearRing
+  ddi:Raster
+]
+
+ddi:SpatialRelationSpecification [
+  ddi:Equals
+  ddi:Disjoint
+  ddi:Intersects
+  ddi:Contains
+  ddi:Touches
+]
+
+ddi:TableDirectionValues [
+  ddi:Ltr
+  ddi:Rtl
+  ddi:Auto
+]
+
+ddi:TemporalRelationSpecification [
+  ddi:TemporalMeets
+  ddi:TemporalContains
+  ddi:TemporalFinishes
+  ddi:TemporalPrecedes
+  ddi:TemporalStarts
+  ddi:TemporalOverlaps
+  ddi:TemporalEquals
+]
+
+ddi:TextDirectionValues [
+  ddi:Ltr
+  ddi:Rtl
+  ddi:Auto
+  ddi:Inherit
+]
+
+ddi:TotalityType [
+  ddi:Total
+  ddi:Partial
+  ddi:Unknown
+]
+
+ddi:TrimValues [
+  ddi:Start
+  ddi:End
+  ddi:Both
+  ddi:Neither
+]
+
+ddi:ValueRelationshipType [
+  ddi:Equal
+  ddi:NotEqual
+  ddi:GreaterThan
+  ddi:GreaterThanOrEqualTo
+  ddi:LessThan
+  ddi:LessThanOrEqualTo
+]
+
+ddi:WhiteSpaceRule [
+  ddi:Preserve
+  ddi:Replace
+  ddi:collapse
+]
+# END EnumerationsRegExp Package
+
+
+# START CustomMetadata Package
 ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?;
   ddi:name @ddi:ObjectName *;
@@ -1254,7 +1412,10 @@ ddi:VocabularyRelationStructure EXTENDS ddi:AnnotatedIdentifiable {
   ddi:totality @ddi:TotalityType ?;
   ddi:hasMemberRelation @ddi:VocabularyEntryRelation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/vocabularyrelationstructure#parent_properties>
+# END CustomMetadata Package
 
+
+# START FormatDescription Package
 ddi:DataPointRelationStructure EXTENDS ddi:Identifiable {
   ddi:hasRelationSpecification @ddi:RelationSpecification ?;
   ddi:semantic @ddi:ExternalControlledVocabularyEntry ?;
@@ -1362,7 +1523,10 @@ ddi:ValueMapping EXTENDS ddi:Identifiable {
   ddi:formatsDataPoint @ddi:DataPoint *;
   ddi:describesSegmentLocation @ddi:PhysicalSegmentLocation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemapping#parent_properties>
+# END FormatDescription Package
 
+
+# START StudyRelated Package
 ddi:Budget EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?;
   ddi:name @ddi:ObjectName *;
@@ -1452,7 +1616,10 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isOrdered umld:Boolean ?;
   ddi:isStructuredBy @ddi:StudyRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyseries#parent_properties>
+# END StudyRelated Package
 
+
+# START BusinessWorkflow Package
 ddi:BusinessAlgorithm EXTENDS ddi:AlgorithmOverview {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessalgorithm#parent_properties>
 
@@ -1470,7 +1637,10 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isOrdered umld:Boolean ?;
   ddi:isInStudy @ddi:Study *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapipeline#parent_properties>
+# END BusinessWorkflow Package
 
+
+# START Workflows Package
 ddi:Act EXTENDS ddi:WorkflowStep {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/act#parent_properties>
 
@@ -1580,6 +1750,13 @@ ddi:WorkflowStepSequence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:isOrdered umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequence#parent_properties>
+# END Workflows Package
+
+
+# START Utility Package
+ddi:DDI4Version [
+  ddi:DR0.2
+]
 
 ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contentCoverage @ddi:TypedDescriptiveText *;
@@ -1619,7 +1796,10 @@ ddi:Note EXTENDS ddi:AnnotatedIdentifiable {
   ddi:noteContent @ddi:InternationalStructuredString ?;
   ddi:proprietaryInfo @ddi:StandardKeyValuePair ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/note#parent_properties>
+# END Utility Package
 
+
+# START Representations Package
 ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
   ddi:statementOfAuthorization @ddi:InternationalStructuredString ?;
   ddi:legalMandate @ddi:InternationalString ?;
@@ -1807,7 +1987,10 @@ ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:recommendedDataType @ddi:ExternalControlledVocabularyEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuedomain#parent_properties>
+# END Representations Package
 
+
+# START LogicalDataDescription Package
 ddi:AttributeRole EXTENDS ddi:ViewpointRole {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/attributerole#parent_properties>
 
@@ -1910,7 +2093,10 @@ ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contains @ddi:InstanceVariableIndicator *;
   ddi:isOrdered umld:Boolean ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrole#parent_properties>
+# END LogicalDataDescription Package
 
+
+# START DataCapture Package
 ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:forCategory @ddi:Category ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/booleanresponsedomain#parent_properties>
@@ -2021,7 +2207,10 @@ ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:minimumLength umld:Integer ?;
   ddi:regularExpression @ddi:TypedString ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/textresponsedomain#parent_properties>
+# END DataCapture Package
 
+
+# START Discovery Package
 ddi:Access EXTENDS ddi:AnnotatedIdentifiable {
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:confidentialityStatement @ddi:InternationalStructuredString ?;
@@ -2070,7 +2259,10 @@ ddi:TopicalCoverage EXTENDS ddi:AnnotatedIdentifiable {
   ddi:subject @ddi:ExternalControlledVocabularyEntry *;
   ddi:keyword @ddi:ExternalControlledVocabularyEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/topicalcoverage#parent_properties>
+# END Discovery Package
 
+
+# START Identification Package
 ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation ?;
   ddi:relatedMaterial @ddi:ExternalMaterial *;
@@ -2088,7 +2280,10 @@ ddi:Identifiable {
   ddi:localId @ddi:LocalIdFormat *;
   ddi:basedOnObject @ddi:BasedOnObjectInformation ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/identifiable#parent_properties>
+# END Identification Package
 
+
+# START Methodologies Package
 ddi:AppliedUse EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?;
   ddi:hasGuide @ddi:Guide +;
@@ -2122,7 +2317,10 @@ ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasInputParameter @ddi:Parameter *;
   ddi:hasOutputParameter @ddi:Parameter *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/result#parent_properties>
+# END Methodologies Package
 
+
+# START Agents Package
 ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasAgentId @ddi:AgentId *;
   ddi:purpose @ddi:InternationalStructuredString ?;
@@ -2169,140 +2367,25 @@ ddi:Organization EXTENDS ddi:Agent {
   ddi:ddiId umld:String *;
   ddi:hasContactInformation @ddi:ContactInformation ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/organization#parent_properties>
+# END Agents Package
 
-ddi:RelationSpecification [
-  ddi:Unordered
-  ddi:List
-  ddi:ParentChild
-  ddi:WholePart
-  ddi:AcyclicPrecedence
-  ddi:Equivalence
-  ddi:GeneralSpecfic
-]
 
-ddi:CategoryRelationCode [
-  ddi:Nominal
-  ddi:Ordinal
-  ddi:Interval
-  ddi:Ratio
-  ddi:Continuous
-]
+# START Primitives Package
+ddi:LanguageSpecification xsd:string
 
-ddi:CollectionType [
-  ddi:Bag
-  ddi:Set
-]
 
-ddi:ComputationBaseList [
-  ddi:Total
-  ddi:ValidOnly
-  ddi:MissingOnly
-]
 
-ddi:MappingRelation [
-  ddi:ExactMatch
-  ddi:CloseMatch
-  ddi:Disjoint
-]
 
-ddi:PointFormat [
-  ddi:DecimalDegree
-  ddi:DegreesMinutesSeconds
-  ddi:DecimalMinutes
-  ddi:Meters
-  ddi:Feet
-]
 
-ddi:SexSpecificationType [
-  ddi:Masculine
-  ddi:Feminine
-  ddi:GenderNeutral
-]
 
-ddi:ShapeCoded [
-  ddi:Rectangle
-  ddi:Circle
-  ddi:Polygon
-  ddi:LinearRing
-]
 
-ddi:SpatialObjectPairs [
-  ddi:PointToPoint
-  ddi:PointToLine
-  ddi:PointToArea
-  ddi:LineToLine
-  ddi:LineToArea
-  ddi:AreaToArea
-]
 
-ddi:SpatialObjectType [
-  ddi:Point
-  ddi:Polygon
-  ddi:Line
-  ddi:LinearRing
-  ddi:Raster
-]
 
-ddi:SpatialRelationSpecification [
-  ddi:Equals
-  ddi:Disjoint
-  ddi:Intersects
-  ddi:Contains
-  ddi:Touches
-]
 
-ddi:TableDirectionValues [
-  ddi:Ltr
-  ddi:Rtl
-  ddi:Auto
-]
 
-ddi:TemporalRelationSpecification [
-  ddi:TemporalMeets
-  ddi:TemporalContains
-  ddi:TemporalFinishes
-  ddi:TemporalPrecedes
-  ddi:TemporalStarts
-  ddi:TemporalOverlaps
-  ddi:TemporalEquals
-]
 
-ddi:TextDirectionValues [
-  ddi:Ltr
-  ddi:Rtl
-  ddi:Auto
-  ddi:Inherit
-]
 
-ddi:TotalityType [
-  ddi:Total
-  ddi:Partial
-  ddi:Unknown
-]
 
-ddi:TrimValues [
-  ddi:Start
-  ddi:End
-  ddi:Both
-  ddi:Neither
-]
 
-ddi:ValueRelationshipType [
-  ddi:Equal
-  ddi:NotEqual
-  ddi:GreaterThan
-  ddi:GreaterThanOrEqualTo
-  ddi:LessThan
-  ddi:LessThanOrEqualTo
-]
 
-ddi:WhiteSpaceRule [
-  ddi:Preserve
-  ddi:Replace
-  ddi:collapse
-]
-
-ddi:DDI4Version [
-  ddi:DR0.2
-]
-
+# END Primitives Package

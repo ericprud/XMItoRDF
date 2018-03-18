@@ -7872,7 +7872,9 @@ function main () {
         ),
         $('<li/>').append(
           'ShEx: ',
-          $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex'))
+          $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
+          ' | ',
+          $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/shex', 'ddi.shex'))
         )
       )
 
@@ -8124,6 +8126,7 @@ function main () {
               packages: parents,
               superClasses: []
             })
+            packages[parent].elements.push({type: 'class', id: id})
             Object.keys(ownedAttrs.associations).forEach(
               assocSourceId => { assocSrcToClass[assocSourceId] = id }
             )
@@ -8150,6 +8153,7 @@ function main () {
               ),
               packages: parents
             }
+            packages[parent].elements.push({type: 'enumeration', id: id})
             // record class hierarchy
             if ('generalization' in elt) {
               throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
@@ -8165,6 +8169,7 @@ function main () {
               id: id,
               packages: parents
             }
+            packages[parent].elements.push({type: 'datatype', id: id})
             // record class hierarchy
             if ('generalization' in elt) {
               throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
@@ -8186,10 +8191,12 @@ function main () {
             packages[id] = {
               name: name,
               id: id,
-              packages: parents
+              packages: parents,
+              elements: []
             }
             if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
               packageHierarchy.add(parent, id)
+              packages[parent].elements.push({type: 'package', id: id})
             }
             if (recurse) {
               // walk desendents
@@ -8223,7 +8230,7 @@ function main () {
                </packagedElement> */
             break
           default:
-            console.log('need handler for ' + type)
+            console.warn('need handler for ' + type)
         }
       }
     }
@@ -8356,10 +8363,43 @@ function main () {
         'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         '\n'
     ]
+    let ShExCMarkup = {
+      definition: name => pname(name),
+      reference: name => pname(name),
+      constant: name => pname(name),
+      property: name => pname(name),
+      valueType: name => pname(name),
+      valueReference: name => name === '.' ? '.' : '@' + pname(name)
+    }
     let shexh = []
+    let ShExHMarkup = {
+      definition: name => pname(name),
+      reference: name => pname(name),
+      constant: name => pname(name),
+      property: name => pname(name),
+      valueType: name => pname(name),
+      valueReference: name => name === '.' ? '.' : '@' + pname(name)
+    }
+
+    // Missing classes -- expected to be repaired.
+    { ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment'].forEach(
+      classId => {
+        if (!(classId in model)) { // !!
+          model.classes[classId] = { name: classId, packages: ['FooPattern'] }
+        }
+      }) }
+
+    let packages = firstBranch(model.packageHierarchy.roots)
+
+    let s = OWLXMLSerializer(model)
+    owlx = owlx.concat(Object.keys(packages).map(
+      packageId => renderPackage(model.packages[packageId], s, null) // markup not used in OWL
+    ))
+    shexc = shexc.concat(Object.keys(packages).map(
+      packageId => renderPackage(model.packages[packageId], ShExCSerializer(model), ShExCMarkup)
+    ))
 
     // Render package hierarchy.
-    let packages = firstBranch(model.packageHierarchy.roots)
     owlx = owlx.concat(Object.keys(packages).map(
       p => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.packages[p].name}_Package"/>
@@ -8382,14 +8422,6 @@ function main () {
       ))
     }
 
-    // Missing classes expected to be repaired.
-    ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment'].forEach(
-      classId => {
-        if (!(classId in model)) { // !!
-          model.classes[classId] = { name: classId, packages: ['FooPattern'] }
-        }
-      })
-
     // Declare properties
     owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
@@ -8408,6 +8440,7 @@ function main () {
     </${t}PropertyRange>`
       }
     ))
+
     owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
@@ -8416,12 +8449,6 @@ function main () {
       }
     ))
 
-    // Create Classes/Shapes
-    owlx = owlx.concat(Object.keys(model.classes).filter(
-      classId => !model.classes[classId].packages[0].match(/Pattern/)
-    ).map(
-      classId => OWLXMLClass(model, classId, isPolymorphic)
-    ))
     owlm = owlm.concat(Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
@@ -8434,58 +8461,61 @@ function main () {
           }
         ).join(',\n')
     ))
-    let ShExCMarkup = {
-      definition: name => pname(name),
-      reference: name => pname(name),
-      constant: name => pname(name),
-      property: name => pname(name),
-      valueType: name => pname(name),
-      valueReference: name => '@' + pname(name)
-    }
-    shexc = shexc.concat(Object.keys(model.classes).filter(
-      classId => !model.classes[classId].packages[0].match(/Pattern/)
-    ).map(
-      classId => ShExCClass(model, classId, ShExCMarkup)
-    ))
-
-    // Enumerate enumerations (enumeratively).
-    owlx = owlx.concat(Object.keys(model.enums).map(
-      enumId => OWLXMLEnum(model, enumId)))
-    shexc = shexc.concat(Object.keys(model.enums).map(
-      enumId => ShExCEnum(model, enumId, ShExCMarkup)
-    ))
-
-    // Add datatypes.
-    owlx = owlx.concat(Object.keys(model.datatypes).filter(
-      id => !pname(model.datatypes[id].name).startsWith('xsd')
-    ).map(
-      id => [].concat(
-        `    <DatatypeDefinition>
-        <Datatype abbreviatedIRI="${pname(model.datatypes[id].name)}"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DatatypeDefinition>`).join('\n')))
-    // shexc = shexc.concat(Object.keys(model.datatypes).filter(
-    //   id => !pname(model.datatypes[id].name).startsWith('xsd')
-    // ).map(
-    //   id => pname(model.datatypes[id].name) + ' LITERAL'
-    // ))
 
     // Terminate the various forms:
     owlx = owlx.concat([
       '</Ontology>\n'
     ])
-    shexc = shexc.concat(['']) // add a blank line
     console.dir({owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh})
-    return {owlx: owlx, owlm: owlm, shexc: shexc}
+    return {owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh}
 
     function isPolymorphic (propName) {
       return model.properties[propName].uniformType.length !== 1 ||
         model.properties[propName].uniformType[0] === undefined
     }
+
+    function renderPackage (pkg, serializer, markup) {
+      return serializer.startPackage(pkg) +
+        pkg.elements.map(
+          entry => {
+            switch (entry.type) {
+              // Not needed since the package space is flat:
+              // case 'package':
+              //   return model.packages[entry.id].map(
+              //     packageId => renderPackage(packageId, serializer, markup)
+              //   ).join('\n')
+              //   break
+              case 'class':
+                return serializer.class(model, entry.id, markup)
+              case 'enumeration':
+                return serializer.enum(model, entry.id, markup)
+              case 'datatype':
+                return serializer.datatype(model, entry.id, markup)
+              default:
+                throw Error('need renderPackage handler for ' + entry.type)
+            }
+          }
+        ).join('\n\n') +
+        serializer.endPackage(pkg)
+    }
   }
 
-  function OWLXMLClass (model, classId, isPolymorphic) {
-    return `x    <Declaration>
+  function OWLXMLSerializer (model) {
+    return {
+      class: OWLXMLClass,
+      enum: OWLXMLEnum,
+      datatype: OWLXMLDatatype,
+      startPackage: function (p) { return '    <!-- START ' + p.name + ' Package -->\n' },
+      endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
+    }
+
+    function isPolymorphic (propName) {
+      return model.properties[propName].uniformType.length !== 1 ||
+        model.properties[propName].uniformType[0] === undefined
+    }
+
+    function OWLXMLClass (model, classId) {
+      return `    <Declaration>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
     </Declaration>\n` +
         model.classes[classId].properties.filter(
@@ -8527,67 +8557,104 @@ function main () {
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
             ]).join('\n')
-  }
-
-  function ShExCClass (model, classId, markup) {
-    let classRecord = model.classes[classId]
-    return markup.definition(classRecord.name) +
-      classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + markup.reference(name)).join('') +
-      ' {\n' +
-      classRecord.properties.map(
-        propertyRecord => {
-          let propName = propertyRecord.name
-          let p = model.properties[propName]
-          let use = p.sources.find(s => s.id.indexOf(classId) === 0)
-          let dt = isObject(p)
-            ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-            : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
-          if (dt === undefined) {
-            console.log(use.relation)
-            return ''
-          }
-          let card = shexCardinality(use)
-          return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
-        }
-      ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
-  }
-
-  function shexCardinality (propertyRecord) {
-    let lower = parseInt(propertyRecord.lower || 0)
-    let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
-    if (lower === 1 && upper === 1) {
-      return ''
-    } else if (lower === 1 && upper === -1) {
-      return '+'
-    } else if (lower === 0 && upper === -1) {
-      return '*'
-    } else if (lower === 0 && upper === 1) {
-      return '?'
-    } else {
-      return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
     }
-  }
 
-  function OWLXMLEnum (model, enumId) {
-    return [].concat(
-      `    <EquivalentClasses>
+    function OWLXMLEnum (model, enumId) {
+      return [].concat(
+        `    <EquivalentClasses>
     <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
         <ObjectOneOf>`,
-      model.enums[enumId].values.map(
-        v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
-      ),
-      `       </ObjectOneOf>
+        model.enums[enumId].values.map(
+          v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
+        ),
+        `       </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.enums[enumId].packages[0]].name}_Package"/>
     </SubClassOf>`).join('\n')
+    }
+
+    function OWLXMLDatatype (model, datatypeId) {
+      let dt = model.datatypes[datatypeId]
+      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+          dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
+        return ''
+      }
+      return [].concat(
+        `    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="${pname(dt.name)}"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DatatypeDefinition>`).join('\n')
+    }
   }
 
-  function ShExCEnum (model, enumId, markup) {
-    return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
-      v => '  ' + markup.constant(v) + '\n'
-    ).join('') + ']'
+  function ShExCSerializer (model) {
+    return {
+      class: ShExCClass,
+      enum: ShExCEnum,
+      datatype: ShExCDatatype,
+      startPackage: function (p) { return '# START ' + p.name + ' Package\n' },
+      endPackage: function (p) { return '\n# END ' + p.name + ' Package\n' }
+    }
+
+    function ShExCClass (model, classId, markup) {
+      let classRecord = model.classes[classId]
+      return markup.definition(classRecord.name) +
+        classRecord.superClasses.map(
+          su => model.classes[su].name
+        ).map(
+          name => " EXTENDS " + markup.reference(name)
+        ).join('') +
+        ' {\n' +
+        classRecord.properties.map(
+          propertyRecord => {
+            let propName = propertyRecord.name
+            let p = model.properties[propName]
+            let use = p.sources.find(s => s.id.indexOf(classId) === 0)
+            let dt = isObject(p)
+              ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
+              : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+            if (dt === undefined) {
+              console.warn('unresolved datatype ' + use.relation + ' for property ' + propName)
+              dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
+            }
+            let card = shexCardinality(use)
+            return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
+          }
+        ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
+    }
+
+    function ShExCEnum (model, enumId, markup) {
+      return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
+        v => '  ' + markup.constant(v) + '\n'
+      ).join('') + ']'
+    }
+
+    function ShExCDatatype (model, datatypeId, markup) {
+      let dt = model.datatypes[datatypeId]
+      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+          dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
+        return ''
+      }
+      return markup.definition(dt.name) + ' xsd:string'
+    }
+
+    function shexCardinality (propertyRecord) {
+      let lower = parseInt(propertyRecord.lower || 0)
+      let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
+      if (lower === 1 && upper === 1) {
+        return ''
+      } else if (lower === 1 && upper === -1) {
+        return '+'
+      } else if (lower === 0 && upper === -1) {
+        return '*'
+      } else if (lower === 0 && upper === 1) {
+        return '?'
+      } else {
+        return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
+      }
+    }
   }
 
   function isObject (propertyDecl) {
