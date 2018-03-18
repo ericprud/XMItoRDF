@@ -738,7 +738,7 @@ function main () {
         'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         '\n'
     ]
-    let shexhtml = []
+    let shexh = []
 
     // Render package hierarchy.
     let packages = firstBranch(model.packageHierarchy.roots)
@@ -816,37 +816,25 @@ function main () {
           }
         ).join(',\n')
     ))
+    let ShExCMarkup = {
+      definition: name => pname(name),
+      reference: name => pname(name),
+      constant: name => pname(name),
+      property: name => pname(name),
+      valueType: name => pname(name),
+      valueReference: name => '@' + pname(name)
+    }
     shexc = shexc.concat(Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
-      classId => ShExCClass(model, classId, {
-        shapeDefn: name => pname(name),
-        shapeRef: name => pname(name),
-        property: name => pname(name),
-        valueType: name => pname(name),
-        valueShape: name => '@' + pname(name)
-      })
+      classId => ShExCClass(model, classId, ShExCMarkup)
     ))
 
     // Enumerate enumerations (enumeratively).
     owlx = owlx.concat(Object.keys(model.enums).map(
-      enumId => [].concat(
-        `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
-        <ObjectOneOf>`,
-        model.enums[enumId].values.map(
-          v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
-        ),
-        `       </ObjectOneOf>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.enums[enumId].packages[0]].name}_Package"/>
-    </SubClassOf>`).join('\n')))
+      enumId => OWLXMLEnum(model, enumId)))
     shexc = shexc.concat(Object.keys(model.enums).map(
-      enumId => 'ddi:' + model.enums[enumId].name + ' [\n' + model.enums[enumId].values.map(
-        v => '  ' + pname(v) + '\n'
-      ).join('') + ']'
+      enumId => ShExCEnum(model, enumId, ShExCMarkup)
     ))
 
     // Add datatypes.
@@ -869,7 +857,7 @@ function main () {
       '</Ontology>\n'
     ])
     shexc = shexc.concat(['']) // add a blank line
-    console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
+    console.dir({owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh})
     return {owlx: owlx, owlm: owlm, shexc: shexc}
 
     function isPolymorphic (propName) {
@@ -925,8 +913,8 @@ function main () {
 
   function ShExCClass (model, classId, markup) {
     let classRecord = model.classes[classId]
-    return markup.shapeDefn(classRecord.name) +
-      classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + markup.shapeRef(name)).join('') +
+    return markup.definition(classRecord.name) +
+      classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + markup.reference(name)).join('') +
       ' {\n' +
       classRecord.properties.map(
         propertyRecord => {
@@ -941,7 +929,7 @@ function main () {
             return ''
           }
           let card = shexCardinality(use)
-          return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueShape(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
+          return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
         }
       ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
   }
@@ -960,6 +948,28 @@ function main () {
     } else {
       return '{' + lower + ',' + (upper === -1 ? '' : upper) + '}'
     }
+  }
+
+  function OWLXMLEnum (model, enumId) {
+    return [].concat(
+      `    <EquivalentClasses>
+    <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
+        <ObjectOneOf>`,
+      model.enums[enumId].values.map(
+        v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
+      ),
+      `       </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.enums[enumId].packages[0]].name}_Package"/>
+    </SubClassOf>`).join('\n')
+  }
+
+  function ShExCEnum (model, enumId, markup) {
+    return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
+      v => '  ' + markup.constant(v) + '\n'
+    ).join('') + ']'
   }
 
   function isObject (propertyDecl) {
