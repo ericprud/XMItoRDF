@@ -8319,15 +8319,6 @@ function main () {
   }
 
   function dumpFormats (model) {
-    let x = Object.keys(model.properties).filter(
-      propName =>
-        model.properties[propName].uniformType.length !== 1 ||
-        model.properties[propName].uniformType[0] === undefined
-    )
-    let xHash = x.reduce(
-      (acc, propName, idx) =>
-        addKey(acc, propName, idx)
-      , {})
     let owlx = [
       '<?xml version="1.0"?>\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
@@ -8365,7 +8356,7 @@ function main () {
         'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         '\n'
     ]
-    console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
+    let shexhtml = []
 
     // Render package hierarchy.
     let packages = firstBranch(model.packageHierarchy.roots)
@@ -8400,7 +8391,7 @@ function main () {
       })
 
     // Declare properties
-    owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+    owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p) ? 'Object' : 'Data'
@@ -8417,7 +8408,7 @@ function main () {
     </${t}PropertyRange>`
       }
     ))
-    owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(propName in xHash)).map(
+    owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p) ? 'Object' : 'Data'
@@ -8429,48 +8420,7 @@ function main () {
     owlx = owlx.concat(Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
-      classId => `    <Declaration>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-    </Declaration>\n` +
-        model.classes[classId].properties.filter(
-          propertyRecord => !(propertyRecord.name in xHash)
-        ).map(
-          propertyRecord => {
-            let propName = propertyRecord.name
-            let p = model.properties[propName]
-            let t = isObject(p) ? 'Object' : 'Data'
-            let dt = isObject(p)
-              ? propertyRecord.relation in model.classes ? model.classes[propertyRecord.relation] : model.enums[propertyRecord.relation]
-              : propertyRecord.attribute in model.datatypes ? model.datatypes[propertyRecord.attribute] : { name: propertyRecord.attribute }
-            let type = propName in xHash ? 'owl:Thing' : pname(dt.name)
-            return `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <${t}AllValuesFrom>
-            <${t}Property abbreviatedIRI="ddi:${propName}"/>
-            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
-        </${t}AllValuesFrom>
-    </SubClassOf>`
-          }
-        ).concat(
-          (model.classes[classId].superClasses).map(
-            superClass =>
-              `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
-    </SubClassOf>`
-          )
-        ).concat(
-          model.classes[classId].superClasses.find(
-            supercl =>
-              SUPPRESS_DUPLICATE_CLASSES && // if some superclass appears in the same package...
-              model.classes[classId].packages[0] === model.classes[supercl].packages[0]
-          )
-            ? [] //       ... skip that package
-            : [`    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
-    </SubClassOf>`
-            ]).join('\n')
+      classId => OWLXMLClass(model, classId, isPolymorphic)
     ))
     owlm = owlm.concat(Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
@@ -8478,9 +8428,8 @@ function main () {
       classId => 'Class: ddi:' + classId + ' SubClassOf:\n' +
         model.classes[classId].properties.map(
           propertyRecord => {
-            let propId = propertyRecord.id
             let propName = propertyRecord.name
-            let type = propName in xHash ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
+            let type = isPolymorphic(propName) ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
             return '  ddi:' + propName + ' only ' + type
           }
         ).join(',\n')
@@ -8488,31 +8437,13 @@ function main () {
     shexc = shexc.concat(Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
-      classId => {
-        let classRecord = model.classes[classId]
-        return 'ddi:' + classRecord.name +
-          classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + pname(name)).join('') +
-          ' {\n' +
-          classRecord.properties.map(
-            propertyRecord => {
-              let propId = propertyRecord.id
-              let propName = propertyRecord.name
-              let p = model.properties[propName]
-              let use = p.sources.find(s => s.id.indexOf(classId) === 0)
-              let dt = isObject(p)
-                ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-                : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
-              if (dt === undefined) {
-                console.log(use.relation)
-                return ''
-              }
-              let type = propName in xHash ? '.' : pname(model.properties[propName].uniformType[0])
-              let refChar = isObject(p) ? '@' : ''
-              let card = shexCardinality(use)
-              return '  ddi:' + propName + ' ' + refChar + pname(dt.name) + ' ' + card + ';\n'
-            }
-          ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
-      }
+      classId => ShExCClass(model, classId, {
+        shapeDefn: name => pname(name),
+        shapeRef: name => pname(name),
+        property: name => pname(name),
+        valueType: name => pname(name),
+        valueShape: name => '@' + pname(name)
+      })
     ))
 
     // Enumerate enumerations (enumeratively).
@@ -8556,7 +8487,81 @@ function main () {
       '</Ontology>\n'
     ])
     shexc = shexc.concat(['']) // add a blank line
+    console.dir({owlx: owlx, owlm: owlm, shexc: shexc})
     return {owlx: owlx, owlm: owlm, shexc: shexc}
+
+    function isPolymorphic (propName) {
+      return model.properties[propName].uniformType.length !== 1 ||
+        model.properties[propName].uniformType[0] === undefined
+    }
+  }
+
+  function OWLXMLClass (model, classId, isPolymorphic) {
+    return `x    <Declaration>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+    </Declaration>\n` +
+        model.classes[classId].properties.filter(
+          propertyRecord => !(isPolymorphic(propertyRecord.name))
+        ).map(
+          propertyRecord => {
+            let propName = propertyRecord.name
+            let p = model.properties[propName]
+            let t = isObject(p) ? 'Object' : 'Data'
+            let dt = isObject(p)
+              ? propertyRecord.relation in model.classes ? model.classes[propertyRecord.relation] : model.enums[propertyRecord.relation]
+              : propertyRecord.attribute in model.datatypes ? model.datatypes[propertyRecord.attribute] : { name: propertyRecord.attribute }
+            let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
+            return `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}AllValuesFrom>
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
+        </${t}AllValuesFrom>
+    </SubClassOf>`
+          }
+        ).concat(
+          (model.classes[classId].superClasses).map(
+            superClass =>
+              `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
+    </SubClassOf>`
+          )
+        ).concat(
+          model.classes[classId].superClasses.find(
+            supercl =>
+              SUPPRESS_DUPLICATE_CLASSES && // if some superclass appears in the same package...
+              model.classes[classId].packages[0] === model.classes[supercl].packages[0]
+          )
+            ? [] //       ... skip that package
+            : [`    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
+    </SubClassOf>`
+            ]).join('\n')
+  }
+
+  function ShExCClass (model, classId, markup) {
+    let classRecord = model.classes[classId]
+    return markup.shapeDefn(classRecord.name) +
+      classRecord.superClasses.map(su => model.classes[su].name).map(name => " EXTENDS " + markup.shapeRef(name)).join('') +
+      ' {\n' +
+      classRecord.properties.map(
+        propertyRecord => {
+          let propName = propertyRecord.name
+          let p = model.properties[propName]
+          let use = p.sources.find(s => s.id.indexOf(classId) === 0)
+          let dt = isObject(p)
+            ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
+            : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+          if (dt === undefined) {
+            console.log(use.relation)
+            return ''
+          }
+          let card = shexCardinality(use)
+          return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueShape(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
+        }
+      ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
   }
 
   function shexCardinality (propertyRecord) {
