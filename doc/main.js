@@ -745,44 +745,83 @@ function main () {
         'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         '\n'
     ]
-    let ShExCMarkup = {
-      definition: name => pname(name),
-      reference: name => pname(name),
-      constant: name => pname(name),
-      property: name => pname(name),
-      valueType: name => pname(name),
-      valueReference: name => name === '.' ? '.' : '@' + pname(name)
-    }
     let shexh = []
-    let ShExHMarkup = {
-      definition: name => pname(name),
-      reference: name => pname(name),
-      constant: name => pname(name),
-      property: name => pname(name),
-      valueType: name => pname(name),
-      valueReference: name => name === '.' ? '.' : '@' + pname(name)
+
+    function OWLXMLMarkup () {
+      return {
+        // only needed for section markers
+        startPackage: function (p) { return '    <!-- START ' + p.name + ' Package -->\n' },
+        endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
+      }
+    }
+    function ShExCMarkup () {
+      return {
+        definition: name => pname(name),
+        docLink: link => ' // rdfs:definedBy <' + link + '>',
+        reference: name => pname(name),
+        constant: name => pname(name),
+        property: name => pname(name),
+        valueType: name => pname(name),
+        valueReference: name => name === '.' ? '.' : '@' + pname(name),
+        startPackage: function (p) { return '# START ' + p.name + ' Package\n' },
+        endPackage: function (p) { return '\n# END ' + p.name + ' Package\n' }
+      }
+    }
+    function ShExHMarkup () {
+      return {
+        definition: name => `      <section>
+        <h3>${name}</h3>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
+        docLink: link => `<a class="tryit" href="${link}">lion</a></pre>
+      </div>
+      </section>`,
+        reference: name => ref(pname(name)),
+        constant: name => pOrT(pname(name)),
+        property: name => pOrT(pname(name)),
+        valueType: name => pOrT(pname(name)),
+        valueReference: name => name === '.' ? '.' : '@' + ref(pname(name)),
+        startPackage: function (p) { return '    <section>\n      <h2>' + p.name + '</h2>\n\n' },
+        endPackage: function (p) { return '    </section>\n' }
+      }
+
+      function ref (term) {
+        let i = term.indexOf(':') + 1
+        return '<span class="shape-name">' + term.substr(0, i) + '<a>' + term.substr(i) + '</a></span>'
+      }
+
+      function pOrT (term) {
+        let i = term.indexOf(':') + 1
+        return '<span class="type">' + term.substr(0, i) + '</span><span class="constant">' + term.substr(i) + '</span>'
+      }
     }
 
     // Missing classes -- expected to be repaired.
-    { ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment'].forEach(
+    let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
+    missingClasses.forEach(
       classId => {
         if (!(classId in model)) { // !!
           model.classes[classId] = { name: classId, packages: ['FooPattern'] }
         }
-      }) }
+      })
 
     let packages = firstBranch(model.packageHierarchy.roots)
 
-    let s = OWLXMLSerializer(model)
-    owlx = owlx.concat(Object.keys(packages).map(
-      packageId => renderPackage(model.packages[packageId], s, null) // markup not used in OWL
-    ))
-    shexc = shexc.concat(Object.keys(packages).map(
-      packageId => renderPackage(model.packages[packageId], ShExCSerializer(model), ShExCMarkup)
-    ))
+    let toRender = [
+      { v: owlx, s: OWLXMLSerializer(model), m: OWLXMLMarkup() },
+      { v: shexc, s: ShExCSerializer(model), m: ShExCMarkup() },
+      { v: shexh, s: ShExCSerializer(model), m: ShExHMarkup() }
+    ]
+    toRender.forEach(
+      r => {
+        Array().push.apply(r.v, Object.keys(packages).map(
+          packageId => renderPackage(model.packages[packageId], r.s, r.m)
+        ))
+      })
 
     // Render package hierarchy.
-    owlx = owlx.concat(Object.keys(packages).map(
+    Array().push.apply(owlx, Object.keys(packages).map(
       p => `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.packages[p].name}_Package"/>
         <Class abbreviatedIRI="ddi:Packages"/>
@@ -791,7 +830,7 @@ function main () {
 
     // Render view hierarchy.
     if ('views' in model) {
-      owlx = owlx.concat(model.views.reduce(
+      Array().push.apply(owlx, model.views.reduce(
         (acc, view) => acc.concat([`    <SubClassOf>
         <Class abbreviatedIRI="ddi:${view.name}"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -805,7 +844,7 @@ function main () {
     }
 
     // Declare properties
-    owlx = owlx.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlx, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p) ? 'Object' : 'Data'
@@ -823,7 +862,7 @@ function main () {
       }
     ))
 
-    owlm = owlm.concat(Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlm, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p) ? 'Object' : 'Data'
@@ -831,7 +870,7 @@ function main () {
       }
     ))
 
-    owlm = owlm.concat(Object.keys(model.classes).filter(
+    Array().push.apply(owlm, Object.keys(model.classes).filter(
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
       classId => 'Class: ddi:' + classId + ' SubClassOf:\n' +
@@ -845,11 +884,12 @@ function main () {
     ))
 
     // Terminate the various forms:
-    owlx = owlx.concat([
+    Array().push.apply(owlx, [
       '</Ontology>\n'
     ])
-    console.dir({owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh})
-    return {owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh}
+    let ret = {owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh}
+    console.dir(ret)
+    return ret
 
     function isPolymorphic (propName) {
       return model.properties[propName].uniformType.length !== 1 ||
@@ -857,7 +897,7 @@ function main () {
     }
 
     function renderPackage (pkg, serializer, markup) {
-      return serializer.startPackage(pkg) +
+      return markup.startPackage(pkg) +
         pkg.elements.map(
           entry => {
             switch (entry.type) {
@@ -878,7 +918,7 @@ function main () {
             }
           }
         ).join('\n\n') +
-        serializer.endPackage(pkg)
+        markup.endPackage(pkg)
     }
   }
 
@@ -886,9 +926,7 @@ function main () {
     return {
       class: OWLXMLClass,
       enum: OWLXMLEnum,
-      datatype: OWLXMLDatatype,
-      startPackage: function (p) { return '    <!-- START ' + p.name + ' Package -->\n' },
-      endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
+      datatype: OWLXMLDatatype
     }
 
     function isPolymorphic (propName) {
@@ -975,9 +1013,7 @@ function main () {
     return {
       class: ShExCClass,
       enum: ShExCEnum,
-      datatype: ShExCDatatype,
-      startPackage: function (p) { return '# START ' + p.name + ' Package\n' },
-      endPackage: function (p) { return '\n# END ' + p.name + ' Package\n' }
+      datatype: ShExCDatatype
     }
 
     function ShExCClass (model, classId, markup) {
@@ -1004,13 +1040,13 @@ function main () {
             let card = shexCardinality(use)
             return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
           }
-        ).join('') + '} // rdfs:definedBy <' + docURL(classId) + '>'
+        ).join('') + '}' + markup.docLink(docURL(classId))
     }
 
     function ShExCEnum (model, enumId, markup) {
       return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
         v => '  ' + markup.constant(v) + '\n'
-      ).join('') + ']'
+      ).join('') + ']' + markup.docLink(docURL(enumId))
     }
 
     function ShExCDatatype (model, datatypeId, markup) {
@@ -1019,7 +1055,7 @@ function main () {
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
-      return markup.definition(dt.name) + ' xsd:string'
+      return markup.definition(dt.name) + ' xsd:string' + markup.docLink(docURL(datatypeId))
     }
 
     function shexCardinality (propertyRecord) {
