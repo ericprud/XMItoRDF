@@ -6,30 +6,6 @@ PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>
 
 
 
-# START DummyPackage Package
-ddi:PhysicalSegment {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegment#parent_properties>
-
-ddi:LogicalSegment {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalsegment#parent_properties>
-
-ddi:LogicalResource {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalresource#parent_properties>
-
-ddi:DataCollection {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datacollection#parent_properties>
-
-ddi:CatalogItem {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/catalogitem#parent_properties>
-
-ddi:CommonDataElement {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/commondataelement#parent_properties>
-
-ddi:AnalyticMetadatum {
-} // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/analyticmetadatum#parent_properties>
-# END DummyPackage Package
-
-
 # START ComplexDataTypes Package
 ddi:RelationSpecification [
   ddi:Unordered
@@ -388,7 +364,7 @@ ddi:DynamicText {
   ddi:audienceLanguage ddi:LanguageSpecification ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictext#parent_properties>
 
-ddi:DynamicTextContent {
+ABSTRACT ddi:DynamicTextContent {
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:orderPosition umld:Integer ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictextcontent#parent_properties>
@@ -554,7 +530,7 @@ ddi:LanguageSpecificStringType {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstringtype#parent_properties>
 
 ddi:LanguageSpecificStructuredStringType {
-  ddi:formattedContent umld:String +;
+  ddi:formattedContent xhtml:BlkNoForm.mix +;
   ddi:language xsd:language ?;
   ddi:isTranslated umld:Boolean ?;
   ddi:isTranslatable umld:Boolean ?;
@@ -954,7 +930,7 @@ ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:maps @ddi:ConceptSystem *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystemcorrespondence#parent_properties>
 
-ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:describedConceptualDomain @ddi:ValueAndConceptDescription *;
   ddi:enumeratedConceptualDomain @ddi:ConceptSystem *;
@@ -1184,8 +1160,8 @@ ddi:SampleFrame EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasPrimaryUnitType @ddi:UnitType *;
   ddi:hasSecondaryUnitType @ddi:UnitType *;
   ddi:sourceFrame @ddi:SampleFrame *;
-  ddi:hasInputParameter @ddi:Parameter ?;
-  ddi:hasOutputParameter @ddi:Parameter ?;
+  ddi:hasInputParameter @ddi:Parameter ;
+  ddi:hasOutputParameter @ddi:Parameter ;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sampleframe#parent_properties>
 
 ddi:SamplePopulationResult EXTENDS ddi:Result {
@@ -1484,7 +1460,7 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isStructuredBy @ddi:DataPointRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegment#parent_properties>
 
-ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isDelimited umld:Boolean ;
   ddi:delimiter umld:String ?;
   ddi:isFixedWidth umld:Boolean ;
@@ -1516,7 +1492,7 @@ ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isStructuredBy @ddi:PhysicalLayoutRelationStructure *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout#parent_properties>
 
-ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation#parent_properties>
 
 ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
@@ -1665,7 +1641,7 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
 
 
 # START Workflows Package
-ddi:Act EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:Act EXTENDS ddi:WorkflowStep {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/act#parent_properties>
 
 ddi:ComputationAction EXTENDS ddi:Act {
@@ -1746,7 +1722,7 @@ ddi:WorkflowService EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasAgent @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowservice#parent_properties>
 
-ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
@@ -1755,7 +1731,7 @@ ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasInformationFlow @ddi:Binding *;
   ddi:isPerformedBy @ddi:WorkflowService *;
   ddi:hasInputParameter @ddi:Parameter ?;
-  ddi:hasOutputParameter @ddi:Parameter ?;
+  ddi:hasOutputParameter @ddi:Parameter *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstep#parent_properties>
 
 ddi:WorkflowStepRelationStructure EXTENDS ddi:AnnotatedIdentifiable {
@@ -1934,7 +1910,7 @@ ddi:CorrespondenceTable EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contactPerson @ddi:Agent *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetable#parent_properties>
 
-ddi:Designation EXTENDS ddi:Identifiable {
+ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
   ddi:representation @ddi:Signifier ?;
   ddi:denotes @ddi:Concept *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designation#parent_properties>
@@ -2007,7 +1983,7 @@ ddi:ValueAndConceptDescription EXTENDS ddi:Identifiable {
   ddi:formatPattern @ddi:ExternalControlledVocabularyEntry ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valueandconceptdescription#parent_properties>
 
-ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:recommendedDataType @ddi:ExternalControlledVocabularyEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuedomain#parent_properties>
@@ -2073,7 +2049,7 @@ ddi:InstanceVariableRelationStructure EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasMemberRelation @ddi:InstanceVariableRelation *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariablerelationstructure#parent_properties>
 
-ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
@@ -2105,12 +2081,12 @@ ddi:UnitDataRecord EXTENDS ddi:LogicalRecord {
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unitdatarecord#parent_properties>
 
 ddi:UnitDataViewpoint EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:hasIdentifierRole @ddi:IdentifierRole ?;
-  ddi:hasMeasureRole @ddi:MeasureRole ?;
+  ddi:hasIdentifierRole @ddi:IdentifierRole ;
+  ddi:hasMeasureRole @ddi:MeasureRole ;
   ddi:hasAttributeRole @ddi:AttributeRole ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unitdataviewpoint#parent_properties>
 
-ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?;
   ddi:name @ddi:ObjectName *;
   ddi:purpose @ddi:InternationalStructuredString ?;
@@ -2125,7 +2101,7 @@ ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:forCategory @ddi:Category ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/booleanresponsedomain#parent_properties>
 
-ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:displayLabel @ddi:LabelForDisplay *;
   ddi:usage @ddi:InternationalStructuredString ?;
@@ -2186,7 +2162,7 @@ ddi:InstrumentCode EXTENDS ddi:InstrumentComponent {
   ddi:usesCommandCode @ddi:CommandCode ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcode#parent_properties>
 
-ddi:InstrumentComponent EXTENDS ddi:Act {
+ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
   ddi:hasInstructions @ddi:Instruction ?;
   ddi:hasExternalAids @ddi:ExternalAid ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcomponent#parent_properties>
@@ -2287,12 +2263,12 @@ ddi:TopicalCoverage EXTENDS ddi:AnnotatedIdentifiable {
 
 
 # START Identification Package
-ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
+ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation ?;
   ddi:relatedMaterial @ddi:ExternalMaterial *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotatedidentifiable#parent_properties>
 
-ddi:Identifiable {
+ABSTRACT ddi:Identifiable {
   ddi:agency umld:String ;
   ddi:id umld:String ;
   ddi:version umld:String ;
@@ -2315,7 +2291,7 @@ ddi:AppliedUse EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isUsedBy @ddi:AnnotatedIdentifiable *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/applieduse#parent_properties>
 
-ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessfunction#parent_properties>
 
@@ -2333,7 +2309,7 @@ ddi:Precondition EXTENDS ddi:BusinessFunction {
   ddi:basedOnPriorResult @ddi:Result *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/precondition#parent_properties>
 
-ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?;
   ddi:hasBinding @ddi:Binding *;
   ddi:hasAppliedUse @ddi:AppliedUse *;
@@ -2345,7 +2321,7 @@ ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
 
 
 # START Agents Package
-ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasAgentId @ddi:AgentId *;
   ddi:purpose @ddi:InternationalStructuredString ?;
   ddi:image @ddi:PrivateImage *;
@@ -2394,10 +2370,22 @@ ddi:Organization EXTENDS ddi:Agent {
 # END Agents Package
 
 
-# START XMLSchemaDatatypes Package
-
-
-
-
+# START Primitives Package
 ddi:LanguageSpecification xsd:string // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecification#parent_properties>
-# END XMLSchemaDatatypes Package
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# END Primitives Package

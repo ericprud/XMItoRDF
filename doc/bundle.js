@@ -7656,6 +7656,10 @@ function main () {
     return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
   }
 
+  function parseIsAbstract (elt) {
+    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0].$['xmi:idref'] === 'true' : false
+  }
+
   function parseProperties (model, elts, className) {
     let ret = {
       properties: [],
@@ -7874,7 +7878,7 @@ function main () {
           'ShEx: ',
           $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
           ' | ',
-          $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/shex', 'ddi.shex'))
+          $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
         )
       )
 
@@ -7983,7 +7987,8 @@ function main () {
             properties: [],
             others: old.others.slice(),
             packages: old.packages.slice(),
-            superClasses: old.superClasses.slice()
+            superClasses: old.superClasses.slice(),
+            isAbstract: old.isAbstract
           } // was deepCopy(old)
           ret.classes[classId] = c
           old.properties.forEach(
@@ -8124,7 +8129,8 @@ function main () {
               name: name
             }, ownedAttrs, {
               packages: parents,
-              superClasses: []
+              superClasses: [],
+              isAbstract: parseIsAbstract(elt)
             })
             packages[parent].elements.push({type: 'class', id: id})
             Object.keys(ownedAttrs.associations).forEach(
@@ -8200,8 +8206,7 @@ function main () {
             }
             if (recurse) {
               // walk desendents
-              let skipTheseElements = ['lowerValue', 'upperValue', 'generalization', 'type', 'name', 'isAbstract', 'URI', 'ownedLiteral']
-              Object.keys(elt).filter(k => k !== '$' && skipTheseElements.indexOf(k) === -1).forEach(k => {
+              Object.keys(elt).filter(k => k !== '$').forEach(k => {
                 elt[k].forEach(sub => {
                   visitPackage(sub, [id].concat(parents))
                 })
@@ -8374,7 +8379,7 @@ function main () {
     }
     function ShExCMarkup () {
       return {
-        definition: name => pname(name),
+        definition: (name, isAbstract) => (isAbstract ? 'ABSTRACT ' : '') + pname(name),
         docLink: link => ' // rdfs:definedBy <' + link + '>',
         reference: name => pname(name),
         constant: name => pname(name),
@@ -8387,11 +8392,11 @@ function main () {
     }
     function ShExHMarkup () {
       return {
-        definition: name => `      <section>
+        definition: (name, isAbstract) => `      <section>
         <h3>${name}</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
+${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
         docLink: link => `<a class="tryit" href="${link}">lion</a></pre>
       </div>
       </section>`,
@@ -8556,6 +8561,17 @@ function main () {
       return `    <Declaration>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
     </Declaration>\n` +
+        (model.classes[classId].isAbstract ? (
+          `    <DisjointUnion>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+` + model.classHierarchy.children[classId].map(
+  childClassId =>
+`        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>
+`
+).join('') +
+          `    </DisjointUnion>
+`
+        ) : '') +
         model.classes[classId].properties.filter(
           propertyRecord => !(isPolymorphic(propertyRecord.name))
         ).map(
@@ -8636,11 +8652,11 @@ function main () {
 
     function ShExCClass (model, classId, markup) {
       let classRecord = model.classes[classId]
-      return markup.definition(classRecord.name) +
+      return markup.definition(classRecord.name, model.classes[classId].isAbstract) +
         classRecord.superClasses.map(
           su => model.classes[su].name
         ).map(
-          name => " EXTENDS " + markup.reference(name)
+          name => ' EXTENDS ' + markup.reference(name)
         ).join('') +
         ' {\n' +
         classRecord.properties.map(
@@ -8871,6 +8887,9 @@ function main () {
       if (elt === null) {
         title += ':'
         value = $('<span/>').addClass('keyword').text('NULL')
+      } else if (typeof elt === 'boolean') {
+        title += ':'
+        value = $('<span/>').addClass('keyword').text(elt)
       } else if (typeof elt === 'object') {
         if (elt.constructor === Array) {
           title += ' (' + Object.keys(elt).length + ')'
