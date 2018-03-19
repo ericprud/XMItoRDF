@@ -39,7 +39,7 @@ function main () {
   }
 
   function parseIsAbstract (elt) {
-    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0].$['xmi:idref'] === 'true' : false
+    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
   }
 
   function parseProperties (model, elts, className) {
@@ -143,7 +143,7 @@ function main () {
         // Give user some interface feedback before reading.
         let div = $('<div/>', {'id': file.name}).appendTo('#loaded')
         $('<li/>').append($('<a/>', {href: '#' + file.name}).text(file.name)).appendTo('#toc')
-        let status = $('<span/>').addClass('status').text('loading')
+        let status = $('<span/>').addClass('status').text('loading...')
         $('<h2/>').append(file.name, status).appendTo(div)
         window.setTimeout(() => {
           let loader = new window.FileReader()
@@ -588,10 +588,8 @@ function main () {
             }
             if (recurse) {
               // walk desendents
-              Object.keys(elt).filter(k => k !== '$').forEach(k => {
-                elt[k].forEach(sub => {
-                  visitPackage(sub, [id].concat(parents))
-                })
+              elt.packagedElement.forEach(sub => {
+                visitPackage(sub, [id].concat(parents))
               })
             }
             break
@@ -945,14 +943,11 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     </Declaration>\n` +
         (model.classes[classId].isAbstract ? (
           `    <DisjointUnion>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-` + model.classHierarchy.children[classId].map(
-  childClassId =>
-`        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>
-`
-).join('') +
-          `    </DisjointUnion>
-`
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + model.classHierarchy.children[classId].map(
+            childClassId =>
+              `        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>\n`
+          ).join('') +
+          `    </DisjointUnion>\n`
         ) : '') +
         model.classes[classId].properties.filter(
           propertyRecord => !(isPolymorphic(propertyRecord.name))
