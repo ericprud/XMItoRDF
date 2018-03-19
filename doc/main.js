@@ -565,7 +565,7 @@ function main () {
               recurse = false
               break // elide EA views package in package hierarcy
             }
-            if (id === 'DDI4-FunctionalViews') {
+            if (id.match(/FunctionalViews/)) {
               model.views = parseCanonicalViews(elt)
               recurse = false
               break // elide canonical views package in package hierarcy
