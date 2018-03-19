@@ -1040,13 +1040,13 @@ function main () {
             let card = shexCardinality(use)
             return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
           }
-        ).join('') + '}' + markup.docLink(docURL(classId))
+        ).join('') + '}' + markup.docLink(docURL(classRecord.name))
     }
 
     function ShExCEnum (model, enumId, markup) {
       return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
         v => '  ' + markup.constant(v) + '\n'
-      ).join('') + ']' + markup.docLink(docURL(enumId))
+      ).join('') + ']' + markup.docLink(docURL(model.enums[enumId].name))
     }
 
     function ShExCDatatype (model, datatypeId, markup) {
@@ -1055,7 +1055,7 @@ function main () {
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
-      return markup.definition(dt.name) + ' xsd:string' + markup.docLink(docURL(datatypeId))
+      return markup.definition(dt.name) + ' xsd:string' + markup.docLink(docURL(dt.name))
     }
 
     function shexCardinality (propertyRecord) {
