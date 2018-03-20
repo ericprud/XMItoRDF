@@ -7740,6 +7740,17 @@ function main () {
     if (type === 'xs:language') {
       return 'http://www.w3.org/2001/XMLSchema#language'
     }
+    let nameMap = {
+      'http://schema.omg.org/spec/UML/2.1/uml.xml#String': 'http://www.w3.org/2001/XMLSchema#string',
+      'http://schema.omg.org/spec/UML/2.1/uml.xml#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
+      'http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String': 'http://www.w3.org/2001/XMLSchema#string',
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean'
+    }
+    if (type in nameMap) {
+      return nameMap[type]
+    }
     let umlp = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
     let umld = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
     if (type.startsWith(umlp)) {
