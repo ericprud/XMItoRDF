@@ -597,7 +597,7 @@ function main () {
               packageHierarchy.add(parent, id)
               packages[parent].elements.push({type: 'package', id: id})
             }
-            if (recurse) {
+            if (recurse && 'packagedElement' in elt) {
               // walk desendents
               elt.packagedElement.forEach(sub => {
                 visitPackage(sub, [id].concat(parents))
