@@ -8,7 +8,15 @@ var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's packa
 var UPPER_UNLIMITED = '*'
 
 function main () {
-  const AllRecordTypes = [{type: PropertyRecord, maker: () => $('<span/>', { class: 'propertyRecord' }).text('P')}]
+  const AllRecordTypes = [
+    {type: PropertyRecord,    maker: () => $('<span/>', { class: 'record' }).text('prop'   )},
+    {type: ClassRecord,       maker: () => $('<span/>', { class: 'record' }).text('Class'  )},
+    {type: PackageRecord,     maker: () => $('<span/>', { class: 'record' }).text('Package')},
+    {type: EnumRecord,        maker: () => $('<span/>', { class: 'record' }).text('Enum'   )},
+    {type: DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
+    {type: ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
+    {type: AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )}
+  ]
 
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
@@ -63,14 +71,14 @@ function main () {
              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
            </ownedAttribute> */
-        ret.associations[id] = {
+        ret.associations[id] = Object.assign(new AssociationRecord(), {
           in: className,
           id: id,
           name: name,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
-        }
+        })
       } else if (!name) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
@@ -94,26 +102,26 @@ function main () {
       diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
     ).map(
       diagram => {
-        return {
+        return Object.assign(new ViewRecord(), {
           id: diagram['$']['xmi:id'],
           name: diagram.model[0].$.package,
           members: diagram.elements[0].element.map(
             member => member.$.subject
           )
-        }
+        })
       }
     )
   }
 
   function parseCanonicalViews (elt) {
     return elt.packagedElement.map(view => {
-      return {
+      return Object.assign(new ViewRecord(), {
         id: view.$['xmi:id'],
         name: parseName(view),
         members: view.elementImport.map(
           imp => imp.importedElement[0].$['xmi:idref']
         )
-      }
+      })
     })
   }
 
@@ -184,7 +192,7 @@ function main () {
     // Give user some interface feedback before reading.
     let div = $('<div/>', {'id': source}).appendTo('#loaded')
     $('<li/>').append($('<a/>', {href: '#' + source}).text(source)).appendTo('#toc')
-    let status = $('<span/>').addClass('status').text('loading')
+    let status = $('<span/>').addClass('status').text('fetching...')
     $('<h2/>').append(source, status).appendTo(div)
     window.fetch(source).then(function (response) {
       if (!response.ok) {
@@ -457,7 +465,8 @@ function main () {
       enums: enums,
       datatypes: datatypes,
       classHierarchy: classHierarchy,
-      packageHierarchy: packageHierarchy
+      packageHierarchy: packageHierarchy,
+      associations: associations
     }
 
     // Build the model
@@ -519,10 +528,9 @@ function main () {
               model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
               name, triples)
 
-            classes[id] = Object.assign({
-              id: id,
-              name: name
-            }, ownedAttrs, {
+            classes[id] = Object.assign(
+              new ClassRecord(id, name),
+              ownedAttrs, {
               packages: parents,
               superClasses: [],
               isAbstract: parseIsAbstract(elt)
@@ -546,14 +554,14 @@ function main () {
             if (id in enums) {
               throw Error('already seen enum id ' + id)
             }
-            enums[id] = {
+            enums[id] = Object.assign(new EnumRecord(), {
               id: id,
               name: name,
               values: elt.ownedLiteral.map(
                 l => parseName(l)
               ),
               packages: parents
-            }
+            })
             packages[parent].elements.push({type: 'enumeration', id: id})
             // record class hierarchy
             if ('generalization' in elt) {
@@ -565,11 +573,11 @@ function main () {
             if (id in datatypes) {
               throw Error('already seen datatype id ' + id)
             }
-            datatypes[id] = {
+            datatypes[id] = Object.assign(new DatatypeRecord(), {
               name: name,
               id: id,
               packages: parents
-            }
+            })
             packages[parent].elements.push({type: 'datatype', id: id})
             // record class hierarchy
             if ('generalization' in elt) {
@@ -589,12 +597,12 @@ function main () {
               recurse = false
               break // elide canonical views package in package hierarcy
             }
-            packages[id] = {
+            packages[id] = Object.assign(new PackageRecord(), {
               name: name,
               id: id,
               packages: parents,
               elements: []
-            }
+            })
             if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
               packageHierarchy.add(parent, id)
               packages[parent].elements.push({type: 'package', id: id})
@@ -609,12 +617,12 @@ function main () {
             // Pass through to get to nested goodies.
           case 'uml:Association':
             let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
-            associations[id] = {
+            associations[id] = Object.assign(new AssociationRecord(), {
               id: id,
               name: name,
               from: from
               // type: elt.ownedEnd[0].type[0].$['xmi:idref']
-            }
+            })
             /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
                  <name>member</name>
                  <memberEnd xmi:idref="AgentIndicator-member-source"/>
@@ -634,6 +642,11 @@ function main () {
     }
   }
 
+  function ClassRecord (id, name) {
+    this.id = id
+    this.name = name
+  }
+
   function PropertyRecord (model, className, id, name, relation, attribute, lower, upper) {
     this.in = className
     this.id = id
@@ -650,6 +663,12 @@ function main () {
     }
     model.properties[name].sources.push(this)
   }
+
+  function PackageRecord     () { }
+  function EnumRecord        () { }
+  function DatatypeRecord    () { }
+  function ViewRecord        () { }
+  function AssociationRecord () { }
 
   function reusedProperties (classes, into) {
     const x = Object.keys(classes).reduce((acc, classId) => {
