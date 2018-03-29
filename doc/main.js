@@ -674,14 +674,12 @@ function main () {
     const x = Object.keys(classes).reduce((acc, classId) => {
       classes[classId].properties.forEach(
         field => {
-          let a = field.id.split(/_/)
-          field = a[a.length - 1]
-          if (!(field in acc.seen)) {
-            acc.seen[field] = [classId]
+          if (!(field.name in acc.seen)) {
+            acc.seen[field.name] = [classId]
           } else {
-            acc.seen[field].push(classId)
-            if (acc.duplicates.indexOf(field) === -1) {
-              acc.duplicates.push(field)
+            acc.seen[field.name].push(classId)
+            if (acc.duplicates.indexOf(field.name) === -1) {
+              acc.duplicates.push(field.name)
             }
           }
         }
