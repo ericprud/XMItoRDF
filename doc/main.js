@@ -8,6 +8,8 @@ var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's packa
 var UPPER_UNLIMITED = '*'
 
 function main () {
+  const AllRecordTypes = [{type: PropertyRecord, maker: () => $('<span/>', { class: 'propertyRecord' }).text('P')}]
+
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' +
       term.toLowerCase() + '#parent_properties'
@@ -76,7 +78,7 @@ function main () {
         throw Error('unexpected property name ' + name + ' in ' + className)
       } else {
         ret.properties.push(
-          addProperty(
+          new PropertyRecord(
             model, className, id, name, elt.type[0].$['xmi:idref'],
             normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
             parseValue(elt.lowerValue[0], 0),
@@ -232,7 +234,7 @@ function main () {
 
     function render () {
       let modelUL = $('<ul/>')
-      structureToListItems(model, modelUL)
+      structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
       progress.append($('<li/>').text('model').append(modelUL))
 
@@ -396,7 +398,7 @@ function main () {
               if (id in model.classes) {
                 dependentClassIds.push(id)
               }
-              c.properties.push(addProperty(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
+              c.properties.push(new PropertyRecord(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
             }
           )
           addPackages(ret, model, c.packages)
@@ -468,7 +470,7 @@ function main () {
         let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
         if (a.name !== 'realizes') {
-          c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
+          c.properties.push(new PropertyRecord(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
         }
       }
     )
@@ -632,24 +634,21 @@ function main () {
     }
   }
 
-  function addProperty (model, className, id, name, relation, attribute, lower, upper) {
-    let propertyRecord = {
-      in: className,
-      id: id,
-      name: name,
-      relation: relation,
-      attribute: attribute,
-      lower: lower,
-      upper: upper
-    }
-    if (propertyRecord.upper === '-1') {
-      propertyRecord.upper = UPPER_UNLIMITED
+  function PropertyRecord (model, className, id, name, relation, attribute, lower, upper) {
+    this.in = className
+    this.id = id
+    this.name = name
+    this.relation = relation
+    this.attribute = attribute
+    this.lower = lower
+    this.upper = upper
+    if (this.upper === '-1') {
+      this.upper = UPPER_UNLIMITED
     }
     if (!(name in model.properties)) {
       model.properties[name] = {sources: []}
     }
-    model.properties[name].sources.push(propertyRecord)
-    return propertyRecord
+    model.properties[name].sources.push(this)
   }
 
   function reusedProperties (classes, into) {
@@ -1263,11 +1262,12 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }, [])
   }
 
-  function structureToListItems (object, into) {
+  function structureToListItems (object, into, recordTypes) {
     into.append(Object.keys(object).filter(
       k => typeof object[k] !== 'function'
     ).map(k => {
       let elt = object[k]
+      let typeIcon = ''
       let title = object.constructor === Array
         ? ''
         : k
@@ -1279,8 +1279,9 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
         title += ':'
         value = $('<span/>').addClass('keyword').text(elt)
       } else if (typeof elt === 'object') {
+        let delims = ['{', '}']
         if (elt.constructor === Array) {
-          title += ' (' + Object.keys(elt).length + ')'
+          let delims = ['[', ']']
         } else if ('id' in elt) {
           if (title === '') {
             title = elt.id
@@ -1291,8 +1292,15 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
         } else if ('$' in elt && 'xmi:id' in elt.$) {
           title += elt.$['xmi:id']
         }
+        typeIcon = recordTypes.find(rt => elt instanceof rt.type)
+        if (typeIcon === undefined) {
+          typeIcon = ''
+          title += ' ' + delims[0] + Object.keys(elt).length + delims[1]
+        } else {
+          typeIcon = typeIcon.maker()
+        }
         value = $('<ul/>')
-        structureToListItems(elt, value)
+        structureToListItems(elt, value, recordTypes)
       } else {
         if (object.constructor !== Array) {
           title += ':'
@@ -1301,7 +1309,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
           ? ''
           : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
       }
-      into.append($('<li/>').text(title).append(value))
+      into.append($('<li/>').append(typeIcon, title, value))
     }))
   }
 
