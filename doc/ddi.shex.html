@@ -87,6 +87,26 @@
   <span class="type">ddi:</span><span class="constant">Equivalence</span>
   <span class="type">ddi:</span><span class="constant">GeneralSpecfic</span>
 ]<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/relationspecification"></a></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ComplexDataTypes</h2>
+
+      <section>
+        <h3>RelationSpecification</h3>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name">ddi:<dfn>RelationSpecification</dfn></span> [
+  <span class="type">ddi:</span><span class="constant">Unordered</span>
+  <span class="type">ddi:</span><span class="constant">List</span>
+  <span class="type">ddi:</span><span class="constant">ParentChild</span>
+  <span class="type">ddi:</span><span class="constant">WholePart</span>
+  <span class="type">ddi:</span><span class="constant">AcyclicPrecedence</span>
+  <span class="type">ddi:</span><span class="constant">Equivalence</span>
+  <span class="type">ddi:</span><span class="constant">GeneralSpecfic</span>
+]<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/relationspecification"></a></pre>
       </div>
       </section>
 
@@ -95,7 +115,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AccessLocation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> *;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> *;
   <span class="type">ddi:</span><span class="constant">mimeType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">physicalLocation</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/accesslocation"></a></pre>
@@ -108,15 +128,15 @@
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Address</dfn></span> {
   <span class="type">ddi:</span><span class="constant">typeOfAddress</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">line</span> <span class="type">umld:</span><span class="constant">String</span> *;
-  <span class="type">ddi:</span><span class="constant">cityPlaceLocal</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">stateProvince</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">postalCode</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">line</span> <span class="type">xsd:</span><span class="constant">string</span> *;
+  <span class="type">ddi:</span><span class="constant">cityPlaceLocal</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">stateProvince</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">postalCode</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">countryCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">timeZone</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">geographicPoint</span> @<span class="shape-name">ddi:<a>SpatialPoint</a></span> ?;
   <span class="type">ddi:</span><span class="constant">regionalCoverage</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfLocation</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -142,8 +162,8 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AgentId</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">agentIdValue</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">agentIdType</span> <span class="type">umld:</span><span class="constant">String</span> ;
+  <span class="type">ddi:</span><span class="constant">agentIdValue</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">agentIdType</span> <span class="type">xsd:</span><span class="constant">string</span> ;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/agentid"></a></pre>
       </div>
       </section>
@@ -153,7 +173,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AgentIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/agentindicator"></a></pre>
       </div>
@@ -175,31 +195,6 @@
       </section>
 
       <section>
-        <h3>AnalyticMetadatumIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AnalyticMetadatumIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>AnalyticMetadatum</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/analyticmetadatumindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>AnalyticMetadatumRelation</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AnalyticMetadatumRelation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>AnalyticMetadatum</a></span> *;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>AnalyticMetadatum</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/analyticmetadatumrelation"></a></pre>
-      </div>
-      </section>
-
-      <section>
         <h3>Annotation</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
@@ -216,9 +211,9 @@
   <span class="type">ddi:</span><span class="constant">copyright</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
   <span class="type">ddi:</span><span class="constant">typeOfResource</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   <span class="type">ddi:</span><span class="constant">informationSource</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
-  <span class="type">ddi:</span><span class="constant">versionIdentification</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">versionIdentification</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">versioningAgent</span> @<span class="shape-name">ddi:<a>AgentAssociation</a></span> *;
-  <span class="type">ddi:</span><span class="constant">abstract</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">summary</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">relatedResource</span> @<span class="shape-name">ddi:<a>ResourceIdentifier</a></span> *;
   <span class="type">ddi:</span><span class="constant">provenance</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
   <span class="type">ddi:</span><span class="constant">rights</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
@@ -256,8 +251,8 @@
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AudioSegment</dfn></span> {
   <span class="type">ddi:</span><span class="constant">typeOfAudioClip</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">audioClipBegin</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">audioClipEnd</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">audioClipBegin</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">audioClipEnd</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/audiosegment"></a></pre>
       </div>
       </section>
@@ -279,7 +274,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>BibliographicName</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InternationalString</a></span> {
-  <span class="type">ddi:</span><span class="constant">affiliation</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">affiliation</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/bibliographicname"></a></pre>
       </div>
       </section>
@@ -300,7 +295,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>BusinessProcessCondition</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">sql</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">sql</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">rejectionCriteria</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
   <span class="type">ddi:</span><span class="constant">dataDescription</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
   <span class="type">ddi:</span><span class="constant">usesLogicalRecord</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
@@ -313,59 +308,9 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>BusinessProcessIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>BusinessProcess</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/businessprocessindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>CDEIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CDEIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CommonDataElement</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/cdeindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>CDERelation</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CDERelation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>CommonDataElement</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>CommonDataElement</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/cderelation"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>CatalogItemIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CatalogItemIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CatalogItem</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/catalogitemindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>CatalogItemRelation</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CatalogItemRelation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>CatalogItem</a></span> *;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>CatalogItem</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/catalogitemrelation"></a></pre>
       </div>
       </section>
 
@@ -374,7 +319,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CategoryIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Category</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/categoryindicator"></a></pre>
       </div>
@@ -413,9 +358,9 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CharacterOffset</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">startCharOffset</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">endCharOffset</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">characterLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">startCharOffset</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">endCharOffset</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">characterLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/characteroffset"></a></pre>
       </div>
       </section>
@@ -425,7 +370,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ClassificationIndexEntryIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ClassificationIndexEntry</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationindexentryindicator"></a></pre>
       </div>
@@ -436,8 +381,8 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ClassificationItemIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">hasLevel</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">hasLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ClassificationItem</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationitemindicator"></a></pre>
       </div>
@@ -448,7 +393,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ClassificationSeriesIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ClassificationSeries</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationseriesindicator"></a></pre>
       </div>
@@ -473,8 +418,8 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CodeIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Code</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/codeindicator"></a></pre>
       </div>
@@ -486,7 +431,7 @@
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Command</dfn></span> {
   <span class="type">ddi:</span><span class="constant">programLanguage</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">commandContent</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">commandContent</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/command"></a></pre>
       </div>
       </section>
@@ -510,7 +455,7 @@
 <span class="shape-name">ddi:<dfn>CommandFile</dfn></span> {
   <span class="type">ddi:</span><span class="constant">programLanguage</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">location</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/commandfile"></a></pre>
       </div>
       </section>
@@ -520,7 +465,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ConceptIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conceptindicator"></a></pre>
       </div>
@@ -557,7 +502,7 @@
 <span class="shape-name">ddi:<dfn>ContactInformation</dfn></span> {
   <span class="type">ddi:</span><span class="constant">website</span> @<span class="shape-name">ddi:<a>WebLink</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasEmail</span> @<span class="shape-name">ddi:<a>Email</a></span> *;
-  <span class="type">ddi:</span><span class="constant">electronicMessaging</span> @<span class="shape-name">ddi:<a>AccessLocation</a></span> *;
+  <span class="type">ddi:</span><span class="constant">electronicMessaging</span> @<span class="shape-name">ddi:<a>ElectronicMessageSystem</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAddress</span> @<span class="shape-name">ddi:<a>Address</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasTelephone</span> @<span class="shape-name">ddi:<a>Telephone</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/contactinformation"></a></pre>
@@ -570,7 +515,7 @@
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ContentDateOffset</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> {
   <span class="type">ddi:</span><span class="constant">numberOfUnits</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
-  <span class="type">ddi:</span><span class="constant">isNegativeOffset</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isNegativeOffset</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/contentdateoffset"></a></pre>
       </div>
       </section>
@@ -593,7 +538,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CustomItemIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CustomItem</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/customitemindicator"></a></pre>
       </div>
@@ -618,7 +563,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CustomValueIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CustomValue</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/customvalueindicator"></a></pre>
       </div>
@@ -639,22 +584,11 @@
       </section>
 
       <section>
-        <h3>DataCollectionIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DataCollectionIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>DataCollection</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datacollectionindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
         <h3>DataPointIndicator</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DataPointIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>DataPoint</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datapointindicator"></a></pre>
       </div>
@@ -679,7 +613,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DataStoreIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>DataStore</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datastoreindicator"></a></pre>
       </div>
@@ -737,7 +671,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DoubleNumberRangeValue</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">doubleValue</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/doublenumberrangevalue"></a></pre>
       </div>
@@ -749,7 +683,7 @@
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DynamicText</dfn></span> {
   <span class="type">ddi:</span><span class="constant">textContent</span> @<span class="shape-name">ddi:<a>DynamicTextContent</a></span> +;
-  <span class="type">ddi:</span><span class="constant">isStructureRequired</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isStructureRequired</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">audienceLanguage</span> <span class="type">ddi:</span><span class="constant">LanguageSpecification</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/dynamictext"></a></pre>
       </div>
@@ -761,7 +695,7 @@
         <pre class="nohighlight schema shexc tryable">
 ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">orderPosition</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">orderPosition</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/dynamictextcontent"></a></pre>
       </div>
       </section>
@@ -771,11 +705,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ElectronicMessageSystem</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">contactAddress</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">contactAddress</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfService</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/electronicmessagesystem"></a></pre>
       </div>
       </section>
@@ -796,11 +730,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Email</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">internetEmail</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">internetEmail</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfEmail</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/email"></a></pre>
       </div>
       </section>
@@ -810,14 +744,14 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ExternalControlledVocabularyEntry</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">controlledVocabularyID</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">controlledVocabularyName</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">controlledVocabularyAgencyName</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">controlledVocabularyVersionID</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">otherValue</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
-  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">xsd:</span><span class="constant">language</span> ?;
+  <span class="type">ddi:</span><span class="constant">controlledVocabularyID</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">controlledVocabularyName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">controlledVocabularyAgencyName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">controlledVocabularyVersionID</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">otherValue</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">ddi:</span><span class="constant">language</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/externalcontrolledvocabularyentry"></a></pre>
       </div>
       </section>
@@ -837,10 +771,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Form</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">formNumber</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">formNumber</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
   <span class="type">ddi:</span><span class="constant">statement</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isRequired</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isRequired</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/form"></a></pre>
       </div>
       </section>
@@ -850,8 +784,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>GeographicUnitIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>GeographicUnit</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/geographicunitindicator"></a></pre>
       </div>
@@ -877,8 +811,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>GeographicUnitTypeIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/geographicunittypeindicator"></a></pre>
       </div>
@@ -891,7 +825,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
 <span class="shape-name">ddi:<dfn>GeographicUnitTypeRelation</dfn></span> {
   <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
   <span class="type">ddi:</span><span class="constant">hasSpatialRelationSpecification</span> @<span class="shape-name">ddi:<a>SpatialRelationSpecification</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isExhaustiveCoverage</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isExhaustiveCoverage</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
@@ -905,9 +839,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Image</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfImage</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">dpi</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">dpi</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">languageOfImage</span> <span class="type">ddi:</span><span class="constant">LanguageSpecification</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/image"></a></pre>
       </div>
@@ -918,7 +852,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ImageArea</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">coordinates</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">coordinates</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">shape</span> @<span class="shape-name">ddi:<a>ShapeCoded</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/imagearea"></a></pre>
       </div>
@@ -943,19 +877,19 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>IndividualName</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">prefix</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">firstGiven</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">middle</span> <span class="type">umld:</span><span class="constant">String</span> *;
-  <span class="type">ddi:</span><span class="constant">lastFamily</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">suffix</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">prefix</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">firstGiven</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">middle</span> <span class="type">xsd:</span><span class="constant">string</span> *;
+  <span class="type">ddi:</span><span class="constant">lastFamily</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">suffix</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">fullName</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">abbreviation</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfIndividualName</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">sex</span> @<span class="shape-name">ddi:<a>SexSpecificationType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">context</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isFormal</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFormal</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/individualname"></a></pre>
       </div>
       </section>
@@ -965,7 +899,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>InstanceVariableIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/instancevariableindicator"></a></pre>
       </div>
@@ -1004,9 +938,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>InternationalIdentifier</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">identifierContent</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">identifierContent</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">managingAgency</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isURI</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isURI</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/internationalidentifier"></a></pre>
       </div>
       </section>
@@ -1038,7 +972,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
 <span class="shape-name">ddi:<dfn>LabelForDisplay</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InternationalStructuredString</a></span> {
   <span class="type">ddi:</span><span class="constant">locationVariant</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">maxLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">maxLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/labelfordisplay"></a></pre>
       </div>
       </section>
@@ -1048,11 +982,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>LanguageSpecificStringType</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">xsd:</span><span class="constant">language</span> ?;
-  <span class="type">ddi:</span><span class="constant">isTranslated</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isTranslatable</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">translationSourceLanguage</span> <span class="type">xsd:</span><span class="constant">language</span> *;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">ddi:</span><span class="constant">language</span> ?;
+  <span class="type">ddi:</span><span class="constant">isTranslated</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isTranslatable</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">translationSourceLanguage</span> <span class="type">ddi:</span><span class="constant">language</span> *;
   <span class="type">ddi:</span><span class="constant">translationDate</span> <span class="type">umld:</span><span class="constant">UnlimitedNatural</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/languagespecificstringtype"></a></pre>
       </div>
@@ -1063,30 +997,14 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>LanguageSpecificStructuredStringType</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">formattedContent</span> <span class="type">xhtml:</span><span class="constant">BlkNoForm.mix</span> +;
-  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">xsd:</span><span class="constant">language</span> ?;
-  <span class="type">ddi:</span><span class="constant">isTranslated</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isTranslatable</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">translationSourceLanguage</span> <span class="type">xsd:</span><span class="constant">language</span> *;
+  <span class="type">ddi:</span><span class="constant">formattedContent</span> <span class="type">xsd:</span><span class="constant">string</span> +;
+  <span class="type">ddi:</span><span class="constant">language</span> <span class="type">ddi:</span><span class="constant">language</span> ?;
+  <span class="type">ddi:</span><span class="constant">isTranslated</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isTranslatable</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">translationSourceLanguage</span> <span class="type">ddi:</span><span class="constant">language</span> *;
   <span class="type">ddi:</span><span class="constant">translationDate</span> <span class="type">umld:</span><span class="constant">UnlimitedNatural</span> ?;
-  <span class="type">ddi:</span><span class="constant">isPlainText</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPlainText</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/languagespecificstructuredstringtype"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>LayoutComponentRelation</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LayoutComponentRelation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-  <span class="type">ddi:</span><span class="constant">alternateSource</span> @<span class="shape-name">ddi:<a>Code</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">alternateTarget</span> @<span class="shape-name">ddi:<a>Code</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/layoutcomponentrelation"></a></pre>
       </div>
       </section>
 
@@ -1095,7 +1013,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Level</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">levelNumber</span> <span class="type">umld:</span><span class="constant">Integer</span> ;
+  <span class="type">ddi:</span><span class="constant">levelNumber</span> <span class="type">xsd:</span><span class="constant">integer</span> ;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">definedBy</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/level"></a></pre>
@@ -1107,10 +1025,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>LineParameter</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">startLine</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">startOffset</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">endLine</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">endOffset</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">startLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">startOffset</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">endLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">endOffset</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/lineparameter"></a></pre>
       </div>
       </section>
@@ -1130,9 +1048,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>LocalIdFormat</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">localIdValue</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">localIdType</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">localIdVersion</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">localIdValue</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">localIdType</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">localIdVersion</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/localidformat"></a></pre>
       </div>
       </section>
@@ -1152,7 +1070,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>LogicalRecordIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/logicalrecordindicator"></a></pre>
       </div>
@@ -1169,28 +1087,6 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
   <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/logicalrecordrelation"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>LogicalResourceIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LogicalResourceIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>LogicalResource</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/logicalresourceindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>LogicalSegmentIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LogicalSegmentIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>LogicalSegment</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/logicalsegmentindicator"></a></pre>
       </div>
       </section>
 
@@ -1214,7 +1110,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>NonIsoDateType</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">dateContent</span> <span class="type">umld:</span><span class="constant">String</span> ;
+  <span class="type">ddi:</span><span class="constant">dateContent</span> <span class="type">xsd:</span><span class="constant">string</span> ;
   <span class="type">ddi:</span><span class="constant">nonIsoDateFormat</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">calendar</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/nonisodatetype"></a></pre>
@@ -1231,9 +1127,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">highCodeDouble</span> @<span class="shape-name">ddi:<a>DoubleNumberRangeValue</a></span> ?;
   <span class="type">ddi:</span><span class="constant">lowCode</span> @<span class="shape-name">ddi:<a>NumberRangeValue</a></span> ?;
   <span class="type">ddi:</span><span class="constant">lowCodeDouble</span> @<span class="shape-name">ddi:<a>DoubleNumberRangeValue</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">regExp</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">isTopCoded</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
-  <span class="type">ddi:</span><span class="constant">isBottomCoded</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">regExp</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">isTopCoded</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">isBottomCoded</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/numberrange"></a></pre>
       </div>
       </section>
@@ -1243,7 +1139,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>NumberRangeValue</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">decimalValue</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/numberrangevalue"></a></pre>
       </div>
@@ -1254,7 +1150,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ObjectName</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">context</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/objectname"></a></pre>
       </div>
@@ -1268,7 +1164,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">abbreviation</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfOrganizationName</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isFormal</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFormal</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/organizationname"></a></pre>
       </div>
       </section>
@@ -1289,7 +1185,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>PhysicalRecordSegmentIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>PhysicalRecordSegment</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicalrecordsegmentindicator"></a></pre>
       </div>
@@ -1310,23 +1206,12 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
       </section>
 
       <section>
-        <h3>PhysicalSegmentIndicator</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>PhysicalSegmentIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>PhysicalSegment</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicalsegmentindicator"></a></pre>
-      </div>
-      </section>
-
-      <section>
         <h3>Polygon</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Polygon</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
-  <span class="type">ddi:</span><span class="constant">polygonLinkCode</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">polygonLinkCode</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">shapeFileFormat</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">point</span> @<span class="shape-name">ddi:<a>SpatialPoint</a></span> {4,};
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/polygon"></a></pre>
@@ -1349,7 +1234,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>RangeValue</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ValueString</a></span> {
-  <span class="type">ddi:</span><span class="constant">included</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">included</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/rangevalue"></a></pre>
       </div>
       </section>
@@ -1382,7 +1267,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
 <span class="shape-name">ddi:<dfn>Segment</dfn></span> {
   <span class="type">ddi:</span><span class="constant">usesAudioSegment</span> @<span class="shape-name">ddi:<a>AudioSegment</a></span> *;
   <span class="type">ddi:</span><span class="constant">usesVideoSegment</span> @<span class="shape-name">ddi:<a>VideoSegment</a></span> *;
-  <span class="type">ddi:</span><span class="constant">xml</span> <span class="type">umld:</span><span class="constant">String</span> *;
+  <span class="type">ddi:</span><span class="constant">xml</span> <span class="type">xsd:</span><span class="constant">string</span> *;
   <span class="type">ddi:</span><span class="constant">useseTextualSegment</span> @<span class="shape-name">ddi:<a>TextualSegment</a></span> *;
   <span class="type">ddi:</span><span class="constant">usesImageArea</span> @<span class="shape-name">ddi:<a>ImageArea</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/segment"></a></pre>
@@ -1394,7 +1279,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>SpatialCoordinate</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">coordinateValue</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">coordinateValue</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">coordinateType</span> @<span class="shape-name">ddi:<a>PointFormat</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/spatialcoordinate"></a></pre>
       </div>
@@ -1405,8 +1290,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>SpatialLine</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
-  <span class="type">ddi:</span><span class="constant">lineLinkCode</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">lineLinkCode</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">shapeFileFormat</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">point</span> @<span class="shape-name">ddi:<a>SpatialPoint</a></span> {2,};
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/spatialline"></a></pre>
@@ -1453,7 +1338,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Statistic</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">isWeighted</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isWeighted</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">computationBase</span> @<span class="shape-name">ddi:<a>ComputationBaseList</a></span> ?;
   <span class="type">ddi:</span><span class="constant">decimalValue</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
   <span class="type">ddi:</span><span class="constant">doubleValue</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
@@ -1466,7 +1351,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>StatisticalClassificationIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/statisticalclassificationindicator"></a></pre>
       </div>
@@ -1491,7 +1376,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>StudyIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Study</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/studyindicator"></a></pre>
       </div>
@@ -1527,11 +1412,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>TargetSample</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">isPrimary</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
-  <span class="type">ddi:</span><span class="constant">targetSize</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPrimary</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">targetSize</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">targetPercent</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
-  <span class="type">ddi:</span><span class="constant">hasUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
-  <span class="type">ddi:</span><span class="constant">fromUniverse</span> @<span class="shape-name">ddi:<a>Universe</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">fromUniverse</span> @<span class="shape-name">ddi:<a>Universe</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/targetsample"></a></pre>
       </div>
       </section>
@@ -1541,11 +1426,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Telephone</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">telephoneNumber</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">telephoneNumber</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfTelephone</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/telephone"></a></pre>
       </div>
       </section>
@@ -1578,7 +1463,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>TypedString</dfn></span> {
   <span class="type">ddi:</span><span class="constant">typeOfContent</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">umld:</span><span class="constant">String</span> ;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> ;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/typedstring"></a></pre>
       </div>
       </section>
@@ -1588,7 +1473,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ValueMappingIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ValueMapping</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valuemappingindicator"></a></pre>
       </div>
@@ -1613,7 +1498,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ValueString</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">whiteSpace</span> @<span class="shape-name">ddi:<a>WhiteSpaceRule</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valuestring"></a></pre>
       </div>
@@ -1624,7 +1509,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>VariableIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ConceptualVariable</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/variableindicator"></a></pre>
       </div>
@@ -1650,8 +1535,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>VideoSegment</dfn></span> {
   <span class="type">ddi:</span><span class="constant">typeOfVideoClip</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">videoClipBegin</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">videoClipEnd</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">videoClipBegin</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">videoClipEnd</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/videosegment"></a></pre>
       </div>
       </section>
@@ -1675,7 +1560,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>VocabularyEntryIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>VocabularyEntry</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/vocabularyentryindicator"></a></pre>
       </div>
@@ -1700,8 +1585,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>WebLink</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> ?;
+  <span class="type">ddi:</span><span class="constant">isPreferred</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfWebsite</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -1714,7 +1599,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>WorkflowStepIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>WorkflowStep</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/workflowstepindicator"></a></pre>
       </div>
@@ -1740,11 +1625,16 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>WorkflowStepSequenceIndicator</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/workflowstepsequenceindicator"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Conceptual</h2>
 
       <section>
         <h3>Category</h3>
@@ -1814,8 +1704,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>ConceptIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>ConceptRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conceptsystem"></a></pre>
       </div>
       </section>
@@ -1828,8 +1719,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>Map</a></span> *;
-  <span class="type">ddi:</span><span class="constant">maps</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
+  <span class="type">ddi:</span><span class="constant">correspondence</span> @<span class="shape-name">ddi:<a>Map</a></span> *;
+  <span class="type">ddi:</span><span class="constant">maps</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> {2,};
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conceptsystemcorrespondence"></a></pre>
       </div>
       </section>
@@ -1854,7 +1745,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
-  <span class="type">ddi:</span><span class="constant">takesSubstantiveConceptsFrom</span> @<span class="shape-name">ddi:<a>SubstantiveConceptualDomain</a></span> +;
+  <span class="type">ddi:</span><span class="constant">takesSubstantiveConceptsFrom</span> @<span class="shape-name">ddi:<a>SubstantiveConceptualDomain</a></span> *;
   <span class="type">ddi:</span><span class="constant">usesUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
   <span class="type">ddi:</span><span class="constant">takesSentinelConceptsFrom</span> @<span class="shape-name">ddi:<a>SentinelConceptualDomain</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conceptualvariable"></a></pre>
@@ -1900,7 +1791,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>RepresentedVariable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConceptualVariable</a></span> {
-  <span class="type">ddi:</span><span class="constant">unitOfMeasurement</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">unitOfMeasurement</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">hasIntendedDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">takesSubstantiveValuesFrom</span> @<span class="shape-name">ddi:<a>SubstantiveValueDomain</a></span> *;
   <span class="type">ddi:</span><span class="constant">measures</span> @<span class="shape-name">ddi:<a>Universe</a></span> *;
@@ -1947,7 +1838,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 <span class="shape-name">ddi:<dfn>UnitType</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
+  <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/unittype"></a></pre>
       </div>
       </section>
@@ -1957,7 +1848,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Universe</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
-  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">narrowsUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
@@ -1978,8 +1869,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">groupingSemantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>VariableIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>VariableRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/variablecollection"></a></pre>
       </div>
       </section>
@@ -1996,6 +1888,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/variablerelationstructure"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>SimpleCodebook</h2>
 
       <section>
         <h3>StandardWeight</h3>
@@ -2012,7 +1909,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>VariableStatistics</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">totalResponses</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">totalResponses</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">hasSummaryStatistic</span> @<span class="shape-name">ddi:<a>SummaryStatistic</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasCategoryStatistic</span> @<span class="shape-name">ddi:<a>CategoryStatistic</a></span> *;
   <span class="type">ddi:</span><span class="constant">forInstanceVariable</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
@@ -2022,6 +1919,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/variablestatistics"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>SimpleMethodologyOverview</h2>
 
       <section>
         <h3>AlgorithmOverview</h3>
@@ -2075,11 +1977,16 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ProcessOverview</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>ProcessSequence</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>ProcessSequence</a></span> ?;
   <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/processoverview"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>GeographicClassification</h2>
 
       <section>
         <h3>GeographicExtent</h3>
@@ -2119,16 +2026,16 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>GeographicUnitIndicator</a></span> *;
   <span class="type">ddi:</span><span class="constant">releaseDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>GeographicUnitRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">isMaintainedBy</span> @<span class="shape-name">ddi:<a>Organization</a></span> *;
   <span class="type">ddi:</span><span class="constant">variantOf</span> @<span class="shape-name">ddi:<a>GeographicUnitClassification</a></span> *;
-  <span class="type">ddi:</span><span class="constant">replaces</span> @<span class="shape-name">ddi:<a>GeographicUnitClassification</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isReplacedBy</span> @<span class="shape-name">ddi:<a>GeographicUnitClassification</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">replaces</span> @<span class="shape-name">ddi:<a>GeographicUnitClassification</a></span> *;
+  <span class="type">ddi:</span><span class="constant">isReplacedBy</span> @<span class="shape-name">ddi:<a>GeographicUnitClassification</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/geographicunitclassification"></a></pre>
       </div>
       </section>
@@ -2154,16 +2061,16 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeIndicator</a></span> *;
   <span class="type">ddi:</span><span class="constant">releaseDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">isMaintainedBy</span> @<span class="shape-name">ddi:<a>Organization</a></span> *;
   <span class="type">ddi:</span><span class="constant">variantOf</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeClassification</a></span> *;
-  <span class="type">ddi:</span><span class="constant">replaces</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeClassification</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isReplacedBy</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeClassification</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">replaces</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeClassification</a></span> *;
+  <span class="type">ddi:</span><span class="constant">isReplacedBy</span> @<span class="shape-name">ddi:<a>GeographicUnitTypeClassification</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/geographicunittypeclassification"></a></pre>
       </div>
       </section>
@@ -2180,6 +2087,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/geographicunittyperelationstructure"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>SamplingMethodology</h2>
 
       <section>
         <h3>SampleFrame</h3>
@@ -2196,12 +2108,12 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">validPeriod</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasCustodian</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAccess</span> @<span class="shape-name">ddi:<a>Access</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasPrimaryUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasPrimaryUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasSecondaryUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
   <span class="type">ddi:</span><span class="constant">sourceFrame</span> @<span class="shape-name">ddi:<a>SampleFrame</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasInputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> ;
-  <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> ;
+  <span class="type">ddi:</span><span class="constant">hasInputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/sampleframe"></a></pre>
       </div>
       </section>
@@ -2211,8 +2123,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>SamplePopulationResult</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Result</a></span> {
-  <span class="type">ddi:</span><span class="constant">sizeOfSample</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">strataName</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">sizeOfSample</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">strataName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">sampleDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">sampleUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
   <span class="type">ddi:</span><span class="constant">populationSampled</span> @<span class="shape-name">ddi:<a>Population</a></span> *;
@@ -2247,7 +2159,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>SamplingGoal</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Goal</a></span> {
-  <span class="type">ddi:</span><span class="constant">overallTargetSampleSize</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">overallTargetSampleSize</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">overallTargetSamplePercent</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
   <span class="type">ddi:</span><span class="constant">targetSampleSize</span> @<span class="shape-name">ddi:<a>TargetSample</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/samplinggoal"></a></pre>
@@ -2274,12 +2186,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 <span class="shape-name">ddi:<dfn>SamplingProcess</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasResults</span> @<span class="shape-name">ddi:<a>SamplePopulationResult</a></span> *;
   <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name">ddi:<a>SamplingAlgorithm</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/samplingprocess"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>EnumerationsRegExp</h2>
 
       <section>
         <h3>CategoryRelationCode</h3>
@@ -2520,6 +2437,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 ]<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/whitespacerule"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>CustomMetadata</h2>
 
       <section>
         <h3>ControlledVocabulary</h3>
@@ -2530,8 +2452,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>VocabularyEntryIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>VocabularyRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/controlledvocabulary"></a></pre>
       </div>
       </section>
@@ -2545,8 +2468,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>CustomValueIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">correspondsTo</span> @<span class="shape-name">ddi:<a>CustomStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/custominstance"></a></pre>
       </div>
       </section>
@@ -2556,9 +2480,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CustomItem</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">maxOccurs</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">minOccurs</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">key</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">maxOccurs</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">minOccurs</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">uses</span> @<span class="shape-name">ddi:<a>ValueDomain</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
   <span class="type">ddi:</span><span class="constant">comparesTo</span> @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> *;
@@ -2591,8 +2515,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>CustomItemIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>CustomItemRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/customstructure"></a></pre>
       </div>
       </section>
@@ -2603,26 +2528,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CustomValue</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">value</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">key</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">correspondsTo</span> @<span class="shape-name">ddi:<a>CustomItem</a></span> *;
   <span class="type">ddi:</span><span class="constant">comparesTo</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/customvalue"></a></pre>
-      </div>
-      </section>
-
-      <section>
-        <h3>CustomValueRelationStructure</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CustomValueRelationStructure</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">criteria</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
-  <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasMemberRelation</span> @<span class="shape-name">ddi:<a>CustomValueRelation</a></span> *;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/customvaluerelationstructure"></a></pre>
       </div>
       </section>
 
@@ -2652,6 +2561,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/vocabularyrelationstructure"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>FormatDescription</h2>
 
       <section>
         <h3>DataPointRelationStructure</h3>
@@ -2672,14 +2586,16 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>PhysicalDataSet</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">numberOfSegments</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">numberOfSegments</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>PhysicalRecordSegmentIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">formatsDataStore</span> @<span class="shape-name">ddi:<a>DataStore</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>PhysicalOrderRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasVariableStatistics</span> @<span class="shape-name">ddi:<a>VariableStatistics</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicaldataset"></a></pre>
       </div>
       </section>
@@ -2716,13 +2632,14 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>PhysicalRecordSegment</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>DataPointIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">hasPhysicalLayout</span> @<span class="shape-name">ddi:<a>PhysicalSegmentLayout</a></span> *;
-  <span class="type">ddi:</span><span class="constant">representsPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">representsPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> *;
   <span class="type">ddi:</span><span class="constant">mapTo</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>DataPointRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicalrecordsegment"></a></pre>
       </div>
       </section>
@@ -2732,25 +2649,25 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">isDelimited</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
-  <span class="type">ddi:</span><span class="constant">delimiter</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">isFixedWidth</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
-  <span class="type">ddi:</span><span class="constant">escapeCharacter</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">lineTerminator</span> <span class="type">umld:</span><span class="constant">String</span> *;
-  <span class="type">ddi:</span><span class="constant">quoteCharacter</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">commentPrefix</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">isDelimited</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">delimiter</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFixedWidth</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">escapeCharacter</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">lineTerminator</span> <span class="type">xsd:</span><span class="constant">string</span> *;
+  <span class="type">ddi:</span><span class="constant">quoteCharacter</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">commentPrefix</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">encoding</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasHeader</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">headerRowCount</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">skipBlankRows</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">skipDataColumns</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">skipInitialSpace</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">skipRows</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">hasHeader</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">headerRowCount</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">skipBlankRows</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">skipDataColumns</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">skipInitialSpace</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">skipRows</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">trim</span> @<span class="shape-name">ddi:<a>TrimValues</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">nullSequence</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">headerIsCaseSensitive</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">arrayBase</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">treatConsecutiveDelimitersAsOne</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">nullSequence</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">headerIsCaseSensitive</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">arrayBase</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">treatConsecutiveDelimitersAsOne</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">tableDirection</span> @<span class="shape-name">ddi:<a>TableDirectionValues</a></span> ?;
   <span class="type">ddi:</span><span class="constant">textDirection</span> @<span class="shape-name">ddi:<a>TextDirectionValues</a></span> ?;
@@ -2758,9 +2675,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EX
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>ValueMappingIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">formatsLogicalRecord</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>PhysicalLayoutRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout"></a></pre>
       </div>
       </section>
@@ -2779,11 +2697,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>SegmentByText</dfn></span> EXTENDS <span class="shape-name">ddi:<a>PhysicalSegmentLocation</a></span> {
-  <span class="type">ddi:</span><span class="constant">startLine</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">endLine</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">startCharacterPosition</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">endCharacterPosition</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">characterLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">startLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">endLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">startCharacterPosition</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">endCharacterPosition</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">characterLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/segmentbytext"></a></pre>
       </div>
       </section>
@@ -2805,21 +2723,26 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">physicalDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">defaultDecimalSeparator</span> <span class="type">ddi:</span><span class="constant">OneCharString</span> ?;
   <span class="type">ddi:</span><span class="constant">defaultDigitGroupSeparator</span> <span class="type">ddi:</span><span class="constant">OneCharString</span> ?;
-  <span class="type">ddi:</span><span class="constant">numberPattern</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">numberPattern</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">defaultValue</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">nullSequence</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">nullSequence</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">format</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">length</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">minimumLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">maximumLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">scale</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">decimalPositions</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">isRequired</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">length</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">minimumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">maximumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">scale</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">decimalPositions</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">isRequired</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">formatsDataPoint</span> @<span class="shape-name">ddi:<a>DataPoint</a></span> *;
   <span class="type">ddi:</span><span class="constant">describesSegmentLocation</span> @<span class="shape-name">ddi:<a>PhysicalSegmentLocation</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valuemapping"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>StudyRelated</h2>
 
       <section>
         <h3>Budget</h3>
@@ -2840,7 +2763,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
 <span class="shape-name">ddi:<dfn>ComplianceStatement</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">externalComplianceCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">complianceConceptReference</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
+  <span class="type">ddi:</span><span class="constant">complianceConceptReference</span> @<span class="shape-name">ddi:<a>Concept</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/compliancestatement"></a></pre>
       </div>
       </section>
@@ -2893,7 +2816,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Standard</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">compliance</span> @<span class="shape-name">ddi:<a>ComplianceStatement</a></span> *;
+  <span class="type">ddi:</span><span class="constant">compliance</span> @<span class="shape-name">ddi:<a>ComplianceStatement</a></span> ?;
   <span class="type">ddi:</span><span class="constant">standardUsed</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/standard"></a></pre>
       </div>
@@ -2920,7 +2843,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">hasFundingInformation</span> @<span class="shape-name">ddi:<a>FundingInformation</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAuthorizationSource</span> @<span class="shape-name">ddi:<a>AuthorizationSource</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasQualityStatement</span> @<span class="shape-name">ddi:<a>QualityStatement</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasBudget</span> @<span class="shape-name">ddi:<a>Budget</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasBudget</span> @<span class="shape-name">ddi:<a>Budget</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasInstanceVariable</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasExPostEvaluation</span> @<span class="shape-name">ddi:<a>ExPostEvaluation</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasSamplingProcedure</span> @<span class="shape-name">ddi:<a>SamplingProcedure</a></span> *;
@@ -2965,11 +2888,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>StudyIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>StudyRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/studyseries"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>BusinessWorkflow</h2>
 
       <section>
         <h3>BusinessAlgorithm</h3>
@@ -3001,11 +2930,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>BusinessProcessIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isInStudy</span> @<span class="shape-name">ddi:<a>Study</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datapipeline"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Workflows</h2>
 
       <section>
         <h3>Act</h3>
@@ -3034,7 +2969,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ConditionalControlConstruct</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStep</a></span> {
   <span class="type">ddi:</span><span class="constant">condition</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">containsSubSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
+  <span class="type">ddi:</span><span class="constant">containsSubSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conditionalcontrolconstruct"></a></pre>
       </div>
       </section>
@@ -3045,7 +2980,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>IfThenElse</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
   <span class="type">ddi:</span><span class="constant">elseIf</span> @<span class="shape-name">ddi:<a>ElseIfAction</a></span> *;
-  <span class="type">ddi:</span><span class="constant">elseContains</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
+  <span class="type">ddi:</span><span class="constant">elseContains</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/ifthenelse"></a></pre>
       </div>
       </section>
@@ -3080,11 +3015,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
 <span class="shape-name">ddi:<dfn>Parameter</dfn></span> {
   <span class="type">ddi:</span><span class="constant">alias</span> <span class="type">umld:</span><span class="constant">UnlimitedNatural</span> ?;
   <span class="type">ddi:</span><span class="constant">defaultValue</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isArray</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isArray</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">limitArrayIndex</span> <span class="type">umld:</span><span class="constant">UnlimitedNatural</span> ?;
-  <span class="type">ddi:</span><span class="constant">agency</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">id</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">version</span> <span class="type">umld:</span><span class="constant">String</span> ;
+  <span class="type">ddi:</span><span class="constant">agency</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">id</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">version</span> <span class="type">xsd:</span><span class="constant">string</span> ;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">valueRepresentation</span> @<span class="shape-name">ddi:<a>ValueDomain</a></span> *;
@@ -3160,7 +3095,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/workflowprocess"></a></pre>
       </div>
       </section>
@@ -3170,7 +3105,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>WorkflowService</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">interface</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">serviceInterface</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   <span class="type">ddi:</span><span class="constant">serviceLocation</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">estimatedDuration</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasAgent</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
@@ -3190,7 +3125,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasInformationFlow</span> @<span class="shape-name">ddi:<a>Binding</a></span> *;
   <span class="type">ddi:</span><span class="constant">isPerformedBy</span> @<span class="shape-name">ddi:<a>WorkflowService</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasInputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasInputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/workflowstep"></a></pre>
       </div>
@@ -3220,18 +3155,22 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>WorkflowStepIndicator</a></span> *;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/workflowstepsequence"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Utility</h2>
 
       <section>
         <h3>DDI4Version</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DDI4Version</dfn></span> [
-  <span class="type">ddi:</span><span class="constant">DR0.2</span>
-]<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/ddi4version"></a></pre>
+<span class="shape-name">ddi:<dfn>DDI4Version</dfn></span> xsd:string<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/ddi4version"></a></pre>
       </div>
       </section>
 
@@ -3241,9 +3180,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DocumentInformation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">contentCoverage</span> @<span class="shape-name">ddi:<a>TypedDescriptiveText</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isPublished</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">isPublished</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
   <span class="type">ddi:</span><span class="constant">hasPrimaryContent</span> <span class="type">umld:</span><span class="constant">UnlimitedNatural</span> ?;
-  <span class="type">ddi:</span><span class="constant">ofType</span> @<span class="shape-name">ddi:<a>DDI4Version</a></span> ;
+  <span class="type">ddi:</span><span class="constant">ofType</span> <span class="type">ddi:</span><span class="constant">DDI4Version</span> ;
   <span class="type">ddi:</span><span class="constant">hasDocumentCoverage</span> @<span class="shape-name">ddi:<a>Coverage</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasPersistentAccessControl</span> @<span class="shape-name">ddi:<a>Access</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasLocalAccessControl</span> @<span class="shape-name">ddi:<a>Access</a></span> *;
@@ -3260,7 +3199,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
 <span class="shape-name">ddi:<dfn>ExternalMaterial</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">typeOfMaterial</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> *;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> *;
   <span class="type">ddi:</span><span class="constant">relationshipDescription</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
   <span class="type">ddi:</span><span class="constant">mimeType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesSegment</span> @<span class="shape-name">ddi:<a>Segment</a></span> *;
@@ -3275,28 +3214,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>FundingInformation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">funderRole</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">grantNumber</span> <span class="type">umld:</span><span class="constant">String</span> *;
+  <span class="type">ddi:</span><span class="constant">grantNumber</span> <span class="type">xsd:</span><span class="constant">string</span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasFunder</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/fundinginformation"></a></pre>
       </div>
       </section>
+    </section>
 
-      <section>
-        <h3>Note</h3>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Note</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">typeOfNote</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">noteSubject</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">relationship</span> @<span class="shape-name">ddi:<a>DescribedRelationship</a></span> *;
-  <span class="type">ddi:</span><span class="constant">responsibility</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">header</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">noteContent</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">proprietaryInfo</span> @<span class="shape-name">ddi:<a>StandardKeyValuePair</a></span> ?;
-}<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/note"></a></pre>
-      </div>
-      </section>
+
+    <section>
+      <h2>Representations</h2>
 
       <section>
         <h3>AuthorizationSource</h3>
@@ -3321,9 +3249,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>ClassificationSeriesIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">hasClassificationIndex</span> @<span class="shape-name">ddi:<a>ClassificationIndex</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>ClassificationSeriesRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationfamily"></a></pre>
       </div>
       </section>
@@ -3341,11 +3270,12 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>ClassificationIndexEntryIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">hasPublication</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>IndexEntryRelationStructure</a></span> *;
-  <span class="type">ddi:</span><span class="constant">maintenanceUnit</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
+  <span class="type">ddi:</span><span class="constant">maintenanceUnit</span> @<span class="shape-name">ddi:<a>Agent</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contactPerson</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationindex"></a></pre>
       </div>
       </section>
@@ -3367,8 +3297,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ClassificationItem</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Code</a></span> {
-  <span class="type">ddi:</span><span class="constant">isValid</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isGenerated</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isValid</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isGenerated</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">explanatoryNotes</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
   <span class="type">ddi:</span><span class="constant">futureNotes</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
   <span class="type">ddi:</span><span class="constant">changeLog</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
@@ -3408,9 +3338,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>StatisticalClassificationIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>StatisticalClassificationRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">owner</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/classificationseries"></a></pre>
       </div>
       </section>
@@ -3448,10 +3379,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>CodeIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>CategorySet</a></span> +;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>ClassificationRelationStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>CategorySet</a></span> *;
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>ClassificationRelationStructure</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesLevelStructure</span> @<span class="shape-name">ddi:<a>LevelStructure</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/codelist"></a></pre>
       </div>
       </section>
@@ -3531,8 +3463,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
 <span class="shape-name">ddi:<dfn>StatisticalClassification</dfn></span> EXTENDS <span class="shape-name">ddi:<a>CodeList</a></span> {
   <span class="type">ddi:</span><span class="constant">releaseDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isFloating</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">changeFromBase</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">purposeOfVariant</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">copyright</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
@@ -3546,8 +3478,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
   <span class="type">ddi:</span><span class="constant">distributedAs</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
   <span class="type">ddi:</span><span class="constant">variantOf</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
   <span class="type">ddi:</span><span class="constant">isIndexedBy</span> @<span class="shape-name">ddi:<a>ClassificationIndex</a></span> *;
-  <span class="type">ddi:</span><span class="constant">predecessor</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">successor</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">predecessor</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
+  <span class="type">ddi:</span><span class="constant">successor</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/statisticalclassification"></a></pre>
       </div>
       </section>
@@ -3585,10 +3517,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
   <span class="type">ddi:</span><span class="constant">description</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">logicalExpression</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">regularExpression</span> @<span class="shape-name">ddi:<a>TypedString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">minimumValueInclusive</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">maximumValueInclusive</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">minimumValueExclusive</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">maximumValueExclusive</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">minimumValueInclusive</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">maximumValueInclusive</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">minimumValueExclusive</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">maximumValueExclusive</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">classificationLevel</span> @<span class="shape-name">ddi:<a>CategoryRelationCode</a></span> ?;
   <span class="type">ddi:</span><span class="constant">formatPattern</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valueandconceptdescription"></a></pre>
@@ -3605,6 +3537,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valuedomain"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>LogicalDataDescription</h2>
 
       <section>
         <h3>AttributeRole</h3>
@@ -3621,7 +3558,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DataPoint</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">isDescribedBy</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasDatum</span> @<span class="shape-name">ddi:<a>Datum</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasDatum</span> @<span class="shape-name">ddi:<a>Datum</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datapoint"></a></pre>
       </div>
       </section>
@@ -3631,18 +3568,19 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>DataStore</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">characterSet</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">characterSet</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">dataStoreType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">recordCount</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">recordCount</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">aboutMissing</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>LogicalRecordIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>LogicalRecordRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">isInStudy</span> @<span class="shape-name">ddi:<a>Study</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">usesRecordRelation</span> @<span class="shape-name">ddi:<a>RecordRelation</a></span> *;
+  <span class="type">ddi:</span><span class="constant">usesRecordRelation</span> @<span class="shape-name">ddi:<a>RecordRelation</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datastore"></a></pre>
       </div>
       </section>
@@ -3656,9 +3594,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>DataStoreIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>DataStoreRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">isInStudySeries</span> @<span class="shape-name">ddi:<a>StudySeries</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/datastorelibrary"></a></pre>
       </div>
       </section>
@@ -3721,7 +3660,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS <s
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>InstanceVariableIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/logicalrecord"></a></pre>
       </div>
       </section>
@@ -3769,6 +3709,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS <s
 <span class="shape-name">ddi:<dfn>UnitDataRecord</dfn></span> EXTENDS <span class="shape-name">ddi:<a>LogicalRecord</a></span> {
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>InstanceVariableRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">isViewedFrom</span> @<span class="shape-name">ddi:<a>UnitDataViewpoint</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/unitdatarecord"></a></pre>
       </div>
       </section>
@@ -3778,9 +3719,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS <s
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>UnitDataViewpoint</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-  <span class="type">ddi:</span><span class="constant">hasIdentifierRole</span> @<span class="shape-name">ddi:<a>IdentifierRole</a></span> ;
-  <span class="type">ddi:</span><span class="constant">hasMeasureRole</span> @<span class="shape-name">ddi:<a>MeasureRole</a></span> ;
-  <span class="type">ddi:</span><span class="constant">hasAttributeRole</span> @<span class="shape-name">ddi:<a>AttributeRole</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasIdentifierRole</span> @<span class="shape-name">ddi:<a>IdentifierRole</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasMeasureRole</span> @<span class="shape-name">ddi:<a>MeasureRole</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasAttributeRole</span> @<span class="shape-name">ddi:<a>AttributeRole</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/unitdataviewpoint"></a></pre>
       </div>
       </section>
@@ -3794,17 +3735,23 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ViewpointRole</dfn></span> EXTENDS <s
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>InstanceVariableIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/viewpointrole"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>DataCapture</h2>
 
       <section>
         <h3>BooleanResponseDomain</h3>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>BooleanResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
-  <span class="type">ddi:</span><span class="constant">forCategory</span> @<span class="shape-name">ddi:<a>Category</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">forCategory</span> @<span class="shape-name">ddi:<a>Category</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/booleanresponsedomain"></a></pre>
       </div>
       </section>
@@ -3833,9 +3780,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>CodeListResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
-  <span class="type">ddi:</span><span class="constant">usesCodeList</span> @<span class="shape-name">ddi:<a>CodeList</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">specifyOtherResponseDomain</span> @<span class="shape-name">ddi:<a>ResponseDomain</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">specifyOtherCorrespondingCode</span> @<span class="shape-name">ddi:<a>Code</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">usesCodeList</span> @<span class="shape-name">ddi:<a>CodeList</a></span> *;
+  <span class="type">ddi:</span><span class="constant">specifyOtherResponseDomain</span> @<span class="shape-name">ddi:<a>ResponseDomain</a></span> *;
+  <span class="type">ddi:</span><span class="constant">specifyOtherCorrespondingCode</span> @<span class="shape-name">ddi:<a>Code</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/codelistresponsedomain"></a></pre>
       </div>
       </section>
@@ -3849,7 +3796,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">description</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">organizes</span> @<span class="shape-name">ddi:<a>Capture</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">organizes</span> @<span class="shape-name">ddi:<a>Capture</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conceptualinstrument"></a></pre>
       </div>
       </section>
@@ -3871,10 +3818,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
 <span class="shape-name">ddi:<dfn>ImplementedInstrument</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">typeOfInstrument</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">xsd:</span><span class="constant">anyURI</span> *;
+  <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> *;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
-  <span class="type">ddi:</span><span class="constant">usesConceptualInstrument</span> @<span class="shape-name">ddi:<a>ConceptualInstrument</a></span> *;
+  <span class="type">ddi:</span><span class="constant">usesConceptualInstrument</span> @<span class="shape-name">ddi:<a>ConceptualInstrument</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/implementedinstrument"></a></pre>
       </div>
       </section>
@@ -3929,8 +3876,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Act</a></span> {
-  <span class="type">ddi:</span><span class="constant">hasInstructions</span> @<span class="shape-name">ddi:<a>Instruction</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasExternalAids</span> @<span class="shape-name">ddi:<a>ExternalAid</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasInstructions</span> @<span class="shape-name">ddi:<a>Instruction</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasExternalAids</span> @<span class="shape-name">ddi:<a>ExternalAid</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/instrumentcomponent"></a></pre>
       </div>
       </section>
@@ -3986,8 +3933,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>ResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">intendedRepresentation</span> @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> ;
+  <span class="type">ddi:</span><span class="constant">intendedRepresentation</span> @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/responsedomain"></a></pre>
       </div>
       </section>
@@ -4017,12 +3964,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>TextResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
-  <span class="type">ddi:</span><span class="constant">maximumLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
-  <span class="type">ddi:</span><span class="constant">minimumLength</span> <span class="type">umld:</span><span class="constant">Integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">maximumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
+  <span class="type">ddi:</span><span class="constant">minimumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">regularExpression</span> @<span class="shape-name">ddi:<a>TypedString</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/textresponsedomain"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Discovery</h2>
 
       <section>
         <h3>Access</h3>
@@ -4062,9 +4014,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Coverage</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasTemporalCoverage</span> @<span class="shape-name">ddi:<a>TemporalCoverage</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasTopicalCoverage</span> @<span class="shape-name">ddi:<a>TopicalCoverage</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasSpatialCoverage</span> @<span class="shape-name">ddi:<a>SpatialCoverage</a></span> *;
+  <span class="type">ddi:</span><span class="constant">hasTemporalCoverage</span> @<span class="shape-name">ddi:<a>TemporalCoverage</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasTopicalCoverage</span> @<span class="shape-name">ddi:<a>TopicalCoverage</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">hasSpatialCoverage</span> @<span class="shape-name">ddi:<a>SpatialCoverage</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/coverage"></a></pre>
       </div>
       </section>
@@ -4108,6 +4060,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/topicalcoverage"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Identification</h2>
 
       <section>
         <h3>AnnotatedIdentifiable</h3>
@@ -4125,19 +4082,24 @@ ABSTRACT <span class="shape-name">ddi:<dfn>AnnotatedIdentifiable</dfn></span> EX
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 ABSTRACT <span class="shape-name">ddi:<dfn>Identifiable</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">agency</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">id</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">version</span> <span class="type">umld:</span><span class="constant">String</span> ;
-  <span class="type">ddi:</span><span class="constant">versionResponsibility</span> <span class="type">umld:</span><span class="constant">String</span> ?;
-  <span class="type">ddi:</span><span class="constant">versionRationale</span> <span class="type">umld:</span><span class="constant">String</span> ?;
+  <span class="type">ddi:</span><span class="constant">agency</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">id</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">version</span> <span class="type">xsd:</span><span class="constant">string</span> ;
+  <span class="type">ddi:</span><span class="constant">versionResponsibility</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
+  <span class="type">ddi:</span><span class="constant">versionRationale</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">versionDate</span> <span class="type">ddi:</span><span class="constant">IsoDateType</span> ?;
-  <span class="type">ddi:</span><span class="constant">isUniversallyUnique</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
-  <span class="type">ddi:</span><span class="constant">isPersistent</span> <span class="type">umld:</span><span class="constant">Boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">isUniversallyUnique</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
+  <span class="type">ddi:</span><span class="constant">isPersistent</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
   <span class="type">ddi:</span><span class="constant">localId</span> @<span class="shape-name">ddi:<a>LocalIdFormat</a></span> *;
   <span class="type">ddi:</span><span class="constant">basedOnObject</span> @<span class="shape-name">ddi:<a>BasedOnObjectInformation</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/identifiable"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Methodologies</h2>
 
       <section>
         <h3>AppliedUse</h3>
@@ -4145,7 +4107,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Identifiable</dfn></span> {
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AppliedUse</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasGuide</span> @<span class="shape-name">ddi:<a>Guide</a></span> +;
+  <span class="type">ddi:</span><span class="constant">hasGuide</span> @<span class="shape-name">ddi:<a>Guide</a></span> *;
   <span class="type">ddi:</span><span class="constant">appliesToUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
   <span class="type">ddi:</span><span class="constant">isUsedBy</span> @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/applieduse"></a></pre>
@@ -4202,12 +4164,17 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Result</dfn></span> EXTENDS <span cla
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasBinding</span> @<span class="shape-name">ddi:<a>Binding</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAppliedUse</span> @<span class="shape-name">ddi:<a>AppliedUse</a></span> *;
-  <span class="type">ddi:</span><span class="constant">evaluateAgainstGoal</span> @<span class="shape-name">ddi:<a>Goal</a></span> ?;
+  <span class="type">ddi:</span><span class="constant">evaluateAgainstGoal</span> @<span class="shape-name">ddi:<a>Goal</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasInputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/result"></a></pre>
       </div>
       </section>
+    </section>
+
+
+    <section>
+      <h2>Agents</h2>
 
       <section>
         <h3>Agent</h3>
@@ -4230,9 +4197,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>AgentIndicator</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">umld:</span><span class="constant">Boolean</span> ?;
+  <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isStructuredBy</span> @<span class="shape-name">ddi:<a>AgentRelationStructure</a></span> *;
   <span class="type">ddi:</span><span class="constant">maintenanceUnit</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
+  <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/agentlisting"></a></pre>
       </div>
       </section>
@@ -4259,7 +4227,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Individual</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Agent</a></span> {
   <span class="type">ddi:</span><span class="constant">hasIndividualName</span> @<span class="shape-name">ddi:<a>IndividualName</a></span> *;
-  <span class="type">ddi:</span><span class="constant">ddiId</span> <span class="type">umld:</span><span class="constant">String</span> *;
+  <span class="type">ddi:</span><span class="constant">ddiId</span> <span class="type">xsd:</span><span class="constant">string</span> *;
   <span class="type">ddi:</span><span class="constant">hasContactInformation</span> @<span class="shape-name">ddi:<a>ContactInformation</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/individual"></a></pre>
       </div>
@@ -4274,7 +4242,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAccessLocation</span> @<span class="shape-name">ddi:<a>AccessLocation</a></span> ?;
   <span class="type">ddi:</span><span class="constant">function</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
-  <span class="type">ddi:</span><span class="constant">interface</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
+  <span class="type">ddi:</span><span class="constant">machineInterface</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   <span class="type">ddi:</span><span class="constant">ownerOperatorContact</span> @<span class="shape-name">ddi:<a>ContactInformation</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/machine"></a></pre>
       </div>
@@ -4286,9 +4254,30 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>Organization</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Agent</a></span> {
   <span class="type">ddi:</span><span class="constant">hasOrganizationName</span> @<span class="shape-name">ddi:<a>OrganizationName</a></span> +;
-  <span class="type">ddi:</span><span class="constant">ddiId</span> <span class="type">umld:</span><span class="constant">String</span> *;
+  <span class="type">ddi:</span><span class="constant">ddiId</span> <span class="type">xsd:</span><span class="constant">string</span> *;
   <span class="type">ddi:</span><span class="constant">hasContactInformation</span> @<span class="shape-name">ddi:<a>ContactInformation</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/organization"></a></pre>
+      </div>
+      </section>
+    </section>
+
+
+    <section>
+      <h2>XMLSchemaDatatypes</h2>
+
+      <section>
+        <h3>anyURI</h3>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name">ddi:<dfn>anyURI</dfn></span> xsd:string<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/anyuri"></a></pre>
+      </div>
+      </section>
+
+      <section>
+        <h3>language</h3>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name">ddi:<dfn>language</dfn></span> xsd:string<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/language"></a></pre>
       </div>
       </section>
 
@@ -4299,21 +4288,6 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
 <span class="shape-name">ddi:<dfn>LanguageSpecification</dfn></span> xsd:string<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/languagespecification"></a></pre>
       </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
     </body>
 </html>
