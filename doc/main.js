@@ -16,12 +16,12 @@ function main () {
     {type: EnumRecord,        maker: () => $('<span/>', { class: 'record' }).text('Enum'   )},
     {type: DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
     {type: ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
-    {type: AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )}
+    {type: AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )},
+    {type: RefereeRecord,     maker: () => $('<span/>', { class: 'record' }).text('ref'    )}
   ]
 
   function docURL (term) {
-    return 'http://lion.ddialliance.org/ddiobjects/' +
-      term.toLowerCase() + '#parent_properties'
+    return 'http://lion.ddialliance.org/ddiobjects/' + term.toLowerCase()
   }
 
   function parseName (elt) {
@@ -513,6 +513,19 @@ function main () {
     Object.keys(properties).forEach(propName => {
       let p = properties[propName]
       p.uniformType = findMinimalTypes(model, p)
+      p.sources.forEach(s => {
+        let t = s.attribute || s.relation
+        let referent =
+              t in classes ? classes[t] :
+              t in enums ? enums[t] :
+              t in datatypes ? datatypes[t] :
+              null
+        if (referent) {
+          referent.referees.push(new RefereeRecord(s.in, propName))
+        } else {
+          console.warn('referent not found: ' + referent)
+        }
+      }, [])
     }, [])
 
     console.dir(model)
@@ -534,15 +547,17 @@ function main () {
             }
             let ownedAttrs = parseProperties(
               model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
-              name, triples)
+              id, triples)
 
             classes[id] = Object.assign(
               new ClassRecord(id, name),
               ownedAttrs, {
-              packages: parents,
-              superClasses: [],
-              isAbstract: parseIsAbstract(elt)
-            })
+                packages: parents,
+                superClasses: [],
+                isAbstract: parseIsAbstract(elt),
+                referees: []
+              }
+            )
             packages[parent].elements.push({type: 'class', id: id})
             Object.keys(ownedAttrs.associations).forEach(
               assocSourceId => { assocSrcToClass[assocSourceId] = id }
@@ -568,7 +583,8 @@ function main () {
               values: elt.ownedLiteral.map(
                 l => parseName(l)
               ),
-              packages: parents
+              packages: parents,
+              referees: []
             })
             packages[parent].elements.push({type: 'enumeration', id: id})
             // record class hierarchy
@@ -584,7 +600,8 @@ function main () {
             datatypes[id] = Object.assign(new DatatypeRecord(), {
               name: name,
               id: id,
-              packages: parents
+              packages: parents,
+              referees: []
             })
             packages[parent].elements.push({type: 'datatype', id: id})
             // record class hierarchy
@@ -672,6 +689,10 @@ function main () {
     model.properties[name].sources.push(this)
   }
 
+  function RefereeRecord     (classId, propName) {
+    this.classId = classId
+    this.propName = propName
+  }
   function ModelRecord       () { }
   function PackageRecord     () { }
   function EnumRecord        () { }
@@ -814,7 +835,7 @@ function main () {
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
-        docLink: link => `<a class="tryit" href="${link}">lion</a></pre>
+        docLink: link => `<a class="tryit" href="${link}"></a></pre>
       </div>
       </section>`,
         reference: name => ref(pname(name)),
@@ -823,7 +844,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
         valueType: name => pOrT(pname(name)),
         valueReference: name => name === '.' ? '.' : '@' + ref(pname(name)),
         startPackage: function (p) { return '    <section>\n      <h2>' + p.name + '</h2>\n\n' },
-        endPackage: function (p) { return '    </section>\n' }
+        endPackage: function (p) { return '\n    </section>\n' }
       }
 
       function ref (term) {
