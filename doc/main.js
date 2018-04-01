@@ -9,6 +9,7 @@ var UPPER_UNLIMITED = '*'
 
 function main () {
   const AllRecordTypes = [
+    {type: ModelRecord,       maker: () => $('<span/>', { class: 'record' }).text('model'  )},
     {type: PropertyRecord,    maker: () => $('<span/>', { class: 'record' }).text('prop'   )},
     {type: ClassRecord,       maker: () => $('<span/>', { class: 'record' }).text('Class'  )},
     {type: PackageRecord,     maker: () => $('<span/>', { class: 'record' }).text('Package')},
@@ -179,7 +180,7 @@ function main () {
             }
             // This may take a long time to render.
             $('<textarea/>', {cols: 60, rows: 10}).val(loadEvent.target.result).appendTo(div)
-            processXMI(loadEvent.target.result, file.name, status)
+            processXMI(loadEvent.target.result, 'uploaded ' + file.name + ' ' + new Date().toISOString(), status)
           }
           loader.readAsText(file)
         }, RENDER_DELAY)
@@ -202,7 +203,7 @@ function main () {
     }).then(function (text) {
       window.setTimeout(() => {
         $('<textarea/>', {cols: 60, rows: 10}).val(text).appendTo(div)
-        processXMI(text, source, status)
+        processXMI(text, 'fetched ' + source + ' ' + new Date().toISOString(), status)
       }, RENDER_DELAY)
     }).catch(function (error) {
       div.append($('<pre/>').text(error)).addClass('error')
@@ -210,10 +211,10 @@ function main () {
     return true
   })
 
-  function processXMI (xmiText, title, status) {
-    let div = $('<div/>', {'id': title, 'class': 'result'}).appendTo('#render')
+  function processXMI (xmiText, source, status) {
+    let div = $('<div/>', {'id': source, 'class': 'result'}).appendTo('#render')
     let reparse = $('<button/>').text('reparse').on('click', parse)
-    $('<h2/>').text(title).append(reparse).appendTo(div)
+    $('<h2/>').text(source).append(reparse).appendTo(div)
     let model
     let document
     let progress = $('<ul/>')
@@ -235,12 +236,12 @@ function main () {
     }
 
     function index () {
-      model = parseModel(document)
+      model = parseModel(document, source)
       status.text('rendering structure...')
       window.setTimeout(render, RENDER_DELAY)
     }
 
-    function render () {
+   function render () {
       let modelUL = $('<ul/>')
       structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
@@ -255,7 +256,7 @@ function main () {
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
-      let allViews = strip(model, model.views.map(v => v.name))
+      let allViews = strip(model, source, model.views.map(v => v.name))
       console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
 
@@ -269,7 +270,7 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let t = dumpFormats(model)
+      let t = dumpFormats(model, source)
       progress.append(
         $('<li/>').append(
           'OWL: ',
@@ -288,7 +289,7 @@ function main () {
       console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       model.views.map(v => v.name).forEach(
         viewName => {
-          let s = strip(model, viewName,
+          let s = strip(model, source, viewName,
                         $('#followReferencedClasses').is(':checked'),
                         $('#followReferentHierarchy').is(':checked'))
           console.log(viewName, s, Object.keys(s.classes).length, Object.keys(s.properties).length)
@@ -297,12 +298,13 @@ function main () {
     }
   }
 
-  function strip (model, viewLabels, followReferencedClasses, followReferentHierarchy) {
+  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
 
-    let ret = {
+    let ret = Object.assign(new ModelRecord(), {
+      source: source + viewLabels.join('-'),
       packages: {},
       classes: {},
       properties: {},
@@ -313,7 +315,7 @@ function main () {
       views: model.views.filter(
         v => viewLabels.indexOf(v.name) !== -1
       )
-    }
+    })
 
     // ret.enums = Object.keys(model.enums).forEach(
     //   enumId => copyEnum(ret, model, enumId)
@@ -448,7 +450,7 @@ function main () {
     }
   }
 
-  function parseModel (document, triples) {
+  function parseModel (document, source, triples) {
     // makeHierarchy.test()
     // convenience variables
     let packages = {}
@@ -463,7 +465,8 @@ function main () {
     let assocSrcToClass = {}
 
     // return structure
-    let model = {
+    let model = Object.assign(new ModelRecord(), {
+      source: source,
       packages: packages,
       classes: classes,
       properties: properties,
@@ -472,7 +475,7 @@ function main () {
       classHierarchy: classHierarchy,
       packageHierarchy: packageHierarchy,
       associations: associations
-    }
+    })
 
     // Build the model
     visitPackage(document['xmi:XMI']['uml:Model'][0], [])
@@ -669,6 +672,7 @@ function main () {
     model.properties[name].sources.push(this)
   }
 
+  function ModelRecord       () { }
   function PackageRecord     () { }
   function EnumRecord        () { }
   function DatatypeRecord    () { }
@@ -742,7 +746,7 @@ function main () {
       )))
   }
 
-  function dumpFormats (model) {
+  function dumpFormats (model, source) {
     let owlx = [
       '<?xml version="1.0"?>\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
@@ -773,7 +777,8 @@ function main () {
         '\n'
     ]
     let shexc = [
-      'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
+      '# Source: ' + source + '\n' +
+        'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
         'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
         'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +

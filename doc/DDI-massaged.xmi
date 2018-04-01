@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    wget https://bitbucket.org/wackerow/ddi4_xmi/raw/HEAD/DDI4_PIM_Lion.xmi
+-->
 <xmi:XMI xmi:version="2.4.1" xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701">
   <xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
   <uml:Model xmi:type="uml:Model" xmi:id="42" name="ddi4">
@@ -310,10 +313,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Annotation_versioningAgent_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Annotation_versioningAgent_upper" value="-1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="abstract" xmi:id="Annotation_abstract">
+          <ownedAttribute xmi:type="uml:Property" name="summary" xmi:id="Annotation_summary">
             <type xmi:idref="InternationalString"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Annotation_abstract_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Annotation_abstract_upper" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Annotation_summary_lower"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Annotation_summary_upper" value="1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="relatedResource" xmi:id="Annotation_relatedResource">
             <type xmi:idref="ResourceIdentifier"/>
@@ -4063,10 +4066,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ConceptSystemCorrespondence_usage_lower"/>
             <upperValue xmi:type="uml:LiteralInteger" xmi:id="ConceptSystemCorrespondence_usage_upper" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="contains" xmi:id="ConceptSystemCorrespondence_contains">
+          <ownedAttribute xmi:type="uml:Property" name="correspondence" xmi:id="ConceptSystemCorrespondence_correspondence">
             <type xmi:idref="Map"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ConceptSystemCorrespondence_contains_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ConceptSystemCorrespondence_contains_upper" value="-1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ConceptSystemCorrespondence_correspondence_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ConceptSystemCorrespondence_correspondence_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ConceptSystemCorrespondence" xmi:id="ConceptSystemCorrespondence_maps_source" association="ConceptSystemCorrespondence_maps_association">
             <type xmi:idref="ConceptSystem"/>
@@ -4152,7 +4155,7 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ConceptualVariable" xmi:id="ConceptualVariable_takesSubstantiveConceptsFrom_source" association="ConceptualVariable_takesSubstantiveConceptsFrom_association">
             <type xmi:idref="SubstantiveConceptualDomain"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ConceptualVariable_takesSubstantiveConceptsFrom_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ConceptualVariable_takesSubstantiveConceptsFrom_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ConceptualVariable_takesSubstantiveConceptsFrom_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ConceptualVariable" xmi:id="ConceptualVariable_usesUnitType_source" association="ConceptualVariable_usesUnitType_association">
@@ -5615,12 +5618,12 @@
           <ownedAttribute xmi:type="uml:Property" name="GeographicUnitClassification" xmi:id="GeographicUnitClassification_replaces_source" association="GeographicUnitClassification_replaces_association">
             <type xmi:idref="GeographicUnitClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_replaces_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_replaces_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitClassification_replaces_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="GeographicUnitClassification" xmi:id="GeographicUnitClassification_isReplacedBy_source" association="GeographicUnitClassification_isReplacedBy_association">
             <type xmi:idref="GeographicUnitClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_isReplacedBy_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_isReplacedBy_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitClassification_isReplacedBy_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="GeographicUnitClassification_references_association" name="references">
@@ -5665,7 +5668,7 @@
           <ownedEnd xmi:id="GeographicUnitClassification_replaces_target" xmi:type="uml:Property" association="GeographicUnitClassification_replaces_association" >
             <type xmi:idref="GeographicUnitClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_replaces_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_replaces_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitClassification_replaces_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="GeographicUnitClassification_isReplacedBy_association" name="isReplacedBy">
@@ -5674,7 +5677,7 @@
           <ownedEnd xmi:id="GeographicUnitClassification_isReplacedBy_target" xmi:type="uml:Property" association="GeographicUnitClassification_isReplacedBy_association" >
             <type xmi:idref="GeographicUnitClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_isReplacedBy_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitClassification_isReplacedBy_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitClassification_isReplacedBy_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="GeographicUnitRelationStructure" xmi:id="GeographicUnitRelationStructure" visibility="package" >
@@ -5774,12 +5777,12 @@
           <ownedAttribute xmi:type="uml:Property" name="GeographicUnitTypeClassification" xmi:id="GeographicUnitTypeClassification_replaces_source" association="GeographicUnitTypeClassification_replaces_association">
             <type xmi:idref="GeographicUnitTypeClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_replaces_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_replaces_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitTypeClassification_replaces_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="GeographicUnitTypeClassification" xmi:id="GeographicUnitTypeClassification_isReplacedBy_source" association="GeographicUnitTypeClassification_isReplacedBy_association">
             <type xmi:idref="GeographicUnitTypeClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_isReplacedBy_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_isReplacedBy_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitTypeClassification_isReplacedBy_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="GeographicUnitTypeClassification_references_association" name="references">
@@ -5824,7 +5827,7 @@
           <ownedEnd xmi:id="GeographicUnitTypeClassification_replaces_target" xmi:type="uml:Property" association="GeographicUnitTypeClassification_replaces_association" >
             <type xmi:idref="GeographicUnitTypeClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_replaces_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_replaces_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitTypeClassification_replaces_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="GeographicUnitTypeClassification_isReplacedBy_association" name="isReplacedBy">
@@ -5833,7 +5836,7 @@
           <ownedEnd xmi:id="GeographicUnitTypeClassification_isReplacedBy_target" xmi:type="uml:Property" association="GeographicUnitTypeClassification_isReplacedBy_association" >
             <type xmi:idref="GeographicUnitTypeClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_isReplacedBy_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="GeographicUnitTypeClassification_isReplacedBy_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="GeographicUnitTypeClassification_isReplacedBy_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="GeographicUnitTypeRelationStructure" xmi:id="GeographicUnitTypeRelationStructure" visibility="package" >
@@ -7116,7 +7119,7 @@
           <ownedAttribute xmi:type="uml:Property" name="PhysicalRecordSegment" xmi:id="PhysicalRecordSegment_representsPopulation_source" association="PhysicalRecordSegment_representsPopulation_association">
             <type xmi:idref="Population"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="PhysicalRecordSegment_representsPopulation_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="PhysicalRecordSegment_representsPopulation_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PhysicalRecordSegment_representsPopulation_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="PhysicalRecordSegment" xmi:id="PhysicalRecordSegment_mapTo_source" association="PhysicalRecordSegment_mapTo_association">
             <type xmi:idref="LogicalRecord"/>
@@ -7154,7 +7157,7 @@
           <ownedEnd xmi:id="PhysicalRecordSegment_representsPopulation_target" xmi:type="uml:Property" association="PhysicalRecordSegment_representsPopulation_association" >
             <type xmi:idref="PhysicalRecordSegment"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="PhysicalRecordSegment_representsPopulation_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="PhysicalRecordSegment_representsPopulation_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="PhysicalRecordSegment_representsPopulation_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="PhysicalRecordSegment_mapTo_association" name="mapTo">
@@ -7828,7 +7831,7 @@
           <ownedAttribute xmi:type="uml:Property" name="Study" xmi:id="Study_hasBudget_source" association="Study_hasBudget_association">
             <type xmi:idref="Budget"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Study_hasBudget_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Study_hasBudget_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Study_hasBudget_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="Study" xmi:id="Study_hasInstanceVariable_source" association="Study_hasInstanceVariable_association">
             <type xmi:idref="InstanceVariable"/>
@@ -7994,7 +7997,7 @@
           <ownedEnd xmi:id="Study_hasBudget_target" xmi:type="uml:Property" association="Study_hasBudget_association" >
             <type xmi:idref="Study"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Study_hasBudget_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Study_hasBudget_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Study_hasBudget_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="Study_hasInstanceVariable_association" name="hasInstanceVariable">
@@ -8596,10 +8599,10 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="WorkflowService" xmi:id="WorkflowService" visibility="package" >
           <generalization xmi:type="uml:Generalization" xmi:id="WorkflowService_extends_AnnotatedIdentifiable" general="AnnotatedIdentifiable"/>
-          <ownedAttribute xmi:type="uml:Property" name="interface" xmi:id="WorkflowService_interface">
+          <ownedAttribute xmi:type="uml:Property" name="serviceInterface" xmi:id="WorkflowService_serviceInterface">
             <type xmi:idref="ExternalControlledVocabularyEntry"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowService_interface_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowService_interface_upper" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="WorkflowService_serviceInterface_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="WorkflowService_serviceInterface_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="serviceLocation" xmi:id="WorkflowService_serviceLocation">
             <type xmi:idref="ExternalControlledVocabularyEntry"/>
@@ -9592,7 +9595,7 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="CodeList" xmi:id="CodeList_references_source" association="CodeList_references_association">
             <type xmi:idref="CategorySet"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeList_references_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeList_references_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeList_references_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="CodeList" xmi:id="CodeList_realizes_source" association="CodeList_realizes_association">
@@ -10022,12 +10025,12 @@
           <ownedAttribute xmi:type="uml:Property" name="StatisticalClassification" xmi:id="StatisticalClassification_predecessor_source" association="StatisticalClassification_predecessor_association">
             <type xmi:idref="StatisticalClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_predecessor_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_predecessor_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StatisticalClassification_predecessor_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="StatisticalClassification" xmi:id="StatisticalClassification_successor_source" association="StatisticalClassification_successor_association">
             <type xmi:idref="StatisticalClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_successor_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_successor_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StatisticalClassification_successor_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="StatisticalClassification_isMaintainedBy_association" name="isMaintainedBy">
@@ -10072,7 +10075,7 @@
           <ownedEnd xmi:id="StatisticalClassification_predecessor_target" xmi:type="uml:Property" association="StatisticalClassification_predecessor_association" >
             <type xmi:idref="StatisticalClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_predecessor_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_predecessor_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StatisticalClassification_predecessor_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="StatisticalClassification_successor_association" name="successor">
@@ -10081,7 +10084,7 @@
           <ownedEnd xmi:id="StatisticalClassification_successor_target" xmi:type="uml:Property" association="StatisticalClassification_successor_association" >
             <type xmi:idref="StatisticalClassification"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_successor_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="StatisticalClassification_successor_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="StatisticalClassification_successor_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="StatisticalClassificationRelationStructure" xmi:id="StatisticalClassificationRelationStructure" visibility="package" >
@@ -10907,7 +10910,7 @@
           <ownedAttribute xmi:type="uml:Property" name="BooleanResponseDomain" xmi:id="BooleanResponseDomain_forCategory_source" association="BooleanResponseDomain_forCategory_association">
             <type xmi:idref="Category"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BooleanResponseDomain_forCategory_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="BooleanResponseDomain_forCategory_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BooleanResponseDomain_forCategory_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="BooleanResponseDomain_forCategory_association" name="forCategory">
@@ -10916,7 +10919,7 @@
           <ownedEnd xmi:id="BooleanResponseDomain_forCategory_target" xmi:type="uml:Property" association="BooleanResponseDomain_forCategory_association" >
             <type xmi:idref="BooleanResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="BooleanResponseDomain_forCategory_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="BooleanResponseDomain_forCategory_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="BooleanResponseDomain_forCategory_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="Capture" xmi:id="Capture" visibility="package" isAbstract="true">
@@ -11013,17 +11016,17 @@
           <ownedAttribute xmi:type="uml:Property" name="CodeListResponseDomain" xmi:id="CodeListResponseDomain_usesCodeList_source" association="CodeListResponseDomain_usesCodeList_association">
             <type xmi:idref="CodeList"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_usesCodeList_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_usesCodeList_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_usesCodeList_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="CodeListResponseDomain" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_source" association="CodeListResponseDomain_specifyOtherResponseDomain_association">
             <type xmi:idref="ResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="CodeListResponseDomain" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_source" association="CodeListResponseDomain_specifyOtherCorrespondingCode_association">
             <type xmi:idref="Code"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="CodeListResponseDomain_usesCodeList_association" name="usesCodeList">
@@ -11032,7 +11035,7 @@
           <ownedEnd xmi:id="CodeListResponseDomain_usesCodeList_target" xmi:type="uml:Property" association="CodeListResponseDomain_usesCodeList_association" >
             <type xmi:idref="CodeListResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_usesCodeList_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_usesCodeList_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_usesCodeList_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_association" name="specifyOtherResponseDomain">
@@ -11041,7 +11044,7 @@
           <ownedEnd xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_target" xmi:type="uml:Property" association="CodeListResponseDomain_specifyOtherResponseDomain_association" >
             <type xmi:idref="CodeListResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherResponseDomain_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_association" name="specifyOtherCorrespondingCode">
@@ -11050,7 +11053,7 @@
           <ownedEnd xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_target" xmi:type="uml:Property" association="CodeListResponseDomain_specifyOtherCorrespondingCode_association" >
             <type xmi:idref="CodeListResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="CodeListResponseDomain_specifyOtherCorrespondingCode_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" name="ConceptualInstrument" xmi:id="ConceptualInstrument" visibility="package" >
@@ -11229,12 +11232,12 @@
           <ownedAttribute xmi:type="uml:Property" name="InstrumentComponent" xmi:id="InstrumentComponent_hasInstructions_source" association="InstrumentComponent_hasInstructions_association">
             <type xmi:idref="Instruction"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="InstrumentComponent_hasInstructions_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="InstrumentComponent_hasInstructions_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="InstrumentComponent_hasInstructions_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="InstrumentComponent" xmi:id="InstrumentComponent_hasExternalAids_source" association="InstrumentComponent_hasExternalAids_association">
             <type xmi:idref="ExternalAid"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="InstrumentComponent_hasExternalAids_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="InstrumentComponent_hasExternalAids_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="InstrumentComponent_hasExternalAids_upper" value="-1"/>
           </ownedAttribute>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="InstrumentComponent_hasInstructions_association" name="hasInstructions">
@@ -11340,7 +11343,7 @@
           <ownedAttribute xmi:type="uml:Property" name="ResponseDomain" xmi:id="ResponseDomain_intendedRepresentation_source" association="ResponseDomain_intendedRepresentation_association">
             <type xmi:idref="RepresentedVariable"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ResponseDomain_intendedRepresentation_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="ResponseDomain_intendedRepresentation_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ResponseDomain_intendedRepresentation_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ResponseDomain" xmi:id="ResponseDomain_hasOutputParameter_source" association="ResponseDomain_hasOutputParameter_association">
             <type xmi:idref="Parameter"/>
@@ -11354,7 +11357,7 @@
           <ownedEnd xmi:id="ResponseDomain_intendedRepresentation_target" xmi:type="uml:Property" association="ResponseDomain_intendedRepresentation_association" >
             <type xmi:idref="ResponseDomain"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="ResponseDomain_intendedRepresentation_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="ResponseDomain_intendedRepresentation_packagedElement_upper" value="-1"/>
+            <upperValue xmi:type="uml:LiteralInteger" xmi:id="ResponseDomain_intendedRepresentation_packagedElement_upper" value="1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="ResponseDomain_hasOutputParameter_association" name="hasOutputParameter">
@@ -11962,7 +11965,7 @@
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="AppliedUse" xmi:id="AppliedUse_hasGuide_source" association="AppliedUse_hasGuide_association">
             <type xmi:idref="Guide"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AppliedUse_hasGuide_lower" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AppliedUse_hasGuide_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AppliedUse_hasGuide_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="AppliedUse" xmi:id="AppliedUse_appliesToUnitType_source" association="AppliedUse_appliesToUnitType_association">
@@ -11982,7 +11985,7 @@
           <ownedEnd xmi:id="AppliedUse_hasGuide_target" xmi:type="uml:Property" association="AppliedUse_hasGuide_association"  aggregation="shared">
             <type xmi:idref="AppliedUse"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AppliedUse_hasGuide_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="AppliedUse_hasGuide_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AppliedUse_hasGuide_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="AppliedUse_appliesToUnitType_association" name="appliesToUnitType">
@@ -12101,7 +12104,7 @@
           <ownedAttribute xmi:type="uml:Property" name="Result" xmi:id="Result_evaluateAgainstGoal_source" association="Result_evaluateAgainstGoal_association">
             <type xmi:idref="Goal"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Result_evaluateAgainstGoal_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Result_evaluateAgainstGoal_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Result_evaluateAgainstGoal_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="Result" xmi:id="Result_hasInputParameter_source" association="Result_hasInputParameter_association">
             <type xmi:idref="Parameter"/>
@@ -12129,7 +12132,7 @@
           <ownedEnd xmi:id="Result_evaluateAgainstGoal_target" xmi:type="uml:Property" association="Result_evaluateAgainstGoal_association" >
             <type xmi:idref="Result"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Result_evaluateAgainstGoal_packagedElement_lower"/>
-            <upperValue xmi:type="uml:LiteralInteger" xmi:id="Result_evaluateAgainstGoal_packagedElement_upper" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Result_evaluateAgainstGoal_packagedElement_upper" value="-1"/>
           </ownedEnd>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="Result_hasInputParameter_association" name="hasInputParameter">
@@ -12360,10 +12363,10 @@
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Machine_function_lower"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Machine_function_upper" value="-1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" name="interface" xmi:id="Machine_interface">
+          <ownedAttribute xmi:type="uml:Property" name="machineInterface" xmi:id="Machine_machineInterface">
             <type xmi:idref="ExternalControlledVocabularyEntry"/>
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Machine_interface_lower"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Machine_interface_upper" value="-1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Machine_machineInterface_lower"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Machine_machineInterface_upper" value="-1"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Property" name="ownerOperatorContact" xmi:id="Machine_ownerOperatorContact">
             <type xmi:idref="ContactInformation"/>
@@ -12404,27 +12407,27 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="ddi4_views" name="Views (Exported from Drupal)">
       <packagedElement xmi:type="uml:Package" xmi:id="DescriptiveCodebookView" name="DescriptiveCodebookView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="SamplingView" name="SamplingView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="StatisticalClassificationView" name="StatisticalClassificationView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="StructuredGeographyView" name="StructuredGeographyView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="DataManagementView" name="DataManagementView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="DataDescriptionView" name="DataDescriptionView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="ConceptualContentView" name="ConceptualContentView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="ControlledVocabularyView" name="ControlledVocabularyView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="CustomMetadataView" name="CustomMetadataView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="DataCaptureInstrumentView" name="DataCaptureInstrumentView">
-			</packagedElement>
+      </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="AgentRegistryView" name="AgentRegistryView">
-			</packagedElement>
+      </packagedElement>
     </packagedElement>
   </uml:Model>
   <xmi:Extension extender="Enterprise Architect" extenderID="6.5">
@@ -13085,9 +13088,9 @@
             <tags/>
             <xrefs/>
           </attribute>
-          <attribute xmi:idref="Annotation_abstract" name="abstract" scope="Public">
+          <attribute xmi:idref="Annotation_summary" name="summary" scope="Public">
             <initial/>
-            <documentation value="An abstract (description) of the annotated object."/>
+            <documentation value="A summary description (abstract) of the annotated object."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -13931,7 +13934,7 @@
         <attributes>
           <attribute xmi:idref="ConceptRelation_hasRelationSepcification" name="hasRelationSepcification" scope="Public">
             <initial/>
-            <documentation value="RelationSpecification	Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list"/>
+            <documentation value="RelationSpecification Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list"/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -14531,7 +14534,7 @@
         <attributes>
           <attribute xmi:idref="DescribedRelationship_rationale" name="rationale" scope="Public">
             <initial/>
-            <documentation value="Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text. 
+            <documentation value="Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -14738,8 +14741,7 @@
       <element xmi:idref="ElseIfAction" xmi:type="uml:Class" name="ElseIfAction" scope="package">
         <model package="ComplexDataTypes" tpos="0" ea_localid="808" ea_eleType="element"/>
         <properties documentation="An additional condition and resulting step to take if the condition in the parent IfThenElse is false. It cannot exist without a parent IfThenElse.
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="ComplexDataTypes"/>
         <code gentype="Java"/>
         <attributes>
@@ -16884,9 +16886,8 @@
       </element>
       <element xmi:idref="ResourceIdentifier" xmi:type="uml:Class" name="ResourceIdentifier" scope="package">
         <model package="ComplexDataTypes" tpos="0" ea_localid="720" ea_eleType="element"/>
-        <properties documentation="Provides a means of identifying a related resource and provides the typeOfRelationship.  
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+        <properties documentation="Provides a means of identifying a related resource and provides the typeOfRelationship.
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="ComplexDataTypes"/>
         <code gentype="Java"/>
         <attributes>
@@ -18458,7 +18459,7 @@
           </attribute>
           <attribute xmi:idref="ConceptSystem_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="MemberIndicator	Allows for the identification of the member and optionally provides an index for the member within an ordered array"/>
+            <documentation value="MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array"/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -18532,9 +18533,9 @@
             <tags/>
             <xrefs/>
           </attribute>
-          <attribute xmi:idref="ConceptSystemCorrespondence_contains" name="contains" scope="Public">
+          <attribute xmi:idref="ConceptSystemCorrespondence_correspondence" name="correspondence" scope="Public">
             <initial/>
-            <documentation value="Realization of contains in Symmetric Relation for mapping similar concepts."/>
+            <documentation value="Realization of correspondence in Comparison for mapping similar concepts."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -18645,27 +18646,17 @@
           </attribute>
           <attribute xmi:idref="InstanceVariable_platformType" name="platformType" scope="Public">
             <initial/>
-            <documentation value="This should match a platformType of the RepresentedVariable on which the InstanceVariable is based (if one exists). It is drawn from the same external controlled vocabulary used by the RepreentedVariable&#039;s platformType. 
+            <documentation value="This should match a platformType of the RepresentedVariable on which the InstanceVariable is based (if one exists). It is drawn from the same external controlled vocabulary used by the RepreentedVariable&#039;s platformType.
                                   A sample list for the external controlled vocabulary is:
-                                  A sample list would be: 
-                                  •	BlankString - A Blank string indicates missing. Comparison is based on lexical order.
-                                  
-                                    •	EmptyString - An empty string indicates missing. Use in comparisons returns missing.
-                                    
-                                      
-                                        •	Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.
-                                        
-                                          
-                                            •	SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value
-                                            
-                                              
-                                                •	SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)
-                                                
-                                                  
-                                                    •	StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value
-                                                    
-                                                      •	Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate. 
-                                                      "/>
+                                  A sample list would be:
+                                  • BlankString - A Blank string indicates missing. Comparison is based on lexical order.
+                                  • EmptyString - An empty string indicates missing. Use in comparisons returns missing.
+                                  • Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.
+                                  • SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value
+                                  • SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)
+                                  • StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value
+                                  • Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate.
+                                  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -19203,7 +19194,7 @@
       </element>
       <element xmi:idref="DesignOverview" xmi:type="uml:Class" name="DesignOverview" scope="package">
         <model package="SimpleMethodologyOverview" tpos="0" ea_localid="1009" ea_eleType="element"/>
-        <properties documentation="High level, descriptive, human informative, design statement The design may be used to specify how a process will be performed in general. This would most commonly be used in a Codebook along with an AlgorithmOverview and a MethodologyOverview. The design informs a specific or implemented process as to its general parameters. Supports specification of any realization of Goal. 
+        <properties documentation="High level, descriptive, human informative, design statement The design may be used to specify how a process will be performed in general. This would most commonly be used in a Codebook along with an AlgorithmOverview and a MethodologyOverview. The design informs a specific or implemented process as to its general parameters. Supports specification of any realization of Goal.
                                    "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="SimpleMethodologyOverview"/>
         <code gentype="Java"/>
@@ -19241,9 +19232,8 @@
       </element>
       <element xmi:idref="MethodologyOverview" xmi:type="uml:Class" name="MethodologyOverview" scope="package">
         <model package="SimpleMethodologyOverview" tpos="0" ea_localid="1007" ea_eleType="element"/>
-        <properties documentation="High level, descriptive, human informative methodology statement used to describe the overall methodology, identify related design, algorithm, and process information. A methodology is normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work. 
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+        <properties documentation="High level, descriptive, human informative methodology statement used to describe the overall methodology, identify related design, algorithm, and process information. A methodology is normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work.
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="SimpleMethodologyOverview"/>
         <code gentype="Java"/>
         <attributes>
@@ -19412,8 +19402,7 @@
       <element xmi:idref="Algorithm" xmi:type="uml:Class" name="Algorithm" scope="package">
         <model package="MethodologyPattern" tpos="0" ea_localid="908" ea_eleType="element"/>
         <properties documentation="An algorithm is an effective method that can be expressed within a finite amount of space and time and in a well-defined formal language for calculating a function. Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, proceeds through a finite number of well-defined successive states, eventually producing &quot;output&quot; and terminating at a final ending state. The transition from one state to the next is not necessarily deterministic; some algorithms, known as randomized algorithms, incorporate random input. [from www.wikipedia.org 15 April 2016]
-                                   
-                                     The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="MethodologyPattern"/>
         <code gentype="Java"/>
         <attributes>
@@ -19462,18 +19451,17 @@
       <element xmi:idref="Methodology" xmi:type="uml:Class" name="Methodology" scope="package">
         <model package="MethodologyPattern" tpos="0" ea_localid="937" ea_eleType="element"/>
         <properties documentation="Methodology brings together the design, algorithm, and process as a logically structured approach to an activity such as sampling, weighting, harmonization, imputation, collection management, etc. A methodology in normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work.
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="MethodologyPattern"/>
         <code gentype="Java"/>
         <attributes>
           <attribute xmi:idref="Methodology_name" name="name" scope="Public">
             <initial/>
-            <documentation value="A linguistic signifier. Human 
-                                  understandable name (word, phrase, or 
-                                  mnemonic) that reflects the ISO/IEC 
-                                  11179-5 naming principles. If more than 
-                                  one name is provided provide a context to 
+            <documentation value="A linguistic signifier. Human
+                                  understandable name (word, phrase, or
+                                  mnemonic) that reflects the ISO/IEC
+                                  11179-5 naming principles. If more than
+                                  one name is provided provide a context to
                                   differentiate usage. "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -19487,10 +19475,10 @@
           </attribute>
           <attribute xmi:idref="Methodology_usage" name="usage" scope="Public">
             <initial/>
-            <documentation value="Explanation of the ways in which some 
-                                  decision or object is employed. Supports 
-                                  the use of multiple languages and 
-                                  structured text. 
+            <documentation value="Explanation of the ways in which some
+                                  decision or object is employed. Supports
+                                  the use of multiple languages and
+                                  structured text.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -19504,10 +19492,10 @@
           </attribute>
           <attribute xmi:idref="Methodology_rationale" name="rationale" scope="Public">
             <initial/>
-            <documentation value="Explanation of the reasons some decision 
-                                  was made or some object exists. Supports 
-                                  the use of multiple languages and 
-                                  structured text. 
+            <documentation value="Explanation of the reasons some decision
+                                  was made or some object exists. Supports
+                                  the use of multiple languages and
+                                  structured text.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -19521,11 +19509,11 @@
           </attribute>
           <attribute xmi:idref="Methodology_overview" name="overview" scope="Public">
             <initial/>
-            <documentation value="Short natural language account of the 
-                                  information obtained from the 
-                                  combination of properties and 
-                                  relationships associated with an object. 
-                                  Supports the use of multiple languages 
+            <documentation value="Short natural language account of the
+                                  information obtained from the
+                                  combination of properties and
+                                  relationships associated with an object.
+                                  Supports the use of multiple languages
                                   and structured text.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -19657,9 +19645,8 @@
       </element>
       <element xmi:idref="Service" xmi:type="uml:Class" name="Service" scope="package">
         <model package="ProcessPattern" tpos="0" ea_localid="583" ea_eleType="element"/>
-        <properties documentation="A means of performing a Process Step as part of a Business Function (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve). 
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+        <properties documentation="A means of performing a Process Step as part of a Business Function (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve).
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="ProcessPattern"/>
         <code gentype="Java"/>
         <attributes>
@@ -20491,7 +20478,7 @@
           </attribute>
           <attribute xmi:idref="ControlledVocabulary_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -20567,7 +20554,7 @@
           </attribute>
           <attribute xmi:idref="CustomInstance_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -20580,7 +20567,7 @@
           </attribute>
           <attribute xmi:idref="CustomInstance_isOrdered" name="isOrdered" scope="Public">
             <initial/>
-            <documentation value="If members are ordered set to true, if unordered set to false.	"/>
+            <documentation value="If members are ordered set to true, if unordered set to false.  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -20694,7 +20681,7 @@
           </attribute>
           <attribute xmi:idref="CustomItemRelationStructure_hasRelationSpecification" name="hasRelationSpecification" scope="Public">
             <initial/>
-            <documentation value="Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.	."/>
+            <documentation value="Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification. ."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -20796,7 +20783,7 @@
           </attribute>
           <attribute xmi:idref="CustomStructure_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="Allows for the identification of the member and optionally provides an index for the member within an ordered array "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -20972,7 +20959,7 @@
           </attribute>
           <attribute xmi:idref="VocabularyRelationStructure_totality" name="totality" scope="Public">
             <initial/>
-            <documentation value="Type of relation in terms of totality with respect to an associated collection.	"/>
+            <documentation value="Type of relation in terms of totality with respect to an associated collection. "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -21111,7 +21098,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalDataSet_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="A physical description of the data store encompasses a description of its gross record structure. This structure consists of one or more PhysicalRecordSegments and their relationships. Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="A physical description of the data store encompasses a description of its gross record structure. This structure consists of one or more PhysicalRecordSegments and their relationships. Allows for the identification of the member and optionally provides an index for the member within an ordered array  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -21188,7 +21175,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalLayoutRelationStructure_hasRelationSpecification" name="hasRelationSpecification" scope="Public">
             <initial/>
-            <documentation value="Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.	"/>
+            <documentation value="Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification. "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -21377,7 +21364,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalSegmentLayout_delimiter" name="delimiter" scope="Public">
             <initial/>
-            <documentation value="The Delimiting character in the data. Must be used if isDelimited is true. &quot;The separator between cells, set by the delimiter property of a dialect description. The default is ,.&quot; see https://www.w3.org/TR/tabular-data-model/#encoding 
+            <documentation value="The Delimiting character in the data. Must be used if isDelimited is true. &quot;The separator between cells, set by the delimiter property of a dialect description. The default is ,.&quot; see https://www.w3.org/TR/tabular-data-model/#encoding
                                   From https://www.w3.org/TR/tabular-metadata/  5.9 Dialect  delimiter: “An atomic property that sets the delimiter flag to the single provided value, which MUST be a string. The default is &quot;,&quot;.”
                                   From https://www.w3.org/TR/tabular-data-model/ 8 “The separator between cells, set by the delimiter property of a dialect description. The default is ,.”
                                   From http://specs.frictionlessdata.io/csv-dialect/ delimiter:  “specifies a one-character string to use as the field separator. Default = ,”
@@ -21455,7 +21442,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalSegmentLayout_commentPrefix" name="commentPrefix" scope="Public">
             <initial/>
-            <documentation value="A string used to indicate that an input line is a comment, a string which precedes a comment in the data file. 
+            <documentation value="A string used to indicate that an input line is a comment, a string which precedes a comment in the data file.
                                   From https://www.w3.org/TR/tabular-metadata/  5.9 Dialect  commentPrefix: “An atomic property that sets the comment prefix flag to the single provided value, which MUST be a string. The default is &quot;#&quot;.”"/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -21470,7 +21457,7 @@
           <attribute xmi:idref="PhysicalSegmentLayout_encoding" name="encoding" scope="Public">
             <initial/>
             <documentation value="The character encoding of the represented data.
-                                  From https://www.w3.org/TR/tabular-metadata/ 5.9 Dialect: encoding: “An atomic property that sets the encoding flag to the single provided string value, which MUST be a defined in [encoding]. The default is &quot;utf-8&quot;.”    
+                                  From https://www.w3.org/TR/tabular-metadata/ 5.9 Dialect: encoding: “An atomic property that sets the encoding flag to the single provided string value, which MUST be a defined in [encoding]. The default is &quot;utf-8&quot;.”
                                   From https://www.w3.org/TR/tabular-metadata/ 7.2 Encoding:  “CSV files should be encoded using UTF-8, and should be in Unicode Normal Form C as defined in [UAX15]. If a CSV file is not encoded using UTF-8, the encoding should be specified through the charset parameter in the Content-Type header:”
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -21488,8 +21475,7 @@
             <documentation value="True if the file contains a header containing column names.
                                   From https://www.w3.org/TR/tabular-metadata/  5.9 Dialect  header: “A boolean atomic property that, if true, sets the header row count flag to 1, and if false to 0, unless headerRowCount is provided, in which case the value provided for the header property is ignored. The default is true.”
                                   From http://specs.frictionlessdata.io/csv-dialect/ header: “indicates whether the file includes a header row. If true the first row in the file is a header row, not data. Default = true”
-                                  
-                                    "/>
+                                  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -21503,7 +21489,7 @@
           <attribute xmi:idref="PhysicalSegmentLayout_headerRowCount" name="headerRowCount" scope="Public">
             <initial/>
             <documentation value="The number of lines in the header
-                                  From https://www.w3.org/TR/tabular-metadata/  5.9 Dialect  headerRowCount: “A numeric atomic property that sets the header row count flag to the single provided value, which MUST be a non-negative integer. The default is 1.” 
+                                  From https://www.w3.org/TR/tabular-metadata/  5.9 Dialect  headerRowCount: “A numeric atomic property that sets the header row count flag to the single provided value, which MUST be a non-negative integer. The default is 1.”
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -21673,8 +21659,7 @@
             <initial/>
             <documentation value="Indicates the direction in which columns are arranged in each row.
                                   From https://www.w3.org/TR/tabular-metadata/  5.3.2 tableDirection: “An atomic property that MUST have a single string value that is one of &quot;rtl&quot;, &quot;ltr&quot;, or &quot;auto&quot;. Indicates whether the tables in the group should be displayed with the first column on the right, on the left, or based on the first character in the table that has a specific direction. The value of this property becomes the value of the table direction annotation for all the tables in the table group. See Bidirectional Tables in [tabular-data-model] for details. The default value for this property is &quot;auto&quot;.”
-                                  
-                                    "/>
+                                  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -21701,7 +21686,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalSegmentLayout_type" name="type" scope="Public">
             <initial/>
-            <documentation value="	
+            <documentation value="
                                   Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -21728,7 +21713,7 @@
           </attribute>
           <attribute xmi:idref="PhysicalSegmentLayout_purpose" name="purpose" scope="Public">
             <initial/>
-            <documentation value="	
+            <documentation value="
                                   Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -21877,7 +21862,7 @@
           <attribute xmi:idref="ValueMapping_physicalDataType" name="physicalDataType" scope="Public">
             <initial/>
             <documentation value="The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number.
-                                  From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details. 
+                                  From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.
                                   The normalized value of this property becomes the datatype annotation for the described column. ”
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -21924,13 +21909,12 @@
             <initial/>
             <documentation value="A pattern description of the format of a numeric value.
                                   In W3C part of the datatype format
-                                  From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 pattern: “A number format pattern as defined in [UAX35] http://www.unicode.org/reports/tr35/tr35-31/tr35-numbers.html#Number_Format_Patterns . Implementations MUST recognise number format patterns containing the symbols 0, #, the specified decimalChar (or &quot;.&quot; if unspecified), the specified groupChar (or &quot;,&quot; if unspecified), E, +, % and ‰. Implementations MAY additionally recognise number format patterns containing other special pattern characters defined in [UAX35]. If the supplied value is not a string, or if it contains an invalid number format pattern or uses special pattern characters that the implementation does not recognise, implementations MUST issue a warning and proceed as if the property had not been specified.  
+                                  From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 pattern: “A number format pattern as defined in [UAX35] http://www.unicode.org/reports/tr35/tr35-31/tr35-numbers.html#Number_Format_Patterns . Implementations MUST recognise number format patterns containing the symbols 0, #, the specified decimalChar (or &quot;.&quot; if unspecified), the specified groupChar (or &quot;,&quot; if unspecified), E, +, % and ‰. Implementations MAY additionally recognise number format patterns containing other special pattern characters defined in [UAX35]. If the supplied value is not a string, or if it contains an invalid number format pattern or uses special pattern characters that the implementation does not recognise, implementations MUST issue a warning and proceed as if the property had not been specified.
                                   f the datatype format annotation is a single string, this is interpreted in the same way as if it were an object with a pattern property whose value is that string.
-                                  If the groupChar is specified, but no pattern is supplied, when parsing the string value of a cell against this format specification, implementations MUST recognise and parse numbers that consist of: 
+                                  If the groupChar is specified, but no pattern is supplied, when parsing the string value of a cell against this format specification, implementations MUST recognise and parse numbers that consist of:
                                   an optional + or - sign, …
-                                  
-                                    Implementations MAY also recognise numeric values that are in any of the standard-decimal, standard-percent or standard-scientific formats listed in the Unicode Common Locale Data Repository. …”
-                                    "/>
+                                  Implementations MAY also recognise numeric values that are in any of the standard-decimal, standard-percent or standard-scientific formats listed in the Unicode Common Locale Data Repository. …”
+                                  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -22038,7 +22022,7 @@
           </attribute>
           <attribute xmi:idref="ValueMapping_scale" name="scale" scope="Public">
             <initial/>
-            <documentation value="The scale of the number expressed as an integer (for example a number expressed in 100&#039;s, 5 = 500 would have a scale of 100).  
+            <documentation value="The scale of the number expressed as an integer (for example a number expressed in 100&#039;s, 5 = 500 would have a scale of 100).
                                   From DDI 3.2 ManagedNumericRepresentation@scale: "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -22580,13 +22564,10 @@
       </element>
       <element xmi:idref="BusinessProcess" xmi:type="uml:Class" name="BusinessProcess" scope="package">
         <model package="BusinessWorkflow" tpos="0" ea_localid="1192" ea_eleType="element"/>
-        <properties documentation="BusinessProcesses could be Generic Longitudinal Business Process Model (GLBPM) and/or Generic Statistical Business Process Model (GSBPM) steps and/or sub-steps. BusinessProcesses participate in a DataPipeline by virtue of their preconditions and postconditions. 
-                                   
-                                     A BusinessProcess differs from a WorkflowStep by virtue of its granularity. Higher level operations are the subject of BusinessProcesses. A BusinessProcess has a WorkflowStepSequence through which these higher levels operations may optionally be decomposed into WorkflowSteps.
-                                     
-                                       BusinessProcess preconditions and postconditions differ from input and output parameters because they don&#039;t take variables and values. Instead the subject of preconditions and postconditions are typically whole datasets.
-                                       
-                                         Given this level of granularity it is possible to view a BusinessProcess through the Open Archival Information System (OAIS) Reference Model. So a BusinessProcess may optionally be described as a component of a Submission Information Package (SIP), an Archival Information Package (AIP) or a Dissemination Information Package (DIP)."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+        <properties documentation="BusinessProcesses could be Generic Longitudinal Business Process Model (GLBPM) and/or Generic Statistical Business Process Model (GSBPM) steps and/or sub-steps. BusinessProcesses participate in a DataPipeline by virtue of their preconditions and postconditions.
+                                   A BusinessProcess differs from a WorkflowStep by virtue of its granularity. Higher level operations are the subject of BusinessProcesses. A BusinessProcess has a WorkflowStepSequence through which these higher levels operations may optionally be decomposed into WorkflowSteps.
+                                   BusinessProcess preconditions and postconditions differ from input and output parameters because they don&#039;t take variables and values. Instead the subject of preconditions and postconditions are typically whole datasets.
+                                   Given this level of granularity it is possible to view a BusinessProcess through the Open Archival Information System (OAIS) Reference Model. So a BusinessProcess may optionally be described as a component of a Submission Information Package (SIP), an Archival Information Package (AIP) or a Dissemination Information Package (DIP)."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="BusinessWorkflow"/>
         <code gentype="Java"/>
         <attributes>
@@ -22859,14 +22840,10 @@
       <element xmi:idref="MetadataDrivenAction" xmi:type="uml:Class" name="MetadataDrivenAction" scope="package">
         <model package="Workflows" tpos="0" ea_localid="1195" ea_eleType="element"/>
         <properties documentation="Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-                                   
-                                     In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-                                     
-                                       In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-                                       
-                                         In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-                                         
-                                           MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain &quot;extensions&quot;. Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
+                                   In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+                                   In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+                                   MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain &quot;extensions&quot;. Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="Workflows"/>
         <code gentype="Java"/>
         <attributes>
@@ -23157,7 +23134,7 @@
           </attribute>
           <attribute xmi:idref="WorkflowProcess_usage" name="usage" scope="Public">
             <initial/>
-            <documentation value="Explanation of the ways in which the pattern is employed. Supports  the use of multiple languages and  structured text. 
+            <documentation value="Explanation of the ways in which the pattern is employed. Supports  the use of multiple languages and  structured text.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
@@ -23180,7 +23157,7 @@
         <extendedProperties tagged="0" package_name="Workflows"/>
         <code gentype="Java"/>
         <attributes>
-          <attribute xmi:idref="WorkflowService_interface" name="interface" scope="Public">
+          <attribute xmi:idref="WorkflowService_serviceInterface" name="serviceInterface" scope="Public">
             <initial/>
             <documentation value="Specifies how to communicate with the service."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -23392,11 +23369,9 @@
       <element xmi:idref="WorkflowStepSequence" xmi:type="uml:Class" name="WorkflowStepSequence" scope="package">
         <model package="Workflows" tpos="0" ea_localid="533" ea_eleType="element"/>
         <properties documentation="A WorkflowStepSequence is an enumerated (simple) collection of WorkflowSteps.
-                                   
-                                     WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, specific concurrent processing defined by Split and SplitJoin, or designed for various specializations of the WorkflowProcess. .
-                                     
-                                       Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
-                                       "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, specific concurrent processing defined by Split and SplitJoin, or designed for various specializations of the WorkflowProcess. .
+                                   Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="Workflows"/>
         <code gentype="Java"/>
         <attributes>
@@ -24255,7 +24230,7 @@
           </attribute>
           <attribute xmi:idref="ClassificationSeries_keyword" name="keyword" scope="Public">
             <initial/>
-            <documentation value="A ClassificationSeries can be associated with one or a number of keywords.	"/>
+            <documentation value="A ClassificationSeries can be associated with one or a number of keywords.  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -24307,7 +24282,7 @@
           </attribute>
           <attribute xmi:idref="ClassificationSeries_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="MemberIndicator	Allows for the identification of the member and optionally provides an index for the member within an ordered array"/>
+            <documentation value="MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array"/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -24626,8 +24601,7 @@
       <element xmi:idref="LevelStructure" xmi:type="uml:Class" name="LevelStructure" scope="package">
         <model package="Representations" tpos="0" ea_localid="232" ea_eleType="element"/>
         <properties documentation="The LevelStructure describes the nesting structure of a hierarchical collection. The levels within the structure begin at the root level &#039;1&#039; and continue as an ordered array through each level of nesting.
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="Representations"/>
         <code gentype="Java"/>
         <attributes>
@@ -24698,24 +24672,14 @@
           <attribute xmi:idref="SentinelValueDomain_platformType" name="platformType" scope="Public">
             <initial/>
             <documentation value="The type of platform under which sentinel codes will be used. Statistical software platforms use different sets of codes to indicate missing values. The external controlled vocabulary should list platform tpes and a description of the allowed missing value types. A sample list would be:
-                                  •	BlankString - A Blank string indicates missing. Comparison is based on lexical order.
-                                  
-                                    •	EmptyString - An empty string indicates missing. Use in comparisons returns missing.
-                                    
-                                      
-                                        •	Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.
-                                        
-                                          
-                                            •	SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value
-                                            
-                                              
-                                                •	SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)
-                                                
-                                                  
-                                                    •	StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value
-                                                    
-                                                      •	Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate. 
-                                                      "/>
+                                  • BlankString - A Blank string indicates missing. Comparison is based on lexical order.
+                                  • EmptyString - An empty string indicates missing. Use in comparisons returns missing.
+                                  • Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.
+                                  • SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value
+                                  • SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)
+                                  • StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value
+                                  • Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate.
+                                  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -25004,7 +24968,7 @@
           </attribute>
           <attribute xmi:idref="ValueAndConceptDescription_logicalExpression" name="logicalExpression" scope="Public">
             <initial/>
-            <documentation value="A logical expression where the values of &quot;x&quot; making the expression true are the members of the set of valid values. 
+            <documentation value="A logical expression where the values of &quot;x&quot; making the expression true are the members of the set of valid values.
                                   Example:
                                   (all reals x such that  x &gt;0)
                                   describes the real numbers greater than 0"/>
@@ -25062,7 +25026,7 @@
           <attribute xmi:idref="ValueAndConceptDescription_minimumValueExclusive" name="minimumValueExclusive" scope="Public">
             <initial/>
             <documentation value="A string denoting the minimum possible value (excluding this value)
-                                  From https://www.w3.org/TR/tabular-metadata/  5.11.2 minExclusive: “An atomic property that contains a single number or string that is the minimum valid value (exclusive). The value of this property becomes the minimum exclusive annotation for the described datatype. See Value Constraints in [tabular-data-model] for details.”  
+                                  From https://www.w3.org/TR/tabular-metadata/  5.11.2 minExclusive: “An atomic property that contains a single number or string that is the minimum valid value (exclusive). The value of this property becomes the minimum exclusive annotation for the described datatype. See Value Constraints in [tabular-data-model] for details.”
                                   DDI3.2 handles this with a Boolean isInclusive attribute.
                                   "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -25077,7 +25041,7 @@
           </attribute>
           <attribute xmi:idref="ValueAndConceptDescription_maximumValueExclusive" name="maximumValueExclusive" scope="Public">
             <initial/>
-            <documentation value="A string denotFrom https://www.w3.org/TR/tabular-metadata/  5.11.2 maxExclusive: “An atomic property that contains a single number or string that is the maximum valid value (exclusive). The value of this property becomes the maximum exclusive annotation for the described datatype. See Value Constraints in [tabular-data-model] for details.”  
+            <documentation value="A string denotFrom https://www.w3.org/TR/tabular-metadata/  5.11.2 maxExclusive: “An atomic property that contains a single number or string that is the maximum valid value (exclusive). The value of this property becomes the maximum exclusive annotation for the described datatype. See Value Constraints in [tabular-data-model] for details.”
                                   DDI3.2 handles this with a Boolean isInclusive attribute.
                                   ing the maximumpossible value (excluding this value)"/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -25181,13 +25145,10 @@
       <element xmi:idref="DataStore" xmi:type="uml:Class" name="DataStore" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="665" ea_eleType="element"/>
         <properties documentation="A DataStore is either a SimpleCollection or a StructuredCollection of LogicalRecords, keeping in mind that a LogicalRecords is a definition, not a &quot;datasets&quot;.
-                                   
-                                     LogicalRecords organized in a StructuredCollection is called a LogicalRecordRelationStructure.
-                                     
-                                       Instances of LogicalRecords instantiated as organizations of DataPoints hosting data are described in FormatDescription.
-                                       
-                                         A DataStore is reusable across studies. Each Study has at most one DataStore.
-                                         "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   LogicalRecords organized in a StructuredCollection is called a LogicalRecordRelationStructure.
+                                   Instances of LogicalRecords instantiated as organizations of DataPoints hosting data are described in FormatDescription.
+                                   A DataStore is reusable across studies. Each Study has at most one DataStore.
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <attributes>
@@ -25284,7 +25245,7 @@
           </attribute>
           <attribute xmi:idref="DataStore_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="Data in the form of Data Records contained in the Data Store. Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="Data in the form of Data Records contained in the Data Store. Allows for the identification of the member and optionally provides an index for the member within an ordered array "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -25316,12 +25277,9 @@
       <element xmi:idref="DataStoreLibrary" xmi:type="uml:Class" name="DataStoreLibrary" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="891" ea_eleType="element"/>
         <properties documentation="A DataStoreLibrary is a collection or, again, a &quot;library&quot; of DataStores.
-                                   
-                                     An individual DataStore is associated with a Study. A collection of DataStores is associated with a StudySeries.
-                                     
-                                       The relationships among the DataStores in the DataStoreLibrary is described by the DataStoreRelationStructure. Relations may be more or less complicated depending on the StudySeries type. A StudySeries may be ad hoc. A StudySeries may form a time series. The variety of these collections has been described using the &lt;a href=https://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/FieldLevelDocumentation/&quot;&gt;&quot;Group&quot;&lt;/a&gt; in DDI 3.1.
-                                       
-                                         Like any RelationStructure, the DataStoreRelationStructure is able to describe both part/whole relations and generalization/specialization relations. See the controlled vocabulary at &lt;a href=&quot;http://lion.ddialliance.org/datatypes/relationspecification&quot;&gt;RelationSpecification&lt;/a&gt; to review all the types of relations a RelationStructure is able to describe. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   An individual DataStore is associated with a Study. A collection of DataStores is associated with a StudySeries.
+                                   The relationships among the DataStores in the DataStoreLibrary is described by the DataStoreRelationStructure. Relations may be more or less complicated depending on the StudySeries type. A StudySeries may be ad hoc. A StudySeries may form a time series. The variety of these collections has been described using the &lt;a href=https://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/FieldLevelDocumentation/&quot;&gt;&quot;Group&quot;&lt;/a&gt; in DDI 3.1.
+                                   Like any RelationStructure, the DataStoreRelationStructure is able to describe both part/whole relations and generalization/specialization relations. See the controlled vocabulary at &lt;a href=&quot;http://lion.ddialliance.org/datatypes/relationspecification&quot;&gt;RelationSpecification&lt;/a&gt; to review all the types of relations a RelationStructure is able to describe. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <attributes>
@@ -25366,7 +25324,7 @@
           </attribute>
           <attribute xmi:idref="DataStoreLibrary_contains" name="contains" scope="Public">
             <initial/>
-            <documentation value="The DataStores in the Catalog. Allows for the identification of the member and optionally provides an index for the member within an ordered array	"/>
+            <documentation value="The DataStores in the Catalog. Allows for the identification of the member and optionally provides an index for the member within an ordered array  "/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
             <coords ordered="0"/>
             <containment position="0"/>
@@ -25598,10 +25556,8 @@
       <element xmi:idref="LogicalRecord" xmi:type="uml:Class" name="LogicalRecord" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="883" ea_eleType="element"/>
         <properties documentation="The LogicalRecord is a record definition. It is abstract.
-                                   
-                                     The actual realization of record definitions are provided by the UnitDataRecord and the DataCube. UnitDataRecords support two types of record definitions. The first is based on the SimpleCollection it inherits from LogicalRecord. The second type is a StructuredCollection that specializes the LogicalRecord. As a SimpleCollection a UnitDataRecord can, for example, provide table definitions. As a StructuredCollection, UnitDataRecord can define structures comparable to a &quot;struct&quot; in C or a JSON nested object. A UnitDataRecord, then, inherits SimpleCollection from LogicalRecord but adds its own StructuredCollection into the mix. The DataCube brings into play its own StructuredCollection which is distinct from the UnitDataRecord StructuredCollection.The DataCube StructuredCollection is not currently in scope.
-                                     
-                                       The various record definitions -- simple and structured -- when they are actually instantiated with data is described by the PhysicalLayout of a LogicalRecord in the FormatDescription package. The PhysicalLayout places data into DataPoints formed at the direction of a LogicalRecord and its instance variables. At this point a LogicalRecord turn into a &quot;dataset&quot; that hosts unit records, A record definition is not a record. So we conflate metadata and data when we refer to a LogicalRecord as an empty table."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   The actual realization of record definitions are provided by the UnitDataRecord and the DataCube. UnitDataRecords support two types of record definitions. The first is based on the SimpleCollection it inherits from LogicalRecord. The second type is a StructuredCollection that specializes the LogicalRecord. As a SimpleCollection a UnitDataRecord can, for example, provide table definitions. As a StructuredCollection, UnitDataRecord can define structures comparable to a &quot;struct&quot; in C or a JSON nested object. A UnitDataRecord, then, inherits SimpleCollection from LogicalRecord but adds its own StructuredCollection into the mix. The DataCube brings into play its own StructuredCollection which is distinct from the UnitDataRecord StructuredCollection.The DataCube StructuredCollection is not currently in scope.
+                                   The various record definitions -- simple and structured -- when they are actually instantiated with data is described by the PhysicalLayout of a LogicalRecord in the FormatDescription package. The PhysicalLayout places data into DataPoints formed at the direction of a LogicalRecord and its instance variables. At this point a LogicalRecord turn into a &quot;dataset&quot; that hosts unit records, A record definition is not a record. So we conflate metadata and data when we refer to a LogicalRecord as an empty table."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <attributes>
@@ -25741,8 +25697,7 @@
       <element xmi:idref="MeasureRole" xmi:type="uml:Class" name="MeasureRole" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="888" ea_eleType="element"/>
         <properties documentation="A MeasureRole identifies one or more InstanceVariables as being measures within a ViewPoint. A MeasureRole is a SimpleCollection of InstanceVariables acting in the MeasureRole.
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <links>
@@ -25815,10 +25770,8 @@
       <element xmi:idref="UnitDataRecord" xmi:type="uml:Class" name="UnitDataRecord" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="1190" ea_eleType="element"/>
         <properties documentation="Gives a UnitDataRecord structure to a Logical Record. UnitDataRecord structures a LogicalRecord as either a SimpleCollection or a StructuredCollection (InstanceVariableRelationStructure) of instance variables.
-                                   
-                                     The UnitDataRecord also organizes instance variables in a UnitDataViewpoint. The UnitDataViewpoint assigns roles to Instance Variables. In any one UnitDataViewpoint UnitDataRecord instance variables play one of three roles: identifier, measure or attribute. The same UnitDataRecord may have many UnitDataViewpoints.
-                                     
-                                       The UnitDataViewPoint can work in conjunction with the InstanceVariableRelationStructure. Together they can break out instance variables into complex (hierarchical) identifier, measure and attribute groups. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   The UnitDataRecord also organizes instance variables in a UnitDataViewpoint. The UnitDataViewpoint assigns roles to Instance Variables. In any one UnitDataViewpoint UnitDataRecord instance variables play one of three roles: identifier, measure or attribute. The same UnitDataRecord may have many UnitDataViewpoints.
+                                   The UnitDataViewPoint can work in conjunction with the InstanceVariableRelationStructure. Together they can break out instance variables into complex (hierarchical) identifier, measure and attribute groups. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <links>
@@ -25828,8 +25781,7 @@
       <element xmi:idref="UnitDataViewpoint" xmi:type="uml:Class" name="UnitDataViewpoint" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="890" ea_eleType="element"/>
         <properties documentation="The assignment of measure, identifier and attribute roles to InstanceVariables
-                                   
-                                     Each of three roles within a UnitDataViewpoint is a SimpleCollection of instance variables. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+                                   Each of three roles within a UnitDataViewpoint is a SimpleCollection of instance variables. "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <links>
@@ -25839,8 +25791,7 @@
       <element xmi:idref="ViewpointRole" xmi:type="uml:Class" name="ViewpointRole" scope="package">
         <model package="LogicalDataDescription" tpos="0" ea_localid="885" ea_eleType="element"/>
         <properties documentation="A ViewpointRole designates the function an InstanceVariable performs in the context of the Viewpoint. (IdentifierRole, AttributeRole, or MeasureRole of interest).
-                                   
-                                     Each of three roles within a Viewpoint may be a collection. This happens when a role is mapped to multiple instance variables. In this event a role forms a SimpleCollection. There are SimpleCollections of instance variables in each role."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   Each of three roles within a Viewpoint may be a collection. This happens when a role is mapped to multiple instance variables. In this event a role forms a SimpleCollection. There are SimpleCollections of instance variables in each role."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="LogicalDataDescription"/>
         <code gentype="Java"/>
         <attributes>
@@ -25926,9 +25877,7 @@
       <element xmi:idref="Capture" xmi:type="uml:Class" name="Capture" scope="package">
         <model package="DataCapture" tpos="0" ea_localid="39" ea_eleType="element"/>
         <properties documentation="A measurement that describes a means of capturing data. This class can be extended to account for different specific means. Use a specific instantiation of a Capture to describe a means of capturing a measurement.
-                                   
-                                     
-                                       "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="DataCapture"/>
         <code gentype="Java"/>
         <attributes>
@@ -26313,8 +26262,7 @@
       <element xmi:idref="InstrumentComponent" xmi:type="uml:Class" name="InstrumentComponent" scope="package">
         <model package="DataCapture" tpos="0" ea_localid="46" ea_eleType="element"/>
         <properties documentation="InstrumentComponent is an abstract object which extends an Act (a type of Process Step). The purpose of InstrumentComponent is to provide a common parent for Capture (e.g., Question, Measure), Statement, and Instructions.
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="DataCapture"/>
         <code gentype="Java"/>
         <links>
@@ -26373,7 +26321,7 @@
       </element>
       <element xmi:idref="RankingResponseDomain" xmi:type="uml:Class" name="RankingResponseDomain" scope="package">
         <model package="DataCapture" tpos="0" ea_localid="1005" ea_eleType="element"/>
-        <properties documentation="A response domain capturing a ranking response which supports a &quot;ranking&quot; or &quot;Ordering&quot; of provided categories. 
+        <properties documentation="A response domain capturing a ranking response which supports a &quot;ranking&quot; or &quot;Ordering&quot; of provided categories.
                                    Note: This item still must be modeled and is incomplete at this time."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="DataCapture"/>
         <code gentype="Java"/>
@@ -26481,7 +26429,7 @@
       </element>
       <element xmi:idref="ScaleResponseDomain" xmi:type="uml:Class" name="ScaleResponseDomain" scope="package">
         <model package="DataCapture" tpos="0" ea_localid="1004" ea_eleType="element"/>
-        <properties documentation="A response domain capturing a scaled response, such as a Likert scale. 
+        <properties documentation="A response domain capturing a scaled response, such as a Likert scale.
                                    Note: This item still must be modeled and is incomplete at this time."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="DataCapture"/>
         <code gentype="Java"/>
@@ -26578,7 +26526,7 @@
       </element>
       <element xmi:idref="CollectionMember" xmi:type="uml:Class" name="CollectionMember" scope="package">
         <model package="CollectionsPattern" tpos="0" ea_localid="695" ea_eleType="element"/>
-        <properties documentation="Generic class representing members of a collection. 
+        <properties documentation="Generic class representing members of a collection.
                                    "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="CollectionsPattern"/>
         <code gentype="Java"/>
@@ -27381,10 +27329,8 @@
       <element xmi:idref="BusinessFunction" xmi:type="uml:Class" name="BusinessFunction" scope="package">
         <model package="Methodologies" tpos="0" ea_localid="804" ea_eleType="element"/>
         <properties documentation="Something an enterprise does, or needs to do, in order to achieve its objectives.
-                                   
-                                     A Business Function delivers added value from a business point of view. It is delivered by bringing together people, processes and technology (resources), for a specific business purpose. 
-                                     
-                                       Business Functions answer in a generic sense &quot;What business purpose does this Business Service or Process Step serve?&quot; Through identifying the Business Function associated with each Business Service or Process Step it increases the documentation of the use of the associated Business Services and Process Steps, to enable future reuse."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+                                   A Business Function delivers added value from a business point of view. It is delivered by bringing together people, processes and technology (resources), for a specific business purpose.
+                                   Business Functions answer in a generic sense &quot;What business purpose does this Business Service or Process Step serve?&quot; Through identifying the Business Function associated with each Business Service or Process Step it increases the documentation of the use of the associated Business Services and Process Steps, to enable future reuse."  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
         <extendedProperties tagged="0" package_name="Methodologies"/>
         <code gentype="Java"/>
         <attributes>
@@ -27408,9 +27354,8 @@
       </element>
       <element xmi:idref="Goal" xmi:type="uml:Class" name="Goal" scope="package">
         <model package="Methodologies" tpos="0" ea_localid="799" ea_eleType="element"/>
-        <properties documentation="Goals are the &quot;things&quot; a method aims to achieve. A goal may be a business function (GSIM) corresponding to a function in a catalog of functions such as GSBPM or GLBMN. However, goals may be specified more broadly. For example, conducting a clinical trial might be the goal of a method. Machine learning might be the goal of a method. 
-                                   
-                                     "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
+        <properties documentation="Goals are the &quot;things&quot; a method aims to achieve. A goal may be a business function (GSIM) corresponding to a function in a catalog of functions such as GSBPM or GLBMN. However, goals may be specified more broadly. For example, conducting a clinical trial might be the goal of a method. Machine learning might be the goal of a method.
+                                   "  isSpecification="false" sType="Class" nType="0" scope="package" isRoot="false" isLeaf="false"  isActive="false"/>
         <extendedProperties tagged="0" package_name="Methodologies"/>
         <code gentype="Java"/>
         <links>
@@ -27823,7 +27768,7 @@
             <tags/>
             <xrefs/>
           </attribute>
-          <attribute xmi:idref="Machine_interface" name="interface" scope="Public">
+          <attribute xmi:idref="Machine_machineInterface" name="machineInterface" scope="Public">
             <initial/>
             <documentation value="Specified the machine interface. Supports the use of a controlled vocabulary."/>
             <properties derived="0" collection="false" duplicates="1" changeability="changeable"/>
@@ -34055,7 +34000,7 @@
           <element subject="Organization" seqno="6"/>
         </elements>
       </diagram>
-      <!-- diagram>
+      <diagram>
         <model package="ComplexDataTypes" localID="1" owner="ComplexDataTypes"/>
         <properties name="ComplexDataTypes" type="Logical"/>
         <elements>
@@ -34184,7 +34129,7 @@
           <element subject="8" seqno="123" />
           <element subject="1" seqno="124" />
         </elements>
-      </diagram -->
+      </diagram>
     </diagrams>
   </xmi:Extension>
 </xmi:XMI>
