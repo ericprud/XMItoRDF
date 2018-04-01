@@ -288,14 +288,16 @@ function main () {
       console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       model.views.map(v => v.name).forEach(
         viewName => {
-          let s = strip(model, viewName)
+          let s = strip(model, viewName,
+                        $('#followReferencedClasses').is(':checked'),
+                        $('#followReferentHierarchy').is(':checked'))
           console.log(viewName, s, Object.keys(s.classes).length, Object.keys(s.properties).length)
         }
       )
     }
   }
 
-  function strip (model, viewLabels) {
+  function strip (model, viewLabels, followReferencedClasses, followReferentHierarchy) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
@@ -330,7 +332,7 @@ function main () {
             ))
           }, []))
       , [])
-    addDependentClasses(classIds)
+    addDependentClasses(classIds, true)
 
     return ret
     // let properties = Object.keys(model.properties).filter(
@@ -375,7 +377,7 @@ function main () {
       to.datatypes[datatypeId] = e
     }
 
-    function addDependentClasses (classIds) {
+    function addDependentClasses (classIds, followParents) {
       classIds.forEach(
         classId => {
           if (classId in ret.classes) { // a recursive walk of the superClasses
@@ -403,7 +405,7 @@ function main () {
               if (id in model.datatypes) {
                 copyDatatype(ret, model, id)
               }
-              if (id in model.classes) {
+              if (followReferencedClasses && id in model.classes) {
                 dependentClassIds.push(id)
               }
               c.properties.push(new PropertyRecord(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
@@ -414,7 +416,10 @@ function main () {
             suClass =>
               ret.classHierarchy.add(suClass, c.id)
           )
-          addDependentClasses(dependentClassIds.concat(c.superClasses))
+          let x = dependentClassIds
+          if (followParents)
+            x = x.concat(c.superClasses)
+          addDependentClasses(x, followReferentHierarchy)
         }
       )
     }

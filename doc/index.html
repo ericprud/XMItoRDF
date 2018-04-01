@@ -37,13 +37,24 @@
       .scalar { background-color: #eee; }
       #sources { font-size: small }
       .record { margin-right: .1em; margin-left: -.8em; font-size: .5em; color: blue; }
+      p { margin: 0; }
     </style>
   </head>
   <body>
     <div id="render">
       <div id="loadform">
-        <p style="float:left; text-align: right;">Load file:<br/><span id="sources"><a href="DDI-massaged.xmi" title="comments and extension elements removed">m</a> <a href="DDI-canonical.xmi" title="canonicallized by the Joachim filter">c</a> <a href="DDI4_PIM_canonical.xmi" title="more recent canonicallized version">c2</a> <!-- <a href="http://lion.ddialliance.org/xmi.xml" title="load live from lion (needs CORS headers)">l</a> --></span> URL:</p>
+        <p style="float:left; text-align: right;">
+          Load file:<br/>
+          <span id="sources"><a href="DDI-massaged.xmi" title="comments and extension elements removed">m</a> <a href="DDI-canonical.xmi" title="canonicallized by the Joachim filter">c</a> <a href="DDI4_PIM_canonical.xmi" title="more recent canonicallized version">c2</a> <!-- <a href="http://lion.ddialliance.org/xmi.xml" title="load live from lion (needs CORS headers)">l</a> --></span> URL:<br/>
+        </p>
         <p style="float:left; margin-left: .5em;"><input id="load-file" name="files[]" multiple="multiple" type="file" /><br/><input size="35" id="load-url"/></p>
+        <p style="clear:both; float:left">
+          Views:
+        </p>
+        <p style="float:left; border: thin solid blue; text-align: right">
+          <label for="followReferencedClasses">follow referenced classes</label><input id="followReferencedClasses" type="checkbox" checked="checked"/><br/>
+          <label for="followReferentHierarchy">follow referent hierarchy</label><input id="followReferentHierarchy" type="checkbox" checked="checked"/>
+        </p>
       </div>
     </div>
     <ul id="toc" style="clear:both"></ul>
