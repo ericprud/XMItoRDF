@@ -1085,9 +1085,14 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
       datatype: ShExCDatatype
     }
 
-    function ShExCClass (model, classId, markup) {
+    function ShExCClass (model, classId, markup, force) {
       let classRecord = model.classes[classId]
-      return markup.definition(classRecord.name, model.classes[classId].isAbstract) +
+      if (!force && inlineable(classRecord)) {
+        return ''
+      }
+      return (force
+              ? ''
+              : markup.definition(classRecord.name, model.classes[classId].isAbstract)) +
         classRecord.superClasses.map(
           su => model.classes[su].name
         ).map(
@@ -1107,9 +1112,22 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
-            return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
+            let valueStr =
+                  'referees' in dt && dt instanceof ClassRecord && inlineable(dt)
+                  ? ShExCClass(model, dt.id, markup, true).replace(/\n/g, "\n    ")
+                  : isObject(p)
+                  ? markup.valueReference(dt.name)
+                  : markup.valueType(dt.name)
+            return '  ' + markup.property(propName) + ' ' + valueStr + ' ' + card + ';\n'
           }
-        ).join('') + '}' + markup.docLink(docURL(classRecord.name))
+        ).join('') + '}' + (force ? '' : markup.docLink(docURL(classRecord.name)))
+
+      function inlineable (classRecord) {
+        return classRecord.referees.length === 1
+          && (
+            !(classRecord.id in model.classHierarchy.children)
+              || model.classHierarchy.children[classRecord.id].length === 0)
+      }
     }
 
     function ShExCEnum (model, enumId, markup) {
