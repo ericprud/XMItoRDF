@@ -17,6 +17,7 @@ function main () {
     {type: DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
     {type: ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
     {type: AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )},
+    {type: AssocRefRecord,    maker: () => $('<span/>', { class: 'record' }).text('assoc'  )},
     {type: RefereeRecord,     maker: () => $('<span/>', { class: 'record' }).text('ref'    )}
   ]
 
@@ -72,10 +73,8 @@ function main () {
              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
            </ownedAttribute> */
-        ret.associations[id] = Object.assign(new AssociationRecord(), {
+        ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
           in: className,
-          id: id,
-          name: name,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
@@ -410,7 +409,7 @@ function main () {
               if (followReferencedClasses && id in model.classes) {
                 dependentClassIds.push(id)
               }
-              c.properties.push(new PropertyRecord(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
+              c.properties.push(new PropertyRecord(ret, c.id, p.id, p.name, p.relation, p.attribute, p.lower, p.upper))
             }
           )
           addPackages(ret, model, c.packages)
@@ -486,8 +485,9 @@ function main () {
         let a = associations[assocId]
         let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
+        let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') {
-          c.properties.push(new PropertyRecord(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
+          c.properties.push(new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper))
         }
       }
     )
@@ -523,7 +523,7 @@ function main () {
         if (referent) {
           referent.referees.push(new RefereeRecord(s.in, propName))
         } else {
-          console.warn('referent not found: ' + referent)
+          // console.warn('referent not found: ' + referent)
         }
       }, [])
     }, [])
@@ -642,9 +642,7 @@ function main () {
             // Pass through to get to nested goodies.
           case 'uml:Association':
             let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
-            associations[id] = Object.assign(new AssociationRecord(), {
-              id: id,
-              name: name,
+            associations[id] = Object.assign(new AssociationRecord(id, name), {
               from: from
               // type: elt.ownedEnd[0].type[0].$['xmi:idref']
             })
@@ -673,6 +671,9 @@ function main () {
   }
 
   function PropertyRecord (model, className, id, name, relation, attribute, lower, upper) {
+    if (className === null) {
+      console.warn('no class name for PropertyRecord ' + id)
+    }
     this.in = className
     this.id = id
     this.name = name
@@ -690,6 +691,9 @@ function main () {
   }
 
   function RefereeRecord     (classId, propName) {
+    // if (classId === null) {
+    //   throw Error('no class id for ReferenceRecord with property name ' + propName)
+    // }
     this.classId = classId
     this.propName = propName
   }
@@ -698,7 +702,42 @@ function main () {
   function EnumRecord        () { }
   function DatatypeRecord    () { }
   function ViewRecord        () { }
-  function AssociationRecord () { }
+
+  /**
+   * if attrName is null, we'll use the AssociationRecord's name.
+        <packagedElement xmi:id="<classId>" xmi:type="uml:Class">
+          <ownedAttribute xmi:id="<classId>-ownedAttribute-<n>" xmi:type="uml:Property">
+            <type xmi:idref="<refType>"/> <lowerValue/> <upperValue/>
+            <name>attrName</name>
+          </ownedAttribute>
+        </packagedElement>
+   */
+  function AssocRefRecord (id, name) {
+    // if (name === null) {
+    //   throw Error('no name for AssociationRecord ' + id)
+    // }
+    this.id = id
+    this.name = name
+  }
+
+  /**
+        <packagedElement xmi:id="<classId>" xmi:type="uml:Association"> <!-- can duplicate classId -->
+          <memberEnd xmi:idref="<classId>-ownedAttribute-<n>"/>
+          <memberEnd xmi:idref="<classId>-ownedEnd"/>
+          <ownedEnd xmi:id="<classId>-ownedEnd" xmi:type="uml:Property">
+            <type xmi:idref="<classId>"/> <lowerValue /> <upperValue />
+            <association xmi:idref="<classId>"/>
+          </ownedEnd>
+          <name>assocName</name>
+        </packagedElement>
+   */
+  function AssociationRecord (id, name) {
+    // if (name === null) {
+    //   throw Error('no name for AssociationRecord ' + id)
+    // }
+    this.id = id
+    this.name = name
+  }
 
   function reusedProperties (classes, into) {
     const x = Object.keys(classes).reduce((acc, classId) => {
@@ -817,7 +856,7 @@ function main () {
     }
     function ShExCMarkup () {
       return {
-        definition: (name, isAbstract) => (isAbstract ? 'ABSTRACT ' : '') + pname(name),
+        definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => ' // rdfs:definedBy <' + link + '>',
         reference: name => pname(name),
         constant: name => pname(name),
@@ -828,13 +867,19 @@ function main () {
         endPackage: function (p) { return '\n# END ' + p.name + ' Package\n' }
       }
     }
-    function ShExHMarkup () {
+    function ShExHMarkup (model) {
       return {
-        definition: (name, isAbstract) => `      <section>
-        <h3>${name}</h3>
+        definition: (rec) => `      <section>
+        <h3>${rec.name}</h3>
+        <div>
+          <p>${rec.referees.length === 0 ? 'no references' : '' + rec.referees.length + ' reference' + (rec.referees.length > 1 ? 's' : '') + ':'}</p>
+          ${rec.referees.length ? `<div class="left-scroll"><ul class="referees">
+${rec.referees.map(r => `            <li><a>${finalReferee(r.classId).name}</a> ${r.propName}</li>\n`).join('')}
+          </ul></div>` : ''}
+        </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
+${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name}</dfn></span>`,
         docLink: link => `<a class="tryit" href="${link}"></a></pre>
       </div>
       </section>`,
@@ -845,6 +890,17 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
         valueReference: name => name === '.' ? '.' : '@' + ref(pname(name)),
         startPackage: function (p) { return '    <section>\n      <h2>' + p.name + '</h2>\n\n' },
         endPackage: function (p) { return '\n    </section>\n' }
+      }
+
+      function finalReferee (classId) {
+        while (inlineable(model, model.classes[classId])) {
+          if (classId === model.classes[classId].referees[0].classId) {
+            debugger
+            break
+          }
+          classId = model.classes[classId].referees[0].classId
+        }
+        return model.classes[classId]
       }
 
       function ref (term) {
@@ -872,7 +928,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     let toRender = [
       { v: owlx, s: OWLXMLSerializer(model), m: OWLXMLMarkup() },
       { v: shexc, s: ShExCSerializer(model), m: ShExCMarkup() },
-      { v: shexh, s: ShExCSerializer(model), m: ShExHMarkup() }
+      { v: shexh, s: ShExCSerializer(model), m: ShExHMarkup(model) }
     ]
     toRender.forEach(
       r => {
@@ -1078,6 +1134,13 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }
   }
 
+  function inlineable (model, classRecord) {
+        return classRecord.referees.length === 1
+          && (
+            !(classRecord.id in model.classHierarchy.children)
+              || model.classHierarchy.children[classRecord.id].length === 0)
+      }
+
   function ShExCSerializer (model) {
     return {
       class: ShExCClass,
@@ -1087,12 +1150,12 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
 
     function ShExCClass (model, classId, markup, force) {
       let classRecord = model.classes[classId]
-      if (!force && inlineable(classRecord)) {
+      if (!force && inlineable(model, classRecord)) {
         return ''
       }
       return (force
               ? ''
-              : markup.definition(classRecord.name, model.classes[classId].isAbstract)) +
+              : markup.definition(classRecord)) +
         classRecord.superClasses.map(
           su => model.classes[su].name
         ).map(
@@ -1113,8 +1176,11 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
             }
             let card = shexCardinality(use)
             let valueStr =
-                  'referees' in dt && dt instanceof ClassRecord && inlineable(dt)
-                  ? ShExCClass(model, dt.id, markup, true).replace(/\n/g, "\n    ")
+                  'referees' in dt && dt instanceof ClassRecord && inlineable(model, dt)
+                  ? ShExCClass(model, dt.id, markup, true)
+                  .replace(/\n/g, "\n    ") //                 indent everything
+                  .replace(/^ +/, " ") //                      single leading space
+                  .replace(/ *([}\]])([ *+?]?)$/, '  $1$2') // outdent final line
                   : isObject(p)
                   ? markup.valueReference(dt.name)
                   : markup.valueType(dt.name)
@@ -1122,16 +1188,10 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
           }
         ).join('') + '}' + (force ? '' : markup.docLink(docURL(classRecord.name)))
 
-      function inlineable (classRecord) {
-        return classRecord.referees.length === 1
-          && (
-            !(classRecord.id in model.classHierarchy.children)
-              || model.classHierarchy.children[classRecord.id].length === 0)
-      }
     }
 
     function ShExCEnum (model, enumId, markup) {
-      return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
+      return markup.definition(model.enums[enumId]) + ' [\n' + model.enums[enumId].values.map(
         v => '  ' + markup.constant(v) + '\n'
       ).join('') + ']' + markup.docLink(docURL(model.enums[enumId].name))
     }
@@ -1142,7 +1202,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
-      return markup.definition(dt.name) + ' xsd:string' + markup.docLink(docURL(dt.name))
+      return markup.definition(dt) + ' xsd:string' + markup.docLink(docURL(dt.name))
     }
 
     function shexCardinality (propertyRecord) {
