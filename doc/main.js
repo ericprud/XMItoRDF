@@ -1135,11 +1135,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
   }
 
   function inlineable (model, classRecord) {
-        return classRecord.referees.length === 1
-          && (
-            !(classRecord.id in model.classHierarchy.children)
-              || model.classHierarchy.children[classRecord.id].length === 0)
-      }
+    return classRecord.referees.length === 1
+      && (!(classRecord.id in model.classHierarchy.children)
+          || model.classHierarchy.children[classRecord.id].length === 0)
+  }
 
   function ShExCSerializer (model) {
     return {
@@ -1177,10 +1176,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let card = shexCardinality(use)
             let valueStr =
                   'referees' in dt && dt instanceof ClassRecord && inlineable(model, dt)
-                  ? ShExCClass(model, dt.id, markup, true)
-                  .replace(/\n/g, "\n    ") //                 indent everything
-                  .replace(/^ +/, " ") //                      single leading space
-                  .replace(/ *([}\]])([ *+?]?)$/, '  $1$2') // outdent final line
+                  ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p)
                   ? markup.valueReference(dt.name)
                   : markup.valueType(dt.name)
@@ -1188,6 +1184,14 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           }
         ).join('') + '}' + (force ? '' : markup.docLink(docURL(classRecord.name)))
 
+      function indent (s, lead) {
+        let a = s.split(/\n/)
+        return a[0].replace(/^ /, '') + '\n'
+          + a.slice(1, a.length - 1).map(
+            line => line.replace(/^/g, lead) + '\n'
+          ).join('')
+          + lead + a[a.length - 1]
+      }
     }
 
     function ShExCEnum (model, enumId, markup) {
