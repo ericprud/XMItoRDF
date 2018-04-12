@@ -269,7 +269,8 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let t = dumpFormats(model, source)
+      let t = dumpFormats(model, source,
+                          $('#nestInlinableStructure').is(':checked'))
       progress.append(
         $('<li/>').append(
           'OWL: ',
@@ -291,13 +292,12 @@ function main () {
           let s = strip(model, source, viewName,
                         $('#followReferencedClasses').is(':checked'),
                         $('#followReferentHierarchy').is(':checked'))
-          console.log(viewName, s, Object.keys(s.classes).length, Object.keys(s.properties).length)
         }
       )
     }
   }
 
-  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy) {
+  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
@@ -806,7 +806,7 @@ function main () {
       )))
   }
 
-  function dumpFormats (model, source) {
+  function dumpFormats (model, source, nestInlinableStructure) {
     let owlx = [
       '<?xml version="1.0"?>\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
@@ -893,7 +893,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       }
 
       function finalReferee (classId) {
-        while (inlineable(model, model.classes[classId])) {
+        while (nestInlinableStructure && inlineable(model, model.classes[classId])) {
           if (classId === model.classes[classId].referees[0].classId) {
             debugger
             break
@@ -927,8 +927,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
 
     let toRender = [
       { v: owlx, s: OWLXMLSerializer(model), m: OWLXMLMarkup() },
-      { v: shexc, s: ShExCSerializer(model), m: ShExCMarkup() },
-      { v: shexh, s: ShExCSerializer(model), m: ShExHMarkup(model) }
+      { v: shexc, s: ShExCSerializer(model, nestInlinableStructure), m: ShExCMarkup() },
+      { v: shexh, s: ShExCSerializer(model, nestInlinableStructure), m: ShExHMarkup(model) }
     ]
     toRender.forEach(
       r => {
@@ -1140,7 +1140,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           || model.classHierarchy.children[classRecord.id].length === 0)
   }
 
-  function ShExCSerializer (model) {
+  function ShExCSerializer (model, nestInlinableStructure) {
     return {
       class: ShExCClass,
       enum: ShExCEnum,
@@ -1149,7 +1149,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
 
     function ShExCClass (model, classId, markup, force) {
       let classRecord = model.classes[classId]
-      if (!force && inlineable(model, classRecord)) {
+      if (!force && nestInlinableStructure && inlineable(model, classRecord)) {
         return ''
       }
       return (force
@@ -1175,7 +1175,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             }
             let card = shexCardinality(use)
             let valueStr =
-                  'referees' in dt && dt instanceof ClassRecord && inlineable(model, dt)
+                  'referees' in dt && dt instanceof ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p)
                   ? markup.valueReference(dt.name)
