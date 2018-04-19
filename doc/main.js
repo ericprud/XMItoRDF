@@ -555,7 +555,8 @@ function main () {
                 packages: parents,
                 superClasses: [],
                 isAbstract: parseIsAbstract(elt),
-                referees: []
+                referees: [],
+                comments: []
               }
             )
             packages[parent].elements.push({type: 'class', id: id})
@@ -570,6 +571,13 @@ function main () {
                   let superClassId = parseGeneral(superClassElt)
                   classHierarchy.add(superClassId, id)
                   classes[id].superClasses.push(superClassId)
+                })
+            }
+
+            if ('ownedComment' in elt) {
+              elt.ownedComment.forEach(
+                commentElt => {
+                  classes[id].comments.push(commentElt.body[0])
                 })
             }
             break
@@ -824,15 +832,13 @@ function main () {
         '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
         '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
         '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
-        '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
-        '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
+        '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n'
     ]
     let owlm = [
       'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
         'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
         'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-        'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
         '\n'
     ]
@@ -842,7 +848,8 @@ function main () {
         'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
         'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-        'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+        'PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>\n' +
+        'PREFIX mark: <https://github.com/commonmark/commonmark.js>\n' +
         '\n'
     ]
     let shexh = []
@@ -854,10 +861,15 @@ function main () {
         endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
       }
     }
+    function tripleEsc (str) {
+      return str.replace(/"/g, '\\"')
+    }
     function ShExCMarkup () {
       return {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => ' // rdfs:definedBy <' + link + '>',
+        packageLink: pkg => ' // shexmi:package <' + pkg + '>',
+        comment: txt => ' // shexmi:comment """' + tripleEsc(txt) + '"""^^mark:',
         reference: name => pname(name),
         constant: name => pname(name),
         property: name => pname(name),
@@ -883,6 +895,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         docLink: link => `<a class="tryit" href="${link}"></a></pre>
       </div>
       </section>`,
+        packageLink: pkg => '',
+        comment: txt => '',
         reference: name => ref(pname(name)),
         constant: name => pOrT(pname(name)),
         property: name => pOrT(pname(name)),
@@ -1064,7 +1078,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           `    </DisjointUnion>\n`
         ) : '') +
         model.classes[classId].properties.filter(
-          propertyRecord => !(isPolymorphic(propertyRecord.name))
+          propertyRecord => false // !(isPolymorphic(propertyRecord.name))
         ).map(
           propertyRecord => {
             let propName = propertyRecord.name
@@ -1182,7 +1196,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
                   : markup.valueType(dt.name)
             return '  ' + markup.property(propName) + ' ' + valueStr + ' ' + card + ';\n'
           }
-        ).join('') + '}' + (force ? '' : markup.docLink(docURL(classRecord.name)))
+        ).join('') + '}' +
+        (force ? '' : markup.docLink(docURL(classRecord.name))) +
+        (force || classRecord.packages.length === 0 ? '' : markup.packageLink(docURL(model.packages[classRecord.packages[0]].name))) +
+        (force || classRecord.comments.length === 0 ? '' : markup.comment(docURL(classRecord.comments[0])))
 
       function indent (s, lead) {
         let a = s.split(/\n/)
