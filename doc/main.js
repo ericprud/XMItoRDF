@@ -1077,9 +1077,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           ).join('') +
           `    </DisjointUnion>\n`
         ) : '') +
-        model.classes[classId].properties.filter(
-          propertyRecord => false // !(isPolymorphic(propertyRecord.name))
-        ).map(
+        model.classes[classId].properties
+        // .filter( propertyRecord => !(isPolymorphic(propertyRecord.name)) )
+        .map(
           propertyRecord => {
             let propName = propertyRecord.name
             let p = model.properties[propName]
