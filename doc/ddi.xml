@@ -13,8 +13,6 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>
-    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>
 
 
     <!-- START ComplexDataTypes Package -->
@@ -477,7 +475,7 @@
         <Class abbreviatedIRI="ddi:AreaCoverage"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:areaMeasure"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1130,7 +1128,7 @@
         <Class abbreviatedIRI="ddi:ContentDateOffset"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:numberOfUnits"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1521,7 +1519,7 @@
         <Class abbreviatedIRI="ddi:DoubleNumberRangeValue"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:doubleValue"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2411,7 +2409,7 @@
         <Class abbreviatedIRI="ddi:LanguageSpecificStringType"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:translationDate"/>
-            <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2461,7 +2459,7 @@
         <Class abbreviatedIRI="ddi:LanguageSpecificStructuredStringType"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:translationDate"/>
-            <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2822,7 +2820,7 @@
         <Class abbreviatedIRI="ddi:NumberRangeValue"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:decimalValue"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3287,14 +3285,14 @@
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:decimalValue"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:doubleValue"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3475,7 +3473,7 @@
         <Class abbreviatedIRI="ddi:TargetSample"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:targetPercent"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4812,7 +4810,7 @@
         <Class abbreviatedIRI="ddi:StandardWeight"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:standardWeightValue"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -5727,7 +5725,7 @@
         <Class abbreviatedIRI="ddi:SamplingGoal"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:overallTargetSamplePercent"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8024,7 +8022,7 @@
         <Class abbreviatedIRI="ddi:Parameter"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:alias"/>
-            <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8045,7 +8043,7 @@
         <Class abbreviatedIRI="ddi:Parameter"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:limitArrayIndex"/>
-            <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8496,7 +8494,7 @@
         <Class abbreviatedIRI="ddi:DocumentInformation"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:hasPrimaryContent"/>
-            <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10893,7 +10891,7 @@
         <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:estimatedResponseTimeInSeconds"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11092,28 +11090,28 @@
         <Class abbreviatedIRI="ddi:BoundingBox"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:eastLongitude"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BoundingBox"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:westLongitude"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BoundingBox"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:northLatitude"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BoundingBox"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:southLatitude"/>
-            <Datatype abbreviatedIRI="umld:Real"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14353,7 +14351,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:areaMeasure"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -14609,7 +14607,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:numberOfUnits"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -14705,7 +14703,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:doubleValue"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -15137,7 +15135,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:translationDate"/>
-        <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -15337,7 +15335,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:decimalValue"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -15577,7 +15575,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:targetPercent"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -15761,7 +15759,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:standardWeightValue"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -16017,7 +16015,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:overallTargetSamplePercent"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -16513,7 +16511,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:alias"/>
-        <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -16529,7 +16527,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:limitArrayIndex"/>
-        <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -16601,7 +16599,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:hasPrimaryContent"/>
-        <Datatype abbreviatedIRI="umld:UnlimitedNatural"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -17017,7 +17015,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:estimatedResponseTimeInSeconds"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -17105,7 +17103,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:eastLongitude"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -17113,7 +17111,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:westLongitude"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -17121,7 +17119,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:northLatitude"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -17129,7 +17127,7 @@
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:southLatitude"/>
-        <Datatype abbreviatedIRI="umld:Real"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
 
     <Declaration>
