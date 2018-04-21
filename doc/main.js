@@ -146,7 +146,9 @@ function main () {
       'http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
       'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String': 'http://www.w3.org/2001/XMLSchema#string',
       'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean'
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Real': 'http://www.w3.org/2001/XMLSchema#double',
+      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#UnlimitedNatural': 'http://www.w3.org/2001/XMLSchema#double'
     }
     if (type in nameMap) {
       return nameMap[type]
@@ -832,14 +834,11 @@ function main () {
         '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
         '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
         '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
-        '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
-        '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
-        '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n'
+        '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n'
     ]
     let owlm = [
       'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
         'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-        'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
         'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
         '\n'
@@ -848,7 +847,6 @@ function main () {
       '# Source: ' + source + '\n' +
         'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
         'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-        'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
         'PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>\n' +
         'PREFIX mark: <https://github.com/commonmark/commonmark.js>\n' +

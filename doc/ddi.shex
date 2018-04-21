@@ -1,7 +1,6 @@
-# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-20T23:41:04.598Z
+# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-21T08:57:45.183Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>
 PREFIX mark: <https://github.com/commonmark/commonmark.js>
@@ -471,7 +470,7 @@ GSIM mapping
 									"""^^mark:
 
 ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
-  ddi:numberOfUnits umld:Real ? // shexmi:comment """The number of units to off-set the date for this item expressed as a decimal.""";
+  ddi:numberOfUnits xsd:double ? // shexmi:comment """The number of units to off-set the date for this item expressed as a decimal.""";
   ddi:isNegativeOffset xsd:boolean ? // shexmi:comment """If set to \"true\" the date is offset the number of units specified PRIOR to the default date of the data. A setting of \"false\" indicates a date the specified number of units in the FUTURE from the default date of the data.""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contentdateoffset> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
@@ -693,7 +692,7 @@ GSIM mapping
 
 ddi:DoubleNumberRangeValue {
   ddi:isInclusive xsd:boolean ? // shexmi:comment """Indicates that the value is included in the range. Set to false if the range includes numbers up to but no including the designated value.""";
-  ddi:doubleValue umld:Real ? // shexmi:comment """The bounding value expressed as an xs:double""";
+  ddi:doubleValue xsd:double ? // shexmi:comment """The bounding value expressed as an xs:double""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/doublenumberrangevalue> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
 ============
@@ -967,7 +966,7 @@ ddi:InternationalString {
     ddi:isTranslated xsd:boolean ? // shexmi:comment """Indicates whether content is a translation (true) or an original (false).""";
     ddi:isTranslatable xsd:boolean ? // shexmi:comment """Indicates whether content is translatable (true) or not (false). An example of something that is not translatable would be a MNEMONIC of an object or a number.""";
     ddi:translationSourceLanguage ddi:language * // shexmi:comment """List the language code of the source. Repeat of multiple language sources are used. """;
-    ddi:translationDate umld:UnlimitedNatural ? // shexmi:comment """The date the content was translated. Provision of translation date allows user to verify if translation was available during data collection or other time linked activity.""";
+    ddi:translationDate xsd:double ? // shexmi:comment """The date the content was translated. Provision of translation date allows user to verify if translation was available during data collection or other time linked activity.""";
   } * // shexmi:comment """A non-formatted string of text with an attribute that designates the language of the text. Repeat this object to express the same content in another language.""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalstring> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
@@ -1073,7 +1072,7 @@ ddi:LanguageSpecificStructuredStringType {
   ddi:isTranslated xsd:boolean ? // shexmi:comment """Indicates whether content is a translation (true) or an original (false).""";
   ddi:isTranslatable xsd:boolean ? // shexmi:comment """Indicates whether content is translatable (true) or not (false).""";
   ddi:translationSourceLanguage ddi:language * // shexmi:comment """List the language or language codes in a space delimited array. The language original may or may not be provided in this bundle of language specific strings.""";
-  ddi:translationDate umld:UnlimitedNatural ? // shexmi:comment """The date the content was translated. Provision of translation date allows user to verify if translation was available during data collection or other time linked activity.""";
+  ddi:translationDate xsd:double ? // shexmi:comment """The date the content was translated. Provision of translation date allows user to verify if translation was available during data collection or other time linked activity.""";
   ddi:isPlainText xsd:boolean ? // shexmi:comment """Indicates that the content is to be treated as plain text (no formatting). You may use DDIProfile to fix the value of this attribute to 'true' in cases where you wish to indicate that your system treats all content should be treated as plain text.""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstructuredstringtype> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
@@ -1242,7 +1241,7 @@ Map
 
 ddi:NumberRangeValue {
   ddi:isInclusive xsd:boolean ? // shexmi:comment """Indicates that the value is included in the range. Set to false if the range includes numbers up to but no including the designated value.""";
-  ddi:decimalValue umld:Real ? // shexmi:comment """Bounding value expressed as an xs:double""";
+  ddi:decimalValue xsd:double ? // shexmi:comment """Bounding value expressed as an xs:double""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numberrangevalue> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
 ============
@@ -1561,8 +1560,8 @@ GSIM mapping
 ddi:Statistic {
   ddi:isWeighted xsd:boolean ? // shexmi:comment """Set to \"true\" if the statistic is weighted using the weight designated in VariableStatistics.""";
   ddi:computationBase @ddi:ComputationBaseList ? // shexmi:comment """Defines the cases included in determining the statistic. The options are total=all cases, valid and missing (invalid); validOnly=Only valid values, missing (invalid) are not included in the calculation; missingOnly=Only missing (invalid) cases included in the calculation.""";
-  ddi:decimalValue umld:Real ? // shexmi:comment """The value of the statistic expressed as a decimal""";
-  ddi:doubleValue umld:Real ? // shexmi:comment """The value of the statistic expressed as a double.""";
+  ddi:decimalValue xsd:double ? // shexmi:comment """The value of the statistic expressed as a decimal""";
+  ddi:doubleValue xsd:double ? // shexmi:comment """The value of the statistic expressed as a double.""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statistic> // shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes> // shexmi:comment """
 Definition
 ============
@@ -2433,7 +2432,7 @@ ddi:GeographicUnit EXTENDS ddi:Unit {
     ddi:hasAreaCoverage {
       ddi:typeOfArea @ddi:ExternalControlledVocabularyEntry ? // shexmi:comment """Specify the type of area covered i.e. Total, Land, Water, etc. Supports the use of an external controlled vocabulary.""";
       ddi:measurementUnit @ddi:ExternalControlledVocabularyEntry ? // shexmi:comment """Records the measurement unit, for example, Square Kilometer, Square Mile. Supports the use of an external controlled vocabulary.""";
-      ddi:areaMeasure umld:Real ? // shexmi:comment """The area measure expressed as a decimal for the measurement unit designated.""";
+      ddi:areaMeasure xsd:double ? // shexmi:comment """The area measure expressed as a decimal for the measurement unit designated.""";
     } * // shexmi:comment """Means of describing the area covered by the geographic extent either in its entirety (total area) or specific subsets (land, water, urban, rural, etc.) providing a definition and measurement.""";
     ddi:hasCentroid @ddi:SpatialPoint ? // shexmi:comment """Identifies the centroid of a polygon as a specific point""";
     ddi:locationPoint @ddi:SpatialPoint ? // shexmi:comment """The geographic extent is a single point.""";
@@ -2648,11 +2647,11 @@ ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
     ddi:expressesAlgorithm @ddi:SamplingAlgorithm *;
     ddi:specifiesGoal EXTENDS ddi:Goal {
       ddi:overallTargetSampleSize xsd:integer ? // shexmi:comment """The goal for the overall size of the sample expressed as an integer.""";
-      ddi:overallTargetSamplePercent umld:Real ? // shexmi:comment """The goal for the overall size of the sample expressed as a decimal (i.e. 70% entered as .7). """;
+      ddi:overallTargetSamplePercent xsd:double ? // shexmi:comment """The goal for the overall size of the sample expressed as a decimal (i.e. 70% entered as .7). """;
       ddi:targetSampleSize {
         ddi:isPrimary xsd:boolean  // shexmi:comment """Default value is True. The information is for the primary sample unit or universe. Change to False if the information relates to a secondary or sub- sample universe.""";
         ddi:targetSize xsd:integer ? // shexmi:comment """The target size of the sample expressed as an integer.""";
-        ddi:targetPercent umld:Real ? // shexmi:comment """The target size of the sample expressed as an integer (70% expressed as .7)""";
+        ddi:targetPercent xsd:double ? // shexmi:comment """The target size of the sample expressed as an integer (70% expressed as .7)""";
         ddi:hasUnitType @ddi:UnitType ?;
         ddi:fromUniverse @ddi:Universe ?;
       } * // shexmi:comment """Repeat for primary and secondary target samples. Supports identification of size, percent, unit type, and universe""";
@@ -3151,7 +3150,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
     } * // shexmi:comment """Statistics that provides a category specific values, filtered or unfiltered, weighted or unweighted, expressed as an xs:decimal or xs:double""";
     ddi:forInstanceVariable @ddi:InstanceVariable *;
     ddi:usesStandardWeight EXTENDS ddi:AnnotatedIdentifiable {
-      ddi:standardWeightValue umld:Real ? // shexmi:comment """Provides the standard weight used for weighted analysis of data expressed as an xs:float. This element is referenced by the variable and/or statistics calculated using the standard weight.""";
+      ddi:standardWeightValue xsd:double ? // shexmi:comment """Provides the standard weight used for weighted analysis of data expressed as an xs:float. This element is referenced by the variable and/or statistics calculated using the standard weight.""";
     } *;
     ddi:applicableWeightVariable @ddi:InstanceVariable *;
     ddi:hasFilterVariable @ddi:InstanceVariable *;
@@ -4022,10 +4021,10 @@ GSIM mapping
 									"""^^mark:
 
 ddi:Parameter {
-  ddi:alias umld:UnlimitedNatural ? // shexmi:comment """If the content of the parameter is being used in a generic set of code as an alias for the value of an object in a formula (for example source code for a statistical program) enter that name here. This provides a link from the identified parameter to the alias in the code.""";
+  ddi:alias xsd:double ? // shexmi:comment """If the content of the parameter is being used in a generic set of code as an alias for the value of an object in a formula (for example source code for a statistical program) enter that name here. This provides a link from the identified parameter to the alias in the code.""";
   ddi:defaultValue @ddi:ValueString ? // shexmi:comment """Provides a default value for the parameter if there is no value provided by the object it is bound to or the process that was intended to produce a value.""";
   ddi:isArray xsd:boolean ? // shexmi:comment """If set to \"true\" indicates that the content of the parameter is a delimited array rather than a single object and should be processed as such.limitArrayIndex""";
-  ddi:limitArrayIndex umld:UnlimitedNatural ? // shexmi:comment """When the Parameter represents an array of items, this attribute specifies the index identification of the items within the zero-based array which should be treated as that associated with the parameter. If not specified, the full array is treated as the parameter.""";
+  ddi:limitArrayIndex xsd:double ? // shexmi:comment """When the Parameter represents an array of items, this attribute specifies the index identification of the items within the zero-based array which should be treated as that associated with the parameter. If not specified, the full array is treated as the parameter.""";
   ddi:agency xsd:string  // shexmi:comment """This is the registered agency code with optional sub-agencies separated by dots. For example, diw.soep, ucl.qss, abs.essg.""";
   ddi:id xsd:string  // shexmi:comment """The ID of the object. This must conform to the allowed structure of the DDI Identifier and must be unique within the Agency.""";
   ddi:version xsd:string  // shexmi:comment """The version number of the object. The version number is incremented whenever the non-administrative metadata contained by the object changes.""";
@@ -4417,7 +4416,7 @@ ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
     ddi:descriptiveText @ddi:InternationalStructuredString ? // shexmi:comment """A short natural language account of the characteristics of the object.""";
   } * // shexmi:comment """Allows for the addition of a Purpose, Table of Contents, List of Variables, or other forms of information more specific than a general abstract. Provides both the content (using description) and a type identification using an External Controlled Vocabulary Entry.""";
   ddi:isPublished xsd:boolean  // shexmi:comment """Default value is False. Indicates that the metadata instance will not be changed without versioning, and is a stable target for referencing.""";
-  ddi:hasPrimaryContent umld:UnlimitedNatural ? // shexmi:comment """A whitespace-delimited list of the DDI URN identifiers of the objects contained in an XML instance or RDF graph which could be considered the primary objects or entry points. In a Codebook View, for example, the top-level Codebook object, fo example. In some views, such as the Agents View, there my be more than one primary object (Individuals, Organizations, and Machines in this case).""";
+  ddi:hasPrimaryContent xsd:double ? // shexmi:comment """A whitespace-delimited list of the DDI URN identifiers of the objects contained in an XML instance or RDF graph which could be considered the primary objects or entry points. In a Codebook View, for example, the top-level Codebook object, fo example. In some views, such as the Agents View, there my be more than one primary object (Individuals, Organizations, and Machines in this case).""";
   ddi:ofType ddi:DDI4Version  // shexmi:comment """Automatically brings in the version number for of DDI 4""";
   ddi:hasDocumentCoverage @ddi:Coverage *;
   ddi:hasPersistentAccessControl @ddi:Access *;
@@ -5770,7 +5769,7 @@ ddi:InstanceQuestion EXTENDS ddi:InstrumentComponent {
   ddi:instantiates EXTENDS ddi:Capture {
     ddi:questionText @ddi:DynamicText * // shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.""";
     ddi:questionIntent @ddi:InternationalStructuredString ? // shexmi:comment """The purpose or intent of the question.""";
-    ddi:estimatedResponseTimeInSeconds umld:Real ? // shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.""";
+    ddi:estimatedResponseTimeInSeconds xsd:double ? // shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.""";
     ddi:hasRepresentedVariable @ddi:RepresentedVariable *;
   } *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancequestion> // shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture> // shexmi:comment """
@@ -6168,10 +6167,10 @@ GSIM mapping
 									"""^^mark:
 
 ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:eastLongitude umld:Real  // shexmi:comment """The easternmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
-  ddi:westLongitude umld:Real  // shexmi:comment """The westernmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
-  ddi:northLatitude umld:Real  // shexmi:comment """The northernmost coordinate expressed as a decimal between the values of -90 and 90 degrees.""";
-  ddi:southLatitude umld:Real  // shexmi:comment """The southermost latitude expressed as a decimal between the values of -90 and 90 degrees""";
+  ddi:eastLongitude xsd:double  // shexmi:comment """The easternmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
+  ddi:westLongitude xsd:double  // shexmi:comment """The westernmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
+  ddi:northLatitude xsd:double  // shexmi:comment """The northernmost coordinate expressed as a decimal between the values of -90 and 90 degrees.""";
+  ddi:southLatitude xsd:double  // shexmi:comment """The southermost latitude expressed as a decimal between the values of -90 and 90 degrees""";
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/boundingbox> // shexmi:package <http://lion.ddialliance.org/ddiobjects/discovery> // shexmi:comment """
 Definition
 ============
