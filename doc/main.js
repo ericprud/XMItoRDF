@@ -862,14 +862,14 @@ function main () {
       }
     }
     function tripleEsc (str) {
-      return str.replace(/"/g, '\\"')
+      return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
     }
     function ShExCMarkup () {
       return {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
-        docLink: link => ' // rdfs:definedBy <' + link + '>',
-        packageLink: pkg => ' // shexmi:package <' + pkg + '>',
-        comment: txt => ' // shexmi:comment """' + tripleEsc(txt) + '"""',
+        docLink: link => '// rdfs:definedBy <' + link + '>',
+        packageLink: pkg => '// shexmi:package <' + pkg + '>',
+        comment: txt => '// shexmi:comment """' + tripleEsc(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
         property: name => pname(name),
@@ -1188,19 +1188,23 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
-            let comments = use.comments.length === 0 ? '' : markup.comment(use.comments[0])
+            let comments = (use.comments || []).map(markup.comment)
             let valueStr =
                   'referees' in dt && dt instanceof ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p)
                   ? markup.valueReference(dt.name)
                   : markup.valueType(dt.name)
-            return '  ' + markup.property(propName) + ' ' + valueStr + ' ' + card + comments + ';\n'
+            return '  ' + markup.property(propName) + ' ' + valueStr +
+              (card ? ' ' + card : '') +
+              comments.map(
+                comment => '\n  ' + comment
+              ).join('') + ';\n'
           }
         ).join('') + '}' +
-        (force ? '' : markup.docLink(docURL(classRecord.name))) +
-        (force || classRecord.packages.length === 0 ? '' : markup.packageLink(docURL(model.packages[classRecord.packages[0]].name))) +
-        (force || classRecord.comments.length === 0 ? '' : markup.comment(classRecord.comments[0]) + '^^mark:')
+        (force ? '' : '\n' + markup.docLink(docURL(classRecord.name))) +
+        (force || classRecord.packages.length === 0 ? '' : '\n' + markup.packageLink(docURL(model.packages[classRecord.packages[0]].name))) +
+        (force || classRecord.comments.length === 0 ? '' : '\n' + markup.comment(classRecord.comments[0]) + '^^mark:')
 
       function indent (s, lead) {
         let a = s.split(/\n/)
@@ -1215,7 +1219,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     function ShExCEnum (model, enumId, markup) {
       return markup.definition(model.enums[enumId]) + ' [\n' + model.enums[enumId].values.map(
         v => '  ' + markup.constant(v) + '\n'
-      ).join('') + ']' + markup.docLink(docURL(model.enums[enumId].name))
+      ).join('') + ']' + '\n' + markup.docLink(docURL(model.enums[enumId].name))
     }
 
     function ShExCDatatype (model, datatypeId, markup) {
@@ -1224,7 +1228,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
-      return markup.definition(dt) + ' xsd:string' + markup.docLink(docURL(dt.name))
+      return markup.definition(dt) + ' xsd:string' + '\n' + markup.docLink(docURL(dt.name))
     }
 
     function shexCardinality (propertyRecord) {
