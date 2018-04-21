@@ -50,6 +50,12 @@ function main () {
     return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
   }
 
+  function parseComments (elt) {
+    return 'ownedComment' in elt
+      ? elt.ownedComment.map( commentElt => commentElt.body[0] )
+      : []
+  }
+
   function parseIsAbstract (elt) {
     return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
   }
@@ -58,7 +64,7 @@ function main () {
     let ret = {
       properties: [],
       associations: {},
-      others: []
+      comments: []
     }
     elts.forEach(elt => {
       let type = elt.$['xmi:type']
@@ -77,7 +83,8 @@ function main () {
           in: className,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
-          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
+          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
+          comments: parseComments(elt)
         })
       } else if (!name) {
         // e.g. canonical *-owned-attribute-n properties.
@@ -90,7 +97,8 @@ function main () {
             model, className, id, name, elt.type[0].$['xmi:idref'],
             normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
             parseValue(elt.lowerValue[0], 0),
-            parseValue(elt.upperValue[0], UPPER_UNLIMITED))
+            parseValue(elt.upperValue[0], UPPER_UNLIMITED),
+            parseComments(elt))
         )
       }
     })
@@ -391,7 +399,7 @@ function main () {
             id: old.id,
             name: old.name,
             properties: [],
-            others: old.others.slice(),
+            comments: old.comments.slice(),
             packages: old.packages.slice(),
             superClasses: old.superClasses.slice(),
             isAbstract: old.isAbstract
@@ -487,7 +495,7 @@ function main () {
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') {
-          c.properties.push(new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper))
+          c.properties.push(new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments))
         }
       }
     )
@@ -556,7 +564,7 @@ function main () {
                 superClasses: [],
                 isAbstract: parseIsAbstract(elt),
                 referees: [],
-                comments: []
+                comments: parseComments(elt)
               }
             )
             packages[parent].elements.push({type: 'class', id: id})
@@ -571,13 +579,6 @@ function main () {
                   let superClassId = parseGeneral(superClassElt)
                   classHierarchy.add(superClassId, id)
                   classes[id].superClasses.push(superClassId)
-                })
-            }
-
-            if ('ownedComment' in elt) {
-              elt.ownedComment.forEach(
-                commentElt => {
-                  classes[id].comments.push(commentElt.body[0])
                 })
             }
             break
@@ -678,7 +679,7 @@ function main () {
     this.name = name
   }
 
-  function PropertyRecord (model, className, id, name, relation, attribute, lower, upper) {
+  function PropertyRecord (model, className, id, name, relation, attribute, lower, upper, comments) {
     if (className === null) {
       console.warn('no class name for PropertyRecord ' + id)
     }
@@ -689,6 +690,7 @@ function main () {
     this.attribute = attribute
     this.lower = lower
     this.upper = upper
+    this.comments = comments
     if (this.upper === '-1') {
       this.upper = UPPER_UNLIMITED
     }
@@ -869,7 +871,7 @@ function main () {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => ' // rdfs:definedBy <' + link + '>',
         packageLink: pkg => ' // shexmi:package <' + pkg + '>',
-        comment: txt => ' // shexmi:comment """' + tripleEsc(txt) + '"""^^mark:',
+        comment: txt => ' // shexmi:comment """' + tripleEsc(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
         property: name => pname(name),
@@ -1188,18 +1190,19 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
+            let comments = use.comments.length === 0 ? '' : markup.comment(use.comments[0])
             let valueStr =
                   'referees' in dt && dt instanceof ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p)
                   ? markup.valueReference(dt.name)
                   : markup.valueType(dt.name)
-            return '  ' + markup.property(propName) + ' ' + valueStr + ' ' + card + ';\n'
+            return '  ' + markup.property(propName) + ' ' + valueStr + ' ' + card + comments + ';\n'
           }
         ).join('') + '}' +
         (force ? '' : markup.docLink(docURL(classRecord.name))) +
         (force || classRecord.packages.length === 0 ? '' : markup.packageLink(docURL(model.packages[classRecord.packages[0]].name))) +
-        (force || classRecord.comments.length === 0 ? '' : markup.comment(docURL(classRecord.comments[0])))
+        (force || classRecord.comments.length === 0 ? '' : markup.comment(classRecord.comments[0]) + '^^mark:')
 
       function indent (s, lead) {
         let a = s.split(/\n/)
