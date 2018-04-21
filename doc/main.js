@@ -861,15 +861,15 @@ function main () {
         endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
       }
     }
-    function tripleEsc (str) {
+    function stringEscape (str) {
       return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
     }
     function ShExCMarkup () {
       return {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => '// rdfs:definedBy <' + link + '>',
-        packageLink: pkg => '// shexmi:package <' + pkg + '>',
-        comment: txt => '// shexmi:comment """' + tripleEsc(txt) + '"""',
+        packageStr: pkg => '// shexmi:package "' + stringEscape(pkg) + '"',
+        comment: txt => '// shexmi:comment """' + stringEscape(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
         property: name => pname(name),
@@ -895,7 +895,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         docLink: link => `<a class="tryit" href="${link}"></a></pre>
       </div>
       </section>`,
-        packageLink: pkg => '',
+        packageStr: pkg => '',
         comment: txt => '',
         reference: name => ref(pname(name)),
         constant: name => pOrT(pname(name)),
@@ -1203,7 +1203,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           }
         ).join('') + '}' +
         (force ? '' : '\n' + markup.docLink(docURL(classRecord.name))) +
-        (force || classRecord.packages.length === 0 ? '' : '\n' + markup.packageLink(docURL(model.packages[classRecord.packages[0]].name))) +
+        (force || classRecord.packages.length === 0 ? '' : '\n' + markup.packageStr(model.packages[classRecord.packages[0]].name)) +
         (force || classRecord.comments.length === 0 ? '' : '\n' + markup.comment(classRecord.comments[0]) + '^^mark:')
 
       function indent (s, lead) {

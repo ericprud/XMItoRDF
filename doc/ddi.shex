@@ -1,4 +1,4 @@
-# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-21T11:06:21.128Z
+# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-21T11:31:26.143Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -34,7 +34,7 @@ ddi:AgentAssociation {
   ddi:agentAssociation @ddi:Agent *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentassociation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -118,7 +118,7 @@ ddi:Annotation {
   // shexmi:comment """Date the record was last revised""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -154,7 +154,7 @@ ddi:AnnotationDate EXTENDS ddi:Date {
   // shexmi:comment """Use to specify the type of date. This may reflect the refinements of dc:date such as dateAccepted, dateCopyrighted, dateSubmitted, etc.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotationdate>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -198,7 +198,7 @@ ddi:Binding {
   ddi:toParameter @ddi:Parameter *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/binding>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -239,7 +239,7 @@ ddi:BusinessProcessCondition {
   ddi:usesLogicalRecord @ddi:LogicalRecord *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessprocesscondition>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -285,7 +285,7 @@ ddi:CategoryRelation {
   ddi:target @ddi:Category *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/categoryrelation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -337,7 +337,7 @@ ddi:CodeIndicator {
   ddi:member @ddi:Code *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codeindicator>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -391,7 +391,7 @@ ddi:CommandCode {
   // shexmi:comment """This is an in-line provision of the command itself. It provides the programming language used as well as the command.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/commandcode>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -433,7 +433,7 @@ ddi:ConditionalText EXTENDS ddi:DynamicTextContent {
   // shexmi:comment """The condition on which the associated text varies expressed by a command code. For example, a command that inserts an age by calculating the difference between today’s date and a previously defined date of birth.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conditionaltext>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -550,7 +550,7 @@ ddi:ContactInformation {
   // shexmi:comment """Telephone for contact""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contactinformation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -588,7 +588,7 @@ ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
   // shexmi:comment """If set to \"true\" the date is offset the number of units specified PRIOR to the default date of the data. A setting of \"false\" indicates a date the specified number of units in the FUTURE from the default date of the data.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contentdateoffset>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -630,7 +630,7 @@ ddi:CorrespondenceType {
   // shexmi:comment """Allows specification of exact match, close match, or disjoint. These relationships can be further defined by describing commonalities or differences or providing additional controlled vocabulary description of relationship.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetype>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -678,7 +678,7 @@ ddi:CustomValueRelation {
   ddi:target @ddi:CustomValue *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvaluerelation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -731,7 +731,7 @@ ddi:Date {
   // shexmi:comment """A simple date expressed in a non-ISO date format, including a specification of the date format and calendar used.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/date>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -769,7 +769,7 @@ ddi:DateRange {
   // shexmi:comment """The date (time) designating the end of the period or range.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/daterange>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -806,7 +806,7 @@ ddi:DescribedRelationship {
   ddi:relatedTo @ddi:Identifiable *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/describedrelationship>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -844,7 +844,7 @@ ddi:DoubleNumberRangeValue {
   // shexmi:comment """The bounding value expressed as an xs:double""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/doublenumberrangevalue>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -884,7 +884,7 @@ ddi:DynamicText {
   // shexmi:comment """Specifies the language of the intended audience. This is particularly important for clarifying the primary language of a mixed language textual string, for example when language testing and using a foreign word withing the question text. Supports the inclusion of multiple languages within a single property.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictext>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -922,7 +922,7 @@ ABSTRACT ddi:DynamicTextContent {
   // shexmi:comment """Provides the relative order of TextContent objects in a dynamic text with more than one TextContent object. Uses integer value.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictextcontent>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -978,7 +978,7 @@ ddi:ExternalControlledVocabularyEntry {
   // shexmi:comment """Language of the content value if applicable""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalcontrolledvocabularyentry>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1032,7 +1032,7 @@ ddi:Image {
   // shexmi:comment """Language of image. Supports the indication of multiple languages within a single property. Supports use of codes defined by the RFC 1766.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/image>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1075,7 +1075,7 @@ ddi:InstanceVariableIndicator {
   ddi:member @ddi:InstanceVariable *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariableindicator>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1119,7 +1119,7 @@ ddi:InternationalIdentifier {
   // shexmi:comment """Set to \"true\" if Identifier is a URI""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalidentifier>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1168,7 +1168,7 @@ ddi:InternationalString {
   // shexmi:comment """A non-formatted string of text with an attribute that designates the language of the text. Repeat this object to express the same content in another language.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalstring>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1204,7 +1204,7 @@ ddi:InternationalStructuredString {
   // shexmi:comment """Supports the optional use of XHTML formatting tags within the string structure. In addition to the language designation and information regarding translation, the attribute isPlain can be set to true to indicate that the content should be treated as plain unstructured text, including any XHTML formatting tags. Repeat the content element to provide multiple language versions of the same content.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalstructuredstring>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1244,7 +1244,7 @@ ddi:LabelForDisplay EXTENDS ddi:InternationalStructuredString {
   // shexmi:comment """A positive integer indicating the maximum number of characters in the label.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/labelfordisplay>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1294,7 +1294,7 @@ ddi:LanguageSpecificStructuredStringType {
   // shexmi:comment """Indicates that the content is to be treated as plain text (no formatting). You may use DDIProfile to fix the value of this attribute to 'true' in cases where you wish to indicate that your system treats all content should be treated as plain text.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstructuredstringtype>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1337,7 +1337,7 @@ ddi:LiteralText EXTENDS ddi:DynamicTextContent {
   // shexmi:comment """The value of the static text string. Supports the optional use of XHTML formatting tags within the string structure. If the content of a literal text contains more than one language, i.e. \"What is your understanding of the German word 'Gesundheit'?\", the foreign language element should be placed in a separate LiteralText component with the appropriate xmlang value and, in this case, isTranslatable set to \"false\". If the existence of white space is critical to the understanding of the content (such as inclusion of a leading or trailing white space), set the attribute of Text xml:space to \"preserve\".""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/literaltext>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1375,7 +1375,7 @@ ddi:LocationName EXTENDS ddi:ObjectName {
   // shexmi:comment """The time period for which this name is accurate and in use.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/locationname>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1423,7 +1423,7 @@ ddi:Map {
   ddi:target @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/map>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1483,7 +1483,7 @@ ddi:NumberRangeValue {
   // shexmi:comment """Bounding value expressed as an xs:double""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numberrangevalue>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1521,7 +1521,7 @@ ddi:ObjectName {
   // shexmi:comment """A name may be specific to a particular context, i.e., a type of software, or a section of a registry. Identify the context related to the specified name. """;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/objectname>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1561,7 +1561,7 @@ ddi:PairedExternalControlledVocabularyEntry {
   // shexmi:comment """Describes the extent to which the parent term applies for the specific case using an external controlled vocabulary. When associated with a role from the CASRAI Contributor Roles Taxonomy an appropriate vocabulary should be specified as either ‘lead’, ‘equal’, or ‘supporting’.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/pairedexternalcontrolledvocabularyentry>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1609,7 +1609,7 @@ ddi:Polygon {
   // shexmi:comment """A geographic point defined by a latitude and longitude. A minimum of 4 points is required as the first and last point should be identical in order to close the polygon. Note that a triangle has three sides and requires 3 unique points plus a fourth point replicating the first point in order to close the polygon.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/polygon>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1647,7 +1647,7 @@ ddi:RangeValue EXTENDS ddi:ValueString {
   // shexmi:comment """Set to \"true\" if the value is included in the range.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rangevalue>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1691,7 +1691,7 @@ ddi:SpatialCoordinate {
   // shexmi:comment """Identifies the type of point coordinate system using a controlled vocabulary. Point formats include decimal degree, degrees minutes seconds, decimal minutes, meters, and feet.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialcoordinate>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1731,7 +1731,7 @@ ddi:SpatialPoint {
   // shexmi:comment """A Y coordinate (longitudinal equivalent) value and format expressed using the Spatial Coordinate structure.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialpoint>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1772,7 +1772,7 @@ ddi:SpatialRelationship {
   ddi:relatesTo @ddi:GeographicUnit *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialrelationship>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1810,7 +1810,7 @@ ddi:StandardKeyValuePair {
   // shexmi:comment """The value assigned to the named Key expressed as a string. Supports the use of an external controlled vocabulary.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/standardkeyvaluepair>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1852,7 +1852,7 @@ ddi:Statistic {
   // shexmi:comment """The value of the statistic expressed as a double.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statistic>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1908,7 +1908,7 @@ ddi:TypedString {
   // shexmi:comment """Content of the property expressed as a simple string.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/typedstring>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1950,7 +1950,7 @@ ddi:ValueString {
   // shexmi:comment """The usual setting \"collapse\" states that leading and trailing white space will be removed and multiple adjacent white spaces will be treated as a single white space. When setting to \"replace\" all occurrences of #x9 (tab), #xA (line feed) and #xD (carriage return) are replaced with #x20 (space) but leading and trailing spaces will be retained. If the existence of any of these white spaces is critical to the understanding of the content, change the value of this attribute to \"preserve\".""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuestring>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -1998,7 +1998,7 @@ ddi:ViewpointRoleRelation {
   ddi:target @ddi:InstanceVariable *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrolerelation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/complexdatatypes>
+// shexmi:package "ComplexDataTypes"
 // shexmi:comment """
 Definition
 ============
@@ -2051,7 +2051,7 @@ ddi:Category EXTENDS ddi:Concept {
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/category>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2093,7 +2093,7 @@ ddi:Concept EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Natural language statement conveying the meaning of a concept, differentiating it from other concepts. Supports the use of multiple languages and structured text.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/concept>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2163,7 +2163,7 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystem>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2206,7 +2206,7 @@ ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:maps @ddi:ConceptSystem {2,};
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystemcorrespondence>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2244,7 +2244,7 @@ ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:enumeratedConceptualDomain @ddi:ConceptSystem *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptualdomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2286,7 +2286,7 @@ ddi:ConceptualVariable EXTENDS ddi:Concept {
   ddi:takesSentinelConceptsFrom @ddi:SentinelConceptualDomain *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptualvariable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2334,7 +2334,7 @@ ddi:InstanceVariable EXTENDS ddi:RepresentedVariable {
   ddi:generatedBy @ddi:Act *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2384,7 +2384,7 @@ ddi:Population EXTENDS ddi:Concept {
   ddi:geographyOfPopulation @ddi:GeographicUnit *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/population>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2432,7 +2432,7 @@ ddi:RepresentedVariable EXTENDS ddi:ConceptualVariable {
   ddi:takesPlatformSpecificSentinelValues @ddi:SentinelValueDomain *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/representedvariable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2467,7 +2467,7 @@ GSIM mapping
 ddi:SentinelConceptualDomain EXTENDS ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sentinelconceptualdomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2503,7 +2503,7 @@ GSIM mapping
 ddi:SubstantiveConceptualDomain EXTENDS ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/substantiveconceptualdomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2545,7 +2545,7 @@ ddi:Unit EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasUnitType @ddi:UnitType *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unit>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2588,7 +2588,7 @@ ddi:UnitType EXTENDS ddi:Concept {
   ddi:usesConcept @ddi:Concept ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unittype>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2632,7 +2632,7 @@ ddi:Universe EXTENDS ddi:Concept {
   ddi:usesConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/universe>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/conceptual>
+// shexmi:package "Conceptual"
 // shexmi:comment """
 Definition
 ============
@@ -2691,7 +2691,7 @@ ddi:AlgorithmOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isDescribedIn @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/algorithmoverview>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/simplemethodologyoverview>
+// shexmi:package "SimpleMethodologyOverview"
 // shexmi:comment """
 Definition
 ============
@@ -2735,7 +2735,7 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:implementedBy @ddi:WorkflowProcess *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designoverview>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/simplemethodologyoverview>
+// shexmi:package "SimpleMethodologyOverview"
 // shexmi:comment """
 Definition
 ============
@@ -2785,7 +2785,7 @@ ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:componentMethodology @ddi:MethodologyOverview *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/methodologyoverview>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/simplemethodologyoverview>
+// shexmi:package "SimpleMethodologyOverview"
 // shexmi:comment """
 Definition
 ============
@@ -2869,7 +2869,7 @@ ddi:GeographicUnit EXTENDS ddi:Unit {
   } *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunit>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/geographicclassification>
+// shexmi:package "GeographicClassification"
 // shexmi:comment """
 Definition
 ============
@@ -2949,7 +2949,7 @@ ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
   ddi:isReplacedBy @ddi:GeographicUnitClassification *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunitclassification>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/geographicclassification>
+// shexmi:package "GeographicClassification"
 // shexmi:comment """
 Definition
 ============
@@ -3033,7 +3033,7 @@ ddi:GeographicUnitTypeClassification EXTENDS ddi:CodeList {
   ddi:isReplacedBy @ddi:GeographicUnitTypeClassification *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunittypeclassification>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/geographicclassification>
+// shexmi:package "GeographicClassification"
 // shexmi:comment """
 Definition
 ============
@@ -3078,7 +3078,7 @@ ddi:SamplingAlgorithm EXTENDS ddi:AlgorithmOverview {
   // shexmi:comment """The algorithm expressed as algebraic or computer code.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingalgorithm>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/samplingmethodology>
+// shexmi:package "SamplingMethodology"
 // shexmi:comment """
 Definition
 ============
@@ -3140,7 +3140,7 @@ ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
   ddi:componentMethodology @ddi:SamplingProcedure *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocedure>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/samplingmethodology>
+// shexmi:package "SamplingMethodology"
 // shexmi:comment """
 Definition
 ============
@@ -3189,7 +3189,7 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:implementsAlgorithm @ddi:SamplingAlgorithm *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocess>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/samplingmethodology>
+// shexmi:package "SamplingMethodology"
 // shexmi:comment """
 Definition
 ============
@@ -3416,7 +3416,7 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/controlledvocabulary>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/custommetadata>
+// shexmi:package "CustomMetadata"
 // shexmi:comment """
 Definition
 ============
@@ -3507,7 +3507,7 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/custominstance>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/custommetadata>
+// shexmi:package "CustomMetadata"
 // shexmi:comment """
 Definition
 ============
@@ -3552,7 +3552,7 @@ ddi:CustomItem EXTENDS ddi:AnnotatedIdentifiable {
   ddi:comparesTo @ddi:RepresentedVariable *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customitem>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/custommetadata>
+// shexmi:package "CustomMetadata"
 // shexmi:comment """
 Definition
 ============
@@ -3599,7 +3599,7 @@ ddi:CustomValue EXTENDS ddi:Identifiable {
   ddi:comparesTo @ddi:InstanceVariable *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvalue>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/custommetadata>
+// shexmi:package "CustomMetadata"
 // shexmi:comment """
 Definition
 ============
@@ -3639,7 +3639,7 @@ ddi:VocabularyEntry EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An explanation (definition) of the value""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/vocabularyentry>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/custommetadata>
+// shexmi:package "CustomMetadata"
 // shexmi:comment """
 Definition
 ============
@@ -3749,7 +3749,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicaldataset>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -3820,7 +3820,7 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegment>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -3940,7 +3940,7 @@ ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -3975,7 +3975,7 @@ GSIM mapping
 ABSTRACT ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -4019,7 +4019,7 @@ ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
   // shexmi:comment """The number of characters in the segment. The segment may include text from multiple lines of the resource. If it does, the length includes any line termination characters.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/segmentbytext>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -4058,7 +4058,7 @@ GSIM mapping
 ddi:UnitSegmentLayout EXTENDS ddi:PhysicalSegmentLayout {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unitsegmentlayout>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -4126,7 +4126,7 @@ ddi:ValueMapping EXTENDS ddi:Identifiable {
   ddi:describesSegmentLocation @ddi:PhysicalSegmentLocation *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemapping>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/formatdescription>
+// shexmi:package "FormatDescription"
 // shexmi:comment """
 Definition
 ============
@@ -4318,7 +4318,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   } *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/study>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/studyrelated>
+// shexmi:package "StudyRelated"
 // shexmi:comment """
 Definition
 ============
@@ -4353,7 +4353,7 @@ ddi:StudyControl EXTENDS ddi:Act {
   ddi:hasStudy @ddi:Study *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studycontrol>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/studyrelated>
+// shexmi:package "StudyRelated"
 // shexmi:comment """
 Definition
 ============
@@ -4425,7 +4425,7 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyseries>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/studyrelated>
+// shexmi:package "StudyRelated"
 // shexmi:comment """
 Definition
 ============
@@ -4464,7 +4464,7 @@ GSIM mapping
 ddi:BusinessAlgorithm EXTENDS ddi:AlgorithmOverview {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessalgorithm>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/businessworkflow>
+// shexmi:package "BusinessWorkflow"
 // shexmi:comment """
 Definition
 ============
@@ -4524,7 +4524,7 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapipeline>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/businessworkflow>
+// shexmi:package "BusinessWorkflow"
 // shexmi:comment """
 Definition
 ============
@@ -4566,7 +4566,7 @@ GSIM mapping
 ABSTRACT ddi:Act EXTENDS ddi:WorkflowStep {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/act>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4607,7 +4607,7 @@ ddi:ComputationAction EXTENDS ddi:Act {
   // shexmi:comment """Allows for the specification of a computation or transformation type supporting the use of an external controlled vocabulary""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/computationaction>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4646,7 +4646,7 @@ ddi:ConditionalControlConstruct EXTENDS ddi:WorkflowStep {
   ddi:containsSubSequence @ddi:WorkflowStepSequence ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conditionalcontrolconstruct>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4688,7 +4688,7 @@ ddi:IfThenElse EXTENDS ddi:ConditionalControlConstruct {
   ddi:elseContains @ddi:WorkflowStepSequence ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/ifthenelse>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4730,7 +4730,7 @@ ddi:Loop EXTENDS ddi:ConditionalControlConstruct {
   // shexmi:comment """The command used to set the incremental or step value for the process. Could be a simple value.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/loop>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4770,7 +4770,7 @@ ddi:MetadataDrivenAction EXTENDS ddi:Act {
   // shexmi:comment """A definition of the action in XHTML that conforms to the quasi-VTL schema. Each action has its own definition that a user optionally completes.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/metadatadrivenaction>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4831,7 +4831,7 @@ ddi:Parameter {
   ddi:valueRepresentation @ddi:ValueDomain *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/parameter>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4866,7 +4866,7 @@ GSIM mapping
 ddi:RepeatUntil EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatuntil>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4900,7 +4900,7 @@ GSIM mapping
 ddi:RepeatWhile EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatwhile>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4935,7 +4935,7 @@ ddi:Split EXTENDS ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/split>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -4970,7 +4970,7 @@ ddi:SplitJoin EXTENDS ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/splitjoin>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5027,7 +5027,7 @@ ddi:StructuredWorkflowSteps EXTENDS ddi:WorkflowStepSequence {
   } *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/structuredworkflowsteps>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5067,7 +5067,7 @@ ddi:WorkflowMasterSequence EXTENDS ddi:WorkflowStepSequence {
   // shexmi:comment """Restricts contains to WorkflowSequenceIndicator which supports the use of an index to specify the position of the referenced Workflow Sequence in an ordered array""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowmastersequence>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5112,7 +5112,7 @@ ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasProcessSequence @ddi:WorkflowStepSequence ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowprocess>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5171,7 +5171,7 @@ ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasOutputParameter @ddi:Parameter *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstep>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5226,7 +5226,7 @@ ddi:WorkflowStepSequence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequence>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/workflows>
+// shexmi:package "Workflows"
 // shexmi:comment """
 Definition
 ============
@@ -5291,7 +5291,7 @@ ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasExternalMaterial @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/documentinformation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/utility>
+// shexmi:package "Utility"
 // shexmi:comment """
 Definition
 ============
@@ -5390,7 +5390,7 @@ ddi:ExternalMaterial EXTENDS ddi:Identifiable {
   // shexmi:comment """Bibliographic citation for the external resource.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalmaterial>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/utility>
+// shexmi:package "Utility"
 // shexmi:comment """
 Definition
 ============
@@ -5432,7 +5432,7 @@ ddi:FundingInformation EXTENDS ddi:Identifiable {
   ddi:hasFunder @ddi:Agent *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/fundinginformation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/utility>
+// shexmi:package "Utility"
 // shexmi:comment """
 Definition
 ============
@@ -5478,7 +5478,7 @@ ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
   ddi:authorizingAgent @ddi:Agent *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/authorizationsource>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5547,7 +5547,7 @@ ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationfamily>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5626,7 +5626,7 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindex>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5667,7 +5667,7 @@ ddi:ClassificationIndexEntry EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Additional information which drives the coding process. Required when coding is dependent upon one or many other factors.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindexentry>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5719,7 +5719,7 @@ ddi:ClassificationItem EXTENDS ddi:Code {
   ddi:exclude @ddi:ClassificationItem *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationitem>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5801,7 +5801,7 @@ ddi:ClassificationSeries EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationseries>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5841,7 +5841,7 @@ ddi:Code EXTENDS ddi:Designation {
   ddi:denotes @ddi:Category *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/code>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5919,7 +5919,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codelist>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -5967,7 +5967,7 @@ ddi:CorrespondenceTable EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contactPerson @ddi:Agent *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6004,7 +6004,7 @@ ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
   ddi:denotes @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designation>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6054,7 +6054,7 @@ ddi:LevelStructure EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The dates for which the level structure is valid.  A structured DateRange with start and end Date (both with the structure of Date and supporting the use of ISO and non-ISO date structures); Use to relate a period with a start and end date.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/levelstructure>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6100,7 +6100,7 @@ ddi:SentinelValueDomain EXTENDS ddi:ValueDomain {
   ddi:enumeratedValueDomain @ddi:CodeList *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sentinelvaluedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6197,7 +6197,7 @@ ddi:StatisticalClassification EXTENDS ddi:CodeList {
   ddi:successor @ddi:StatisticalClassification *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statisticalclassification>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6253,7 +6253,7 @@ ddi:ValueAndConceptDescription EXTENDS ddi:Identifiable {
   // shexmi:comment """A pattern for a number as described in Unicode Locale Data Markup Language (LDML) (http://www.unicode.org/reports/tr35/tr35.html) Part 3: Numbers  (http://www.unicode.org/reports/tr35/tr35-numbers.html#Number_Format_Patterns) and Part 4. Dates (http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns) . Examples would be    #,##0.### to describe the pattern for a decimal number, or yyyy.MM.dd G 'at' HH:mm:ss zzz for a datetime pattern.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valueandconceptdescription>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6308,7 +6308,7 @@ ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The data types that are recommended for use with this domain""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/representations>
+// shexmi:package "Representations"
 // shexmi:comment """
 Definition
 ============
@@ -6353,7 +6353,7 @@ ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
   } ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapoint>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/logicaldatadescription>
+// shexmi:package "LogicalDataDescription"
 // shexmi:comment """
 Definition
 ============
@@ -6485,7 +6485,7 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastore>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/logicaldatadescription>
+// shexmi:package "LogicalDataDescription"
 // shexmi:comment """
 Definition
 ============
@@ -6561,7 +6561,7 @@ ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastorelibrary>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/logicaldatadescription>
+// shexmi:package "LogicalDataDescription"
 // shexmi:comment """
 Definition
 ============
@@ -6626,7 +6626,7 @@ ABSTRACT ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalrecord>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/logicaldatadescription>
+// shexmi:package "LogicalDataDescription"
 // shexmi:comment """
 Definition
 ============
@@ -6687,7 +6687,7 @@ ABSTRACT ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrole>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/logicaldatadescription>
+// shexmi:package "LogicalDataDescription"
 // shexmi:comment """
 Definition
 ============
@@ -6727,7 +6727,7 @@ ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:forCategory @ddi:Category *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/booleanresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6777,7 +6777,7 @@ ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasExternalAid @ddi:ExternalAid *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/capture>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6817,7 +6817,7 @@ ddi:CodeListResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:specifyOtherCorrespondingCode @ddi:Code *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codelistresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6855,7 +6855,7 @@ ddi:ExternalAid EXTENDS ddi:ExternalMaterial {
   // shexmi:comment """""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalaid>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6896,7 +6896,7 @@ ddi:InstanceMeasurement EXTENDS ddi:InstrumentComponent {
   } *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancemeasurement>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6941,7 +6941,7 @@ ddi:InstanceQuestion EXTENDS ddi:InstrumentComponent {
   } *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancequestion>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -6982,7 +6982,7 @@ ddi:Instruction EXTENDS ddi:AnnotatedIdentifiable {
   ddi:associatedMaterial @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instruction>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7020,7 +7020,7 @@ ddi:InstrumentCode EXTENDS ddi:InstrumentComponent {
   // shexmi:comment """Describes the code used to execute the command using the options of inline textual description, inline code, and/or an external file.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcode>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7056,7 +7056,7 @@ ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
   ddi:hasExternalAids @ddi:ExternalAid *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcomponent>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7115,7 +7115,7 @@ ddi:NumericResponseDomain EXTENDS ddi:ResponseDomain {
   // shexmi:comment """Defines the valid number range or number values for the representation.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numericresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7149,7 +7149,7 @@ GSIM mapping
 ddi:RankingResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rankingresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7192,7 +7192,7 @@ ddi:ResponseDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasOutputParameter @ddi:Parameter *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/responsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7226,7 +7226,7 @@ GSIM mapping
 ddi:ScaleResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/scaleresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7265,7 +7265,7 @@ ddi:Statement EXTENDS ddi:InstrumentComponent {
   // shexmi:comment """Describes the use of the statement within the instrument. For example, a section divider, welcome statement, or other text.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statement>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7305,7 +7305,7 @@ ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
   // shexmi:comment """A regular expression limiting the allowed characters or character order of the content. Use typeOfContent to specify the syntax of the regularExpression found in content.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/textresponsedomain>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/datacapture>
+// shexmi:package "DataCapture"
 // shexmi:comment """
 Definition
 ============
@@ -7371,7 +7371,7 @@ ddi:Access EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The date range or start date of the access description.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/access>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/discovery>
+// shexmi:package "Discovery"
 // shexmi:comment """
 Definition
 ============
@@ -7413,7 +7413,7 @@ ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The southermost latitude expressed as a decimal between the values of -90 and 90 degrees""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/boundingbox>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/discovery>
+// shexmi:package "Discovery"
 // shexmi:comment """
 Definition
 ============
@@ -7479,7 +7479,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
   } ?;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/coverage>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/discovery>
+// shexmi:package "Discovery"
 // shexmi:comment """
 Definition
 ============
@@ -7525,7 +7525,7 @@ ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
   ddi:relatedMaterial @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotatedidentifiable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/identification>
+// shexmi:package "Identification"
 // shexmi:comment """
 Definition
 ============
@@ -7592,7 +7592,7 @@ ABSTRACT ddi:Identifiable {
   // shexmi:comment """The object/version that this object version is based on.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/identifiable>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/identification>
+// shexmi:package "Identification"
 // shexmi:comment """
 Definition
 ============
@@ -7633,7 +7633,7 @@ ABSTRACT ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessfunction>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/methodologies>
+// shexmi:package "Methodologies"
 // shexmi:comment """
 Definition
 ============
@@ -7672,7 +7672,7 @@ ddi:Goal EXTENDS ddi:BusinessFunction {
   ddi:isDiscussedIn @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/goal>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/methodologies>
+// shexmi:package "Methodologies"
 // shexmi:comment """
 Definition
 ============
@@ -7712,7 +7712,7 @@ ddi:Precondition EXTENDS ddi:BusinessFunction {
   ddi:basedOnPriorResult @ddi:Result *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/precondition>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/methodologies>
+// shexmi:package "Methodologies"
 // shexmi:comment """
 Definition
 ============
@@ -7764,7 +7764,7 @@ ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasOutputParameter @ddi:Parameter *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/result>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/methodologies>
+// shexmi:package "Methodologies"
 // shexmi:comment """
 Definition
 ============
@@ -7817,7 +7817,7 @@ ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """References an image using the standard Image description. In addition to the standard attributes provides an effective date (period), the type of image, and a privacy ranking.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agent>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/agents>
+// shexmi:package "Agents"
 // shexmi:comment """
 Definition
 ============
@@ -7895,7 +7895,7 @@ ddi:AgentListing EXTENDS ddi:Identifiable {
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentlisting>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/agents>
+// shexmi:package "Agents"
 // shexmi:comment """
 Definition
 ============
@@ -7964,7 +7964,7 @@ ddi:Individual EXTENDS ddi:Agent {
   // shexmi:comment """Contact information for the individual including location specification, address, URL, phone numbers, and other means of communication access. Sets of information can be repeated and date-stamped.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/individual>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/agents>
+// shexmi:package "Agents"
 // shexmi:comment """
 Definition
 ============
@@ -8017,7 +8017,7 @@ ddi:Machine EXTENDS ddi:Agent {
   // shexmi:comment """Contact information for the owner/operator including location specification, address, URL, phone numbers, and other means of communication access. Sets of information can be repeated and date-stamped.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/machine>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/agents>
+// shexmi:package "Agents"
 // shexmi:comment """
 Definition
 ============
@@ -8066,7 +8066,7 @@ ddi:Organization EXTENDS ddi:Agent {
   // shexmi:comment """Contact information for the organization including location specification, address, URL, phone numbers, and other means of communication access. Sets of information can be repeated and date-stamped.""";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/organization>
-// shexmi:package <http://lion.ddialliance.org/ddiobjects/agents>
+// shexmi:package "Agents"
 // shexmi:comment """
 Definition
 ============
