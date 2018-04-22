@@ -30,6 +30,11 @@
 
 
     <style>
+      h1 {
+          margin: 0;
+          margin-left: .1em;
+          font-size: 1.3em;
+      }
       #loadform { float: left; border: thin solid #f77; }
       .result { float:left; }
       span { margin-left: .2em; }
@@ -42,9 +47,11 @@
   </head>
   <body>
     <div id="render">
+      <img src="http://www.w3.org/2015/ShEx-bones-min.svg" style="float:left; height:1.3em; padding-left: .3em;" alt="ShEx Icon"/><h1 style="float:left;">ShEx2 — XMI Parser</h1>
+      <div style="clear: both;"/>
       <div id="loadform">
         <p style="float:left; text-align: right;">
-          Load file:<br/>
+          Load XMI:<br/>
           <span id="sources"><a href="DDI-massaged.xmi" title="comments and extension elements removed">m</a> <a href="DDI-canonical.xmi" title="canonicallized by the Joachim filter">c</a> <!-- <a href="http://lion.ddialliance.org/xmi.xml" title="load live from lion (needs CORS headers)">l</a> --></span> URL:<br/>
         </p>
         <p style="float:left; margin-left: .5em;"><input id="load-file" name="files[]" multiple="multiple" type="file" /><br/><input size="35" id="load-url"/></p>
