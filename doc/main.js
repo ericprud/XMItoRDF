@@ -1115,18 +1115,34 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
-            ]).join('\n')
+            ]).concat(
+          (model.classes[classId].comments).map(
+            comment =>
+              `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`
+          )
+        ).join('\n')
+    }
+
+    function encodeCharData (text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
     }
 
     function OWLXMLEnum (model, enumId) {
       return [].concat(
         `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
         <ObjectOneOf>`,
         model.enums[enumId].values.map(
           v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
         ),
-        `       </ObjectOneOf>
+        `        </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
@@ -1152,6 +1168,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     return classRecord.referees.length === 1
       && (!(classRecord.id in model.classHierarchy.children)
           || model.classHierarchy.children[classRecord.id].length === 0)
+  }
+
+  function trimMarkdown (md) {
+    return md.replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
   }
 
   function ShExCSerializer (model, nestInlinableStructure) {
@@ -1204,7 +1224,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         ).join('') + '}' +
         (force ? '' : '\n' + markup.docLink(docURL(classRecord.name))) +
         (force || classRecord.packages.length === 0 ? '' : '\n' + markup.packageStr(model.packages[classRecord.packages[0]].name)) +
-        (force || classRecord.comments.length === 0 ? '' : '\n' + markup.comment(classRecord.comments[0]) + '^^mark:')
+        (force || classRecord.comments.length === 0 ? '' : '\n' + markup.comment(trimMarkdown(classRecord.comments[0])) + '^^mark:')
 
       function indent (s, lead) {
         let a = s.split(/\n/)

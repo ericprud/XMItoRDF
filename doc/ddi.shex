@@ -1,4 +1,4 @@
-# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-21T11:31:26.143Z
+# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-22T02:00:39.225Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -35,36 +35,14 @@ ddi:AgentAssociation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentassociation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A basic structure for declaring the name of an Agent inline, reference to an Agent, and role specification. This object is used primarily within Annotation.
 
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:ContributorType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:ContributorType"""^^mark:
 
 
 
@@ -119,35 +97,13 @@ ddi:Annotation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides annotation information on the object to support citation and crediting of the creator(s) of the object.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:CitationType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:CitationType"""^^mark:
 
 ddi:AnnotationDate EXTENDS ddi:Date {
   ddi:typeOfDate @ddi:ExternalControlledVocabularyEntry *
@@ -155,35 +111,13 @@ ddi:AnnotationDate EXTENDS ddi:Date {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotationdate>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A generic date type for use in Annotation which provides the standard date structure plus a property to define the date type (Publication date,  Accepted date, Copyrighted date, Submitted date, etc.). 
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
 Synonyms
 ==========
-Equivalent of http://purl.org/dc/elements/1.1/date where the type of date may identify the Dublin Core refinement term.
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Equivalent of http://purl.org/dc/elements/1.1/date where the type of date may identify the Dublin Core refinement term."""^^mark:
 
 
 
@@ -199,8 +133,7 @@ ddi:Binding {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/binding>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Binds two parameters together to direct flow of data through a process
 
@@ -210,24 +143,7 @@ From the output of an InstanceQuestion to the input of a ComputationAction
 
 Explanatory notes
 ===================
-Binding is used to define the flow of data into, out of, and within a process. It is separate from the flow of a process. When used in the workflow of a data capture process most data may go from a capture to an instance variable, but when needed as a check sum in a loop, a recoding process, or conditional content for DynamicText, Binding provides the means for explicitly directing the movement of data from one point to another in the process.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Binding is used to define the flow of data into, out of, and within a process. It is separate from the flow of a process. When used in the workflow of a data capture process most data may go from a capture to an instance variable, but when needed as a check sum in a loop, a recoding process, or conditional content for DynamicText, Binding provides the means for explicitly directing the movement of data from one point to another in the process."""^^mark:
 
 ddi:BusinessProcessCondition {
   ddi:sql xsd:string ?
@@ -240,35 +156,9 @@ ddi:BusinessProcessCondition {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessprocesscondition>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-A BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance."""^^mark:
 
 
 
@@ -286,36 +176,9 @@ ddi:CategoryRelation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/categoryrelation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Source target relationship between categories in a classification relation structure
-
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Source target relationship between categories in a classification relation structure"""^^mark:
 
 
 
@@ -338,35 +201,9 @@ ddi:CodeIndicator {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codeindicator>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-A CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure."""^^mark:
 
 
 
@@ -392,35 +229,13 @@ ddi:CommandCode {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/commandcode>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Contains information on the command used for processing data. Contains a description of the command which should clarify for the user the purpose and process of the command, an in-line provision of the command itself, and a reference to an external version of the command such as a coding script. 
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:CommandCodeType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:CommandCodeType"""^^mark:
 
 
 
@@ -434,35 +249,13 @@ ddi:ConditionalText EXTENDS ddi:DynamicTextContent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conditionaltext>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Text which has a changeable value depending on a stated condition, response to earlier questions, or as input from a set of metrics (pre-supplied data).
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:ConditionalTextType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:ConditionalTextType"""^^mark:
 
 ddi:ContactInformation {
   ddi:website {
@@ -551,35 +344,13 @@ ddi:ContactInformation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contactinformation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Contact information for the individual or organization including location specification, address, web site, phone numbers, and other means of communication access. Address, location, telephone, and other means of communication can be repeated to express multiple means of a single type or change over time. Each major piece of contact information contains the element EffectiveDates in order to date stamp the period for which the information is valid.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-a:ContactInformationType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+a:ContactInformationType"""^^mark:
 
 ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
   ddi:numberOfUnits xsd:double ?
@@ -589,35 +360,13 @@ ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/contentdateoffset>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Identifies the difference between the date applied to the data as a whole and this specific item such as previous year's income or residence 5 years ago. A value of true for the attribute isNegativeOffset indicates that the offset is the specified number of declared units prior to the date of the data as a whole and false indicates information regarding a future state.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:ContentDateOffsetType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:ContentDateOffsetType"""^^mark:
 
 ddi:CorrespondenceType {
   ddi:commonality @ddi:InternationalStructuredString ?
@@ -631,35 +380,13 @@ ddi:CorrespondenceType {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetype>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes the commonalities and differences between two members using a textual description of both commonalities and differences plus an optional coding of the type of commonality.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-cm:CorrespondenceType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+cm:CorrespondenceType"""^^mark:
 
 
 
@@ -679,35 +406,9 @@ ddi:CustomValueRelation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvaluerelation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Defines the relation between CustomValues
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Defines the relation between CustomValues"""^^mark:
 
 
 
@@ -732,35 +433,17 @@ ddi:Date {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/date>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides the structure of a single Date expressed in an ISO date structure along with equivalent expression in any number of non-ISO formats. While it supports the use of the ISO time interval structure this should only be used when the exact date is unclear (i.e. occurring at some point in time between the two specified dates) or in specified applications. Ranges with specified start and end dates should use the DateRange as a datatype. Commonly uses property names include: eventDate, issueDate, and releaseDate.
-
-Examples
-==========
-
 
 Explanatory notes
 ===================
 Date allows one of a set of date-time (YYYY-MM-DDThh:mm:ss), date (YYYY-MM-DD), year-month (YYYY-MM), year (YYYY), time (hh:mm:ss) and duration (PnYnMnDnHnMnS), or time interval (YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss, YYYY-MM-DDThh:mm:ss/PnYnMnDnHnMnS, PnYnMnDnHnMnS/ YYYY-MM-DDThh:mm:ss) which is formatted according to ISO 8601 and backed supported by regular expressions in the BaseDateType. Time Zone designation and negative/positive prefixes are allowed as are dates before and after 0000 through 9999.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:DateType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:DateType"""^^mark:
 
 ddi:DateRange {
   ddi:startDate @ddi:Date ?
@@ -770,35 +453,13 @@ ddi:DateRange {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/daterange>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Expresses a date/time range using a start date and end date (both with the structure of Date and supporting the use of ISO and non-ISO date structures). Use in all locations where a range of dates is required, i.e. validFor, embargoPeriod, collectionPeriod, etc.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:DateType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:DateType"""^^mark:
 
 ddi:DescribedRelationship {
   ddi:rationale @ddi:InternationalStructuredString ?
@@ -807,35 +468,13 @@ ddi:DescribedRelationship {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/describedrelationship>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Relationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:RelationshipType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:RelationshipType"""^^mark:
 
 ddi:DoubleNumberRangeValue {
   ddi:isInclusive xsd:boolean ?
@@ -845,35 +484,13 @@ ddi:DoubleNumberRangeValue {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/doublenumberrangevalue>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes a bounding value for a number range expressed as an xs:double.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:DoubleNumberRangeValueType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:DoubleNumberRangeValueType"""^^mark:
 
 ddi:DynamicText {
   ddi:textContent @ddi:DynamicTextContent +
@@ -885,35 +502,13 @@ ddi:DynamicText {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictext>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Structure supporting the use of dynamic text, where portions of the textual content change depending on external information (pre-loaded data, response to an earlier query, environmental situations, etc.).
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:DynamicTextType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:DynamicTextType"""^^mark:
 
 ABSTRACT ddi:DynamicTextContent {
   ddi:purpose @ddi:InternationalStructuredString ?
@@ -923,35 +518,13 @@ ABSTRACT ddi:DynamicTextContent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/dynamictextcontent>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Abstract type existing as the head of a substitution group. May be replaced by any valid member of the substitution group TextContent. Provides the common property of purpose to all members using TextContent as an extension base.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:TextContentType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:TextContentType"""^^mark:
 
 
 
@@ -979,35 +552,13 @@ ddi:ExternalControlledVocabularyEntry {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalcontrolledvocabularyentry>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Allows for unstructured content which may be an entry from an externally maintained controlled vocabulary.If the content is from a controlled vocabulary provide the code value of the entry, as well as a reference to the controlled vocabulary from which the value is taken. Provide as many of the identifying attributes as needed to adequately identify the controlled vocabulary. Note that DDI has published a number of controlled vocabularies applicable to several locations using the ExternalControlledVocabularyEntry structure. If the code portion of the controlled vocabulary entry is language specific (i.e. a list of keywords or subject headings) use language to specify that language. In most cases the code portion of an entry is not language specific although the description and usage may be managed in one or more languages. Use of shared controlled vocabularies helps support interoperability and machine actionability.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:CodeValueType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:CodeValueType"""^^mark:
 
 
 
@@ -1033,35 +584,13 @@ ddi:Image {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/image>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A reference to an image, with a description of its properties and type.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:ImageType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:ImageType"""^^mark:
 
 
 
@@ -1076,35 +605,13 @@ ddi:InstanceVariableIndicator {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariableindicator>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Allows for the identification of the InstanceVariable specifically as a member and optionally provides an index for the member within an ordered array. 
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-Note if multiple types of Variables may be included in a collection use VariableIndicator.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Note if multiple types of Variables may be included in a collection use VariableIndicator."""^^mark:
 
 
 
@@ -1120,35 +627,17 @@ ddi:InternationalIdentifier {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalidentifier>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An identifier whose scope of uniqueness is broader than the local archive. Common forms of an international identifier are ISBN, ISSN, DOI or similar designator. Provides both the value of the identifier and the agency who manages it.
-
-Examples
-==========
-
 
 Explanatory notes
 ===================
 For use in Annotation or other citation format. 
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:InternationalIdentifierType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:InternationalIdentifierType"""^^mark:
 
 ddi:InternationalString {
   ddi:languageSpecificString {
@@ -1169,35 +658,13 @@ ddi:InternationalString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalstring>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Packaging structure for multiple language versions of the same string content. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages. The language designation goes on the individual String.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:InternationalStringType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:InternationalStringType"""^^mark:
 
 ddi:InternationalStructuredString {
   ddi:languageSpecificStructuredString @ddi:LanguageSpecificStructuredStringType +
@@ -1205,35 +672,13 @@ ddi:InternationalStructuredString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/internationalstructuredstring>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Packaging structure for multiple language versions of the same string content, for objects that allow for internal formatting using XHTML tags. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:StructuredStringType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:StructuredStringType"""^^mark:
 
 ddi:LabelForDisplay EXTENDS ddi:InternationalStructuredString {
   ddi:locationVariant @ddi:ExternalControlledVocabularyEntry ?
@@ -1245,35 +690,13 @@ ddi:LabelForDisplay EXTENDS ddi:InternationalStructuredString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/labelfordisplay>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A structured display label. Label provides display content of a fully human readable display for the identification of the object. 
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:LabelType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:LabelType"""^^mark:
 
 
 
@@ -1295,35 +718,13 @@ ddi:LanguageSpecificStructuredStringType {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/languagespecificstructuredstringtype>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Supports the optional use of XHTML formatting tags within the string structure. XHTML tag content is controlled by the schema, see http://www.w3.org/1999/xhtml/ for a detailed list of available tags. Language of the string is defined by the attribute language. The content can be identified as translated (isTranslated), subject to translation (isTranslatable), the result of translation from one or more languages (translationSourceLanguages), and carry an indication whether or not it should be treated as plain text (isPlain).
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:ContentType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:ContentType"""^^mark:
 
 
 
@@ -1338,35 +739,13 @@ ddi:LiteralText EXTENDS ddi:DynamicTextContent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/literaltext>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Literal (static) text to be used in the instrument using the StructuredString structure plus an attribute allowing for the specification of white space to be preserved.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:LiteralTextType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:LiteralTextType"""^^mark:
 
 
 
@@ -1376,35 +755,13 @@ ddi:LocationName EXTENDS ddi:ObjectName {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/locationname>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Name of the location using the DDI Name structure and the ability to add an effective date.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-a:LocationNameType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+a:LocationNameType"""^^mark:
 
 
 
@@ -1424,14 +781,9 @@ ddi:Map {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/map>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes the correspondence between concepts in a correspondence table related to one or more Statistical Classifications.
-
-Examples
-==========
-
 
 Explanatory notes
 ===================
@@ -1455,22 +807,9 @@ widowed                                          \"
 divorced                                          \"
 married                                            married
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Map
-									"""^^mark:
+Map"""^^mark:
 
 
 
@@ -1484,35 +823,13 @@ ddi:NumberRangeValue {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numberrangevalue>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes a bounding value for a number range expressed as an xs:demical.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:NumberRangeValueType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:NumberRangeValueType"""^^mark:
 
 ddi:ObjectName {
   ddi:content xsd:string ?
@@ -1522,35 +839,17 @@ ddi:ObjectName {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/objectname>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A standard means of expressing a Name for a class object.  A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles.
-
-Examples
-==========
-
 
 Explanatory notes
 ===================
 USE in Model: In general the property name should be \"name\" as it is the name of the class object which contains it. Use a specific name (i.e. xxxName) only when naming something other than the class object which contains it.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:NameType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:NameType"""^^mark:
 
 
 
@@ -1562,8 +861,7 @@ ddi:PairedExternalControlledVocabularyEntry {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/pairedexternalcontrolledvocabularyentry>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A tightly bound pair of items from an external controlled vocabulary. The extent property describes the extent to which the parent term applies for the specific case. 
 
@@ -1571,28 +869,7 @@ Examples
 ==========
 When used to assign a role to an actor within a specific activity this term would express the degree of contribution. Contributor with Role=Editor and extent=Lead.
 
-Alternatively. the term might be a controlled vocabulary from a list of controlled vocabularies, e.g. the Generic Longitudinal Business Process Model (GLBPM) in a list that could include other business process model frameworks. In this context the extent becomes the name of a business process model task, e.g. \"integrate data\" from the GLBPM.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Alternatively. the term might be a controlled vocabulary from a list of controlled vocabularies, e.g. the Generic Longitudinal Business Process Model (GLBPM) in a list that could include other business process model frameworks. In this context the extent becomes the name of a business process model task, e.g. \"integrate data\" from the GLBPM."""^^mark:
 
 
 
@@ -1610,35 +887,13 @@ ddi:Polygon {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/polygon>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A closed plane figure bounded by three or more line segments, representing a geographic area. Contains either the URI of the file containing the polygon, a specific link code for the shape within the file, and a file format, or a minimum of 4 points to describe the polygon in-line. Note that the first and last point must be identical in order to close the polygon. A triangle has 4 points. A geographic time designating the time period that the shape is valid should be included. If the date range is unknown use a SingleDate indicating a date that the shape was known to be valid.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:PolygonType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:PolygonType"""^^mark:
 
 
 
@@ -1648,35 +903,13 @@ ddi:RangeValue EXTENDS ddi:ValueString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rangevalue>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes a bounding value of a string.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:RangeValueType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:RangeValueType"""^^mark:
 
 
 
@@ -1692,35 +925,13 @@ ddi:SpatialCoordinate {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialcoordinate>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Lists the value and format type for the coordinate value. Note that this is a single value (X coordinate or Y coordinate) rather than a coordinate pair.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:SpatialCoordinateType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:SpatialCoordinateType"""^^mark:
 
 
 
@@ -1732,35 +943,13 @@ ddi:SpatialPoint {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialpoint>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A geographic point consisting of an X and Y coordinate. Each coordinate value is expressed separately providing its value and format.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:PointType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:PointType"""^^mark:
 
 ddi:SpatialRelationship {
   ddi:hasSpatialObjectPair @ddi:SpatialObjectPairs ?
@@ -1773,35 +962,9 @@ ddi:SpatialRelationship {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/spatialrelationship>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Used to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Used to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date."""^^mark:
 
 ddi:StandardKeyValuePair {
   ddi:attributeKey @ddi:ExternalControlledVocabularyEntry ?
@@ -1811,35 +974,13 @@ ddi:StandardKeyValuePair {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/standardkeyvaluepair>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:StandardKeyValuePairType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:StandardKeyValuePairType"""^^mark:
 
 ddi:Statistic {
   ddi:isWeighted xsd:boolean ?
@@ -1853,35 +994,13 @@ ddi:Statistic {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statistic>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The value of the statistic expressed as an xs:decimal and/or xs:double. Indicates whether it is weighted value and the computation base.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-pi:StatisticType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+pi:StatisticType"""^^mark:
 
 
 
@@ -1909,8 +1028,7 @@ ddi:TypedString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/typedstring>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 TypedString combines a typeOfContent with a content defined as a simple string. May be used wherever a simple string needs to support a type definition to clarify its content
 
@@ -1920,24 +1038,7 @@ content is a regular expression and typeOfContent is used to define the syntax u
 
 Explanatory notes
 ===================
-This is a generic type + string where property name and documentation should be used to define any specification for the content. If international structured string content is required use TypedStructuredString 
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+This is a generic type + string where property name and documentation should be used to define any specification for the content. If international structured string content is required use TypedStructuredString"""^^mark:
 
 
 
@@ -1951,35 +1052,13 @@ ddi:ValueString {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuestring>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The Value expressed as an xs:string with the ability to preserve whitespace if critical to the understanding of the content. 
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:ValueType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:ValueType"""^^mark:
 
 
 
@@ -1999,35 +1078,9 @@ ddi:ViewpointRoleRelation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrolerelation>
 // shexmi:package "ComplexDataTypes"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Defines complex relationship between ViewpointRoles
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Defines complex relationship between ViewpointRoles"""^^mark:
 
 
 
@@ -2052,8 +1105,7 @@ ddi:Category EXTENDS ddi:Concept {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/category>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Concept whose role is to define and measure a characteristic.
 
@@ -2065,22 +1117,9 @@ Explanatory notes
 ===================
 The Category is a Concept. It can have multiple name and display label properties as well as a definition and some descriptive text. As a \"Signified\" class there can be one or more \"Sign\" classes (e.g. a Code) that denotes it with some representation. The relationship is from the Code to the Category.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-l:CategoryType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+l:CategoryType"""^^mark:
 
 
 
@@ -2094,8 +1133,7 @@ ddi:Concept EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/concept>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Unit of thought differentiated by characteristics [GSIM 1.1]
 
@@ -2107,22 +1145,13 @@ Explanatory notes
 ===================
 Many DDI4 classes are subtypes of the Concept class including Category, Universe, UnitType, ConceptualVariable. This class realizes the pattern class Signified and as such a Concept can be denoted by a Sign.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 c:ConceptType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Concept
-									"""^^mark:
+Concept"""^^mark:
 
 
 
@@ -2164,8 +1193,7 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystem>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A set of Concepts structured by the relations among them. [GSIM 1.1] 
 
@@ -2177,22 +1205,13 @@ Explanatory notes
 ===================
 Note that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 c:ConceptSchemeType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Concept System
-									"""^^mark:
+Concept System"""^^mark:
 
 ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2207,8 +1226,7 @@ ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystemcorrespondence>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Relationship between 2 or more ConceptSystems described through mapping similarity relationships between their member Concepts.
 
@@ -2218,24 +1236,7 @@ Correspondence between the concepts used to define the populations in the census
 
 Explanatory notes
 ===================
-Describes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Describes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies."""^^mark:
 
 ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2245,8 +1246,7 @@ ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptualdomain>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Set of Concepts, both sentinel and substantive, that can be described by either enumeration or by an expression.
 
@@ -2256,24 +1256,7 @@ Substantive: Housing Unit Tenure - Owned, Rented, Vacant; Sentinel: Non-response
 
 Explanatory notes
 ===================
-Intent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept.  
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Intent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept."""^^mark:
 
 ddi:ConceptualVariable EXTENDS ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2287,8 +1270,7 @@ ddi:ConceptualVariable EXTENDS ddi:Concept {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptualvariable>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The use of a Concept as a characteristic of a UnitType intended to be measured
 
@@ -2302,22 +1284,13 @@ Explanatory notes
 ===================
 Note that DDI varies from GSIM in the use of a UnitType rather than a Universe. \"The use of a Concept as a characteristic of a Universe intended to be measured\" [GSIM 1.1]
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 c:ConceptualVariableType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Variable
-									"""^^mark:
+Variable"""^^mark:
 
 ddi:InstanceVariable EXTENDS ddi:RepresentedVariable {
   ddi:variableRole @ddi:InternationalStructuredString ?
@@ -2335,8 +1308,7 @@ ddi:InstanceVariable EXTENDS ddi:RepresentedVariable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancevariable>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The use of a Represented Variable within a Data Set.  The InstanceVariable describes actual instances of data that have been collected. 
 
@@ -2354,22 +1326,9 @@ Explanatory notes
 The InstanceVariable class inherits all of the properties and relationships of the RepresentedVariable (RV) class and, in turn, the ConceptualVariable (CV) class. This means that an InstanceVariable can be completely populated without the need to create an associated RepresentedVariable or ConceptualVariable. If, however, a user wishes to indicate that a particular InstanceVariable is patterned after a particular RepresentedVariable or a particular ConceptualVariable that may be indicated by including a relationship to the RV and or CV. Including these references is an important method of indicating that multiple InstanceVariables have the same representation, measure the same concept, and are drawn from the same Universe. If two InstanceVariables of a person's height reference the same RepresentedVariable. This indicates that they are intended to: be measured with the same unit of measurement, have the same intended data type, have the same SubstantativeValueDomain, use a SentinelValueDomain drawn from the same set of SentinelValueDomains, have the same sentinel (missing value) concepts, and draw their Population from the same Universe. In other words, the two InstanceVariables should be comparable. 
 
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Instance Variable
-									"""^^mark:
+Instance Variable"""^^mark:
 
 ddi:Population EXTENDS ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2385,8 +1344,7 @@ ddi:Population EXTENDS ddi:Concept {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/population>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Set of specific units (people, entities, objects, events) with specification of time and geography.
 
@@ -2400,22 +1358,9 @@ Explanatory notes
 ===================
 Population is the most specific in the conceptually narrowing hierarchy of UnitType, Universe and Population. Several Populations having differing time and or geography may specialize the same Universe.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Population
-									"""^^mark:
+Population"""^^mark:
 
 ddi:RepresentedVariable EXTENDS ddi:ConceptualVariable {
   ddi:unitOfMeasurement xsd:string ?
@@ -2433,8 +1378,7 @@ ddi:RepresentedVariable EXTENDS ddi:ConceptualVariable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/representedvariable>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A combination of a characteristic of a universe to be measured and how that measure will be represented.
 
@@ -2447,29 +1391,15 @@ Explanatory notes
 ===================
 Extends from ConceptualVariable and can contain all descriptive fields without creating a ConceptualVariable. By referencing a ConceptualVariable it can indicate a common relationship with RepresentedVariables expressing the same characteristic of a universe measured in another way, such as Age of Persons in hours rather than years. RepresentedVariable constrains the coverage of the UnitType to a specific Universe. In the above case the Universe with the measurement of Age in hours may be constrained to Persons under 5 days (120 hours old). RepresentedVariable can define sentinel values for multiple storage systems which have the same conceptual domain but specialized value domains.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-l:RepresentedVariableType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+l:RepresentedVariableType"""^^mark:
 
 ddi:SentinelConceptualDomain EXTENDS ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sentinelconceptualdomain>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Description or list of possible sentinel concepts , e.g. missing values.
 
@@ -2479,33 +1409,15 @@ Refused,
 Don't know, 
 Lost in processing
 
-Explanatory notes
-===================
-
-
 Synonyms
 ==========
-missing categories
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+missing categories"""^^mark:
 
 ddi:SubstantiveConceptualDomain EXTENDS ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/substantiveconceptualdomain>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Set of valid Concepts. The Concepts can be described by either enumeration or by an expression.
 
@@ -2520,22 +1432,9 @@ An example might be the conceptual domain for a variable representing self-ident
 A conceptual domain might be described through a ValueAndConceptDescription’s description property of “a real number greater than 0” or through a more formal logicalExpression of “(all reals x such that x >0) “. Even in the described case, what is being described are conceptual, not the symbols used to represent the values. This may be a subtle distinction, but allows specifying that the same numeric value might be represented by 32 bits or by 64 bits or by an Arabic numeral or a Roman numeral.
 
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Conceptual Domain
-									"""^^mark:
+Conceptual Domain"""^^mark:
 
 ddi:Unit EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2546,8 +1445,7 @@ ddi:Unit EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unit>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The object of interest in a process step related to the collection or use of observational data.
 
@@ -2563,22 +1461,9 @@ In a big data table each row represents a unit/variable double. Together a unit 
 A big data table is sometimes referred to as a column-oriented data store whereas a traditional database is sometimes referred to as a row-oriented data store. The unit plays an identifier role in both types of data stores.
 
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Unit
-									"""^^mark:
+Unit"""^^mark:
 
 ddi:UnitType EXTENDS ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -2589,8 +1474,7 @@ ddi:UnitType EXTENDS ddi:Concept {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unittype>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Unit Type is a class of objects of interest.
 
@@ -2608,18 +1492,9 @@ Synonyms
 ==========
 Object Class [ISO11179]
 
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Unit Type
-									"""^^mark:
+Unit Type"""^^mark:
 
 ddi:Universe EXTENDS ddi:Concept {
   ddi:isInclusive xsd:boolean ?
@@ -2633,8 +1508,7 @@ ddi:Universe EXTENDS ddi:Concept {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/universe>
 // shexmi:package "Conceptual"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A defined class of people, entities, events, or objects, with no specification of time and geography, contextualizing a Unit Type
 
@@ -2652,22 +1526,13 @@ If the Universe consist of people a number of factors may be used in defining me
 
 Not to be confused with Population, which includes the specification of time and geography.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 c:UniverseType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Population
-									"""^^mark:
+Population"""^^mark:
 
 
 
@@ -2692,36 +1557,13 @@ ddi:AlgorithmOverview EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/algorithmoverview>
 // shexmi:package "SimpleMethodologyOverview"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 High level, descriptive, human informative, algorithm statement used to describe the overall methodology. 
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-This would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+This would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation."""^^mark:
 
 ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:subectOfDesign @ddi:ExternalControlledVocabularyEntry ?
@@ -2736,37 +1578,14 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designoverview>
 // shexmi:package "SimpleMethodologyOverview"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 High level, descriptive, human informative, design statement The design may be used to specify how a process will be performed in general. This would most commonly be used in a Codebook along with an AlgorithmOverview and a MethodologyOverview. The design informs a specific or implemented process as to its general parameters. Supports specification of any realization of Goal. 
 
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-Allows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View.
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Allows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View."""^^mark:
 
 ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:subjectOfMethodology @ddi:ExternalControlledVocabularyEntry ?
@@ -2786,8 +1605,7 @@ ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/methodologyoverview>
 // shexmi:package "SimpleMethodologyOverview"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 High level, descriptive, human informative methodology statement used to describe the overall methodology, identify related design, algorithm, and process information. A methodology is normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work. 
 
@@ -2801,24 +1619,7 @@ The target of the relationship from Study: \"hasMethodology\"
 Explanatory notes
 ===================
 This would most commonly be used in a Codebook along with an AlgorithmOverview and a DesignOverview. Note that Process may be described in more detail than a high level overview.
-Note that the algorithm may be implemented by multiple processes which are not limited to any specific type of Process . This can be constrained by the inclusion of only specific realizations of Process within a Functional View. Note that this MethodologyOverview can be used as a collective description of specific methodologies used by a Study or other broad set of metadata.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Note that the algorithm may be implemented by multiple processes which are not limited to any specific type of Process . This can be constrained by the inclusion of only specific realizations of Process within a Functional View. Note that this MethodologyOverview can be used as a collective description of specific methodologies used by a Study or other broad set of metadata."""^^mark:
 
 
 # END SimpleMethodologyOverview Package
@@ -2870,8 +1671,7 @@ ddi:GeographicUnit EXTENDS ddi:Unit {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunit>
 // shexmi:package "GeographicClassification"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A specific geographic unit of a defined Unit Type. A geographic unit may change its name, composition, or geographic extent over time. This may be tracked by versioning the content of the geographic unit. Normally a new version of a geographic unit would have a geographic (spatial) overlap with its previous version (a city annexing new area). A geographic unit ends when it is no longer a unit of the same unit type.
 
@@ -2879,26 +1679,9 @@ Examples
 ==========
 The State of Minnesota from 1858 to date where the Unit Type is a State as defined by the United States Census Bureau. It has a geographic extent and supersedes a portion of the Territory of Minnesota and a portion of the Territory of Wisconsin. Minnesota territory had both a broader geographic extent, different Unit Type, and earlier time period (1849-1858) as did the Territory of Wisconsin. 
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:GeographicLocationType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:GeographicLocationType"""^^mark:
 
 ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
   ddi:contains {
@@ -2950,35 +1733,9 @@ ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunitclassification>
 // shexmi:package "GeographicClassification"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Describes the classification of specific geographic units into a classification system. As a subtype of Code List it can be used directly for the description of a value domain.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Describes the classification of specific geographic units into a classification system. As a subtype of Code List it can be used directly for the description of a value domain."""^^mark:
 
 
 
@@ -3034,35 +1791,13 @@ ddi:GeographicUnitTypeClassification EXTENDS ddi:CodeList {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/geographicunittypeclassification>
 // shexmi:package "GeographicClassification"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A structured collection of Unit Types defining a geographic structure. As a subtype of CodeList it may be used directly to describe a value domain.
 
 Examples
 ==========
-Country--State--County
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Country--State--County"""^^mark:
 
 
 # END GeographicClassification Package
@@ -3079,35 +1814,13 @@ ddi:SamplingAlgorithm EXTENDS ddi:AlgorithmOverview {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingalgorithm>
 // shexmi:package "SamplingMethodology"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Generic description of a sampling algorithm expressed by a Sampling Design and implemented by a Sampling Process. May include common algebraic formula or statistical package instructions (use of specific selection models).
 
 Examples
 ==========
-Random Sample; Stratified Random Sample
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Random Sample; Stratified Random Sample"""^^mark:
 
 
 
@@ -3141,8 +1854,7 @@ ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocedure>
 // shexmi:package "SamplingMethodology"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The Sampling Procedure describes the population being sampled, the sampling frame and the sampling plan including steps and sub steps by referencing the universe, sample frames and sampling plans described in schemes. Target sample sizes for each stage can be noted as well as the process for determining sample size, the date of the sample and the person or organization responsible for drawing the sample.
 
@@ -3152,24 +1864,7 @@ Census of Population and Housing, 1980 Summary Tape File 4, chapter on Technical
 
 Explanatory notes
 ===================
-This is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+This is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample."""^^mark:
 
 ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
@@ -3190,8 +1885,7 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocess>
 // shexmi:package "SamplingMethodology"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides the details of the process used to apply the sampling design and obtain the sample. Sampling Process contains a Workflow Step which provides the constituents of a Workflow. It can be a composition (a set of Control Constructs) or atomic (an Act) and may be performed by a service. This allows the use of existing Workflow models to express various sampling process actions. Sampling Frames and Sample Population can be used as designated Inputs or Outputs using Parameters.
 
@@ -3199,28 +1893,7 @@ Examples
 ==========
 A Split which takes a sampling stage and divides the sample frame into different subsets. A different sampling technique is applied to each subset. Once a split occurs each subset can have stages underneath, and the number of states under each split subset may differ.
 A Stage is the application of a single sampling algorithm applied to a sampling frame. For instance, the US Current Population Survey samples geographic areas first before identifying household to contact within each of those areas.
-A Stratification of a stage into multiple subsets. Each stratified group will be sampled using the same sampling approach. For example stratifying a state by ZIP Code areas in each of 5 mean income quintiles and then doing a random sample of the households in a set of Zip Codes. Allows for oversampling of identified subpopulations.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A Stratification of a stage into multiple subsets. Each stratified group will be sampled using the same sampling approach. For example stratifying a state by ZIP Code areas in each of 5 mean income quintiles and then doing a random sample of the households in a set of Zip Codes. Allows for oversampling of identified subpopulations."""^^mark:
 # END SamplingMethodology Package
 
 
@@ -3417,35 +2090,9 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/controlledvocabulary>
 // shexmi:package "CustomMetadata"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-The specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+The specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries."""^^mark:
 
 ddi:CustomInstance EXTENDS ddi:Identifiable {
   ddi:name @ddi:ObjectName *
@@ -3508,8 +2155,7 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/custominstance>
 // shexmi:package "CustomMetadata"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A set of CustomValues to be attached to some object.
 
@@ -3517,28 +2163,7 @@ Examples
 ==========
 A set of OMB required information about a question.
 
-The set of openEHR protocol information to be attached to a blood pressure Capture
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+The set of openEHR protocol information to be attached to a blood pressure Capture"""^^mark:
 
 ddi:CustomItem EXTENDS ddi:AnnotatedIdentifiable {
   ddi:maxOccurs xsd:integer ?
@@ -3553,8 +2178,7 @@ ddi:CustomItem EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customitem>
 // shexmi:package "CustomMetadata"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A custom item description. This allows the definition of an item which is a member of a CustomStructure.
 It defines the minimum and maximum number of occurrences and representation of a CustomValue.
@@ -3567,24 +2191,7 @@ BloodPressureCuffSize - the size of a blood pressure cuff specified for a partic
 
 Explanatory notes
 ===================
-This definition will be referenced by a CustomValue when recording a key,value instance
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+This definition will be referenced by a CustomValue when recording a key,value instance"""^^mark:
 
 
 
@@ -3600,8 +2207,7 @@ ddi:CustomValue EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/customvalue>
 // shexmi:package "CustomMetadata"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An instance of a  key, value pair for a  particular  key.
 
@@ -3609,28 +2215,7 @@ Examples
 ==========
 OMBBurden,\"High\"
 
-openEHRBPposition, \"upper arm\"
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+openEHRBPposition, \"upper arm\""""^^mark:
 
 ddi:VocabularyEntry EXTENDS ddi:AnnotatedIdentifiable {
   ddi:entryTerm @ddi:InternationalStructuredString ?
@@ -3640,35 +2225,13 @@ ddi:VocabularyEntry EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/vocabularyentry>
 // shexmi:package "CustomMetadata"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 One entry term and its definition in an ordered list comprising a controlled vocabulary.
 
 Examples
 ==========
-aunt - The female sibling of a parent
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+aunt - The female sibling of a parent"""^^mark:
 
 
 # END CustomMetadata Package
@@ -3750,8 +2313,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicaldataset>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The information needed for understanding the physical structure of data coming from a file or other source. A StructureDescription also points to the Data Store it physically represents.
 
@@ -3763,22 +2325,9 @@ Explanatory notes
 ===================
 Multiple styles of structural description are supported: including describing files as unit-record (UnitSegmentLayout) files; describing cubes; and describing event-history (spell) data.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-p:PhysicalDataProductType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+p:PhysicalDataProductType"""^^mark:
 
 
 
@@ -3821,8 +2370,7 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegment>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A description of each physical storage segment required to completely cover the logical record. A logical record may be stored in one or more segments housed hierarchically in a single file or in separate data files. All logical records have at least one segment.
 
@@ -3835,26 +2383,9 @@ The file below has four InstanceVariables: PersonId, SegmentId, AgeYr, HeightCm.
 2 b 175
 
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-p:PhysicalRecordSegmentType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+p:PhysicalRecordSegmentType"""^^mark:
 
 ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isDelimited xsd:boolean
@@ -3941,8 +2472,7 @@ ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The PhysicalSegmentLayout is an abstract class used as an extension point in the description of the different layout styles of data structure description.
 
@@ -3952,32 +2482,13 @@ Examples include UnitSegmentLayouts, event data layouts, and cube layouts (e.g. 
 
 Explanatory notes
 ===================
-A PhysicalLayout is a physical description (EventLayout, UnitSegmentLayout, or CubeLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical representation of each related Instance Variable.
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A PhysicalLayout is a physical description (EventLayout, UnitSegmentLayout, or CubeLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical representation of each related Instance Variable."""^^mark:
 
 ABSTRACT ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Defines the location of a segment in a DataStore (e.g. a text file). This is abstract since there are many different ways to describe the location of a segment - character counts, start and end times, etc.
 
@@ -3987,24 +2498,7 @@ A segment of text in a plain text file beginning at character 3 and ending at ch
 
 Explanatory notes
 ===================
-While this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+While this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve."""^^mark:
 
 ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
   ddi:startLine xsd:integer ?
@@ -4020,8 +2514,7 @@ ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/segmentbytext>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Defines the location of a segment of text through character, and optionally line, counts. An adequate description will always include a startCharacterPosition and then may include an endCharacterPosition or a characterLength.
 If StartLine is specified, the character counts begin within that line.
@@ -4032,35 +2525,13 @@ Examples
 ==========
 The segment beginning at line 3, character 4 and ending at line 27 character 13.
 Alternatively the segment beginning at character 257 and ending at character 1350 of the whole body of text.
-StartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12. 
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+StartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12."""^^mark:
 
 ddi:UnitSegmentLayout EXTENDS ddi:PhysicalSegmentLayout {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unitsegmentlayout>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 UnitSegmentLayout supports the description of unit-record (\"wide\") data sets, where each row in the data set provides the same group of values for variables all relating to a single unit. Each logical column will contain data relating to the values for a single variable. 
 
@@ -4076,24 +2547,7 @@ PersonId,AgeYr,HeightCm
 
 Explanatory notes
 ===================
-This is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable. 
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+This is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable."""^^mark:
 
 ddi:ValueMapping EXTENDS ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry ?
@@ -4127,8 +2581,7 @@ ddi:ValueMapping EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuemapping>
 // shexmi:package "FormatDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides physical characteristics for an InstanceVariable as part of a PhysicalSegmentLayout
 
@@ -4139,25 +2592,7 @@ A variable \"age\" might be represented in a file as a string with a maximum len
 Explanatory notes
 ===================
 An InstanceVariable has details of value domain and datatype, but will not have the final details of how a value is physically represented in a data file. A variable for height, for example, may be represented as a real number, but may be represented as a string in multiple ways. The decimal separator might be, for example a period or a comma. The string representing the value of a payment might be preceded by a currency symbol. The same numeric value might be written as “1,234,567” or “1.234567 E6”. A missing value might be written as “.”, “NA”, “.R” or as “R”. 
-The ValueMapping describes how the value of an InstanceVariable is physically expressed. The properties of the ValueMapping as intended to be compatible with the W3C Metadata Vocabulary for Tabular Data (https://www.w3.org/TR/tabular-metadata/ ) as well as common programming languages and statistical packages. The “format” property, for example can draw from an external controlled vocabulary such as the set of formats for Stata, SPSS, or SAS.
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+The ValueMapping describes how the value of an InstanceVariable is physically expressed. The properties of the ValueMapping as intended to be compatible with the W3C Metadata Vocabulary for Tabular Data (https://www.w3.org/TR/tabular-metadata/ ) as well as common programming languages and statistical packages. The “format” property, for example can draw from an external controlled vocabulary such as the set of formats for Stata, SPSS, or SAS."""^^mark:
 # END FormatDescription Package
 
 
@@ -4319,8 +2754,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/study>
 // shexmi:package "StudyRelated"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Study is the conceptual anchor for an individual collection activity resulting in a data set or data file. It can be both a part of a StudySeries as a wave etc. or an unrelated activity like a single survey project.
 
@@ -4332,57 +2766,18 @@ Explanatory notes
 ===================
 The Study class brings together many properties and relationships describing a set of data – coverage, kind of data, methodology, citation information, access information and more.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-s:StudyUnitType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+s:StudyUnitType"""^^mark:
 
 ddi:StudyControl EXTENDS ddi:Act {
   ddi:hasStudy @ddi:Study *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studycontrol>
 // shexmi:package "StudyRelated"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-StudyControl references a Study. StudyControl enables the representation of a research protocol at the Study level. [If the only purpose of the object is to carry a Study, it should be seriously considered for melting with another object. Modeling rules state that any object needs to have a reality of its own. Carrying another object is not a reality. If I misunderstood, please clarify the description instead]
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+StudyControl references a Study. StudyControl enables the representation of a research protocol at the Study level. [If the only purpose of the object is to carry a Study, it should be seriously considered for melting with another object. Modeling rules state that any object needs to have a reality of its own. Carrying another object is not a reality. If I misunderstood, please clarify the description instead]"""^^mark:
 
 
 
@@ -4426,8 +2821,7 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyseries>
 // shexmi:package "StudyRelated"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A collection of studies which can be structured as a simple sequence, or with a more complex structure.
 
@@ -4439,24 +2833,7 @@ Explanatory notes
 ===================
 A set of studies may be defined in many ways. A study may be repeated over time. One or more studies may attempt to replicate an earlier study. The StudySeries allows for the description of the relationships among a set of studies.
 
-A simple ordered or unordered sequence of studies can be described via the \"contains StudyIndicator\" property. More complex relationships among studies may also be described using the optional \"isStructuredBy StudyRelationsStructure\".
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A simple ordered or unordered sequence of studies can be described via the \"contains StudyIndicator\" property. More complex relationships among studies may also be described using the optional \"isStructuredBy StudyRelationsStructure\"."""^^mark:
 # END StudyRelated Package
 
 
@@ -4465,36 +2842,14 @@ ddi:BusinessAlgorithm EXTENDS ddi:AlgorithmOverview {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessalgorithm>
 // shexmi:package "BusinessWorkflow"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Business Algorithm is used to express the generalized function of the Business Process.
 The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.
 
 Examples
 ==========
-There are several well-established algorithms for performing data anonymization including \"local suppression\", \"global attribute generalization\" and \"k-Anonymization with suppression\" which is a specific combination of the two. An anonymizing business process might implement one of these algorithms.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+There are several well-established algorithms for performing data anonymization including \"local suppression\", \"global attribute generalization\" and \"k-Anonymization with suppression\" which is a specific combination of the two. An anonymizing business process might implement one of these algorithms."""^^mark:
 
 
 
@@ -4525,8 +2880,7 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapipeline>
 // shexmi:package "BusinessWorkflow"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A DataPipeline is a single traversal of the Generic Longitudinal Business Model (GLBPM) and/or the Generic Statistical Business process Model (GSBPM) in the course of a study where a study is either one off or a wave in a StudySeries.
 
@@ -4539,26 +2893,9 @@ Extract Transform and Load (ETL) platforms support data pipelines to move data b
 A prospective DataPipeline gives guidance to data engineers. It is a design pattern. A retrospective DataPipeline documents an ETL data pipeline after the fact.
 
 
-Explanatory notes
-===================
-
-
 Synonyms
 ==========
-Traversal, Data Lifecycle
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Traversal, Data Lifecycle"""^^mark:
 # END BusinessWorkflow Package
 
 
@@ -4567,8 +2904,7 @@ ABSTRACT ddi:Act EXTENDS ddi:WorkflowStep {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/act>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An Act is an indivisible, atomic step, i.e. not composed of other steps. An Act can also be viewed as a terminal node in a hierarchy of Workflow Steps. 
 
@@ -4579,24 +2915,7 @@ GenerationInstructionType from DDI 3..x is an example of an Act extended to incl
 
 Explanatory notes
 ===================
-Act is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Act is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth."""^^mark:
 
 ddi:ComputationAction EXTENDS ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString ?
@@ -4608,8 +2927,7 @@ ddi:ComputationAction EXTENDS ddi:Act {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/computationaction>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides an extensible framework for specific computation or transformation objects.
 
@@ -4619,26 +2937,9 @@ In data processing, a ComputationAction might be a code statement in a code sequ
 
 In data capture, a ComputationAction might takes the form of a question, a measurement or instrument code.
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:ComputationItemType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:ComputationItemType"""^^mark:
 
 ddi:ConditionalControlConstruct EXTENDS ddi:WorkflowStep {
   ddi:condition @ddi:CommandCode ?
@@ -4647,36 +2948,14 @@ ddi:ConditionalControlConstruct EXTENDS ddi:WorkflowStep {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conditionalcontrolconstruct>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Type of WorkflowStep in which the execution flow is determined by one or more conditions.
 
 
 Examples
 ==========
-If-then-else and iterative structures.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+If-then-else and iterative structures."""^^mark:
 
 ddi:IfThenElse EXTENDS ddi:ConditionalControlConstruct {
   ddi:elseIf {
@@ -4689,8 +2968,7 @@ ddi:IfThenElse EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/ifthenelse>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 IfThenElse describes an if-then-else decision type of control construct. If the stated condition is met, then the associated Workflow Sequence in containsSubSeqence is triggered, otherwise the Workflow Sequence that is triggered is the one associated via elseContains.
 
@@ -4706,22 +2984,9 @@ Contains a condition and two associations:
 - another to the Workflow Sequence that is triggered when the condition is false (elseContains). 
 
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:IfThenElseType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:IfThenElseType"""^^mark:
 
 ddi:Loop EXTENDS ddi:ConditionalControlConstruct {
   ddi:initialValue @ddi:CommandCode ?
@@ -4731,8 +2996,7 @@ ddi:Loop EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/loop>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Iterative control structure to be repeated a specified number of times based on one or more conditions. Inside the loop, one or more Workflow Steps are evaluated and processed in the order they appear.
 
@@ -4750,16 +3014,7 @@ ForLoop
 
 DDI 3.2 mapping
 =================
-d:LoopType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:LoopType"""^^mark:
 
 ddi:MetadataDrivenAction EXTENDS ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString ?
@@ -4771,8 +3026,7 @@ ddi:MetadataDrivenAction EXTENDS ddi:Act {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/metadatadrivenaction>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
 
@@ -4790,24 +3044,7 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema."""^^mark:
 
 ddi:Parameter {
   ddi:alias xsd:double ?
@@ -4832,8 +3069,7 @@ ddi:Parameter {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/parameter>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An Input or Output to a Process Step defined by as a unique identifier. It may be a single value or an array. 
 
@@ -4844,31 +3080,13 @@ A computation action may be expecting a numeric array of values [result of loopi
 
 Explanatory notes
 ===================
-When used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+When used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value."""^^mark:
 
 ddi:RepeatUntil EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatuntil>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Iterative control structure to be repeated until a specified condition is met. After each iteration the condition is tested. If the condition is not met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is met, control passes back to the containing Workflow Step.
 
@@ -4876,33 +3094,15 @@ Examples
 ==========
 A RepeatUntil loop is similar to a RepeatWhile loop, except that it tests the Boolean expression after the loop rather than before. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, in a household there is at last one person and a loop might contain a block of person questions. After the first person the last question in the block might be \"Anyone else in the household\"? The RepeatUntil would continue iterating until there was no-one else in the household.
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:RepeatUntilType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:RepeatUntilType"""^^mark:
 
 ddi:RepeatWhile EXTENDS ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatwhile>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Iterative control structure to be repeated while a specified condition is met. Before each iteration the condition is tested. If the condition is met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is not met, control passes back to the containing Workflow Step.
 
@@ -4910,69 +3110,29 @@ Examples
 ==========
 A RepeatWhile loop is similar to a RepeatUntil loop, except that it tests the Boolean expression before the loop rather than after. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, RepeatWhile may be used to pre-test a certain condition like if \"the number of new people in a household is greater than 0\" in which case a block of questions might be asked for each new person.
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:RepeatWhileType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:RepeatWhileType"""^^mark:
 
 ddi:Split EXTENDS ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/split>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The components of a Split consists of a number of process steps to be executed concurrently with partial synchronization. Split completes as soon as all of its component process steps have been scheduled for execution.
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-Supports parallel processing that does not require completion to exit. 
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Supports parallel processing that does not require completion to exit."""^^mark:
 
 ddi:SplitJoin EXTENDS ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/splitjoin>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 SplitJoin consists of process steps that are executed concurrently (execution with barrier synchronization). That is, SplitJoin completes when all of its components processes have completed. 
 
@@ -4982,24 +3142,7 @@ A GANTT chart where a number of processes running parallel to each other are all
 
 Explanatory notes
 ===================
-Supports parallel processing that requires completion of all included process steps to exit.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Supports parallel processing that requires completion of all included process steps to exit."""^^mark:
 
 ddi:StructuredWorkflowSteps EXTENDS ddi:WorkflowStepSequence {
   ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
@@ -5028,35 +3171,13 @@ ddi:StructuredWorkflowSteps EXTENDS ddi:WorkflowStepSequence {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/structuredworkflowsteps>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 This extends the WorkflowStepSequence allowing for a graph structuring of WorkflowSteps. It adds a WorkflowStepRelationStructure which describes the order of Workflow steps in StructuredWorkflowSteps that has multiple entry points and/or multiple exit points and/or, alternatively, a WorkflowStep can have multiple predecessors and/or multiple successors.
 
 Examples
 ==========
-Data Integration might combine multiple data source and make multiple data products. This sequence would have several starting points and terminate in multiple endpoints.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Data Integration might combine multiple data source and make multiple data products. This sequence would have several starting points and terminate in multiple endpoints."""^^mark:
 
 ddi:WorkflowMasterSequence EXTENDS ddi:WorkflowStepSequence {
   ddi:contains {
@@ -5068,8 +3189,7 @@ ddi:WorkflowMasterSequence EXTENDS ddi:WorkflowStepSequence {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowmastersequence>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Allows for the organizing WorkflowStepSequences into a larger MasterSequence. The WorkflowMasterSequence is a succession of WorkflowStepSequences in which one WorkflowStepSequence precedes the next.
 
@@ -5080,24 +3200,7 @@ In a data capture multiple instruments might be administered in a certain order.
 
 Explanatory notes
 ===================
-A WorkflowMasterSequence is a SimpleCollection that is normally ordered. It allows for blocks WorkflowSteps expressed as a WorkflowStepSequence to be ordered sequentially thereby creating a master sequence that is identified by the WorkflowProcess as the overall ordering for the process.  
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A WorkflowMasterSequence is a SimpleCollection that is normally ordered. It allows for blocks WorkflowSteps expressed as a WorkflowStepSequence to be ordered sequentially thereby creating a master sequence that is identified by the WorkflowProcess as the overall ordering for the process."""^^mark:
 
 ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
@@ -5113,35 +3216,13 @@ ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowprocess>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Workflow Process is a realization of Process which identifies the Workflow Step Sequence which contains the WorkflowSteps and their order. It may identify the algorithm that it implements.
 
 Examples
 ==========
-Overall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM).
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Overall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM)."""^^mark:
 
 
 
@@ -5172,8 +3253,7 @@ ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstep>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 One of the constituents of a Workflow. It can be a composition or atomic and might be performed by a Service.
 
@@ -5187,22 +3267,9 @@ An atomic Workflow Step has no Control Constructs -- it's an Act. A composition 
 
 Furthermore, a composition might be a glass box or a black box from the perspective of a service. If a service performs a WorkflowStep, it might invoke just the topmost ControlConstruct -- for example a WorkflowSequence. It may know nothing about the internal workings of the sequence. In this case the WorkflowStep is a black box.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Process Step
-									"""^^mark:
+Process Step"""^^mark:
 
 
 
@@ -5227,8 +3294,7 @@ ddi:WorkflowStepSequence EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstepsequence>
 // shexmi:package "Workflows"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A WorkflowStepSequence is an enumerated (simple) collection of WorkflowSteps.
 
@@ -5247,22 +3313,9 @@ Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:SequenceType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:SequenceType"""^^mark:
 # END Workflows Package
 
 
@@ -5292,35 +3345,13 @@ ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/documentinformation>
 // shexmi:package "Utility"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides a consistent path to identifying information regarding the DDI Document and is automatically available for all Functional Views (/DocumentInformation/Annotation etc.). It covers annotation information, coverage (general, plus specific spatial, temporal, and topical coverage), access information from the producer (persistent access control), access information from the local distributor (Local Access Control), information on related series (i.e. a study done as a series of data capture events over time, qualitative material that is part of a larger set, one of a series of funded data capture activities, etc.), funding information, and other document level information used to identify and discover information about a DDI document regardless of its Functional View type. Use the Annotation at this level to provide the full annotation of the DDI Document. Note that related materials can be entered within the Annotation fields.
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-Annotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance. 
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Annotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance."""^^mark:
 
 ddi:ExternalMaterial EXTENDS ddi:Identifiable {
   ddi:typeOfMaterial @ddi:ExternalControlledVocabularyEntry ?
@@ -5391,8 +3422,7 @@ ddi:ExternalMaterial EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalmaterial>
 // shexmi:package "Utility"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 ExternalMaterial describes the location, structure, and relationship to the DDI metadata instance for any material held external to that instance. This includes citations to such material, an external reference to a URL (or other URI), and a statement about the relationship between the cited ExternalMaterial the contents of the DDI instance. It should be used as follows:as a target object from a relationship which clarifies its role within a class; or as the target of a relatedResource within an annotation.
 
@@ -5405,22 +3435,9 @@ Explanatory notes
 ===================
 Within the DDI model, ExternalMaterial is used as an extension base for specific external materials found such as an External Aid. It is used as a base for specifically related material (e.g. ExternalAid) by creating a relationship whose name clarifies the purpose of the related material.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:OtherMaterialType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:OtherMaterialType"""^^mark:
 
 ddi:FundingInformation EXTENDS ddi:Identifiable {
   ddi:funderRole @ddi:ExternalControlledVocabularyEntry ?
@@ -5433,8 +3450,7 @@ ddi:FundingInformation EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/fundinginformation>
 // shexmi:package "Utility"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides information about the individual, agency and/or grant(s) which funded the described entity. Lists a reference to the agency or individual as described by a DDI Agent, the role of the funder, the grant number(s) and a description of the funding activity.
 
@@ -5442,26 +3458,9 @@ Examples
 ==========
 A \"millionaire grant\" (funding description) from John Beresford Tipton, Jr. (individual). Exploration of the effect of sudden wealth and basis for a television episode (funder role).
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:FundingInformationType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:FundingInformationType"""^^mark:
 # END Utility Package
 
 
@@ -5479,8 +3478,7 @@ ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/authorizationsource>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Identifies the authorizing agency and allows for the full text of the authorization (law, regulation, or other form of authorization).
 
@@ -5498,16 +3496,7 @@ Use for the Case Law, Case Law Description, and Case Law Date properties in Clas
 
 DDI 3.2 mapping
 =================
-r:AuthorizationSourceType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:AuthorizationSourceType"""^^mark:
 
 ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
@@ -5548,8 +3537,7 @@ ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationfamily>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Classification Family is a collection of Classification Series related from a particular point of view. The Classification Family is related by being based on a common Concept (e.g. economic activity).[GSIM1.1]
 
@@ -5561,22 +3549,9 @@ Explanatory notes
 ===================
 Different classification databases may use different types of Classification Families and have different names for the families, as no standard has been agreed upon. [GSIM1.1]
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Classification Family
-									"""^^mark:
+Classification Family"""^^mark:
 
 ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   ddi:releaseDate @ddi:Date ?
@@ -5627,8 +3602,7 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindex>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Classification Index is an ordered list (alphabetical, in code order etc) of Classification Index Entries. A Classification Index can relate to one particular or to several Statistical Classifications. [GSIM Statistical Classification Model]
 
@@ -5641,22 +3615,9 @@ Explanatory notes
 A Classification Index shows the relationship between text found in statistical data sources (responses to survey questionnaires, administrative records) and one or more Statistical Classifications.  A Classification Index may be used to assign the codes for Classification Items to observations in statistical collections. 
 A Statistical Classification is a subtype of Node Set. The relationship between Statistical Classification and Classification Index can also be extended to include the other Node Set types - Code List and Category Set.  [GSIM Statistical Classification Model]  Note that a GSIM Node is the equivalent of a DDI Member and a GSIM Node Set is a DDI Collection.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Classification Index
-									"""^^mark:
+Classification Index"""^^mark:
 
 ddi:ClassificationIndexEntry EXTENDS ddi:AnnotatedIdentifiable {
   ddi:entry @ddi:InternationalString ?
@@ -5668,35 +3629,13 @@ ddi:ClassificationIndexEntry EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindexentry>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Classification Index Entry is a word or a short text (e.g. the name of a locality, an economic activity or an occupational title) describing a type of object/unit or object property to which a Classification Item applies, together with the code of the corresponding Classification Item. Each Classification Index Entry typically refers to one item of the Statistical Classification. Although a Classification Index Entry may be associated with a Classification Item at any Level of a Statistical Classification, Classification Index Entries are normally associated with items at the lowest Level.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Classification Index Entry
-									"""^^mark:
+Classification Index Entry"""^^mark:
 
 ddi:ClassificationItem EXTENDS ddi:Code {
   ddi:isValid xsd:boolean ?
@@ -5720,8 +3659,7 @@ ddi:ClassificationItem EXTENDS ddi:Code {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationitem>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Classification Item represents a Category at a certain Level within a Statistical Classification.
 
@@ -5736,22 +3674,9 @@ A Classification Item defines the content and the borders of the Category. A Uni
 
 This differentiates it from Code which is a kind of Designation, in particular it is an alphanumeric string assigned to stand in place of a category. For example, the letter M might stand for the category Male in the CodeList called Gender.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Classification Item
-									"""^^mark:
+Classification Item"""^^mark:
 
 
 
@@ -5802,8 +3727,7 @@ ddi:ClassificationSeries EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationseries>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Classification Series is an ensemble of one or more Statistical Classifications, based on the same concept, and related to each other as versions or updates. Typically, these Statistical Classifications have the same name.
 
@@ -5812,26 +3736,9 @@ Examples
 ISIC or ISCO
 SIC (with different published versions related to the publication year)
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Classification Series
-									"""^^mark:
+Classification Series"""^^mark:
 
 
 
@@ -5842,8 +3749,7 @@ ddi:Code EXTENDS ddi:Designation {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/code>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.
 
@@ -5857,22 +3763,13 @@ A Code is a kind of Designation, in particular it is the assignment of an alphan
 
 It should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 l:CodeType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Code
-									"""^^mark:
+Code"""^^mark:
 
 ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
@@ -5920,8 +3817,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codelist>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A list of Codes and associated Categories. May be flat or hierarchical. A hierarchical structure may have an indexed order for intended presentation even though the content within levels of the hierarchy are conceptually unordered. For hierarchical structures ClassificationRelationStructure is used to provide additional information on the structure and organization of the categories. Note that a CategorySet can be structured by a ClassificationRelationStructure without the need for associating any Codes with the Categories. This allows for the creation of a CategorySet, for example for a response domain, without an associated CodeList.
 
@@ -5932,26 +3828,13 @@ The codes \"M\" and \"F\" could point to \"Male\" and \"Female\" categories resp
 A CodeList for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers)
 
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 l:CodeListType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Code List
-									"""^^mark:
+Code List"""^^mark:
 
 ddi:CorrespondenceTable EXTENDS ddi:AnnotatedIdentifiable {
   ddi:effectiveDates @ddi:DateRange ?
@@ -5968,8 +3851,7 @@ ddi:CorrespondenceTable EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/correspondencetable>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Correspondence Table expresses relationships between the members within or between StatisticalClassifications.
 
@@ -5981,22 +3863,9 @@ Explanatory notes
 ===================
 CorrespondenceTables are used with Statistical Classifications. For instance, it can relate two versions from the same Classification Series; Statistical Classifications from different Classification Series; a variant and the version on which it is based; or, different versions of a variant. In the first and last examples, the Correspondence Table facilitates comparability over time.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Correspondence Table
-									"""^^mark:
+Correspondence Table"""^^mark:
 
 ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
   ddi:representation @ddi:Signifier ?
@@ -6005,8 +3874,7 @@ ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designation>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A sign denoting a concept.
 
@@ -6018,22 +3886,9 @@ Explanatory notes
 ===================
 The representation of a concept by a sign (e.g., string, pictogram, bitmap) which denotes it. An example is the code M designating the marital status Married, which is a concept. In this context, M means Married.
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Designation
-									"""^^mark:
+Designation"""^^mark:
 
 
 
@@ -6055,8 +3910,7 @@ ddi:LevelStructure EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/levelstructure>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The LevelStructure describes the nesting structure of a hierarchical collection. The levels within the structure begin at the root level '1' and continue as an ordered array through each level of nesting.
 
@@ -6075,22 +3929,13 @@ A Level often is associated with a Concept, which defines it. These correspond t
 
 \"Classification schemes are frequently organized in nested levels of increasing detail. ISCO-08, for example, has four levels: at the top level are ten major groups, each of which contain sub-major groups, which in turn are subdivided in minor groups, which contain unit groups. Even when a classification is not structured in levels (\"flat classification\"), the usual convention, which is adopted here, is to consider that it contains one unique level.\" (http://rdf-vocabulary.ddialliance.org/xkos.html#) Individual classification items organized in a hierarchy may be associated with a specific level.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
 l:LevelType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Level
-									"""^^mark:
+Level"""^^mark:
 
 ddi:SentinelValueDomain EXTENDS ddi:ValueDomain {
   ddi:platformType @ddi:ExternalControlledVocabularyEntry ?
@@ -6101,8 +3946,7 @@ ddi:SentinelValueDomain EXTENDS ddi:ValueDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sentinelvaluedomain>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The Value Domain for a sentinel conceptual domain. Sentinel values are defined in ISO 11404 as
 \"element of a value space that is not completely consistent with a datatype's properties and characterizing operations...\". A common example would be codes for missing values.
@@ -6139,22 +3983,9 @@ In SAS or Stata for example:
 .A = \"greater than or equal to 100 and less than 1000 \"
 
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Enumerated Value Domain
-									"""^^mark:
+Enumerated Value Domain"""^^mark:
 
 ddi:StatisticalClassification EXTENDS ddi:CodeList {
   ddi:releaseDate @ddi:Date ?
@@ -6198,35 +4029,17 @@ ddi:StatisticalClassification EXTENDS ddi:CodeList {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statisticalclassification>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Statistical Classification is a set of Categories which may be assigned to one or more variables registered in statistical surveys or administrative files, and used in the production and dissemination of statistics. The Categories at each Level of the classification structure must be mutually exclusive and jointly exhaustive of all objects/units in the population of interest. (Source: GSIM StatisticalClassification)
-
-Examples
-==========
-
 
 Explanatory notes
 ===================
 The Categories are defined with reference to one or more characteristics of a particular universe of units of observation. A Statistical Classification may have a flat, linear structure or may be hierarchically structured, such that all Categories at lower Levels are sub-Categories of Categories at the next Level up.Categories in Statistical Classifications are represented in the information model as Classification Items. (Source: GSIM StatisticalClassification
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Statistical Classification
-									"""^^mark:
+Statistical Classification"""^^mark:
 
 
 
@@ -6254,8 +4067,7 @@ ddi:ValueAndConceptDescription EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valueandconceptdescription>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A formal description of a set of values. 
 
@@ -6282,24 +4094,7 @@ The ValueAndConceptDescription may be used to describe either a value domain or 
 Some Conceptual Domains might be described with just a narrative. Others, though, might be described in much the same way as a value domain depending on the specificity of the concept.
 
 In ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.
-The logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096 
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+The logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096"""^^mark:
 
 ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -6309,8 +4104,7 @@ ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/valuedomain>
 // shexmi:package "Representations"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The permitted range of values for a characteristic of a variable. [GSIM 1.1]
 
@@ -6330,14 +4124,9 @@ DDI 3.2 mapping
 =================
 r:RepresentationType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Value Domain
-									"""^^mark:
+Value Domain"""^^mark:
 # END Representations Package
 
 
@@ -6354,8 +4143,7 @@ ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapoint>
 // shexmi:package "LogicalDataDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A DataPoint is a container for a Datum.
 
@@ -6367,22 +4155,9 @@ Explanatory notes
 ===================
 The DataPoint is structural and distinct from the value (the Datum) that it holds. [GSIM 1.1]
 
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Data Point
-									"""^^mark:
+Data Point"""^^mark:
 
 ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
   ddi:characterSet xsd:string ?
@@ -6486,8 +4261,7 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastore>
 // shexmi:package "LogicalDataDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A DataStore is either a SimpleCollection or a StructuredCollection of LogicalRecords, keeping in mind that a LogicalRecords is a definition, not a \"datasets\".
 
@@ -6502,26 +4276,13 @@ Examples
 ==========
 The data lineage of an individual BusinessProcess or an entire DataPipeline are both examples of  a LogicalRecordRelationStructures. In a data lineage we can observe how LogicalRecords are connected within a BusinessProcess or across BusinessProcesses.
 
-Explanatory notes
-===================
-
-
 Synonyms
 ==========
 Schema repository, data network
 
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Data Set
-									"""^^mark:
+Data Set"""^^mark:
 
 ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
@@ -6562,8 +4323,7 @@ ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastorelibrary>
 // shexmi:package "LogicalDataDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A DataStoreLibrary is a collection or, again, a \"library\" of DataStores.
 
@@ -6589,20 +4349,7 @@ Sometimes across a StudySeries we add panels. If panels were also sub-studies, w
 
 Synonyms
 ==========
-Structured metadata archive
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Structured metadata archive"""^^mark:
 
 
 
@@ -6627,8 +4374,7 @@ ABSTRACT ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/logicalrecord>
 // shexmi:package "LogicalDataDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The LogicalRecord is a record definition. It is abstract.
 
@@ -6654,14 +4400,9 @@ DDI 3.2 mapping
 =================
 l:LogicalRecordType
 
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Data Structure
-									"""^^mark:
+Data Structure"""^^mark:
 
 
 
@@ -6688,37 +4429,15 @@ ABSTRACT ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/viewpointrole>
 // shexmi:package "LogicalDataDescription"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A ViewpointRole designates the function an InstanceVariable performs in the context of the Viewpoint. (IdentifierRole, AttributeRole, or MeasureRole of interest).
 
 Each of three roles within a Viewpoint may be a collection. This happens when a role is mapped to multiple instance variables. In this event a role forms a SimpleCollection. There are SimpleCollections of instance variables in each role.
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-See the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+See the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint"""^^mark:
 # END LogicalDataDescription Package
 
 
@@ -6728,35 +4447,13 @@ ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/booleanresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a binary response, such as selected/unselected or checked/unchecked or true/false.
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-Exactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Exactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)"""^^mark:
 
 ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
@@ -6778,8 +4475,7 @@ ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/capture>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A measurement that describes a means of capturing data. This class can be extended to account for different specific means. Use a specific instantiation of a Capture to describe a means of capturing a measurement.
 
@@ -6792,24 +4488,7 @@ A survey question, blood pressure reading; MRI images; thermometer; web service;
 
 Explanatory notes
 ===================
-Provides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions).
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Provides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions)."""^^mark:
 
 ddi:CodeListResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:usesCodeList @ddi:CodeList *;
@@ -6818,35 +4497,13 @@ ddi:CodeListResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/codelistresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a coded response (where both codes and their related category value are displayed) for a question. This response domain allows the single selection of one coded response.
 
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:CodeDomainType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:CodeDomainType"""^^mark:
 
 
 
@@ -6856,8 +4513,7 @@ ddi:ExternalAid EXTENDS ddi:ExternalMaterial {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/externalaid>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Any external material used in an instrument that aids or facilitates data capture, or that is presented to a respondent and about which measurements are made. 
 
@@ -6865,26 +4521,9 @@ Examples
 ==========
 Image, link, external aid, stimulus, physical object.
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:OtherMaterialType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:OtherMaterialType"""^^mark:
 
 
 
@@ -6897,35 +4536,9 @@ ddi:InstanceMeasurement EXTENDS ddi:InstrumentComponent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancemeasurement>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-An instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+An instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process."""^^mark:
 
 ddi:InstanceQuestion EXTENDS ddi:InstrumentComponent {
   ddi:name @ddi:ObjectName *
@@ -6942,35 +4555,13 @@ ddi:InstanceQuestion EXTENDS ddi:InstrumentComponent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instancequestion>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An instance question is an instantiation of a represented question,to be used as an Act in the process steps that define a survey questionnaire.
 
 Examples
 ==========
-“How old are you?”
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+“How old are you?”"""^^mark:
 
 ddi:Instruction EXTENDS ddi:AnnotatedIdentifiable {
   ddi:instructionText @ddi:DynamicText *
@@ -6983,8 +4574,7 @@ ddi:Instruction EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instruction>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Provides the content and description of data capture instructions. Contains the \"how to\" information for administering an instrument.
 
@@ -6992,26 +4582,9 @@ Examples
 ==========
 Completion instructions in self-administered mail questionnaire, information for administering a blood pressure measurement, interviewer instructions for a CATI questionnaire, guidance for communicating between an interviewer and a respondent (note MIDUS cognitive assessment example).
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:InstructionType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:InstructionType"""^^mark:
 
 ddi:InstrumentCode EXTENDS ddi:InstrumentComponent {
   ddi:purposeOfCode @ddi:ExternalControlledVocabularyEntry ?
@@ -7021,8 +4594,7 @@ ddi:InstrumentCode EXTENDS ddi:InstrumentComponent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcode>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An InstrumentComponent that specifies the performance of a specific computation within the context of an instrument flow.
 
@@ -7030,26 +4602,9 @@ Examples
 ==========
 quality control, edit check, checksums, compute filler text, compute values for use in administering the instrument
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:ComputationItemType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:ComputationItemType"""^^mark:
 
 ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
   ddi:hasInstructions @ddi:Instruction *;
@@ -7057,37 +4612,15 @@ ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcomponent>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 InstrumentComponent is an abstract object which extends an Act (a type of Process Step). The purpose of InstrumentComponent is to provide a common parent for Capture (e.g., Question, Measure), Statement, and Instructions.
 
 
 
-Examples
-==========
-
-
 Explanatory notes
 ===================
-InstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+InstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument."""^^mark:
 
 ddi:NumericResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:numericTypeCode @ddi:ExternalControlledVocabularyEntry ?
@@ -7116,8 +4649,7 @@ ddi:NumericResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/numericresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a numeric response (the intent is to analyze the response as a number) for a question.
 
@@ -7125,61 +4657,18 @@ Examples
 ==========
 Systolic blood pressure level, as an integer from 0 to 200
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-d:NumericDomainType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:NumericDomainType"""^^mark:
 
 ddi:RankingResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rankingresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. 
-Note: This item still must be modeled and is incomplete at this time.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
 
 
@@ -7193,8 +4682,7 @@ ddi:ResponseDomain EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/responsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 The possible list of values that are allowed by a Capture.
 
@@ -7208,55 +4696,16 @@ Identifies both the sentinel and substantive value domains used for capturing th
 
 Synonyms
 ==========
-GSIM & DDI: ResponseDomain
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+GSIM & DDI: ResponseDomain"""^^mark:
 
 ddi:ScaleResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/scaleresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a scaled response, such as a Likert scale. 
-Note: This item still must be modeled and is incomplete at this time.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
 ddi:Statement EXTENDS ddi:InstrumentComponent {
   ddi:statementText @ddi:DynamicText *
@@ -7266,8 +4715,7 @@ ddi:Statement EXTENDS ddi:InstrumentComponent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/statement>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A Statement is a type of Instrument Component containing  human readable text or referred material. 
 
@@ -7285,16 +4733,7 @@ DDI:StatementItem
 
 DDI 3.2 mapping
 =================
-d:StatementItemType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+d:StatementItemType"""^^mark:
 
 ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
   ddi:maximumLength xsd:integer ?
@@ -7306,8 +4745,7 @@ ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/textresponsedomain>
 // shexmi:package "DataCapture"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A response domain capturing a textual response including the length of the text and restriction of content using a regular expression.
 
@@ -7315,26 +4753,9 @@ Examples
 ==========
 Collecting the first name on an individual in an open ended text field
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:TextDomainType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:TextDomainType"""^^mark:
 # END DataCapture Package
 
 
@@ -7372,8 +4793,7 @@ ddi:Access EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/access>
 // shexmi:package "Discovery"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes access to the annotated object. This item includes a confidentiality statement, descriptions of the access permissions required, restrictions to access, citation requirements, depositor requirements, conditions for access, a disclaimer, any time limits for access restrictions, and contact information regarding access.
 
@@ -7381,26 +4801,9 @@ Examples
 ==========
 A proprietary InstanceQuestion might have specific access restrictions.
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-a:AccessType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+a:AccessType"""^^mark:
 
 ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
   ddi:eastLongitude xsd:double
@@ -7414,8 +4817,7 @@ ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/boundingbox>
 // shexmi:package "Discovery"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A type of Spatial coverage describing a rectangular area within which the actual range of location fits. A BoundingBox is described by 4 numbers - the maxima of the north, south, east, and west coordinates found in the area.
 
@@ -7429,20 +4831,7 @@ A BoundingBox is often described by two x,y coordinates where the x coordinates 
 
 Synonyms
 ==========
-r:BoundingBox
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:BoundingBox"""^^mark:
 
 ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
@@ -7480,8 +4869,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/coverage>
 // shexmi:package "Discovery"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Coverage information for an annotated object. Includes coverage information for temporal, topical, and spatial coverage. 
 
@@ -7493,22 +4881,9 @@ Explanatory notes
 ===================
 Coverage is a container for the more specific temporal, spatial, and topical coverages to which it refers.
 
-Synonyms
-==========
-
-
 DDI 3.2 mapping
 =================
-r:CoverageType
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+r:CoverageType"""^^mark:
 
 
 
@@ -7526,35 +4901,9 @@ ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotatedidentifiable>
 // shexmi:package "Identification"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Used to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned. Provides identification and administrative metadata about the object. Adds optional annotation. Use this as the extension base for First Order Classes that contain intellectual content that needs to be discoverable in its own right.
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Used to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned. Provides identification and administrative metadata about the object. Adds optional annotation. Use this as the extension base for First Order Classes that contain intellectual content that needs to be discoverable in its own right."""^^mark:
 
 ABSTRACT ddi:Identifiable {
   ddi:agency xsd:string
@@ -7593,35 +4942,9 @@ ABSTRACT ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/identifiable>
 // shexmi:package "Identification"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
-Used to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned and provide administrative metadata properties. Use for First Order Classes whose content does not need to be discoverable in its own right but needs to be related to multiple classes. 
-
-Examples
-==========
-
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Used to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned and provide administrative metadata properties. Use for First Order Classes whose content does not need to be discoverable in its own right but needs to be related to multiple classes."""^^mark:
 # END Identification Package
 
 
@@ -7634,8 +4957,7 @@ ABSTRACT ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessfunction>
 // shexmi:package "Methodologies"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Something an enterprise does, or needs to do, in order to achieve its objectives.
 
@@ -7647,34 +4969,16 @@ Examples
 ==========
 A Business Function may be defined directly with descriptive text and/or through reference to an existing catalogue of Business Functions. 
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Business Function
-									"""^^mark:
+Business Function"""^^mark:
 
 ddi:Goal EXTENDS ddi:BusinessFunction {
   ddi:isDiscussedIn @ddi:ExternalMaterial *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/goal>
 // shexmi:package "Methodologies"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Goals are the \"things\" a method aims to achieve. A goal may be a business function (GSIM) corresponding to a function in a catalog of functions such as GSBPM or GLBMN. However, goals may be specified more broadly. For example, conducting a clinical trial might be the goal of a method. Machine learning might be the goal of a method. 
 
@@ -7684,26 +4988,9 @@ Examples
 ==========
 To further distinguish a \"goal\" from an \"output\", consider the construction of a statistic. A goal may be the construction of the statistic. The output is the statistic. The output is data. The statistic by itself -- the output -- is arguably meaningless even if we capture the process of its construction. 
 
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
 GSIM mapping
 ==============
-Business Function
-									"""^^mark:
+Business Function"""^^mark:
 
 
 
@@ -7713,8 +5000,7 @@ ddi:Precondition EXTENDS ddi:BusinessFunction {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/precondition>
 // shexmi:package "Methodologies"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A precondition is a state. The state includes one or more goals that were previously achieved. This state is the necessary condition before a process can begin.
 
@@ -7724,24 +5010,7 @@ Using goals and preconditions processes can be chained to form work flows. Note 
 
 Explanatory notes
 ===================
-A precondition related to a design defines the state that must exist in order for a design being applied. For example in applying a Sampling Design there may be a precondition for the existance of a sampling frame meeting certain specifications.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A precondition related to a design defines the state that must exist in order for a design being applied. For example in applying a Sampling Design there may be a precondition for the existance of a sampling frame meeting certain specifications."""^^mark:
 
 ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
@@ -7765,35 +5034,13 @@ ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/result>
 // shexmi:package "Methodologies"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Describes the results of a process for the purpose of linking these results to guidance for future usage in specified situations. Result is abstract and serves as a substitution base for the specified result of a specific instantiation of a methodology process.
 
 Examples
 ==========
-The use of a weight resulting from a sampling process by an analyst within the context of a specific set of variables. The class containing the weight would use the extension base Result, adding any additional required properties and relationships to describe it.
-
-Explanatory notes
-===================
-
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+The use of a weight resulting from a sampling process by an analyst within the context of a specific set of variables. The class containing the weight would use the extension base Result, adding any additional required properties and relationships to describe it."""^^mark:
 # END Methodologies Package
 
 
@@ -7818,8 +5065,7 @@ ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agent>
 // shexmi:package "Agents"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 An actor that performs a role in relation to a process or product.
 
@@ -7834,20 +5080,7 @@ prov:Agent is An agent is something that bears some form of responsibility for a
 
 Synonyms
 ==========
-Agent
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Agent"""^^mark:
 
 ddi:AgentListing EXTENDS ddi:Identifiable {
   ddi:type @ddi:CollectionType ?
@@ -7896,8 +5129,7 @@ ddi:AgentListing EXTENDS ddi:Identifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/agentlisting>
 // shexmi:package "Agents"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A listing of Agents of any type. The AgentList may be organized to describe relationships between members using AgentRelationStructure.
 
@@ -7907,24 +5139,7 @@ Organizations contributing to a project. Individuals within an agency. All organ
 
 Explanatory notes
 ===================
-Relationships between agents are fluid and reflect effective dates of the relationship. An agent may have multiple relationships which may be sequencial or concurrent. Relationships may or may not be hierarchical in nature. All Agents are serialized individually and brought into relationships as appropriate.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+Relationships between agents are fluid and reflect effective dates of the relationship. An agent may have multiple relationships which may be sequencial or concurrent. Relationships may or may not be hierarchical in nature. All Agents are serialized individually and brought into relationships as appropriate."""^^mark:
 
 
 
@@ -7965,8 +5180,7 @@ ddi:Individual EXTENDS ddi:Agent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/individual>
 // shexmi:package "Agents"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A person who may have a relationship to another Agent and who may be specified as being associated with an act.
 
@@ -7976,24 +5190,7 @@ Analyst performing edits on data, interviewer conducting an interview, a creator
 
 Explanatory notes
 ===================
-A set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization).
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+A set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization)."""^^mark:
 
 ddi:Machine EXTENDS ddi:Agent {
   ddi:typeOfMachine @ddi:ExternalControlledVocabularyEntry ?
@@ -8018,8 +5215,7 @@ ddi:Machine EXTENDS ddi:Agent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/machine>
 // shexmi:package "Agents"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 Mechanism or computer program used to implement a process.
 
@@ -8029,24 +5225,7 @@ SAS program, photocopier
 
 Explanatory notes
 ===================
-May be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine.
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+May be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine."""^^mark:
 
 ddi:Organization EXTENDS ddi:Agent {
   ddi:hasOrganizationName EXTENDS ddi:ObjectName {
@@ -8067,8 +5246,7 @@ ddi:Organization EXTENDS ddi:Agent {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/organization>
 // shexmi:package "Agents"
-// shexmi:comment """
-Definition
+// shexmi:comment """Definition
 ============
 A framework of authority designated to act toward some purpose.
 
@@ -8078,24 +5256,7 @@ U.S. Census Bureau, University of Michigan/ISR, Norwegian Social Data Archive
 
 Explanatory notes
 ===================
-related to org:Organization which is described as \"Represents a collection of people organized together into a community or other...\"
-
-Synonyms
-==========
-
-
-DDI 3.2 mapping
-=================
-
-
-RDF mapping
-=============
-
-
-GSIM mapping
-==============
-
-									"""^^mark:
+related to org:Organization which is described as \"Represents a collection of people organized together into a community or other...\""""^^mark:
 # END Agents Package
 
 
