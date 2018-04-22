@@ -6,6 +6,8 @@ var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). Could 
 var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
 var UPPER_UNLIMITED = '*'
+const TYPE_NodeConstraint = ['NodeConstraint']
+const TYPE_ShapeRef = ['ShapeRef']
 
 function main () {
   const AllRecordTypes = [
@@ -67,8 +69,8 @@ function main () {
       comments: []
     }
     elts.forEach(elt => {
-      let type = elt.$['xmi:type']
-      console.assert(type === 'uml:Property')
+      let umlType = elt.$['xmi:type']
+      console.assert(umlType === 'uml:Property')
       let id = elt.$['xmi:id']
       let name = parseName(elt)
       let association = parseAssociation(elt)
@@ -95,7 +97,7 @@ function main () {
         ret.properties.push(
           new PropertyRecord(
             model, className, id, name, elt.type[0].$['xmi:idref'],
-            normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
+            normalizeType(elt.type[0].$['href']),
             parseValue(elt.lowerValue[0], 0),
             parseValue(elt.upperValue[0], UPPER_UNLIMITED),
             parseComments(elt))
@@ -409,7 +411,7 @@ function main () {
           ret.classes[classId] = c
           old.properties.forEach(
             p => {
-              let id = p.relation || p.attribute
+              let id = p.idref || p.href
               if (id in model.enums) {
                 copyEnum(ret, model, id)
               }
@@ -419,7 +421,7 @@ function main () {
               if (followReferencedClasses && id in model.classes) {
                 dependentClassIds.push(id)
               }
-              c.properties.push(new PropertyRecord(ret, c.id, p.id, p.name, p.relation, p.attribute, p.lower, p.upper))
+              c.properties.push(new PropertyRecord(ret, c.id, p.id, p.name, p.idref, p.href, p.lower, p.upper))
             }
           )
           addPackages(ret, model, c.packages)
@@ -507,24 +509,30 @@ function main () {
     Object.keys(properties).forEach(
       p => properties[p].sources.forEach(
         s => {
-          if (s.relation in datatypes) {
-            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
-            // s.attribute = datatypes[s.relation].name
-            s.attribute = s.relation
-            s.relation = undefined
-          } else if (s.relation in classes) {
-            // s.relation = classes[s.relation].name
-          } else if (s.relation in enums) {
-            // s.relation = enums[s.relation].name
+          if (s.idref in datatypes) {
+            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.idref].name)
+            // s.href = datatypes[s.idref].name
+            s.href = s.idref
+            s.idref = undefined
+          } else if (s.idref in classes) {
+            // s.idref = classes[s.idref].name
+          } else if (s.idref in enums) {
+            // s.idref = enums[s.idref].name
           }
         }))
+
+    /*
+     idref => idref in datatypes ? NodeConstraint : ShapeRef
+     href => NodeConstraint
+     type => NodeConstraint
+     */
 
     // Find set of types for each property.
     Object.keys(properties).forEach(propName => {
       let p = properties[propName]
       p.uniformType = findMinimalTypes(model, p)
       p.sources.forEach(s => {
-        let t = s.attribute || s.relation
+        let t = s.href || s.idref
         let referent =
               t in classes ? classes[t] :
               t in enums ? enums[t] :
@@ -681,15 +689,15 @@ function main () {
     this.name = name
   }
 
-  function PropertyRecord (model, className, id, name, relation, attribute, lower, upper, comments) {
+  function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
     if (className === null) {
       console.warn('no class name for PropertyRecord ' + id)
     }
     this.in = className
     this.id = id
     this.name = name
-    this.relation = relation
-    this.attribute = attribute
+    this.idref = idref
+    this.href = href
     this.lower = lower
     this.upper = upper
     this.comments = comments
@@ -981,8 +989,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         let t = isObject(p) ? 'Object' : 'Data'
         let src = p.sources[0]
         let dt = isObject(p)
-          ? src.relation in model.classes ? model.classes[src.relation] : model.enums[src.relation]
-          : src.attribute in model.datatypes ? model.datatypes[src.attribute] : { name: src.attribute }
+          ? src.idref in model.classes ? model.classes[src.idref] : model.enums[src.idref]
+          : src.href in model.datatypes ? model.datatypes[src.href] : { name: src.href }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
@@ -1085,8 +1093,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let p = model.properties[propName]
             let t = isObject(p) ? 'Object' : 'Data'
             let dt = isObject(p)
-              ? propertyRecord.relation in model.classes ? model.classes[propertyRecord.relation] : model.enums[propertyRecord.relation]
-              : propertyRecord.attribute in model.datatypes ? model.datatypes[propertyRecord.attribute] : { name: propertyRecord.attribute }
+              ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
+              : propertyRecord.href in model.datatypes ? model.datatypes[propertyRecord.href] : { name: propertyRecord.href }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
             return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
@@ -1201,10 +1209,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let p = model.properties[propName]
             let use = p.sources.find(s => s.id.indexOf(classId) === 0)
             let dt = isObject(p)
-              ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-              : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+              ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
+              : use.href in model.datatypes ? model.datatypes[use.href] : { name: use.href }
             if (dt === undefined) {
-              console.warn('unresolved datatype ' + use.relation + ' for property ' + propName)
+              console.warn('unresolved datatype ' + use.idref + ' for property ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
@@ -1269,7 +1277,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
   }
 
   function isObject (propertyDecl) {
-    return !!propertyDecl.sources[0].relation
+    return !!propertyDecl.sources[0].idref
   }
 
   const KnownPrefixes = [
@@ -1355,7 +1363,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
    */
   function findMinimalTypes (model, p) {
     return p.sources.reduce((acc, s) => {
-      let t = s.attribute || s.relation
+      let t = s.href || s.idref
       if (acc.length > 0 && acc.indexOf(t) === -1) {
         // debugger;
         // a.find(i => b.indexOf(i) !== -1)
