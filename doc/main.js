@@ -506,7 +506,7 @@ function main () {
 
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
-    Object.keys(properties).forEach(
+/*    Object.keys(properties).forEach(
       p => properties[p].sources.forEach(
         s => {
           if (s.idref in datatypes) {
@@ -520,7 +520,7 @@ function main () {
             // s.idref = enums[s.idref].name
           }
         }))
-
+*/
     /*
      idref => idref in datatypes ? NodeConstraint : ShapeRef
      href => NodeConstraint
@@ -917,7 +917,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       function finalReferee (classId) {
         while (nestInlinableStructure && inlineable(model, model.classes[classId])) {
           if (classId === model.classes[classId].referees[0].classId) {
-            debugger
             break
           }
           classId = model.classes[classId].referees[0].classId
@@ -986,17 +985,17 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     Array().push.apply(owlx, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
-        let t = isObject(p) ? 'Object' : 'Data'
+        let t = isObject(p, model) ? 'Object' : 'Data'
         let src = p.sources[0]
-        let dt = isObject(p)
+        let dt = isObject(p, model)
           ? src.idref in model.classes ? model.classes[src.idref] : model.enums[src.idref]
-          : src.href in model.datatypes ? model.datatypes[src.href] : { name: src.href }
+          : src.idref in model.datatypes ? model.datatypes[src.idref] : { name: src.href }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
     <${t}PropertyRange>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
-        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(dt.name)}"/>
+        <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${pname(dt.name)}"/>
     </${t}PropertyRange>`
       }
     ))
@@ -1004,7 +1003,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     Array().push.apply(owlm, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
-        let t = isObject(p) ? 'Object' : 'Data'
+        let t = isObject(p, model) ? 'Object' : 'Data'
         return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
       }
     ))
@@ -1091,16 +1090,16 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           propertyRecord => {
             let propName = propertyRecord.name
             let p = model.properties[propName]
-            let t = isObject(p) ? 'Object' : 'Data'
-            let dt = isObject(p)
+            let t = isObject(p, model) ? 'Object' : 'Data'
+            let dt = isObject(p, model)
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
-              : propertyRecord.href in model.datatypes ? model.datatypes[propertyRecord.href] : { name: propertyRecord.href }
+              : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
             return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
-            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
+            <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
     </SubClassOf>`
           }
@@ -1208,9 +1207,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let propName = propertyRecord.name
             let p = model.properties[propName]
             let use = p.sources.find(s => s.id.indexOf(classId) === 0)
-            let dt = isObject(p)
+            let dt = isObject(p, model)
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
-              : use.href in model.datatypes ? model.datatypes[use.href] : { name: use.href }
+              : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
               console.warn('unresolved datatype ' + use.idref + ' for property ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
@@ -1220,7 +1219,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let valueStr =
                   'referees' in dt && dt instanceof ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
-                  : isObject(p)
+                  : isObject(p, model)
                   ? markup.valueReference(dt.name)
                   : markup.valueType(dt.name)
             return '  ' + markup.property(propName) + ' ' + valueStr +
@@ -1276,8 +1275,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
   }
 
-  function isObject (propertyDecl) {
-    return !!propertyDecl.sources[0].idref
+  function isObject (propertyDecl, model) {
+    return !!propertyDecl.sources[0].idref &&
+      !(propertyDecl.sources[0].idref in model.datatypes)
   }
 
   const KnownPrefixes = [
