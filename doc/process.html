@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>DDI XMI analyzer</title>
+
+    <script src="../da-web/jquery.min.js"></script>
+<!-- -->
+    <script src="../node_modules/sax/lib/sax.js" type="text/javascript"></script>
+    <script src="require.js"      ></script>
+
+    <script src="../node_modules/events/events.js"></script><script>modules["emitter"] = module.exports;</script>
+    <script src="../node_modules/stream/index.js"></script><script>modules["stream"] = module.exports;</script>
+    <script src="../node_modules/sax/lib/sax.js"></script><script>modules["sax"] = exports;</script>
+    <script src="../node_modules/events/events.js"></script><script>modules["events"] = module.exports;</script>
+    <script>
+      modules["xmlbuilder"] = null;
+      modules["timers"] = { setImmediate: setTimeout };
+    </script>
+    <script src="../node_modules/xml2js/lib/bom.js"></script><script>modules["./bom"] = exports;</script>
+    <script src="../node_modules/xml2js/lib/processors.js"></script><script>modules["./processors"] = module.exports;</script>
+    <script src="../node_modules/xml2js/lib/xml2js.js"></script><script>modules["xml2js"] = exports;</script>
+    <script>modules["chalk"] = {};</script>
+
+    <script src="main.js" type="text/javascript"></script>
+<!-- -->
+<!--
+    <script src="bundle.js" type="text/javascript"></script>
+ -->
+
+
+    <style>
+      #loadform { float: left; border: thin solid #f77; }
+      .result { float:left; }
+      span { margin-left: .2em; }
+      .keyword { background-color: #ffd; }
+      .scalar { background-color: #eee; }
+    </style>
+  </head>
+  <body>
+    <div id="intro">
+      <h1>parsing XMI</h1>
+      <p>recursively walk the XMI capturing:</p>
+      <ul>
+        <li>
+          <p>packages</p>
+          <pre>&lt;packagedElement xmi:id="…-Conceptual" xmi:uuid="…" xmi:type="uml:Package"&gt;
+</pre>
+        </li>
+        <li>
+          <p>classes</p>
+          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
+  &lt;name&gt;ConceptSystem&lt;/name&gt;
+  &lt;generalization xmi:id="…-Conceptual-ConceptSystem-generalization" xmi:uuid="…" xmi:type="uml:Generalization"&gt;
+    &lt;general xmi:idref="…-Identification-AnnotatedIdentifiable"/&gt;
+  &lt;/generalization&gt;</pre>
+        </li>
+        <li>
+          <p>properties</p>
+          <pre>  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-type" xmi:uuid="…" xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="…-EnumerationsRegExp-CollectionType"/&gt;
+    &lt;name&gt;type&lt;/name&gt;
+</pre>
+        </li>
+        <li>
+          <p>enums</p>
+          <pre>&lt;packagedElement xmi:id="…-ComplexDataTypes-RelationSpecification" xmi:uuid="…" xmi:type="uml:Enumeration"&gt;
+  &lt;name&gt;RelationSpecification&lt;/name&gt;
+  &lt;ownedLiteral xmi:id="…-ComplexDataTypes-RelationSpecification-Unordered" xmi:uuid="…" xmi:type="uml:EnumerationLiteral"&gt;
+    &lt;name&gt;Unordered&lt;/name&gt;
+  &lt;/ownedLiteral&gt;
+</pre>
+        </li>
+        <li>
+          <p>datatypes</p>
+          <pre>&lt;packagedElement xmi:id="…-EnumerationsRegExp-IsoDateType" xmi:uuid="…" xmi:type="uml:DataType"&gt;
+  &lt;name&gt;IsoDateType&lt;/name&gt;
+&lt;/packagedElement&gt;
+</pre>
+        </li>
+        <li>
+          <p>views - packages ending with the word "View"</p>
+          <pre>&lt;packagedElement xmi:id="…-ConceptualContentView" xmi:uuid="…" xmi:type="uml:Package"&gt;
+  &lt;elementImport xmi:id="…-ConceptualContentView-elementImport-7" xmi:uuid="…" xmi:type="uml:ElementImport"&gt;
+    &lt;importedElement xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
+</pre>
+        </li>
+      </ul>
+      <p>This produces a <code>model</code> object which is supplemented by:</p>
+      <ul>
+        <li>classHierarchy - hierarchy of classes, e.g. <code>AnnotationDate</code> refines <code>Date</code>.</li>
+        <li>packageHierarchy - hierarchy of packages, e.g. <code>ComplexDataTypes</code> nests inside <code>ddi4_model</code>.</li>
+      </ul>
+    </div>
+    <div id="model">
+      <ul>
+      </ul>
+    </div>
+    <div id="transformation">
+      <p>For the corresping RDF model:</p>
+      <ul>
+        <li>
+          <p>Each class, property, datatype, enumeration and literal in that enumeration is an IRI with and identifier of that entity's name prefixed with 'ddi:'</p>
+        </li>
+      </ul>
+    </div>
+    <div id="OWLrep">
+      <p>For the OWL representation:</p>
+      <ul>
+        <li>Express in OWL/XML because protege's (OWLAPI's) error feedback is better.</li>
+        <li>
+          <p>
+            For each property with a single datatype, declare that property's range.
+            If the the property is an href or an idref to a datatype, it's a DataProperty:
+          </p>
+          <pre>&lt;Declaration&gt;
+    &lt;DataProperty abbreviatedIRI="ddi:uri"/&gt;
+&lt;/Declaration&gt;
+&lt;DataPropertyRange&gt;
+    &lt;DataProperty abbreviatedIRI="ddi:uri"/&gt;
+    &lt;Datatype abbreviatedIRI="ddi:anyURI"/&gt;
+&lt;/DataPropertyRange&gt;</pre>
+          <p>
+            Otherwise, it's an ObjectProperty:
+          </p>
+          <pre>&lt;Declaration&gt;
+    &lt;ObjectProperty abbreviatedIRI="ddi:mimeType"/&gt;
+&lt;/Declaration&gt;
+&lt;ObjectPropertyRange&gt;
+    &lt;ObjectProperty abbreviatedIRI="ddi:mimeType"/&gt;
+    &lt;Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/&gt;
+&lt;/ObjectPropertyRange&gt;</pre>
+        </li>
+        <li>
+          <p>
+            For each Class
+          </p>
+          <ul>
+            <li>
+              <p>Declare the class</p>
+              <pre>&lt;Declaration&gt;
+    &lt;Class abbreviatedIRI="ddi:ConceptSystem"/&gt;
+&lt;/Declaration&gt;</pre>
+            </li>
+            <li>
+              <p>For each property with a single datatype, declare that property's range:</p>
+              <pre>&lt;SubClassOf&gt;
+    &lt;Class abbreviatedIRI="ddi:Identifiable"/&gt;
+    &lt;DataAllValuesFrom&gt;
+        &lt;DataProperty abbreviatedIRI="ddi:versionDate"/&gt;
+        &lt;Datatype abbreviatedIRI="ddi:IsoDateType"/&gt;
+    &lt;/DataAllValuesFrom&gt;
+&lt;/SubClassOf&gt;</pre>
+            </li>
+            <li>
+              <p>For each generalizes (max one because DDI has single-inheritance), express the superclass:</p>
+              <pre>&lt;SubClassOf&gt;
+    &lt;Class abbreviatedIRI="ddi:ConceptSystem"/&gt;
+    &lt;Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/&gt;
+&lt;/SubClassOf&gt;</pre>
+            </li>
+            <li>
+              <p>For navigation, express the immidiately enclosing package:</p>
+              <pre>&lt;SubClassOf&gt;
+    &lt;Class abbreviatedIRI="ddi:ConceptSystem"/&gt;
+    &lt;Class abbreviatedIRI="ddi:Conceptual_Package"/&gt;
+&lt;/SubClassOf&gt;</pre>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Per <a href="http://www.essepuntato.it/lode">LODE</a>, use <code>rdfs:comment</code> for comments.</p>
+          <pre>
+&lt;AnnotationAssertion&gt;
+    &lt;AnnotationProperty abbreviatedIRI="rdfs:comment"/&gt;
+    &lt;AbbreviatedIRI&gt;ddi:ConceptSystem&lt;/AbbreviatedIRI&gt;
+    &lt;Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"&gt;Definition
+============
+A set of Concepts structured by the relations among them. [GSIM 1.1] …
+    &lt;/Literal&gt;
+&lt;/AnnotationAssertion&gt;
+          </pre>
+        </li>
+      </ul>
+    </div>
+    <div id="product">
+    </div>
+  </body>
+</html>
+
