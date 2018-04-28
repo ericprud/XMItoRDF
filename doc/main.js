@@ -8,163 +8,22 @@ var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's packa
 var UPPER_UNLIMITED = '*'
 const TYPE_NodeConstraint = ['NodeConstraint']
 const TYPE_ShapeRef = ['ShapeRef']
+const UMLparser = require('./canonical-uml-xmi-parser')()
+
+const AllRecordTypes = [
+  {type: UMLparser.ModelRecord,       maker: () => $('<span/>', { class: 'record' }).text('model'  )},
+  {type: UMLparser.PropertyRecord,    maker: () => $('<span/>', { class: 'record' }).text('prop'   )},
+  {type: UMLparser.ClassRecord,       maker: () => $('<span/>', { class: 'record' }).text('Class'  )},
+  {type: UMLparser.PackageRecord,     maker: () => $('<span/>', { class: 'record' }).text('Package')},
+  {type: UMLparser.EnumRecord,        maker: () => $('<span/>', { class: 'record' }).text('Enum'   )},
+  {type: UMLparser.DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
+  {type: UMLparser.ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
+  {type: UMLparser.AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )},
+  {type: UMLparser.AssocRefRecord,    maker: () => $('<span/>', { class: 'record' }).text('assoc'  )},
+  {type: UMLparser.RefereeRecord,     maker: () => $('<span/>', { class: 'record' }).text('ref'    )}
+]
 
 function main () {
-  const AllRecordTypes = [
-    {type: ModelRecord,       maker: () => $('<span/>', { class: 'record' }).text('model'  )},
-    {type: PropertyRecord,    maker: () => $('<span/>', { class: 'record' }).text('prop'   )},
-    {type: ClassRecord,       maker: () => $('<span/>', { class: 'record' }).text('Class'  )},
-    {type: PackageRecord,     maker: () => $('<span/>', { class: 'record' }).text('Package')},
-    {type: EnumRecord,        maker: () => $('<span/>', { class: 'record' }).text('Enum'   )},
-    {type: DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
-    {type: ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
-    {type: AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )},
-    {type: AssocRefRecord,    maker: () => $('<span/>', { class: 'record' }).text('assoc'  )},
-    {type: RefereeRecord,     maker: () => $('<span/>', { class: 'record' }).text('ref'    )}
-  ]
-
-  function docURL (term) {
-    return 'http://lion.ddialliance.org/ddiobjects/' + term.toLowerCase()
-  }
-
-  function parseName (elt) {
-    let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
-    let nameMap = {
-      'Views (Exported from Drupal)': 'Views',
-      'Class Model (Exported from Drupal)': 'ddi4_model',
-      'ClassLibrary': 'ddi4_model', // minimize diffs
-      'FunctionalViews': 'Views',
-      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
-      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    return !ret ? ret : ret in nameMap ? nameMap[ret] : expandPrefix(ret)
-  }
-
-  function parseValue (elt, deflt) { // 'default' is a reserved word
-    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : deflt
-  }
-
-  function parseGeneral (elt) {
-    return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
-  }
-
-  function parseAssociation (elt) {
-    return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
-  }
-
-  function parseComments (elt) {
-    return 'ownedComment' in elt
-      ? elt.ownedComment.map( commentElt => commentElt.body[0] )
-      : []
-  }
-
-  function parseIsAbstract (elt) {
-    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
-  }
-
-  function parseProperties (model, elts, className) {
-    let ret = {
-      properties: [],
-      associations: {},
-      comments: []
-    }
-    elts.forEach(elt => {
-      let umlType = elt.$['xmi:type']
-      console.assert(umlType === 'uml:Property')
-      let id = elt.$['xmi:id']
-      let name = parseName(elt)
-      let association = parseAssociation(elt)
-
-      if (association) {
-        /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
-             <type xmi:idref="Agent"/>
-             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
-             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
-           </ownedAttribute> */
-        ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
-          in: className,
-          type: elt.type[0].$['xmi:idref'],
-          lower: parseValue(elt.lowerValue[0], 0),
-          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
-          comments: parseComments(elt)
-        })
-      } else if (!name) {
-        // e.g. canonical *-owned-attribute-n properties.
-        // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
-      } else if (name.charAt(0).match(/[A-Z]/)) {
-        throw Error('unexpected property name ' + name + ' in ' + className)
-      } else {
-        ret.properties.push(
-          new PropertyRecord(
-            model, className, id, name, elt.type[0].$['xmi:idref'],
-            normalizeType(elt.type[0].$['href']),
-            parseValue(elt.lowerValue[0], 0),
-            parseValue(elt.upperValue[0], UPPER_UNLIMITED),
-            parseComments(elt))
-        )
-      }
-    })
-    return ret
-  }
-
-  function parseEAViews (diagrams) {
-    return diagrams.filter(
-      diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
-    ).map(
-      diagram => {
-        return Object.assign(new ViewRecord(), {
-          id: diagram['$']['xmi:id'],
-          name: diagram.model[0].$.package,
-          members: diagram.elements[0].element.map(
-            member => member.$.subject
-          )
-        })
-      }
-    )
-  }
-
-  function parseCanonicalViews (elt) {
-    return elt.packagedElement.map(view => {
-      return Object.assign(new ViewRecord(), {
-        id: view.$['xmi:id'],
-        name: parseName(view),
-        members: view.elementImport.map(
-          imp => imp.importedElement[0].$['xmi:idref']
-        )
-      })
-    })
-  }
-
-  function normalizeType (type) {
-    if (!type) {
-      return type // pass undefined on
-    }
-    if (type === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    let nameMap = {
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Real': 'http://www.w3.org/2001/XMLSchema#double',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#UnlimitedNatural': 'http://www.w3.org/2001/XMLSchema#double'
-    }
-    if (type in nameMap) {
-      return nameMap[type]
-    }
-    let umlp = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
-    let umld = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
-    if (type.startsWith(umlp)) {
-      return umld + type.substr(umlp.length)
-    }
-    return type
-  }
-
-  const xml2js = require('xml2js')
-  // let rs = Ecore.ResourceSet.create()
   let $ = window.jQuery
 
   $('#load-file').on('change', function (evt) {
@@ -227,29 +86,24 @@ function main () {
     let reparse = $('<button/>').text('reparse').on('click', parse)
     $('<h2/>').text(source).append(reparse).appendTo(div)
     let model
-    let document
     let progress = $('<ul/>')
+
     div.append(progress)
 
     status.text('parsing UML...')
     window.setTimeout(parse, RENDER_DELAY)
 
     function parse () {
-      xml2js.Parser().parseString(xmiText, function (err, result) {
+      console.log(UMLparser.parse(xmiText, source, function (err, result) {
         if (err) {
           console.error(err)
         } else {
-          document = result
           status.text('indexing...')
-          window.setTimeout(index, RENDER_DELAY)
+          model = result
+          status.text('rendering structure...')
+          window.setTimeout(render, RENDER_DELAY)
         }
-      })
-    }
-
-    function index () {
-      model = parseModel(document, source)
-      status.text('rendering structure...')
-      window.setTimeout(render, RENDER_DELAY)
+      }))
     }
 
    function render () {
@@ -267,7 +121,7 @@ function main () {
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
-      let allViews = strip(model, source, model.views.map(v => v.name))
+      let allViews = model.strip(model, source, model.views.map(v => v.name))
       console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
 
@@ -301,462 +155,12 @@ function main () {
       console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       model.views.map(v => v.name).forEach(
         viewName => {
-          let s = strip(model, source, viewName,
-                        $('#followReferencedClasses').is(':checked'),
-                        $('#followReferentHierarchy').is(':checked'))
+          let s = model.strip(model, source, viewName,
+                              $('#followReferencedClasses').is(':checked'),
+                              $('#followReferentHierarchy').is(':checked'))
         }
       )
     }
-  }
-
-  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
-    if (viewLabels.constructor !== Array) {
-      viewLabels = [viewLabels]
-    }
-
-    let ret = Object.assign(new ModelRecord(), {
-      source: source + viewLabels.join('-'),
-      packages: {},
-      classes: {},
-      properties: {},
-      enums: {},
-      datatypes: {},
-      classHierarchy: makeHierarchy(),
-      packageHierarchy: makeHierarchy(),
-      views: model.views.filter(
-        v => viewLabels.indexOf(v.name) !== -1
-      )
-    })
-
-    // ret.enums = Object.keys(model.enums).forEach(
-    //   enumId => copyEnum(ret, model, enumId)
-    // )
-    // ret.datatypes = Object.keys(model.datatypes).forEach(
-    //   datatypeId => copyDatatype(ret, model, datatypeId)
-    // )
-
-    let classIds = ret.views.reduce(
-      (classIds, view) =>
-        classIds.concat(view.members.reduce(
-          (x, member) => {
-            let parents = model.classHierarchy.parents[member] || [] // has no parents
-            return x.concat(member, parents.filter(
-              classId => x.indexOf(classId) === -1
-            ))
-          }, []))
-      , [])
-    addDependentClasses(classIds, true)
-
-    return ret
-    // let properties = Object.keys(model.properties).filter(
-    //   propName => model.properties[propName].sources.find(includedSource)
-    // ).reduce(
-    //   (acc, propName) => {
-    //     let sources = model.properties[propName].sources.filter(includedSource)
-    //     return addKey(acc, propName, {
-    //       sources: sources,
-    //       uniformType: findMinimalTypes(ret, {sources: sources})
-    //     })
-    //   }, [])
-
-    function copyEnum (to, from, enumId) {
-      let old = from.enums[enumId]
-      if (old.id in to.enums) {
-        return
-      }
-
-      let e = {
-        id: old.id,
-        name: old.name,
-        values: old.values.slice(),
-        packages: old.packages.slice()
-      }
-      addPackages(to, model, e.packages)
-      to.enums[enumId] = e
-    }
-
-    function copyDatatype (to, from, datatypeId) {
-      let old = from.datatypes[datatypeId]
-      if (old.id in to.datatypes) {
-        return
-      }
-
-      let e = {
-        id: old.id,
-        name: old.name,
-        packages: old.packages.slice()
-      }
-      addPackages(to, model, e.packages)
-      to.datatypes[datatypeId] = e
-    }
-
-    function addDependentClasses (classIds, followParents) {
-      classIds.forEach(
-        classId => {
-          if (classId in ret.classes) { // a recursive walk of the superClasses
-            return //                      may result in redundant insertions.
-          }
-
-          let old = model.classes[classId]
-          let dependentClassIds = []
-          let c = {
-            id: old.id,
-            name: old.name,
-            properties: [],
-            comments: old.comments.slice(),
-            packages: old.packages.slice(),
-            superClasses: old.superClasses.slice(),
-            isAbstract: old.isAbstract
-          } // was deepCopy(old)
-          ret.classes[classId] = c
-          old.properties.forEach(
-            p => {
-              let id = p.idref || p.href
-              if (id in model.enums) {
-                copyEnum(ret, model, id)
-              }
-              if (id in model.datatypes) {
-                copyDatatype(ret, model, id)
-              }
-              if (followReferencedClasses && id in model.classes) {
-                dependentClassIds.push(id)
-              }
-              c.properties.push(new PropertyRecord(ret, c.id, p.id, p.name, p.idref, p.href, p.lower, p.upper))
-            }
-          )
-          addPackages(ret, model, c.packages)
-          c.superClasses.forEach(
-            suClass =>
-              ret.classHierarchy.add(suClass, c.id)
-          )
-          let x = dependentClassIds
-          if (followParents)
-            x = x.concat(c.superClasses)
-          addDependentClasses(x, followReferentHierarchy)
-        }
-      )
-    }
-
-    function addPackages (to, from, packageIds) {
-      for (let i = 0; i < packageIds.length; ++i) {
-        let pid = packageIds[i]
-        let old = from.packages[pid]
-        let p = pid in to.packages ? to.packages[pid] : {
-          name: old.name,
-          id: pid,
-          packages: old.packages.slice()
-        }
-        if (!(pid in to.packages)) {
-          to.packages[pid] = p
-        }
-        if (i > 0) { // add [0],[1]  [1],[2]  [2],[3]...
-          to.packageHierarchy.add(pid, packageIds[i - 1])
-        }
-      }
-    }
-
-    function includedSource (source) {
-      // properties with a source in classIds
-      return classIds.indexOf(source.in) !== -1
-    }
-  }
-
-  function parseModel (document, source, triples) {
-    // makeHierarchy.test()
-    // convenience variables
-    let packages = {}
-    let classes = {}
-    let properties = {}
-    let enums = {}
-    let datatypes = {}
-    let classHierarchy = makeHierarchy()
-    let packageHierarchy = makeHierarchy()
-
-    let associations = {}
-    let assocSrcToClass = {}
-
-    // return structure
-    let model = Object.assign(new ModelRecord(), {
-      source: source,
-      packages: packages,
-      classes: classes,
-      properties: properties,
-      enums: enums,
-      datatypes: datatypes,
-      classHierarchy: classHierarchy,
-      packageHierarchy: packageHierarchy,
-      associations: associations
-    })
-
-    // Build the model
-    visitPackage(document['xmi:XMI']['uml:Model'][0], [])
-
-    // Turn associations into properties.
-    Object.keys(associations).forEach(
-      assocId => {
-        let a = associations[assocId]
-        let c = classes[assocSrcToClass[a.from]]
-        let aref = c.associations[a.from]
-        let name = aref.name || a.name // if a reference has no name used the association name
-        if (a.name !== 'realizes') {
-          c.properties.push(new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments))
-        }
-      }
-    )
-
-    // Change relations to datatypes to be attributes.
-    // Change relations to the classes and enums to reference the name.
-/*    Object.keys(properties).forEach(
-      p => properties[p].sources.forEach(
-        s => {
-          if (s.idref in datatypes) {
-            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.idref].name)
-            // s.href = datatypes[s.idref].name
-            s.href = s.idref
-            s.idref = undefined
-          } else if (s.idref in classes) {
-            // s.idref = classes[s.idref].name
-          } else if (s.idref in enums) {
-            // s.idref = enums[s.idref].name
-          }
-        }))
-*/
-    /*
-     idref => idref in datatypes ? NodeConstraint : ShapeRef
-     href => NodeConstraint
-     type => NodeConstraint
-     */
-
-    // Find set of types for each property.
-    Object.keys(properties).forEach(propName => {
-      let p = properties[propName]
-      p.uniformType = findMinimalTypes(model, p)
-      p.sources.forEach(s => {
-        let t = s.href || s.idref
-        let referent =
-              t in classes ? classes[t] :
-              t in enums ? enums[t] :
-              t in datatypes ? datatypes[t] :
-              null
-        if (referent) {
-          referent.referees.push(new RefereeRecord(s.in, propName))
-        } else {
-          // console.warn('referent not found: ' + referent)
-        }
-      }, [])
-    }, [])
-
-    console.dir(model)
-    return model
-
-    function visitPackage (elt, parents) {
-      let parent = parents[0]
-      let type = elt.$['xmi:type']
-      if ('xmi:id' in elt.$) {
-        let id = elt.$['xmi:id']
-        let name = parseName(elt)
-        // Could keep id to elt map around with this:
-        // index[id] = { element: elt, packages: parents }
-
-        switch (type) {
-          case 'uml:Class':
-            if (id in classes) {
-              throw Error('already seen class id ' + id)
-            }
-            let ownedAttrs = parseProperties(
-              model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
-              id, triples)
-
-            classes[id] = Object.assign(
-              new ClassRecord(id, name),
-              ownedAttrs, {
-                packages: parents,
-                superClasses: [],
-                isAbstract: parseIsAbstract(elt),
-                referees: [],
-                comments: parseComments(elt)
-              }
-            )
-            packages[parent].elements.push({type: 'class', id: id})
-            Object.keys(ownedAttrs.associations).forEach(
-              assocSourceId => { assocSrcToClass[assocSourceId] = id }
-            )
-
-            // record class hierarchy (allows multiple inheritance)
-            if ('generalization' in elt) {
-              elt.generalization.forEach(
-                superClassElt => {
-                  let superClassId = parseGeneral(superClassElt)
-                  classHierarchy.add(superClassId, id)
-                  classes[id].superClasses.push(superClassId)
-                })
-            }
-            break
-          case 'uml:Enumeration':
-            if (id in enums) {
-              throw Error('already seen enum id ' + id)
-            }
-            enums[id] = Object.assign(new EnumRecord(), {
-              id: id,
-              name: name,
-              values: elt.ownedLiteral.map(
-                l => parseName(l)
-              ),
-              packages: parents,
-              referees: []
-            })
-            packages[parent].elements.push({type: 'enumeration', id: id})
-            // record class hierarchy
-            if ('generalization' in elt) {
-              throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
-            }
-            break
-          case 'uml:DataType':
-          case 'uml:PrimitiveType':
-            if (id in datatypes) {
-              throw Error('already seen datatype id ' + id)
-            }
-            datatypes[id] = Object.assign(new DatatypeRecord(), {
-              name: name,
-              id: id,
-              packages: parents,
-              referees: []
-            })
-            packages[parent].elements.push({type: 'datatype', id: id})
-            // record class hierarchy
-            if ('generalization' in elt) {
-              throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
-            }
-            break
-          case 'uml:Model':
-          case 'uml:Package':
-            let recurse = true
-            if (id === 'ddi4_views') {
-              model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
-              recurse = false
-              break // elide EA views package in package hierarcy
-            }
-            if (id.match(/FunctionalViews/)) {
-              model.views = parseCanonicalViews(elt)
-              recurse = false
-              break // elide canonical views package in package hierarcy
-            }
-            packages[id] = Object.assign(new PackageRecord(), {
-              name: name,
-              id: id,
-              packages: parents,
-              elements: []
-            })
-            if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
-              packageHierarchy.add(parent, id)
-              packages[parent].elements.push({type: 'package', id: id})
-            }
-            if (recurse && 'packagedElement' in elt) {
-              // walk desendents
-              elt.packagedElement.forEach(sub => {
-                visitPackage(sub, [id].concat(parents))
-              })
-            }
-            break
-            // Pass through to get to nested goodies.
-          case 'uml:Association':
-            let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
-            associations[id] = Object.assign(new AssociationRecord(id, name), {
-              from: from
-              // type: elt.ownedEnd[0].type[0].$['xmi:idref']
-            })
-            /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
-                 <name>member</name>
-                 <memberEnd xmi:idref="AgentIndicator-member-source"/>
-                 <memberEnd xmi:idref="AgentIndicator-member-target"/>
-                 <ownedEnd xmi:id="AgentIndicator-member-target" xmi:type="uml:Property">
-                   <association xmi:idref="AgentIndicator-member-association"/>
-                   <type xmi:idref="AgentIndicator"/>
-                   <lower><value>1</value></lowerValue>
-                   <upper><value>1</value></uppervalue>
-                 </ownedEnd>
-               </packagedElement> */
-            break
-          default:
-            console.warn('need handler for ' + type)
-        }
-      }
-    }
-  }
-
-  function ClassRecord (id, name) {
-    this.id = id
-    this.name = name
-  }
-
-  function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
-    if (className === null) {
-      console.warn('no class name for PropertyRecord ' + id)
-    }
-    this.in = className
-    this.id = id
-    this.name = name
-    this.idref = idref
-    this.href = href
-    this.lower = lower
-    this.upper = upper
-    this.comments = comments
-    if (this.upper === '-1') {
-      this.upper = UPPER_UNLIMITED
-    }
-    if (!(name in model.properties)) {
-      model.properties[name] = {sources: []}
-    }
-    model.properties[name].sources.push(this)
-  }
-
-  function RefereeRecord     (classId, propName) {
-    // if (classId === null) {
-    //   throw Error('no class id for ReferenceRecord with property name ' + propName)
-    // }
-    this.classId = classId
-    this.propName = propName
-  }
-  function ModelRecord       () { }
-  function PackageRecord     () { }
-  function EnumRecord        () { }
-  function DatatypeRecord    () { }
-  function ViewRecord        () { }
-
-  /**
-   * if attrName is null, we'll use the AssociationRecord's name.
-        <packagedElement xmi:id="<classId>" xmi:type="uml:Class">
-          <ownedAttribute xmi:id="<classId>-ownedAttribute-<n>" xmi:type="uml:Property">
-            <type xmi:idref="<refType>"/> <lowerValue/> <upperValue/>
-            <name>attrName</name>
-          </ownedAttribute>
-        </packagedElement>
-   */
-  function AssocRefRecord (id, name) {
-    // if (name === null) {
-    //   throw Error('no name for AssociationRecord ' + id)
-    // }
-    this.id = id
-    this.name = name
-  }
-
-  /**
-        <packagedElement xmi:id="<classId>" xmi:type="uml:Association"> <!-- can duplicate classId -->
-          <memberEnd xmi:idref="<classId>-ownedAttribute-<n>"/>
-          <memberEnd xmi:idref="<classId>-ownedEnd"/>
-          <ownedEnd xmi:id="<classId>-ownedEnd" xmi:type="uml:Property">
-            <type xmi:idref="<classId>"/> <lowerValue /> <upperValue />
-            <association xmi:idref="<classId>"/>
-          </ownedEnd>
-          <name>assocName</name>
-        </packagedElement>
-   */
-  function AssociationRecord (id, name) {
-    // if (name === null) {
-    //   throw Error('no name for AssociationRecord ' + id)
-    // }
-    this.id = id
-    this.name = name
   }
 
   function reusedProperties (classes, into) {
@@ -1217,7 +621,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let card = shexCardinality(use)
             let comments = (use.comments || []).map(markup.comment)
             let valueStr =
-                  'referees' in dt && dt instanceof ClassRecord && nestInlinableStructure && inlineable(model, dt)
+                  'referees' in dt && dt instanceof UMLparser.ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p, model)
                   ? markup.valueReference(dt.name)
@@ -1310,22 +714,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
      </ownedAttribute>
   */
 
-  function expandPrefix (pname) {
-    let i = pname.indexOf(':')
-    if (i === -1) {
-      return pname // e.g. LanguageSpecification
-    }
-    let prefix = pname.substr(0, i)
-    let rest = pname.substr(i + 1)
-    let ret = KnownPrefixes.map(
-      pair =>
-        pair.prefix === prefix
-          ? pair.url + rest
-          : null
-    ).find(v => v)
-    return ret || pname
-  }
-
   function puns (object, into) {
     const lookIns = ['classes', 'fields', 'associations', 'types', 'enums']
     const x = lookIns.reduce((acc, lookIn) => {
@@ -1357,89 +745,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             ))
         })
       )))
-  }
-
-  /** find the unique object types for a property
-   */
-  function findMinimalTypes (model, p) {
-    return p.sources.reduce((acc, s) => {
-      let t = s.href || s.idref
-      if (acc.length > 0 && acc.indexOf(t) === -1) {
-        // debugger;
-        // a.find(i => b.indexOf(i) !== -1)
-      }
-      return acc.indexOf(t) === -1 ? acc.concat(t) : acc
-    }, [])
-  }
-
-  function makeHierarchy () {
-    let roots = {}
-    let parents = {}
-    let children = {}
-    let holders = {}
-    return {
-      add: function (parent, child) {
-        if (parent in children && children[parent].indexOf(child) !== -1) {
-          // already seen
-          return
-        }
-        let target = parent in holders
-          ? getNode(parent)
-          : (roots[parent] = getNode(parent)) // add new parents to roots.
-        let value = getNode(child)
-
-        target[child] = value
-        if (child in roots) {
-          delete roots[child]
-        }
-
-        // // maintain hierarchy (direct and confusing)
-        // children[parent] = children[parent].concat(child, children[child])
-        // children[child].forEach(c => parents[c] = parents[c].concat(parent, parents[parent]))
-        // parents[child] = parents[child].concat(parent, parents[parent])
-        // parents[parent].forEach(p => children[p] = children[p].concat(child, children[child]))
-
-        // maintain hierarchy (generic and confusing)
-        updateClosure(children, parents, child, parent)
-        updateClosure(parents, children, parent, child)
-        function updateClosure (container, members, near, far) {
-          container[far] = container[far].concat(near, container[near])
-          container[near].forEach(
-            n => (members[n] = members[n].concat(far, members[far]))
-          )
-        }
-
-        function getNode (node) {
-          if (!(node in holders)) {
-            parents[node] = []
-            children[node] = []
-            holders[node] = {}
-          }
-          return holders[node]
-        }
-      },
-      roots: roots,
-      parents: parents,
-      children: children
-    }
-  }
-  makeHierarchy.test = function () {
-    let t = makeHierarchy()
-    t.add('B', 'C')
-    t.add('C', 'D')
-    t.add('F', 'G')
-    t.add('E', 'F')
-    t.add('D', 'E')
-    t.add('A', 'B')
-    t.add('G', 'H')
-    console.dir(t)
-  }
-  function walkHierarchy (n, f, p) {
-    return Object.keys(n).reduce((ret, k) => {
-      return ret.concat(
-        walkHierarchy(n[k], f, k),
-        p ? f(k, p) : []) // outer invocation can have null parent
-    }, [])
   }
 
   function structureToListItems (object, into, recordTypes) {
@@ -1553,6 +858,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
     return root
   }
+
+  function docURL (term) {
+    return 'http://lion.ddialliance.org/ddiobjects/' + term.toLowerCase()
+  }
+
 }
 
 window.onload = main
