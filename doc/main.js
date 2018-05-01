@@ -81,32 +81,48 @@ function main () {
     return true
   })
 
-  function processXMI (xmiText, source, status) {
+  function processXMI (umlText, source, status) {
     let div = $('<div/>', {'id': source, 'class': 'result'}).appendTo('#render')
-    let reparse = $('<button/>').text('reparse').on('click', parse)
+    let reparse = $('<button/>').text('reparse').on('click', parseText)
     $('<h2/>').text(source).append(reparse).appendTo(div)
     let model
     let progress = $('<ul/>')
-
     div.append(progress)
+    parseText()
 
-    status.text('parsing UML...')
-    window.setTimeout(parse, RENDER_DELAY)
-
-    function parse () {
-      console.log(UMLparser.parse(xmiText, source, function (err, result) {
-        if (err) {
-          console.error(err)
-        } else {
-          status.text('indexing...')
-          model = result
-          status.text('rendering structure...')
-          window.setTimeout(render, RENDER_DELAY)
-        }
-      }))
+    function parseText () {
+      status.text('parsing JSON...')
+      window.setTimeout(
+        () => {
+          UMLparser.parseJSON(
+            umlText, source,
+            (err, result) => {
+              if (err) {
+                status.text('parsing UML...')
+                window.setTimeout(
+                  () => UMLparser.parseXMI(umlText, source, parsedUML),
+                  RENDER_DELAY
+                )
+              } else {
+                parsedUML(err, result)
+              }
+            })
+        },
+        RENDER_DELAY
+      )
     }
 
-   function render () {
+    function parsedUML (err, result) {
+      if (err) {
+        console.error(err)
+      } else {
+        model = result
+        status.text('rendering structure...')
+        window.setTimeout(render, RENDER_DELAY)
+      }
+    }
+
+    function render () {
       let modelUL = $('<ul/>')
       structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
@@ -135,9 +151,23 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let t = dumpFormats(model, source,
+      let patched = UMLparser.duplicate(model)
+      // Missing classes -- expected to be repaired.
+      let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
+      missingClasses.forEach(
+        classId => {
+          if (!(classId in patched)) { // !!
+            patched.classes[classId] = { name: classId, packages: ['FakePattern'] }
+          }
+        })
+
+      let t = dumpFormats(patched, source,
                           $('#nestInlinableStructure').is(':checked'))
       progress.append(
+        $('<li/>').append(
+          'Raw model: ',
+          $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
+        ),
         $('<li/>').append(
           'OWL: ',
           $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
@@ -233,6 +263,7 @@ function main () {
   function dumpFormats (model, source, nestInlinableStructure) {
     let owlx = [
       '<?xml version="1.0"?>\n' +
+        '<!-- Source: ' + source + ' -->\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
         '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
         '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
@@ -338,15 +369,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         return '<span class="type">' + term.substr(0, i) + '</span><span class="constant">' + term.substr(i) + '</span>'
       }
     }
-
-    // Missing classes -- expected to be repaired.
-    let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
-    missingClasses.forEach(
-      classId => {
-        if (!(classId in model)) { // !!
-          model.classes[classId] = { name: classId, packages: ['FooPattern'] }
-        }
-      })
 
     let packages = firstBranch(model.packageHierarchy.roots)
 

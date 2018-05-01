@@ -136,7 +136,7 @@ let CanonicalUmlXmiParser = function () {
     return type
   }
 
-  function parseModel (document, source, triples) {
+  function parseModel (document, source) {
     // makeHierarchy.test()
     // convenience variables
     let packages = {}
@@ -240,7 +240,7 @@ let CanonicalUmlXmiParser = function () {
             }
             let ownedAttrs = parseProperties(
               model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
-              id, triples)
+              id)
 
             classes[id] = Object.assign(
               new ClassRecord(id, name),
@@ -365,6 +365,9 @@ let CanonicalUmlXmiParser = function () {
   }
 
   function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
+    if (model === undefined) {
+      return // short-cut for objectify
+    }
     if (className === null) {
       console.warn('no class name for PropertyRecord ' + id)
     }
@@ -685,8 +688,77 @@ let CanonicalUmlXmiParser = function () {
     }, [])
   }
 
+  function add (obj, key, value) {
+    let toAdd = { }
+    toAdd[key] = value
+    return Object.assign(obj, toAdd)
+  }
+
+  /** convert parsed structure to have correct prototypes
+   */
+  function objectify (modelStruct) {
+    return Object.assign(new ModelRecord(), {
+      source: modelStruct.source,
+      packages: Object.keys(modelStruct.packages).reduce(
+        (acc, packageId) => add(acc, packageId, Object.assign(new PackageRecord(), modelStruct.packages[packageId])),
+        {}
+      ),
+      classes: Object.keys(modelStruct.classes).reduce(
+        (acc, classId) => add(acc, classId, Object.assign(new ClassRecord(), modelStruct.classes[classId], {
+          properties: modelStruct.classes[classId].properties.map(
+            prop => Object.assign(new PropertyRecord(), prop)
+          )
+        }, referees(modelStruct.classes[classId]))),
+        {}
+      ),
+      properties: Object.keys(modelStruct.properties).reduce(
+        (acc, propertyName) => add(acc, propertyName, Object.assign({}, modelStruct.properties[propertyName], {
+          sources: modelStruct.properties[propertyName].sources.map(
+            propertyRecord => Object.assign(new PropertyRecord(), propertyRecord)
+          )
+        })),
+        {}
+      ),
+      enums: simpleCopy(modelStruct.enums, EnumRecord),
+      datatypes: simpleCopy(modelStruct.datatypes, DatatypeRecord),
+      classHierarchy: Object.assign({}, modelStruct.classHierarchy),
+      packageHierarchy: Object.assign({}, modelStruct.packageHierarchy),
+      associations: Object.keys(modelStruct.associations).reduce(
+        (acc, associationId) => add(acc, associationId, Object.assign(new AssociationRecord(), modelStruct.associations[associationId])),
+        {}
+      ),
+      views: modelStruct.views.map(
+        view => Object.assign(new ViewRecord(), view)
+      )
+    })
+    function simpleCopy (obj, f) {
+      return Object.keys(obj).reduce(
+        (acc, key) => add(acc, key, Object.assign(new f(), obj[key],
+                                                  referees(obj[key]))),
+        {}
+      )
+    }
+    function referees (obj) {
+      return {
+        referees: obj.referees.map(
+          prop => Object.assign(new RefereeRecord(), prop)
+        )
+      }
+    }
+  }
+
   return {
-    parse: function (xmiText, source, cb) {
+    parseJSON: function (jsonText, source, cb) {
+      try {
+        let model = objectify(JSON.parse(jsonText))
+        model.source = source
+        model.strip = strip
+        cb(null, model)
+      } catch (err) {
+        cb(err)
+      }
+    },
+    parseXMI: function (xmiText, source, cb) {
       require('xml2js').Parser().parseString(xmiText, function (err, document) {
         if (err) {
           cb(err)
@@ -696,6 +768,9 @@ let CanonicalUmlXmiParser = function () {
           cb(null, model)
         }
       })
+    },
+    duplicate: function (model) {
+      return objectify(JSON.parse(JSON.stringify(model)))
     },
     ModelRecord: ModelRecord,
     PropertyRecord: PropertyRecord,
