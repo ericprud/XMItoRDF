@@ -63,6 +63,11 @@
 </pre>
         </li>
         <li>
+          <p>assocations</p>
+          <pre>  ...
+</pre>
+        </li>
+        <li>
           <p>enums</p>
           <pre>&lt;packagedElement xmi:id="…-ComplexDataTypes-RelationSpecification" xmi:uuid="…" xmi:type="uml:Enumeration"&gt;
   &lt;name&gt;RelationSpecification&lt;/name&gt;
@@ -100,7 +105,9 @@
       <p>For the corresping RDF model:</p>
       <ul>
         <li>
-          <p>Each class, property, datatype, enumeration and literal in that enumeration is an IRI with and identifier of that entity's name prefixed with 'ddi:'</p>
+          <p>
+            Each class, property, datatype, enumeration and literal in that enumeration is an IRI with and identifier of that entity's name prefixed with 'ddi:'
+          </p>
         </li>
         <li>
           <p>
@@ -115,9 +122,26 @@
         </li>
         <li>
           <p>
-            Non-primitive datatypes are represented as OWL Classes or ShEx Shapes.<br/>
+            Structured datatypes are represented as OWL Classes or ShEx Shapes.<br/>
             Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complext datatype and class.
           </p>
+        </li>
+        <li>
+          <p>
+            Classes:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Properties - becomes an RDF property with predicate ...
+              </p>
+            </li>
+            <li>
+              <p>
+                Associations - becomes an RDF property with predicate ...
+              </p>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
