@@ -94,17 +94,19 @@ function main () {
       status.text('parsing JSON...')
       window.setTimeout(
         () => {
+          // try JSON 'cause it's easier
           UMLparser.parseJSON(
             umlText, source,
             (err, result) => {
               if (err) {
                 status.text('parsing UML...')
                 window.setTimeout(
-                  () => UMLparser.parseXMI(umlText, source, parsedUML),
+                  // fall back to XMI
+                  () => UMLparser.parseXMI(umlText, source, parserCallback),
                   RENDER_DELAY
                 )
               } else {
-                parsedUML(err, result)
+                parserCallback(err, result)
               }
             })
         },
@@ -112,7 +114,7 @@ function main () {
       )
     }
 
-    function parsedUML (err, result) {
+    function parserCallback (err, result) {
       if (err) {
         console.error(err)
       } else {
