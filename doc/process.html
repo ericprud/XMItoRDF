@@ -35,11 +35,44 @@
       span { margin-left: .2em; }
       .keyword { background-color: #ffd; }
       .scalar { background-color: #eee; }
+      .uml { color: #550; }
+      .shex { color: #055; }
+      .rdf { color: #505; }
     </style>
   </head>
   <body>
     <div id="intro">
-      <h1>parsing XMI</h1>
+      <h2>Introduction</h2>
+      <p>
+        This section loosely describes a mapping from <span class="uml">UML models</span> to <span class="shex">RDF models</span> in order to describe compliant <span class="rdf">RDF data</span>.
+      </p>
+
+      <p>
+        The UML model includes <span class="uml">Associations</span>, <span class="uml">Enumerations</span>, atomic and complex <span class="uml">Datatypes</span> and <span class="uml">Classes</span> with <span class="uml">Generalizations</span> and <span class="uml">Properties</span>.
+        For RDF, <span class="uml">Classes</span> and <span class="uml">complex Datatypes</span> are captured as <span class="shex">Shapes</span>, <span class="uml">Properties</span> are captured as <span class="shex">TripleConstraints</span>, and <span class="uml">atomic Datatypes</span> and <span class="uml">Enumerations</span> are expressed as <span class="shex">NodeConstraints</span>.
+        In principle, OCL encodings of co-occurrence constraints can be expressed as <span class="shex">TripleExpressions</span>, but this must be tested on a corpus of UML that has such OCL.
+      </p>
+
+      <p>
+        Creating the RDF model requires a mapping of <span class="uml">Property</span> names to <span class="rdf">RDF predicates</span>.
+        OMG’s ODM offers a conservative approach to this which constructs an <span class="rdf">RDF predicate</span> from a the name of a containing <span class="uml">Class</span>, a <span class="uml">Property</span> name, and the value type of that <span class="uml">Property</span>.
+        For instance, from the BRIDG, a BiologicEntityPart has a <code>anatomicSiteLaterality</code> which has a value which is a code.
+        The ODM representation of this as an RDF predicate is <code>bridg:BiologicEntityPart.anatomicSiteLateralityCode</code>.
+        Greater understanding of the domain of the UML model may reveal at all properties with the same name can be given the same identifier in RDF.
+        For instance, DDI’s <span class="uml">member</span> property appears in many <span class="uml">Classes</span> with different value types, but the RDF identifier <code>ddi:member</code> captures them all.
+      </p>
+
+      <p>
+        <span class="uml">Enumerations</span> contain a list one or more constants.
+        While these could be expressed in RDF instances as either <span class="rdf">literals</span> or <span class="rdf">IRIs</span>, the strong preference in RDF is to leverage <span class="rdf">IRIs</span> and web architecture to provide unambiguous identifiers.
+      </p>
+
+      <p>
+        The following examples are taken from a <a href="ddi-ConceptSystem.shex">subset of the DDI model</a> forming a constellation around <code>ConceptSystem</code>.
+      </p>
+    </div>
+    <div id="parseXMI">
+      <h2>parsing XMI</h2>
       <p>recursively walk the XMI capturing:</p>
       <ul>
         <li>
@@ -102,6 +135,7 @@
       </ul>
     </div>
     <div id="transformation">
+      <h2>RDF Model</h2>
       <p>For the corresping RDF model:</p>
       <ul>
         <li>
@@ -116,7 +150,7 @@
           <table>
             <tr><th>UML</th><th>XSD</th></tr>
             <tr><td>anyURI</td><td>xsd:anyURI</td></tr>
-            <tr><td>LiteralUnlimitedNatural</td><td>xsd:double<br/>n.b. INF</td></tr>
+            <tr><td>LiteralUnlimitedNatural</td><td>xsd:double (n.b. "INF" for infinite values)</td></tr>
             <tr><td>...</td><td>...</td></tr>
           </table>
         </li>
@@ -146,6 +180,7 @@
       </ul>
     </div>
     <div id="OWLrep">
+      <h2>OWL Representation</h2>
       <p>For the OWL representation:</p>
       <ul>
         <li>Express in OWL/XML because protege's (OWLAPI's) error feedback is better.</li>
@@ -224,6 +259,15 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
         </li>
       </ul>
     </div>
+    <div id="issues">
+      <h2>Issues</h2>
+      <ol>
+        <li>Canonical representation of datatypes is still uncertain</li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+
     <div id="product">
     </div>
   </body>
