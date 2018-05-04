@@ -38,6 +38,7 @@
       .uml { color: #550; }
       .shex { color: #055; }
       .rdf { color: #505; }
+      .issue { border: thick solid #fdd; background-color: #fee }
     </style>
   </head>
   <body>
@@ -97,8 +98,21 @@
         </li>
         <li>
           <p>assocations</p>
-          <pre>  ...
-</pre>
+          <pre>&lt;ownedAttribute xmi:id="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
+  &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
+  &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
+
+          <p>+</p>
+
+          <pre>&lt;packagedElement xmi:id="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13" xmi:uuid="..." xmi:type="uml:Association"&gt;
+  &lt;name&gt;definingConcept&lt;/name&gt;
+  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8"/&gt;
+  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd"/&gt;
+  &lt;ownedEnd xmi:id="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;
+  &lt;/ownedEnd&gt;
+&lt;/packagedElement&gt;</pre>
         </li>
         <li>
           <p>enums</p>
@@ -140,39 +154,48 @@
       <ul>
         <li>
           <p>
-            Each class, property, datatype, enumeration and literal in that enumeration is an IRI with and identifier of that entity's name prefixed with 'ddi:'
+            Each <span class="uml">class</span>, <span class="uml">property</span>, <span class="uml">datatype</span>, <span class="uml">enumeration</span> and literal in that <span class="uml">enumeration</span> is an IRI with and identifier of that entity's name prefixed with '<code>ddi:</code>'
           </p>
         </li>
         <li>
           <p>
-            Primitive UML datatypes are mapped to their corresponding XML Schema datatype per
+            <span class="uml">Primitive UML datatypes</span> are mapped to their corresponding XML Schema datatype per
           </p>
           <table>
             <tr><th>UML</th><th>XSD</th></tr>
-            <tr><td>anyURI</td><td>xsd:anyURI</td></tr>
+            <tr><td>boolean</td><td>xsd:boolean</td></tr>
+            <tr><td>integer</td><td>xsd:integer</td></tr>
+            <tr><td>double</td><td>xsd:double</td></tr>
             <tr><td>LiteralUnlimitedNatural</td><td>xsd:double (n.b. "INF" for infinite values)</td></tr>
-            <tr><td>...</td><td>...</td></tr>
+            <tr><td>string</td><td>xsd:string</td></tr>
+            <tr><td>float</td><td>xsd:float</td></tr>
+            <tr><td>anyURI</td><td>xsd:anyURI</td></tr>
           </table>
+          <p class="issue" id="canonDT">
+            Note the the canonical representation of datatypes is still uncertain.
+            They may be expressed directly in <code>&lt;ownedProperty&gt;</code> elements or they may require an extra level of indirection to a locally-defined datatype.
+          </p>
         </li>
         <li>
           <p>
-            Structured datatypes are represented as OWL Classes or ShEx Shapes.<br/>
+            <span class="uml">Structured datatypes</span> are represented as OWL Classes or ShEx Shapes.<br/>
             Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complext datatype and class.
           </p>
         </li>
         <li>
           <p>
-            Classes:
+            Each UML <span class="uml">class</span> is a class in RDF.
+            This class has:
           </p>
           <ul>
             <li>
               <p>
-                Properties - becomes an RDF property with predicate ...
+                <span class="uml">Properties</span> - becomes an RDF property with predicate of the property name prefixed by '<code>ddi:</code>'.
               </p>
             </li>
             <li>
               <p>
-                Associations - becomes an RDF property with predicate ...
+                <span class="uml">Associations</span> - becomes an RDF property with predicate of either the property name, if present, or the Association name, prefixed by '<code>ddi:</code>'.
               </p>
             </li>
           </ul>
@@ -194,7 +217,7 @@
 &lt;/Declaration&gt;
 &lt;DataPropertyRange&gt;
     &lt;DataProperty abbreviatedIRI="ddi:uri"/&gt;
-    &lt;Datatype abbreviatedIRI="ddi:anyURI"/&gt;
+    &lt;Datatype abbreviatedIRI="xsd:anyURI"/&gt;
 &lt;/DataPropertyRange&gt;</pre>
           <p>
             Otherwise, it's an ObjectProperty:
@@ -262,7 +285,7 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
     <div id="issues">
       <h2>Issues</h2>
       <ol>
-        <li>Canonical representation of datatypes is still uncertain</li>
+        <li><a href="#canonDT">Canonical representation of datatypes is still uncertain</a></li>
         <li></li>
         <li></li>
       </ol>
