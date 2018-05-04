@@ -74,15 +74,15 @@
     </div>
     <div id="parseXMI">
       <h2>parsing XMI</h2>
-      <p>recursively walk the XMI capturing:</p>
+      <p>recursively walk the XMI capturing the <span class="uml">UML model</span>:</p>
       <ul>
         <li>
-          <p>packages</p>
+          <h3 class="uml">packages</h3>
           <pre>&lt;packagedElement xmi:id="…-Conceptual" xmi:uuid="…" xmi:type="uml:Package"&gt;
 </pre>
         </li>
         <li>
-          <p>classes</p>
+          <h3 class="uml">classes</h3>
           <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
   &lt;name&gt;ConceptSystem&lt;/name&gt;
   &lt;generalization xmi:id="…-Conceptual-ConceptSystem-generalization" xmi:uuid="…" xmi:type="uml:Generalization"&gt;
@@ -90,17 +90,21 @@
   &lt;/generalization&gt;</pre>
         </li>
         <li>
-          <p>properties</p>
-          <pre>  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-type" xmi:uuid="…" xmi:type="uml:Property"&gt;
+          <h3 class="uml">class properties</h3>
+          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
+  ...
+  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-type" xmi:uuid="…" xmi:type="uml:Property"&gt;
     &lt;type xmi:idref="…-EnumerationsRegExp-CollectionType"/&gt;
     &lt;name&gt;type&lt;/name&gt;
 </pre>
         </li>
         <li>
-          <p>assocations</p>
-          <pre>&lt;ownedAttribute xmi:id="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
-  &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
-  &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
+          <h3 class="uml">class assocations</h3>
+          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
+  ...
+  &lt;ownedAttribute xmi:id="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
 
           <p>+</p>
 
@@ -110,12 +114,10 @@
   &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd"/&gt;
   &lt;ownedEnd xmi:id="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
     &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
-    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;
-  &lt;/ownedEnd&gt;
-&lt;/packagedElement&gt;</pre>
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
         </li>
         <li>
-          <p>enums</p>
+          <h3 class="uml">enums</h3>
           <pre>&lt;packagedElement xmi:id="…-ComplexDataTypes-RelationSpecification" xmi:uuid="…" xmi:type="uml:Enumeration"&gt;
   &lt;name&gt;RelationSpecification&lt;/name&gt;
   &lt;ownedLiteral xmi:id="…-ComplexDataTypes-RelationSpecification-Unordered" xmi:uuid="…" xmi:type="uml:EnumerationLiteral"&gt;
@@ -124,14 +126,14 @@
 </pre>
         </li>
         <li>
-          <p>datatypes</p>
+          <h3 class="uml">datatypes</h3>
           <pre>&lt;packagedElement xmi:id="…-EnumerationsRegExp-IsoDateType" xmi:uuid="…" xmi:type="uml:DataType"&gt;
   &lt;name&gt;IsoDateType&lt;/name&gt;
 &lt;/packagedElement&gt;
 </pre>
         </li>
         <li>
-          <p>views - packages ending with the word "View"</p>
+          <h3><span class="uml">views</span> <span style="font-weight: normal; font-size: initial;">- <span class="uml">packages</span> ending with the word "View"</span></h3>
           <pre>&lt;packagedElement xmi:id="…-ConceptualContentView" xmi:uuid="…" xmi:type="uml:Package"&gt;
   &lt;elementImport xmi:id="…-ConceptualContentView-elementImport-7" xmi:uuid="…" xmi:type="uml:ElementImport"&gt;
     &lt;importedElement xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
@@ -159,6 +161,27 @@
         </li>
         <li>
           <p>
+            Each <span class="uml">class</span> and each <span class="uml">structured (complex) datatype</span><sup>1</sup> becomes an <span class="rdf">RDF class</span>.
+            This class has:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <span class="uml">Properties</span> - becomes an <span class="rdf">RDF property</span> with predicate of the property name prefixed by '<code>ddi:</code>'.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="uml">Associations</span> - becomes an <span class="rdf">RDF property</span> with predicate of either the property name, if present, or the Association name, prefixed by '<code>ddi:</code>'.
+              </p>
+            </li>
+          </ul>
+          <p>
+            <sup>1</sup> Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complext datatype and class.
+          </p>
+        </li>
+        <li>
+          <p>
             <span class="uml">Primitive UML datatypes</span> are mapped to their corresponding XML Schema datatype per
           </p>
           <table>
@@ -172,33 +195,9 @@
             <tr><td>anyURI</td><td>xsd:anyURI</td></tr>
           </table>
           <p class="issue" id="canonDT">
-            Note the the canonical representation of datatypes is still uncertain.
+            Note the the canonical representation of <span class="uml">primitive datatypes</span> is still uncertain.
             They may be expressed directly in <code>&lt;ownedProperty&gt;</code> elements or they may require an extra level of indirection to a locally-defined datatype.
           </p>
-        </li>
-        <li>
-          <p>
-            <span class="uml">Structured datatypes</span> are represented as OWL Classes or ShEx Shapes.<br/>
-            Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complext datatype and class.
-          </p>
-        </li>
-        <li>
-          <p>
-            Each UML <span class="uml">class</span> is a class in RDF.
-            This class has:
-          </p>
-          <ul>
-            <li>
-              <p>
-                <span class="uml">Properties</span> - becomes an RDF property with predicate of the property name prefixed by '<code>ddi:</code>'.
-              </p>
-            </li>
-            <li>
-              <p>
-                <span class="uml">Associations</span> - becomes an RDF property with predicate of either the property name, if present, or the Association name, prefixed by '<code>ddi:</code>'.
-              </p>
-            </li>
-          </ul>
         </li>
       </ul>
     </div>
