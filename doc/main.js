@@ -8,23 +8,73 @@ var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's packa
 var UPPER_UNLIMITED = '*'
 const TYPE_NodeConstraint = ['NodeConstraint']
 const TYPE_ShapeRef = ['ShapeRef']
-const UMLparser = require('./canonical-uml-xmi-parser')()
-
-const AllRecordTypes = [
-  {type: UMLparser.ModelRecord,       maker: () => $('<span/>', { class: 'record' }).text('model'  )},
-  {type: UMLparser.PropertyRecord,    maker: () => $('<span/>', { class: 'record' }).text('prop'   )},
-  {type: UMLparser.ClassRecord,       maker: () => $('<span/>', { class: 'record' }).text('Class'  )},
-  {type: UMLparser.PackageRecord,     maker: () => $('<span/>', { class: 'record' }).text('Package')},
-  {type: UMLparser.EnumRecord,        maker: () => $('<span/>', { class: 'record' }).text('Enum'   )},
-  {type: UMLparser.DatatypeRecord,    maker: () => $('<span/>', { class: 'record' }).text('Dt'     )},
-  {type: UMLparser.ViewRecord,        maker: () => $('<span/>', { class: 'record' }).text('View'   )},
-  {type: UMLparser.AssociationRecord, maker: () => $('<span/>', { class: 'record' }).text('Assoc'  )},
-  {type: UMLparser.AssocRefRecord,    maker: () => $('<span/>', { class: 'record' }).text('assoc'  )},
-  {type: UMLparser.RefereeRecord,     maker: () => $('<span/>', { class: 'record' }).text('ref'    )}
-]
 
 function main () {
   let $ = window.jQuery
+
+  let XSD = 'http://www.w3.org/2001/XMLSchema#'
+  let UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
+  let UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
+
+  const normalizeType = function (type) {
+    if (!type) {
+      return type // pass undefined on
+    }
+    if (type === 'xs:language') {
+      return XSD + 'language'
+    }
+    let dtList = [
+      { from: UMLD + 'String', to: XSD + 'string' },
+      { from: UMLD + 'Integer', to: XSD + 'integer' },
+      { from: UMLD + 'Boolean', to: XSD + 'boolean' },
+      { from: UMLP + 'String', to: XSD + 'string' },
+      { from: UMLP + 'Integer', to: XSD + 'integer' },
+      { from: UMLP + 'Boolean', to: XSD + 'boolean' },
+      { from: UMLP + 'Real', to: XSD + 'double' },
+      { from: UMLP + 'UnlimitedNatural', to: XSD + 'double' }
+    ]
+    let dtMap = dtList.reduce(
+      (acc, elt) => objSet(acc, elt.from, elt.to),
+      {}
+    )
+    if (type in dtMap) {
+      return dtMap[type]
+    }
+    if (type.startsWith(UMLP)) {
+      return UMLD + type.substr(UMLP.length)
+    }
+    return type
+  }
+  const ParserOpts = {
+    viewPattern: /FunctionalViews/,
+    normalizeType: normalizeType,
+    nameMap: {
+      'Views (Exported from Drupal)': 'Views',
+      'Class Model (Exported from Drupal)': 'ddi4_model',
+      'ClassLibrary': 'ddi4_model', // minimize diffs
+      'FunctionalViews': 'Views',
+      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
+      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
+    }
+  }
+  const UMLparser = require('./canonical-uml-xmi-parser')(ParserOpts)
+
+  function spanText (str) {
+    return () => $('<span/>', { class: 'record' }).text(str)
+  }
+
+  const AllRecordTypes = [
+    {type: UMLparser.ModelRecord,       maker: spanText('model'  )},
+    {type: UMLparser.PropertyRecord,    maker: spanText('prop'   )},
+    {type: UMLparser.ClassRecord,       maker: spanText('Class'  )},
+    {type: UMLparser.PackageRecord,     maker: spanText('Package')},
+    {type: UMLparser.EnumRecord,        maker: spanText('Enum'   )},
+    {type: UMLparser.DatatypeRecord,    maker: spanText('Dt'     )},
+    {type: UMLparser.ViewRecord,        maker: spanText('View'   )},
+    {type: UMLparser.AssociationRecord, maker: spanText('Assoc'  )},
+    {type: UMLparser.AssocRefRecord,    maker: spanText('assoc'  )},
+    {type: UMLparser.RefereeRecord,     maker: spanText('ref'    )}
+  ]
 
   $('#load-file').on('change', function (evt) {
     if (!window.FileReader) {
@@ -587,7 +637,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
 
     function OWLXMLDatatype (model, datatypeId) {
       let dt = model.datatypes[datatypeId]
-      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+      if (dt.name.startsWith(XSD) ||
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
@@ -679,7 +729,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
 
     function ShExCDatatype (model, datatypeId, markup) {
       let dt = model.datatypes[datatypeId]
-      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+      if (dt.name.startsWith(XSD) ||
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
@@ -709,11 +759,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
   }
 
   const KnownPrefixes = [
-    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
-    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
-    {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
+    {url: XSD, prefix: 'xsd'},
+    {url: XSD, prefix: 'xs'},
+    {url: UMLD, prefix: 'umld'},
     {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
-    {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
+    {url: UMLP, prefix: 'umlp'}
   ]
 
   function pname (id) {
@@ -885,6 +935,13 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
 
   function docURL (term) {
     return 'http://lion.ddialliance.org/ddiobjects/' + term.toLowerCase()
+  }
+
+  // stupid stuff you always have to add to javascript
+  function objSet (obj, key, value) {
+    let add = { }
+    add[key] = value
+    return Object.assign({}, obj, add)
   }
 
 }

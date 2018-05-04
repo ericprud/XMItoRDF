@@ -1,16 +1,15 @@
-let CanonicalUmlXmiParser = function () {
+/**
+ */
+
+let CanonicalUmlXmiParser = function (opts) {
+
+  let NormalizeType = opts.normalizeType || (type => type)
+  let ViewPattern = opts.viewPattern || null
+  let NameMap = opts.nameMap || { }
 
   function parseName (elt) {
     let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
-    let nameMap = {
-      'Views (Exported from Drupal)': 'Views',
-      'Class Model (Exported from Drupal)': 'ddi4_model',
-      'ClassLibrary': 'ddi4_model', // minimize diffs
-      'FunctionalViews': 'Views',
-      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
-      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    return !ret ? ret : ret in nameMap ? nameMap[ret] : expandPrefix(ret)
+    return !ret ? ret : ret in NameMap ? NameMap[ret] : expandPrefix(ret)
   }
 
   function parseValue (elt, deflt) { // 'default' is a reserved word
@@ -70,7 +69,7 @@ let CanonicalUmlXmiParser = function () {
         ret.properties.push(
           new PropertyRecord(
             model, className, id, name, elt.type[0].$['xmi:idref'],
-            normalizeType(elt.type[0].$['href']),
+            NormalizeType(elt.type[0].$['href']),
             parseValue(elt.lowerValue[0], 0),
             parseValue(elt.upperValue[0], UPPER_UNLIMITED),
             parseComments(elt))
@@ -106,34 +105,6 @@ let CanonicalUmlXmiParser = function () {
         )
       })
     })
-  }
-
-  function normalizeType (type) {
-    if (!type) {
-      return type // pass undefined on
-    }
-    if (type === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    let nameMap = {
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Real': 'http://www.w3.org/2001/XMLSchema#double',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#UnlimitedNatural': 'http://www.w3.org/2001/XMLSchema#double'
-    }
-    if (type in nameMap) {
-      return nameMap[type]
-    }
-    let umlp = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
-    let umld = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
-    if (type.startsWith(umlp)) {
-      return umld + type.substr(umlp.length)
-    }
-    return type
   }
 
   function parseModel (document, source) {
@@ -305,32 +276,34 @@ let CanonicalUmlXmiParser = function () {
             break
           case 'uml:Model':
           case 'uml:Package':
-            let recurse = true
+          let recurse = true
+          /* obsolete special code for DDI EA view
             if (id === 'ddi4_views') {
               model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
               recurse = false
               break // elide EA views package in package hierarcy
             }
-            if (id.match(/FunctionalViews/)) {
+          */
+            if (ViewPattern && id.match(ViewPattern)) {
               model.views = parseCanonicalViews(elt)
-              recurse = false
-              break // elide canonical views package in package hierarcy
-            }
-            packages[id] = Object.assign(new PackageRecord(), {
-              name: name,
-              id: id,
-              packages: parents,
-              elements: []
-            })
-            if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
-              packageHierarchy.add(parent, id)
-              packages[parent].elements.push({type: 'package', id: id})
-            }
-            if (recurse && 'packagedElement' in elt) {
-              // walk desendents
-              elt.packagedElement.forEach(sub => {
-                visitPackage(sub, [id].concat(parents))
+              recurse = false // elide canonical views package in package hierarcy
+            } else {
+              packages[id] = Object.assign(new PackageRecord(), {
+                name: name,
+                id: id,
+                packages: parents,
+                elements: []
               })
+              if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
+                packageHierarchy.add(parent, id)
+                packages[parent].elements.push({type: 'package', id: id})
+              }
+              if (recurse && 'packagedElement' in elt) {
+                // walk desendents
+                elt.packagedElement.forEach(sub => {
+                  visitPackage(sub, [id].concat(parents))
+                })
+              }
             }
             break
             // Pass through to get to nested goodies.
