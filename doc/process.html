@@ -91,10 +91,25 @@
         <li>
           <h3 class="uml">classes</h3>
           <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
-  &lt;name&gt;ConceptSystem&lt;/name&gt;
-  &lt;generalization xmi:id="…-Conceptual-ConceptSystem-generalization" xmi:uuid="…" xmi:type="uml:Generalization"&gt;
-    &lt;general xmi:idref="…-Identification-AnnotatedIdentifiable"/&gt;
-  &lt;/generalization&gt;</pre>
+  &lt;name&gt;ConceptSystem&lt;/name&gt;</pre>
+          <p>
+            Classes may be marked abstract:
+          </p>
+          <pre>&lt;isAbstract&gt;true&lt;/isAbstract&gt;</pre>
+          <p>
+            and may be derived from other classes:
+          </p>
+          <pre>  &lt;generalization xmi:id="…-Conceptual-ConceptSystem-generalization" xmi:uuid="…" xmi:type="uml:Generalization"&gt;
+    &lt;general xmi:idref="…-Identification-AnnotatedIdentifiable"/&gt;</pre>
+          <p>
+            Practical permutations:
+          </p>
+          <ul>
+            <li>simple concrete class</li>
+            <li>concrete class with a generalization concrete class</li>
+            <li>concrete class with a generalization abstract class</li>
+            <li>abstract class with a generalization abstract class</li>
+          </ul>
         </li>
         <li>
           <h3 class="uml">class properties</h3>
@@ -303,6 +318,17 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
           </pre>
         </li>
       </ul>
+    </div>
+    <div id="OWLrep">
+      <h2>Goal architecture</h2>
+      <pre>modules, invocations, permutations</pre>
+      <ul>
+        <li>XMI parser: XMI -&gt; ShEx model</li>
+        <li>ShEx to OWL: ShEx model -&gt; OWL</li>
+        <li>ShEx to OWL: ShEx model -&gt; OWL</li>
+        <li></li>
+      </ul>
+      <p>Note that the NPM convention is that package.json captures the require version information.</p>
     </div>
     <div id="issues">
       <h2>Issues</h2>
