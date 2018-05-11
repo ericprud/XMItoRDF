@@ -1,4 +1,4 @@
-# Source: uploaded DDI4_PIM_canonical.xmi 2018-04-22T02:00:39.225Z
+# Source: uploaded DDI4_PIM_canonical.xmi 2018-05-11T09:03:18.209Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1571,7 +1571,10 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:isDescribedIn @ddi:ExternalMaterial *;
-  ddi:assumesPrecondition @ddi:Precondition *;
+  ddi:assumesPrecondition EXTENDS ddi:BusinessFunction {
+    ddi:isDiscussedIn @ddi:ExternalMaterial *;
+    ddi:basedOnPriorResult @ddi:Result *;
+  } *;
   ddi:specifiesGoal @ddi:Goal *;
   ddi:expressesAlgorithm @ddi:AlgorithmOverview *;
   ddi:implementedBy @ddi:WorkflowProcess *;
@@ -2625,7 +2628,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasProcess EXTENDS ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString ?
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit""";
-    ddi:hasProcessSequence @ddi:ProcessSequence ?;
+    ddi:hasProcessSequence . ?;
     ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
   } *;
   ddi:hasInstrument EXTENDS ddi:AnnotatedIdentifiable {
@@ -3868,7 +3871,7 @@ GSIM mapping
 Correspondence Table"""^^mark:
 
 ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
-  ddi:representation @ddi:Signifier ?
+  ddi:representation . ?
   // shexmi:comment """A perceivable object used to denote a signified, i.e. a concept in this case.""";
   ddi:denotes @ddi:Concept *;
 }
@@ -4994,23 +4997,7 @@ Business Function"""^^mark:
 
 
 
-ddi:Precondition EXTENDS ddi:BusinessFunction {
-  ddi:isDiscussedIn @ddi:ExternalMaterial *;
-  ddi:basedOnPriorResult @ddi:Result *;
-}
-// rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/precondition>
-// shexmi:package "Methodologies"
-// shexmi:comment """Definition
-============
-A precondition is a state. The state includes one or more goals that were previously achieved. This state is the necessary condition before a process can begin.
 
-Examples
-==========
-Using goals and preconditions processes can be chained to form work flows. Note that these work flows do not include data flows. Instead data flows consisting ouf outputs, inputs and bindings are a separate swim lane. 
-
-Explanatory notes
-===================
-A precondition related to a design defines the state that must exist in order for a design being applied. For example in applying a Sampling Design there may be a precondition for the existance of a sampling frame meeting certain specifications."""^^mark:
 
 ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?

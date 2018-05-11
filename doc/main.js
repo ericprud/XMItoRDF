@@ -431,7 +431,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     ]
     toRender.forEach(
       r => {
-        Array().push.apply(r.v, Object.keys(packages).map(
+        Array().push.apply(r.v, Object.keys(packages)/*.filter(
+          packageId => !packages[packageId].name.match(/Pattern/)
+        )*/.map(
           packageId => renderPackage(model.packages[packageId], r.s, r.m)
         ))
       })
@@ -556,7 +558,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     </Declaration>\n` +
         (model.classes[classId].isAbstract ? (
           `    <DisjointUnion>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + model.classHierarchy.children[classId].map(
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + (model.classHierarchy.children[classId] || []).map(
             childClassId =>
               `        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>\n`
           ).join('') +

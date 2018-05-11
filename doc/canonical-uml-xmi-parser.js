@@ -294,9 +294,13 @@ let CanonicalUmlXmiParser = function (opts) {
                 packages: parents,
                 elements: []
               })
-              if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
-                packageHierarchy.add(parent, id)
-                packages[parent].elements.push({type: 'package', id: id})
+              if (parents.length) {
+                if (id.match(/Pattern/)) {
+                  recurse = false // don't record Pattern packages.
+                } else {
+                  packageHierarchy.add(parent, id)
+                  packages[parent].elements.push({type: 'package', id: id})
+                }
               }
               if (recurse && 'packagedElement' in elt) {
                 // walk desendents

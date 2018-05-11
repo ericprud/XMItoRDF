@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- Source: uploaded DDI4_PIM_canonical.xmi 2018-05-11T09:03:18.209Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://ddi-alliance.org/ns/ddi4"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -10838,7 +10839,7 @@ A specification for an air flow monitor used to capture a measure for an Impleme
         <Class abbreviatedIRI="ddi:WorkflowStep"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isPerformedBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowService"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15220,11 +15221,6 @@ Used to identify objects for purposes of internal and/or external referencing. E
         <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
         <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
         <Class abbreviatedIRI="ddi:VariableStatistics"/>
-        <Class abbreviatedIRI="ddi:Algorithm"/>
-        <Class abbreviatedIRI="ddi:Design"/>
-        <Class abbreviatedIRI="ddi:Methodology"/>
-        <Class abbreviatedIRI="ddi:Process"/>
-        <Class abbreviatedIRI="ddi:Service"/>
         <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
         <Class abbreviatedIRI="ddi:CustomInstance"/>
@@ -15247,16 +15243,6 @@ Used to identify objects for purposes of internal and/or external referencing. E
         <Class abbreviatedIRI="ddi:Datum"/>
         <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
         <Class abbreviatedIRI="ddi:ExternalAid"/>
-        <Class abbreviatedIRI="ddi:CollectionMember"/>
-        <Class abbreviatedIRI="ddi:Sign"/>
-        <Class abbreviatedIRI="ddi:Signified"/>
-        <Class abbreviatedIRI="ddi:ProcessStep"/>
-        <Class abbreviatedIRI="ddi:ProcessControlStep"/>
-        <Class abbreviatedIRI="ddi:Comparison"/>
-        <Class abbreviatedIRI="ddi:RelationStructure"/>
-        <Class abbreviatedIRI="ddi:SimpleCollection"/>
-        <Class abbreviatedIRI="ddi:ProcessSequence"/>
-        <Class abbreviatedIRI="ddi:StructuredCollection"/>
         <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
         <Class abbreviatedIRI="ddi:Concept"/>
         <Class abbreviatedIRI="ddi:Category"/>
@@ -19765,30 +19751,6 @@ related to org:Organization which is described as "Represents a collection of pe
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasMemberIndicator"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasMemberIndicator"/>
-        <Class abbreviatedIRI="ddi:ProcessStepIndicator"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
-        <Class abbreviatedIRI="ddi:Binding"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
-        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:boundingPolygon"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -20509,11 +20471,27 @@ related to org:Organization which is described as "Represents a collection of pe
     </ObjectPropertyRange>
 
     <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
+        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:estimatedDuration"/>
     </Declaration>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:estimatedDuration"/>
         <Class abbreviatedIRI="ddi:Date"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
+        <Class abbreviatedIRI="ddi:Binding"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -21549,54 +21527,6 @@ related to org:Organization which is described as "Represents a collection of pe
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
-        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:implentatedBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:implentatedBy"/>
-        <Class abbreviatedIRI="ddi:Process"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:executeSequence"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:executeSequence"/>
-        <Class abbreviatedIRI="ddi:ProcessSequence"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
-        <Class abbreviatedIRI="ddi:Parameter"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
-        <Class abbreviatedIRI="ddi:Parameter"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
-        <Class abbreviatedIRI="ddi:Agent"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:hasBoundingBox"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -21669,6 +21599,22 @@ related to org:Organization which is described as "Represents a collection of pe
     </ObjectPropertyRange>
 
     <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:sampleUnitType"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -21690,6 +21636,14 @@ related to org:Organization which is described as "Represents a collection of pe
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:implentedBy"/>
         <Class abbreviatedIRI="ddi:SamplingProcess"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -22026,6 +21980,22 @@ related to org:Organization which is described as "Represents a collection of pe
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:executeConcurrently"/>
         <Class abbreviatedIRI="ddi:WorkflowStep"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
+        <Class abbreviatedIRI="ddi:Agent"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:isPerformedBy"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:isPerformedBy"/>
+        <Class abbreviatedIRI="ddi:WorkflowService"/>
     </ObjectPropertyRange>
 
     <Declaration>
