@@ -172,7 +172,11 @@
     &lt;importedElement xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
 </pre>
         </li>
+        <li>
+          <h3>@@@<span class="uml">comments</span> (packages, classes, properties and associations)</h3>
+        </li>
       </ul>
+      <p>ElementImport can stand for a class, association or property. No PackageImport.</p>
       <p>This produces a <code>model</code> object which is supplemented by:</p>
       <ul>
         <li>classHierarchy - hierarchy of classes, e.g. <code>AnnotationDate</code> refines <code>Date</code>.</li>
@@ -309,6 +313,11 @@
           </ul>
         </li>
         <li>
+          <p>
+            For each comment@@
+          </p>
+        </li>
+        <li>
           <p>Per <a href="http://www.essepuntato.it/lode">LODE</a>, use <code>rdfs:comment</code> for comments.</p>
           <pre>
 &lt;AnnotationAssertion&gt;
@@ -329,7 +338,7 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
       <ul>
         <li>XMI parser: XMI -&gt; ShEx model</li>
         <li>ShEx to OWL: ShEx model -&gt; OWL</li>
-        <li>ShEx to OWL: ShEx model -&gt; OWL</li>
+        <li>ShEx to HTML: ShEx model -&gt; HTML schema explorer</li>
         <li></li>
       </ul>
       <p>Note that the NPM convention is that package.json captures the require version information.</p>
@@ -338,7 +347,7 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
       <h2>Issues</h2>
       <ol>
         <li><a href="#canonDT">Canonical representation of datatypes is still uncertain</a></li>
-        <li></li>
+        <li>Nesting throws away annotations on nested classes.</li>
         <li></li>
       </ol>
     </div>
