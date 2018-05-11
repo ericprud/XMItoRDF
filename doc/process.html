@@ -55,6 +55,13 @@
       </p>
 
       <p>
+        Shapes describe data structures while typical intepretations of OWL classes are that they describe real-world objects.
+        For example, a real-world Person object will always have two biological parents which are in turn entities of type Person.
+        A data structure describing a person will deal with this infinite series (and with likely missing data) by making the biological parents "optional".
+        OWL model using <span class="rdf">OWL Classes</span> as OWL has been used to model this duality since before shapes languages existed and DDI exports a data structure-oriented ontology.
+      </p>
+
+      <p>
         Creating the RDF model requires a mapping of <span class="uml">Property</span> names to <span class="rdf">RDF predicates</span>.
         OMG’s ODM offers a conservative approach to this which constructs an <span class="rdf">RDF predicate</span> from a the name of a containing <span class="uml">Class</span>, a <span class="uml">Property</span> name, and the value type of that <span class="uml">Property</span>.
         For instance, from the BRIDG, a BiologicEntityPart has a <code>anatomicSiteLaterality</code> which has a value which is a code.
@@ -102,22 +109,33 @@
           <h3 class="uml">class assocations</h3>
           <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
   ...
-  &lt;ownedAttribute xmi:id="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
+  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
     &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
     &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
 
           <p>+</p>
 
-          <pre>&lt;packagedElement xmi:id="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13" xmi:uuid="..." xmi:type="uml:Association"&gt;
+          <pre>&lt;packagedElement xmi:id="…-Conceptual-packagedElement-13" xmi:uuid="..." xmi:type="uml:Association"&gt;
   &lt;name&gt;definingConcept&lt;/name&gt;
   &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8"/&gt;
   &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd"/&gt;
-  &lt;ownedEnd xmi:id="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
+  &lt;ownedEnd xmi:id="…-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
     &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
     &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
+
+              <p>
+                Associations are annotated by an <code>aggregation</code> attribute they are marked as <code>shared</code>:
+              </p>
+              <pre>&lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-6" xmi:uuid="…" xmi:type="uml:Property"&gt;
+  &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-11"/&gt;
+    &lt;aggregation&gt;shared&lt;/aggregation&gt;</pre>
+              <p>
+                or <code>aggregate</code>:
+              </p>
+              <pre>    &lt;aggregation&gt;shared&lt;/aggregation&gt;</pre>
         </li>
         <li>
-          <h3 class="uml">enums</h3>
+          <h3 class="uml">enumerations</h3>
           <pre>&lt;packagedElement xmi:id="…-ComplexDataTypes-RelationSpecification" xmi:uuid="…" xmi:type="uml:Enumeration"&gt;
   &lt;name&gt;RelationSpecification&lt;/name&gt;
   &lt;ownedLiteral xmi:id="…-ComplexDataTypes-RelationSpecification-Unordered" xmi:uuid="…" xmi:type="uml:EnumerationLiteral"&gt;
@@ -143,7 +161,7 @@
       <p>This produces a <code>model</code> object which is supplemented by:</p>
       <ul>
         <li>classHierarchy - hierarchy of classes, e.g. <code>AnnotationDate</code> refines <code>Date</code>.</li>
-        <li>packageHierarchy - hierarchy of packages, e.g. <code>ComplexDataTypes</code> nests inside <code>ddi4_model</code>.</li>
+        <li>packageHierarchy - hierarchy of packages, e.g. <code>Conceptual</code> nests inside <code>ClassLibrary</code>.</li>
       </ul>
     </div>
     <div id="model">
@@ -174,10 +192,15 @@
               <p>
                 <span class="uml">Associations</span> - becomes an <span class="rdf">RDF property</span> with predicate of either the property name, if present, or the Association name, prefixed by '<code>ddi:</code>'.
               </p>
+              <p>
+                Aggregations and compositions are treated as regular associations (above).
+                In addition, annotations indicate aggregations and compositions.
+                Properties are annotated by an <code>shexmi:partonomy</code> property if the source annotation was marked as <code>shared</code> or <code>aggregate</code>:
+              </p>
             </li>
           </ul>
           <p>
-            <sup>1</sup> Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complext datatype and class.
+            <sup>1</sup> Neither RDF, nor the structure-defining schema languages OWL and ShEx, have a distinction between complex datatype and class.
           </p>
         </li>
         <li>
