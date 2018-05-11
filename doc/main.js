@@ -214,7 +214,8 @@ function main () {
         })
 
       let t = dumpFormats(patched, source,
-                          $('#nestInlinableStructure').is(':checked'))
+                          $('#nestInlinableStructure').is(':checked'),
+                          $('#chattyOWL').is(':checked'))
       progress.append(
         $('<li/>').append(
           'Raw model: ',
@@ -312,7 +313,7 @@ function main () {
       )))
   }
 
-  function dumpFormats (model, source, nestInlinableStructure) {
+  function dumpFormats (model, source, nestInlinableStructure, chattyOWL) {
     let owlx = [
       '<?xml version="1.0"?>\n' +
         '<!-- Source: ' + source + ' -->\n' +
@@ -427,7 +428,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     let packages = firstBranch(model.packageHierarchy.roots)
 
     let toRender = [
-      { v: owlx, s: OWLXMLSerializer(model), m: OWLXMLMarkup() },
+      { v: owlx, s: OWLXMLSerializer(model, chattyOWL), m: OWLXMLMarkup() },
       { v: shexc, s: ShExCSerializer(model, nestInlinableStructure), m: ShExCMarkup() },
       { v: shexh, s: ShExCSerializer(model, nestInlinableStructure), m: ShExHMarkup(model) }
     ]
@@ -542,7 +543,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
   }
 
-  function OWLXMLSerializer (model) {
+  function OWLXMLSerializer (model, chatty) {
     return {
       class: OWLXMLClass,
       enum: OWLXMLEnum,
@@ -577,13 +578,25 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
               : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
+            let lower = parseInt(propertyRecord.lower || 0)
+            let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
             return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
             <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
-    </SubClassOf>`
+    </SubClassOf>` + (chatty ? ((lower === 0 ? '' : (`\n    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}MinCardinality cardinality="${lower}">
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+        </${t}MinCardinality>
+    </SubClassOf>`)) + (upper === -1 ? '' : (`\n    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}MaxCardinality cardinality="${upper}">
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+        </${t}MaxCardinality>
+    </SubClassOf>`))) : '')
           }
         ).concat(
           (model.classes[classId].superClasses).map(

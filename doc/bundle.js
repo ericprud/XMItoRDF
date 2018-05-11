@@ -67,8 +67,8 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssign = __webpack_require__(112),
-    baseCreate = __webpack_require__(113);
+var baseAssign = __webpack_require__(113),
+    baseCreate = __webpack_require__(114);
 
 /**
  * Creates an object that inherits from the `prototype` object. If a
@@ -357,8 +357,8 @@ function forEach(xs, f) {
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(87),
-    getValue = __webpack_require__(92);
+var baseIsNative = __webpack_require__(88),
+    getValue = __webpack_require__(93);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -418,7 +418,7 @@ if (typeof Object.create === 'function') {
 
   isFunction = __webpack_require__(18);
 
-  isEmpty = __webpack_require__(114);
+  isEmpty = __webpack_require__(115);
 
   XMLElement = null;
 
@@ -445,8 +445,8 @@ if (typeof Object.create === 'function') {
         XMLComment = __webpack_require__(68);
         XMLDeclaration = __webpack_require__(56);
         XMLDocType = __webpack_require__(69);
-        XMLRaw = __webpack_require__(189);
-        XMLText = __webpack_require__(190);
+        XMLRaw = __webpack_require__(190);
+        XMLText = __webpack_require__(191);
       }
     }
 
@@ -861,8 +861,8 @@ function objectToString(o) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(19),
-    getRawTag = __webpack_require__(88),
-    objectToString = __webpack_require__(89);
+    getRawTag = __webpack_require__(89),
+    objectToString = __webpack_require__(90);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -933,7 +933,7 @@ module.exports = isArrayLike;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(101),
+var arrayLikeKeys = __webpack_require__(102),
     baseKeys = __webpack_require__(55),
     isArrayLike = __webpack_require__(11);
 
@@ -1726,11 +1726,11 @@ module.exports = eq;
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var listCacheClear = __webpack_require__(130),
-    listCacheDelete = __webpack_require__(131),
-    listCacheGet = __webpack_require__(132),
-    listCacheHas = __webpack_require__(133),
-    listCacheSet = __webpack_require__(134);
+var listCacheClear = __webpack_require__(131),
+    listCacheDelete = __webpack_require__(132),
+    listCacheGet = __webpack_require__(133),
+    listCacheHas = __webpack_require__(134),
+    listCacheSet = __webpack_require__(135);
 
 /**
  * Creates an list cache object.
@@ -1803,7 +1803,7 @@ module.exports = nativeCreate;
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isKeyable = __webpack_require__(148);
+var isKeyable = __webpack_require__(149);
 
 /**
  * Gets the data for `map`.
@@ -1865,8 +1865,8 @@ module.exports = toKey;
 
 
 
-var base64 = __webpack_require__(73)
-var ieee754 = __webpack_require__(74)
+var base64 = __webpack_require__(74)
+var ieee754 = __webpack_require__(75)
 var isArray = __webpack_require__(41)
 
 exports.Buffer = Buffer
@@ -3657,7 +3657,7 @@ exports.Readable = exports;
 exports.Writable = __webpack_require__(28);
 exports.Duplex = __webpack_require__(5);
 exports.Transform = __webpack_require__(46);
-exports.PassThrough = __webpack_require__(80);
+exports.PassThrough = __webpack_require__(81);
 
 
 /***/ }),
@@ -3737,7 +3737,7 @@ util.inherits = __webpack_require__(7);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(79)
+  deprecate: __webpack_require__(80)
 };
 /*</replacement>*/
 
@@ -4733,7 +4733,7 @@ module.exports = isPrototype;
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(103),
+var baseIsArguments = __webpack_require__(104),
     isObjectLike = __webpack_require__(13);
 
 /** Used for built-in method references. */
@@ -4776,7 +4776,7 @@ module.exports = isArguments;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(3),
-    stubFalse = __webpack_require__(104);
+    stubFalse = __webpack_require__(105);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -4820,9 +4820,9 @@ module.exports = isBuffer;
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(105),
-    baseUnary = __webpack_require__(106),
-    nodeUtil = __webpack_require__(107);
+var baseIsTypedArray = __webpack_require__(106),
+    baseUnary = __webpack_require__(107),
+    nodeUtil = __webpack_require__(108);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -4866,11 +4866,11 @@ module.exports = Map;
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(140),
-    mapCacheDelete = __webpack_require__(147),
-    mapCacheGet = __webpack_require__(149),
-    mapCacheHas = __webpack_require__(150),
-    mapCacheSet = __webpack_require__(151);
+var mapCacheClear = __webpack_require__(141),
+    mapCacheDelete = __webpack_require__(148),
+    mapCacheGet = __webpack_require__(150),
+    mapCacheHas = __webpack_require__(151),
+    mapCacheSet = __webpack_require__(152);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -5057,7 +5057,7 @@ util.inherits = __webpack_require__(7);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(76);
+var debugUtil = __webpack_require__(77);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -5066,7 +5066,7 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(77);
+var BufferList = __webpack_require__(78);
 var destroyImpl = __webpack_require__(44);
 var StringDecoder;
 
@@ -6134,7 +6134,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(78);
+__webpack_require__(79);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -6607,7 +6607,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isPrototype = __webpack_require__(33),
-    nativeKeys = __webpack_require__(108);
+    nativeKeys = __webpack_require__(109);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -6713,11 +6713,11 @@ module.exports = baseKeys;
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataView = __webpack_require__(115),
+var DataView = __webpack_require__(116),
     Map = __webpack_require__(37),
-    Promise = __webpack_require__(116),
-    Set = __webpack_require__(117),
-    WeakMap = __webpack_require__(118),
+    Promise = __webpack_require__(117),
+    Set = __webpack_require__(118),
+    WeakMap = __webpack_require__(119),
     baseGetTag = __webpack_require__(10),
     toSource = __webpack_require__(51);
 
@@ -6789,11 +6789,11 @@ module.exports = getTag;
 
   isFunction = __webpack_require__(18);
 
-  every = __webpack_require__(119);
+  every = __webpack_require__(120);
 
   XMLNode = __webpack_require__(8);
 
-  XMLAttribute = __webpack_require__(184);
+  XMLAttribute = __webpack_require__(185);
 
   XMLProcessingInstruction = __webpack_require__(66);
 
@@ -6996,11 +6996,11 @@ module.exports = getTag;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(21),
-    stackClear = __webpack_require__(135),
-    stackDelete = __webpack_require__(136),
-    stackGet = __webpack_require__(137),
-    stackHas = __webpack_require__(138),
-    stackSet = __webpack_require__(139);
+    stackClear = __webpack_require__(136),
+    stackDelete = __webpack_require__(137),
+    stackGet = __webpack_require__(138),
+    stackHas = __webpack_require__(139),
+    stackSet = __webpack_require__(140);
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -7028,7 +7028,7 @@ module.exports = Stack;
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqualDeep = __webpack_require__(152),
+var baseIsEqualDeep = __webpack_require__(153),
     isObjectLike = __webpack_require__(13);
 
 /**
@@ -7062,9 +7062,9 @@ module.exports = baseIsEqual;
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SetCache = __webpack_require__(153),
-    arraySome = __webpack_require__(156),
-    cacheHas = __webpack_require__(157);
+var SetCache = __webpack_require__(154),
+    arraySome = __webpack_require__(157),
+    cacheHas = __webpack_require__(158);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -7230,8 +7230,8 @@ module.exports = baseGet;
 
 var isArray = __webpack_require__(2),
     isKey = __webpack_require__(39),
-    stringToPath = __webpack_require__(172),
-    toString = __webpack_require__(175);
+    stringToPath = __webpack_require__(173),
+    toString = __webpack_require__(176);
 
 /**
  * Casts `value` to a path array if it's not one.
@@ -7434,13 +7434,13 @@ module.exports = castPath;
 
   XMLComment = __webpack_require__(68);
 
-  XMLDTDAttList = __webpack_require__(185);
+  XMLDTDAttList = __webpack_require__(186);
 
-  XMLDTDEntity = __webpack_require__(186);
+  XMLDTDEntity = __webpack_require__(187);
 
-  XMLDTDElement = __webpack_require__(187);
+  XMLDTDElement = __webpack_require__(188);
 
-  XMLDTDNotation = __webpack_require__(188);
+  XMLDTDNotation = __webpack_require__(189);
 
   XMLProcessingInstruction = __webpack_require__(66);
 
@@ -7624,16 +7624,49 @@ var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). Could 
 var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
 var UPPER_UNLIMITED = '*'
+const TYPE_NodeConstraint = ['NodeConstraint']
+const TYPE_ShapeRef = ['ShapeRef']
 
 function main () {
-  function docURL (term) {
-    return 'http://lion.ddialliance.org/ddiobjects/' +
-      term.toLowerCase() + '#parent_properties'
-  }
+  let $ = window.jQuery
 
-  function parseName (elt) {
-    let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
-    let nameMap = {
+  let XSD = 'http://www.w3.org/2001/XMLSchema#'
+  let UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
+  let UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
+
+  const normalizeType = function (type) {
+    if (!type) {
+      return type // pass undefined on
+    }
+    if (type === 'xs:language') {
+      return XSD + 'language'
+    }
+    let dtList = [
+      { from: UMLD + 'String', to: XSD + 'string' },
+      { from: UMLD + 'Integer', to: XSD + 'integer' },
+      { from: UMLD + 'Boolean', to: XSD + 'boolean' },
+      { from: UMLP + 'String', to: XSD + 'string' },
+      { from: UMLP + 'Integer', to: XSD + 'integer' },
+      { from: UMLP + 'Boolean', to: XSD + 'boolean' },
+      { from: UMLP + 'Real', to: XSD + 'double' },
+      { from: UMLP + 'UnlimitedNatural', to: XSD + 'double' }
+    ]
+    let dtMap = dtList.reduce(
+      (acc, elt) => objSet(acc, elt.from, elt.to),
+      {}
+    )
+    if (type in dtMap) {
+      return dtMap[type]
+    }
+    if (type.startsWith(UMLP)) {
+      return UMLD + type.substr(UMLP.length)
+    }
+    return type
+  }
+  const ParserOpts = {
+    viewPattern: /FunctionalViews/,
+    normalizeType: normalizeType,
+    nameMap: {
       'Views (Exported from Drupal)': 'Views',
       'Class Model (Exported from Drupal)': 'ddi4_model',
       'ClassLibrary': 'ddi4_model', // minimize diffs
@@ -7641,127 +7674,25 @@ function main () {
       'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
       'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
     }
-    return !ret ? ret : ret in nameMap ? nameMap[ret] : expandPrefix(ret)
+  }
+  const UMLparser = __webpack_require__(71)(ParserOpts)
+
+  function spanText (str) {
+    return () => $('<span/>', { class: 'record' }).text(str)
   }
 
-  function parseValue (elt, deflt) { // 'default' is a reserved word
-    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : deflt
-  }
-
-  function parseGeneral (elt) {
-    return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
-  }
-
-  function parseAssociation (elt) {
-    return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
-  }
-
-  function parseIsAbstract (elt) {
-    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
-  }
-
-  function parseProperties (model, elts, className) {
-    let ret = {
-      properties: [],
-      associations: {},
-      others: []
-    }
-    elts.forEach(elt => {
-      let type = elt.$['xmi:type']
-      console.assert(type === 'uml:Property')
-      let id = elt.$['xmi:id']
-      let name = parseName(elt)
-      let association = parseAssociation(elt)
-
-      if (association) {
-        /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
-             <type xmi:idref="Agent"/>
-             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
-             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
-           </ownedAttribute> */
-        ret.associations[id] = {
-          in: className,
-          id: id,
-          name: name,
-          type: elt.type[0].$['xmi:idref'],
-          lower: parseValue(elt.lowerValue[0], 0),
-          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED)
-        }
-      } else if (!name) {
-        // e.g. canonical *-owned-attribute-n properties.
-        // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
-      } else if (name.charAt(0).match(/[A-Z]/)) {
-        throw Error('unexpected property name ' + name + ' in ' + className)
-      } else {
-        ret.properties.push(
-          addProperty(
-            model, className, id, name, elt.type[0].$['xmi:idref'],
-            normalizeType(elt.type[0].$['href'] || elt.type[0].$['xmi:type']),
-            parseValue(elt.lowerValue[0], 0),
-            parseValue(elt.upperValue[0], UPPER_UNLIMITED))
-        )
-      }
-    })
-    return ret
-  }
-
-  function parseEAViews (diagrams) {
-    return diagrams.filter(
-      diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
-    ).map(
-      diagram => {
-        return {
-          id: diagram['$']['xmi:id'],
-          name: diagram.model[0].$.package,
-          members: diagram.elements[0].element.map(
-            member => member.$.subject
-          )
-        }
-      }
-    )
-  }
-
-  function parseCanonicalViews (elt) {
-    return elt.packagedElement.map(view => {
-      return {
-        id: view.$['xmi:id'],
-        name: parseName(view),
-        members: view.elementImport.map(
-          imp => imp.importedElement[0].$['xmi:idref']
-        )
-      }
-    })
-  }
-
-  function normalizeType (type) {
-    if (!type) {
-      return type // pass undefined on
-    }
-    if (type === 'xs:language') {
-      return 'http://www.w3.org/2001/XMLSchema#language'
-    }
-    let nameMap = {
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://schema.omg.org/spec/UML/2.1/uml.xml#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String': 'http://www.w3.org/2001/XMLSchema#string',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer': 'http://www.w3.org/2001/XMLSchema#integer',
-      'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean': 'http://www.w3.org/2001/XMLSchema#boolean'
-    }
-    if (type in nameMap) {
-      return nameMap[type]
-    }
-    let umlp = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
-    let umld = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
-    if (type.startsWith(umlp)) {
-      return umld + type.substr(umlp.length)
-    }
-    return type
-  }
-
-  const xml2js = __webpack_require__(71)
-  // let rs = Ecore.ResourceSet.create()
-  let $ = window.jQuery
+  const AllRecordTypes = [
+    {type: UMLparser.ModelRecord,       maker: spanText('model'  )},
+    {type: UMLparser.PropertyRecord,    maker: spanText('prop'   )},
+    {type: UMLparser.ClassRecord,       maker: spanText('Class'  )},
+    {type: UMLparser.PackageRecord,     maker: spanText('Package')},
+    {type: UMLparser.EnumRecord,        maker: spanText('Enum'   )},
+    {type: UMLparser.DatatypeRecord,    maker: spanText('Dt'     )},
+    {type: UMLparser.ViewRecord,        maker: spanText('View'   )},
+    {type: UMLparser.AssociationRecord, maker: spanText('Assoc'  )},
+    {type: UMLparser.AssocRefRecord,    maker: spanText('assoc'  )},
+    {type: UMLparser.RefereeRecord,     maker: spanText('ref'    )}
+  ]
 
   $('#load-file').on('change', function (evt) {
     if (!window.FileReader) {
@@ -7787,7 +7718,7 @@ function main () {
             }
             // This may take a long time to render.
             $('<textarea/>', {cols: 60, rows: 10}).val(loadEvent.target.result).appendTo(div)
-            processXMI(loadEvent.target.result, file.name, status)
+            processXMI(loadEvent.target.result, 'uploaded ' + file.name + ' ' + new Date().toISOString(), status)
           }
           loader.readAsText(file)
         }, RENDER_DELAY)
@@ -7800,7 +7731,7 @@ function main () {
     // Give user some interface feedback before reading.
     let div = $('<div/>', {'id': source}).appendTo('#loaded')
     $('<li/>').append($('<a/>', {href: '#' + source}).text(source)).appendTo('#toc')
-    let status = $('<span/>').addClass('status').text('loading')
+    let status = $('<span/>').addClass('status').text('fetching...')
     $('<h2/>').append(source, status).appendTo(div)
     window.fetch(source).then(function (response) {
       if (!response.ok) {
@@ -7810,7 +7741,7 @@ function main () {
     }).then(function (text) {
       window.setTimeout(() => {
         $('<textarea/>', {cols: 60, rows: 10}).val(text).appendTo(div)
-        processXMI(text, source, status)
+        processXMI(text, 'fetched ' + source + ' ' + new Date().toISOString(), status)
       }, RENDER_DELAY)
     }).catch(function (error) {
       div.append($('<pre/>').text(error)).addClass('error')
@@ -7818,39 +7749,52 @@ function main () {
     return true
   })
 
-  function processXMI (xmiText, title, status) {
-    let div = $('<div/>', {'id': title, 'class': 'result'}).appendTo('#render')
-    let reparse = $('<button/>').text('reparse').on('click', parse)
-    $('<h2/>').text(title).append(reparse).appendTo(div)
+  function processXMI (umlText, source, status) {
+    let div = $('<div/>', {'id': source, 'class': 'result'}).appendTo('#render')
+    let reparse = $('<button/>').text('reparse').on('click', parseText)
+    $('<h2/>').text(source).append(reparse).appendTo(div)
     let model
-    let document
     let progress = $('<ul/>')
     div.append(progress)
+    parseText()
 
-    status.text('parsing UML...')
-    window.setTimeout(parse, RENDER_DELAY)
-
-    function parse () {
-      xml2js.Parser().parseString(xmiText, function (err, result) {
-        if (err) {
-          console.error(err)
-        } else {
-          document = result
-          status.text('indexing...')
-          window.setTimeout(index, RENDER_DELAY)
-        }
-      })
+    function parseText () {
+      status.text('parsing JSON...')
+      window.setTimeout(
+        () => {
+          // try JSON 'cause it's easier
+          UMLparser.parseJSON(
+            umlText, source,
+            (err, result) => {
+              if (err) {
+                status.text('parsing UML...')
+                window.setTimeout(
+                  // fall back to XMI
+                  () => UMLparser.parseXMI(umlText, source, parserCallback),
+                  RENDER_DELAY
+                )
+              } else {
+                parserCallback(err, result)
+              }
+            })
+        },
+        RENDER_DELAY
+      )
     }
 
-    function index () {
-      model = parseModel(document)
-      status.text('rendering structure...')
-      window.setTimeout(render, RENDER_DELAY)
+    function parserCallback (err, result) {
+      if (err) {
+        console.error(err)
+      } else {
+        model = result
+        status.text('rendering structure...')
+        window.setTimeout(render, RENDER_DELAY)
+      }
     }
 
     function render () {
       let modelUL = $('<ul/>')
-      structureToListItems(model, modelUL)
+      structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
       progress.append($('<li/>').text('model').append(modelUL))
 
@@ -7863,7 +7807,7 @@ function main () {
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
-      let allViews = strip(model, model.views.map(v => v.name))
+      let allViews = model.strip(model, source, model.views.map(v => v.name))
       console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
 
@@ -7877,8 +7821,24 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let t = dumpFormats(model)
+      let patched = UMLparser.duplicate(model)
+      // Missing classes -- expected to be repaired.
+      let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
+      missingClasses.forEach(
+        classId => {
+          if (!(classId in patched)) { // !!
+            patched.classes[classId] = { name: classId, packages: ['FakePattern'] }
+          }
+        })
+
+      let t = dumpFormats(patched, source,
+                          $('#nestInlinableStructure').is(':checked'),
+                          $('#chattyOWL').is(':checked'))
       progress.append(
+        $('<li/>').append(
+          'Raw model: ',
+          $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
+        ),
         $('<li/>').append(
           'OWL: ',
           $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
@@ -7896,392 +7856,24 @@ function main () {
       console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       model.views.map(v => v.name).forEach(
         viewName => {
-          let s = strip(model, viewName)
-          console.log(viewName, s, Object.keys(s.classes).length, Object.keys(s.properties).length)
+          let s = model.strip(model, source, viewName,
+                              $('#followReferencedClasses').is(':checked'),
+                              $('#followReferentHierarchy').is(':checked'))
         }
       )
     }
-  }
-
-  function strip (model, viewLabels) {
-    if (viewLabels.constructor !== Array) {
-      viewLabels = [viewLabels]
-    }
-
-    let ret = {
-      packages: {},
-      classes: {},
-      properties: {},
-      enums: {},
-      datatypes: {},
-      classHierarchy: makeHierarchy(),
-      packageHierarchy: makeHierarchy(),
-      views: model.views.filter(
-        v => viewLabels.indexOf(v.name) !== -1
-      )
-    }
-
-    // ret.enums = Object.keys(model.enums).forEach(
-    //   enumId => copyEnum(ret, model, enumId)
-    // )
-    // ret.datatypes = Object.keys(model.datatypes).forEach(
-    //   datatypeId => copyDatatype(ret, model, datatypeId)
-    // )
-
-    let classIds = ret.views.reduce(
-      (classIds, view) =>
-        classIds.concat(view.members.reduce(
-          (x, member) => {
-            let parents = model.classHierarchy.parents[member] || [] // has no parents
-            return x.concat(member, parents.filter(
-              classId => x.indexOf(classId) === -1
-            ))
-          }, []))
-      , [])
-    addDependentClasses(classIds)
-
-    return ret
-    // let properties = Object.keys(model.properties).filter(
-    //   propName => model.properties[propName].sources.find(includedSource)
-    // ).reduce(
-    //   (acc, propName) => {
-    //     let sources = model.properties[propName].sources.filter(includedSource)
-    //     return addKey(acc, propName, {
-    //       sources: sources,
-    //       uniformType: findMinimalTypes(ret, {sources: sources})
-    //     })
-    //   }, [])
-
-    function copyEnum (to, from, enumId) {
-      let old = from.enums[enumId]
-      if (old.id in to.enums) {
-        return
-      }
-
-      let e = {
-        id: old.id,
-        name: old.name,
-        values: old.values.slice(),
-        packages: old.packages.slice()
-      }
-      addPackages(to, model, e.packages)
-      to.enums[enumId] = e
-    }
-
-    function copyDatatype (to, from, datatypeId) {
-      let old = from.datatypes[datatypeId]
-      if (old.id in to.datatypes) {
-        return
-      }
-
-      let e = {
-        id: old.id,
-        name: old.name,
-        packages: old.packages.slice()
-      }
-      addPackages(to, model, e.packages)
-      to.datatypes[datatypeId] = e
-    }
-
-    function addDependentClasses (classIds) {
-      classIds.forEach(
-        classId => {
-          if (classId in ret.classes) { // a recursive walk of the superClasses
-            return //                      may result in redundant insertions.
-          }
-
-          let old = model.classes[classId]
-          let dependentClassIds = []
-          let c = {
-            id: old.id,
-            name: old.name,
-            properties: [],
-            others: old.others.slice(),
-            packages: old.packages.slice(),
-            superClasses: old.superClasses.slice(),
-            isAbstract: old.isAbstract
-          } // was deepCopy(old)
-          ret.classes[classId] = c
-          old.properties.forEach(
-            p => {
-              let id = p.relation || p.attribute
-              if (id in model.enums) {
-                copyEnum(ret, model, id)
-              }
-              if (id in model.datatypes) {
-                copyDatatype(ret, model, id)
-              }
-              if (id in model.classes) {
-                dependentClassIds.push(id)
-              }
-              c.properties.push(addProperty(ret, c.name, c.id, p.name, p.relation, p.attribute, p.lower, p.upper))
-            }
-          )
-          addPackages(ret, model, c.packages)
-          c.superClasses.forEach(
-            suClass =>
-              ret.classHierarchy.add(suClass, c.id)
-          )
-          addDependentClasses(dependentClassIds.concat(c.superClasses))
-        }
-      )
-    }
-
-    function addPackages (to, from, packageIds) {
-      for (let i = 0; i < packageIds.length; ++i) {
-        let pid = packageIds[i]
-        let old = from.packages[pid]
-        let p = pid in to.packages ? to.packages[pid] : {
-          name: old.name,
-          id: pid,
-          packages: old.packages.slice()
-        }
-        if (!(pid in to.packages)) {
-          to.packages[pid] = p
-        }
-        if (i > 0) { // add [0],[1]  [1],[2]  [2],[3]...
-          to.packageHierarchy.add(pid, packageIds[i - 1])
-        }
-      }
-    }
-
-    function includedSource (source) {
-      // properties with a source in classIds
-      return classIds.indexOf(source.in) !== -1
-    }
-  }
-
-  function parseModel (document, triples) {
-    // makeHierarchy.test()
-    // convenience variables
-    let packages = {}
-    let classes = {}
-    let properties = {}
-    let enums = {}
-    let datatypes = {}
-    let classHierarchy = makeHierarchy()
-    let packageHierarchy = makeHierarchy()
-
-    let associations = {}
-    let assocSrcToClass = {}
-
-    // return structure
-    let model = {
-      packages: packages,
-      classes: classes,
-      properties: properties,
-      enums: enums,
-      datatypes: datatypes,
-      classHierarchy: classHierarchy,
-      packageHierarchy: packageHierarchy
-    }
-
-    // Build the model
-    visitPackage(document['xmi:XMI']['uml:Model'][0], [])
-
-    // Turn associations into properties.
-    Object.keys(associations).forEach(
-      assocId => {
-        let a = associations[assocId]
-        let c = classes[assocSrcToClass[a.from]]
-        let aref = c.associations[a.from]
-        if (a.name !== 'realizes') {
-          c.properties.push(addProperty(model, aref.name, aref.id, a.name, aref.type, undefined, aref.lower, aref.upper))
-        }
-      }
-    )
-
-    // Change relations to datatypes to be attributes.
-    // Change relations to the classes and enums to reference the name.
-    Object.keys(properties).forEach(
-      p => properties[p].sources.forEach(
-        s => {
-          if (s.relation in datatypes) {
-            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.relation].name)
-            // s.attribute = datatypes[s.relation].name
-            s.attribute = s.relation
-            s.relation = undefined
-          } else if (s.relation in classes) {
-            // s.relation = classes[s.relation].name
-          } else if (s.relation in enums) {
-            // s.relation = enums[s.relation].name
-          }
-        }))
-
-    // Find set of types for each property.
-    Object.keys(properties).forEach(propName => {
-      let p = properties[propName]
-      p.uniformType = findMinimalTypes(model, p)
-    }, [])
-
-    console.dir(model)
-    return model
-
-    function visitPackage (elt, parents) {
-      let parent = parents[0]
-      let type = elt.$['xmi:type']
-      if ('xmi:id' in elt.$) {
-        let id = elt.$['xmi:id']
-        let name = parseName(elt)
-        // Could keep id to elt map around with this:
-        // index[id] = { element: elt, packages: parents }
-
-        switch (type) {
-          case 'uml:Class':
-            if (id in classes) {
-              throw Error('already seen class id ' + id)
-            }
-            let ownedAttrs = parseProperties(
-              model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
-              name, triples)
-
-            classes[id] = Object.assign({
-              id: id,
-              name: name
-            }, ownedAttrs, {
-              packages: parents,
-              superClasses: [],
-              isAbstract: parseIsAbstract(elt)
-            })
-            packages[parent].elements.push({type: 'class', id: id})
-            Object.keys(ownedAttrs.associations).forEach(
-              assocSourceId => { assocSrcToClass[assocSourceId] = id }
-            )
-
-            // record class hierarchy (allows multiple inheritance)
-            if ('generalization' in elt) {
-              elt.generalization.forEach(
-                superClassElt => {
-                  let superClassId = parseGeneral(superClassElt)
-                  classHierarchy.add(superClassId, id)
-                  classes[id].superClasses.push(superClassId)
-                })
-            }
-            break
-          case 'uml:Enumeration':
-            if (id in enums) {
-              throw Error('already seen enum id ' + id)
-            }
-            enums[id] = {
-              id: id,
-              name: name,
-              values: elt.ownedLiteral.map(
-                l => parseName(l)
-              ),
-              packages: parents
-            }
-            packages[parent].elements.push({type: 'enumeration', id: id})
-            // record class hierarchy
-            if ('generalization' in elt) {
-              throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
-            }
-            break
-          case 'uml:DataType':
-          case 'uml:PrimitiveType':
-            if (id in datatypes) {
-              throw Error('already seen datatype id ' + id)
-            }
-            datatypes[id] = {
-              name: name,
-              id: id,
-              packages: parents
-            }
-            packages[parent].elements.push({type: 'datatype', id: id})
-            // record class hierarchy
-            if ('generalization' in elt) {
-              throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
-            }
-            break
-          case 'uml:Model':
-          case 'uml:Package':
-            let recurse = true
-            if (id === 'ddi4_views') {
-              model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
-              recurse = false
-              break // elide EA views package in package hierarcy
-            }
-            if (id.match(/FunctionalViews/)) {
-              model.views = parseCanonicalViews(elt)
-              recurse = false
-              break // elide canonical views package in package hierarcy
-            }
-            packages[id] = {
-              name: name,
-              id: id,
-              packages: parents,
-              elements: []
-            }
-            if (parents.length && !id.match(/Pattern/)) { // don't record Pattern packages.
-              packageHierarchy.add(parent, id)
-              packages[parent].elements.push({type: 'package', id: id})
-            }
-            if (recurse) {
-              // walk desendents
-              elt.packagedElement.forEach(sub => {
-                visitPackage(sub, [id].concat(parents))
-              })
-            }
-            break
-            // Pass through to get to nested goodies.
-          case 'uml:Association':
-            let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
-            associations[id] = {
-              id: id,
-              name: name,
-              from: from
-              // type: elt.ownedEnd[0].type[0].$['xmi:idref']
-            }
-            /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
-                 <name>member</name>
-                 <memberEnd xmi:idref="AgentIndicator-member-source"/>
-                 <memberEnd xmi:idref="AgentIndicator-member-target"/>
-                 <ownedEnd xmi:id="AgentIndicator-member-target" xmi:type="uml:Property">
-                   <association xmi:idref="AgentIndicator-member-association"/>
-                   <type xmi:idref="AgentIndicator"/>
-                   <lower><value>1</value></lowerValue>
-                   <upper><value>1</value></uppervalue>
-                 </ownedEnd>
-               </packagedElement> */
-            break
-          default:
-            console.warn('need handler for ' + type)
-        }
-      }
-    }
-  }
-
-  function addProperty (model, className, id, name, relation, attribute, lower, upper) {
-    let propertyRecord = {
-      in: className,
-      id: id,
-      name: name,
-      relation: relation,
-      attribute: attribute,
-      lower: lower,
-      upper: upper
-    }
-    if (propertyRecord.upper === '-1') {
-      propertyRecord.upper = UPPER_UNLIMITED
-    }
-    if (!(name in model.properties)) {
-      model.properties[name] = {sources: []}
-    }
-    model.properties[name].sources.push(propertyRecord)
-    return propertyRecord
   }
 
   function reusedProperties (classes, into) {
     const x = Object.keys(classes).reduce((acc, classId) => {
       classes[classId].properties.forEach(
         field => {
-          let a = field.id.split(/_/)
-          field = a[a.length - 1]
-          if (!(field in acc.seen)) {
-            acc.seen[field] = [classId]
+          if (!(field.name in acc.seen)) {
+            acc.seen[field.name] = [classId]
           } else {
-            acc.seen[field].push(classId)
-            if (acc.duplicates.indexOf(field) === -1) {
-              acc.duplicates.push(field)
+            acc.seen[field.name].push(classId)
+            if (acc.duplicates.indexOf(field.name) === -1) {
+              acc.duplicates.push(field.name)
             }
           }
         }
@@ -8339,9 +7931,10 @@ function main () {
       )))
   }
 
-  function dumpFormats (model) {
+  function dumpFormats (model, source, nestInlinableStructure, chattyOWL) {
     let owlx = [
       '<?xml version="1.0"?>\n' +
+        '<!-- Source: ' + source + ' -->\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
         '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
         '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
@@ -8355,26 +7948,22 @@ function main () {
         '    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>\n' +
         '    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>\n' +
         '    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>\n' +
-        '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n' +
-        '    <Prefix name="umld" IRI="http://schema.omg.org/spec/UML/2.1/uml.xml#"/>\n' +
-        '    <Prefix name="umlp" IRI="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#"/>\n' +
-        '    <Prefix name="xhtml" IRI="http://www.w3.org/1999/xhtml/"/>\n'
+        '    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>\n'
     ]
     let owlm = [
       'Prefix: ddi: <http://ddi-alliance.org/ns/#>\n' +
         'Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-        'Prefix: umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-        'Prefix: xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
         'Ontology: <http://ddi-alliance.org/ddi-owl>\n' +
         '\n'
     ]
     let shexc = [
-      'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
+      '# Source: ' + source + '\n' +
+        'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
         'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
-        'PREFIX umld: <http://schema.omg.org/spec/UML/2.1/uml.xml#>\n' +
         'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
-        'PREFIX xhtml: <http://www.w3.org/XML/1998/namespace#>\n' +
+        'PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>\n' +
+        'PREFIX mark: <https://github.com/commonmark/commonmark.js>\n' +
         '\n'
     ]
     let shexh = []
@@ -8386,10 +7975,16 @@ function main () {
         endPackage: function (p) { return '\n    <!-- END ' + p.name + ' Package -->\n' }
       }
     }
+    function stringEscape (str) {
+      return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+    }
     function ShExCMarkup () {
       return {
-        definition: (name, isAbstract) => (isAbstract ? 'ABSTRACT ' : '') + pname(name),
-        docLink: link => ' // rdfs:definedBy <' + link + '>',
+        definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
+        docLink: link => '// rdfs:definedBy <' + link + '>',
+        packageStr: pkg => '// shexmi:package "' + stringEscape(pkg) + '"',
+        aggregation: agg => '// shexmi:partonomy "' + (agg === UMLparser.Aggregation.shared ? "shexmi:sharedAggregation" : agg === UMLparser.Aggregation.composite ? "shexmi:compositeAggregation" : "\"???\"") + '"',
+        comment: txt => '// shexmi:comment """' + stringEscape(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
         property: name => pname(name),
@@ -8399,23 +7994,42 @@ function main () {
         endPackage: function (p) { return '\n# END ' + p.name + ' Package\n' }
       }
     }
-    function ShExHMarkup () {
+    function ShExHMarkup (model) {
       return {
-        definition: (name, isAbstract) => `      <section>
-        <h3>${name}</h3>
+        definition: (rec) => `      <section>
+        <h3>${rec.name}</h3>
+        <div>
+          <p>${rec.referees.length === 0 ? 'no references' : '' + rec.referees.length + ' reference' + (rec.referees.length > 1 ? 's' : '') + ':'}</p>
+          ${rec.referees.length ? `<div class="left-scroll"><ul class="referees">
+${rec.referees.map(r => `            <li><a>${finalReferee(r.classId).name}</a> ${r.propName}</li>\n`).join('')}
+          </ul></div>` : ''}
+        </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn></span>`,
-        docLink: link => `<a class="tryit" href="${link}">lion</a></pre>
+${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name}</dfn></span>`,
+        docLink: link => `<a class="tryit" href="${link}"></a></pre>
       </div>
       </section>`,
+        packageStr: pkg => '',
+        aggregation: agg => '',
+        comment: txt => '',
         reference: name => ref(pname(name)),
         constant: name => pOrT(pname(name)),
         property: name => pOrT(pname(name)),
         valueType: name => pOrT(pname(name)),
         valueReference: name => name === '.' ? '.' : '@' + ref(pname(name)),
         startPackage: function (p) { return '    <section>\n      <h2>' + p.name + '</h2>\n\n' },
-        endPackage: function (p) { return '    </section>\n' }
+        endPackage: function (p) { return '\n    </section>\n' }
+      }
+
+      function finalReferee (classId) {
+        while (nestInlinableStructure && inlineable(model, model.classes[classId])) {
+          if (classId === model.classes[classId].referees[0].classId) {
+            break
+          }
+          classId = model.classes[classId].referees[0].classId
+        }
+        return model.classes[classId]
       }
 
       function ref (term) {
@@ -8429,25 +8043,18 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
       }
     }
 
-    // Missing classes -- expected to be repaired.
-    let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
-    missingClasses.forEach(
-      classId => {
-        if (!(classId in model)) { // !!
-          model.classes[classId] = { name: classId, packages: ['FooPattern'] }
-        }
-      })
-
     let packages = firstBranch(model.packageHierarchy.roots)
 
     let toRender = [
-      { v: owlx, s: OWLXMLSerializer(model), m: OWLXMLMarkup() },
-      { v: shexc, s: ShExCSerializer(model), m: ShExCMarkup() },
-      { v: shexh, s: ShExCSerializer(model), m: ShExHMarkup() }
+      { v: owlx, s: OWLXMLSerializer(model, chattyOWL), m: OWLXMLMarkup() },
+      { v: shexc, s: ShExCSerializer(model, nestInlinableStructure), m: ShExCMarkup() },
+      { v: shexh, s: ShExCSerializer(model, nestInlinableStructure), m: ShExHMarkup(model) }
     ]
     toRender.forEach(
       r => {
-        Array().push.apply(r.v, Object.keys(packages).map(
+        Array().push.apply(r.v, Object.keys(packages)/*.filter(
+          packageId => !packages[packageId].name.match(/Pattern/)
+        )*/.map(
           packageId => renderPackage(model.packages[packageId], r.s, r.m)
         ))
       })
@@ -8479,17 +8086,17 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     Array().push.apply(owlx, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
-        let t = isObject(p) ? 'Object' : 'Data'
+        let t = isObject(p, model) ? 'Object' : 'Data'
         let src = p.sources[0]
-        let dt = isObject(p)
-          ? src.relation in model.classes ? model.classes[src.relation] : model.enums[src.relation]
-          : src.attribute in model.datatypes ? model.datatypes[src.attribute] : { name: src.attribute }
+        let dt = isObject(p, model)
+          ? src.idref in model.classes ? model.classes[src.idref] : model.enums[src.idref]
+          : src.idref in model.datatypes ? model.datatypes[src.idref] : { name: src.href }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
     <${t}PropertyRange>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
-        <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${pname(dt.name)}"/>
+        <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${pname(dt.name)}"/>
     </${t}PropertyRange>`
       }
     ))
@@ -8497,7 +8104,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     Array().push.apply(owlm, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
       propName => {
         let p = model.properties[propName]
-        let t = isObject(p) ? 'Object' : 'Data'
+        let t = isObject(p, model) ? 'Object' : 'Data'
         return t + 'Property: ddi:' + propName + ' Range: ' + pname(p.uniformType[0])
       }
     ))
@@ -8554,7 +8161,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }
   }
 
-  function OWLXMLSerializer (model) {
+  function OWLXMLSerializer (model, chatty) {
     return {
       class: OWLXMLClass,
       enum: OWLXMLEnum,
@@ -8572,30 +8179,42 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     </Declaration>\n` +
         (model.classes[classId].isAbstract ? (
           `    <DisjointUnion>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + model.classHierarchy.children[classId].map(
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + (model.classHierarchy.children[classId] || []).map(
             childClassId =>
               `        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>\n`
           ).join('') +
           `    </DisjointUnion>\n`
         ) : '') +
-        model.classes[classId].properties.filter(
-          propertyRecord => !(isPolymorphic(propertyRecord.name))
-        ).map(
+        model.classes[classId].properties
+        // .filter( propertyRecord => !(isPolymorphic(propertyRecord.name)) )
+        .map(
           propertyRecord => {
             let propName = propertyRecord.name
             let p = model.properties[propName]
-            let t = isObject(p) ? 'Object' : 'Data'
-            let dt = isObject(p)
-              ? propertyRecord.relation in model.classes ? model.classes[propertyRecord.relation] : model.enums[propertyRecord.relation]
-              : propertyRecord.attribute in model.datatypes ? model.datatypes[propertyRecord.attribute] : { name: propertyRecord.attribute }
+            let t = isObject(p, model) ? 'Object' : 'Data'
+            let dt = isObject(p, model)
+              ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
+              : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
+            let lower = parseInt(propertyRecord.lower || 0)
+            let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
             return `    <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
-            <${isObject(p) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
+            <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
-    </SubClassOf>`
+    </SubClassOf>` + (chatty ? ((lower === 0 ? '' : (`\n    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}MinCardinality cardinality="${lower}">
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+        </${t}MinCardinality>
+    </SubClassOf>`)) + (upper === -1 ? '' : (`\n    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <${t}MaxCardinality cardinality="${upper}">
+            <${t}Property abbreviatedIRI="ddi:${propName}"/>
+        </${t}MaxCardinality>
+    </SubClassOf>`))) : '')
           }
         ).concat(
           (model.classes[classId].superClasses).map(
@@ -8616,18 +8235,34 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
         <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
-            ]).join('\n')
+            ]).concat(
+          (model.classes[classId].comments).map(
+            comment =>
+              `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`
+          )
+        ).join('\n')
+    }
+
+    function encodeCharData (text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
     }
 
     function OWLXMLEnum (model, enumId) {
       return [].concat(
         `    <EquivalentClasses>
-    <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
+        <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
         <ObjectOneOf>`,
         model.enums[enumId].values.map(
           v => `            <NamedIndividual abbreviatedIRI="ddi:${v}"/>`
         ),
-        `       </ObjectOneOf>
+        `        </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:${model.enums[enumId].name}"/>
@@ -8637,7 +8272,7 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
 
     function OWLXMLDatatype (model, datatypeId) {
       let dt = model.datatypes[datatypeId]
-      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+      if (dt.name.startsWith(XSD) ||
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
@@ -8649,16 +8284,31 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }
   }
 
-  function ShExCSerializer (model) {
+  function inlineable (model, classRecord) {
+    return classRecord.referees.length === 1
+      && (!(classRecord.id in model.classHierarchy.children)
+          || model.classHierarchy.children[classRecord.id].length === 0)
+  }
+
+  function trimMarkdown (md) {
+    return md.replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
+  }
+
+  function ShExCSerializer (model, nestInlinableStructure) {
     return {
       class: ShExCClass,
       enum: ShExCEnum,
       datatype: ShExCDatatype
     }
 
-    function ShExCClass (model, classId, markup) {
+    function ShExCClass (model, classId, markup, force) {
       let classRecord = model.classes[classId]
-      return markup.definition(classRecord.name, model.classes[classId].isAbstract) +
+      if (!force && nestInlinableStructure && inlineable(model, classRecord)) {
+        return ''
+      }
+      return (force
+              ? ''
+              : markup.definition(classRecord)) +
         classRecord.superClasses.map(
           su => model.classes[su].name
         ).map(
@@ -8670,32 +8320,61 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
             let propName = propertyRecord.name
             let p = model.properties[propName]
             let use = p.sources.find(s => s.id.indexOf(classId) === 0)
-            let dt = isObject(p)
-              ? use.relation in model.classes ? model.classes[use.relation] : model.enums[use.relation]
-              : use.attribute in model.datatypes ? model.datatypes[use.attribute] : { name: use.attribute }
+            let dt = isObject(p, model)
+              ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
+              : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              console.warn('unresolved datatype ' + use.relation + ' for property ' + propName)
+              console.warn('unresolved datatype ' + use.idref + ' for property ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
-            return '  ' + markup.property(propName) + ' ' + (isObject(p) ? markup.valueReference(dt.name) : markup.valueType(dt.name)) + ' ' + card + ';\n'
+            if (use.aggregation)
+              console.log(use.aggregation, UMLparser.Aggregation.shared, use.aggregation === UMLparser.Aggregation.shared);
+            let comments = (use.comments || []).map(markup.comment)
+            let aggregations = use.aggregation ? [markup.aggregation(use.aggregation)] : []
+            let valueStr =
+                  'referees' in dt && dt instanceof UMLparser.ClassRecord && nestInlinableStructure && inlineable(model, dt)
+                  ? indent(ShExCClass(model, dt.id, markup, true), '  ')
+                  : isObject(p, model)
+                  ? markup.valueReference(dt.name)
+                  : markup.valueType(dt.name)
+            return '  ' + markup.property(propName) + ' ' + valueStr +
+              (card ? ' ' + card : '') +
+              comments.map(
+                comment => '\n  ' + comment
+              ).join('') +
+              aggregations.map(
+                aggregation => '\n  ' + aggregation
+              ).join('') + ';\n'
           }
-        ).join('') + '}' + markup.docLink(docURL(classRecord.name))
+        ).join('') + '}' +
+        (force ? '' : '\n' + markup.docLink(docURL(classRecord.name))) +
+        (force || classRecord.packages.length === 0 ? '' : '\n' + markup.packageStr(model.packages[classRecord.packages[0]].name)) +
+        (force || classRecord.comments.length === 0 ? '' : '\n' + markup.comment(trimMarkdown(classRecord.comments[0])) + '^^mark:')
+
+      function indent (s, lead) {
+        let a = s.split(/\n/)
+        return a[0].replace(/^ /, '') + '\n'
+          + a.slice(1, a.length - 1).map(
+            line => line.replace(/^/g, lead) + '\n'
+          ).join('')
+          + lead + a[a.length - 1]
+      }
     }
 
     function ShExCEnum (model, enumId, markup) {
-      return markup.definition(model.enums[enumId].name) + ' [\n' + model.enums[enumId].values.map(
+      return markup.definition(model.enums[enumId]) + ' [\n' + model.enums[enumId].values.map(
         v => '  ' + markup.constant(v) + '\n'
-      ).join('') + ']' + markup.docLink(docURL(model.enums[enumId].name))
+      ).join('') + ']' + '\n' + markup.docLink(docURL(model.enums[enumId].name))
     }
 
     function ShExCDatatype (model, datatypeId, markup) {
       let dt = model.datatypes[datatypeId]
-      if (dt.name.startsWith('http://www.w3.org/2001/XMLSchema#') ||
+      if (dt.name.startsWith(XSD) ||
           dt.name.startsWith('http://www.w3.org/XML/1998/namespace#')) {
         return ''
       }
-      return markup.definition(dt.name) + ' xsd:string' + markup.docLink(docURL(dt.name))
+      return markup.definition(dt) + ' xsd:string' + '\n' + markup.docLink(docURL(dt.name))
     }
 
     function shexCardinality (propertyRecord) {
@@ -8715,16 +8394,17 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }
   }
 
-  function isObject (propertyDecl) {
-    return !!propertyDecl.sources[0].relation
+  function isObject (propertyDecl, model) {
+    return !!propertyDecl.sources[0].idref &&
+      !(propertyDecl.sources[0].idref in model.datatypes)
   }
 
   const KnownPrefixes = [
-    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xsd'},
-    {url: 'http://www.w3.org/2001/XMLSchema#', prefix: 'xs'},
-    {url: 'http://schema.omg.org/spec/UML/2.1/uml.xml#', prefix: 'umld'},
+    {url: XSD, prefix: 'xsd'},
+    {url: XSD, prefix: 'xs'},
+    {url: UMLD, prefix: 'umld'},
     {url: 'http://www.w3.org/XML/1998/namespace#', prefix: 'xhtml'},
-    {url: 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#', prefix: 'umlp'}
+    {url: UMLP, prefix: 'umlp'}
   ]
 
   function pname (id) {
@@ -8748,22 +8428,6 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
      <type xmi:type="xs:language"/>
      </ownedAttribute>
   */
-
-  function expandPrefix (pname) {
-    let i = pname.indexOf(':')
-    if (i === -1) {
-      return pname // e.g. LanguageSpecification
-    }
-    let prefix = pname.substr(0, i)
-    let rest = pname.substr(i + 1)
-    let ret = KnownPrefixes.map(
-      pair =>
-        pair.prefix === prefix
-          ? pair.url + rest
-          : null
-    ).find(v => v)
-    return ret || pname
-  }
 
   function puns (object, into) {
     const lookIns = ['classes', 'fields', 'associations', 'types', 'enums']
@@ -8798,17 +8462,716 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
       )))
   }
 
-  /** find the unique object types for a property
-   */
-  function findMinimalTypes (model, p) {
-    return p.sources.reduce((acc, s) => {
-      let t = s.attribute || s.relation
-      if (acc.length > 0 && acc.indexOf(t) === -1) {
-        // debugger;
-        // a.find(i => b.indexOf(i) !== -1)
+  function structureToListItems (object, into, recordTypes) {
+    into.append(Object.keys(object).filter(
+      k => typeof object[k] !== 'function'
+    ).map(k => {
+      let elt = object[k]
+      let typeIcon = ''
+      let title = object.constructor === Array
+        ? ''
+        : k
+      let value
+      if (elt === null) {
+        title += ':'
+        value = $('<span/>').addClass('keyword').text('NULL')
+      } else if (typeof elt === 'boolean') {
+        title += ':'
+        value = $('<span/>').addClass('keyword').text(elt)
+      } else if (typeof elt === 'object') {
+        let delims = ['{', '}']
+        if (elt.constructor === Array) {
+          let delims = ['[', ']']
+        } else if ('id' in elt) {
+          if (title === '') {
+            title = elt.id
+          } else if (title !== elt.id) {
+            console.log("differ: " + title + ' != ' + elt.id)
+            // title += ' ' + 'id=' + elt.id
+          }
+        } else if ('$' in elt && 'xmi:id' in elt.$) {
+          title += elt.$['xmi:id']
+        }
+        typeIcon = recordTypes.find(rt => elt instanceof rt.type)
+        if (typeIcon === undefined) {
+          typeIcon = ''
+          title += ' ' + delims[0] + Object.keys(elt).length + delims[1]
+        } else {
+          typeIcon = typeIcon.maker()
+        }
+        value = $('<ul/>')
+        structureToListItems(elt, value, recordTypes)
+      } else {
+        if (object.constructor !== Array) {
+          title += ':'
+        }
+        value = !elt
+          ? ''
+          : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
       }
-      return acc.indexOf(t) === -1 ? acc.concat(t) : acc
+      into.append($('<li/>').append(typeIcon, title, value))
+    }))
+  }
+
+  // collapsable list from <from> element
+  function collapse (from) {
+    from.find('li')
+      .css('pointer', 'default')
+      .css('list-style-image', 'none')
+    from.find('li:has(ul)')
+      .click(function (event) {
+        if (this === event.target) {
+          $(this).css(
+            'list-style-image',
+            (!$(this).children('ul').is(':hidden')) ? 'url(plusbox.gif)' : 'url(minusbox.gif)'
+          )
+          $(this).children('ul').toggle(TOGGLE_TIME)
+          return false
+        } else {
+          return true
+        }
+      })
+      .css({cursor: 'pointer', 'list-style-image': 'url(plusbox.gif)'})
+      .children('ul').hide()
+    from.find('li:not(:has(ul))').css({cursor: 'default', 'list-style-image': 'none'})
+    return from
+  }
+
+  function download (data, mediaType, filename) {
+    let blob = new window.Blob([data], {type: mediaType})
+    let e = document.createEvent('MouseEvents')
+    let a = document.createElement('a')
+
+    a.download = filename
+    a.href = window.URL.createObjectURL(blob)
+    a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
+    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+    a.dispatchEvent(e)
+    return false
+  }
+
+  // functional add key/val to object.
+  function addKey (obj, prop, val) {
+    let toAdd = {}
+    toAdd[prop] = val
+    return Object.assign({}, obj, toAdd)
+  }
+
+  function deepCopy (obj) {
+    return JSON.parse(JSON.stringify(obj)) // startlingly efficient
+  }
+
+  function emptyObject (obj) {
+    for (var x in obj) { return false }
+    return true
+  }
+
+  // Find the first nested object which has multiple children.
+  function firstBranch (root) {
+    while (Object.keys(root).length === 1) {
+      root = root[Object.keys(root)[0]]
+    }
+    return root
+  }
+
+  function docURL (term) {
+    return 'http://lion.ddialliance.org/ddiobjects/' + term.toLowerCase()
+  }
+
+  // stupid stuff you always have to add to javascript
+  function objSet (obj, key, value) {
+    let add = { }
+    add[key] = value
+    return Object.assign({}, obj, add)
+  }
+
+}
+
+window.onload = main
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ */
+
+let CanonicalUmlXmiParser = function (opts) {
+
+  let NormalizeType = opts.normalizeType || (type => type)
+  let ViewPattern = opts.viewPattern || null
+  let NameMap = opts.nameMap || { }
+  let AGGREGATION_shared = 'AGGREGATION_shared'
+  let AGGREGATION_composite = 'AGGREGATION_composite'
+
+  function parseName (elt) {
+    let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
+    return !ret ? ret : ret in NameMap ? NameMap[ret] : expandPrefix(ret)
+  }
+
+  function parseValue (elt, deflt) { // 'default' is a reserved word
+    return 'value' in elt.$ ? elt.$.value : 'value' in elt ? elt.value[0] : deflt
+  }
+
+  function parseGeneral (elt) {
+    return 'general' in elt.$ ? elt.$.general : 'general' in elt ? elt.general[0].$['xmi:idref'] : null
+  }
+
+  function parseAssociation (elt) {
+    return 'association' in elt.$ ? elt.$.association : 'association' in elt ? elt.association[0].$['xmi:idref'] : null
+  }
+
+  function parseComments (elt) {
+    return 'ownedComment' in elt
+      ? elt.ownedComment.map( commentElt => commentElt.body[0] )
+      : []
+  }
+
+  function parseIsAbstract (elt) {
+    return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
+  }
+
+  function parseProperties (model, elts, className) {
+    let ret = {
+      properties: [],
+      associations: {},
+      comments: []
+    }
+    elts.forEach(elt => {
+      let umlType = elt.$['xmi:type']
+      console.assert(umlType === 'uml:Property')
+      let id = elt.$['xmi:id']
+      let name = parseName(elt)
+      let association = parseAssociation(elt)
+
+      if (association) {
+        /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
+             <type xmi:idref="Agent"/>
+             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="AgentIndicator_member_lower"/>
+             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
+           </ownedAttribute> */
+        ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
+          in: className,
+          type: elt.type[0].$['xmi:idref'],
+          lower: parseValue(elt.lowerValue[0], 0),
+          upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
+          comments: parseComments(elt)
+        }, ('aggregation' in elt ? {
+          aggregation: (elt.aggregation[0] === "shared"
+                        ? AGGREGATION_shared
+                        : elt.aggregation[0] === "composite"
+                        ? AGGREGATION_composite
+                        : elt.aggregation[0]) // unknown aggregation state.
+        } : { }))
+      } else if (!name) {
+        // e.g. canonical *-owned-attribute-n properties.
+        // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
+      } else if (name.charAt(0).match(/[A-Z]/)) {
+        throw Error('unexpected property name ' + name + ' in ' + className)
+      } else {
+        ret.properties.push(
+          new PropertyRecord(
+            model, className, id, name, elt.type[0].$['xmi:idref'],
+            NormalizeType(elt.type[0].$['href']),
+            parseValue(elt.lowerValue[0], 0),
+            parseValue(elt.upperValue[0], UPPER_UNLIMITED),
+            parseComments(elt))
+        )
+      }
+    })
+    return ret
+  }
+
+  function parseEAViews (diagrams) {
+    return diagrams.filter(
+      diagram => '$' in diagram // eliminate the empty <diagram> element containing datatypes
+    ).map(
+      diagram => {
+        return Object.assign(new ViewRecord(), {
+          id: diagram['$']['xmi:id'],
+          name: diagram.model[0].$.package,
+          members: diagram.elements[0].element.map(
+            member => member.$.subject
+          )
+        })
+      }
+    )
+  }
+
+  function parseCanonicalViews (elt) {
+    return elt.packagedElement.map(view => {
+      return Object.assign(new ViewRecord(), {
+        id: view.$['xmi:id'],
+        name: parseName(view),
+        members: view.elementImport.map(
+          imp => imp.importedElement[0].$['xmi:idref']
+        )
+      })
+    })
+  }
+
+  function parseModel (document, source) {
+    // makeHierarchy.test()
+    // convenience variables
+    let packages = {}
+    let classes = {}
+    let properties = {}
+    let enums = {}
+    let datatypes = {}
+    let classHierarchy = makeHierarchy()
+    let packageHierarchy = makeHierarchy()
+
+    let associations = {}
+    let assocSrcToClass = {}
+
+    // return structure
+    let model = Object.assign(new ModelRecord(), {
+      source: source,
+      packages: packages,
+      classes: classes,
+      properties: properties,
+      enums: enums,
+      datatypes: datatypes,
+      classHierarchy: classHierarchy,
+      packageHierarchy: packageHierarchy,
+      associations: associations
+    })
+
+    // Build the model
+    visitPackage(document['xmi:XMI']['uml:Model'][0], [])
+
+    // Turn associations into properties.
+    Object.keys(associations).forEach(
+      assocId => {
+        let a = associations[assocId]
+        let c = classes[assocSrcToClass[a.from]]
+        let aref = c.associations[a.from]
+        let name = aref.name || a.name // if a reference has no name used the association name
+        if (a.name !== 'realizes') { // @@@ DDI-specific
+          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments);
+          if ('aggregation' in aref) {
+            prec.aggregation = aref.aggregation;
+          }
+          c.properties.push(prec)
+        }
+      }
+    )
+
+    // Change relations to datatypes to be attributes.
+    // Change relations to the classes and enums to reference the name.
+/*    Object.keys(properties).forEach(
+      p => properties[p].sources.forEach(
+        s => {
+          if (s.idref in datatypes) {
+            // console.log('changing property ' + p + ' to have attribute type ' + datatypes[s.idref].name)
+            // s.href = datatypes[s.idref].name
+            s.href = s.idref
+            s.idref = undefined
+          } else if (s.idref in classes) {
+            // s.idref = classes[s.idref].name
+          } else if (s.idref in enums) {
+            // s.idref = enums[s.idref].name
+          }
+        }))
+*/
+    /*
+     idref => idref in datatypes ? NodeConstraint : ShapeRef
+     href => NodeConstraint
+     type => NodeConstraint
+     */
+
+    // Find set of types for each property.
+    Object.keys(properties).forEach(propName => {
+      let p = properties[propName]
+      p.uniformType = findMinimalTypes(model, p)
+      p.sources.forEach(s => {
+        let t = s.href || s.idref
+        let referent =
+              t in classes ? classes[t] :
+              t in enums ? enums[t] :
+              t in datatypes ? datatypes[t] :
+              null
+        if (referent) {
+          referent.referees.push(new RefereeRecord(s.in, propName))
+        } else {
+          // console.warn('referent not found: ' + referent)
+        }
+      }, [])
     }, [])
+
+    console.dir(model)
+    return model
+
+    function visitPackage (elt, parents) {
+      let parent = parents[0]
+      let type = elt.$['xmi:type']
+      if ('xmi:id' in elt.$) {
+        let id = elt.$['xmi:id']
+        let name = parseName(elt)
+        // Could keep id to elt map around with this:
+        // index[id] = { element: elt, packages: parents }
+
+        switch (type) {
+          case 'uml:Class':
+            if (id in classes) {
+              throw Error('already seen class id ' + id)
+            }
+            let ownedAttrs = parseProperties(
+              model, elt.ownedAttribute || [], // SentinelConceptualDomain has no props
+              id)
+
+            classes[id] = Object.assign(
+              new ClassRecord(id, name),
+              ownedAttrs, {
+                packages: parents,
+                superClasses: [],
+                isAbstract: parseIsAbstract(elt),
+                referees: [],
+                comments: parseComments(elt)
+              }
+            )
+            packages[parent].elements.push({type: 'class', id: id})
+            Object.keys(ownedAttrs.associations).forEach(
+              assocSourceId => { assocSrcToClass[assocSourceId] = id }
+            )
+
+            // record class hierarchy (allows multiple inheritance)
+            if ('generalization' in elt) {
+              elt.generalization.forEach(
+                superClassElt => {
+                  let superClassId = parseGeneral(superClassElt)
+                  classHierarchy.add(superClassId, id)
+                  classes[id].superClasses.push(superClassId)
+                })
+            }
+            break
+          case 'uml:Enumeration':
+            if (id in enums) {
+              throw Error('already seen enum id ' + id)
+            }
+            enums[id] = Object.assign(new EnumRecord(), {
+              id: id,
+              name: name,
+              values: elt.ownedLiteral.map(
+                l => parseName(l)
+              ),
+              packages: parents,
+              referees: []
+            })
+            packages[parent].elements.push({type: 'enumeration', id: id})
+            // record class hierarchy
+            if ('generalization' in elt) {
+              throw Error("need to handle inherited enumeration " + parseGeneral(elt.generalization[0]) + " " + name)
+            }
+            break
+          case 'uml:DataType':
+          case 'uml:PrimitiveType':
+            if (id in datatypes) {
+              throw Error('already seen datatype id ' + id)
+            }
+            datatypes[id] = Object.assign(new DatatypeRecord(), {
+              name: name,
+              id: id,
+              packages: parents,
+              referees: []
+            })
+            packages[parent].elements.push({type: 'datatype', id: id})
+            // record class hierarchy
+            if ('generalization' in elt) {
+              throw Error("need to handle inherited datatype " + parseGeneral(elt.generalization[0]) + " " + name)
+            }
+            break
+          case 'uml:Model':
+          case 'uml:Package':
+          let recurse = true
+          /* obsolete special code for DDI EA view
+            if (id === 'ddi4_views') {
+              model.views = parseEAViews(document['xmi:XMI']['xmi:Extension'][0]['diagrams'][0]['diagram'])
+              recurse = false
+              break // elide EA views package in package hierarcy
+            }
+          */
+            if (ViewPattern && id.match(ViewPattern)) {
+              model.views = parseCanonicalViews(elt)
+              recurse = false // elide canonical views package in package hierarcy
+            } else {
+              packages[id] = Object.assign(new PackageRecord(), {
+                name: name,
+                id: id,
+                packages: parents,
+                elements: []
+              })
+              if (parents.length) {
+                if (id.match(/Pattern/)) {
+                  recurse = false // don't record Pattern packages.
+                } else {
+                  packageHierarchy.add(parent, id)
+                  packages[parent].elements.push({type: 'package', id: id})
+                }
+              }
+              if (recurse && 'packagedElement' in elt) {
+                // walk desendents
+                elt.packagedElement.forEach(sub => {
+                  visitPackage(sub, [id].concat(parents))
+                })
+              }
+            }
+            break
+            // Pass through to get to nested goodies.
+          case 'uml:Association':
+            let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
+            associations[id] = Object.assign(new AssociationRecord(id, name), {
+              from: from
+              // type: elt.ownedEnd[0].type[0].$['xmi:idref']
+            })
+            /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
+                 <name>member</name>
+                 <memberEnd xmi:idref="AgentIndicator-member-source"/>
+                 <memberEnd xmi:idref="AgentIndicator-member-target"/>
+                 <ownedEnd xmi:id="AgentIndicator-member-target" xmi:type="uml:Property">
+                   <association xmi:idref="AgentIndicator-member-association"/>
+                   <type xmi:idref="AgentIndicator"/>
+                   <lower><value>1</value></lowerValue>
+                   <upper><value>1</value></uppervalue>
+                 </ownedEnd>
+               </packagedElement> */
+            break
+          default:
+            console.warn('need handler for ' + type)
+        }
+      }
+    }
+  }
+
+  function ClassRecord (id, name) {
+    this.id = id
+    this.name = name
+  }
+
+  function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
+    if (model === undefined) {
+      return // short-cut for objectify
+    }
+    if (className === null) {
+      console.warn('no class name for PropertyRecord ' + id)
+    }
+    this.in = className
+    this.id = id
+    this.name = name
+    this.idref = idref
+    this.href = href
+    this.lower = lower
+    this.upper = upper
+    this.comments = comments
+    if (this.upper === '-1') {
+      this.upper = UPPER_UNLIMITED
+    }
+    if (!(name in model.properties)) {
+      model.properties[name] = {sources: []}
+    }
+    model.properties[name].sources.push(this)
+  }
+
+  function RefereeRecord     (classId, propName) {
+    // if (classId === null) {
+    //   throw Error('no class id for ReferenceRecord with property name ' + propName)
+    // }
+    this.classId = classId
+    this.propName = propName
+  }
+  function ModelRecord       () { }
+  function PackageRecord     () { }
+  function EnumRecord        () { }
+  function DatatypeRecord    () { }
+  function ViewRecord        () { }
+
+  /**
+   * if attrName is null, we'll use the AssociationRecord's name.
+        <packagedElement xmi:id="<classId>" xmi:type="uml:Class">
+          <ownedAttribute xmi:id="<classId>-ownedAttribute-<n>" xmi:type="uml:Property">
+            <type xmi:idref="<refType>"/> <lowerValue/> <upperValue/>
+            <name>attrName</name>
+          </ownedAttribute>
+        </packagedElement>
+   */
+  function AssocRefRecord (id, name) {
+    // if (name === null) {
+    //   throw Error('no name for AssociationRecord ' + id)
+    // }
+    this.id = id
+    this.name = name
+  }
+
+  /**
+        <packagedElement xmi:id="<classId>" xmi:type="uml:Association"> <!-- can duplicate classId -->
+          <memberEnd xmi:idref="<classId>-ownedAttribute-<n>"/>
+          <memberEnd xmi:idref="<classId>-ownedEnd"/>
+          <ownedEnd xmi:id="<classId>-ownedEnd" xmi:type="uml:Property">
+            <type xmi:idref="<classId>"/> <lowerValue /> <upperValue />
+            <association xmi:idref="<classId>"/>
+          </ownedEnd>
+          <name>assocName</name>
+        </packagedElement>
+   */
+  function AssociationRecord (id, name) {
+    // if (name === null) {
+    //   throw Error('no name for AssociationRecord ' + id)
+    // }
+    this.id = id
+    this.name = name
+  }
+
+  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
+    if (viewLabels.constructor !== Array) {
+      viewLabels = [viewLabels]
+    }
+
+    let ret = Object.assign(new ModelRecord(), {
+      source: source + viewLabels.join('-'),
+      packages: {},
+      classes: {},
+      properties: {},
+      enums: {},
+      datatypes: {},
+      classHierarchy: makeHierarchy(),
+      packageHierarchy: makeHierarchy(),
+      views: model.views.filter(
+        v => viewLabels.indexOf(v.name) !== -1
+      )
+    })
+
+    // ret.enums = Object.keys(model.enums).forEach(
+    //   enumId => copyEnum(ret, model, enumId)
+    // )
+    // ret.datatypes = Object.keys(model.datatypes).forEach(
+    //   datatypeId => copyDatatype(ret, model, datatypeId)
+    // )
+
+    let classIds = ret.views.reduce(
+      (classIds, view) =>
+        classIds.concat(view.members.reduce(
+          (x, member) => {
+            let parents = model.classHierarchy.parents[member] || [] // has no parents
+            return x.concat(member, parents.filter(
+              classId => x.indexOf(classId) === -1
+            ))
+          }, []))
+      , [])
+    addDependentClasses(classIds, true)
+
+    return ret
+    // let properties = Object.keys(model.properties).filter(
+    //   propName => model.properties[propName].sources.find(includedSource)
+    // ).reduce(
+    //   (acc, propName) => {
+    //     let sources = model.properties[propName].sources.filter(includedSource)
+    //     return addKey(acc, propName, {
+    //       sources: sources,
+    //       uniformType: findMinimalTypes(ret, {sources: sources})
+    //     })
+    //   }, [])
+
+    function copyEnum (to, from, enumId) {
+      let old = from.enums[enumId]
+      if (old.id in to.enums) {
+        return
+      }
+
+      let e = {
+        id: old.id,
+        name: old.name,
+        values: old.values.slice(),
+        packages: old.packages.slice()
+      }
+      addPackages(to, model, e.packages)
+      to.enums[enumId] = e
+    }
+
+    function copyDatatype (to, from, datatypeId) {
+      let old = from.datatypes[datatypeId]
+      if (old.id in to.datatypes) {
+        return
+      }
+
+      let e = {
+        id: old.id,
+        name: old.name,
+        packages: old.packages.slice()
+      }
+      addPackages(to, model, e.packages)
+      to.datatypes[datatypeId] = e
+    }
+
+    function addDependentClasses (classIds, followParents) {
+      classIds.forEach(
+        classId => {
+          if (classId in ret.classes) { // a recursive walk of the superClasses
+            return //                      may result in redundant insertions.
+          }
+
+          let old = model.classes[classId]
+          let dependentClassIds = []
+          let c = {
+            id: old.id,
+            name: old.name,
+            properties: [],
+            comments: old.comments.slice(),
+            packages: old.packages.slice(),
+            superClasses: old.superClasses.slice(),
+            isAbstract: old.isAbstract
+          } // was deepCopy(old)
+          ret.classes[classId] = c
+          old.properties.forEach(
+            p => {
+              let id = p.idref || p.href
+              if (id in model.enums) {
+                copyEnum(ret, model, id)
+              }
+              if (id in model.datatypes) {
+                copyDatatype(ret, model, id)
+              }
+              if (followReferencedClasses && id in model.classes) {
+                dependentClassIds.push(id)
+              }
+              c.properties.push(new PropertyRecord(ret, c.id, p.id, p.name, p.idref, p.href, p.lower, p.upper))
+            }
+          )
+          addPackages(ret, model, c.packages)
+          c.superClasses.forEach(
+            suClass =>
+              ret.classHierarchy.add(suClass, c.id)
+          )
+          let x = dependentClassIds
+          if (followParents)
+            x = x.concat(c.superClasses)
+          addDependentClasses(x, followReferentHierarchy)
+        }
+      )
+    }
+
+    function addPackages (to, from, packageIds) {
+      for (let i = 0; i < packageIds.length; ++i) {
+        let pid = packageIds[i]
+        let old = from.packages[pid]
+        let p = pid in to.packages ? to.packages[pid] : {
+          name: old.name,
+          id: pid,
+          packages: old.packages.slice()
+        }
+        if (!(pid in to.packages)) {
+          to.packages[pid] = p
+        }
+        if (i > 0) { // add [0],[1]  [1],[2]  [2],[3]...
+          to.packageHierarchy.add(pid, packageIds[i - 1])
+        }
+      }
+    }
+
+    function includedSource (source) {
+      // properties with a source in classIds
+      return classIds.indexOf(source.in) !== -1
+    }
   }
 
   function makeHierarchy () {
@@ -8881,115 +9244,138 @@ ${isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${name}</dfn><
     }, [])
   }
 
-  function structureToListItems (object, into) {
-    into.append(Object.keys(object).filter(
-      k => typeof object[k] !== 'function'
-    ).map(k => {
-      let elt = object[k]
-      let title = object.constructor === Array
-        ? ''
-        : k
-      let value
-      if (elt === null) {
-        title += ':'
-        value = $('<span/>').addClass('keyword').text('NULL')
-      } else if (typeof elt === 'boolean') {
-        title += ':'
-        value = $('<span/>').addClass('keyword').text(elt)
-      } else if (typeof elt === 'object') {
-        if (elt.constructor === Array) {
-          title += ' (' + Object.keys(elt).length + ')'
-        } else if ('id' in elt) {
-          if (title === '') {
-            title = elt.id
-          } else if (title !== elt.id) {
-            console.log("differ: " + title + ' != ' + elt.id)
-            // title += ' ' + 'id=' + elt.id
-          }
-        } else if ('$' in elt && 'xmi:id' in elt.$) {
-          title += elt.$['xmi:id']
-        }
-        value = $('<ul/>')
-        structureToListItems(elt, value)
-      } else {
-        if (object.constructor !== Array) {
-          title += ':'
-        }
-        value = !elt
-          ? ''
-          : $(elt.match(/\n/) ? '<pre/>' : '<span/>').addClass('scalar').text(elt)
-      }
-      into.append($('<li/>').text(title).append(value))
-    }))
+  function expandPrefix (pname) {
+    let i = pname.indexOf(':')
+    if (i === -1) {
+      return pname // e.g. LanguageSpecification
+    }
+    let prefix = pname.substr(0, i)
+    let rest = pname.substr(i + 1)
+    let ret = KnownPrefixes.map(
+      pair =>
+        pair.prefix === prefix
+          ? pair.url + rest
+          : null
+    ).find(v => v)
+    return ret || pname
   }
 
-  // collapsable list from <from> element
-  function collapse (from) {
-    from.find('li')
-      .css('pointer', 'default')
-      .css('list-style-image', 'none')
-    from.find('li:has(ul)')
-      .click(function (event) {
-        if (this === event.target) {
-          $(this).css(
-            'list-style-image',
-            (!$(this).children('ul').is(':hidden')) ? 'url(plusbox.gif)' : 'url(minusbox.gif)'
+  /** find the unique object types for a property
+   */
+  function findMinimalTypes (model, p) {
+    return p.sources.reduce((acc, s) => {
+      let t = s.href || s.idref
+      if (acc.length > 0 && acc.indexOf(t) === -1) {
+        // debugger;
+        // a.find(i => b.indexOf(i) !== -1)
+      }
+      return acc.indexOf(t) === -1 ? acc.concat(t) : acc
+    }, [])
+  }
+
+  function add (obj, key, value) {
+    let toAdd = { }
+    toAdd[key] = value
+    return Object.assign(obj, toAdd)
+  }
+
+  /** convert parsed structure to have correct prototypes
+   */
+  function objectify (modelStruct) {
+    return Object.assign(new ModelRecord(), {
+      source: modelStruct.source,
+      packages: Object.keys(modelStruct.packages).reduce(
+        (acc, packageId) => add(acc, packageId, Object.assign(new PackageRecord(), modelStruct.packages[packageId])),
+        {}
+      ),
+      classes: Object.keys(modelStruct.classes).reduce(
+        (acc, classId) => add(acc, classId, Object.assign(new ClassRecord(), modelStruct.classes[classId], {
+          properties: modelStruct.classes[classId].properties.map(
+            prop => Object.assign(new PropertyRecord(), prop)
           )
-          $(this).children('ul').toggle(TOGGLE_TIME)
-          return false
+        }, referees(modelStruct.classes[classId]))),
+        {}
+      ),
+      properties: Object.keys(modelStruct.properties).reduce(
+        (acc, propertyName) => add(acc, propertyName, Object.assign({}, modelStruct.properties[propertyName], {
+          sources: modelStruct.properties[propertyName].sources.map(
+            propertyRecord => Object.assign(new PropertyRecord(), propertyRecord)
+          )
+        })),
+        {}
+      ),
+      enums: simpleCopy(modelStruct.enums, EnumRecord),
+      datatypes: simpleCopy(modelStruct.datatypes, DatatypeRecord),
+      classHierarchy: Object.assign({}, modelStruct.classHierarchy),
+      packageHierarchy: Object.assign({}, modelStruct.packageHierarchy),
+      associations: Object.keys(modelStruct.associations).reduce(
+        (acc, associationId) => add(acc, associationId, Object.assign(new AssociationRecord(), modelStruct.associations[associationId])),
+        {}
+      ),
+      views: modelStruct.views.map(
+        view => Object.assign(new ViewRecord(), view)
+      )
+    })
+    function simpleCopy (obj, f) {
+      return Object.keys(obj).reduce(
+        (acc, key) => add(acc, key, Object.assign(new f(), obj[key],
+                                                  referees(obj[key]))),
+        {}
+      )
+    }
+    function referees (obj) {
+      return {
+        referees: obj.referees.map(
+          prop => Object.assign(new RefereeRecord(), prop)
+        )
+      }
+    }
+  }
+
+  return {
+    parseJSON: function (jsonText, source, cb) {
+      try {
+        let model = objectify(JSON.parse(jsonText))
+        model.source = source
+        model.strip = strip
+        cb(null, model)
+      } catch (err) {
+        cb(err)
+      }
+    },
+    parseXMI: function (xmiText, source, cb) {
+      __webpack_require__(72).Parser().parseString(xmiText, function (err, document) {
+        if (err) {
+          cb(err)
         } else {
-          return true
+          let model = parseModel(document, source)
+          model.strip = strip
+          cb(null, model)
         }
       })
-      .css({cursor: 'pointer', 'list-style-image': 'url(plusbox.gif)'})
-      .children('ul').hide()
-    from.find('li:not(:has(ul))').css({cursor: 'default', 'list-style-image': 'none'})
-    return from
-  }
-
-  function download (data, mediaType, filename) {
-    let blob = new window.Blob([data], {type: mediaType})
-    let e = document.createEvent('MouseEvents')
-    let a = document.createElement('a')
-
-    a.download = filename
-    a.href = window.URL.createObjectURL(blob)
-    a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
-    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-    a.dispatchEvent(e)
-    return false
-  }
-
-  // functional add key/val to object.
-  function addKey (obj, prop, val) {
-    let toAdd = {}
-    toAdd[prop] = val
-    return Object.assign({}, obj, toAdd)
-  }
-
-  function deepCopy (obj) {
-    return JSON.parse(JSON.stringify(obj)) // startlingly efficient
-  }
-
-  function emptyObject (obj) {
-    for (var x in obj) { return false }
-    return true
-  }
-
-  // Find the first nested object which has multiple children.
-  function firstBranch (root) {
-    while (Object.keys(root).length === 1) {
-      root = root[Object.keys(root)[0]]
-    }
-    return root
+    },
+    duplicate: function (model) {
+      return objectify(JSON.parse(JSON.stringify(model)))
+    },
+    ModelRecord: ModelRecord,
+    PropertyRecord: PropertyRecord,
+    ClassRecord: ClassRecord,
+    PackageRecord: PackageRecord,
+    EnumRecord: EnumRecord,
+    DatatypeRecord: DatatypeRecord,
+    ViewRecord: ViewRecord,
+    AssociationRecord: AssociationRecord,
+    AssocRefRecord: AssocRefRecord,
+    RefereeRecord: RefereeRecord,
+    Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }
   }
 }
 
-window.onload = main
+module.exports = CanonicalUmlXmiParser
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.10.0
@@ -9000,15 +9386,15 @@ window.onload = main
     hasProp = {}.hasOwnProperty,
     bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  sax = __webpack_require__(72);
+  sax = __webpack_require__(73);
 
   events = __webpack_require__(14);
 
-  builder = __webpack_require__(85);
+  builder = __webpack_require__(86);
 
-  bom = __webpack_require__(191);
+  bom = __webpack_require__(192);
 
-  processors = __webpack_require__(192);
+  processors = __webpack_require__(193);
 
   setImmediate = __webpack_require__(45).setImmediate;
 
@@ -9538,7 +9924,7 @@ window.onload = main
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {;(function (sax) { // wrapper for non-node envs
@@ -9703,7 +10089,7 @@ window.onload = main
 
   var Stream
   try {
-    Stream = __webpack_require__(75).Stream
+    Stream = __webpack_require__(76).Stream
   } catch (ex) {
     Stream = function () {}
   }
@@ -11110,7 +11496,7 @@ window.onload = main
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26).Buffer))
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11231,7 +11617,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -11321,7 +11707,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -11352,10 +11738,10 @@ var inherits = __webpack_require__(7);
 
 inherits(Stream, EE);
 Stream.Readable = __webpack_require__(27);
-Stream.Writable = __webpack_require__(81);
-Stream.Duplex = __webpack_require__(82);
-Stream.Transform = __webpack_require__(83);
-Stream.PassThrough = __webpack_require__(84);
+Stream.Writable = __webpack_require__(82);
+Stream.Duplex = __webpack_require__(83);
+Stream.Transform = __webpack_require__(84);
+Stream.PassThrough = __webpack_require__(85);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -11454,13 +11840,13 @@ Stream.prototype.pipe = function(dest, options) {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11540,7 +11926,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -11733,7 +12119,7 @@ module.exports = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(15)))
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -11807,7 +12193,7 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11860,44 +12246,44 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(28);
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5);
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27).Transform
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27).PassThrough
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLBuilder, assign;
 
-  assign = __webpack_require__(86);
+  assign = __webpack_require__(87);
 
-  XMLBuilder = __webpack_require__(110);
+  XMLBuilder = __webpack_require__(111);
 
   module.exports.create = function(name, xmldec, doctype, options) {
     options = assign({}, xmldec, doctype, options);
@@ -11908,12 +12294,12 @@ module.exports = __webpack_require__(27).PassThrough
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(47),
     copyObject = __webpack_require__(52),
-    createAssigner = __webpack_require__(93),
+    createAssigner = __webpack_require__(94),
     isArrayLike = __webpack_require__(11),
     isPrototype = __webpack_require__(33),
     keys = __webpack_require__(12);
@@ -11972,11 +12358,11 @@ module.exports = assign;
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(18),
-    isMasked = __webpack_require__(90),
+    isMasked = __webpack_require__(91),
     isObject = __webpack_require__(1),
     toSource = __webpack_require__(51);
 
@@ -12025,7 +12411,7 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(19);
@@ -12077,7 +12463,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -12105,10 +12491,10 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(91);
+var coreJsData = __webpack_require__(92);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -12131,7 +12517,7 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(3);
@@ -12143,7 +12529,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 /**
@@ -12162,10 +12548,10 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseRest = __webpack_require__(94),
+var baseRest = __webpack_require__(95),
     isIterateeCall = __webpack_require__(53);
 
 /**
@@ -12205,12 +12591,12 @@ module.exports = createAssigner;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var identity = __webpack_require__(30),
-    overRest = __webpack_require__(95),
-    setToString = __webpack_require__(97);
+    overRest = __webpack_require__(96),
+    setToString = __webpack_require__(98);
 
 /**
  * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -12228,10 +12614,10 @@ module.exports = baseRest;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = __webpack_require__(96);
+var apply = __webpack_require__(97);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -12270,7 +12656,7 @@ module.exports = overRest;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 /**
@@ -12297,11 +12683,11 @@ module.exports = apply;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSetToString = __webpack_require__(98),
-    shortOut = __webpack_require__(100);
+var baseSetToString = __webpack_require__(99),
+    shortOut = __webpack_require__(101);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -12317,10 +12703,10 @@ module.exports = setToString;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constant = __webpack_require__(99),
+var constant = __webpack_require__(100),
     defineProperty = __webpack_require__(49),
     identity = __webpack_require__(30);
 
@@ -12345,7 +12731,7 @@ module.exports = baseSetToString;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 /**
@@ -12377,7 +12763,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -12420,10 +12806,10 @@ module.exports = shortOut;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(102),
+var baseTimes = __webpack_require__(103),
     isArguments = __webpack_require__(34),
     isArray = __webpack_require__(2),
     isBuffer = __webpack_require__(35),
@@ -12475,7 +12861,7 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 /**
@@ -12501,7 +12887,7 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(10),
@@ -12525,7 +12911,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 /**
@@ -12549,7 +12935,7 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(10),
@@ -12615,7 +13001,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 /**
@@ -12635,7 +13021,7 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(50);
@@ -12664,10 +13050,10 @@ module.exports = nodeUtil;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)(module)))
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(109);
+var overArg = __webpack_require__(110);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -12676,7 +13062,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 /**
@@ -12697,14 +13083,14 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
 (function() {
   var XMLBuilder, XMLDeclaration, XMLDocType, XMLElement, XMLStringifier;
 
-  XMLStringifier = __webpack_require__(111);
+  XMLStringifier = __webpack_require__(112);
 
   XMLDeclaration = __webpack_require__(56);
 
@@ -12772,7 +13158,7 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 // Generated by CoffeeScript 1.9.1
@@ -12948,7 +13334,7 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(52),
@@ -12971,7 +13357,7 @@ module.exports = baseAssign;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(1);
@@ -13007,7 +13393,7 @@ module.exports = baseCreate;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseKeys = __webpack_require__(55),
@@ -13090,7 +13476,7 @@ module.exports = isEmpty;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(6),
@@ -13103,7 +13489,7 @@ module.exports = DataView;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(6),
@@ -13116,7 +13502,7 @@ module.exports = Promise;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(6),
@@ -13129,7 +13515,7 @@ module.exports = Set;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(6),
@@ -13142,12 +13528,12 @@ module.exports = WeakMap;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayEvery = __webpack_require__(120),
-    baseEvery = __webpack_require__(121),
-    baseIteratee = __webpack_require__(127),
+var arrayEvery = __webpack_require__(121),
+    baseEvery = __webpack_require__(122),
+    baseIteratee = __webpack_require__(128),
     isArray = __webpack_require__(2),
     isIterateeCall = __webpack_require__(53);
 
@@ -13204,7 +13590,7 @@ module.exports = every;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports) {
 
 /**
@@ -13233,10 +13619,10 @@ module.exports = arrayEvery;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseEach = __webpack_require__(122);
+var baseEach = __webpack_require__(123);
 
 /**
  * The base implementation of `_.every` without support for iteratee shorthands.
@@ -13260,11 +13646,11 @@ module.exports = baseEvery;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseForOwn = __webpack_require__(123),
-    createBaseEach = __webpack_require__(126);
+var baseForOwn = __webpack_require__(124),
+    createBaseEach = __webpack_require__(127);
 
 /**
  * The base implementation of `_.forEach` without support for iteratee shorthands.
@@ -13280,10 +13666,10 @@ module.exports = baseEach;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(124),
+var baseFor = __webpack_require__(125),
     keys = __webpack_require__(12);
 
 /**
@@ -13302,10 +13688,10 @@ module.exports = baseForOwn;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(125);
+var createBaseFor = __webpack_require__(126);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -13324,7 +13710,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 /**
@@ -13355,7 +13741,7 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArrayLike = __webpack_require__(11);
@@ -13393,14 +13779,14 @@ module.exports = createBaseEach;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseMatches = __webpack_require__(128),
-    baseMatchesProperty = __webpack_require__(170),
+var baseMatches = __webpack_require__(129),
+    baseMatchesProperty = __webpack_require__(171),
     identity = __webpack_require__(30),
     isArray = __webpack_require__(2),
-    property = __webpack_require__(181);
+    property = __webpack_require__(182);
 
 /**
  * The base implementation of `_.iteratee`.
@@ -13430,11 +13816,11 @@ module.exports = baseIteratee;
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsMatch = __webpack_require__(129),
-    getMatchData = __webpack_require__(169),
+var baseIsMatch = __webpack_require__(130),
+    getMatchData = __webpack_require__(170),
     matchesStrictComparable = __webpack_require__(63);
 
 /**
@@ -13458,7 +13844,7 @@ module.exports = baseMatches;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(59),
@@ -13526,7 +13912,7 @@ module.exports = baseIsMatch;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 /**
@@ -13545,7 +13931,7 @@ module.exports = listCacheClear;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(22);
@@ -13586,7 +13972,7 @@ module.exports = listCacheDelete;
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(22);
@@ -13611,7 +13997,7 @@ module.exports = listCacheGet;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(22);
@@ -13633,7 +14019,7 @@ module.exports = listCacheHas;
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(22);
@@ -13665,7 +14051,7 @@ module.exports = listCacheSet;
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(21);
@@ -13686,7 +14072,7 @@ module.exports = stackClear;
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 /**
@@ -13710,7 +14096,7 @@ module.exports = stackDelete;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 /**
@@ -13730,7 +14116,7 @@ module.exports = stackGet;
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 /**
@@ -13750,7 +14136,7 @@ module.exports = stackHas;
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(21),
@@ -13790,10 +14176,10 @@ module.exports = stackSet;
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Hash = __webpack_require__(141),
+var Hash = __webpack_require__(142),
     ListCache = __webpack_require__(21),
     Map = __webpack_require__(37);
 
@@ -13817,14 +14203,14 @@ module.exports = mapCacheClear;
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hashClear = __webpack_require__(142),
-    hashDelete = __webpack_require__(143),
-    hashGet = __webpack_require__(144),
-    hashHas = __webpack_require__(145),
-    hashSet = __webpack_require__(146);
+var hashClear = __webpack_require__(143),
+    hashDelete = __webpack_require__(144),
+    hashGet = __webpack_require__(145),
+    hashHas = __webpack_require__(146),
+    hashSet = __webpack_require__(147);
 
 /**
  * Creates a hash object.
@@ -13855,7 +14241,7 @@ module.exports = Hash;
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(23);
@@ -13876,7 +14262,7 @@ module.exports = hashClear;
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 /**
@@ -13899,7 +14285,7 @@ module.exports = hashDelete;
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(23);
@@ -13935,7 +14321,7 @@ module.exports = hashGet;
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(23);
@@ -13964,7 +14350,7 @@ module.exports = hashHas;
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(23);
@@ -13993,7 +14379,7 @@ module.exports = hashSet;
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(24);
@@ -14017,7 +14403,7 @@ module.exports = mapCacheDelete;
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports) {
 
 /**
@@ -14038,7 +14424,7 @@ module.exports = isKeyable;
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(24);
@@ -14060,7 +14446,7 @@ module.exports = mapCacheGet;
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(24);
@@ -14082,7 +14468,7 @@ module.exports = mapCacheHas;
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(24);
@@ -14110,13 +14496,13 @@ module.exports = mapCacheSet;
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(59),
     equalArrays = __webpack_require__(61),
-    equalByTag = __webpack_require__(158),
-    equalObjects = __webpack_require__(162),
+    equalByTag = __webpack_require__(159),
+    equalObjects = __webpack_require__(163),
     getTag = __webpack_require__(57),
     isArray = __webpack_require__(2),
     isBuffer = __webpack_require__(35),
@@ -14199,12 +14585,12 @@ module.exports = baseIsEqualDeep;
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(38),
-    setCacheAdd = __webpack_require__(154),
-    setCacheHas = __webpack_require__(155);
+    setCacheAdd = __webpack_require__(155),
+    setCacheHas = __webpack_require__(156);
 
 /**
  *
@@ -14232,7 +14618,7 @@ module.exports = SetCache;
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports) {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -14257,7 +14643,7 @@ module.exports = setCacheAdd;
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 /**
@@ -14277,7 +14663,7 @@ module.exports = setCacheHas;
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
 /**
@@ -14306,7 +14692,7 @@ module.exports = arraySome;
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports) {
 
 /**
@@ -14325,15 +14711,15 @@ module.exports = cacheHas;
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(19),
-    Uint8Array = __webpack_require__(159),
+    Uint8Array = __webpack_require__(160),
     eq = __webpack_require__(20),
     equalArrays = __webpack_require__(61),
-    mapToArray = __webpack_require__(160),
-    setToArray = __webpack_require__(161);
+    mapToArray = __webpack_require__(161),
+    setToArray = __webpack_require__(162);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -14443,7 +14829,7 @@ module.exports = equalByTag;
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(3);
@@ -14455,7 +14841,7 @@ module.exports = Uint8Array;
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports) {
 
 /**
@@ -14479,7 +14865,7 @@ module.exports = mapToArray;
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports) {
 
 /**
@@ -14503,10 +14889,10 @@ module.exports = setToArray;
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getAllKeys = __webpack_require__(163);
+var getAllKeys = __webpack_require__(164);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -14598,11 +14984,11 @@ module.exports = equalObjects;
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(164),
-    getSymbols = __webpack_require__(166),
+var baseGetAllKeys = __webpack_require__(165),
+    getSymbols = __webpack_require__(167),
     keys = __webpack_require__(12);
 
 /**
@@ -14620,10 +15006,10 @@ module.exports = getAllKeys;
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(165),
+var arrayPush = __webpack_require__(166),
     isArray = __webpack_require__(2);
 
 /**
@@ -14646,7 +15032,7 @@ module.exports = baseGetAllKeys;
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports) {
 
 /**
@@ -14672,11 +15058,11 @@ module.exports = arrayPush;
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(167),
-    stubArray = __webpack_require__(168);
+var arrayFilter = __webpack_require__(168),
+    stubArray = __webpack_require__(169);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -14708,7 +15094,7 @@ module.exports = getSymbols;
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports) {
 
 /**
@@ -14739,7 +15125,7 @@ module.exports = arrayFilter;
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports) {
 
 /**
@@ -14768,7 +15154,7 @@ module.exports = stubArray;
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isStrictComparable = __webpack_require__(62),
@@ -14798,12 +15184,12 @@ module.exports = getMatchData;
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsEqual = __webpack_require__(60),
-    get = __webpack_require__(171),
-    hasIn = __webpack_require__(178),
+    get = __webpack_require__(172),
+    hasIn = __webpack_require__(179),
     isKey = __webpack_require__(39),
     isStrictComparable = __webpack_require__(62),
     matchesStrictComparable = __webpack_require__(63),
@@ -14837,7 +15223,7 @@ module.exports = baseMatchesProperty;
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(64);
@@ -14876,10 +15262,10 @@ module.exports = get;
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoizeCapped = __webpack_require__(173);
+var memoizeCapped = __webpack_require__(174);
 
 /** Used to match property names within property paths. */
 var reLeadingDot = /^\./,
@@ -14910,10 +15296,10 @@ module.exports = stringToPath;
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(174);
+var memoize = __webpack_require__(175);
 
 /** Used as the maximum memoize cache size. */
 var MAX_MEMOIZE_SIZE = 500;
@@ -14942,7 +15328,7 @@ module.exports = memoizeCapped;
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(38);
@@ -15021,10 +15407,10 @@ module.exports = memoize;
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseToString = __webpack_require__(176);
+var baseToString = __webpack_require__(177);
 
 /**
  * Converts `value` to a string. An empty string is returned for `null`
@@ -15055,11 +15441,11 @@ module.exports = toString;
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(19),
-    arrayMap = __webpack_require__(177),
+    arrayMap = __webpack_require__(178),
     isArray = __webpack_require__(2),
     isSymbol = __webpack_require__(40);
 
@@ -15098,7 +15484,7 @@ module.exports = baseToString;
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 /**
@@ -15125,11 +15511,11 @@ module.exports = arrayMap;
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseHasIn = __webpack_require__(179),
-    hasPath = __webpack_require__(180);
+var baseHasIn = __webpack_require__(180),
+    hasPath = __webpack_require__(181);
 
 /**
  * Checks if `path` is a direct or inherited property of `object`.
@@ -15165,7 +15551,7 @@ module.exports = hasIn;
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 /**
@@ -15184,7 +15570,7 @@ module.exports = baseHasIn;
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var castPath = __webpack_require__(65),
@@ -15229,11 +15615,11 @@ module.exports = hasPath;
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseProperty = __webpack_require__(182),
-    basePropertyDeep = __webpack_require__(183),
+var baseProperty = __webpack_require__(183),
+    basePropertyDeep = __webpack_require__(184),
     isKey = __webpack_require__(39),
     toKey = __webpack_require__(25);
 
@@ -15267,7 +15653,7 @@ module.exports = property;
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 /**
@@ -15287,7 +15673,7 @@ module.exports = baseProperty;
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(64);
@@ -15309,7 +15695,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15347,7 +15733,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15421,7 +15807,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15511,7 +15897,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15563,7 +15949,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15625,7 +16011,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15680,7 +16066,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.9.1
@@ -15735,7 +16121,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports) {
 
 // Generated by CoffeeScript 1.10.0
@@ -15753,7 +16139,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 // Generated by CoffeeScript 1.10.0
