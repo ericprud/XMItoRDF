@@ -1,5 +1,5 @@
 {
-  "source": "uploaded DDI4_PIM_canonical.xmi 2018-05-11T09:03:18.209Z",
+  "source": "uploaded DDI4_PIM_canonical.xmi 2018-05-11T11:37:40.795Z",
   "packages": {
     "DDI4_PIM": {
       "name": "DDI4_PIM",
@@ -10527,7 +10527,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-ComplexDataTypes-TargetSample",
@@ -10536,7 +10537,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Universe",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -10547,7 +10549,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-ComplexDataTypes-TargetSample-ownedAttribute-5": {
           "id": "DDI4_PIM-ClassLibrary-ComplexDataTypes-TargetSample-ownedAttribute-5",
@@ -10556,7 +10559,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-Universe",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -12375,7 +12379,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-ConceptRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem",
@@ -12395,7 +12400,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-ConceptRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-7": {
           "id": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-7",
@@ -12502,7 +12508,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem",
           "lower": "2",
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -12513,7 +12520,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem",
           "lower": "2",
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystemCorrespondence-ownedAttribute-6": {
           "id": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystemCorrespondence-ownedAttribute-6",
@@ -13006,7 +13014,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Unit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-Population",
@@ -13033,7 +13042,8 @@
           "idref": "DDI4_PIM-ClassLibrary-GeographicClassification-GeographicUnit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -13044,7 +13054,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-Unit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Conceptual-Population-ownedAttribute-5": {
           "id": "DDI4_PIM-ClassLibrary-Conceptual-Population-ownedAttribute-5",
@@ -13071,7 +13082,8 @@
           "type": "DDI4_PIM-ClassLibrary-GeographicClassification-GeographicUnit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -13400,7 +13412,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -13411,7 +13424,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -13695,7 +13709,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-VariableRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-VariableCollection",
@@ -13715,7 +13730,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-VariableRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Conceptual-VariableCollection-ownedAttribute-10": {
           "id": "DDI4_PIM-ClassLibrary-Conceptual-VariableCollection-ownedAttribute-10",
@@ -14161,7 +14177,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview",
@@ -14170,7 +14187,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -14208,7 +14226,8 @@
           "type": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview-ownedAttribute-7": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview-ownedAttribute-7",
@@ -14217,7 +14236,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview-ownedAttribute-8": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview-ownedAttribute-8",
@@ -14327,7 +14347,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview",
@@ -14336,7 +14357,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview",
@@ -14345,7 +14367,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -14365,7 +14388,8 @@
           "type": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-8": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-8",
@@ -14374,7 +14398,8 @@
           "type": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-9": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-9",
@@ -14383,7 +14408,8 @@
           "type": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-10": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview-ownedAttribute-10",
@@ -14440,7 +14466,8 @@
           "idref": "DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-ProcessOverview",
@@ -14460,7 +14487,8 @@
           "type": "DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-ProcessOverview-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-ProcessOverview-ownedAttribute-3",
@@ -15439,7 +15467,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Population",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
@@ -15448,7 +15477,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
@@ -15457,7 +15487,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
@@ -15466,7 +15497,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
@@ -15475,7 +15507,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
@@ -15484,7 +15517,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "associations": {
@@ -15513,7 +15547,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-Population",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-12": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-12",
@@ -15522,7 +15557,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-13": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-13",
@@ -15531,7 +15567,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-14": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-14",
@@ -15540,7 +15577,8 @@
           "type": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-15": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-15",
@@ -15549,7 +15587,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-16": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame-ownedAttribute-16",
@@ -15558,7 +15597,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       },
       "comments": [
@@ -15868,7 +15908,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingDesign",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -15877,7 +15918,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -15886,7 +15928,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingAlgorithm",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -15895,7 +15938,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -15906,7 +15950,8 @@
           "type": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingDesign",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-2": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-2",
@@ -15915,7 +15960,8 @@
           "type": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-3",
@@ -15924,7 +15970,8 @@
           "type": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingAlgorithm",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-4": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure-ownedAttribute-4",
@@ -15933,7 +15980,8 @@
           "type": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -15990,7 +16038,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess",
@@ -16028,7 +16077,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess-ownedAttribute-4": {
           "id": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess-ownedAttribute-4",
@@ -16147,7 +16197,8 @@
           "idref": "DDI4_PIM-ClassLibrary-CustomMetadata-VocabularyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-CustomMetadata-ControlledVocabulary",
@@ -16167,7 +16218,8 @@
           "type": "DDI4_PIM-ClassLibrary-CustomMetadata-VocabularyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-CustomMetadata-ControlledVocabulary-ownedAttribute-7": {
           "id": "DDI4_PIM-ClassLibrary-CustomMetadata-ControlledVocabulary-ownedAttribute-7",
@@ -16635,7 +16687,8 @@
           "idref": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomItemRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomStructure",
@@ -16664,7 +16717,8 @@
           "type": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomItemRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-CustomMetadata-CustomStructure-ownedAttribute-8": {
           "id": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomStructure-ownedAttribute-8",
@@ -17149,7 +17203,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalOrderRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet",
@@ -17158,7 +17213,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleCodebook-VariableStatistics",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet",
@@ -17196,7 +17252,8 @@
           "type": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalOrderRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet-ownedAttribute-11": {
           "id": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet-ownedAttribute-11",
@@ -17205,7 +17262,8 @@
           "type": "DDI4_PIM-ClassLibrary-SimpleCodebook-VariableStatistics",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet-ownedAttribute-12": {
           "id": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet-ownedAttribute-12",
@@ -17471,7 +17529,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-DataPointRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalRecordSegment",
@@ -17527,7 +17586,8 @@
           "type": "DDI4_PIM-ClassLibrary-FormatDescription-DataPointRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalRecordSegment-ownedAttribute-9": {
           "id": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalRecordSegment-ownedAttribute-9",
@@ -17883,7 +17943,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalLayoutRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalSegmentLayout",
@@ -17921,7 +17982,8 @@
           "type": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalLayoutRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalSegmentLayout-ownedAttribute-31": {
           "id": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalSegmentLayout-ownedAttribute-31",
@@ -18391,7 +18453,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -18402,7 +18465,8 @@
           "type": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -18717,7 +18781,8 @@
           "idref": "DDI4_PIM-ClassLibrary-StudyRelated-ComplianceStatement",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-Standard",
@@ -18726,7 +18791,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -18737,7 +18803,8 @@
           "type": "DDI4_PIM-ClassLibrary-StudyRelated-ComplianceStatement",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-StudyRelated-Standard-ownedAttribute-2": {
           "id": "DDI4_PIM-ClassLibrary-StudyRelated-Standard-ownedAttribute-2",
@@ -18746,7 +18813,8 @@
           "type": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -19429,7 +19497,8 @@
           "idref": "DDI4_PIM-ClassLibrary-StudyRelated-StudyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-StudySeries",
@@ -19458,7 +19527,8 @@
           "type": "DDI4_PIM-ClassLibrary-StudyRelated-StudyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-StudyRelated-StudySeries-ownedAttribute-9": {
           "id": "DDI4_PIM-ClassLibrary-StudyRelated-StudySeries-ownedAttribute-9",
@@ -19790,7 +19860,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -19801,7 +19872,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -19840,7 +19912,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -19851,7 +19924,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -20263,7 +20337,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -20274,7 +20349,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Workflows-StructuredWorkflowSteps-ownedAttribute-2": {
           "id": "DDI4_PIM-ClassLibrary-Workflows-StructuredWorkflowSteps-ownedAttribute-2",
@@ -20395,7 +20471,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -20424,7 +20501,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -20618,7 +20696,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStep",
@@ -20627,7 +20706,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "associations": {
@@ -20656,7 +20736,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         "DDI4_PIM-ClassLibrary-Workflows-WorkflowStep-ownedAttribute-10": {
           "id": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStep-ownedAttribute-10",
@@ -20665,7 +20746,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       },
       "comments": [
@@ -21289,7 +21371,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -21300,7 +21383,8 @@
           "type": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -21381,7 +21465,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -21392,7 +21477,8 @@
           "type": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -21667,7 +21753,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex",
@@ -21676,7 +21763,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-IndexEntryRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex",
@@ -21685,7 +21773,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex",
@@ -21694,7 +21783,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex",
@@ -21714,7 +21804,8 @@
           "type": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-11": {
           "id": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-11",
@@ -21732,7 +21823,8 @@
           "type": "DDI4_PIM-ClassLibrary-Representations-IndexEntryRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-13": {
           "id": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-13",
@@ -21741,7 +21833,8 @@
           "type": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-14": {
           "id": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-14",
@@ -21750,7 +21843,8 @@
           "type": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-15": {
           "id": "DDI4_PIM-ClassLibrary-Representations-ClassificationIndex-ownedAttribute-15",
@@ -21960,7 +22054,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-AuthorizationSource",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationItem",
@@ -21980,7 +22075,8 @@
           "type": "DDI4_PIM-ClassLibrary-Representations-AuthorizationSource",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-ClassificationItem-ownedAttribute-10": {
           "id": "DDI4_PIM-ClassLibrary-Representations-ClassificationItem-ownedAttribute-10",
@@ -22514,7 +22610,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-ClassificationRelationStructure",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-CodeList",
@@ -22561,7 +22658,8 @@
           "type": "DDI4_PIM-ClassLibrary-Representations-ClassificationRelationStructure",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-CodeList-ownedAttribute-9": {
           "id": "DDI4_PIM-ClassLibrary-Representations-CodeList-ownedAttribute-9",
@@ -23260,7 +23358,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-StatisticalClassification",
@@ -23316,7 +23415,8 @@
           "type": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Representations-StatisticalClassification-ownedAttribute-16": {
           "id": "DDI4_PIM-ClassLibrary-Representations-StatisticalClassification-ownedAttribute-16",
@@ -23784,7 +23884,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-Datum",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -23804,7 +23905,8 @@
           "type": "DDI4_PIM-ClassLibrary-LogicalDataDescription-Datum",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataPoint-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataPoint-ownedAttribute-3",
@@ -23975,7 +24077,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-RecordRelation",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataStore",
@@ -24022,7 +24125,8 @@
           "type": "DDI4_PIM-ClassLibrary-LogicalDataDescription-RecordRelation",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataStore-ownedAttribute-14": {
           "id": "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataStore-ownedAttribute-14",
@@ -24902,7 +25006,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-IdentifierRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint",
@@ -24911,7 +25016,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-MeasureRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint",
@@ -24920,7 +25026,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-AttributeRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "associations": {
@@ -24931,7 +25038,8 @@
           "type": "DDI4_PIM-ClassLibrary-LogicalDataDescription-IdentifierRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint-ownedAttribute-2": {
           "id": "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint-ownedAttribute-2",
@@ -24940,7 +25048,8 @@
           "type": "DDI4_PIM-ClassLibrary-LogicalDataDescription-MeasureRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-LogicalDataDescription-UnitDataViewpoint-ownedAttribute-3",
@@ -24949,7 +25058,8 @@
           "type": "DDI4_PIM-ClassLibrary-LogicalDataDescription-AttributeRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       },
       "comments": [
@@ -25190,7 +25300,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ResponseDomain",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-DataCapture-Capture",
@@ -25208,7 +25319,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-DataCapture-Capture",
@@ -25217,7 +25329,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -25228,7 +25341,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-ResponseDomain",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-DataCapture-Capture-ownedAttribute-8": {
           "id": "DDI4_PIM-ClassLibrary-DataCapture-Capture-ownedAttribute-8",
@@ -25246,7 +25360,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-DataCapture-Capture-ownedAttribute-10": {
           "id": "DDI4_PIM-ClassLibrary-DataCapture-Capture-ownedAttribute-10",
@@ -25255,7 +25370,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -25411,7 +25527,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Capture",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "associations": {
@@ -25422,7 +25539,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-Capture",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       },
       "comments": [
@@ -25550,7 +25668,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ConceptualInstrument",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -25561,7 +25680,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-ConceptualInstrument",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -25806,7 +25926,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-DataCapture-InstrumentComponent",
@@ -25815,7 +25936,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -25826,7 +25948,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-DataCapture-InstrumentComponent-ownedAttribute-2": {
           "id": "DDI4_PIM-ClassLibrary-DataCapture-InstrumentComponent-ownedAttribute-2",
@@ -25835,7 +25958,8 @@
           "type": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -26087,7 +26211,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "associations": {
@@ -26107,7 +26232,8 @@
           "type": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       },
       "comments": [
@@ -26489,7 +26615,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-TemporalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Discovery-Coverage",
@@ -26498,7 +26625,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-TopicalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Discovery-Coverage",
@@ -26507,7 +26635,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "associations": {
@@ -26518,7 +26647,8 @@
           "type": "DDI4_PIM-ClassLibrary-Discovery-TemporalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Discovery-Coverage-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-Discovery-Coverage-ownedAttribute-3",
@@ -26527,7 +26657,8 @@
           "type": "DDI4_PIM-ClassLibrary-Discovery-TopicalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Discovery-Coverage-ownedAttribute-4": {
           "id": "DDI4_PIM-ClassLibrary-Discovery-Coverage-ownedAttribute-4",
@@ -26536,7 +26667,8 @@
           "type": "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       },
       "comments": [
@@ -26606,7 +26738,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-BoundingBox",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage",
@@ -26671,7 +26804,8 @@
           "type": "DDI4_PIM-ClassLibrary-Discovery-BoundingBox",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage-ownedAttribute-5": {
           "id": "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage-ownedAttribute-5",
@@ -27044,7 +27178,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Methodologies-Guide",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse",
@@ -27073,7 +27208,8 @@
           "type": "DDI4_PIM-ClassLibrary-Methodologies-Guide",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse-ownedAttribute-3": {
           "id": "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse-ownedAttribute-3",
@@ -27342,7 +27478,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Methodologies-Result",
@@ -27380,7 +27517,8 @@
           "type": "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Methodologies-Result-ownedAttribute-4": {
           "id": "DDI4_PIM-ClassLibrary-Methodologies-Result-ownedAttribute-4",
@@ -27631,7 +27769,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-AgentRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Agents-AgentListing",
@@ -27669,7 +27808,8 @@
           "type": "DDI4_PIM-ClassLibrary-Agents-AgentRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         "DDI4_PIM-ClassLibrary-Agents-AgentListing-ownedAttribute-8": {
           "id": "DDI4_PIM-ClassLibrary-Agents-AgentListing-ownedAttribute-8",
@@ -41790,7 +41930,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-Unit",
@@ -41815,7 +41956,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Universe",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -41840,7 +41982,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-ConceptRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-VariableCollection",
@@ -41849,7 +41992,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-VariableRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-GeographicClassification-GeographicUnitClassification",
@@ -41876,7 +42020,8 @@
           "idref": "DDI4_PIM-ClassLibrary-CustomMetadata-VocabularyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomStructure",
@@ -41885,7 +42030,8 @@
           "idref": "DDI4_PIM-ClassLibrary-CustomMetadata-CustomItemRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalDataSet",
@@ -41894,7 +42040,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalOrderRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalRecordSegment",
@@ -41903,7 +42050,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-DataPointRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalSegmentLayout",
@@ -41912,7 +42060,8 @@
           "idref": "DDI4_PIM-ClassLibrary-FormatDescription-PhysicalLayoutRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-StudySeries",
@@ -41921,7 +42070,8 @@
           "idref": "DDI4_PIM-ClassLibrary-StudyRelated-StudyRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Workflows-StructuredWorkflowSteps",
@@ -41930,7 +42080,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationFamily",
@@ -41948,7 +42099,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-IndexEntryRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-ClassificationSeries",
@@ -41966,7 +42118,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-ClassificationRelationStructure",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-LogicalDataDescription-DataStore",
@@ -42002,7 +42155,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-AgentRelationStructure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42233,7 +42387,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem",
           "lower": "2",
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-CorrespondenceTable",
@@ -42319,7 +42474,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Conceptual-Universe",
@@ -42516,7 +42672,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Unit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42548,7 +42705,8 @@
           "idref": "DDI4_PIM-ClassLibrary-GeographicClassification-GeographicUnit",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42736,7 +42894,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingDesign",
@@ -42762,7 +42921,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42778,7 +42938,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-DesignOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -42787,7 +42948,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingDesign",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-Study",
@@ -42813,7 +42975,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -42822,7 +42985,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingAlgorithm",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42839,7 +43003,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleMethodologyOverview-MethodologyOverview",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
@@ -42848,7 +43013,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcedure",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42865,7 +43031,8 @@
           "idref": "DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess",
@@ -42874,7 +43041,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Workflows-WorkflowProcess",
@@ -42883,7 +43051,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -42944,7 +43113,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-BoundingBox",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43165,7 +43335,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Population",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-Study",
@@ -43190,7 +43361,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43206,7 +43378,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-UnitType",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43222,7 +43395,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SampleFrame",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43238,7 +43412,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStep",
@@ -43247,7 +43422,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Methodologies-Result",
@@ -43272,7 +43448,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStep",
@@ -43281,7 +43458,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-DataCapture-ResponseDomain",
@@ -43290,7 +43468,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-Parameter",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Methodologies-Result",
@@ -43363,7 +43542,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SamplingMethodology-SamplingProcess",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-StudyRelated-Study",
@@ -43566,7 +43746,8 @@
           "idref": "DDI4_PIM-ClassLibrary-SimpleCodebook-VariableStatistics",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43694,7 +43875,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Conceptual-Concept",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43774,7 +43956,8 @@
           "idref": "DDI4_PIM-ClassLibrary-StudyRelated-ComplianceStatement",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -43790,7 +43973,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44119,7 +44303,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44135,7 +44320,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Workflows-WorkflowStepSequence",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44304,7 +44490,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44320,7 +44507,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44352,7 +44540,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-CorrespondenceTable",
@@ -44377,7 +44566,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-CorrespondenceTable",
@@ -44411,7 +44601,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Agents-Agent",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         },
         {
           "in": "DDI4_PIM-ClassLibrary-Representations-CorrespondenceTable",
@@ -44436,7 +44627,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Representations-AuthorizationSource",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44643,7 +44835,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44723,7 +44916,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-Datum",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44739,7 +44933,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-RecordRelation",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44803,7 +44998,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-IdentifierRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "uniformType": [
@@ -44819,7 +45015,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-MeasureRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "uniformType": [
@@ -44835,7 +45032,8 @@
           "idref": "DDI4_PIM-ClassLibrary-LogicalDataDescription-AttributeRole",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "uniformType": [
@@ -44867,7 +45065,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ResponseDomain",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44883,7 +45082,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44899,7 +45099,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -44963,7 +45164,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Capture",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_composite"
         }
       ],
       "uniformType": [
@@ -44979,7 +45181,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ConceptualInstrument",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45037,7 +45240,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-Instruction",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45053,7 +45257,8 @@
           "idref": "DDI4_PIM-ClassLibrary-DataCapture-ExternalAid",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45110,7 +45315,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-TemporalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45126,7 +45332,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-TopicalCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45142,7 +45349,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Discovery-SpatialCoverage",
           "lower": 0,
           "upper": "1",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45270,7 +45478,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Methodologies-Guide",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [
@@ -45334,7 +45543,8 @@
           "idref": "DDI4_PIM-ClassLibrary-Methodologies-AppliedUse",
           "lower": 0,
           "upper": "*",
-          "comments": []
+          "comments": [],
+          "aggregation": "AGGREGATION_shared"
         }
       ],
       "uniformType": [

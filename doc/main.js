@@ -364,6 +364,7 @@ function main () {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => '// rdfs:definedBy <' + link + '>',
         packageStr: pkg => '// shexmi:package "' + stringEscape(pkg) + '"',
+        aggregation: agg => '// shexmi:partonomy "' + (agg === UMLparser.Aggregation.shared ? "shexmi:sharedAggregation" : agg === UMLparser.Aggregation.composite ? "shexmi:compositeAggregation" : "\"???\"") + '"',
         comment: txt => '// shexmi:comment """' + stringEscape(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
@@ -391,6 +392,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       </div>
       </section>`,
         packageStr: pkg => '',
+        aggregation: agg => '',
         comment: txt => '',
         reference: name => ref(pname(name)),
         constant: name => pOrT(pname(name)),
@@ -695,7 +697,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
+            if (use.aggregation)
+              console.log(use.aggregation, UMLparser.Aggregation.shared, use.aggregation === UMLparser.Aggregation.shared);
             let comments = (use.comments || []).map(markup.comment)
+            let aggregations = use.aggregation ? [markup.aggregation(use.aggregation)] : []
             let valueStr =
                   'referees' in dt && dt instanceof UMLparser.ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
@@ -706,6 +711,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               (card ? ' ' + card : '') +
               comments.map(
                 comment => '\n  ' + comment
+              ).join('') +
+              aggregations.map(
+                aggregation => '\n  ' + aggregation
               ).join('') + ';\n'
           }
         ).join('') + '}' +

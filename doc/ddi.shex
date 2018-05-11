@@ -1,4 +1,4 @@
-# Source: uploaded DDI4_PIM_canonical.xmi 2018-05-11T09:03:18.209Z
+# Source: uploaded DDI4_PIM_canonical.xmi 2018-05-11T11:37:40.795Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1188,7 +1188,8 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:Concept *;
     } *
     // shexmi:comment """Restricted to ConceptRelation. ConceptRelations making up the relation structure.""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystem>
@@ -1222,7 +1223,8 @@ ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
   ddi:correspondence @ddi:Map *
   // shexmi:comment """Realization of correspondence in Comparison for mapping similar concepts.""";
-  ddi:maps @ddi:ConceptSystem {2,};
+  ddi:maps @ddi:ConceptSystem {2,}
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conceptsystemcorrespondence>
 // shexmi:package "Conceptual"
@@ -1337,10 +1339,12 @@ ddi:Population EXTENDS ddi:Concept {
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
   ddi:timePeriodOfPopulation @ddi:DateRange *
   // shexmi:comment """The time period associated with the Population""";
-  ddi:composedOf @ddi:Unit *;
+  ddi:composedOf @ddi:Unit *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:usesConcept @ddi:Concept *;
   ddi:narrowsUniverse @ddi:Universe *;
-  ddi:geographyOfPopulation @ddi:GeographicUnit *;
+  ddi:geographyOfPopulation @ddi:GeographicUnit *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/population>
 // shexmi:package "Conceptual"
@@ -1470,7 +1474,8 @@ ddi:UnitType EXTENDS ddi:Concept {
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
-  ddi:usesConcept @ddi:Concept ?;
+  ddi:usesConcept @ddi:Concept ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unittype>
 // shexmi:package "Conceptual"
@@ -1576,8 +1581,10 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
     ddi:basedOnPriorResult @ddi:Result *;
   } *;
   ddi:specifiesGoal @ddi:Goal *;
-  ddi:expressesAlgorithm @ddi:AlgorithmOverview *;
-  ddi:implementedBy @ddi:WorkflowProcess *;
+  ddi:expressesAlgorithm @ddi:AlgorithmOverview *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:implementedBy @ddi:WorkflowProcess *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/designoverview>
 // shexmi:package "SimpleMethodologyOverview"
@@ -1602,9 +1609,12 @@ ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:isDescribedIn @ddi:ExternalMaterial *;
-  ddi:hasDesign @ddi:DesignOverview *;
-  ddi:isExpressedBy @ddi:AlgorithmOverview *;
-  ddi:componentMethodology @ddi:MethodologyOverview *;
+  ddi:hasDesign @ddi:DesignOverview *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:isExpressedBy @ddi:AlgorithmOverview *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:componentMethodology @ddi:MethodologyOverview *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/methodologyoverview>
 // shexmi:package "SimpleMethodologyOverview"
@@ -1844,16 +1854,22 @@ ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
         // shexmi:comment """The target size of the sample expressed as an integer.""";
         ddi:targetPercent xsd:double ?
         // shexmi:comment """The target size of the sample expressed as an integer (70% expressed as .7)""";
-        ddi:hasUnitType @ddi:UnitType ?;
-        ddi:fromUniverse @ddi:Universe ?;
+        ddi:hasUnitType @ddi:UnitType ?
+        // shexmi:partonomy "shexmi:sharedAggregation";
+        ddi:fromUniverse @ddi:Universe ?
+        // shexmi:partonomy "shexmi:sharedAggregation";
       } *
       // shexmi:comment """Repeat for primary and secondary target samples. Supports identification of size, percent, unit type, and universe""";
     } *;
     ddi:implentedBy @ddi:SamplingProcess *;
-  } *;
-  ddi:hasProcess @ddi:SamplingProcess *;
-  ddi:isExpressedBy @ddi:SamplingAlgorithm *;
-  ddi:componentMethodology @ddi:SamplingProcedure *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:hasProcess @ddi:SamplingProcess *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:isExpressedBy @ddi:SamplingAlgorithm *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:componentMethodology @ddi:SamplingProcedure *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/samplingprocedure>
 // shexmi:package "SamplingMethodology"
@@ -1873,7 +1889,8 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:isDiscussedIn @ddi:ExternalMaterial *;
-  ddi:hasProcessSequence @ddi:WorkflowStepSequence ?;
+  ddi:hasProcessSequence @ddi:WorkflowStepSequence ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:hasResults EXTENDS ddi:Result {
     ddi:sizeOfSample xsd:integer ?
     // shexmi:comment """The overall size of the sample""";
@@ -2088,7 +2105,8 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:VocabularyEntry *;
     } *
     // shexmi:comment """Relation between VocabularyEntries""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/controlledvocabulary>
@@ -2151,7 +2169,8 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
         ddi:target @ddi:CustomItem *;
       } *
       // shexmi:comment """Member relationships that comprise the relationship structure""";
-    } *;
+    } *
+    // shexmi:partonomy "shexmi:sharedAggregation";
     ddi:definingConcept @ddi:Concept *;
   } *;
   ddi:definingConcept @ddi:Concept *;
@@ -2281,7 +2300,8 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:PhysicalRecordSegment *;
     } *
     // shexmi:comment """Member relations that comprise the relation structure""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:hasVariableStatistics EXTENDS ddi:Identifiable {
     ddi:totalResponses xsd:integer ?
     // shexmi:comment """The total number of responses to this variable. This element is especially useful if the number of responses does not match added case counts. It may also be used to sum the frequencies for variable categories.""";
@@ -2311,7 +2331,8 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
     } *;
     ddi:applicableWeightVariable @ddi:InstanceVariable *;
     ddi:hasFilterVariable @ddi:InstanceVariable *;
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicaldataset>
@@ -2368,7 +2389,8 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:DataPoint *;
     } *
     // shexmi:comment """Member relations that comprise the relation structure""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalrecordsegment>
@@ -2470,7 +2492,8 @@ ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:ValueMapping *;
     } *
     // shexmi:comment """Specifics of relations between InstanceVariables in the PhysicalLayout""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlayout>
@@ -2628,7 +2651,8 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasProcess EXTENDS ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString ?
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit""";
-    ddi:hasProcessSequence . ?;
+    ddi:hasProcessSequence . ?
+    // shexmi:partonomy "shexmi:sharedAggregation";
     ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
   } *;
   ddi:hasInstrument EXTENDS ddi:AnnotatedIdentifiable {
@@ -2651,8 +2675,10 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """A description of the purpose or use of the Member. May be expressed in multiple languages and supports the use of structured content. """;
       ddi:usage @ddi:InternationalStructuredString ?
       // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-      ddi:organizes @ddi:Capture *;
-    } ?;
+      ddi:organizes @ddi:Capture *
+      // shexmi:partonomy "shexmi:compositeAggregation";
+    } ?
+    // shexmi:partonomy "shexmi:sharedAggregation";
   } *;
   ddi:hasEmbargo EXTENDS ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
@@ -2684,9 +2710,12 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
         // shexmi:comment """Specification of a code which relates to an area of coverage of the standard. Supports the use of an external controlled vocabulary.""";
         ddi:usage @ddi:InternationalStructuredString ?
         // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-        ddi:complianceConceptReference @ddi:Concept ?;
-      } ?;
-      ddi:standardUsed @ddi:ExternalMaterial *;
+        ddi:complianceConceptReference @ddi:Concept ?
+        // shexmi:partonomy "shexmi:sharedAggregation";
+      } ?
+      // shexmi:partonomy "shexmi:sharedAggregation";
+      ddi:standardUsed @ddi:ExternalMaterial *
+      // shexmi:partonomy "shexmi:sharedAggregation";
     } *;
   } *;
   ddi:hasBudget EXTENDS ddi:AnnotatedIdentifiable {
@@ -2751,7 +2780,8 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
         ddi:target @ddi:ConceptualVariable *;
       } *
       // shexmi:comment """Member relations that comprise the relation structure""";
-    } *;
+    } *
+    // shexmi:partonomy "shexmi:sharedAggregation";
     ddi:definingConcept @ddi:Concept *;
   } *;
 }
@@ -2819,7 +2849,8 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:Study *;
     } *
     // shexmi:comment """Member relations that comprise the relation structure""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/studyseries>
@@ -2947,7 +2978,8 @@ d:ComputationItemType"""^^mark:
 ddi:ConditionalControlConstruct EXTENDS ddi:WorkflowStep {
   ddi:condition @ddi:CommandCode ?
   // shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false""";
-  ddi:containsSubSequence @ddi:WorkflowStepSequence ?;
+  ddi:containsSubSequence @ddi:WorkflowStepSequence ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/conditionalcontrolconstruct>
 // shexmi:package "Workflows"
@@ -2967,7 +2999,8 @@ ddi:IfThenElse EXTENDS ddi:ConditionalControlConstruct {
     ddi:thenWorkflowStepCollection @ddi:WorkflowStepSequence *;
   } *
   // shexmi:comment """The condition to check if the IfThenElse condition is false. """;
-  ddi:elseContains @ddi:WorkflowStepSequence ?;
+  ddi:elseContains @ddi:WorkflowStepSequence ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/ifthenelse>
 // shexmi:package "Workflows"
@@ -3170,7 +3203,8 @@ ddi:StructuredWorkflowSteps EXTENDS ddi:WorkflowStepSequence {
     // shexmi:comment """WorkflowStep relations that comprise the relation structure""";
     ddi:hasTemporalRelationSpecification @ddi:TemporalRelationSpecification ?
     // shexmi:comment """Supports the use of Allan's Intervals for describing temporal relations. Allan's Intervals are specific types of analytic precedence relations and should be used to refine a RelationSpecification of analyticPrecedence.""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/structuredworkflowsteps>
 // shexmi:package "Workflows"
@@ -3215,7 +3249,8 @@ ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:usage @ddi:InternationalStructuredString ?
   // shexmi:comment """Explanation of the ways in which the pattern is employed. Supports  the use of multiple languages and  structured text.  """;
   ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
-  ddi:hasProcessSequence @ddi:WorkflowStepSequence ?;
+  ddi:hasProcessSequence @ddi:WorkflowStepSequence ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowprocess>
 // shexmi:package "Workflows"
@@ -3251,8 +3286,10 @@ ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """The estimated time period associated with the operation of the Service. This may be expressed as a time, date-time, or duration.""";
     ddi:hasAgent @ddi:Agent *;
   } *;
-  ddi:hasInputParameter @ddi:Parameter *;
-  ddi:hasOutputParameter @ddi:Parameter *;
+  ddi:hasInputParameter @ddi:Parameter *
+  // shexmi:partonomy "shexmi:compositeAggregation";
+  ddi:hasOutputParameter @ddi:Parameter *
+  // shexmi:partonomy "shexmi:compositeAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/workflowstep>
 // shexmi:package "Workflows"
@@ -3449,7 +3486,8 @@ ddi:FundingInformation EXTENDS ddi:Identifiable {
   // shexmi:comment """The identification code of the grant or other monetary award which provided funding for the described object.""";
   ddi:purpose @ddi:InternationalStructuredString ?
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured tex""";
-  ddi:hasFunder @ddi:Agent *;
+  ddi:hasFunder @ddi:Agent *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/fundinginformation>
 // shexmi:package "Utility"
@@ -3477,7 +3515,8 @@ ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Identifies the date of Authorization.""";
   ddi:purpose @ddi:InternationalStructuredString ?
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
-  ddi:authorizingAgent @ddi:Agent *;
+  ddi:authorizingAgent @ddi:Agent *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/authorizationsource>
 // shexmi:package "Representations"
@@ -3579,7 +3618,8 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:hasPublication @ddi:ExternalMaterial *;
+  ddi:hasPublication @ddi:ExternalMaterial *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
@@ -3598,9 +3638,12 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
       ddi:target @ddi:ClassificationIndexEntry *;
     } *
     // shexmi:comment """Index Entry Relations  that comprise the relationship structure""";
-  } *;
-  ddi:maintenanceUnit @ddi:Agent ?;
-  ddi:contactPerson @ddi:Agent *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:maintenanceUnit @ddi:Agent ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:contactPerson @ddi:Agent *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationindex>
@@ -3657,7 +3700,8 @@ ddi:ClassificationItem EXTENDS ddi:Code {
   // shexmi:comment """Dates for which the classification is valid. Date from which the item became valid. The date must be defined if the item belongs to a floating Statistical classification. Date at which the item became invalid. The date must be defined if the item belongs to a floating Statistical classification and is no longer valid""";
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A Classification Item has a name as provided by the owner or maintenance unit. The name describes the content of the category. The name is unique within the Statistical Classification to which the item belongs, except for categories that are identical at more than one level in a hierarchical classification. Use the context attribute to identify Official Name or alternate names for the Classification Item.""";
-  ddi:caseLaw @ddi:AuthorizationSource *;
+  ddi:caseLaw @ddi:AuthorizationSource *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:exclude @ddi:ClassificationItem *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/classificationitem>
@@ -3814,7 +3858,8 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A display label for the OrderRelation. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
     ddi:hasMemberRelation @ddi:CategoryRelation *
     // shexmi:comment """Member relations that comprise the relation structure""";
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:usesLevelStructure @ddi:LevelStructure *;
   ddi:definingConcept @ddi:Concept *;
 }
@@ -4024,7 +4069,8 @@ ddi:StatisticalClassification EXTENDS ddi:CodeList {
   } *
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isMaintainedBy @ddi:Organization *;
-  ddi:distributedAs @ddi:ExternalMaterial *;
+  ddi:distributedAs @ddi:ExternalMaterial *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:variantOf @ddi:StatisticalClassification *;
   ddi:isIndexedBy @ddi:ClassificationIndex *;
   ddi:predecessor @ddi:StatisticalClassification *;
@@ -4142,7 +4188,8 @@ ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
     ddi:representation @ddi:ValueString
     // shexmi:comment """Specification of the type of Signification""";
     ddi:isBoundedBy @ddi:InstanceVariable *;
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datapoint>
 // shexmi:package "LogicalDataDescription"
@@ -4251,15 +4298,19 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
       } *;
       ddi:isViewedFrom EXTENDS ddi:AnnotatedIdentifiable {
         ddi:hasIdentifierRole EXTENDS ddi:ViewpointRole {
-        } *;
+        } *
+        // shexmi:partonomy "shexmi:compositeAggregation";
         ddi:hasMeasureRole EXTENDS ddi:ViewpointRole {
-        } *;
+        } *
+        // shexmi:partonomy "shexmi:compositeAggregation";
         ddi:hasAttributeRole EXTENDS ddi:ViewpointRole {
-        } *;
+        } *
+        // shexmi:partonomy "shexmi:compositeAggregation";
       } *;
       ddi:definingConcept @ddi:Concept *;
     } *;
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:definingConcept @ddi:Concept *;
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/datastore>
@@ -4471,10 +4522,13 @@ ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The source of a capture structure defined briefly; typically using an external controlled vocabulary""";
   ddi:analysisUnit @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Identifies the unit being analyzed such as a Person, Housing Unit, Enterprise, etc. """;
-  ddi:hasResponseDomain @ddi:ResponseDomain *;
+  ddi:hasResponseDomain @ddi:ResponseDomain *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:hasConcept @ddi:Concept *;
-  ddi:hasInstruction @ddi:Instruction *;
-  ddi:hasExternalAid @ddi:ExternalAid *;
+  ddi:hasInstruction @ddi:Instruction *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:hasExternalAid @ddi:ExternalAid *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/capture>
 // shexmi:package "DataCapture"
@@ -4610,8 +4664,10 @@ DDI 3.2 mapping
 d:ComputationItemType"""^^mark:
 
 ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
-  ddi:hasInstructions @ddi:Instruction *;
-  ddi:hasExternalAids @ddi:ExternalAid *;
+  ddi:hasInstructions @ddi:Instruction *
+  // shexmi:partonomy "shexmi:sharedAggregation";
+  ddi:hasExternalAids @ddi:ExternalAid *
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/instrumentcomponent>
 // shexmi:package "DataCapture"
@@ -4681,7 +4737,8 @@ ddi:ResponseDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay ?
   // shexmi:comment """A display label for the domain. May be expressed in multiple languages.""";
   ddi:intendedRepresentation @ddi:RepresentedVariable *;
-  ddi:hasOutputParameter @ddi:Parameter *;
+  ddi:hasOutputParameter @ddi:Parameter *
+  // shexmi:partonomy "shexmi:compositeAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/responsedomain>
 // shexmi:package "DataCapture"
@@ -4847,13 +4904,15 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use keyword to specify the coverage of the data this date applies to. May be repeated to reflect multiple keywords.""";
     } *
     // shexmi:comment """A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).""";
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:hasTopicalCoverage EXTENDS ddi:AnnotatedIdentifiable {
     ddi:subject @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
     ddi:keyword @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.""";
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:hasSpatialCoverage EXTENDS ddi:AnnotatedIdentifiable {
     ddi:description @ddi:InternationalStructuredString ?
     // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
@@ -4861,14 +4920,16 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Supports the use of a standardized code such as ISO 3166-1,  the Getty Thesaurus of Geographic Names, FIPS-5, etc. """;
     ddi:spatialObject @ddi:SpatialObjectType ?
     // shexmi:comment """Indicates the most discrete spatial object type identified for a single case. Note that data can be collected at a geographic point (address) and reported as such in a protected file, and then aggregated to a polygon for a public file.""";
-    ddi:hasBoundingBox @ddi:BoundingBox *;
+    ddi:hasBoundingBox @ddi:BoundingBox *
+    // shexmi:partonomy "shexmi:sharedAggregation";
     ddi:usesGeographicUnitTypeClassification @ddi:GeographicUnitTypeClassification *;
     ddi:usesGeographicUnitClassification @ddi:GeographicUnitClassification *;
     ddi:includesGeographicUnitType @ddi:UnitType *;
     ddi:includesGeographicUnit @ddi:GeographicUnit *;
     ddi:highestGeographicUnitTypeCovered @ddi:UnitType *;
     ddi:lowestGeographicUnitTypeCovered @ddi:UnitType *;
-  } ?;
+  } ?
+  // shexmi:partonomy "shexmi:sharedAggregation";
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/coverage>
 // shexmi:package "Discovery"
@@ -5011,10 +5072,12 @@ ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
       ddi:overview @ddi:InternationalStructuredString ?
       // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
       ddi:isDiscussedIn @ddi:ExternalMaterial *;
-    } *;
+    } *
+    // shexmi:partonomy "shexmi:sharedAggregation";
     ddi:appliesToUnitType @ddi:UnitType *;
     ddi:isUsedBy @ddi:AnnotatedIdentifiable *;
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:evaluateAgainstGoal @ddi:Goal *;
   ddi:hasInputParameter @ddi:Parameter *;
   ddi:hasOutputParameter @ddi:Parameter *;
@@ -5110,7 +5173,8 @@ ddi:AgentListing EXTENDS ddi:Identifiable {
       ddi:target @ddi:Agent *;
     } *
     // shexmi:comment """Agent relations that comprise the relation structure""";
-  } *;
+  } *
+  // shexmi:partonomy "shexmi:sharedAggregation";
   ddi:maintenanceUnit @ddi:Agent *;
   ddi:definingConcept @ddi:Concept *;
 }

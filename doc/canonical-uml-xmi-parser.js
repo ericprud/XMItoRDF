@@ -6,6 +6,8 @@ let CanonicalUmlXmiParser = function (opts) {
   let NormalizeType = opts.normalizeType || (type => type)
   let ViewPattern = opts.viewPattern || null
   let NameMap = opts.nameMap || { }
+  let AGGREGATION_shared = 'AGGREGATION_shared'
+  let AGGREGATION_composite = 'AGGREGATION_composite'
 
   function parseName (elt) {
     let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
@@ -59,7 +61,13 @@ let CanonicalUmlXmiParser = function (opts) {
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
           comments: parseComments(elt)
-        })
+        }, ('aggregation' in elt ? {
+          aggregation: (elt.aggregation[0] === "shared"
+                        ? AGGREGATION_shared
+                        : elt.aggregation[0] === "composite"
+                        ? AGGREGATION_composite
+                        : elt.aggregation[0]) // unknown aggregation state.
+        } : { }))
       } else if (!name) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
@@ -144,8 +152,12 @@ let CanonicalUmlXmiParser = function (opts) {
         let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
-        if (a.name !== 'realizes') {
-          c.properties.push(new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments))
+        if (a.name !== 'realizes') { // @@@ DDI-specific
+          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments);
+          if ('aggregation' in aref) {
+            prec.aggregation = aref.aggregation;
+          }
+          c.properties.push(prec)
         }
       }
     )
@@ -758,7 +770,8 @@ let CanonicalUmlXmiParser = function (opts) {
     ViewRecord: ViewRecord,
     AssociationRecord: AssociationRecord,
     AssocRefRecord: AssocRefRecord,
-    RefereeRecord: RefereeRecord
+    RefereeRecord: RefereeRecord,
+    Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }
   }
 }
 
