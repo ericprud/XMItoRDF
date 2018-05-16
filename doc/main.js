@@ -633,14 +633,24 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
             ]).concat(
-          (model.classes[classId].comments).map(
+          model.classes[classId].comments.map(
             comment =>
               `    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
     </AnnotationAssertion>`
-          )
+          ),
+          (chatty ? model.classes[classId].properties.reduce(
+            (comments, propertyRecord) =>
+              comments.concat((propertyRecord.comments || []).map(
+                comment => `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(propertyRecord.name + ': ' + trimMarkdown(comment) + '\n')}</Literal>
+    </AnnotationAssertion>`
+              )), []
+          ) : [])
         ).join('\n')
     }
 
