@@ -460,7 +460,15 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Class abbreviatedIRI="ddi:${model.classes[member].name}"/>
         <Class abbreviatedIRI="ddi:${view.name}"/>
     </SubClassOf>`
-        )), []
+        ), view.comments.map(
+            comment =>
+              `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${view.name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`
+          )
+        ), []
       ))
     }
 
@@ -542,6 +550,13 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         markup.endPackage(pkg)
     }
   }
+
+    function encodeCharData (text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+    }
 
   function OWLXMLSerializer (model, chatty) {
     return {
@@ -627,13 +642,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     </AnnotationAssertion>`
           )
         ).join('\n')
-    }
-
-    function encodeCharData (text) {
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
     }
 
     function OWLXMLEnum (model, enumId) {

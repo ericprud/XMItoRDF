@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Source: uploaded DDI4_PIM_canonical.xmi 2018-05-11T12:40:08.797Z -->
+<!-- Source: uploaded DDI4_PIM_canonical.xmi 2018-05-15T21:29:01.520Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://ddi-alliance.org/ns/ddi4"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -21224,6 +21224,25 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:DescriptiveCodebookView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+A basic set of objects that can support structured searching for discovery and ingest to statistical software, and provide sufficient information for the intelligent use and understanding of the associated data. Making data independently understandable so people can reuse it. 
+
+Use Cases:
+This Functional View supports three major uses
+* Basic search to find data (general search, known item search). Users are looking to use data.
+* Machine actionable to allow users to analyze the data (ingest to statistical software)
+* Informational content to support Intelligent use and understanding the data
+
+Target Audience:
+Individual researchers, research groups, National Statistical Organizations focusing on stand-alone codebooks, students, instructors, archives, and libraries.
+
+General Usage Instructions:
+Study is the conceptual anchor for an individual collection activity resulting in a data set or data file. It can be both a part of a StudySeries as a wave etc. or an unrelated activity like a single survey project.</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -21464,6 +21483,30 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:SamplingView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:SamplingView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+The Sampling View covers the methodology and process for obtaining a sample from a described sample frame. It provides descriptive information of the methodologies used, design of the sample, algorithms to support the processing of the sample, goals, sample frames used, and guidance on the use of the resulting sample (for defining weights, limitations, etc.). This includes the use of the Workflows which can define the process of creating simple or complex samples on a step-by-step basis. Can be used as metadata to drive sample selection.
+
+Use Cases:
+Defining Sample Frames for prospective use
+Describing the process of simple or complex sampling procedures to inform the automated creation of a sample from a sample frame.
+Describe the processing of sampling for the purpose of informing the user of limitations or strengths of a particular sampling procedure and to provide guidance on the use of the procedure or the result of the procedure.
+
+Target Audience:
+Organizations defining sample frames and sampling procedures for execution.
+Users requiring information on the sampling process and its limitations.
+
+List of Constrained Classes:
+none
+
+Documentation of specialized use of classes:
+none
+
+General documentation:</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -21569,6 +21612,29 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:StatisticalClassificationView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+The Statistical Classification View brings together the structures need to record, organize, manage, and index Statistical Classifications. These classifications are often developed cooperatively and managed over time. They may be organized into series and families of classifications and use specified vocabularies. Mapping may be provided to express relationships between two or more Statistical Classifications in order to clarify change over time or the similarities and differences between Statistical Classifications in the same family (i.e. Industry, Occupation, Education).
+
+Use Cases:
+Industry: US-SIC, NAICS, GICS, ISIC; Occupational: ISCO, US-SOC; Geographic: US-FIPS, NUTS
+
+Target Audience:
+Organizations maintaining and managing shared Statistical Classifications.
+
+Included Classes: 
+AuthorizationSource, Category, ClassificationFamily, ClassificationIndex, ClassificationIndexEntry, ClassificationItem, ClassificationSeries, Code, Concept, ConceptParentChild, ConceptParentChildPair, ConceptPartWhole, ConceptPartWholePair, ConceptSystem, CorrespondenceTable, ExternalMaterial, Individual, Level, Map, Organization, StatisticalClassification, Vocabulary.
+
+General Documentation:
+The abstract class Designation serves as a relationship target for the following classes: ClassificationItem and Vocabulary. The only included class belonging to this abstract group is Code.
+The abstract class Node serves as a relationship target for the following classes: Map and Level. The only included class belonging to this abstract group is ClassificationItem.
+The abstract class NodeSet serves as a relationship target for the following class: CorrespondenceTable. The only included class belonging to this abstract group is StatisticalClassification.
+The abstract class Agent serves as a relationship target for the following classes: CorrespondenceTable and AuthorizationSource. The only included classes belonging to this abstract group are Organization and Individual.
+The abstract pattern class OrderedPair serves as a relationship target for the following class: Map. The only included class realizing this pattern is ConceptParentChildPair</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -21648,6 +21714,12 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:UnitType"/>
         <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
     </SubClassOf>
+
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:StructuredGeographyView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This view supports the use of a Geographic Unit Classification and Geographic Unit Type Classification to describe the relationship between specific units and types of geography. For example, a geographic unit type (described using Unit Type) defines the type of geographic area types available (State, City, County, NUTS1, Region, etc.). Geographic Units are specific instances of these types (State of Minnesota, City of Berlin, Panama, etc.). The Geographic Unit can provide or link to specific shape specifications, name changes over time, predecessor or successor, and the unit type. Standard approaches to describing hierarchies, levels, and other relationships are supported through use of the common collections pattern. Both Geographic Unit and Geographic Unit Type Classifications are sub-types of CodeList and can be use directly by a Value Domain.</Literal>
+    </AnnotationAssertion>
 
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataManagementView"/>
@@ -21808,6 +21880,15 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         <Class abbreviatedIRI="ddi:DataManagementView"/>
     </SubClassOf>
+
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:DataManagementView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose
+Support the description of business processing such as data transformation, harmonization, ingest processing, creation of OAIS packages, etc.
+
+Restriction: Study has been included in the view so that it can be included in describing a Data Pipeline. The relationships of Study are not supported by this view.</Literal>
+    </AnnotationAssertion>
 
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataDescriptionView"/>
@@ -22009,6 +22090,14 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:DataDescriptionView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:DataDescriptionView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">complete
+
+Restriction: The chaining goes back to the InstanceVariable. Relationships to higher level conceptual content has not been included</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -22139,6 +22228,16 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptualContentView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+To review the conceptual concept structures and to manage concept systems (other than statistical classifications). The coverage go down to a RepresentedVariable. InstanceVariable has been included in the collection for use as a member of a VariableCollection. However it does not go into the detailed content of an InstanceVariable.
+
+Restriction: 
+InstanceVariable has been included for the sole purpose of membership in a VariableCollection. The classes required to completely describe an InstanceVariable have not been included.</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -22163,6 +22262,19 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
         <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
     </SubClassOf>
+
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ControlledVocabularyView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PurposeControlled Vocabularies in DDI4
+The representation of a controlled vocabulary in DDI4 consists of three classes:
+ControlledVocabulary – The structured collection of vocabulary entries
+VocabularyEntry – Assigns a definition to a term
+VocabularyRelationStructure – Allows for the description of a complex structure among the terms, such as a hierarchy
+
+The ControlledVocabulary uses a set of  VocabularyEntryIndicators to delineate the entries in the vocabulary. These may be ordered with an index.
+The VocabularyRelationStructure uses a set of VocabularyEntryRelations to describe relationships among the vocabulary entries. A "source" entry might have a relationship to several "target" entries, for example one entry (e.g. Vehicle) might be a more general term for several other terms (e.g. car, bike, skateboard). This relationship may be described with a semantic, a relationSpecification (e.g. GeneralSpecific), and whether the relation is total or not.</Literal>
+    </AnnotationAssertion>
 
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
@@ -22293,6 +22405,20 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
     </SubClassOf>
+
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CustomMetadataView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose
+Custom Metadata allows for the creation of specialized key value pairs and values with DDI classes. This view was created to demonstrate the use of this set of classes. 
+
+The DDI4 CustomMetadataView allows for the definition of a set of keys and their interrelationships. This structure can be shared and reused by a community. 
+These keys can be used in key-value pairs to enter metadata that is more actionable than would be if an uncontrolled set of keys were employed.
+
+The keys and their interrelationships are defined in a CustomStructure which is a collection of CustomItems. Each CustomItem defines a key, giving it a cardinality and associating it with a RepresentedVariable and a ValueDomain. The set of CustomItems can be arranged into a structure, for example a hierarchy, by a CustomItemRelationStructure.
+
+Once the structure is defined, it can be used in a CustomInstance. This is a collection of CustomValues. A CustomValue contains a key-value pair where the key corresponds to a previously defined CustomItem. A CustomValue also may be associated with an InstanceVariable.  The CustomValues may also be structured by a CustomValueRelationStructure.</Literal>
+    </AnnotationAssertion>
 
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
@@ -22474,6 +22600,27 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
 
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:DataCaptureInstrumentView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+The purpose of the Data Capture Instrument Functional View is to describe the data collection instrument and procedures involved in fielding a simple survey questionnaire. It allows only basic Domains (Text, Numeric, and CodeList), but supports the full questionnaire flow (Sequence, IfThenElse, ElseIf, Loop, RepeatUntil, and RepeatWhile). The specific flow of the Instrument is described using PrecedesIntervalRelation. Support has also been provided for binding the output of one capture to the input of another, for example, the number of persons in the household output used as the condition of a Loop. REWRITE
+
+Target Audience:
+Creator's of simple questionnaires.
+
+Included Classes: 
+Category, CategorySet, CodeItem, CodeList, Concept, ConceptualInstrument, ConceptualVariable, ExternalAid, ExternalMaterial, IfThenElse, ImplementedInstrument, InstanceQuestion, Instruction, InstrumentCode, Level, Loop, OrderedIntervalPair,  PrededesIntervalRelation, RepeatUntil, RepeatWhile, RepresentedQuestion, RepresentedVariable, ResponseDomain, SentinelConceptualDomain, SentinelValueDomain, Statement , SubstantiveConceptualDomain, SubstantiveValueDomain, UnitType, Universe, ValueAndConceptDescription, WorkflowParameter, WorkflowSequence 
+
+Restricted Classes:
+The following classes have been restricted. 
+The relationships with target class "WorkflowService" must be external references, they cannot be included in an implementation of the view. These were restricted as no specific type of WorkflowService relating to an Instrument has been created. 
+Conceptualinstrument can only include Design, Algorithm, Result, and Precondition only by use of an external reference.
+
+General Documentation
+The general top-level entry points are ImplementedInstrument or ConceptualInstrument for content and PrecedesIntervalRelation for the ordering of Sequences and other control construct types.</Literal>
+    </AnnotationAssertion>
+
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentRegistryView"/>
         <Class abbreviatedIRI="ddi:Views"/>
@@ -22513,6 +22660,27 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:Organization"/>
         <Class abbreviatedIRI="ddi:AgentRegistryView"/>
     </SubClassOf>
+
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:AgentRegistryView</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Purpose:
+The Agent Registry View supports the creation of a listing of Agents (Organization, Individual, Machine) for the purpose of maintenance and reuse. The listing of Agents can be organized in pair-wise descriptions within Agent Relationships. These may be typed and provided with effective date ranges either as a set of relationships of a specified type or as individual pairs.
+
+Use Cases:
+Maintaining a listing of all Organizations and Individuals related to a project or statistical activities, i.e. Individuals and Organizations related to the IPUMS projects at the Minnesota Population Center or the Departments and Individuals involved in the production of the Australian Census within the Australian Bureau of Statistics.
+
+Target Audience:
+Organizations working with a number of Individuals and Organizations whose descriptive information and interrelationships change over time.
+
+Included Classes: Agent Listing, Agent Relation Structure, Organization, Individual, Machine, and External Material. 
+
+Restricted Classes:
+All classes are included in their entirety, there are no restrictions.
+
+General Documentation:
+The primary class is the Agent List which can be structured by Agent Relation Structure. Agents may be of any type supported by DDI at the time of this release. Agent relationships can be defined using the pair-wise relationship Agent Relation within Agent Relation Structure specifying the Relationship Specification (Equality, Parent/Child, Whole/Part, etc.), a relevant semantic such as a specific role, and effective time span for the relationship.</Literal>
+    </AnnotationAssertion>
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:uri"/>
