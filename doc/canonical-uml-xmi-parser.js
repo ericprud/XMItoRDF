@@ -110,6 +110,9 @@ let CanonicalUmlXmiParser = function (opts) {
         name: parseName(view),
         members: view.elementImport.map(
           imp => imp.importedElement[0].$['xmi:idref']
+        ),
+        comments: view.ownedComment.map(
+          cmnt => cmnt.body[0]
         )
       })
     })
@@ -153,7 +156,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') { // @@@ DDI-specific
-          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments);
+          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
           if ('aggregation' in aref) {
             prec.aggregation = aref.aggregation;
           }
@@ -326,7 +329,8 @@ let CanonicalUmlXmiParser = function (opts) {
           case 'uml:Association':
             let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
             associations[id] = Object.assign(new AssociationRecord(id, name), {
-              from: from
+              from: from,
+              comments: parseComments(elt)
               // type: elt.ownedEnd[0].type[0].$['xmi:idref']
             })
             /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
