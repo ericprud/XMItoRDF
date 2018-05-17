@@ -188,24 +188,7 @@ let CanonicalUmlXmiParser = function (opts) {
      type => NodeConstraint
      */
 
-    // Find set of types for each property.
-    Object.keys(properties).forEach(propName => {
-      let p = properties[propName]
-      p.uniformType = findMinimalTypes(model, p)
-      p.sources.forEach(s => {
-        let t = s.href || s.idref
-        let referent =
-              t in classes ? classes[t] :
-              t in enums ? enums[t] :
-              t in datatypes ? datatypes[t] :
-              null
-        if (referent) {
-          referent.referees.push(new RefereeRecord(s.in, propName))
-        } else {
-          // console.warn('referent not found: ' + referent)
-        }
-      }, [])
-    }, [])
+    updateReferees(model)
 
     console.dir(model)
     return model
@@ -430,13 +413,34 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
+  function updateReferees (model) {
+    // Find set of types for each property.
+    Object.keys(model.properties).forEach(propName => {
+      let p = model.properties[propName]
+      p.uniformType = findMinimalTypes(model, p)
+      p.sources.forEach(s => {
+        let t = s.href || s.idref
+        let referent =
+            t in model.classes ? model.classes[t] :
+            t in model.enums ? model.enums[t] :
+            t in model.datatypes ? model.datatypes[t] :
+            null
+        if (referent) {
+          referent.referees.push(new RefereeRecord(s.in, propName))
+        } else {
+          // console.warn('referent not found: ' + referent)
+        }
+      }, [])
+    }, [])
+  }
+
   function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
 
     let ret = Object.assign(new ModelRecord(), {
-      source: source + viewLabels.join('-'),
+      source: [source].concat(viewLabels).join('-'),
       packages: {},
       classes: {},
       properties: {},
@@ -467,6 +471,7 @@ let CanonicalUmlXmiParser = function (opts) {
           }, []))
       , [])
     addDependentClasses(classIds, true)
+    updateReferees(ret)
 
     return ret
     // let properties = Object.keys(model.properties).filter(
@@ -490,9 +495,11 @@ let CanonicalUmlXmiParser = function (opts) {
         id: old.id,
         name: old.name,
         values: old.values.slice(),
-        packages: old.packages.slice()
+        packages: old.packages.slice(),
+        referees: []
       }
       addPackages(to, model, e.packages)
+      ret.packages[old.packages[0]].elements.push({ type: 'enumeration', id: old.id })
       to.enums[enumId] = e
     }
 
@@ -505,9 +512,11 @@ let CanonicalUmlXmiParser = function (opts) {
       let e = {
         id: old.id,
         name: old.name,
-        packages: old.packages.slice()
+        packages: old.packages.slice(),
+        referees: []
       }
       addPackages(to, model, e.packages)
+      ret.packages[old.packages[0]].elements.push({ type: 'datatype', id: old.id })
       to.datatypes[datatypeId] = e
     }
 
@@ -527,7 +536,9 @@ let CanonicalUmlXmiParser = function (opts) {
             comments: old.comments.slice(),
             packages: old.packages.slice(),
             superClasses: old.superClasses.slice(),
-            isAbstract: old.isAbstract
+            isAbstract: old.isAbstract,
+            referees: [],
+            comments: []
           } // was deepCopy(old)
           ret.classes[classId] = c
           old.properties.forEach(
@@ -546,6 +557,7 @@ let CanonicalUmlXmiParser = function (opts) {
             }
           )
           addPackages(ret, model, c.packages)
+          ret.packages[old.packages[0]].elements.push({ type: 'class', id: old.id })
           c.superClasses.forEach(
             suClass =>
               ret.classHierarchy.add(suClass, c.id)
@@ -565,6 +577,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let p = pid in to.packages ? to.packages[pid] : {
           name: old.name,
           id: pid,
+          elements: [],
           packages: old.packages.slice()
         }
         if (!(pid in to.packages)) {

@@ -203,7 +203,10 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let patched = UMLparser.duplicate(model)
+      let patched = model
+
+      /* patches disabled for canonical representation
+      UMLparser.duplicate(model)
       // Missing classes -- expected to be repaired.
       let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
       missingClasses.forEach(
@@ -212,37 +215,60 @@ function main () {
             patched.classes[classId] = { name: classId, packages: ['FakePattern'] }
           }
         })
+       */
 
-      let t = dumpFormats(patched, source,
-                          $('#nestInlinableStructure').is(':checked'),
-                          $('#chattyOWL').is(':checked'))
+      progress.append(htmlizeFormats(patched))
+
+      // console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       progress.append(
         $('<li/>').append(
-          'Raw model: ',
-          $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
-        ),
-        $('<li/>').append(
-          'OWL: ',
-          $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
-          ' | ',
-          $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
-        ),
-        $('<li/>').append(
-          'ShEx: ',
-          $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
-          ' | ',
-          $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
+          'Views',
+          $('<ul/>').append(
+            model.views.map(v => v.name).map(
+              viewName => {
+                let s = model.strip(model, source, viewName,
+                                    $('#followReferencedClasses').is(':checked'),
+                                    $('#followReferentHierarchy').is(':checked'))
+                s.views = []
+                console.log(s)
+                let modelUL = $('<ul/>')
+                structureToListItems(s, modelUL, AllRecordTypes)
+                try {
+                  modelUL.append(htmlizeFormats(s))
+                } catch (e) {
+                  console.warn(e)
+                }
+                collapse(modelUL)
+                return $('<li/>').text(viewName).append(modelUL)
+              }
+            )
+          )
         )
       )
 
-      console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
-      model.views.map(v => v.name).forEach(
-        viewName => {
-          let s = model.strip(model, source, viewName,
-                              $('#followReferencedClasses').is(':checked'),
-                              $('#followReferentHierarchy').is(':checked'))
-        }
-      )
+      function htmlizeFormats (model) {
+        let t = dumpFormats(model, source,
+                            $('#nestInlinableStructure').is(':checked'),
+                            $('#chattyOWL').is(':checked'))
+        return [
+          $('<li/>').append(
+            'Raw model: ',
+            $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
+          ),
+          $('<li/>').append(
+            'OWL: ',
+            $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
+            ' | ',
+            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
+          ),
+          $('<li/>').append(
+            'ShEx: ',
+            $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
+            ' | ',
+            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
+          )
+        ]
+      }
     }
   }
 
@@ -481,6 +507,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         let dt = isObject(p, model)
           ? src.idref in model.classes ? model.classes[src.idref] : model.enums[src.idref]
           : src.idref in model.datatypes ? model.datatypes[src.idref] : { name: src.href }
+        if (!dt) {
+          console.warn(`xmi:id="${p.idref}"`)
+          return ''
+        }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
@@ -591,7 +621,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let t = isObject(p, model) ? 'Object' : 'Data'
             let dt = isObject(p, model)
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
-              : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
+                : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
+            if (!dt) {
+              console.warn(`xmi:id="${propertyRecord.idref}"\t\t${classId}\t\t${propName}`)
+              return ''
+            }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
             let lower = parseInt(propertyRecord.lower || 0)
             let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
@@ -691,7 +725,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
   }
 
   function trimMarkdown (md) {
-    return md.replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
+    return md.replace(/\u001e/g, '\n').replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
   }
 
   function ShExCSerializer (model, nestInlinableStructure) {
@@ -724,7 +758,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
               : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              console.warn('unresolved datatype ' + use.idref + ' for property ' + propName)
+              console.warn('unresolved datatype ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
