@@ -12,6 +12,9 @@
       .scalar { background-color: #eee; }
       .issue { border: thick solid #fdd; background-color: #fee }
 
+      .class1 { color: green; }
+      .lookit { font-weight: bold; }
+
       .uml  { color: #770; } /* highcolor: #990; */
       .shex { color: #077; } /* highcolor: #099; */
       .rdf  { color: #707; } /* highcolor: #909; */
@@ -106,11 +109,84 @@ window.onload = main
           <h3 class="uml">packages</h3>
           <pre>&lt;packagedElement xmi:id="…-Conceptual" xmi:uuid="…" xmi:type="uml:Package"&gt;
 </pre>
+          <ul>
+            <li>
+              <h3 class="uml">package comment</h3>
+              <pre>  &lt;ownedComment xmi:type="uml:Comment"&gt;
+    &lt;body&gt;some comment text&lt;/body&gt;
+  &lt;/ownedComment&gt;</pre>
+            </li>
+          </ul>
         </li>
         <li>
           <h3 class="uml">classes</h3>
-          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
+          <pre><span class="class1">&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;</span>
   &lt;name&gt;ConceptSystem&lt;/name&gt;</pre>
+          <ul>
+            <li>
+              <h3 class="uml">class properties</h3>
+              <pre><span class="class1">&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;</span>
+  ...
+  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-type" xmi:uuid="…" xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="…-EnumerationsRegExp-CollectionType"/&gt;
+    &lt;name&gt;type&lt;/name&gt;</pre>
+              <ul>
+                <li>
+                  <h3 class="uml">property comment</h3>
+                  <pre>  &lt;ownedComment xmi:type="uml:Comment"&gt;
+        &lt;body&gt;some comment text&lt;/body&gt;
+      &lt;/ownedComment&gt;</pre>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3 class="uml">class assocations</h3>
+              <pre><span class="class1">&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;</span>
+  ...
+  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
+
+              <p>+</p>
+
+              <pre>&lt;packagedElement xmi:id="…-Conceptual-packagedElement-13" xmi:uuid="..." xmi:type="uml:Association"&gt;
+  &lt;name&gt;definingConcept&lt;/name&gt;
+  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8"/&gt;
+  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd"/&gt;
+  &lt;ownedEnd xmi:id="…-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
+    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
+
+              <ul>
+                <li>
+                  <h3 class="uml">property comment</h3>
+                  <pre>  &lt;ownedComment xmi:type="uml:Comment"&gt;
+        &lt;body&gt;some comment text&lt;/body&gt;
+      &lt;/ownedComment&gt;</pre>
+                </li>
+              </ul>
+                  <p>
+                    Associations are annotated by an <code>aggregation</code> attribute they are marked as <code>shared</code>:
+                  </p>
+                  <pre><span class="class1">&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;</span>
+  ...
+  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-6" xmi:uuid="…" xmi:type="uml:Property"&gt;
+    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-11"/&gt;
+      <span class="lookit">&lt;aggregation&gt;shared&lt;/aggregation&gt;</span></pre>
+                  <p>
+                    or <code>composite</code>:
+                  </p>
+                  <pre>      <span class="lookit">&lt;aggregation&gt;composite&lt;/aggregation&gt;</span></pre>
+            </li>
+            <li>
+              <h3 class="uml">class comment</h3>
+              <pre><span class="class1">&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;</span>
+  ...
+  &lt;ownedComment xmi:type="uml:Comment"&gt;
+    &lt;body&gt;some comment text&lt;/body&gt;
+  &lt;/ownedComment&gt;</pre>
+            </li>
+          </ul>
           <p>
             Classes may be marked abstract:
           </p>
@@ -129,44 +205,6 @@ window.onload = main
             <li>concrete class with a generalization relationship to another abstract class</li>
             <li>abstract class with a generalization relationship to another abstract class</li>
           </ul>
-        </li>
-        <li>
-          <h3 class="uml">class properties</h3>
-          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
-  ...
-  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-type" xmi:uuid="…" xmi:type="uml:Property"&gt;
-    &lt;type xmi:idref="…-EnumerationsRegExp-CollectionType"/&gt;
-    &lt;name&gt;type&lt;/name&gt;
-</pre>
-        </li>
-        <li>
-          <h3 class="uml">class assocations</h3>
-          <pre>&lt;packagedElement xmi:id="…-Conceptual-ConceptSystem" xmi:uuid="…" xmi:type="uml:Class"&gt;
-  ...
-  &lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-8" xmi:uuid="..." xmi:type="uml:Property"&gt;
-    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-Concept"/&gt;
-    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
-
-          <p>+</p>
-
-          <pre>&lt;packagedElement xmi:id="…-Conceptual-packagedElement-13" xmi:uuid="..." xmi:type="uml:Association"&gt;
-  &lt;name&gt;definingConcept&lt;/name&gt;
-  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem-ownedAttribute-8"/&gt;
-  &lt;memberEnd xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13-ownedEnd"/&gt;
-  &lt;ownedEnd xmi:id="…-Conceptual-packagedElement-13-ownedEnd" xmi:uuid="..." xmi:type="uml:Property"&gt;
-    &lt;type xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
-    &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-13"/&gt;</pre>
-
-              <p>
-                Associations are annotated by an <code>aggregation</code> attribute they are marked as <code>shared</code>:
-              </p>
-              <pre>&lt;ownedAttribute xmi:id="…-Conceptual-ConceptSystem-ownedAttribute-6" xmi:uuid="…" xmi:type="uml:Property"&gt;
-  &lt;association xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-packagedElement-11"/&gt;
-    &lt;aggregation&gt;shared&lt;/aggregation&gt;</pre>
-              <p>
-                or <code>composite</code>:
-              </p>
-              <pre>    &lt;aggregation&gt;composite&lt;/aggregation&gt;</pre>
         </li>
         <li>
           <h3 class="uml">enumerations</h3>
@@ -190,12 +228,6 @@ window.onload = main
   &lt;elementImport xmi:id="…-ConceptualContentView-elementImport-7" xmi:uuid="…" xmi:type="uml:ElementImport"&gt;
     &lt;importedElement xmi:idref="DDI4_PIM-ClassLibrary-Conceptual-ConceptSystem"/&gt;
 </pre>
-        </li>
-        <li>
-          <h3><span class="uml">comments</span> (packages, classes, properties and associations)</h3>
-          <p>
-            
-          </p>
         </li>
       </ul>
       <p>ElementImport can stand for a class, association or property. No PackageImport.</p>
@@ -335,11 +367,6 @@ window.onload = main
           </ul>
         </li>
         <li>
-          <p>
-            For each comment@@
-          </p>
-        </li>
-        <li>
           <p>Per <a href="http://www.essepuntato.it/lode">LODE</a>, use <code>rdfs:comment</code> for comments.</p>
           <pre>
 &lt;AnnotationAssertion&gt;
@@ -351,6 +378,15 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
     &lt;/Literal&gt;
 &lt;/AnnotationAssertion&gt;
           </pre>
+          <p>
+            Different comment types are attached to different OWL construcs:
+          </p>
+          <table>
+            <tr><th>package:</th>    <td>the OWL class declaration for the package</td></tr>
+            <tr><th>class:</th>      <td>the OWL class declaration for the class</td></tr>
+            <tr><th>property:</th>   <td>the OWL class declaration for the containing class</td></tr>
+            <tr><th>assocation:</th> <td>the OWL class declaration for the containing class</td></tr>
+          </table>
         </li>
       </ul>
     </div>
