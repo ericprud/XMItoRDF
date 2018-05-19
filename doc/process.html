@@ -10,13 +10,57 @@
       span { margin-left: .2em; }
       .keyword { background-color: #ffd; }
       .scalar { background-color: #eee; }
-      .uml { color: #770; }
-      .shex { color: #077; }
-      .rdf { color: #707; }
       .issue { border: thick solid #fdd; background-color: #fee }
+
+      .uml  { color: #770; } /* highcolor: #990; */
+      .shex { color: #077; } /* highcolor: #099; */
+      .rdf  { color: #707; } /* highcolor: #909; */
     </style>
+
+    <script type="text/javascript">
+function main () {
+  // CSS stuff
+  let x = walkCssRules (rule => {
+    let t = [
+      {sel: '.uml' , low: '#770', high: '#550'},
+      {sel: '.shex', low: '#077', high: '#055'},
+      {sel: '.rdf' , low: '#707', high: '#505'}
+    ].find(
+      update => rule.selectorText === update.sel
+    )
+    return t ? {rule: rule, trans: t} : t
+  })
+
+  document.getElementById('low').onclick =
+    () => x.forEach(x => x.rule.style.color = x.trans.low)
+  document.getElementById('high').onclick =
+    () => x.forEach(x => x.rule.style.color = x.trans.high)
+
+  function walkCssRules (f) {
+    return Array.prototype.reduce.call(
+      document.styleSheets,
+      (outer, ss) => Array.prototype.reduce.call(
+        ss.rules,
+        (inner, rule) => {
+          let t = f(rule)
+          return t ? inner.concat(t) : inner
+        },
+        outer
+      ),
+      []
+    )
+  }
+}
+window.onload = main
+    </script>
   </head>
   <body>
+    <div id="controls">
+      <p>contrast:
+      <input id="low"  name="contrast" type="radio" checked="checked"/><label for="low">low</label>
+      <input id="high" name="contrast" type="radio"                  /><label for="high">high</label>
+      </p>
+    </div>
     <div id="intro">
       <h2>Introduction</h2>
       <p>
