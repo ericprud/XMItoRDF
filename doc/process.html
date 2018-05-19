@@ -390,23 +390,48 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
         </li>
       </ul>
     </div>
-    <div id="OWLrep">
+    <div id="arch">
+      <div class="issue">
+      <h2>Status</h2>
+      <p>
+        Right now, the UML parser emits something half-way between a UML model and an RDF model.
+        All of the markup for the OWL and ShEx is mixed in with the main program.
+        Fixing this involves segregating the following modules and should take about 10 days of focused work.
+        The product should be a set of stand-alone tools that can trivially executed on this and future versions of DDI XMI.
+      </p>
+      </div>
       <h2>Goal architecture</h2>
-      <pre>modules, invocations, permutations</pre>
+      <p>
+        Once completed, this pipeline will produce all of the documents.
+        The libraries should be independent of DDI and ideally profit from wider distribution and tool contribution.
+        The DDI-specific module should be small and easy to maintain and clearly enumerate the DDI-specific transformations.
+      </p>
       <ul>
-        <li>XMI parser: XMI -&gt; ShEx model</li>
-        <li>ShEx to OWL: ShEx model -&gt; OWL</li>
-        <li>ShEx to HTML: ShEx model -&gt; HTML schema explorer</li>
-        <li></li>
+        <li>(NPM library) <span class="lookit">XMI parser</span>: XMI → UML model (mostly done)</li>
+        <li>(DDI-specific) <span class="lookit">UML transforms</span>:
+        <ul>
+          <li>Move view packages to auxilliary Views object.</li>
+          <li>Remove packages ending in /Pattern$/ and their embedded contents (classes, assocations, enumerations, datatypes).</li>
+          <li>Generate distinct UML models for the different views.</li>
+        </ul>
+        </li>
+        <li>(NPM library) <span class="lookit">UmlToRdf</span>: UML model → RDF model</li>
+        <li>(NPM library) <span class="lookit">RdfToOwl</span>: RDF model → OWL XML</li>
+        <li>(NPM library) <span class="lookit">RdfToOwl</span>: RDF model → ShExC</li>
+        <li>(NPM library) <span class="lookit">RdfToHtml</span>: RDF model → HTML schema explorer</li>
       </ul>
-      <p>Note that the NPM convention is that package.json captures the require version information.</p>
+      <p>
+        Apart from the UML transformations, these can all be released as NPM packages.
+        The DDI-specific UML transformations will import the NPM libraries.
+        Note that the NPM conventions include a <code>package.json</code> file which capture version information for all imported libraries.
+        If the some UML/RDF community extends the NPM libraries in ways that are not backward-compatible, the UML transforms script will continue to work as it; it will simply require a little work if we want to update it to use new libraries with new features.
+      </p>
     </div>
     <div id="issues">
       <h2>Issues</h2>
       <ol>
         <li><a href="#canonDT">Canonical representation of datatypes</a> is still uncertain.</li>
         <li>Nesting throws away annotations on nested classes.</li>
-        <li>views as separate ontologies.</li>
       </ol>
     </div>
 
