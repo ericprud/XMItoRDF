@@ -111,7 +111,7 @@ let CanonicalUmlXmiParser = function (opts) {
         members: view.elementImport.map(
           imp => imp.importedElement[0].$['xmi:idref']
         ),
-        comments: view.ownedComment.map(
+        comments: (view.ownedComment || []).map(
           cmnt => cmnt.body[0]
         )
       })
