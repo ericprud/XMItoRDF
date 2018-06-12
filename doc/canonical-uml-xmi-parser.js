@@ -441,7 +441,7 @@ let CanonicalUmlXmiParser = function (opts) {
     }
 
     let ret = Object.assign(new ModelRecord(), {
-      source: [source].concat(viewLabels).join('-'),
+      source: Object.assign({}, source, { viewLabels }),
       packages: {},
       classes: {},
       properties: {},
@@ -705,7 +705,7 @@ let CanonicalUmlXmiParser = function (opts) {
    */
   function objectify (modelStruct) {
     return Object.assign(new ModelRecord(), {
-      source: modelStruct.source,
+      source: Object.assign({}, modelStruct.source),
       packages: Object.keys(modelStruct.packages).reduce(
         (acc, packageId) => add(acc, packageId, Object.assign(new PackageRecord(), modelStruct.packages[packageId])),
         {}

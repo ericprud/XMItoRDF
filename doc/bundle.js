@@ -7717,7 +7717,12 @@ function main () {
             }
             // This may take a long time to render.
             $('<textarea/>', {cols: 60, rows: 10}).val(loadEvent.target.result).appendTo(div)
-            processXMI(loadEvent.target.result, 'uploaded ' + file.name + ' ' + new Date().toISOString(), status)
+            let source = {
+              method: 'uploaded',
+              resource: file.name,
+              timestamp: new Date().toISOString()
+            }
+            processXMI(loadEvent.target.result, source, status)
           }
           loader.readAsText(file)
         }, RENDER_DELAY)
@@ -7726,13 +7731,13 @@ function main () {
   })
 
   $('#load-url').on('change', function (evt) {
-    let source = $(this).val()
+    let url = $(this).val()
     // Give user some interface feedback before reading.
-    let div = $('<div/>', {'id': source}).appendTo('#loaded')
-    $('<li/>').append($('<a/>', {href: '#' + source}).text(source)).appendTo('#toc')
+    let div = $('<div/>', {'id': url}).appendTo('#loaded')
+    $('<li/>').append($('<a/>', {href: '#' + url}).text(url)).appendTo('#toc')
     let status = $('<span/>').addClass('status').text('fetching...')
-    $('<h2/>').append(source, status).appendTo(div)
-    window.fetch(source).then(function (response) {
+    $('<h2/>').append(url, status).appendTo(div)
+    window.fetch(url).then(function (response) {
       if (!response.ok) {
         throw Error('got ' + response.status + ' ' + response.statusText)
       }
@@ -7740,7 +7745,12 @@ function main () {
     }).then(function (text) {
       window.setTimeout(() => {
         $('<textarea/>', {cols: 60, rows: 10}).val(text).appendTo(div)
-        processXMI(text, 'fetched ' + source + ' ' + new Date().toISOString(), status)
+        let source = {
+          method: 'fetched',
+          resource: url,
+          timestamp: new Date().toISOString()
+        }
+        processXMI(text, source, status)
       }, RENDER_DELAY)
     }).catch(function (error) {
       div.append($('<pre/>').text(error)).addClass('error')
@@ -7749,9 +7759,10 @@ function main () {
   })
 
   function processXMI (umlText, source, status) {
-    let div = $('<div/>', {'id': source, 'class': 'result'}).appendTo('#render')
-    let reparse = $('<button/>').text('reparse').on('click', parseText)
-    $('<h2/>').text(source).append(reparse).appendTo(div)
+    let div = $('<div/>', {'id': source.resource, 'class': 'result'}).appendTo('#render')
+    let reparse = $('<button/>').text('reparse').addClass('reparse').on('click', parseText)
+    $('<h2/>').text(source.resource).appendTo(div)
+    $('<h3/>').text(source.method + ' ' + source.timestamp).append(' ', reparse).appendTo(div)
     let model
     let progress = $('<ul/>')
     div.append(progress)
@@ -7866,7 +7877,7 @@ function main () {
       status.text('').parent().removeClass('working').addClass('done')
 
       function htmlizeFormats (model) {
-        let t = dumpFormats(model, source,
+        let t = dumpFormats(model,
                             $('#nestInlinableStructure').is(':checked'),
                             $('#chattyOWL').is(':checked'))
         return [
@@ -7958,10 +7969,16 @@ function main () {
       )))
   }
 
-  function dumpFormats (model, source, nestInlinableStructure, chattyOWL) {
+  function dumpFormats (model, nestInlinableStructure, chattyOWL) {
+    let source = model.source
     let owlx = [
       '<?xml version="1.0"?>\n' +
-        '<!-- Source: ' + source + ' -->\n' +
+        '<!-- ' + source.resource + '\n' +
+        '     ' + source.method + ' ' + source.timestamp + (
+          source.viewLabels ? source.viewLabels.map(
+            l => '\n       ' + l
+          ) : ''
+        ) + ' -->\n' +
         '<Ontology xmlns="http://www.w3.org/2002/07/owl#"\n' +
         '     xml:base="http://ddi-alliance.org/ns/ddi4"\n' +
         '     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n' +
@@ -7985,7 +8002,12 @@ function main () {
         '\n'
     ]
     let shexc = [
-      '# Source: ' + source + '\n' +
+        '# ' + source.resource + '\n' +
+        '# ' + source.method + ' ' + source.timestamp + (
+          source.viewLabels ? source.viewLabels.map(
+            l => '\n#   ' + l
+          ) : ''
+        ) + '\n' +
         'PREFIX ddi: <http://ddi-alliance.org/ns/#>\n' +
         'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n' +
         'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n' +
@@ -9090,7 +9112,7 @@ let CanonicalUmlXmiParser = function (opts) {
     }
 
     let ret = Object.assign(new ModelRecord(), {
-      source: [source].concat(viewLabels).join('-'),
+      source: Object.assign({}, source, { viewLabels }),
       packages: {},
       classes: {},
       properties: {},
@@ -9354,7 +9376,7 @@ let CanonicalUmlXmiParser = function (opts) {
    */
   function objectify (modelStruct) {
     return Object.assign(new ModelRecord(), {
-      source: modelStruct.source,
+      source: Object.assign({}, modelStruct.source),
       packages: Object.keys(modelStruct.packages).reduce(
         (acc, packageId) => add(acc, packageId, Object.assign(new PackageRecord(), modelStruct.packages[packageId])),
         {}
