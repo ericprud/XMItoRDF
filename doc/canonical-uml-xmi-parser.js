@@ -8,6 +8,7 @@ let CanonicalUmlXmiParser = function (opts) {
   let NameMap = opts.nameMap || { }
   let AGGREGATION_shared = 'AGGREGATION_shared'
   let AGGREGATION_composite = 'AGGREGATION_composite'
+  var UPPER_UNLIMITED = '*'
 
   function parseName (elt) {
     let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null

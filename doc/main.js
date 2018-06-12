@@ -5,7 +5,6 @@ var TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
 var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). Could try: .css('opacity', .99)
 var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
-var UPPER_UNLIMITED = '*'
 const TYPE_NodeConstraint = ['NodeConstraint']
 const TYPE_ShapeRef = ['ShapeRef']
 
@@ -141,7 +140,7 @@ function main () {
     parseText()
 
     function parseText () {
-      status.text('parsing JSON...')
+      status.text('parsing JSON...').parent().removeClass('done').addClass('working')
       window.setTimeout(
         () => {
           // try JSON 'cause it's easier
@@ -194,7 +193,7 @@ function main () {
       collapse(diagnostics)
 
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
-      status.text('')
+
       status.text('export all formats...')
       window.setTimeout(exportAllFormats, RENDER_DELAY)
     }
@@ -245,6 +244,8 @@ function main () {
           )
         )
       )
+
+      status.text('').parent().removeClass('working').addClass('done')
 
       function htmlizeFormats (model) {
         let t = dumpFormats(model, source,

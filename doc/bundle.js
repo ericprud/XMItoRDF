@@ -7623,7 +7623,6 @@ var TOGGLE_TIME = 50 // time in μsec to toggle collapsed lists.
 var RENDER_DELAY = 10 // time to pause for display (horrible heuristics). Could try: .css('opacity', .99)
 var BUILD_PRODUCTS = true // can disable if OWL and ShEx construction crashes.
 var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's package.
-var UPPER_UNLIMITED = '*'
 const TYPE_NodeConstraint = ['NodeConstraint']
 const TYPE_ShapeRef = ['ShapeRef']
 
@@ -7759,7 +7758,7 @@ function main () {
     parseText()
 
     function parseText () {
-      status.text('parsing JSON...')
+      status.text('parsing JSON...').parent().removeClass('done').addClass('working')
       window.setTimeout(
         () => {
           // try JSON 'cause it's easier
@@ -7812,7 +7811,7 @@ function main () {
       collapse(diagnostics)
 
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
-      status.text('')
+
       status.text('export all formats...')
       window.setTimeout(exportAllFormats, RENDER_DELAY)
     }
@@ -7821,7 +7820,10 @@ function main () {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
-      let patched = UMLparser.duplicate(model)
+      let patched = model
+
+      /* patches disabled for canonical representation
+      UMLparser.duplicate(model)
       // Missing classes -- expected to be repaired.
       let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
       missingClasses.forEach(
@@ -7830,37 +7832,62 @@ function main () {
             patched.classes[classId] = { name: classId, packages: ['FakePattern'] }
           }
         })
+       */
 
-      let t = dumpFormats(patched, source,
-                          $('#nestInlinableStructure').is(':checked'),
-                          $('#chattyOWL').is(':checked'))
+      progress.append(htmlizeFormats(patched))
+
+      // console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
       progress.append(
         $('<li/>').append(
-          'Raw model: ',
-          $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
-        ),
-        $('<li/>').append(
-          'OWL: ',
-          $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
-          ' | ',
-          $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
-        ),
-        $('<li/>').append(
-          'ShEx: ',
-          $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
-          ' | ',
-          $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
+          'Views',
+          $('<ul/>').append(
+            model.views.map(v => v.name).map(
+              viewName => {
+                let s = model.strip(model, source, viewName,
+                                    $('#followReferencedClasses').is(':checked'),
+                                    $('#followReferentHierarchy').is(':checked'))
+                s.views = []
+                console.log(s)
+                let modelUL = $('<ul/>')
+                structureToListItems(s, modelUL, AllRecordTypes)
+                try {
+                  modelUL.append(htmlizeFormats(s))
+                } catch (e) {
+                  console.warn(e)
+                }
+                collapse(modelUL)
+                return $('<li/>').text(viewName).append(modelUL)
+              }
+            )
+          )
         )
       )
 
-      console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
-      model.views.map(v => v.name).forEach(
-        viewName => {
-          let s = model.strip(model, source, viewName,
-                              $('#followReferencedClasses').is(':checked'),
-                              $('#followReferentHierarchy').is(':checked'))
-        }
-      )
+      status.text('').parent().removeClass('working').addClass('done')
+
+      function htmlizeFormats (model) {
+        let t = dumpFormats(model, source,
+                            $('#nestInlinableStructure').is(':checked'),
+                            $('#chattyOWL').is(':checked'))
+        return [
+          $('<li/>').append(
+            'Raw model: ',
+            $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
+          ),
+          $('<li/>').append(
+            'OWL: ',
+            $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
+            ' | ',
+            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
+          ),
+          $('<li/>').append(
+            'ShEx: ',
+            $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
+            ' | ',
+            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
+          )
+        ]
+      }
     }
   }
 
@@ -8078,7 +8105,15 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Class abbreviatedIRI="ddi:${model.classes[member].name}"/>
         <Class abbreviatedIRI="ddi:${view.name}"/>
     </SubClassOf>`
-        )), []
+        ), view.comments.map(
+            comment =>
+              `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${view.name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`
+          )
+        ), []
       ))
     }
 
@@ -8091,6 +8126,10 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         let dt = isObject(p, model)
           ? src.idref in model.classes ? model.classes[src.idref] : model.enums[src.idref]
           : src.idref in model.datatypes ? model.datatypes[src.idref] : { name: src.href }
+        if (!dt) {
+          console.warn(`xmi:id="${p.idref}"`)
+          return ''
+        }
         return `    <Declaration>
         <${t}Property abbreviatedIRI="ddi:${propName}"/>
     </Declaration>
@@ -8161,6 +8200,13 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
   }
 
+    function encodeCharData (text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+    }
+
   function OWLXMLSerializer (model, chatty) {
     return {
       class: OWLXMLClass,
@@ -8194,7 +8240,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let t = isObject(p, model) ? 'Object' : 'Data'
             let dt = isObject(p, model)
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
-              : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
+                : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
+            if (!dt) {
+              console.warn(`xmi:id="${propertyRecord.idref}"\t\t${classId}\t\t${propName}`)
+              return ''
+            }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
             let lower = parseInt(propertyRecord.lower || 0)
             let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
@@ -8236,22 +8286,25 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
     </SubClassOf>`
             ]).concat(
-          (model.classes[classId].comments).map(
+          model.classes[classId].comments.map(
             comment =>
               `    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
     </AnnotationAssertion>`
-          )
+          ),
+          (chatty ? model.classes[classId].properties.reduce(
+            (comments, propertyRecord) =>
+              comments.concat((propertyRecord.comments || []).map(
+                comment => `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(propertyRecord.name + ': ' + trimMarkdown(comment) + '\n')}</Literal>
+    </AnnotationAssertion>`
+              )), []
+          ) : [])
         ).join('\n')
-    }
-
-    function encodeCharData (text) {
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
     }
 
     function OWLXMLEnum (model, enumId) {
@@ -8291,7 +8344,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
   }
 
   function trimMarkdown (md) {
-    return md.replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
+    return md.replace(/\u001e/g, '\n').replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
   }
 
   function ShExCSerializer (model, nestInlinableStructure) {
@@ -8324,7 +8377,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
               : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              console.warn('unresolved datatype ' + use.idref + ' for property ' + propName)
+              console.warn('unresolved datatype ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
@@ -8604,6 +8657,7 @@ let CanonicalUmlXmiParser = function (opts) {
   let NameMap = opts.nameMap || { }
   let AGGREGATION_shared = 'AGGREGATION_shared'
   let AGGREGATION_composite = 'AGGREGATION_composite'
+  var UPPER_UNLIMITED = '*'
 
   function parseName (elt) {
     let ret = 'name' in elt.$ ? elt.$.name : 'name' in elt ? elt.name[0] : null
@@ -8706,6 +8760,9 @@ let CanonicalUmlXmiParser = function (opts) {
         name: parseName(view),
         members: view.elementImport.map(
           imp => imp.importedElement[0].$['xmi:idref']
+        ),
+        comments: (view.ownedComment || []).map(
+          cmnt => cmnt.body[0]
         )
       })
     })
@@ -8749,7 +8806,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') { // @@@ DDI-specific
-          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments);
+          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
           if ('aggregation' in aref) {
             prec.aggregation = aref.aggregation;
           }
@@ -8781,24 +8838,7 @@ let CanonicalUmlXmiParser = function (opts) {
      type => NodeConstraint
      */
 
-    // Find set of types for each property.
-    Object.keys(properties).forEach(propName => {
-      let p = properties[propName]
-      p.uniformType = findMinimalTypes(model, p)
-      p.sources.forEach(s => {
-        let t = s.href || s.idref
-        let referent =
-              t in classes ? classes[t] :
-              t in enums ? enums[t] :
-              t in datatypes ? datatypes[t] :
-              null
-        if (referent) {
-          referent.referees.push(new RefereeRecord(s.in, propName))
-        } else {
-          // console.warn('referent not found: ' + referent)
-        }
-      }, [])
-    }, [])
+    updateReferees(model)
 
     console.dir(model)
     return model
@@ -8922,7 +8962,8 @@ let CanonicalUmlXmiParser = function (opts) {
           case 'uml:Association':
             let from = elt.memberEnd.map(end => end.$['xmi:idref']).filter(id => id !== elt.ownedEnd[0].$['xmi:id'])[0]
             associations[id] = Object.assign(new AssociationRecord(id, name), {
-              from: from
+              from: from,
+              comments: parseComments(elt)
               // type: elt.ownedEnd[0].type[0].$['xmi:idref']
             })
             /* <packagedElement xmi:id="AgentIndicator-member-association" xmi:type="uml:Association">
@@ -9022,13 +9063,34 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
+  function updateReferees (model) {
+    // Find set of types for each property.
+    Object.keys(model.properties).forEach(propName => {
+      let p = model.properties[propName]
+      p.uniformType = findMinimalTypes(model, p)
+      p.sources.forEach(s => {
+        let t = s.href || s.idref
+        let referent =
+            t in model.classes ? model.classes[t] :
+            t in model.enums ? model.enums[t] :
+            t in model.datatypes ? model.datatypes[t] :
+            null
+        if (referent) {
+          referent.referees.push(new RefereeRecord(s.in, propName))
+        } else {
+          // console.warn('referent not found: ' + referent)
+        }
+      }, [])
+    }, [])
+  }
+
   function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
 
     let ret = Object.assign(new ModelRecord(), {
-      source: source + viewLabels.join('-'),
+      source: [source].concat(viewLabels).join('-'),
       packages: {},
       classes: {},
       properties: {},
@@ -9059,6 +9121,7 @@ let CanonicalUmlXmiParser = function (opts) {
           }, []))
       , [])
     addDependentClasses(classIds, true)
+    updateReferees(ret)
 
     return ret
     // let properties = Object.keys(model.properties).filter(
@@ -9082,9 +9145,11 @@ let CanonicalUmlXmiParser = function (opts) {
         id: old.id,
         name: old.name,
         values: old.values.slice(),
-        packages: old.packages.slice()
+        packages: old.packages.slice(),
+        referees: []
       }
       addPackages(to, model, e.packages)
+      ret.packages[old.packages[0]].elements.push({ type: 'enumeration', id: old.id })
       to.enums[enumId] = e
     }
 
@@ -9097,9 +9162,11 @@ let CanonicalUmlXmiParser = function (opts) {
       let e = {
         id: old.id,
         name: old.name,
-        packages: old.packages.slice()
+        packages: old.packages.slice(),
+        referees: []
       }
       addPackages(to, model, e.packages)
+      ret.packages[old.packages[0]].elements.push({ type: 'datatype', id: old.id })
       to.datatypes[datatypeId] = e
     }
 
@@ -9119,7 +9186,9 @@ let CanonicalUmlXmiParser = function (opts) {
             comments: old.comments.slice(),
             packages: old.packages.slice(),
             superClasses: old.superClasses.slice(),
-            isAbstract: old.isAbstract
+            isAbstract: old.isAbstract,
+            referees: [],
+            comments: []
           } // was deepCopy(old)
           ret.classes[classId] = c
           old.properties.forEach(
@@ -9138,6 +9207,7 @@ let CanonicalUmlXmiParser = function (opts) {
             }
           )
           addPackages(ret, model, c.packages)
+          ret.packages[old.packages[0]].elements.push({ type: 'class', id: old.id })
           c.superClasses.forEach(
             suClass =>
               ret.classHierarchy.add(suClass, c.id)
@@ -9157,6 +9227,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let p = pid in to.packages ? to.packages[pid] : {
           name: old.name,
           id: pid,
+          elements: [],
           packages: old.packages.slice()
         }
         if (!(pid in to.packages)) {
