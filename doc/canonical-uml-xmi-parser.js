@@ -191,7 +191,6 @@ let CanonicalUmlXmiParser = function (opts) {
 
     updateReferees(model)
 
-    console.dir(model)
     return model
 
     function visitPackage (elt, parents) {
@@ -435,7 +434,7 @@ let CanonicalUmlXmiParser = function (opts) {
     }, [])
   }
 
-  function strip (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
+  function getView (model, source, viewLabels, followReferencedClasses, followReferentHierarchy, nestInlinableStructure) {
     if (viewLabels.constructor !== Array) {
       viewLabels = [viewLabels]
     }
@@ -759,7 +758,7 @@ let CanonicalUmlXmiParser = function (opts) {
       try {
         let model = objectify(JSON.parse(jsonText))
         model.source = source
-        model.strip = strip
+        model.getView = getView
         cb(null, model)
       } catch (err) {
         cb(err)
@@ -771,7 +770,7 @@ let CanonicalUmlXmiParser = function (opts) {
           cb(err)
         } else {
           let model = parseModel(document, source)
-          model.strip = strip
+          model.getView = getView
           cb(null, model)
         }
       })

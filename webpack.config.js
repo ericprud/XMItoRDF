@@ -7,6 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'doc')
   },
   node: {
-    fs: 'empty'
-  }
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    dns: 'empty'
+    }
 };

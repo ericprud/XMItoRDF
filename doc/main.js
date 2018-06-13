@@ -179,6 +179,8 @@ function main () {
         console.error(err)
       } else {
         model = result
+        // let toy = UMLparser.toUML(result)
+        // const ShEx = require('shex')
         status.text('rendering structure...')
         window.setTimeout(render, RENDER_DELAY)
       }
@@ -199,8 +201,8 @@ function main () {
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
       // puns(parsedData, diagnostics)
-      let allViews = model.strip(model, source, model.views.map(v => v.name))
-      console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
+      // let allViews = model.getView(model, source, model.views.map(v => v.name))
+      // console.log(Object.keys(model.classes).filter(k => !(k in allViews.classes)))
       collapse(diagnostics)
 
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
@@ -230,15 +232,15 @@ function main () {
       progress.append(htmlizeFormats(patched))
 
       // console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
-      progress.append(
+      debugger;progress.append(
         $('<li/>').append(
           'Views',
           $('<ul/>').append(
             model.views.map(v => v.name).map(
-              viewName => {
-                let s = model.strip(model, source, viewName,
-                                    $('#followReferencedClasses').is(':checked'),
-                                    $('#followReferentHierarchy').is(':checked'))
+              viewName => $('<li/>').append($('<button/>').text(viewName).on('click', evt => {
+                let s = model.getView(model, source, viewName,
+                                      $('#followReferencedClasses').is(':checked'),
+                                      $('#followReferentHierarchy').is(':checked'))
                 s.views = []
                 console.log(s)
                 let modelUL = $('<ul/>')
@@ -249,8 +251,12 @@ function main () {
                   console.warn(e)
                 }
                 collapse(modelUL)
-                return $('<li/>').text(viewName).append(modelUL)
-              }
+                let button = $(evt.target)
+                debugger
+                button.parent().append(modelUL)
+                button.attr('disabled', 'disabled')
+                // button.replaceWith($('<span/>').text(viewName).attr('font-weight', 'bold'))
+              }))
             )
           )
         )
@@ -265,18 +271,18 @@ function main () {
         let filename = [model.source.resource].concat(model.source.viewLabels || []).join('-')
         return [
           $('<li/>').append(
-            'Raw model: ',
-            $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', filename + '-model.json'))
+            'Raw model: JSON: ',
+            $('<a/>', {href: ''}).text(filename + '-model.json').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', filename + '-model.json'))
           ),
           $('<li/>').append(
-            'OWL: ',
-            $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')),
+            'OWL: XML: ',
+            $('<a/>', {href: ''}).text(filename + '-OWL.xml').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')),
             ' | ',
             $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
           ),
           $('<li/>').append(
-            'ShEx: ',
-            $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')),
+            'ShEx: Compact: ',
+            $('<a/>', {href: ''}).text(filename + '.shex').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')),
             ' | ',
             $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
           )
@@ -571,7 +577,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       '</Ontology>\n'
     ])
     let ret = {owlx: owlx, owlm: owlm, shexc: shexc, shexh: shexh}
-    console.dir(ret)
     return ret
 
     function isPolymorphic (propName) {
@@ -625,18 +630,19 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
 
     function OWLXMLClass (model, classId) {
+      let classRecord = model.classes[classId]
       return `    <Declaration>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
     </Declaration>\n` +
-        (model.classes[classId].isAbstract ? (
+        (classRecord.isAbstract ? (
           `    <DisjointUnion>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>\n` + (model.classHierarchy.children[classId] || []).map(
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>\n` + (model.classHierarchy.children[classId] || []).map(
             childClassId =>
               `        <Class abbreviatedIRI="ddi:${model.classes[childClassId].name}"/>\n`
           ).join('') +
           `    </DisjointUnion>\n`
         ) : '') +
-        model.classes[classId].properties
+        classRecord.properties
         // .filter( propertyRecord => !(isPolymorphic(propertyRecord.name)) )
         .map(
           propertyRecord => {
@@ -647,64 +653,64 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
                 : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             if (!dt) {
-              console.warn(`xmi:id="${propertyRecord.idref}"\t\t${classId}\t\t${propName}`)
+              console.warn(`unresolved datatype in OWL/XML: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
               return ''
             }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
             let lower = parseInt(propertyRecord.lower || 0)
             let upper = propertyRecord.upper && propertyRecord.upper !== '*' ? parseInt(propertyRecord.upper) : -1
             return `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
         <${t}AllValuesFrom>
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
             <${isObject(p, model) ? "Class" : "Datatype"} abbreviatedIRI="${type}"/>
         </${t}AllValuesFrom>
     </SubClassOf>` + (chatty ? ((lower === 0 ? '' : (`\n    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
         <${t}MinCardinality cardinality="${lower}">
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
         </${t}MinCardinality>
     </SubClassOf>`)) + (upper === -1 ? '' : (`\n    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
         <${t}MaxCardinality cardinality="${upper}">
             <${t}Property abbreviatedIRI="ddi:${propName}"/>
         </${t}MaxCardinality>
     </SubClassOf>`))) : '')
           }
         ).concat(
-          (model.classes[classId].superClasses).map(
+          (classRecord.superClasses).map(
             superClass =>
               `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
         <Class abbreviatedIRI="ddi:${model.classes[superClass].name}"/>
     </SubClassOf>`
           )
         ).concat(
-          model.classes[classId].superClasses.find(
+          classRecord.superClasses.find(
             supercl =>
               SUPPRESS_DUPLICATE_CLASSES && // if some superclass appears in the same package...
-              model.classes[classId].packages[0] === model.classes[supercl].packages[0]
+              classRecord.packages[0] === model.classes[supercl].packages[0]
           )
             ? [] //       ... skip that package
             : [`    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${model.classes[classId].name}"/>
-        <Class abbreviatedIRI="ddi:${model.packages[model.classes[classId].packages[0]].name}_Package"/>
+        <Class abbreviatedIRI="ddi:${classRecord.name}"/>
+        <Class abbreviatedIRI="ddi:${model.packages[classRecord.packages[0]].name}_Package"/>
     </SubClassOf>`
             ]).concat(
-          model.classes[classId].comments.map(
+          classRecord.comments.map(
             comment =>
               `    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <AbbreviatedIRI>ddi:${classRecord.name}</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
     </AnnotationAssertion>`
           ),
-          (chatty ? model.classes[classId].properties.reduce(
+          (chatty ? classRecord.properties.reduce(
             (comments, propertyRecord) =>
               comments.concat((propertyRecord.comments || []).map(
                 comment => `    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:${model.classes[classId].name}</AbbreviatedIRI>
+        <AbbreviatedIRI>ddi:${classRecord.name}</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(propertyRecord.name + ': ' + trimMarkdown(comment) + '\n')}</Literal>
     </AnnotationAssertion>`
               )), []
@@ -782,12 +788,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
               : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              console.warn('unresolved datatype ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
+              // console.warn(`unresolved datatype in ShExC: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
+              console.warn('unresolved datatype in ShExC: ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
-            if (use.aggregation)
-              console.log(use.aggregation, UMLparser.Aggregation.shared, use.aggregation === UMLparser.Aggregation.shared);
             let comments = (use.comments || []).map(markup.comment)
             let aggregations = use.aggregation ? [markup.aggregation(use.aggregation)] : []
             let valueStr =
@@ -944,7 +949,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           if (title === '') {
             title = elt.id
           } else if (title !== elt.id) {
-            console.log("differ: " + title + ' != ' + elt.id)
+            console.log("differ: " + title + ' != ' + JSON.stringify(elt.id))
             // title += ' ' + 'id=' + elt.id
           }
         } else if ('$' in elt && 'xmi:id' in elt.$) {
