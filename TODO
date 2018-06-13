@@ -1,0 +1,280 @@
+[[
+ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:assumesPrecondition EXTENDS ddi:BusinessFunction {
+    ddi:isDiscussedIn @ddi:ExternalMaterial *;
+    ddi:basedOnPriorResult @ddi:Result *;
+  } *;
+}
+]] loses valuable docs on ddi:Precondition
+
+[[
+ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasProcess EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
+  } *;
+}
+]] was reduced to '.'
+
+[[
+ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
+  ddi:denotes @ddi:Concept *;
+}
+]] was reduced to '.'
+
+OWL/XML diff:
+[[
+--- /home/eric/Downloads/ddi.xml	2018-06-13 03:41:54.343350408 -0400
++++ /home/eric/Downloads/DDI4_PIM_canonical.xmi-OWL.xml	2018-06-13 03:45:01.846769043 -0400
+@@ -15220,11 +26724,6 @@
+         <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+         <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
+         <Class abbreviatedIRI="ddi:VariableStatistics"/>
+-        <Class abbreviatedIRI="ddi:Algorithm"/>
+-        <Class abbreviatedIRI="ddi:Design"/>
+-        <Class abbreviatedIRI="ddi:Methodology"/>
+-        <Class abbreviatedIRI="ddi:Process"/>
+-        <Class abbreviatedIRI="ddi:Service"/>
+         <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
+         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
+         <Class abbreviatedIRI="ddi:CustomInstance"/>
+@@ -15247,16 +26746,6 @@
+         <Class abbreviatedIRI="ddi:Datum"/>
+         <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+         <Class abbreviatedIRI="ddi:ExternalAid"/>
+-        <Class abbreviatedIRI="ddi:CollectionMember"/>
+-        <Class abbreviatedIRI="ddi:Sign"/>
+-        <Class abbreviatedIRI="ddi:Signified"/>
+-        <Class abbreviatedIRI="ddi:ProcessStep"/>
+-        <Class abbreviatedIRI="ddi:ProcessControlStep"/>
+-        <Class abbreviatedIRI="ddi:Comparison"/>
+-        <Class abbreviatedIRI="ddi:RelationStructure"/>
+-        <Class abbreviatedIRI="ddi:SimpleCollection"/>
+-        <Class abbreviatedIRI="ddi:ProcessSequence"/>
+-        <Class abbreviatedIRI="ddi:StructuredCollection"/>
+         <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
+         <Class abbreviatedIRI="ddi:Concept"/>
+         <Class abbreviatedIRI="ddi:Category"/>
+@@ -15417,17 +26930,41 @@
+     </SubClassOf>
+     <SubClassOf>
+         <Class abbreviatedIRI="ddi:Identifiable"/>
++        <DataMinCardinality cardinality="1">
++            <DataProperty abbreviatedIRI="ddi:version"/>
++        </DataMinCardinality>
++    </SubClassOf>
++    <SubClassOf>
++        <Class abbreviatedIRI="ddi:Identifiable"/>
++        <DataMaxCardinality cardinality="1">
++            <DataProperty abbreviatedIRI="ddi:version"/>
++        </DataMaxCardinality>
++    </SubClassOf>
++    <SubClassOf>
++        <Class abbreviatedIRI="ddi:Identifiable"/>
++        <DataAllValuesFrom>
++            <DataProperty abbreviatedIRI="ddi:versionResponsibility"/>
++            <Datatype abbreviatedIRI="xsd:string"/>
++        </DataAllValuesFrom>
++    </SubClassOf>
++    <SubClassOf>
++        <Class abbreviatedIRI="ddi:Identifiable"/>
++        <DataMaxCardinality cardinality="1">
++            <DataProperty abbreviatedIRI="ddi:versionResponsibility"/>
++        </DataMaxCardinality>
++    </SubClassOf>
++    <SubClassOf>
++        <Class abbreviatedIRI="ddi:Identifiable"/>
+         <DataAllValuesFrom>
+-            <DataProperty abbreviatedIRI="ddi:versionResponsibility"/>
++            <DataProperty abbreviatedIRI="ddi:versionRationale"/>
+             <Datatype abbreviatedIRI="xsd:string"/>
+         </DataAllValuesFrom>
+     </SubClassOf>
+     <SubClassOf>
+         <Class abbreviatedIRI="ddi:Identifiable"/>
+-        <DataAllValuesFrom>
++        <DataMaxCardinality cardinality="1">
+             <DataProperty abbreviatedIRI="ddi:versionRationale"/>
+-            <Datatype abbreviatedIRI="xsd:string"/>
+-        </DataAllValuesFrom>
++        </DataMaxCardinality>
+     </SubClassOf>
+     <SubClassOf>
+         <Class abbreviatedIRI="ddi:Identifiable"/>
+@@ -19765,30 +31962,6 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:hasMemberIndicator"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:hasMemberIndicator"/>
+-        <Class abbreviatedIRI="ddi:ProcessStepIndicator"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
+-        <Class abbreviatedIRI="ddi:Binding"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
+-        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:boundingPolygon"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -20509,6 +32682,14 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:serviceLocation"/>
++        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:estimatedDuration"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -20517,6 +32698,14 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:hasInformationFlow"/>
++        <Class abbreviatedIRI="ddi:Binding"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:typeOfWorkflowStepSequence"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -21549,54 +33738,6 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
+-        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:implentatedBy"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:implentatedBy"/>
+-        <Class abbreviatedIRI="ddi:Process"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:executeSequence"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:executeSequence"/>
+-        <Class abbreviatedIRI="ddi:ProcessSequence"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
+-        <Class abbreviatedIRI="ddi:Parameter"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
+-        <Class abbreviatedIRI="ddi:Parameter"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+-        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
+-    </Declaration>
+-    <ObjectPropertyRange>
+-        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
+-        <Class abbreviatedIRI="ddi:Agent"/>
+-    </ObjectPropertyRange>
+-
+-    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:hasBoundingBox"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -21669,6 +33810,22 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:hasInputParameter"/>
++        <Class abbreviatedIRI="ddi:Parameter"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:hasOutputParameter"/>
++        <Class abbreviatedIRI="ddi:Parameter"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:sampleUnitType"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -21693,6 +33850,14 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
++        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:hasResults"/>
+     </Declaration>
+     <ObjectPropertyRange>
+@@ -22029,6 +34194,22 @@
+     </ObjectPropertyRange>
+ 
+     <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:hasAgent"/>
++        <Class abbreviatedIRI="ddi:Agent"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
++        <ObjectProperty abbreviatedIRI="ddi:isPerformedBy"/>
++    </Declaration>
++    <ObjectPropertyRange>
++        <ObjectProperty abbreviatedIRI="ddi:isPerformedBy"/>
++        <Class abbreviatedIRI="ddi:WorkflowService"/>
++    </ObjectPropertyRange>
++
++    <Declaration>
+         <ObjectProperty abbreviatedIRI="ddi:hasDocumentCoverage"/>
+     </Declaration>
+     <ObjectPropertyRange>
+]]
