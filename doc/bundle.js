@@ -7880,22 +7880,23 @@ function main () {
         let t = dumpFormats(model,
                             $('#nestInlinableStructure').is(':checked'),
                             $('#chattyOWL').is(':checked'))
+        let filename = [model.source.resource].concat(model.source.viewLabels || []).join('-')
         return [
           $('<li/>').append(
             'Raw model: ',
-            $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', 'ddi-model.json'))
+            $('<a/>', {href: ''}).text('JSON').on('click', () => download(JSON.stringify(model, null, 2), 'application/json', filename + '-model.json'))
           ),
           $('<li/>').append(
             'OWL: ',
-            $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml', 'ddi.xml')),
+            $('<a/>', {href: ''}).text('XML').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')),
             ' | ',
-            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', 'ddi.omn'))
+            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
           ),
           $('<li/>').append(
             'ShEx: ',
-            $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', 'ddi.shex')),
+            $('<a/>', {href: ''}).text('Compact').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')),
             ' | ',
-            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', 'ddi.shex.html'))
+            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
           )
         ]
       }
