@@ -7961,7 +7961,9 @@ function main () {
         let t = dumpFormats(model,
                             $('#nestInlinableStructure').is(':checked'),
                             $('#chattyOWL').is(':checked'))
-        let filename = [model.source.resource].concat(model.source.viewLabels || []).join('-')
+        let filename = [
+          model.source.resource.replace(/\.xm[il]$/, '')
+        ].concat(model.source.viewLabels || []).join('-')
         return [
           $('<li/>').append(
             'Raw model: JSON: ',
@@ -7969,15 +7971,15 @@ function main () {
           ),
           $('<li/>').append(
             'OWL: XML: ',
-            $('<a/>', {href: ''}).text(filename + '-OWL.xml').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')),
-            ' | ',
-            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
+            $('<a/>', {href: ''}).text(filename + '-OWL.xml').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')) // ,
+            // ' | ',
+            // $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
           ),
           $('<li/>').append(
             'ShEx: Compact: ',
-            $('<a/>', {href: ''}).text(filename + '.shex').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')),
-            ' | ',
-            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
+            $('<a/>', {href: ''}).text(filename + '.shex').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')) //,
+            // ' | ',
+            // $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
           )
         ]
       }
@@ -8346,7 +8348,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
                 : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             if (!dt) {
-              console.warn(`unresolved datatype in OWL/XML: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
+              console.warn(`unresolved datatype in OWL/XML: xmi:id="${propertyRecord.idref}" for ${classRecord.name} / ${propName}`)
               return ''
             }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
@@ -8481,8 +8483,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
               : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              // console.warn(`unresolved datatype in ShExC: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
-              console.warn('unresolved datatype in ShExC: ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
+              console.warn(`unresolved datatype in ShExC: xmi:id="${use.idref}" for ${classRecord.name} / ${propName}`)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
@@ -8638,11 +8639,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         let delims = ['{', '}']
         if (elt.constructor === Array) {
           let delims = ['[', ']']
-        } else if ('id' in elt) {
+        } else if ('id' in elt && typeof elt.id === 'string') {
           if (title === '') {
             title = elt.id
           } else if (title !== elt.id) {
-            console.log("differ: " + title + ' != ' + JSON.stringify(elt.id))
+            console.log("title and id differ: " + title + ' != ' + elt.id)
             // title += ' ' + 'id=' + elt.id
           }
         } else if ('$' in elt && 'xmi:id' in elt.$) {
@@ -8789,7 +8790,7 @@ let CanonicalUmlXmiParser = function (opts) {
     return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
   }
 
-  function parseProperties (model, elts, className) {
+  function parseProperties (model, elts, classId) {
     let ret = {
       properties: [],
       associations: {},
@@ -8809,7 +8810,7 @@ let CanonicalUmlXmiParser = function (opts) {
              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
            </ownedAttribute> */
         ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
-          in: className,
+          classId: classId,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
@@ -8825,11 +8826,11 @@ let CanonicalUmlXmiParser = function (opts) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
       } else if (name.charAt(0).match(/[A-Z]/)) {
-        throw Error('unexpected property name ' + name + ' in ' + className)
+        throw Error('unexpected property name ' + name + ' in ' + classId)
       } else {
         ret.properties.push(
           new PropertyRecord(
-            model, className, id, name, elt.type[0].$['xmi:idref'],
+            model, classId, id, name, elt.type[0].$['xmi:idref'],
             NormalizeType(elt.type[0].$['href']),
             parseValue(elt.lowerValue[0], 0),
             parseValue(elt.upperValue[0], UPPER_UNLIMITED),
@@ -8909,7 +8910,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') { // @@@ DDI-specific
-          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
+          let prec = new PropertyRecord(model, aref.classId, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
           if ('aggregation' in aref) {
             prec.aggregation = aref.aggregation;
           }
@@ -9092,14 +9093,14 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
-  function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
+  function PropertyRecord (model, classId, id, name, idref, href, lower, upper, comments) {
     if (model === undefined) {
       return // short-cut for objectify
     }
-    if (className === null) {
+    if (classId === null) {
       console.warn('no class name for PropertyRecord ' + id)
     }
-    this.in = className
+    this.classId = classId
     this.id = id
     this.name = name
     this.idref = idref
@@ -9178,7 +9179,7 @@ let CanonicalUmlXmiParser = function (opts) {
             t in model.datatypes ? model.datatypes[t] :
             null
         if (referent) {
-          referent.referees.push(new RefereeRecord(s.in, propName))
+          referent.referees.push(new RefereeRecord(s.classId, propName))
         } else {
           // console.warn('referent not found: ' + referent)
         }
@@ -9343,7 +9344,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
     function includedSource (source) {
       // properties with a source in classIds
-      return classIds.indexOf(source.in) !== -1
+      return classIds.indexOf(source.classId) !== -1
     }
   }
 

@@ -1,3 +1,25 @@
+{"sources":[
+  {"in":"DDI4_PIM-ClassLibrary-Workflows-Parameter",
+   "id":"DDI4_PIM-ClassLibrary-Workflows-Parameter-id",
+   "name":"id","href":"http://www.w3.org/2001/XMLSchema#string",
+   "lower":"1","upper":"1",
+   "comments":["The ID of the object. This must conform to the allowed structure of the DDI Identifier and must be unique within the Agency."]},
+  {"in":"DDI4_PIM-ClassLibrary-Identification-Identifiable",
+   "id":"DDI4_PIM-ClassLibrary-Identification-Identifiable-id",
+   "name":"id","href":"http://www.w3.org/2001/XMLSchema#string",
+   "lower":"1","upper":"1",
+   "comments":["The ID of the object. This must conform to the allowed structure of the DDI Identifier and must be unique within the Agency."]}
+ ],
+ "uniformType":["http://www.w3.org/2001/XMLSchema#string"]
+}
+
+unresolved datatype in OWL/XML: xmi:id="DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence"		ProcessOverview		hasProcessSequence
+unresolved datatype in OWL/XML: xmi:id="DDI4_PIM-ClassLibrary-SignificationPattern-Signifier"		Designation		representation
+unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence for ProcessOverview / hasProcessSequence
+unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-SignificationPattern-Signifier for Designation / representation
+unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequence for ProcessOverview / hasProcessSequence
+unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-SignificationPattern-Signifier for Designation / representation
+
 [[
 ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
   ddi:assumesPrecondition EXTENDS ddi:BusinessFunction {

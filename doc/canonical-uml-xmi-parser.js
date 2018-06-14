@@ -37,7 +37,7 @@ let CanonicalUmlXmiParser = function (opts) {
     return 'isAbstract' in elt.$ ? elt.$.isAbstract === 'true' : 'isAbstract' in elt ? elt.isAbstract[0] === 'true' : false
   }
 
-  function parseProperties (model, elts, className) {
+  function parseProperties (model, elts, classId) {
     let ret = {
       properties: [],
       associations: {},
@@ -57,7 +57,7 @@ let CanonicalUmlXmiParser = function (opts) {
              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
            </ownedAttribute> */
         ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
-          in: className,
+          classId: classId,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
@@ -73,11 +73,11 @@ let CanonicalUmlXmiParser = function (opts) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
       } else if (name.charAt(0).match(/[A-Z]/)) {
-        throw Error('unexpected property name ' + name + ' in ' + className)
+        throw Error('unexpected property name ' + name + ' in ' + classId)
       } else {
         ret.properties.push(
           new PropertyRecord(
-            model, className, id, name, elt.type[0].$['xmi:idref'],
+            model, classId, id, name, elt.type[0].$['xmi:idref'],
             NormalizeType(elt.type[0].$['href']),
             parseValue(elt.lowerValue[0], 0),
             parseValue(elt.upperValue[0], UPPER_UNLIMITED),
@@ -157,7 +157,7 @@ let CanonicalUmlXmiParser = function (opts) {
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
         if (a.name !== 'realizes') { // @@@ DDI-specific
-          let prec = new PropertyRecord(model, aref.in, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
+          let prec = new PropertyRecord(model, aref.classId, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
           if ('aggregation' in aref) {
             prec.aggregation = aref.aggregation;
           }
@@ -340,14 +340,14 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
-  function PropertyRecord (model, className, id, name, idref, href, lower, upper, comments) {
+  function PropertyRecord (model, classId, id, name, idref, href, lower, upper, comments) {
     if (model === undefined) {
       return // short-cut for objectify
     }
-    if (className === null) {
+    if (classId === null) {
       console.warn('no class name for PropertyRecord ' + id)
     }
-    this.in = className
+    this.classId = classId
     this.id = id
     this.name = name
     this.idref = idref
@@ -426,7 +426,7 @@ let CanonicalUmlXmiParser = function (opts) {
             t in model.datatypes ? model.datatypes[t] :
             null
         if (referent) {
-          referent.referees.push(new RefereeRecord(s.in, propName))
+          referent.referees.push(new RefereeRecord(s.classId, propName))
         } else {
           // console.warn('referent not found: ' + referent)
         }
@@ -591,7 +591,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
     function includedSource (source) {
       // properties with a source in classIds
-      return classIds.indexOf(source.in) !== -1
+      return classIds.indexOf(source.classId) !== -1
     }
   }
 

@@ -268,7 +268,9 @@ function main () {
         let t = dumpFormats(model,
                             $('#nestInlinableStructure').is(':checked'),
                             $('#chattyOWL').is(':checked'))
-        let filename = [model.source.resource].concat(model.source.viewLabels || []).join('-')
+        let filename = [
+          model.source.resource.replace(/\.xm[il]$/, '')
+        ].concat(model.source.viewLabels || []).join('-')
         return [
           $('<li/>').append(
             'Raw model: JSON: ',
@@ -276,15 +278,15 @@ function main () {
           ),
           $('<li/>').append(
             'OWL: XML: ',
-            $('<a/>', {href: ''}).text(filename + '-OWL.xml').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')),
-            ' | ',
-            $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
+            $('<a/>', {href: ''}).text(filename + '-OWL.xml').on('click', () => download(t.owlx.join('\n\n'), 'application/xml',  filename + '-OWL.xml')) // ,
+            // ' | ',
+            // $('<a/>', {href: ''}).text('Manchester').on('click', () => download(t.owlm.join('\n\n'), 'text/plain', filename + '.omn'))
           ),
           $('<li/>').append(
             'ShEx: Compact: ',
-            $('<a/>', {href: ''}).text(filename + '.shex').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')),
-            ' | ',
-            $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
+            $('<a/>', {href: ''}).text(filename + '.shex').on('click', () => download(t.shexc.join('\n\n'), 'text/shex', filename + '.shex')) //,
+            // ' | ',
+            // $('<a/>', {href: ''}).text('HTML').on('click', () => download(t.shexh.join('\n\n'), 'text/html', filename + '.shex.html'))
           )
         ]
       }
@@ -653,7 +655,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? propertyRecord.idref in model.classes ? model.classes[propertyRecord.idref] : model.enums[propertyRecord.idref]
                 : propertyRecord.idref in model.datatypes ? model.datatypes[propertyRecord.idref] : { name: propertyRecord.href }
             if (!dt) {
-              console.warn(`unresolved datatype in OWL/XML: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
+              console.warn(`unresolved datatype in OWL/XML: xmi:id="${propertyRecord.idref}" for ${classRecord.name} / ${propName}`)
               return ''
             }
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(dt.name)
@@ -788,8 +790,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               ? use.idref in model.classes ? model.classes[use.idref] : model.enums[use.idref]
               : use.idref in model.datatypes ? model.datatypes[use.idref] : { name: use.href }
             if (dt === undefined) {
-              // console.warn(`unresolved datatype in ShExC: xmi:id="${propertyRecord.idref}"\t\t${classRecord.name}\t\t${propName}`)
-              console.warn('unresolved datatype in ShExC: ' + use.idref + ' for '+ classRecord.name +' / ' + propName)
+              console.warn(`unresolved datatype in ShExC: xmi:id="${use.idref}" for ${classRecord.name} / ${propName}`)
               dt = {name: '.'} // replace with a ShExC wildcard to keep the schema coherent.
             }
             let card = shexCardinality(use)
@@ -945,11 +946,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         let delims = ['{', '}']
         if (elt.constructor === Array) {
           let delims = ['[', ']']
-        } else if ('id' in elt) {
+        } else if ('id' in elt && typeof elt.id === 'string') {
           if (title === '') {
             title = elt.id
           } else if (title !== elt.id) {
-            console.log("differ: " + title + ' != ' + JSON.stringify(elt.id))
+            console.log("title and id differ: " + title + ' != ' + elt.id)
             // title += ' ' + 'id=' + elt.id
           }
         } else if ('$' in elt && 'xmi:id' in elt.$) {
