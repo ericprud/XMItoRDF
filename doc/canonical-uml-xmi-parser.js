@@ -168,6 +168,19 @@ let CanonicalUmlXmiParser = function (opts) {
       }
     )
 
+    Object.keys(classes).forEach(
+      classId => {
+        let classRecord = classes[classId]
+        classRecord.properties.forEach(
+          field => {
+            if (!(field.name in properties)) {
+              properties[field.name] = {sources: []}
+            }
+            properties[field.name].sources.push(field)
+          })
+      })
+
+
     // Change relations to datatypes to be attributes.
     // Change relations to the classes and enums to reference the name.
 /*    Object.keys(properties).forEach(
@@ -368,10 +381,6 @@ let CanonicalUmlXmiParser = function (opts) {
     if (this.upper === '-1') {
       this.upper = UPPER_UNLIMITED
     }
-    if (!(name in model.properties)) {
-      model.properties[name] = {sources: []}
-    }
-    model.properties[name].sources.push(this)
   }
   function Property (id, name, type, min, max, association, aggregation) {
     return {id, name, type, min, max, association, aggregation}
