@@ -8838,13 +8838,15 @@ let CanonicalUmlXmiParser = function (opts) {
           lower: parseValue(elt.lowerValue[0], 0),
           upper: parseValue(elt.upperValue[0], UPPER_UNLIMITED),
           comments: parseComments(elt)
-        }, ('aggregation' in elt ? {
-          aggregation: (elt.aggregation[0] === "shared"
-                        ? AGGREGATION_shared
-                        : elt.aggregation[0] === "composite"
-                        ? AGGREGATION_composite
-                        : elt.aggregation[0]) // unknown aggregation state.
-        } : { }))
+        })
+        if ('aggregation' in elt) {
+          newPropertyRec.aggregation =
+            (elt.aggregation[0] === "shared"
+             ? AGGREGATION_shared
+             : elt.aggregation[0] === "composite"
+             ? AGGREGATION_composite
+             : elt.aggregation[0]) // unknown aggregation state.
+        }
       } else if (!name) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
