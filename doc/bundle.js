@@ -7838,7 +7838,6 @@ function main () {
     let reparse = $('<button/>').text('reparse').addClass('reparse').on('click', parseText)
     $('<h2/>').text(source.resource).appendTo(div)
     $('<h3/>').text(source.method + ' ' + source.timestamp).append(' ', reparse).appendTo(div)
-    let model
     let progress = $('<ul/>')
     div.append(progress)
     parseText()
@@ -7871,25 +7870,29 @@ function main () {
       if (err) {
         console.error(err)
       } else {
-        model = result
-        // let toy = UMLparser.toUML(result)
-        // const ShEx = require('shex')
         status.text('rendering structure...')
-        window.setTimeout(render, RENDER_DELAY)
+        window.setTimeout(render, RENDER_DELAY, result)
       }
     }
 
-    function render () {
+    function render (model) {
       let modelUL = $('<ul/>')
       structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
-      progress.append($('<li/>').text('model').append(modelUL))
+      progress.append($('<li/>').text('XMI').append(modelUL))
+
+      let toy = UMLparser.toUML(model)
+      // const ShEx = require('shex')
+      let toyUL = $('<ul/>')
+      structureToListItems(toy, toyUL, AllRecordTypes)
+      collapse(toyUL)
+      progress.append($('<li/>').text('UML').append(toyUL))
 
       status.text('diagnostics...')
-      window.setTimeout(diagnostics, RENDER_DELAY)
+      window.setTimeout(diagnostics, RENDER_DELAY, model)
     }
 
-    function diagnostics () {
+    function diagnostics (model) {
       let diagnostics = $('<ul/>')
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
@@ -7901,17 +7904,17 @@ function main () {
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
 
       status.text('export all formats...')
-      window.setTimeout(exportAllFormats, RENDER_DELAY)
+      window.setTimeout(exportAllFormats, RENDER_DELAY, model)
     }
 
-    function exportAllFormats () {
+    function exportAllFormats (model) {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
       let patched = model
 
       /* patches disabled for canonical representation
-      UMLparser.duplicate(model)
+      UMLparser.duplicateGraph(model)
       // Missing classes -- expected to be repaired.
       let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
       missingClasses.forEach(
@@ -8224,7 +8227,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
 
     // Declare properties
-    Array().push.apply(owlx, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlx, Object.keys(model.properties).filter(
+      propName => propName !== 'realizes' && !(isPolymorphic(propName))
+    ).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p, model) ? 'Object' : 'Data'
@@ -8246,7 +8251,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       }
     ))
 
-    Array().push.apply(owlm, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlm, Object.keys(model.properties).filter(
+      propName => propName !== 'realizes' && !(isPolymorphic(propName))
+    ).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p, model) ? 'Object' : 'Data'
@@ -8258,7 +8265,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
       classId => 'Class: ddi:' + classId + ' SubClassOf:\n' +
-        model.classes[classId].properties.map(
+        model.classes[classId].properties.filter(
+          propName => propName !== 'realizes'
+        ).map(
           propertyRecord => {
             let propName = propertyRecord.name
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
@@ -8338,7 +8347,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           `    </DisjointUnion>\n`
         ) : '') +
         classRecord.properties
-        // .filter( propertyRecord => !(isPolymorphic(propertyRecord.name)) )
+        .filter(
+          propertyRecord => propertyRecord.name !== 'realizes' /* && !(isPolymorphic(propertyRecord.name)) */
+        )
         .map(
           propertyRecord => {
             let propName = propertyRecord.name
@@ -8474,7 +8485,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           name => ' EXTENDS ' + markup.reference(name)
         ).join('') +
         ' {\n' +
-        classRecord.properties.map(
+        classRecord.properties
+        .filter(
+          propertyRecord => propertyRecord.name !== 'realizes' /* && !(isPolymorphic(propertyRecord.name)) */
+        )
+        .map(
           propertyRecord => {
             let propName = propertyRecord.name
             let p = model.properties[propName]
@@ -8802,6 +8817,13 @@ let CanonicalUmlXmiParser = function (opts) {
       let id = elt.$['xmi:id']
       let name = parseName(elt)
       let association = parseAssociation(elt)
+      let newPropertyRec = new PropertyRecord(
+        model, classId, id, name, elt.type[0].$['xmi:idref'],
+        NormalizeType(elt.type[0].$['href']),
+        parseValue(elt.lowerValue[0], 0),
+        parseValue(elt.upperValue[0], UPPER_UNLIMITED),
+        parseComments(elt))
+      ret.properties.push(newPropertyRec)
 
       if (association) {
         /* <ownedAttribute xmi:type="uml:Property" name="AgentIndicator" xmi:id="AgentIndicator_member_source" association="AgentIndicator_member_association">
@@ -8810,6 +8832,7 @@ let CanonicalUmlXmiParser = function (opts) {
              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="AgentIndicator_member_upper" value="-1"/>
            </ownedAttribute> */
         ret.associations[id] = Object.assign(new AssocRefRecord(id, name), {
+          propertyRecord: newPropertyRec,
           classId: classId,
           type: elt.type[0].$['xmi:idref'],
           lower: parseValue(elt.lowerValue[0], 0),
@@ -8827,15 +8850,6 @@ let CanonicalUmlXmiParser = function (opts) {
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
       } else if (name.charAt(0).match(/[A-Z]/)) {
         throw Error('unexpected property name ' + name + ' in ' + classId)
-      } else {
-        ret.properties.push(
-          new PropertyRecord(
-            model, classId, id, name, elt.type[0].$['xmi:idref'],
-            NormalizeType(elt.type[0].$['href']),
-            parseValue(elt.lowerValue[0], 0),
-            parseValue(elt.upperValue[0], UPPER_UNLIMITED),
-            parseComments(elt))
-        )
       }
     })
     return ret
@@ -8901,7 +8915,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
     // Build the model
     visitPackage(document['xmi:XMI']['uml:Model'][0], [])
-
+    debugger;
     // Turn associations into properties.
     Object.keys(associations).forEach(
       assocId => {
@@ -8909,12 +8923,15 @@ let CanonicalUmlXmiParser = function (opts) {
         let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
-        if (a.name !== 'realizes') { // @@@ DDI-specific
+        if (true) { // @@@ DDI-specific
           let prec = new PropertyRecord(model, aref.classId, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
           if ('aggregation' in aref) {
             prec.aggregation = aref.aggregation;
           }
-          c.properties.push(prec)
+
+          // update aref.propertyRecord
+          aref.propertyRecord.name = name
+          aref.propertyRecord.comments = prec.comments
         }
       }
     )
@@ -9093,6 +9110,14 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
+  function Class (id, name, properties) {
+    return {
+      id,
+      name,
+      properties
+    }
+  }
+
   function PropertyRecord (model, classId, id, name, idref, href, lower, upper, comments) {
     if (model === undefined) {
       return // short-cut for objectify
@@ -9116,6 +9141,9 @@ let CanonicalUmlXmiParser = function (opts) {
     }
     model.properties[name].sources.push(this)
   }
+  function Property (id, name, type, min, max, association, aggregation) {
+    return {id, name, type, min, max, association, aggregation}
+  }
 
   function RefereeRecord     (classId, propName) {
     // if (classId === null) {
@@ -9125,9 +9153,36 @@ let CanonicalUmlXmiParser = function (opts) {
     this.propName = propName
   }
   function ModelRecord       () { }
+  function Model (source, packages) {
+    return {
+      source,
+      packages: packages,
+      get classes () { return ['bar', 'baz'] }
+    }
+  }
   function PackageRecord     () { }
+  function Package (id, name, elements) {
+    return {
+      id,
+      name,
+      elements
+    }
+  }
   function EnumRecord        () { }
+  function Enumeration (id, name, values) {
+    return {
+      id,
+      name,
+      values
+    }
+  }
   function DatatypeRecord    () { }
+  function Datatype (id, name) {
+    return {
+      id,
+      name
+    }
+  }
   function ViewRecord        () { }
 
   /**
@@ -9528,8 +9583,68 @@ let CanonicalUmlXmiParser = function (opts) {
         }
       })
     },
-    duplicate: function (model) {
-      return objectify(JSON.parse(JSON.stringify(model)))
+    duplicateGraph: function (xmiGraph) {
+      return objectify(JSON.parse(JSON.stringify(xmiGraph)))
+    },
+    toUML: function (xmiGraph) {
+      let enums = {}
+      let classes = {}
+      let datatypes = {}
+      let associations = {}
+
+      return new Model(
+        xmiGraph.source,
+        Object.keys(xmiGraph.packageHierarchy.roots).map(createPackage)
+      )
+
+      function mapElementById (elt) {
+        switch (elt.type) {
+        case 'package':
+          return createPackage(elt.id)
+        case 'enumeration':
+          return createEnumeration(elt.id)
+        case 'datatype':
+          return createDatatype(elt.id)
+        case 'class':
+          return createClass(elt.id)
+        default:
+          return elt
+        }
+      }
+
+      function createPackage (packageId) {
+        const packageRecord = xmiGraph.packages[packageId]
+        return new Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementById))
+      }
+
+      function createEnumeration (enumerationId) {
+        if (enumerationId in enums) {
+          return enums[enumerationId]
+        }
+        const enumerationRecord = xmiGraph.enums[enumerationId]
+        return enums[enumerationId] = new Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values)
+      }
+
+      function createDatatype (datatypeId) {
+        if (datatypeId in enums) {
+          return enums[datatypeId]
+        }
+        const datatypeRecord = xmiGraph.datatypes[datatypeId]
+        return enums[datatypeId] = new Datatype(datatypeId, datatypeRecord.name)
+      }
+
+      function createClass (classId) {
+        if (classId in enums) {
+          return enums[classId]
+        }
+        const classRecord = xmiGraph.classes[classId]
+        return enums[classId] = new Class(classId, classRecord.name, classRecord.properties.map(createProperty))
+      }
+
+      function createProperty (propertyRecord) {
+        return new Property(propertyRecord.id, propertyRecord.name, propertyRecord.idref, propertyRecord.min, propertyRecord.max, propertyRecord.association, propertyRecord.aggregation)
+      }
+
     },
     ModelRecord: ModelRecord,
     PropertyRecord: PropertyRecord,

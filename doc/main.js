@@ -145,7 +145,6 @@ function main () {
     let reparse = $('<button/>').text('reparse').addClass('reparse').on('click', parseText)
     $('<h2/>').text(source.resource).appendTo(div)
     $('<h3/>').text(source.method + ' ' + source.timestamp).append(' ', reparse).appendTo(div)
-    let model
     let progress = $('<ul/>')
     div.append(progress)
     parseText()
@@ -178,25 +177,29 @@ function main () {
       if (err) {
         console.error(err)
       } else {
-        model = result
-        // let toy = UMLparser.toUML(result)
-        // const ShEx = require('shex')
         status.text('rendering structure...')
-        window.setTimeout(render, RENDER_DELAY)
+        window.setTimeout(render, RENDER_DELAY, result)
       }
     }
 
-    function render () {
+    function render (model) {
       let modelUL = $('<ul/>')
       structureToListItems(model, modelUL, AllRecordTypes)
       collapse(modelUL)
-      progress.append($('<li/>').text('model').append(modelUL))
+      progress.append($('<li/>').text('XMI').append(modelUL))
+
+      let toy = UMLparser.toUML(model)
+      // const ShEx = require('shex')
+      let toyUL = $('<ul/>')
+      structureToListItems(toy, toyUL, AllRecordTypes)
+      collapse(toyUL)
+      progress.append($('<li/>').text('UML').append(toyUL))
 
       status.text('diagnostics...')
-      window.setTimeout(diagnostics, RENDER_DELAY)
+      window.setTimeout(diagnostics, RENDER_DELAY, model)
     }
 
-    function diagnostics () {
+    function diagnostics (model) {
       let diagnostics = $('<ul/>')
       reusedProperties(model.classes, diagnostics)
       polymorphicProperties(model.properties, diagnostics)
@@ -208,17 +211,17 @@ function main () {
       progress.append($('<li/>').text('diagnostics').append(diagnostics))
 
       status.text('export all formats...')
-      window.setTimeout(exportAllFormats, RENDER_DELAY)
+      window.setTimeout(exportAllFormats, RENDER_DELAY, model)
     }
 
-    function exportAllFormats () {
+    function exportAllFormats (model) {
       if (!BUILD_PRODUCTS) {
         return // skip format dump
       }
       let patched = model
 
       /* patches disabled for canonical representation
-      UMLparser.duplicate(model)
+      UMLparser.duplicateGraph(model)
       // Missing classes -- expected to be repaired.
       let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
       missingClasses.forEach(
@@ -531,7 +534,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
     }
 
     // Declare properties
-    Array().push.apply(owlx, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlx, Object.keys(model.properties).filter(
+      propName => propName !== 'realizes' && !(isPolymorphic(propName))
+    ).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p, model) ? 'Object' : 'Data'
@@ -553,7 +558,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       }
     ))
 
-    Array().push.apply(owlm, Object.keys(model.properties).filter(propName => !(isPolymorphic(propName))).map(
+    Array().push.apply(owlm, Object.keys(model.properties).filter(
+      propName => propName !== 'realizes' && !(isPolymorphic(propName))
+    ).map(
       propName => {
         let p = model.properties[propName]
         let t = isObject(p, model) ? 'Object' : 'Data'
@@ -565,7 +572,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       classId => !model.classes[classId].packages[0].match(/Pattern/)
     ).map(
       classId => 'Class: ddi:' + classId + ' SubClassOf:\n' +
-        model.classes[classId].properties.map(
+        model.classes[classId].properties.filter(
+          propName => propName !== 'realizes'
+        ).map(
           propertyRecord => {
             let propName = propertyRecord.name
             let type = isPolymorphic(propName) ? 'owl:Thing' : pname(model.properties[propName].uniformType[0])
@@ -645,7 +654,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           `    </DisjointUnion>\n`
         ) : '') +
         classRecord.properties
-        // .filter( propertyRecord => !(isPolymorphic(propertyRecord.name)) )
+        .filter(
+          propertyRecord => propertyRecord.name !== 'realizes' /* && !(isPolymorphic(propertyRecord.name)) */
+        )
         .map(
           propertyRecord => {
             let propName = propertyRecord.name
@@ -781,7 +792,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           name => ' EXTENDS ' + markup.reference(name)
         ).join('') +
         ' {\n' +
-        classRecord.properties.map(
+        classRecord.properties
+        .filter(
+          propertyRecord => propertyRecord.name !== 'realizes' /* && !(isPolymorphic(propertyRecord.name)) */
+        )
+        .map(
           propertyRecord => {
             let propName = propertyRecord.name
             let p = model.properties[propName]
