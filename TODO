@@ -1,3 +1,15 @@
+    <Declaration>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:contains"/>
+            <Class abbreviatedIRI="owl:Thing"/> <------------ that ain't right!
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+
+
 {"sources":[
   {"in":"DDI4_PIM-ClassLibrary-Workflows-Parameter",
    "id":"DDI4_PIM-ClassLibrary-Workflows-Parameter-id",
