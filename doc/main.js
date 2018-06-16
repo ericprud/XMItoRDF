@@ -217,6 +217,8 @@ function main () {
         return ret
       }
 
+      /** render members of a Model or a Package
+       */
       function renderPackageList (name, list) {
         let expandPackages = $('<img/>', { src: 'plusbox.gif' }).addClass(COLLAPSED)
         let elements = $('<ul/>')

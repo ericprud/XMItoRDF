@@ -8,56 +8,73 @@ function UmlModel (opts) {
   const AGGREGATION_shared = 'AGGREGATION_shared'
   const AGGREGATION_composite = 'AGGREGATION_composite'
 
-  function Model (source, packages, missingElements) {
-    Object.assign(this, {
-      source,
-      packages,
-      missingElements,
-      get classes () { return ['bar', 'baz'] }
-    })
+  class Model {
+    constructor (source, packages, missingElements) {
+      Object.assign(this, {
+        source,
+        packages,
+        missingElements,
+        get classes () { return ['bar', 'baz'] }
+      })
+    }
   }
 
-  function Package (id, name, elements) {
-    Object.assign(this, {
-      id,
-      name,
-      elements
-    })
+  class Packagable {
+    constructor (id, name) {
+      Object.assign(this, {
+        id,
+        name
+      })
+    }
   }
 
-  function Enumeration (id, name, values) {
-    Object.assign(this, {
-      id,
-      name,
-      values
-    })
+  class Package extends Packagable {
+    constructor (id, name, elements) {
+      super(id, name)
+      Object.assign(this, {
+        elements
+      })
+    }
   }
 
-  function Datatype (id, name) {
-    Object.assign(this, {
-      id,
-      name
-    })
+  class Enumeration extends Packagable {
+    constructor (id, name, values) {
+      super(id, name)
+      Object.assign(this, {
+        values
+      })
+    }
   }
 
-  function Class (id, name, properties) {
-    Object.assign(this, {
-      id,
-      name,
-      properties
-    })
+  class Datatype extends Packagable {
+    constructor (id, name) {
+      super(id, name)
+      Object.assign(this, {
+      })
+    }
   }
 
-  function Property (id, name, type, min, max, association, aggregation) {
-    Object.assign(this, {
-      id,
-      name,
-      type,
-      min,
-      max,
-      association,
-      aggregation
-    })
+  class Class extends Packagable {
+    constructor (id, name, properties) {
+      super(id, name)
+      Object.assign(this, {
+        properties
+      })
+    }
+  }
+
+  class Property {
+    constructor (id, name, type, min, max, association, aggregation) {
+      Object.assign(this, {
+        id,
+        name,
+        type,
+        min,
+        max,
+        association,
+        aggregation
+      })
+    }
   }
 
   function AssociationRecord (id, name) {
@@ -68,10 +85,12 @@ function UmlModel (opts) {
     this.name = name
   }
 
-  function MissingElement (id) {
-    Object.assign(this, {
-      id
-    })
+  class MissingElement {
+    constructor (id) {
+      Object.assign(this, {
+        id
+      })
+    }
   }
 
   return UmlModel.singleton = {
