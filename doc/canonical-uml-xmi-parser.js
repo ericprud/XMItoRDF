@@ -149,7 +149,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
     // Build the model
     visitPackage(document['xmi:XMI']['uml:Model'][0], [])
-    debugger;
+
     // Turn associations into properties.
     Object.keys(associations).forEach(
       assocId => {
@@ -396,10 +396,11 @@ let CanonicalUmlXmiParser = function (opts) {
     this.propName = propName
   }
   function ModelRecord       () { }
-  function Model (source, packages) {
+  function Model (source, packages, missingElements) {
     return {
       source,
-      packages: packages,
+      packages,
+      missingElements,
       get classes () { return ['bar', 'baz'] }
     }
   }
@@ -462,6 +463,10 @@ let CanonicalUmlXmiParser = function (opts) {
     // }
     this.id = id
     this.name = name
+  }
+
+  function MissingElement (id) {
+    return { id }
   }
 
   function updateReferees (model) {
@@ -834,30 +839,58 @@ let CanonicalUmlXmiParser = function (opts) {
       let classes = {}
       let datatypes = {}
       let associations = {}
+      let missingElements = {}
 
       return new Model(
         xmiGraph.source,
-        Object.keys(xmiGraph.packageHierarchy.roots).map(createPackage)
+        Object.keys(xmiGraph.packageHierarchy.roots).map(createPackage),
+        missingElements
       )
 
-      function mapElementById (elt) {
-        switch (elt.type) {
+      function mapElementByReference (reference) {
+        switch (reference.type) {
         case 'package':
-          return createPackage(elt.id)
+          return createPackage(reference.id)
         case 'enumeration':
-          return createEnumeration(elt.id)
+          return createEnumeration(reference.id)
         case 'datatype':
-          return createDatatype(elt.id)
+          return createDatatype(reference.id)
         case 'class':
-          return createClass(elt.id)
+          return createClass(reference.id)
         default:
-          return elt
+          throw Error('mapElementByReference: unknown reference type in ' + JSON.stringify(reference))
+          return reference
         }
+      }
+
+      function mapElementByIdref (propertyRecord) {
+        if (propertyRecord.href) {
+          if (propertyRecord.href in datatypes) {
+            return datatypes[propertyRecord.href]
+          }
+          return datatypes[propertyRecord.href] = new Datatype(propertyRecord.href, propertyRecord.href)
+        }
+        if (propertyRecord.idref in xmiGraph.packages) {
+          return createPackage(propertyRecord.idref)
+        }
+        if (propertyRecord.idref in xmiGraph.enums) {
+          return createEnumeration(propertyRecord.idref)
+        }
+        if (propertyRecord.idref in xmiGraph.datatypes) {
+          return createDatatype(propertyRecord.idref)
+        }
+        if (propertyRecord.idref in xmiGraph.classes) {
+          return createClass(propertyRecord.idref)
+        }
+        if (propertyRecord.idref in missingElements) {
+          return missingElements[propertyRecord.idref]
+        }
+        return missingElements[propertyRecord.idref] = createMissingElement(propertyRecord.idref)
       }
 
       function createPackage (packageId) {
         const packageRecord = xmiGraph.packages[packageId]
-        return new Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementById))
+        return new Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference))
       }
 
       function createEnumeration (enumerationId) {
@@ -869,23 +902,39 @@ let CanonicalUmlXmiParser = function (opts) {
       }
 
       function createDatatype (datatypeId) {
-        if (datatypeId in enums) {
-          return enums[datatypeId]
+        if (datatypeId in datatypes) {
+          return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return enums[datatypeId] = new Datatype(datatypeId, datatypeRecord.name)
+        return datatypes[datatypeId] = new Datatype(datatypeId, datatypeRecord.name)
       }
 
       function createClass (classId) {
-        if (classId in enums) {
-          return enums[classId]
+        if (classId in classes) {
+          return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        return enums[classId] = new Class(classId, classRecord.name, classRecord.properties.map(createProperty))
+        console.log(classId)
+        let ret = classes[classId] = new Class(classId, classRecord.name, [])
+        // avoid cycles like Identifiable { basedOn Identifiable }
+        ret.properties = classRecord.properties.map(createProperty)
+        return ret
+      }
+
+      function createMissingElement (missingElementId) {
+        if (missingElementId in missingElements) {
+          return missingElements[missingElementId]
+        }
+        return missingElements[missingElementId] = new MissingElement(missingElementId)
       }
 
       function createProperty (propertyRecord) {
-        return new Property(propertyRecord.id, propertyRecord.name, propertyRecord.idref, propertyRecord.min, propertyRecord.max, propertyRecord.association, propertyRecord.aggregation)
+        console.log(propertyRecord.id)
+        return new Property(propertyRecord.id, propertyRecord.name,
+                            mapElementByIdref(propertyRecord),
+                            propertyRecord.min, propertyRecord.max,
+                            propertyRecord.association,
+                            propertyRecord.aggregation)
       }
 
     },

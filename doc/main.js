@@ -190,10 +190,10 @@ function main () {
 
       let toy = UMLparser.toUML(model)
       // const ShEx = require('shex')
-      let toyUL = $('<ul/>')
-      structureToListItems(toy, toyUL, AllRecordTypes)
-      collapse(toyUL)
-      progress.append($('<li/>').text('UML').append(toyUL))
+      // let toyUL = $('<ul/>')
+      // structureToListItems(toy, toyUL, AllRecordTypes)
+      // collapse(toyUL)
+      // progress.append($('<li/>').text('UML').append(toyUL))
 
       status.text('diagnostics...')
       window.setTimeout(diagnostics, RENDER_DELAY, model)
