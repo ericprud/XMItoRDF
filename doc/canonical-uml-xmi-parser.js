@@ -6,8 +6,7 @@ let CanonicalUmlXmiParser = function (opts) {
   let NormalizeType = opts.normalizeType || (type => type)
   let ViewPattern = opts.viewPattern || null
   let NameMap = opts.nameMap || { }
-  let AGGREGATION_shared = 'AGGREGATION_shared'
-  let AGGREGATION_composite = 'AGGREGATION_composite'
+  const UmlModel = require('./uml-model')()
   var UPPER_UNLIMITED = '*'
 
   function parseName (elt) {
@@ -74,9 +73,9 @@ let CanonicalUmlXmiParser = function (opts) {
         if ('aggregation' in elt) {
           newPropertyRec.aggregation =
             (elt.aggregation[0] === "shared"
-             ? AGGREGATION_shared
+             ? UmlModel.Aggregation.shared
              : elt.aggregation[0] === "composite"
-             ? AGGREGATION_composite
+             ? UmlModel.Aggregation.composite
              : elt.aggregation[0]) // unknown aggregation state.
         }
       } else if (!name) {
@@ -357,14 +356,6 @@ let CanonicalUmlXmiParser = function (opts) {
     this.name = name
   }
 
-  function Class (id, name, properties) {
-    return {
-      id,
-      name,
-      properties
-    }
-  }
-
   function PropertyRecord (model, classId, id, name, idref, href, lower, upper, comments) {
     if (model === undefined) {
       return // short-cut for objectify
@@ -384,9 +375,6 @@ let CanonicalUmlXmiParser = function (opts) {
       this.upper = UPPER_UNLIMITED
     }
   }
-  function Property (id, name, type, min, max, association, aggregation) {
-    return {id, name, type, min, max, association, aggregation}
-  }
 
   function RefereeRecord     (classId, propName) {
     // if (classId === null) {
@@ -396,37 +384,9 @@ let CanonicalUmlXmiParser = function (opts) {
     this.propName = propName
   }
   function ModelRecord       () { }
-  function Model (source, packages, missingElements) {
-    return {
-      source,
-      packages,
-      missingElements,
-      get classes () { return ['bar', 'baz'] }
-    }
-  }
   function PackageRecord     () { }
-  function Package (id, name, elements) {
-    return {
-      id,
-      name,
-      elements
-    }
-  }
   function EnumRecord        () { }
-  function Enumeration (id, name, values) {
-    return {
-      id,
-      name,
-      values
-    }
-  }
   function DatatypeRecord    () { }
-  function Datatype (id, name) {
-    return {
-      id,
-      name
-    }
-  }
   function ViewRecord        () { }
 
   /**
@@ -463,10 +423,6 @@ let CanonicalUmlXmiParser = function (opts) {
     // }
     this.id = id
     this.name = name
-  }
-
-  function MissingElement (id) {
-    return { id }
   }
 
   function updateReferees (model) {
@@ -841,7 +797,7 @@ let CanonicalUmlXmiParser = function (opts) {
       let associations = {}
       let missingElements = {}
 
-      return new Model(
+      return new UmlModel.Model(
         xmiGraph.source,
         Object.keys(xmiGraph.packageHierarchy.roots).map(createPackage),
         missingElements
@@ -868,7 +824,7 @@ let CanonicalUmlXmiParser = function (opts) {
           if (propertyRecord.href in datatypes) {
             return datatypes[propertyRecord.href]
           }
-          return datatypes[propertyRecord.href] = new Datatype(propertyRecord.href, propertyRecord.href)
+          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, propertyRecord.href)
         }
         if (propertyRecord.idref in xmiGraph.packages) {
           return createPackage(propertyRecord.idref)
@@ -890,7 +846,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
       function createPackage (packageId) {
         const packageRecord = xmiGraph.packages[packageId]
-        return new Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference))
+        return new UmlModel.Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference))
       }
 
       function createEnumeration (enumerationId) {
@@ -898,7 +854,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return enums[enumerationId]
         }
         const enumerationRecord = xmiGraph.enums[enumerationId]
-        return enums[enumerationId] = new Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values)
+        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values)
       }
 
       function createDatatype (datatypeId) {
@@ -906,7 +862,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return datatypes[datatypeId] = new Datatype(datatypeId, datatypeRecord.name)
+        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, datatypeRecord.name)
       }
 
       function createClass (classId) {
@@ -914,8 +870,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        console.log(classId)
-        let ret = classes[classId] = new Class(classId, classRecord.name, [])
+        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [])
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(createProperty)
         return ret
@@ -925,12 +880,11 @@ let CanonicalUmlXmiParser = function (opts) {
         if (missingElementId in missingElements) {
           return missingElements[missingElementId]
         }
-        return missingElements[missingElementId] = new MissingElement(missingElementId)
+        return missingElements[missingElementId] = new UmlModel.MissingElement(missingElementId)
       }
 
       function createProperty (propertyRecord) {
-        console.log(propertyRecord.id)
-        return new Property(propertyRecord.id, propertyRecord.name,
+        return new UmlModel.Property(propertyRecord.id, propertyRecord.name,
                             mapElementByIdref(propertyRecord),
                             propertyRecord.min, propertyRecord.max,
                             propertyRecord.association,
@@ -948,7 +902,6 @@ let CanonicalUmlXmiParser = function (opts) {
     AssociationRecord: AssociationRecord,
     AssocRefRecord: AssocRefRecord,
     RefereeRecord: RefereeRecord,
-    Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }
   }
 }
 

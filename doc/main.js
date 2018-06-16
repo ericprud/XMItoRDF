@@ -56,23 +56,24 @@ function main () {
       'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
     }
   }
-  const UMLparser = require('./canonical-uml-xmi-parser')(ParserOpts)
+  const UmlParser = require('./canonical-uml-xmi-parser')(ParserOpts)
+  const UmlModel = require('./uml-model')()
 
   function spanText (str) {
     return () => $('<span/>', { class: 'record' }).text(str)
   }
 
   const AllRecordTypes = [
-    {type: UMLparser.ModelRecord,       maker: spanText('model'  )},
-    {type: UMLparser.PropertyRecord,    maker: spanText('prop'   )},
-    {type: UMLparser.ClassRecord,       maker: spanText('Class'  )},
-    {type: UMLparser.PackageRecord,     maker: spanText('Package')},
-    {type: UMLparser.EnumRecord,        maker: spanText('Enum'   )},
-    {type: UMLparser.DatatypeRecord,    maker: spanText('Dt'     )},
-    {type: UMLparser.ViewRecord,        maker: spanText('View'   )},
-    {type: UMLparser.AssociationRecord, maker: spanText('Assoc'  )},
-    {type: UMLparser.AssocRefRecord,    maker: spanText('assoc'  )},
-    {type: UMLparser.RefereeRecord,     maker: spanText('ref'    )}
+    {type: UmlParser.ModelRecord,       maker: spanText('model'  )},
+    {type: UmlParser.PropertyRecord,    maker: spanText('prop'   )},
+    {type: UmlParser.ClassRecord,       maker: spanText('Class'  )},
+    {type: UmlParser.PackageRecord,     maker: spanText('Package')},
+    {type: UmlParser.EnumRecord,        maker: spanText('Enum'   )},
+    {type: UmlParser.DatatypeRecord,    maker: spanText('Dt'     )},
+    {type: UmlParser.ViewRecord,        maker: spanText('View'   )},
+    {type: UmlParser.AssociationRecord, maker: spanText('Assoc'  )},
+    {type: UmlParser.AssocRefRecord,    maker: spanText('assoc'  )},
+    {type: UmlParser.RefereeRecord,     maker: spanText('ref'    )}
   ]
 
   $('#load-file').on('change', function (evt) {
@@ -154,14 +155,14 @@ function main () {
       window.setTimeout(
         () => {
           // try JSON 'cause it's easier
-          UMLparser.parseJSON(
+          UmlParser.parseJSON(
             umlText, source,
             (err, result) => {
               if (err) {
                 status.text('parsing UML...')
                 window.setTimeout(
                   // fall back to XMI
-                  () => UMLparser.parseXMI(umlText, source, parserCallback),
+                  () => UmlParser.parseXMI(umlText, source, parserCallback),
                   RENDER_DELAY
                 )
               } else {
@@ -188,15 +189,63 @@ function main () {
       collapse(modelUL)
       progress.append($('<li/>').text('XMI').append(modelUL))
 
-      let toy = UMLparser.toUML(model)
+      let toy = UmlParser.toUML(model)
+      console.dir(toy)
       // const ShEx = require('shex')
       // let toyUL = $('<ul/>')
       // structureToListItems(toy, toyUL, AllRecordTypes)
       // collapse(toyUL)
       // progress.append($('<li/>').text('UML').append(toyUL))
+      progress.append($('<li/>').text('UML').append(renderModel(toy)))
 
       status.text('diagnostics...')
       window.setTimeout(diagnostics, RENDER_DELAY, model)
+    }
+
+    function renderModel (model) {
+      const COLLAPSED = 'collapsed', EXPANDED = 'expanded'
+      let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
+      let sourceString = [model.source.resource, model.source.method, model.source.timestamp].join(' ')
+      let packages = renderPackageList(sourceString, model.packages)
+      ret.append(packages)
+      return ret
+
+      function renderPackage (package) {
+        let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
+        let packages = renderPackageList(package.name, package.elements)
+        ret.append(packages)
+        return ret
+      }
+
+      function renderPackageList (name, list) {
+        let expandPackages = $('<img/>', { src: 'plusbox.gif' }).addClass(COLLAPSED)
+        let elements = $('<ul/>')
+        return $('<div/>').addClass(['uml', 'model']).append(
+          expandPackages,
+          $('<span/>')
+            .text(name + ' ' + list.length + ' element' + (list.length === 1 ? '' : 's'))
+            .addClass('heading'),
+          elements
+        ).on('click', evt => {
+          let packages = $(evt.target)
+          if (expandPackages.hasClass(COLLAPSED)) {
+            elements.append(list.map(
+              elt => $('<li/>').append(
+                elt instanceof UmlModel.Package
+                  ? renderPackage(elt)
+                  :
+                  Object.keys(elt).join(' | '))
+            ))
+            packages.removeClass(COLLAPSED).addClass(EXPANDED)
+            expandPackages.attr('src', 'minusbox.gif')
+          } else {
+            elements.empty()
+            packages.removeClass(EXPANDED).addClass(COLLAPSED)
+            expandPackages.attr('src', 'plusbox.gif')
+          }
+          return false
+        })
+      }
     }
 
     function diagnostics (model) {
@@ -221,7 +270,7 @@ function main () {
       let patched = model
 
       /* patches disabled for canonical representation
-      UMLparser.duplicateGraph(model)
+      UmlParser.duplicateGraph(model)
       // Missing classes -- expected to be repaired.
       let missingClasses = ['CatalogItem', 'AnalyticMetadatum', 'CommonDataElement', 'DataCollection', 'LogicalResource', 'LogicalSegment', 'PhysicalSegment']
       missingClasses.forEach(
@@ -426,7 +475,7 @@ function main () {
         definition: (rec) => (rec.isAbstract ? 'ABSTRACT ' : '') + pname(rec.name),
         docLink: link => '// rdfs:definedBy <' + link + '>',
         packageStr: pkg => '// shexmi:package "' + stringEscape(pkg) + '"',
-        aggregation: agg => '// shexmi:partonomy "' + (agg === UMLparser.Aggregation.shared ? "shexmi:sharedAggregation" : agg === UMLparser.Aggregation.composite ? "shexmi:compositeAggregation" : "\"???\"") + '"',
+        aggregation: agg => '// shexmi:partonomy "' + (agg === UmlModel.Aggregation.shared ? "shexmi:sharedAggregation" : agg === UmlModel.Aggregation.composite ? "shexmi:compositeAggregation" : "\"???\"") + '"',
         comment: txt => '// shexmi:comment """' + stringEscape(txt) + '"""',
         reference: name => pname(name),
         constant: name => pname(name),
@@ -812,7 +861,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             let comments = (use.comments || []).map(markup.comment)
             let aggregations = use.aggregation ? [markup.aggregation(use.aggregation)] : []
             let valueStr =
-                  'referees' in dt && dt instanceof UMLparser.ClassRecord && nestInlinableStructure && inlineable(model, dt)
+                  'referees' in dt && dt instanceof UmlParser.ClassRecord && nestInlinableStructure && inlineable(model, dt)
                   ? indent(ShExCClass(model, dt.id, markup, true), '  ')
                   : isObject(p, model)
                   ? markup.valueReference(dt.name)
@@ -965,7 +1014,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           if (title === '') {
             title = elt.id
           } else if (title !== elt.id) {
-            console.log("title and id differ: " + title + ' != ' + elt.id)
+            // console.log("title and id differ: " + title + ' != ' + elt.id)
+            // { foo: { id: 'bar' } } -- keep title='foo'
             // title += ' ' + 'id=' + elt.id
           }
         } else if ('$' in elt && 'xmi:id' in elt.$) {
