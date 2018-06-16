@@ -56,8 +56,8 @@ function main () {
       'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
     }
   }
+  const UmlModel = require('./uml-model')($)
   const UmlParser = require('./canonical-uml-xmi-parser')(ParserOpts)
-  const UmlModel = require('./uml-model')()
 
   function spanText (str) {
     return () => $('<span/>', { class: 'record' }).text(str)
@@ -196,58 +196,10 @@ function main () {
       // structureToListItems(toy, toyUL, AllRecordTypes)
       // collapse(toyUL)
       // progress.append($('<li/>').text('UML').append(toyUL))
-      progress.append($('<li/>').text('UML').append(renderModel(toy)))
+      progress.append($('<li/>').text('UML').append(toy.render()))
 
       status.text('diagnostics...')
       window.setTimeout(diagnostics, RENDER_DELAY, model)
-    }
-
-    function renderModel (model) {
-      const COLLAPSED = 'collapsed', EXPANDED = 'expanded'
-      let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
-      let sourceString = [model.source.resource, model.source.method, model.source.timestamp].join(' ')
-      let packages = renderPackageList(sourceString, model.packages)
-      ret.append(packages)
-      return ret
-
-      function renderPackage (package) {
-        let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
-        let packages = renderPackageList(package.name, package.elements)
-        ret.append(packages)
-        return ret
-      }
-
-      /** render members of a Model or a Package
-       */
-      function renderPackageList (name, list) {
-        let expandPackages = $('<img/>', { src: 'plusbox.gif' }).addClass(COLLAPSED)
-        let elements = $('<ul/>')
-        return $('<div/>').addClass(['uml', 'model']).append(
-          expandPackages,
-          $('<span/>')
-            .text(name + ' ' + list.length + ' element' + (list.length === 1 ? '' : 's'))
-            .addClass('heading'),
-          elements
-        ).on('click', evt => {
-          let packages = $(evt.target)
-          if (expandPackages.hasClass(COLLAPSED)) {
-            elements.append(list.map(
-              elt => $('<li/>').append(
-                elt instanceof UmlModel.Package
-                  ? renderPackage(elt)
-                  :
-                  Object.keys(elt).join(' | '))
-            ))
-            packages.removeClass(COLLAPSED).addClass(EXPANDED)
-            expandPackages.attr('src', 'minusbox.gif')
-          } else {
-            elements.empty()
-            packages.removeClass(EXPANDED).addClass(COLLAPSED)
-            expandPackages.attr('src', 'plusbox.gif')
-          }
-          return false
-        })
-      }
     }
 
     function diagnostics (model) {
