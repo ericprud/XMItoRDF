@@ -104,6 +104,14 @@ function UmlModel ($) {
       ret.append(packages)
       return ret
     }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'enumeration']).append(
+        $('<span/>').text('enumeration').addClass('type'),
+        $('<span/>').text(this.name).addClass('name'),
+        $('<span/>').text(this.values.length).addClass('length')
+      )
+    }
   }
 
   class Datatype extends Packagable {
@@ -118,6 +126,13 @@ function UmlModel ($) {
       ret.append(name)
       return ret
     }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'datatype']).append(
+        $('<span/>').text('datatype').addClass('type'),
+        $('<span/>').text(this.name).addClass('name')
+      )
+    }
   }
 
   class Class extends Packagable {
@@ -131,10 +146,36 @@ function UmlModel ($) {
     render () {
       let ret = $('<div/>').addClass('uml', 'class', EXPANDED)
       let packages = renderList(this.name, this.properties, property => {
-        return property.name
+        return property.renderProp()
       }, 'class')
       ret.append(packages)
       return ret
+    }
+
+    summarize () {
+      let expandPackages = $('<img/>', { src: 'plusbox.gif' })
+      let elements = $('<ul/>')
+      let packages = $('<span/>').addClass(['uml', 'class', 'object']).append(
+        expandPackages,
+        $('<span/>').text('class').addClass('type'),
+        $('<span/>').text(this.name).addClass('name'),
+        $('<span/>').text(this.properties.length).addClass('length'),
+        elements
+      ).addClass(COLLAPSED).on('click', evt => {
+        if (packages.hasClass(COLLAPSED)) {
+          elements.append(this.properties.map(
+            elt => $('<li/>').append(elt.renderProp())
+          ))
+          packages.removeClass(COLLAPSED).addClass(EXPANDED)
+          expandPackages.attr('src', 'minusbox.gif')
+        } else {
+          elements.empty()
+          packages.removeClass(EXPANDED).addClass(COLLAPSED)
+          expandPackages.attr('src', 'plusbox.gif')
+        }
+        return false
+      })
+      return packages
     }
   }
 
@@ -149,6 +190,13 @@ function UmlModel ($) {
         association,
         aggregation
       })
+    }
+
+    renderProp () {
+      return $('<span/>').append(
+        this.name,
+        this.type.summarize()
+      )
     }
   }
 
