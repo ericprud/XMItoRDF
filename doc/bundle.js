@@ -5049,14 +5049,14 @@ function UmlModel ($) {
     let elements = $('<ul/>')
     let packages = $('<div/>').addClass(['uml', cssClass]).append(
       expandPackages,
-      $('<span/>')
-        .text(cssClass + ' ' + name + ' ' + list.length + ' element' + (list.length === 1 ? '' : 's'))
-        .addClass('heading'),
+      $('<span/>').text(cssClass).addClass('type'),
+      $('<span/>').text(name).addClass('name'),
+      $('<span/>').text(list.length).addClass('length'),
       elements
     ).addClass(COLLAPSED).on('click', evt => {
       if (packages.hasClass(COLLAPSED)) {
         elements.append(list.map(
-          elt => $('<li/>').append(/*elt.render()*/foo(elt))
+          elt => $('<li/>').append(foo(elt))
         ))
         packages.removeClass(COLLAPSED).addClass(EXPANDED)
         expandPackages.attr('src', 'minusbox.gif')
@@ -5146,6 +5146,12 @@ function UmlModel ($) {
       Object.assign(this, {
       })
     }
+
+    render () {
+      let ret = $('<div/>').addClass('uml', 'enumeration', EXPANDED)
+      ret.append(name)
+      return ret
+    }
   }
 
   class Class extends Packagable {
@@ -5154,6 +5160,15 @@ function UmlModel ($) {
       Object.assign(this, {
         properties
       })
+    }
+
+    render () {
+      let ret = $('<div/>').addClass('uml', 'class', EXPANDED)
+      let packages = renderList(this.name, this.properties, property => {
+        return property.name
+      }, 'class')
+      ret.append(packages)
+      return ret
     }
   }
 
