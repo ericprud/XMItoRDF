@@ -156,16 +156,14 @@ let CanonicalUmlXmiParser = function (opts) {
         let c = classes[assocSrcToClass[a.from]]
         let aref = c.associations[a.from]
         let name = aref.name || a.name // if a reference has no name used the association name
-        if (true || a.name !== 'realizes') { // @@@ DDI-specific
-          let prec = new PropertyRecord(model, aref.classId, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
-          if ('aggregation' in aref) {
-            prec.aggregation = aref.aggregation;
-          }
-
-          // update aref.propertyRecord
-          aref.propertyRecord.name = name
-          aref.propertyRecord.comments = prec.comments
+        let prec = new PropertyRecord(model, aref.classId, aref.id, name, aref.type, undefined, aref.lower, aref.upper, aref.comments.concat(a.comments));
+        if ('aggregation' in aref) {
+          prec.aggregation = aref.aggregation;
         }
+
+        // update aref.propertyRecord
+        aref.propertyRecord.name = name
+        aref.propertyRecord.comments = prec.comments
       }
     )
 

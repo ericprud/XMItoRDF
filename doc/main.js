@@ -721,7 +721,9 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
     </AnnotationAssertion>`
           ),
-          (chatty ? classRecord.properties.reduce(
+          (chatty ? classRecord.properties.filter(
+            propertyRecord => propertyRecord.name !== 'realizes'
+          ).reduce(
             (comments, propertyRecord) =>
               comments.concat((propertyRecord.comments || []).map(
                 comment => `    <AnnotationAssertion>
