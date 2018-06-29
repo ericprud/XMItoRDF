@@ -8,6 +8,45 @@ var SUPPRESS_DUPLICATE_CLASSES = true // Don't list subclasses in parent's packa
 const TYPE_NodeConstraint = ['NodeConstraint']
 const TYPE_ShapeRef = ['ShapeRef']
 
+const COMMONMARK = 'https://github.com/commonmark/commonmark.js'
+const MARKED_OPTS = {
+  "baseUrl": null,
+  "breaks": false,
+  "gfm": true,
+  "headerIds": true,
+  "headerPrefix": "",
+  "highlight": null,
+  "langPrefix": "lang-",
+  "mangle": true,
+  "pedantic": false,
+  "renderer": Object.assign({}, window.marked.Renderer.prototype, {
+    // "options": null
+    heading: function(text, level, raw) {
+      if (this.options.headerIds) {
+        return '<h'
+          + (parseInt(level) + 3) // start at h4
+          + ' id="'
+          + this.options.headerPrefix
+          + raw.toLowerCase().replace(/[^\w]+/g, '-')
+          + '">'
+          + text
+          + '</h'
+          + (parseInt(level) + 3)
+          + '>\n';
+      }
+      // ignore IDs
+      return '<h' + level + '>' + text + '</h' + level + '>\n';
+    }
+  }),
+  "sanitize": false,
+  "sanitizer": null,
+  "silent": false,
+  "smartLists": false,
+  "smartypants": false,
+  "tables": true,
+  "xhtml": false
+}
+
 function main () {
   let $ = window.jQuery
 
@@ -58,7 +97,10 @@ function main () {
   }
   const UmlModel = require('./uml-model')($)
   const UmlParser = require('./canonical-uml-xmi-parser')(ParserOpts)
-
+  const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
+  const SHEXMI = 'http://www.w3.org/ns/shex-xmi#'
+  const NAMESPACES = [[RDFS, 'rdfs'],
+                      [SHEXMI, 'shexmi']]
   function spanText (str) {
     return () => $('<span/>', { class: 'record' }).text(str)
   }
@@ -190,10 +232,10 @@ function main () {
       progress.append($('<li/>').text('XMI').append(modelUL))
 
       let toy = UmlParser.toUML(model)
-      const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
+      progress.append($('<li/>').text('UML').append(toy.render()))
       debugger
       console.dir(toy)
-      console.dir(toy.toShExJ({
+      let shexj = toy.toShExJ({
         iri: function (suffix, elt) {
           return 'http://ddi-alliance.org/ns/#' + suffix
         },
@@ -235,13 +277,17 @@ function main () {
           }
           return ret
         }
-      }))
+      })
+      console.log(shexj)
+      let shexjUL = $('<ul/>')
+      structureToListItems(shexj, shexjUL, AllRecordTypes)
+      collapse(shexjUL)
+      progress.append($('<li/>').text('Schema').append(shexjUL))
       // const ShEx = require('shex')
       // let toyUL = $('<ul/>')
       // structureToListItems(toy, toyUL, AllRecordTypes)
       // collapse(toyUL)
       // progress.append($('<li/>').text('UML').append(toyUL))
-      progress.append($('<li/>').text('UML').append(toy.render()))
 
       status.text('diagnostics...')
       window.setTimeout(diagnostics, RENDER_DELAY, model)
@@ -1012,29 +1058,66 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         title += ':'
         value = $('<span/>').addClass('keyword').text(elt)
       } else if (typeof elt === 'object') {
-        let delims = ['{', '}']
-        if (elt.constructor === Array) {
-          let delims = ['[', ']']
-        } else if ('id' in elt && typeof elt.id === 'string') {
-          if (title === '') {
-            title = elt.id
-          } else if (title !== elt.id) {
-            // console.log("title and id differ: " + title + ' != ' + elt.id)
-            // { foo: { id: 'bar' } } -- keep title='foo'
-            // title += ' ' + 'id=' + elt.id
-          }
-        } else if ('$' in elt && 'xmi:id' in elt.$) {
-          title += elt.$['xmi:id']
-        }
-        typeIcon = recordTypes.find(rt => elt instanceof rt.type)
-        if (typeIcon === undefined) {
+        if ('value' in elt && !Object.keys(elt).reduce(
+          (acc, k2) => acc || ['value', 'type', 'language'].indexOf(k2) === -1, false
+        )) {
           typeIcon = ''
-          title += ' ' + delims[0] + Object.keys(elt).length + delims[1]
+          value = ''
+          if ('language' in elt) {
+            title = elt.value + '@' + elt.language;
+          } else {
+            if ('type' in elt) {
+              if (elt.type === COMMONMARK) {
+                title = ''
+                value = window.marked(elt.value, MARKED_OPTS)
+              } else {
+                title = '- complex literal -'
+                value = $('<ul/>')
+                structureToListItems(elt, value, recordTypes)
+              }
+            } else {
+              title = elt.value
+            }
+          }
         } else {
-          typeIcon = typeIcon.maker()
+          let delims = ['{', '}']
+          if (elt.constructor === Array) {
+            let delims = ['[', ']']
+          } else if ('id' in elt && typeof elt.id === 'string') {
+            if (title === '') {
+              title = elt.id
+            } else if (title !== elt.id) {
+              // console.log("title and id differ: " + title + ' != ' + elt.id)
+              // { foo: { id: 'bar' } } -- keep title='foo'
+              // title += ' ' + 'id=' + elt.id
+            }
+          } else if ('$' in elt && 'xmi:id' in elt.$) {
+            title += elt.$['xmi:id']
+          } else if ('type' in elt && elt.type === 'Annotation') {
+            let p = qname(elt.predicate)
+            let o = typeof elt.object === 'object'
+                  ? '"' + elt.object.value + '"'
+                  : elt.object
+            title += p + ' ' + (o.length > 80 ? o.substr(0, 40) : o)
+            function qname (iri) {
+              let map = NAMESPACES.find(
+                pair => iri.startsWith(pair[0])
+              )
+              return map
+                ? map[1] + ':' + iri.substr(map[0].length)
+                : '<' + iri + '>'
+            }
+          }
+          typeIcon = recordTypes.find(rt => elt instanceof rt.type)
+          if (typeIcon === undefined) {
+            typeIcon = ''
+            title += ' ' + delims[0] + Object.keys(elt).length + delims[1]
+          } else {
+            typeIcon = typeIcon.maker()
+          }
+          value = $('<ul/>')
+          structureToListItems(elt, value, recordTypes)
         }
-        value = $('<ul/>')
-        structureToListItems(elt, value, recordTypes)
       } else {
         if (object.constructor !== Array) {
           title += ':'
