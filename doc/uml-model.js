@@ -10,7 +10,7 @@ function UmlModel ($) {
 
   /** render members of a Model or a Package
    */
-  function renderList (name, list, foo, cssClass) {
+  function renderList (name, list, renderF, cssClass) {
     let expandPackages = $('<img/>', { src: 'plusbox.gif' })
     let elements = $('<ul/>')
     let packages = $('<div/>').addClass(['uml', cssClass]).append(
@@ -22,7 +22,7 @@ function UmlModel ($) {
     ).addClass(COLLAPSED).on('click', evt => {
       if (packages.hasClass(COLLAPSED)) {
         elements.append(list.map(
-          elt => $('<li/>').append(foo(elt))
+          elt => $('<li/>').append(renderF(elt))
         ))
         packages.removeClass(COLLAPSED).addClass(EXPANDED)
         expandPackages.attr('src', 'minusbox.gif')
@@ -41,10 +41,47 @@ function UmlModel ($) {
   class Model {
     constructor (source, packages, missingElements) {
       Object.assign(this, {
+        get type () { return 'Model' },
         source,
         packages,
         missingElements,
-        get classes () { return ['bar', 'baz'] }
+        // getClasses: function () {
+        //   return packages.reduce(
+        //     (acc, pkg) => acc.concat(pkg.list('Class')), []
+        //   )
+        // }
+        get classes () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Class')), []
+          )
+        },
+        get enumerations () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Enumeration')), []
+          )
+        },
+        get datatypes () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Datatypes')), []
+          )
+        },
+        get properties () {
+          let cz = this.classes
+          let ret = {}
+          cz.forEach(
+            klass => {
+              klass.properties.forEach(
+                property => {
+                  if (!(property.name in ret)) {
+                    ret[property.name] = { uses: [] }
+                  }
+                  ret[property.name].uses.push({ klass, property })
+                }
+              )
+            }
+          )
+          return ret
+        }
       })
     }
 
@@ -56,15 +93,25 @@ function UmlModel ($) {
       return ret
     }
 
-
+    toShExJ (options = {}) {
+      return {
+        "@context": "http://www.w3.org/ns/shex.jsonld",
+        "type": "Schema",
+        "shapes": this.packages.reduce(
+          (acc, pkg) => acc.concat(pkg.toShExJ([], options)), []
+        )
+      }
+    }
   }
 
   class Packagable {
-    constructor (id, name) {
+    constructor (id, name, packages, comments) {
       Object.assign(this, {
         id,
         name
       })
+      if (packages) { Object.assign(this, { packages }) }
+      if (comments) { Object.assign(this, { comments }) }
     }
 
     render () {
@@ -75,9 +122,10 @@ function UmlModel ($) {
   }
 
   class Package extends Packagable {
-    constructor (id, name, elements) {
-      super(id, name)
+    constructor (id, name, elements, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Package' },
         elements
       })
     }
@@ -88,12 +136,32 @@ function UmlModel ($) {
       ret.append(packages)
       return ret
     }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'Package'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+
   }
 
   class Enumeration extends Packagable {
-    constructor (id, name, values) {
-      super(id, name)
+    constructor (id, name, values, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Enumeration' },
         values
       })
     }
@@ -112,19 +180,37 @@ function UmlModel ($) {
         $('<span/>').text(this.values.length).addClass('length')
       )
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "NodeConstraint",
+        "values": this.values.map(
+          v => options.iri(v, this)
+        )
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Datatype extends Packagable {
-    constructor (id, name) {
-      super(id, name)
+    constructor (id, name, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Datatype' },
       })
     }
 
     render () {
-      let ret = $('<div/>').addClass('uml', 'enumeration', EXPANDED)
-      ret.append(name)
-      return ret
+      return $('<div/>').addClass('uml', 'datatype', EXPANDED).append(
+        renderList(this.name, [], () => null, 'datatype')
+      )
     }
 
     summarize () {
@@ -133,13 +219,30 @@ function UmlModel ($) {
         $('<span/>').text(this.name).addClass('name')
       )
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "NodeConstraint",
+        "datatype": this.datatype
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Class extends Packagable {
-    constructor (id, name, properties) {
-      super(id, name)
+    constructor (id, name, properties, isAbstract, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
-        properties
+        get type () { return 'Class' },
+        properties,
+        isAbstract
       })
     }
 
@@ -177,11 +280,54 @@ function UmlModel ($) {
       })
       return packages
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "Shape",
+      }
+      if (this.properties.length > 0) {
+        let conjuncts = this.properties.map(
+          p => {
+            let ret = {
+              "type": "TripleConstraint",
+              "predicate": options.iri(p.name, p),
+              "valueExpr": options.iri(p.type.name, this),
+            }
+            if (this.min !== undefined) { ret.min = this.min }
+            if (this.max !== undefined) { ret.max = this.max }
+            if (options.annotations) {
+              let toAdd = options.annotations(this)
+              if (toAdd && toAdd.length) {
+                ret.annotations = toAdd
+              }
+            }
+            return ret
+          }
+        )
+        if (conjuncts.length === 1) {
+          ret.expression = conjuncts[0]
+        } else {
+          ret.expression = {
+            "type": "EachOf",
+            "expressions": conjuncts
+          }
+        }
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Property {
-    constructor (id, name, type, min, max, association, aggregation) {
+    constructor (id, name, type, min, max, association, aggregation, comments) {
       Object.assign(this, {
+        get type () { return 'Property' },
         id,
         name,
         type,
@@ -190,6 +336,7 @@ function UmlModel ($) {
         association,
         aggregation
       })
+      if (comments && comments.length) { this.comments = comments }
     }
 
     renderProp () {
@@ -200,17 +347,36 @@ function UmlModel ($) {
     }
   }
 
-  function AssociationRecord (id, name) {
-    // if (name === null) {
-    //   throw Error('no name for AssociationRecord ' + id)
-    // }
-    this.id = id
-    this.name = name
+  class Import {
+    constructor (id, ref) {
+      Object.assign(this, {
+        get type () { return 'Import' },
+        id, ref
+      })
+    }
+
+    render () {
+      let ret = $('<div/>').addClass('uml', 'import', EXPANDED)
+      ret.append($('<div/>').addClass('leader').text('→'), this.ref.render())
+      return ret
+    }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'import']).append(
+        $('<span/>').text('import').addClass('type'),
+        $('<span/>').append(this.ref.summarize()).addClass('name')
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return []
+    }
   }
 
   class MissingElement {
     constructor (id) {
       Object.assign(this, {
+        get type () { return 'MissingElement' },
         id
       })
     }
@@ -223,6 +389,7 @@ function UmlModel ($) {
     Package,
     Enumeration,
     Datatype,
+    Import,
     MissingElement,
 //    Association,
     Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }

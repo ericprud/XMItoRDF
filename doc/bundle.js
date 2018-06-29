@@ -5044,7 +5044,7 @@ function UmlModel ($) {
 
   /** render members of a Model or a Package
    */
-  function renderList (name, list, foo, cssClass) {
+  function renderList (name, list, renderF, cssClass) {
     let expandPackages = $('<img/>', { src: 'plusbox.gif' })
     let elements = $('<ul/>')
     let packages = $('<div/>').addClass(['uml', cssClass]).append(
@@ -5056,7 +5056,7 @@ function UmlModel ($) {
     ).addClass(COLLAPSED).on('click', evt => {
       if (packages.hasClass(COLLAPSED)) {
         elements.append(list.map(
-          elt => $('<li/>').append(foo(elt))
+          elt => $('<li/>').append(renderF(elt))
         ))
         packages.removeClass(COLLAPSED).addClass(EXPANDED)
         expandPackages.attr('src', 'minusbox.gif')
@@ -5075,10 +5075,47 @@ function UmlModel ($) {
   class Model {
     constructor (source, packages, missingElements) {
       Object.assign(this, {
+        get type () { return 'Model' },
         source,
         packages,
         missingElements,
-        get classes () { return ['bar', 'baz'] }
+        // getClasses: function () {
+        //   return packages.reduce(
+        //     (acc, pkg) => acc.concat(pkg.list('Class')), []
+        //   )
+        // }
+        get classes () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Class')), []
+          )
+        },
+        get enumerations () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Enumeration')), []
+          )
+        },
+        get datatypes () {
+          return this.packages.reduce(
+            (acc, pkg) => acc.concat(pkg.list('Datatypes')), []
+          )
+        },
+        get properties () {
+          let cz = this.classes
+          let ret = {}
+          cz.forEach(
+            klass => {
+              klass.properties.forEach(
+                property => {
+                  if (!(property.name in ret)) {
+                    ret[property.name] = { uses: [] }
+                  }
+                  ret[property.name].uses.push({ klass, property })
+                }
+              )
+            }
+          )
+          return ret
+        }
       })
     }
 
@@ -5090,15 +5127,25 @@ function UmlModel ($) {
       return ret
     }
 
-
+    toShExJ (options = {}) {
+      return {
+        "@context": "http://www.w3.org/ns/shex.jsonld",
+        "type": "Schema",
+        "shapes": this.packages.reduce(
+          (acc, pkg) => acc.concat(pkg.toShExJ([], options)), []
+        )
+      }
+    }
   }
 
   class Packagable {
-    constructor (id, name) {
+    constructor (id, name, packages, comments) {
       Object.assign(this, {
         id,
         name
       })
+      if (packages) { Object.assign(this, { packages }) }
+      if (comments) { Object.assign(this, { comments }) }
     }
 
     render () {
@@ -5109,9 +5156,10 @@ function UmlModel ($) {
   }
 
   class Package extends Packagable {
-    constructor (id, name, elements) {
-      super(id, name)
+    constructor (id, name, elements, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Package' },
         elements
       })
     }
@@ -5122,12 +5170,32 @@ function UmlModel ($) {
       ret.append(packages)
       return ret
     }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'Package'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+
   }
 
   class Enumeration extends Packagable {
-    constructor (id, name, values) {
-      super(id, name)
+    constructor (id, name, values, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Enumeration' },
         values
       })
     }
@@ -5146,19 +5214,37 @@ function UmlModel ($) {
         $('<span/>').text(this.values.length).addClass('length')
       )
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "NodeConstraint",
+        "values": this.values.map(
+          v => options.iri(v, this)
+        )
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Datatype extends Packagable {
-    constructor (id, name) {
-      super(id, name)
+    constructor (id, name, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
+        get type () { return 'Datatype' },
       })
     }
 
     render () {
-      let ret = $('<div/>').addClass('uml', 'enumeration', EXPANDED)
-      ret.append(name)
-      return ret
+      return $('<div/>').addClass('uml', 'datatype', EXPANDED).append(
+        renderList(this.name, [], () => null, 'datatype')
+      )
     }
 
     summarize () {
@@ -5167,13 +5253,30 @@ function UmlModel ($) {
         $('<span/>').text(this.name).addClass('name')
       )
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "NodeConstraint",
+        "datatype": this.datatype
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Class extends Packagable {
-    constructor (id, name, properties) {
-      super(id, name)
+    constructor (id, name, properties, isAbstract, packages, comments) {
+      super(id, name, packages, comments)
       Object.assign(this, {
-        properties
+        get type () { return 'Class' },
+        properties,
+        isAbstract
       })
     }
 
@@ -5211,11 +5314,54 @@ function UmlModel ($) {
       })
       return packages
     }
+
+    toShExJ (parents = [], options = {}) {
+      let ret = {
+        "id": options.iri(this.name, this),
+        "type": "Shape",
+      }
+      if (this.properties.length > 0) {
+        let conjuncts = this.properties.map(
+          p => {
+            let ret = {
+              "type": "TripleConstraint",
+              "predicate": options.iri(p.name, p),
+              "valueExpr": options.iri(p.type.name, this),
+            }
+            if (this.min !== undefined) { ret.min = this.min }
+            if (this.max !== undefined) { ret.max = this.max }
+            if (options.annotations) {
+              let toAdd = options.annotations(this)
+              if (toAdd && toAdd.length) {
+                ret.annotations = toAdd
+              }
+            }
+            return ret
+          }
+        )
+        if (conjuncts.length === 1) {
+          ret.expression = conjuncts[0]
+        } else {
+          ret.expression = {
+            "type": "EachOf",
+            "expressions": conjuncts
+          }
+        }
+      }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
+    }
   }
 
   class Property {
-    constructor (id, name, type, min, max, association, aggregation) {
+    constructor (id, name, type, min, max, association, aggregation, comments) {
       Object.assign(this, {
+        get type () { return 'Property' },
         id,
         name,
         type,
@@ -5224,6 +5370,7 @@ function UmlModel ($) {
         association,
         aggregation
       })
+      if (comments && comments.length) { this.comments = comments }
     }
 
     renderProp () {
@@ -5234,17 +5381,36 @@ function UmlModel ($) {
     }
   }
 
-  function AssociationRecord (id, name) {
-    // if (name === null) {
-    //   throw Error('no name for AssociationRecord ' + id)
-    // }
-    this.id = id
-    this.name = name
+  class Import {
+    constructor (id, ref) {
+      Object.assign(this, {
+        get type () { return 'Import' },
+        id, ref
+      })
+    }
+
+    render () {
+      let ret = $('<div/>').addClass('uml', 'import', EXPANDED)
+      ret.append($('<div/>').addClass('leader').text('→'), this.ref.render())
+      return ret
+    }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'import']).append(
+        $('<span/>').text('import').addClass('type'),
+        $('<span/>').append(this.ref.summarize()).addClass('name')
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return []
+    }
   }
 
   class MissingElement {
     constructor (id) {
       Object.assign(this, {
+        get type () { return 'MissingElement' },
         id
       })
     }
@@ -5257,6 +5423,7 @@ function UmlModel ($) {
     Package,
     Enumeration,
     Datatype,
+    Import,
     MissingElement,
 //    Association,
     Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }
@@ -7976,7 +8143,7 @@ function main () {
     return type
   }
   const ParserOpts = {
-    viewPattern: /FunctionalViews/,
+    viewPattern: /Functional999Views/,
     normalizeType: normalizeType,
     nameMap: {
       'Views (Exported from Drupal)': 'Views',
@@ -8121,7 +8288,41 @@ function main () {
       progress.append($('<li/>').text('XMI').append(modelUL))
 
       let toy = UmlParser.toUML(model)
-      console.dir(toy)
+      const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
+      debugger;      console.dir(toy.toShExJ({
+        iri: function (suffix, elt) {
+          return 'http://ddi-alliance.org/ns/#' + suffix
+        },
+        annotations: function (elt) {
+          // ShEx doesn't currently allow annotations on NodeConstraints.
+          if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+          let ret = [{
+            "type": "Annotation",
+            "predicate": RDFS + "definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
+          }]
+          if (elt.packages) {
+            ret = ret.concat({
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#package",
+              "object": {
+                "value": "ComplexDataTypes"
+              }
+            })
+          }
+          if (elt.comments) {
+            ret = ret.concat({
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+              "object": {
+                "value": elt.comments[0],
+                "type": "https://github.com/commonmark/commonmark.js"
+              }
+            })
+          }
+          return ret
+        }
+      }))
       // const ShEx = require('shex')
       // let toyUL = $('<ul/>')
       // structureToListItems(toy, toyUL, AllRecordTypes)
@@ -8540,6 +8741,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               //     packageId => renderPackage(packageId, serializer, markup)
               //   ).join('\n')
               //   break
+              case 'package':
+                return renderPackage(model.packages[entry.id], serializer, markup)
               case 'class':
                 return serializer.class(model, entry.id, markup)
               case 'enumeration':
@@ -9139,6 +9342,7 @@ let CanonicalUmlXmiParser = function (opts) {
     let properties = {}
     let enums = {}
     let datatypes = {}
+    let imports = {}
     let classHierarchy = makeHierarchy()
     let packageHierarchy = makeHierarchy()
 
@@ -9153,6 +9357,7 @@ let CanonicalUmlXmiParser = function (opts) {
       properties: properties,
       enums: enums,
       datatypes: datatypes,
+      imports: imports,
       classHierarchy: classHierarchy,
       packageHierarchy: packageHierarchy,
       associations: associations
@@ -9319,18 +9524,29 @@ let CanonicalUmlXmiParser = function (opts) {
                 elements: []
               })
               if (parents.length) {
-                if (id.match(/Pattern/)) {
+                if (id.match(/Pattern/)) { // !! DDI-specific
                   recurse = false // don't record Pattern packages.
                 } else {
                   packageHierarchy.add(parent, id)
                   packages[parent].elements.push({type: 'package', id: id})
                 }
               }
-              if (recurse && 'packagedElement' in elt) {
-                // walk desendents
-                elt.packagedElement.forEach(sub => {
-                  visitPackage(sub, [id].concat(parents))
-                })
+              if (recurse) {
+                if ('elementImport' in elt) {
+                  elt.elementImport.forEach(sub => {
+                    // visitPackage(sub, [id].concat(parents))
+                    let importId = sub.$['xmi:id']
+                    let ref = sub.importedElement[0].$['xmi:idref']
+                    imports[importId] = new ImportedElementRecord(importId, ref)
+                    packages[id].elements.push({type: 'import', id: importId})
+                  })
+                }
+                if ('packagedElement' in elt) {
+                  // walk desendents
+                  elt.packagedElement.forEach(sub => {
+                    visitPackage(sub, [id].concat(parents))
+                  })
+                }
               }
             }
             break
@@ -9433,6 +9649,11 @@ let CanonicalUmlXmiParser = function (opts) {
     // }
     this.id = id
     this.name = name
+  }
+
+  function ImportedElementRecord     (id, idref) {
+    this.id = id
+    this.idref = idref
   }
 
   function updateReferees (model) {
@@ -9805,6 +10026,7 @@ let CanonicalUmlXmiParser = function (opts) {
       let classes = {}
       let datatypes = {}
       let associations = {}
+      let imports = {}
       let missingElements = {}
 
       return new UmlModel.Model(
@@ -9815,6 +10037,8 @@ let CanonicalUmlXmiParser = function (opts) {
 
       function mapElementByReference (reference) {
         switch (reference.type) {
+        case 'import':
+          return followImport(reference.id)
         case 'package':
           return createPackage(reference.id)
         case 'enumeration':
@@ -9829,13 +10053,47 @@ let CanonicalUmlXmiParser = function (opts) {
         }
       }
 
+      function followImport (importId) {
+        if (importId in imports) {
+          throw Error('import id "' + importId + '" already used for ' + JSON.stringify(imports[importId]))
+          // return imports[importId]
+        }
+        const importRecord = xmiGraph.imports[importId]
+        let ref = createdReferencedValueType(importRecord.idref)
+        return imports[importId] = new UmlModel.Import(importId, ref)
+        // imports[importId] = createdReferencedValueType(importRecord.idref)
+        // imports[importId].importId = importId // write down that it's an import for round-tripping
+        // return imports[importId]
+      }
+
+      function createdReferencedValueType (target) {
+        if (target in xmiGraph.packages) {
+          return createPackage(target)
+        }
+        if (target in xmiGraph.enums) {
+          return createEnumeration(target)
+        }
+        if (target in xmiGraph.datatypes) {
+          return createDatatype(target)
+        }
+        if (target in xmiGraph.classes) {
+          return createClass(target)
+        }
+        if (target in missingElements) {
+          return missingElements[target]
+        }
+        return missingElements[target] = createMissingElement(target)
+      }
+
       function mapElementByIdref (propertyRecord) {
         if (propertyRecord.href) {
           if (propertyRecord.href in datatypes) {
             return datatypes[propertyRecord.href]
           }
-          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, propertyRecord.href)
+          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, propertyRecord.href, propertyRecord.packages, propertyRecord.comments)
         }
+        return createdReferencedValueType(propertyRecord.idref)
+        // !! VV disabled VV
         if (propertyRecord.idref in xmiGraph.packages) {
           return createPackage(propertyRecord.idref)
         }
@@ -9856,7 +10114,7 @@ let CanonicalUmlXmiParser = function (opts) {
 
       function createPackage (packageId) {
         const packageRecord = xmiGraph.packages[packageId]
-        return new UmlModel.Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference))
+        return new UmlModel.Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference), packageRecord.packages, packageRecord.comments)
       }
 
       function createEnumeration (enumerationId) {
@@ -9864,7 +10122,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return enums[enumerationId]
         }
         const enumerationRecord = xmiGraph.enums[enumerationId]
-        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values)
+        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values, enumerationRecord.packages, enumerationRecord.comments)
       }
 
       function createDatatype (datatypeId) {
@@ -9872,7 +10130,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, datatypeRecord.name)
+        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, datatypeRecord.name, datatypeRecord.packages, datatypeRecord.comments)
       }
 
       function createClass (classId) {
@@ -9880,7 +10138,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [])
+        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [], classRecord.packages, classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(createProperty)
         return ret
@@ -9912,6 +10170,7 @@ let CanonicalUmlXmiParser = function (opts) {
     AssociationRecord: AssociationRecord,
     AssocRefRecord: AssocRefRecord,
     RefereeRecord: RefereeRecord,
+    ImportedElementRecord: ImportedElementRecord,
   }
 }
 

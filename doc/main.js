@@ -45,7 +45,7 @@ function main () {
     return type
   }
   const ParserOpts = {
-    viewPattern: /FunctionalViews/,
+    viewPattern: /Functional999Views/,
     normalizeType: normalizeType,
     nameMap: {
       'Views (Exported from Drupal)': 'Views',
@@ -190,7 +190,41 @@ function main () {
       progress.append($('<li/>').text('XMI').append(modelUL))
 
       let toy = UmlParser.toUML(model)
-      console.dir(toy)
+      const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
+      debugger;      console.dir(toy.toShExJ({
+        iri: function (suffix, elt) {
+          return 'http://ddi-alliance.org/ns/#' + suffix
+        },
+        annotations: function (elt) {
+          // ShEx doesn't currently allow annotations on NodeConstraints.
+          if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+          let ret = [{
+            "type": "Annotation",
+            "predicate": RDFS + "definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
+          }]
+          if (elt.packages) {
+            ret = ret.concat({
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#package",
+              "object": {
+                "value": "ComplexDataTypes"
+              }
+            })
+          }
+          if (elt.comments) {
+            ret = ret.concat({
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+              "object": {
+                "value": elt.comments[0],
+                "type": "https://github.com/commonmark/commonmark.js"
+              }
+            })
+          }
+          return ret
+        }
+      }))
       // const ShEx = require('shex')
       // let toyUL = $('<ul/>')
       // structureToListItems(toy, toyUL, AllRecordTypes)
@@ -609,6 +643,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               //     packageId => renderPackage(packageId, serializer, markup)
               //   ).join('\n')
               //   break
+              case 'package':
+                return renderPackage(model.packages[entry.id], serializer, markup)
               case 'class':
                 return serializer.class(model, entry.id, markup)
               case 'enumeration':
