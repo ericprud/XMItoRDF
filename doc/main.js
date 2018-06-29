@@ -191,7 +191,9 @@ function main () {
 
       let toy = UmlParser.toUML(model)
       const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
-      debugger;      console.dir(toy.toShExJ({
+      debugger
+      console.dir(toy)
+      console.dir(toy.toShExJ({
         iri: function (suffix, elt) {
           return 'http://ddi-alliance.org/ns/#' + suffix
         },
@@ -208,7 +210,7 @@ function main () {
               "type": "Annotation",
               "predicate": "http://www.w3.org/ns/shex-xmi#package",
               "object": {
-                "value": "ComplexDataTypes"
+                "value": elt.packages[0] // just the inner-most package
               }
             })
           }
@@ -217,8 +219,17 @@ function main () {
               "type": "Annotation",
               "predicate": "http://www.w3.org/ns/shex-xmi#comment",
               "object": {
-                "value": elt.comments[0],
+                "value": elt.comments[0], // !! just the first comment
                 "type": "https://github.com/commonmark/commonmark.js"
+              }
+            })
+          }
+          if (elt.aggregation) {
+            ret = ret.concat({
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
+              "object": {
+                "value": (elt.aggregation === UmlModel.Aggregation.shared ? "shexmi:sharedAggregation" : elt.aggregation === UmlModel.Aggregation.composite ? "shexmi:compositeAggregation" : "\"???\"")
               }
             })
           }
@@ -276,7 +287,7 @@ function main () {
         $('<li/>').append(
           'Views',
           $('<ul/>').append(
-            model.views.map(v => v.name).map(
+            (model.views || []).map(v => v.name).map(
               viewName => $('<li/>').append($('<button/>').text(viewName).on('click', evt => {
                 let s = model.getView(model, source, viewName,
                                       $('#followReferencedClasses').is(':checked'),
@@ -651,6 +662,8 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
                 return serializer.enum(model, entry.id, markup)
               case 'datatype':
                 return serializer.datatype(model, entry.id, markup)
+              case 'import':
+                return ''
               default:
                 throw Error('need renderPackage handler for ' + entry.type)
             }

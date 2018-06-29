@@ -923,7 +923,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [], classRecord.packages, classRecord.comments)
+        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [], classRecord.isAbstract, classRecord.packages, classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(createProperty)
         return ret

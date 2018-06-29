@@ -10,7 +10,7 @@ function UmlModel ($) {
 
   /** render members of a Model or a Package
    */
-  function renderList (name, list, renderF, cssClass) {
+  function renderElement (name, list, renderF, cssClass) {
     let expandPackages = $('<img/>', { src: 'plusbox.gif' })
     let elements = $('<ul/>')
     let packages = $('<div/>').addClass(['uml', cssClass]).append(
@@ -62,7 +62,7 @@ function UmlModel ($) {
         },
         get datatypes () {
           return this.packages.reduce(
-            (acc, pkg) => acc.concat(pkg.list('Datatypes')), []
+            (acc, pkg) => acc.concat(pkg.list('Datatype')), []
           )
         },
         get properties () {
@@ -88,7 +88,7 @@ function UmlModel ($) {
     render () {
       let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
       let sourceString = [this.source.resource, this.source.method, this.source.timestamp].join(' ')
-      let packages = renderList(sourceString, this.packages, elt => elt.render(), 'model')
+      let packages = renderElement(sourceString, this.packages, elt => elt.render(), 'model')
       ret.append(packages)
       return ret
     }
@@ -132,7 +132,7 @@ function UmlModel ($) {
 
     render () {
       let ret = $('<div/>').addClass('uml', 'package', EXPANDED)
-      let packages = renderList(this.name, this.elements, elt => elt.render(), 'package')
+      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
       ret.append(packages)
       return ret
     }
@@ -168,7 +168,7 @@ function UmlModel ($) {
 
     render () {
       let ret = $('<div/>').addClass('uml', 'enumeration', EXPANDED)
-      let packages = renderList(this.name, this.values, elt => elt, 'enumeration')
+      let packages = renderElement(this.name, this.values, elt => elt, 'enumeration')
       ret.append(packages)
       return ret
     }
@@ -209,7 +209,7 @@ function UmlModel ($) {
 
     render () {
       return $('<div/>').addClass('uml', 'datatype', EXPANDED).append(
-        renderList(this.name, [], () => null, 'datatype')
+        renderElement(this.name, [], () => null, 'datatype')
       )
     }
 
@@ -248,7 +248,7 @@ function UmlModel ($) {
 
     render () {
       let ret = $('<div/>').addClass('uml', 'class', EXPANDED)
-      let packages = renderList(this.name, this.properties, property => {
+      let packages = renderElement(this.name, this.properties, property => {
         return property.renderProp()
       }, 'class')
       ret.append(packages)
@@ -282,33 +282,23 @@ function UmlModel ($) {
     }
 
     toShExJ (parents = [], options = {}) {
+      let shape = {
+        "type": "Shape"
+      }
       let ret = {
         "id": options.iri(this.name, this),
-        "type": "Shape",
+        "type": "ShapeDecl",
+        "isAbstract": this.isAbstract,
+        "shapeExpr": shape
       }
       if (this.properties.length > 0) {
         let conjuncts = this.properties.map(
-          p => {
-            let ret = {
-              "type": "TripleConstraint",
-              "predicate": options.iri(p.name, p),
-              "valueExpr": options.iri(p.type.name, this),
-            }
-            if (this.min !== undefined) { ret.min = this.min }
-            if (this.max !== undefined) { ret.max = this.max }
-            if (options.annotations) {
-              let toAdd = options.annotations(this)
-              if (toAdd && toAdd.length) {
-                ret.annotations = toAdd
-              }
-            }
-            return ret
-          }
+          p => p.propToShExJ(options)
         )
         if (conjuncts.length === 1) {
-          ret.expression = conjuncts[0]
+          shape.expression = conjuncts[0]
         } else {
-          ret.expression = {
+          shape.expression = {
             "type": "EachOf",
             "expressions": conjuncts
           }
@@ -317,7 +307,7 @@ function UmlModel ($) {
       if (options.annotations) {
         let toAdd = options.annotations(this)
         if (toAdd && toAdd.length) {
-          ret.annotations = toAdd
+          shape.annotations = toAdd
         }
       }
       return ret
@@ -344,6 +334,23 @@ function UmlModel ($) {
         this.name,
         this.type.summarize()
       )
+    }
+
+    propToShExJ (options) {
+      let ret = {
+        "type": "TripleConstraint",
+        "predicate": options.iri(this.name, this),
+        "valueExpr": options.iri(this.type.name, this)
+      }
+      if (this.min !== undefined) { ret.min = this.min }
+      if (this.max !== undefined) { ret.max = this.max }
+      if (options.annotations) {
+        let toAdd = options.annotations(this)
+        if (toAdd && toAdd.length) {
+          ret.annotations = toAdd
+        }
+      }
+      return ret
     }
   }
 
