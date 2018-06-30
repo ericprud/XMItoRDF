@@ -1,8 +1,11 @@
 /**
  */
 
-function UmlModel ($) {
+function UmlModel (modelOptions = {}, $ = null) {
 
+  if (!('externalDatatype' in modelOptions)) {
+    modelOptions.externalDatatype = () => false
+  }
   if (typeof UmlModel.singleton === 'object')
     return UmlModel.singleton
   const AGGREGATION_shared = 'AGGREGATION_shared'
@@ -203,7 +206,8 @@ function UmlModel ($) {
     constructor (id, name, packages, comments) {
       super(id, name, packages, comments)
       Object.assign(this, {
-        get type () { return 'Datatype' },
+        external: modelOptions.externalDatatype(name),
+        get type () { return 'Datatype' }
       })
     }
 
@@ -337,10 +341,17 @@ function UmlModel ($) {
     }
 
     propToShExJ (options) {
+      let valueExpr =
+            this.type.type === 'Datatype' && this.type.external === true
+            ? {
+                "type": "NodeConstraint",
+                "datatype": this.type.name
+              }
+            : options.iri(this.type.name, this)
       let ret = {
         "type": "TripleConstraint",
         "predicate": options.iri(this.name, this),
-        "valueExpr": options.iri(this.type.name, this)
+        "valueExpr": valueExpr
       }
       if (this.min !== undefined) { ret.min = this.min }
       if (this.max !== undefined) { ret.max = this.max }

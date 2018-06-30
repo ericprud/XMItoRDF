@@ -91,21 +91,26 @@ function main () {
       'Class Model (Exported from Drupal)': 'ddi4_model',
       'ClassLibrary': 'ddi4_model', // minimize diffs
       'FunctionalViews': 'Views',
-      'xsd:anyUri': 'http://www.w3.org/2001/XMLSchema#anyURI',
-      'xsd:anguage': 'http://www.w3.org/2001/XMLSchema#language'
+      'xsd:anyUri': XSD + 'anyURI',
+      'xsd:anguage': XSD + 'language'
     }
   }
-  const UmlModel = require('./uml-model')($)
+  const UmlModel = require('./uml-model')({
+    externalDatatype: n => n.startsWith(XSD)
+  }, $)
   const UmlParser = require('./canonical-uml-xmi-parser')(ParserOpts)
   const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
   const SHEXMI = 'http://www.w3.org/ns/shex-xmi#'
-  const NAMESPACES = [[RDFS, 'rdfs'],
+  const DDI = 'http://ddi-alliance.org/ns/#'
+  const NAMESPACES = [[DDI, 'ddi'],
+                      [XSD, 'xsd'],
+                      [RDFS, 'rdfs'],
                       [SHEXMI, 'shexmi']]
   function spanText (str) {
-    return () => $('<span/>', { class: 'record' }).text(str)
+    return (t) => $('<span/>', { class: 'record' }).text(str)
   }
 
-  const AllRecordTypes = [
+  const UmlRecordTypes = [
     {type: UmlParser.ModelRecord,       maker: spanText('model'  )},
     {type: UmlParser.PropertyRecord,    maker: spanText('prop'   )},
     {type: UmlParser.ClassRecord,       maker: spanText('Class'  )},
@@ -116,6 +121,20 @@ function main () {
     {type: UmlParser.AssociationRecord, maker: spanText('Assoc'  )},
     {type: UmlParser.AssocRefRecord,    maker: spanText('assoc'  )},
     {type: UmlParser.RefereeRecord,     maker: spanText('ref'    )}
+  ]
+
+  let spanArg1 = t => $('<span/>', { class: 'record' }).text(t)
+  const RdfRecordTypes = [
+    {type: 'Schema',           maker: spanArg1},
+    {type: 'ShapeDecl',        maker: spanArg1},
+    {type: 'ShapeAnd',        maker: spanArg1},
+    {type: 'ShapeOr',        maker: spanArg1},
+    {type: 'ShapeNot',        maker: spanArg1},
+    {type: 'NodeConstraint',        maker: spanArg1},
+    {type: 'EachOf',        maker: spanArg1},
+    {type: 'OneOf',        maker: spanArg1},
+    {type: 'TripleConstraint', maker: spanArg1},
+    {type: 'Annotation',       maker: spanArg1},
   ]
 
   $('#load-file').on('change', function (evt) {
@@ -227,17 +246,17 @@ function main () {
 
     function render (model) {
       let modelUL = $('<ul/>')
-      structureToListItems(model, modelUL, AllRecordTypes)
+      structureToListItems(model, modelUL, UmlRecordTypes)
       collapse(modelUL)
-      progress.append($('<li/>').text('XMI').append(modelUL))
+      progress.append($('<li/>').text('XMI graph').append(modelUL))
 
       let toy = UmlParser.toUML(model)
-      progress.append($('<li/>').text('UML').append(toy.render()))
-      debugger
+      progress.append($('<li/>').text('UML model').append(toy.render()))
+      toy.datatypes.find(s => s.id === DDI + 'anyURI') // !! set external datatype
       console.dir(toy)
       let shexj = toy.toShExJ({
         iri: function (suffix, elt) {
-          return 'http://ddi-alliance.org/ns/#' + suffix
+          return DDI + suffix
         },
         annotations: function (elt) {
           // ShEx doesn't currently allow annotations on NodeConstraints.
@@ -278,14 +297,16 @@ function main () {
           return ret
         }
       })
+      shexj.shapes.find(s => s.id === DDI + 'anyURI').datatype = XSD + 'anyURI'
+      // shexj.shapes.find(s => s.id === DDI + 'langauge').datatype = XSD + 'language'
       console.log(shexj)
       let shexjUL = $('<ul/>')
-      structureToListItems(shexj, shexjUL, AllRecordTypes)
+      structureToListItems({ShExJ: shexj}, shexjUL, RdfRecordTypes)
       collapse(shexjUL)
-      progress.append($('<li/>').text('Schema').append(shexjUL))
+      progress.append($('<li/>').text('RDF model').append(shexjUL))
       // const ShEx = require('shex')
       // let toyUL = $('<ul/>')
-      // structureToListItems(toy, toyUL, AllRecordTypes)
+      // structureToListItems(toy, toyUL, UmlRecordTypes)
       // collapse(toyUL)
       // progress.append($('<li/>').text('UML').append(toyUL))
 
@@ -329,7 +350,7 @@ function main () {
       progress.append(htmlizeFormats(patched))
 
       // console.log('model', model, Object.keys(model.classes).length, Object.keys(model.properties).length)
-      debugger;progress.append(
+      progress.append(
         $('<li/>').append(
           'Views',
           $('<ul/>').append(
@@ -341,7 +362,7 @@ function main () {
                 s.views = []
                 console.log(s)
                 let modelUL = $('<ul/>')
-                structureToListItems(s, modelUL, AllRecordTypes)
+                structureToListItems(s, modelUL, UmlRecordTypes)
                 try {
                   modelUL.append(htmlizeFormats(s))
                 } catch (e) {
@@ -1058,6 +1079,11 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         title += ':'
         value = $('<span/>').addClass('keyword').text(elt)
       } else if (typeof elt === 'object') {
+        typeIcon = recordTypes.find(
+          rt => typeof rt.type === 'string'
+            ? elt.type === rt.type
+            : elt instanceof rt.type
+        )
         if ('value' in elt && !Object.keys(elt).reduce(
           (acc, k2) => acc || ['value', 'type', 'language'].indexOf(k2) === -1, false
         )) {
@@ -1077,6 +1103,29 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
               value = $('<span/>').addClass('scalar').text(elt.value)
             }
           }
+        } else if ('type' in elt && elt.type === 'Annotation') {
+          title = $('<span/>').addClass('tripleConstraint').append(
+            turtlify(elt.predicate),
+            separator(),
+            turtlify(elt.object)
+          )
+          value = $('<ul/>')
+          structureToListItems(elt, value, recordTypes)
+          typeIcon = typeIcon.maker(typeIcon.type)
+        } else if ('type' in elt && elt.type === 'TripleConstraint') {
+          let expr = typeof elt.valueExpr === 'string'
+                ? $('<span/>').append('@', turtlify(elt.valueExpr).addClass('reference'))
+                : elt.valueExpr.type === 'NodeConstraint' && 'datatype' in elt.valueExpr
+                ? $('<span/>').append(turtlify(elt.valueExpr.datatype).addClass('datatype'))
+                : '...'
+          title = $('<span/>').addClass('tripleConstraint').append(
+            turtlify(elt.predicate),
+            separator(),
+            expr
+          )
+          value = $('<ul/>')
+          structureToListItems(elt, value, recordTypes)
+          typeIcon = typeIcon.maker(typeIcon.type)
         } else {
           let delims = ['{', '}']
           if (elt.constructor === Array) {
@@ -1091,19 +1140,12 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
             }
           } else if ('$' in elt && 'xmi:id' in elt.$) {
             title += elt.$['xmi:id']
-          } else if ('type' in elt && elt.type === 'Annotation') {
-            let p = qname(elt.predicate)
-            let o = typeof elt.object === 'object'
-                  ? '"' + elt.object.value + '"'
-                  : elt.object
-            title += p + ' ' + (o.length > 80 ? o.substr(0, 40) : o)
           }
-          typeIcon = recordTypes.find(rt => elt instanceof rt.type)
           if (typeIcon === undefined) {
             typeIcon = ''
             title += ' ' + delims[0] + Object.keys(elt).length + delims[1]
           } else {
-            typeIcon = typeIcon.maker()
+            typeIcon = typeIcon.maker(typeIcon.type)
           }
           value = $('<ul/>')
           structureToListItems(elt, value, recordTypes)
@@ -1119,13 +1161,22 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       into.append($('<li/>').append(typeIcon, title, value))
     }))
 
-    function qname (iri) {
+    function turtlify (term) {
+      if (typeof term === 'object') {
+        let text = term.value.length > 80 ? term.value.substr(0, 40) : term.value
+        return $('<span/>').addClass('literal').text('"' + term.value + '"')
+      }
       let map = NAMESPACES.find(
-        pair => iri.startsWith(pair[0])
+        pair => term.startsWith(pair[0])
       )
-      return map
-        ? map[1] + ':' + iri.substr(map[0].length)
-        : '<' + iri + '>'
+      let link = map
+            ? [$('<span/>').addClass('prefix').text(map[1] + ':'), $('<span/>').addClass('local').text(term.substr(map[0].length))]
+            : $('<span/>').addClass('relative').text('<' + term + '>')
+      return $('<span/>', {title: term}).addClass('iri').append(link)
+    }
+
+    function separator () {
+      return $('<span/>').addClass('separator').text(' ')
     }
   }
 
