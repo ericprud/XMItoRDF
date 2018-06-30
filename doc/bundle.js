@@ -9169,19 +9169,17 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
           typeIcon = ''
           value = ''
           if ('language' in elt) {
-            title = elt.value + '@' + elt.language;
+            value = $('<span/>').addClass('scalar').text(elt.value + '@' + elt.language);
           } else {
             if ('type' in elt) {
               if (elt.type === COMMONMARK) {
-                title = ''
-                value = window.marked(elt.value, MARKED_OPTS)
+                value = $('<div/>').addClass('scalar').append(window.marked(elt.value, MARKED_OPTS))
               } else {
-                title = '- complex literal -'
                 value = $('<ul/>')
                 structureToListItems(elt, value, recordTypes)
               }
             } else {
-              title = elt.value
+              value = $('<span/>').addClass('scalar').text(elt.value)
             }
           }
         } else {
@@ -9204,14 +9202,6 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
                   ? '"' + elt.object.value + '"'
                   : elt.object
             title += p + ' ' + (o.length > 80 ? o.substr(0, 40) : o)
-            function qname (iri) {
-              let map = NAMESPACES.find(
-                pair => iri.startsWith(pair[0])
-              )
-              return map
-                ? map[1] + ':' + iri.substr(map[0].length)
-                : '<' + iri + '>'
-            }
           }
           typeIcon = recordTypes.find(rt => elt instanceof rt.type)
           if (typeIcon === undefined) {
@@ -9233,6 +9223,15 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
       }
       into.append($('<li/>').append(typeIcon, title, value))
     }))
+
+    function qname (iri) {
+      let map = NAMESPACES.find(
+        pair => iri.startsWith(pair[0])
+      )
+      return map
+        ? map[1] + ':' + iri.substr(map[0].length)
+        : '<' + iri + '>'
+    }
   }
 
   // collapsable list from <from> element
