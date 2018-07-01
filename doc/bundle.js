@@ -5275,10 +5275,11 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   class Class extends Packagable {
-    constructor (id, name, properties, isAbstract, packages, comments) {
+    constructor (id, name, generalizations, properties, isAbstract, packages, comments) {
       super(id, name, packages, comments)
       Object.assign(this, {
         get type () { return 'Class' },
+        generalizations,
         properties,
         isAbstract
       })
@@ -5322,6 +5323,9 @@ function UmlModel (modelOptions = {}, $ = null) {
     toShExJ (parents = [], options = {}) {
       let shape = {
         "type": "Shape"
+      }
+      if ('generalizations' in this && this.generalizations.length > 0) {
+        shape.extends = this.generalizations.map(options.iri)
       }
       let ret = {
         "id": options.iri(this.name, this),
@@ -10302,7 +10306,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, [], classRecord.isAbstract, classRecord.packages, classRecord.comments)
+        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, classRecord.packages, classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(createProperty)
         return ret
