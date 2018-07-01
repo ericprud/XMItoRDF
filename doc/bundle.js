@@ -10320,7 +10320,8 @@ let CanonicalUmlXmiParser = function (opts) {
                             mapElementByIdref(propertyRecord),
                             propertyRecord.min, propertyRecord.max,
                             propertyRecord.association,
-                            propertyRecord.aggregation)
+                            propertyRecord.aggregation,
+                            propertyRecord.comments)
       }
 
     },
