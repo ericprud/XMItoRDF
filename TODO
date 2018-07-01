@@ -1,3 +1,10 @@
+DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language <name>language</name>:
+  doesn't have leading cap. conflicts with:
+    ExternalControlledVocabularyEntry.language
+    LanguageSpecificStringType.language
+    LanguageSpecificStructuredStringType.language
+
+From Diedra:
     <Declaration>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
     </Declaration>

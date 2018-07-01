@@ -395,12 +395,108 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
   }
 
+  class Reference {
+    constructor () {
+      Object.assign(this, {
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
+      ret.append('render() not implemented on: ' + Object.keys(this).join(' | '))
+      return ret
+    }
+*/
+  }
+
+  class ImportReference extends Reference {
+    constructor (_import) {
+      super()
+      Object.assign(this, {
+        get type () { return 'ImportReference' },
+        _import
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'package', EXPANDED)
+      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
+      ret.append(packages)
+      return ret
+    }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'ImportReference'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+*/
+  }
+
+  class PropertyReference extends Reference {
+    constructor (_class, property) {
+      super()
+      Object.assign(this, {
+        get type () { return 'PropertyReference' },
+        _class,
+        property
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'package', EXPANDED)
+      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
+      ret.append(packages)
+      return ret
+    }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'PropertyReference'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+*/
+  }
+
+
   class MissingElement {
-    constructor (id) {
+    constructor (id, references = []) {
       Object.assign(this, {
         get type () { return 'MissingElement' },
-        id
+        id,
+        references
       })
+    }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'missing']).append(
+        $('<span/>').text('missing').addClass('type'),
+        $('<span/>').text(this.id).addClass('name')
+      )
     }
   }
 
@@ -412,6 +508,9 @@ function UmlModel (modelOptions = {}, $ = null) {
     Enumeration,
     Datatype,
     Import,
+    Reference,
+    ImportReference,
+    PropertyReference,
     MissingElement,
 //    Association,
     Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }

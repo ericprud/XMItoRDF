@@ -5429,12 +5429,108 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
   }
 
+  class Reference {
+    constructor () {
+      Object.assign(this, {
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'model', EXPANDED)
+      ret.append('render() not implemented on: ' + Object.keys(this).join(' | '))
+      return ret
+    }
+*/
+  }
+
+  class ImportReference extends Reference {
+    constructor (_import) {
+      super()
+      Object.assign(this, {
+        get type () { return 'ImportReference' },
+        _import
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'package', EXPANDED)
+      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
+      ret.append(packages)
+      return ret
+    }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'ImportReference'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+*/
+  }
+
+  class PropertyReference extends Reference {
+    constructor (_class, property) {
+      super()
+      Object.assign(this, {
+        get type () { return 'PropertyReference' },
+        _class,
+        property
+      })
+    }
+/*
+    render () {
+      let ret = $('<div/>').addClass('uml', 'package', EXPANDED)
+      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
+      ret.append(packages)
+      return ret
+    }
+
+    list (type) {
+      return this.elements.reduce(
+        (acc, elt) => elt.type === type
+          ? acc.concat([elt])
+          : elt.type === 'PropertyReference'
+          ? acc.concat(elt.list(type))
+          : acc,
+        []
+      )
+    }
+
+    toShExJ (parents = [], options = {}) {
+      return this.elements.reduce(
+        (acc, elt) => acc.concat(elt.toShExJ(parents.concat(this.name), options)),
+        []
+      )
+    }
+*/
+  }
+
+
   class MissingElement {
-    constructor (id) {
+    constructor (id, references = []) {
       Object.assign(this, {
         get type () { return 'MissingElement' },
-        id
+        id,
+        references
       })
+    }
+
+    summarize () {
+      return $('<span/>').addClass(['uml', 'missing']).append(
+        $('<span/>').text('missing').addClass('type'),
+        $('<span/>').text(this.id).addClass('name')
+      )
     }
   }
 
@@ -5446,6 +5542,9 @@ function UmlModel (modelOptions = {}, $ = null) {
     Enumeration,
     Datatype,
     Import,
+    Reference,
+    ImportReference,
+    PropertyReference,
     MissingElement,
 //    Association,
     Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite }
@@ -10227,14 +10326,15 @@ let CanonicalUmlXmiParser = function (opts) {
           // return imports[importId]
         }
         const importRecord = xmiGraph.imports[importId]
-        let ref = createdReferencedValueType(importRecord.idref)
-        return imports[importId] = new UmlModel.Import(importId, ref)
+        let ret = imports[importId] = new UmlModel.Import(importId, null)
+        ret.ref = createdReferencedValueType(importRecord.idref, new UmlModel.ImportReference(ret))
+        return ret
         // imports[importId] = createdReferencedValueType(importRecord.idref)
         // imports[importId].importId = importId // write down that it's an import for round-tripping
         // return imports[importId]
       }
 
-      function createdReferencedValueType (target) {
+      function createdReferencedValueType (target, reference) {
         if (target in xmiGraph.packages) {
           return createPackage(target)
         }
@@ -10250,34 +10350,17 @@ let CanonicalUmlXmiParser = function (opts) {
         if (target in missingElements) {
           return missingElements[target]
         }
-        return missingElements[target] = createMissingElement(target)
+        return missingElements[target] = createMissingElement(target, reference)
       }
 
-      function mapElementByIdref (propertyRecord) {
+      function mapElementByIdref (propertyRecord, reference) {
         if (propertyRecord.href) {
           if (propertyRecord.href in datatypes) {
             return datatypes[propertyRecord.href]
           }
           return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, propertyRecord.href, propertyRecord.packages, propertyRecord.comments)
         }
-        return createdReferencedValueType(propertyRecord.idref)
-        // !! VV disabled VV
-        if (propertyRecord.idref in xmiGraph.packages) {
-          return createPackage(propertyRecord.idref)
-        }
-        if (propertyRecord.idref in xmiGraph.enums) {
-          return createEnumeration(propertyRecord.idref)
-        }
-        if (propertyRecord.idref in xmiGraph.datatypes) {
-          return createDatatype(propertyRecord.idref)
-        }
-        if (propertyRecord.idref in xmiGraph.classes) {
-          return createClass(propertyRecord.idref)
-        }
-        if (propertyRecord.idref in missingElements) {
-          return missingElements[propertyRecord.idref]
-        }
-        return missingElements[propertyRecord.idref] = createMissingElement(propertyRecord.idref)
+        return createdReferencedValueType(propertyRecord.idref, reference)
       }
 
       function createPackage (packageId) {
@@ -10308,24 +10391,28 @@ let CanonicalUmlXmiParser = function (opts) {
         const classRecord = xmiGraph.classes[classId]
         let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, classRecord.packages, classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
-        ret.properties = classRecord.properties.map(createProperty)
+        ret.properties = classRecord.properties.map(
+          propertyRecord => createProperty(propertyRecord, ret))
         return ret
       }
 
-      function createMissingElement (missingElementId) {
+      function createMissingElement (missingElementId, reference) {
         if (missingElementId in missingElements) {
+          missingElements[missingElementId].references.push(reference)
           return missingElements[missingElementId]
         }
-        return missingElements[missingElementId] = new UmlModel.MissingElement(missingElementId)
+        return missingElements[missingElementId] = new UmlModel.MissingElement(missingElementId, [reference])
       }
 
-      function createProperty (propertyRecord) {
-        return new UmlModel.Property(propertyRecord.id, propertyRecord.name,
-                            mapElementByIdref(propertyRecord),
+      function createProperty (propertyRecord, inClass) {
+        let ret = new UmlModel.Property(propertyRecord.id, propertyRecord.name,
+                            null, // so we can pass the Property to unresolved types
                             propertyRecord.min, propertyRecord.max,
                             propertyRecord.association,
                             propertyRecord.aggregation,
                             propertyRecord.comments)
+        ret.type = mapElementByIdref(propertyRecord, new UmlModel.PropertyReference(inClass, ret))
+        return ret
       }
 
     },
