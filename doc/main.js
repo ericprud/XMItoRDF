@@ -50,9 +50,9 @@ const MARKED_OPTS = {
 function main () {
   let $ = window.jQuery
 
-  let XSD = 'http://www.w3.org/2001/XMLSchema#'
-  let UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
-  let UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
+  const XSD = 'http://www.w3.org/2001/XMLSchema#'
+  const UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
+  const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
 
   const normalizeType = function (type) {
     if (!type) {
@@ -218,7 +218,7 @@ function main () {
           // try JSON 'cause it's easier
           UmlParser.parseJSON(
             umlText, source,
-            (err, result) => {
+            (err, xmiGraph) => {
               if (err) {
                 status.text('parsing UML...')
                 window.setTimeout(
@@ -227,7 +227,7 @@ function main () {
                   RENDER_DELAY
                 )
               } else {
-                parserCallback(err, result)
+                parserCallback(err, xmiGraph)
               }
             })
         },
@@ -235,26 +235,33 @@ function main () {
       )
     }
 
-    function parserCallback (err, result) {
+    function parserCallback (err, xmiGraph) {
       if (err) {
         console.error(err)
       } else {
         status.text('rendering structure...')
-        window.setTimeout(render, RENDER_DELAY, result)
+        window.setTimeout(render, RENDER_DELAY, xmiGraph)
       }
     }
 
-    function render (model) {
-      let modelUL = $('<ul/>')
-      structureToListItems(model, modelUL, UmlRecordTypes)
-      collapse(modelUL)
-      progress.append($('<li/>').text('XMI graph').append(modelUL))
+    function render (xmiGraph) {
+      let xmiGraphUL = $('<ul/>')
+      structureToListItems(xmiGraph, xmiGraphUL, UmlRecordTypes)
+      collapse(xmiGraphUL)
+      progress.append($('<li/>').text('XMI graph').append(xmiGraphUL))
 
-      let toy = UmlParser.toUML(model)
-      progress.append($('<li/>').text('UML model').append(toy.render()))
-      toy.datatypes.find(s => s.id === DDI + 'anyURI') // !! set external datatype
-      console.dir(toy)
-      let shexj = toy.toShExJ({
+      let model = UmlParser.toUML(xmiGraph)
+
+      model.elements[0].list('Package').filter(
+        pkg => pkg.name.endsWith('Pattern')
+      ).forEach(
+        pkg => pkg.remove()
+      )
+
+      progress.append($('<li/>').text('UML model').append(model.render()))
+      model.getDatatypes().find(s => s.id === DDI + 'anyURI') // !! set external datatype
+      console.dir(model)
+      let shexj = model.toShExJ({
         iri: function (suffix, elt) {
           return DDI + suffix
         },
@@ -266,12 +273,12 @@ function main () {
             "predicate": RDFS + "definedBy",
             "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
           }]
-          if (elt.packages) {
+          if (elt.parent) {
             ret = ret.concat({
               "type": "Annotation",
               "predicate": "http://www.w3.org/ns/shex-xmi#package",
               "object": {
-                "value": elt.packages[0] // just the inner-most package
+                "value": "http://lion.ddialliance.org/ddiobjects/" + elt.parent.name // just the inner-most package
               }
             })
           }
@@ -305,13 +312,13 @@ function main () {
       collapse(shexjUL)
       progress.append($('<li/>').text('RDF model').append(shexjUL))
       // const ShEx = require('shex')
-      // let toyUL = $('<ul/>')
-      // structureToListItems(toy, toyUL, UmlRecordTypes)
-      // collapse(toyUL)
-      // progress.append($('<li/>').text('UML').append(toyUL))
+      // let modelUL = $('<ul/>')
+      // structureToListItems(model, modelUL, UmlRecordTypes)
+      // collapse(modelUL)
+      // progress.append($('<li/>').text('UML').append(modelUL))
 
       status.text('diagnostics...')
-      window.setTimeout(diagnostics, RENDER_DELAY, model)
+      window.setTimeout(diagnostics, RENDER_DELAY, xmiGraph)
     }
 
     function diagnostics (model) {

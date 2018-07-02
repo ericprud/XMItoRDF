@@ -309,7 +309,7 @@ let CanonicalUmlXmiParser = function (opts) {
                 elements: []
               })
               if (parents.length) {
-                if (id.match(/Pattern/)) { // !! DDI-specific
+                if (id.match(/Pattern999/)) { // !! DDI-specific
                   recurse = false // don't record Pattern packages.
                 } else {
                   packageHierarchy.add(parent, id)
@@ -807,6 +807,7 @@ let CanonicalUmlXmiParser = function (opts) {
       return objectify(JSON.parse(JSON.stringify(xmiGraph)))
     },
     toUML: function (xmiGraph) {
+      let packages = {}
       let enums = {}
       let classes = {}
       let datatypes = {}
@@ -814,37 +815,43 @@ let CanonicalUmlXmiParser = function (opts) {
       let imports = {}
       let missingElements = {}
 
-      return new UmlModel.Model(
+      let ret = new UmlModel.Model(
         xmiGraph.source,
-        Object.keys(xmiGraph.packageHierarchy.roots).map(createPackage),
+        null,
         missingElements
       )
+      ret.elements = Object.keys(xmiGraph.packageHierarchy.roots).map(
+        packageId => createPackage(packageId, new UmlModel.ModelReference(ret))
+      )
+      return ret
 
-      function mapElementByReference (reference) {
-        switch (reference.type) {
+      function mapElementByXmiReference (xmiRef, reference) {
+        switch (xmiRef.type) {
         case 'import':
-          return followImport(reference.id)
+          return followImport(xmiRef.id, reference)
         case 'package':
-          return createPackage(reference.id)
+          return createPackage(xmiRef.id, reference)
         case 'enumeration':
-          return createEnumeration(reference.id)
+          return createEnumeration(xmiRef.id, reference)
         case 'datatype':
-          return createDatatype(reference.id)
+          return createDatatype(xmiRef.id, reference)
         case 'class':
-          return createClass(reference.id)
+          return createClass(xmiRef.id)
         default:
-          throw Error('mapElementByReference: unknown reference type in ' + JSON.stringify(reference))
-          return reference
+          throw Error('mapElementByXmiReference: unknown reference type in ' + JSON.stringify(xmiRef))
         }
       }
 
-      function followImport (importId) {
+      function followImport (importId, reference) {
         if (importId in imports) {
           throw Error('import id "' + importId + '" already used for ' + JSON.stringify(imports[importId]))
+          // imports[importId].references.push(reference)
           // return imports[importId]
         }
         const importRecord = xmiGraph.imports[importId]
-        let ret = imports[importId] = new UmlModel.Import(importId, null)
+        // let ref = createdReferencedValueType(importRecord.idref)
+        // let ret = imports[importId] = new UmlModel.Import(importId, ref)
+        let ret = imports[importId] = new UmlModel.Import(importId, null, reference)
         ret.ref = createdReferencedValueType(importRecord.idref, new UmlModel.ImportReference(ret))
         return ret
         // imports[importId] = createdReferencedValueType(importRecord.idref)
@@ -854,19 +861,16 @@ let CanonicalUmlXmiParser = function (opts) {
 
       function createdReferencedValueType (target, reference) {
         if (target in xmiGraph.packages) {
-          return createPackage(target)
+          return createPackage(target, reference)
         }
         if (target in xmiGraph.enums) {
-          return createEnumeration(target)
+          return createEnumeration(target, reference)
         }
         if (target in xmiGraph.datatypes) {
-          return createDatatype(target)
+          return createDatatype(target, reference)
         }
         if (target in xmiGraph.classes) {
-          return createClass(target)
-        }
-        if (target in missingElements) {
-          return missingElements[target]
+          return createClass(target, reference)
         }
         return missingElements[target] = createMissingElement(target, reference)
       }
@@ -874,40 +878,51 @@ let CanonicalUmlXmiParser = function (opts) {
       function mapElementByIdref (propertyRecord, reference) {
         if (propertyRecord.href) {
           if (propertyRecord.href in datatypes) {
+            datatypes[propertyRecord.href].references.push(reference)
             return datatypes[propertyRecord.href]
           }
-          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, propertyRecord.href, propertyRecord.packages, propertyRecord.comments)
+          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, [reference], propertyRecord.href, null, propertyRecord.comments)
         }
         return createdReferencedValueType(propertyRecord.idref, reference)
       }
 
-      function createPackage (packageId) {
+      function createPackage (packageId, reference) {
+        if (packageId in packages) {
+          throw Error('package id "' + packageId + '" already used for ' + JSON.stringify(packages[packageId]))
+        }
         const packageRecord = xmiGraph.packages[packageId]
-        return new UmlModel.Package(packageId, packageRecord.name, packageRecord.elements.map(mapElementByReference), packageRecord.packages, packageRecord.comments)
+        let ret = packages[packageId] = new UmlModel.Package(packageId, reference, packageRecord.name, null, xmiGraph.packages[packageRecord.packages[0]], packageRecord.comments)
+        ret.elements = packageRecord.elements.map(
+          xmiReference => mapElementByXmiReference(xmiReference, new UmlModel.PackageReference(ret))
+        )
+        return ret
       }
 
-      function createEnumeration (enumerationId) {
+      function createEnumeration (enumerationId, reference) {
         if (enumerationId in enums) {
+          enums[enumerationId].references.push(reference)
           return enums[enumerationId]
         }
         const enumerationRecord = xmiGraph.enums[enumerationId]
-        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, enumerationRecord.name, enumerationRecord.values, enumerationRecord.packages, enumerationRecord.comments)
+        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, [reference], enumerationRecord.name, enumerationRecord.values, xmiGraph.packages[enumerationRecord.packages[0]], enumerationRecord.comments)
       }
 
-      function createDatatype (datatypeId) {
+      function createDatatype (datatypeId, reference) {
         if (datatypeId in datatypes) {
+          datatypes[datatypeId].references.push(reference)
           return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, datatypeRecord.name, datatypeRecord.packages, datatypeRecord.comments)
+        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, [reference], datatypeRecord.name, xmiGraph.packages[datatypeRecord.packages[0]], datatypeRecord.comments)
       }
 
-      function createClass (classId) {
+      function createClass (classId, reference) {
         if (classId in classes) {
+          classes[classId].references.push(reference)
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        let ret = classes[classId] = new UmlModel.Class(classId, classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, classRecord.packages, classRecord.comments)
+        let ret = classes[classId] = new UmlModel.Class(classId, [reference], classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, xmiGraph.packages[classRecord.packages[0]], classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(
           propertyRecord => createProperty(propertyRecord, ret))
@@ -923,13 +938,13 @@ let CanonicalUmlXmiParser = function (opts) {
       }
 
       function createProperty (propertyRecord, inClass) {
-        let ret = new UmlModel.Property(propertyRecord.id, propertyRecord.name,
+        let ret = new UmlModel.Property(propertyRecord.id, inClass, propertyRecord.name,
                             null, // so we can pass the Property to unresolved types
                             propertyRecord.min, propertyRecord.max,
                             propertyRecord.association,
                             propertyRecord.aggregation,
                             propertyRecord.comments)
-        ret.type = mapElementByIdref(propertyRecord, new UmlModel.PropertyReference(inClass, ret))
+        ret.type = mapElementByIdref(propertyRecord, new UmlModel.PropertyReference(ret))
         return ret
       }
 
