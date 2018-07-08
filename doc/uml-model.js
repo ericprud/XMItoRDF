@@ -21,13 +21,13 @@ function UmlModel (modelOptions = {}, $ = null) {
 
   /** render members of a Model or a Package
    */
-  function renderElement (name, list, renderF, cssClass) {
+  function renderElement (renderTitle, list, renderMember, cssClass) {
     let expandPackages = $('<img/>', { src: 'plusbox.gif' })
     let elements = $('<ul/>')
     let packages = $('<div/>').addClass('uml ' + cssClass).append(
       expandPackages,
       $('<span/>').text(cssClass).addClass('type', cssClass),
-      $('<span/>').text(name).addClass('name'),
+      renderTitle(this),
       $('<span/>').text(list.length).addClass('length'),
       elements
     ).addClass(COLLAPSED).on('click', evt => {
@@ -35,7 +35,7 @@ function UmlModel (modelOptions = {}, $ = null) {
         elements.append(list.map(
           elt => {
             try {
-              return $('<li/>').append(renderF(elt))
+              return $('<li/>').append(renderMember(elt))
             } catch (e) {
               console.warn([e, elt])
               return $('<li/>').addClass('error').append(e)
@@ -106,7 +106,14 @@ function UmlModel (modelOptions = {}, $ = null) {
     render () {
       let ret = $('<div/>').addClass('uml model ' + EXPANDED)
       let sourceString = [this.source.resource, this.source.method, this.source.timestamp].join(' ')
-      let packages = renderElement(sourceString, this.elements, elt => elt.render(), 'model')
+      let renderTitle = _ => [
+        $('<span/>').text(this.source.resource).addClass('name'),
+        ' ',
+        this.source.method,
+        ' ',
+        this.source.timestamp
+      ]
+      let packages = renderElement(renderTitle, this.elements, elt => elt.render(), 'model')
       ret.append(packages)
       return ret
     }
@@ -173,6 +180,10 @@ function UmlModel (modelOptions = {}, $ = null) {
       ret.append('render() not implemented on: ' + Object.keys(this).join(' | '))
       return ret
     }
+
+    renderTitle () {
+      return $('<span/>').text(this.name).addClass('name')
+    }
   }
 
   class Package extends Packagable {
@@ -209,7 +220,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     render () {
       let ret = $('<div/>').addClass('uml package ' + EXPANDED)
-      let packages = renderElement(this.name, this.elements, elt => elt.render(), 'package')
+      let packages = renderElement(_ => this.renderTitle(), this.elements, elt => elt.render(), 'package')
       ret.append(packages)
       return ret
     }
@@ -257,7 +268,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     render () {
       let ret = $('<div/>').addClass('uml enumeration ' + EXPANDED)
-      let packages = renderElement(this.name, this.values, elt => elt, 'enumeration')
+      let packages = renderElement(_ => this.renderTitle(), this.values, elt => elt, 'enumeration')
       ret.append(packages)
       return ret
     }
@@ -300,7 +311,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     render () {
       return $('<div/>').addClass('uml datatype ' + EXPANDED).append(
-        renderElement(this.name, [], () => null, 'datatype')
+        renderElement(_ => this.renderTitle(), [], () => null, 'datatype')
       )
     }
 
@@ -354,7 +365,15 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     render () {
       let ret = $('<div/>').addClass('uml class ' + EXPANDED)
-      let packages = renderElement(this.name, this.properties, property => {
+      let title = [this.name].concat((this.generalizations || []).map(
+        gen => '+' + gen
+      )).join(' ')
+      let renderTitle = _ => [
+        $('<span/>').text(this.name).addClass('name')
+      ].concat((this.generalizations || []).reduce(
+        (acc, gen) => acc.concat([' ', '+' + gen]), []
+      ))
+      let packages = renderElement(renderTitle, this.properties, property => {
         return property.renderProp()
       }, 'class')
       ret.append(packages)
