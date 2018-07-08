@@ -250,6 +250,95 @@
 					<name>c4a3</name>
 				</packagedElement>
 
+				<packagedElement xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization" xmi:type="uml:Class">
+					<ownedComment xmi:type="uml:Comment">
+						<body>Comment 1</body>
+					</ownedComment>
+					<generalization xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-generalization" xmi:type="uml:Generalization">
+						<general xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+					</generalization>
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1" xmi:type="uml:Property">
+						<ownedComment xmi:type="uml:Comment">
+							<body>Comment 1</body>
+						</ownedComment>
+						<type xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p1-upperValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</upperValue>
+						<name>c5p1</name>
+					</ownedAttribute>
+					<!-- <ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2" xmi:type="uml:Property"> -->
+					<!-- 	<ownedComment xmi:type="uml:Comment"> -->
+					<!-- 		<body>Comment 1</body> -->
+					<!-- 	</ownedComment> -->
+					<!-- 	<type xmi:idref="All-ClassLibrary-PackageOne-EnumOne"/> -->
+					<!-- 	<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2-lowerValue" xmi:type="uml:LiteralInteger"/> -->
+					<!-- 	<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralization-c3p2-upperValue" xmi:type="uml:LiteralUnlimitedNatural"> -->
+					<!-- 		<value>*</value> -->
+					<!-- 	</upperValue> -->
+					<!-- 	<name>c5p2</name> -->
+					<!-- </ownedAttribute> -->
+					<name>ClassWithOneGeneralization</name>
+				</packagedElement>
+
+				<packagedElement xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation" xmi:type="uml:Class">
+					<ownedComment xmi:type="uml:Comment">
+						<body>Comment 1</body>
+					</ownedComment>
+					<generalization xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-generalization" xmi:type="uml:Generalization">
+						<general xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+					</generalization>
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1" xmi:type="uml:Property">
+						<ownedComment xmi:type="uml:Comment">
+							<body>Comment 1</body>
+						</ownedComment>
+						<type xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p1-upperValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</upperValue>
+						<name>c6p1</name>
+					</ownedAttribute>
+					<!-- <ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2" xmi:type="uml:Property"> -->
+					<!-- 	<ownedComment xmi:type="uml:Comment"> -->
+					<!-- 		<body>Comment 1</body> -->
+					<!-- 	</ownedComment> -->
+					<!-- 	<type xmi:idref="All-ClassLibrary-PackageOne-EnumOne"/> -->
+					<!-- 	<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2-lowerValue" xmi:type="uml:LiteralInteger"/> -->
+					<!-- 	<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-c3p2-upperValue" xmi:type="uml:LiteralUnlimitedNatural"> -->
+					<!-- 		<value>*</value> -->
+					<!-- 	</upperValue> -->
+					<!-- 	<name>c6p2</name> -->
+					<!-- </ownedAttribute> -->
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+							<value>*</value>
+						</upperValue>
+						<association xmi:idref="All-ClassLibrary-PackageOne-associationFive"/>
+					</ownedAttribute>
+					<name>ClassWithOneGeneralizationOneAssociation</name>
+				</packagedElement>
+
+				<packagedElement xmi:id="All-ClassLibrary-PackageOne-associationFive" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-associationFive" xmi:type="uml:Association">
+					<ownedComment xmi:type="uml:Comment">
+						<body>Comment 1</body>
+					</ownedComment>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageOne-associationFive-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageOne-associationFive-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-associationFive-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageOne-associationFive-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-associationFive-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageOne-associationFive-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-associationFive-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</upperValue>
+						<association xmi:idref="All-ClassLibrary-PackageOne-associationFive"/>
+					</ownedEnd>
+					<name>c6a1</name>
+				</packagedElement>
+
 				<name>PackageOne</name>
 			</packagedElement>
 			<packagedElement xmi:id="All-ClassLibrary-PackageTwo" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo" xmi:type="uml:Package">
