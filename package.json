@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard doc/main.js --global $",
+    "lint": "standard doc/main.js --global $",
+    "test": "jest",
     "pack": "webpack --config webpack.config.js"
   },
   "keywords": [],
@@ -18,6 +19,8 @@
     "xml2js": "0.4.17"
   },
   "devDependencies": {
+    "circular-json": "^0.5.5",
+    "jest": "^23.3.0",
     "standard": "^11.0.0",
     "webpack": "^3.10.0"
   }

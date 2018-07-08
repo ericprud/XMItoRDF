@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xmi:XMI xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:mofext="http://www.omg.org/spec/MOF/20110701" xmlns:uml="http://www.omg.org/spec/UML/20110701">
+	<uml:Model xmi:id="All" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi" xmi:type="uml:Model">
+		<name>All</name>
+	</uml:Model>
+	<mofext:Tag xmi:id="_-Tag-2" xmi:uuid="725A27D7-DE6B-45AC-9B20-3D7A9ACA2633" xmi:type="mofext:Tag">
+		<name>org.omg.xmi.schemaType</name>
+		<value>http://www.w3.org/2001/XMLSchema#language</value>
+		<element>language</element>
+	</mofext:Tag>
+	<mofext:Tag xmi:id="_-Tag-1" xmi:uuid="725A27D7-DE6B-496B-9F6F-3D7AA7EE7348" xmi:type="mofext:Tag">
+		<name>org.omg.xmi.schemaType</name>
+		<value>http://www.w3.org/2001/XMLSchema#anyURI</value>
+		<element>anyURI</element>
+	</mofext:Tag>
+</xmi:XMI>

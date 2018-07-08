@@ -821,7 +821,7 @@ let CanonicalUmlXmiParser = function (opts) {
         missingElements
       )
       ret.elements = Object.keys(xmiGraph.packageHierarchy.roots).map(
-        packageId => createPackage(packageId, new UmlModel.ModelReference(ret))
+        packageId => createPackage(packageId, ret)
       )
       return ret
 
@@ -836,7 +836,7 @@ let CanonicalUmlXmiParser = function (opts) {
         case 'datatype':
           return createDatatype(xmiRef.id, reference)
         case 'class':
-          return createClass(xmiRef.id)
+          return createClass(xmiRef.id, reference)
         default:
           throw Error('mapElementByXmiReference: unknown reference type in ' + JSON.stringify(xmiRef))
         }
@@ -852,7 +852,7 @@ let CanonicalUmlXmiParser = function (opts) {
         // let ref = createdReferencedValueType(importRecord.idref)
         // let ret = imports[importId] = new UmlModel.Import(importId, ref)
         let ret = imports[importId] = new UmlModel.Import(importId, null, reference)
-        ret.ref = createdReferencedValueType(importRecord.idref, new UmlModel.ImportReference(ret))
+        ret.target = createdReferencedValueType(importRecord.idref, ret)
         return ret
         // imports[importId] = createdReferencedValueType(importRecord.idref)
         // imports[importId].importId = importId // write down that it's an import for round-tripping
@@ -891,9 +891,9 @@ let CanonicalUmlXmiParser = function (opts) {
           throw Error('package id "' + packageId + '" already used for ' + JSON.stringify(packages[packageId]))
         }
         const packageRecord = xmiGraph.packages[packageId]
-        let ret = packages[packageId] = new UmlModel.Package(packageId, reference, packageRecord.name, null, xmiGraph.packages[packageRecord.packages[0]], packageRecord.comments)
+        let ret = packages[packageId] = new UmlModel.Package(packageId, reference, packageRecord.name, null, reference, packageRecord.comments)
         ret.elements = packageRecord.elements.map(
-          xmiReference => mapElementByXmiReference(xmiReference, new UmlModel.PackageReference(ret))
+          xmiReference => mapElementByXmiReference(xmiReference, ret)
         )
         return ret
       }
@@ -904,7 +904,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return enums[enumerationId]
         }
         const enumerationRecord = xmiGraph.enums[enumerationId]
-        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, [reference], enumerationRecord.name, enumerationRecord.values, xmiGraph.packages[enumerationRecord.packages[0]], enumerationRecord.comments)
+        return enums[enumerationId] = new UmlModel.Enumeration(enumerationId, [reference], enumerationRecord.name, enumerationRecord.values, reference, enumerationRecord.comments)
       }
 
       function createDatatype (datatypeId, reference) {
@@ -913,7 +913,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, [reference], datatypeRecord.name, xmiGraph.packages[datatypeRecord.packages[0]], datatypeRecord.comments)
+        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, [reference], datatypeRecord.name, reference, datatypeRecord.comments)
       }
 
       function createClass (classId, reference) {
@@ -922,7 +922,7 @@ let CanonicalUmlXmiParser = function (opts) {
           return classes[classId]
         }
         const classRecord = xmiGraph.classes[classId]
-        let ret = classes[classId] = new UmlModel.Class(classId, [reference], classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, xmiGraph.packages[classRecord.packages[0]], classRecord.comments)
+        let ret = classes[classId] = new UmlModel.Class(classId, [reference], classRecord.name, classRecord.superClasses, [], classRecord.isAbstract, reference, classRecord.comments)
         // avoid cycles like Identifiable { basedOn Identifiable }
         ret.properties = classRecord.properties.map(
           propertyRecord => createProperty(propertyRecord, ret))
@@ -944,7 +944,7 @@ let CanonicalUmlXmiParser = function (opts) {
                             propertyRecord.association,
                             propertyRecord.aggregation,
                             propertyRecord.comments)
-        ret.type = mapElementByIdref(propertyRecord, new UmlModel.PropertyReference(ret))
+        ret.type = mapElementByIdref(propertyRecord, ret)
         return ret
       }
 
