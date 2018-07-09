@@ -255,7 +255,7 @@ function main () {
       model.elements[0].list('Package').filter(
         pkg => pkg.name.endsWith('Pattern')
       ).forEach(
-        pkg => pkg.remove()
+        pkg => pkg.remove(model.missingElements)
       )
 
       progress.append($('<li/>').text('UML model').append(model.render()))
