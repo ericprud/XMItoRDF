@@ -609,7 +609,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInherit1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInherit1-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations2"/>
+						<general xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-c9p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-c9p1" xmi:type="uml:Property">
 						<ownedComment xmi:type="uml:Comment">
@@ -639,7 +639,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations2"/>
+						<general xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:type="uml:Property">
 						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
@@ -684,7 +684,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations2"/>
+						<general xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:type="uml:Property">
 						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
@@ -802,7 +802,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInherit2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInherit2-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations1"/>
+						<general xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-c14p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-c14p1" xmi:type="uml:Property">
 						<ownedComment xmi:type="uml:Comment">
@@ -832,7 +832,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations1"/>
+						<general xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:type="uml:Property">
 						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
@@ -877,7 +877,7 @@ PackageThree
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="ExtraPackageNoAssociations1"/>
+						<general xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:type="uml:Property">
 						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>

@@ -365,13 +365,10 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     render () {
       let ret = $('<div/>').addClass('uml class ' + EXPANDED)
-      let title = [this.name].concat((this.generalizations || []).map(
-        gen => '+' + gen
-      )).join(' ')
       let renderTitle = _ => [
         $('<span/>').text(this.name).addClass('name')
       ].concat((this.generalizations || []).reduce(
-        (acc, gen) => acc.concat([' ', '+' + gen]), []
+        (acc, gen) => acc.concat([' ⊃', gen.summarize()]), []
       ))
       let packages = renderElement(renderTitle, this.properties, property => {
         return property.renderProp()
