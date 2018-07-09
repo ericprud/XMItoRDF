@@ -1,0 +1,57 @@
+				<!--
+				    PackagePkNo: %PackagePkNo%
+				    ClassName: %ClassName%
+				    AssocNo: %AssocNo%
+				    propName: %propName%
+				    superClass: %superClass%
+                                    AssocClass: %AssocClass%
+				    assocName: %assocName%
+				-->
+				<packagedElement xmi:id="All-ClassLibrary-%PackagePkNo%-%ClassName%" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-%ClassName%" xmi:type="uml:Class">
+					<ownedComment xmi:type="uml:Comment">
+						<body>Comment 1</body>
+					</ownedComment>
+					<generalization xmi:id="All-ClassLibrary-%PackagePkNo%-%ClassName%-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-%ClassName%-generalization" xmi:type="uml:Generalization">
+						<general xmi:idref="%superClass%"/>
+					</generalization>
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%" xmi:type="uml:Property">
+						<ownedComment xmi:type="uml:Comment">
+							<body>Comment 1</body>
+						</ownedComment>
+						<type xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-%propName%-upperValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</upperValue>
+						<name>%propName%</name>
+					</ownedAttribute>
+					<ownedAttribute xmi:id="All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="%AssocClass%"/>
+						<lowerValue xmi:id="All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+							<value>*</value>
+						</upperValue>
+						<association xmi:idref="All-ClassLibrary-%PackagePkNo%-association%AssocNo%"/>
+					</ownedAttribute>
+					<name>%ClassName%</name>
+					<isAbstract>true</isAbstract>
+				</packagedElement>
+				<packagedElement xmi:id="All-ClassLibrary-%PackagePkNo%-association%AssocNo%" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-association%AssocNo%" xmi:type="uml:Association">
+					<ownedComment xmi:type="uml:Comment">
+						<body>Comment 1</body>
+					</ownedComment>
+					<memberEnd xmi:idref="All-ClassLibrary-%PackagePkNo%-%ClassName%-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-%PackagePkNo%-%ClassName%"/>
+						<lowerValue xmi:id="All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</lowerValue>
+						<upperValue xmi:id="All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-%PackagePkNo%-association%AssocNo%-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+							<value>1</value>
+						</upperValue>
+						<association xmi:idref="All-ClassLibrary-%PackagePkNo%-association%AssocNo%"/>
+					</ownedEnd>
+					<name>%assocName%</name>
+				</packagedElement>
+
