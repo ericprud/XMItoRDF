@@ -6,6 +6,10 @@
  * @function{remove(X)}: delete <X>'s entry in <this>.
 
  * - update(X, Y): replace all uses of <X> in <this> with <Y>.
+ *
+ * rendering bugs:
+ *   1. junky HTML -- mixes BLOCK and FLOW
+ *   2. doesn't display multi-generaltional inheritance
  */
 
 function UmlModel (modelOptions = {}, $ = null) {

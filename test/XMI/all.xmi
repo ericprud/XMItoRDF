@@ -445,7 +445,7 @@
 						<body>Comment 1</body>
 					</ownedComment>
 					<generalization xmi:id="All-Library-PackageOne-OneGeneralizationOneAssociation-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-Library-PackageOne-OneGeneralizationOneAssociation-generalization" xmi:type="uml:Generalization">
-						<general xmi:idref="All-Library-PackageOne-NoAssociations"/>
+						<general xmi:idref="All-Library-PackageOne-OneGeneralization"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-Library-PackageOne-OneGeneralizationOneAssociation-c3p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-Library-PackageOne-OneGeneralizationOneAssociation-c3p1" xmi:type="uml:Property">
 						<ownedComment xmi:type="uml:Comment">
