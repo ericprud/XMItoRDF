@@ -4,16 +4,130 @@
 		<name>All</name>
 		<packagedElement xmi:id="All-FunctionalViews" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews" xmi:type="uml:Package">
 
+			<packagedElement xmi:id="All-FunctionalViews-ViewAll" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll" xmi:type="uml:Package">
+				<ownedComment xmi:type="uml:Comment">
+					<body>Comment 1</body>
+				</ownedComment>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-1" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-EnumOne"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-2" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAttributes"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-3" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-4" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-4" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneAssociation"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-5" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-5" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithThreeAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-6" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-6" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralization"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-7" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-7" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation"/>
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-8" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-8" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageRef1"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-9" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-9" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-10" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-10" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInherit1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-11" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-11" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-12" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-12" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-13" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-13" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageRef2"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-14" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-14" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-15" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-15" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInherit2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-16" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-16" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-17" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-17" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-18" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-18" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-EnumTwo"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-19" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-19" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewAll-elementImport-20" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewAll-elementImport-20" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-anyURI"/>
+        </elementImport>
+				<name>ViewAll</name>
+			</packagedElement>
+
 			<packagedElement xmi:id="All-FunctionalViews-ViewOne" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne" xmi:type="uml:Package">
 				<ownedComment xmi:type="uml:Comment">
 					<body>Comment 1</body>
 				</ownedComment>
+				<ownedComment xmi:type="uml:Comment">
+					<body>Comment 1</body>
+				</ownedComment>
 				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-1" xmi:type="uml:ElementImport">
-					<importedElement xmi:idref="All-ClassLibrary-Discovery-Access"/>
-				</elementImport>
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-EnumOne"/>
+        </elementImport>
 				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-2" xmi:type="uml:ElementImport">
-					<importedElement xmi:idref="All-ClassLibrary-SimpleMethodologyOverview-AlgorithmOverview"/>
-				</elementImport>
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAttributes"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-3" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-4" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-4" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneAssociation"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-5" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-5" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithThreeAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-6" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-6" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralization"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-7" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-7" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation"/>
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-13" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-13" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageRef2"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-14" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-14" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-15" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-15" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInherit2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-16" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-16" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-17" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-17" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2"/> <!-- +ExtraPackageNoAssociations1 -->
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-18" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-18" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-EnumTwo"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-19" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-19" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewOne-elementImport-20" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewOne-elementImport-20" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-anyURI"/>
+        </elementImport>
 				<name>ViewOne</name>
 			</packagedElement>
 
@@ -21,12 +135,56 @@
 				<ownedComment xmi:type="uml:Comment">
 					<body>Comment 1</body>
 				</ownedComment>
+				<ownedComment xmi:type="uml:Comment">
+					<body>Comment 1</body>
+				</ownedComment>
 				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-1" xmi:type="uml:ElementImport">
-					<importedElement xmi:idref="All-ClassLibrary-Discovery-Access"/>
-				</elementImport>
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-EnumOne"/>
+        </elementImport>
 				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-2" xmi:type="uml:ElementImport">
-					<importedElement xmi:idref="All-ClassLibrary-Methodologies-AppliedUse"/>
-				</elementImport>
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAttributes"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-3" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithNoAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-4" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-4" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneAssociation"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-5" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-5" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithThreeAssociations"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-6" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-6" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralization"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-7" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-7" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageOne-ClassWithOneGeneralizationOneAssociation"/>
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-8" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-8" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageRef1"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-9" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-9" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-10" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-10" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInherit1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-11" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-11" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-12" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-12" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1"/> <!-- +ExtraPackageNoAssociations2 -->
+        </elementImport>
+
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-18" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-18" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-EnumTwo"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-19" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-19" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-DTypeOne"/>
+        </elementImport>
+				<elementImport xmi:id="All-FunctionalViews-ViewTwo-elementImport-20" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-FunctionalViews-ViewTwo-elementImport-20" xmi:type="uml:ElementImport">
+					<importedElement xmi:idref="All-ClassLibrary-PackageFour-anyURI"/>
+        </elementImport>
 				<name>ViewTwo</name>
 			</packagedElement>
 
@@ -45,7 +203,7 @@
 					<ownedLiteral xmi:id="All-ClassLibrary-PackageOne-EnumOne-Interval" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-EnumOne-Interval" xmi:type="uml:EnumerationLiteral">
 						<name>EnumEltThree</name>
 					</ownedLiteral>
-					<name>EnumTwo</name>
+					<name>EnumOne</name>
 				</packagedElement>
 
 				<packagedElement xmi:id="All-ClassLibrary-PackageOne-ClassWithNoAttributes" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithNoAttributes" xmi:type="uml:Class">
@@ -343,6 +501,32 @@
 			</packagedElement>
 			<packagedElement xmi:id="All-ClassLibrary-PackageTwo" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo" xmi:type="uml:Package">
 
+        <!--
+PackageTwo
+  ExtraPackageRef1
+    c7p1 -> ExtraPackageNoAssociations2
+  ExtraPackageNoAssociations1
+    c8p1 DType1
+  ExtraPackageInherit1 -> ExtraPackageNoAssociations2
+    c9p1 DType1
+  ExtraPackageInheritAndSameRef1 -> ExtraPackageNoAssociations2
+    c10p1 -> ExtraPackageNoAssociations2
+  ExtraPackageInheritAndCircularRef1 -> ExtraPackageNoAssociations2
+    c11p1 -> ExtraPackageInheritAndCircularRef2
+
+PackageThree
+  ExtraPackageRef2
+    c12p1 -> ExtraPackageNoAssociations1
+  ExtraPackageNoAssociations2
+    c13p1 DType1
+  ExtraPackageInherit2 -> ExtraPackageNoAssociations1
+    c14p1 DType1
+  ExtraPackageInheritAndSameRef2 -> ExtraPackageNoAssociations1
+    c15p1 -> ExtraPackageNoAssociations1
+  ExtraPackageInheritAndCircularRef2 -> ExtraPackageNoAssociations1
+    c16p1 -> ExtraPackageInheritAndCircularRef1
+        -->
+
 				<!--
 				    PackagePkNo: Two
 				    ClassName: ExtraPackageRef1
@@ -351,36 +535,36 @@
 				    superClass: 
 				    assocName: c7a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Two-ExtraPackageRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageRef1" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageRef1" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<ownedAttribute xmi:id="All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageNoAssociations2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association1"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association1"/>
 					</ownedAttribute>
 					<name>ExtraPackageRef1</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Two-association1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association1" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-association1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association1" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-ExtraPackageRef1-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-association1-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Two-association1-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association1-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageRef1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-association1-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association1-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageRef1-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-association1-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageTwo-association1-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association1-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageRef1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-association1-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association1-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Two-association1-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association1-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-association1-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association1-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association1"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association1"/>
 					</ownedEnd>
 					<name>c7a1</name>
 				</packagedElement>
@@ -393,7 +577,7 @@
 				    superClass: 
 				    assocName: 
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Two-ExtraPackageNoAssociations1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageNoAssociations1" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
@@ -420,11 +604,11 @@
 				    superClass: ExtraPackageNoAssociations2
 				    assocName: 
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Two-ExtraPackageInherit1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInherit1" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInherit1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInherit1" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Two-ExtraPackageInherit1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInherit1-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInherit1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInherit1-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations2"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-c9p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-c9p1" xmi:type="uml:Property">
@@ -450,39 +634,39 @@
 				    superClass: ExtraPackageNoAssociations2
 				    assocName: c10a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations2"/>
 					</generalization>
-					<ownedAttribute xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageNoAssociations2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association2"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association2"/>
 					</ownedAttribute>
 					<name>ExtraPackageInheritAndSameRef1</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Two-association2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association2" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-association2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association2" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-association2-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Two-association2-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association2-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageInheritAndSameRef1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-association2-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association2-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-association2-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageTwo-association2-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association2-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndSameRef1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-association2-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association2-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Two-association2-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association2-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-association2-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association2-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association2"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association2"/>
 					</ownedEnd>
 					<name>c10a1</name>
 				</packagedElement>
@@ -495,39 +679,39 @@
 				    superClass: ExtraPackageNoAssociations2
 				    assocName: c11a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations2"/>
 					</generalization>
-					<ownedAttribute xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageNoAssociations2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association3"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association3"/>
 					</ownedAttribute>
 					<name>ExtraPackageInheritAndCircularRef1</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Two-association3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association3" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageTwo-association3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association3" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Two-association3-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Two-association3-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association3-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageInheritAndCircularRef1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Two-association3-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association3-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageTwo-association3-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageTwo-association3-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association3-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageInheritAndCircularRef1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageTwo-association3-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association3-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Two-association3-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Two-association3-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageTwo-association3-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageTwo-association3-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Two-association3"/>
+						<association xmi:idref="All-ClassLibrary-PackageTwo-association3"/>
 					</ownedEnd>
 					<name>c11a1</name>
 				</packagedElement>
@@ -544,36 +728,36 @@
 				    superClass: 
 				    assocName: c12a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Three-ExtraPackageRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageRef2" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-ExtraPackageRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageRef2" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<ownedAttribute xmi:id="All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageNoAssociations1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association1"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association1"/>
 					</ownedAttribute>
 					<name>ExtraPackageRef2</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Three-association1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association1" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-association1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association1" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-ExtraPackageRef2-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-association1-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Three-association1-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association1-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageRef2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-association1-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association1-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageRef2-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-association1-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageThree-association1-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association1-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageRef2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-association1-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association1-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Three-association1-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association1-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-association1-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association1-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association1"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association1"/>
 					</ownedEnd>
 					<name>c12a1</name>
 				</packagedElement>
@@ -586,7 +770,7 @@
 				    superClass: 
 				    assocName: 
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Three-ExtraPackageNoAssociations2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageNoAssociations2" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageNoAssociations2" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
@@ -613,11 +797,11 @@
 				    superClass: ExtraPackageNoAssociations1
 				    assocName: 
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Three-ExtraPackageInherit2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInherit2" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInherit2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInherit2" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Three-ExtraPackageInherit2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInherit2-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInherit2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInherit2-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations1"/>
 					</generalization>
 					<ownedAttribute xmi:id="All-ClassLibrary-PackageOne-ClassWithOneAssociation-c14p1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageOne-ClassWithOneAssociation-c14p1" xmi:type="uml:Property">
@@ -643,39 +827,39 @@
 				    superClass: ExtraPackageNoAssociations1
 				    assocName: c15a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations1"/>
 					</generalization>
-					<ownedAttribute xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageNoAssociations1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association2"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association2"/>
 					</ownedAttribute>
 					<name>ExtraPackageInheritAndSameRef2</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Three-association2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association2" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-association2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association2" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-association2-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Three-association2-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association2-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageInheritAndSameRef2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-association2-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association2-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-association2-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageThree-association2-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association2-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndSameRef2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-association2-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association2-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Three-association2-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association2-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-association2-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association2-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association2"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association2"/>
 					</ownedEnd>
 					<name>c15a1</name>
 				</packagedElement>
@@ -688,39 +872,39 @@
 				    superClass: ExtraPackageNoAssociations1
 				    assocName: c16a1
 				-->
-				<packagedElement xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2" xmi:type="uml:Class">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2" xmi:type="uml:Class">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<generalization xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-generalization" xmi:type="uml:Generalization">
+					<generalization xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-generalization" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-generalization" xmi:type="uml:Generalization">
 						<general xmi:idref="ExtraPackageNoAssociations1"/>
 					</generalization>
-					<ownedAttribute xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Two-ExtraPackageNoAssociations1"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
-						<upperValue xmi:id="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
+					<ownedAttribute xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageTwo-ExtraPackageNoAssociations1"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-lowerValue" xmi:type="uml:LiteralInteger"/>
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1-upperValue" xmi:type="uml:LiteralUnlimitedNatural">
 							<value>*</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association3"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association3"/>
 					</ownedAttribute>
 					<name>ExtraPackageInheritAndCircularRef2</name>
 					<isAbstract>true</isAbstract>
 				</packagedElement>
-				<packagedElement xmi:id="All-ClassLibrary-Three-association3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association3" xmi:type="uml:Association">
+				<packagedElement xmi:id="All-ClassLibrary-PackageThree-association3" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association3" xmi:type="uml:Association">
 					<ownedComment xmi:type="uml:Comment">
 						<body>Comment 1</body>
 					</ownedComment>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2-ownedAttribute-1"/>
-					<memberEnd xmi:idref="All-ClassLibrary-Three-association3-ownedEnd"/>
-					<ownedEnd xmi:id="All-ClassLibrary-Three-association3-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association3-ownedEnd" xmi:type="uml:Property">
-						<type xmi:idref="All-ClassLibrary-Three-ExtraPackageInheritAndCircularRef2"/>
-						<lowerValue xmi:id="All-ClassLibrary-Three-association3-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association3-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1"/>
+					<memberEnd xmi:idref="All-ClassLibrary-PackageThree-association3-ownedEnd"/>
+					<ownedEnd xmi:id="All-ClassLibrary-PackageThree-association3-ownedEnd" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association3-ownedEnd" xmi:type="uml:Property">
+						<type xmi:idref="All-ClassLibrary-PackageThree-ExtraPackageInheritAndCircularRef2"/>
+						<lowerValue xmi:id="All-ClassLibrary-PackageThree-association3-ownedEnd-lowerValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association3-ownedEnd-lowerValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</lowerValue>
-						<upperValue xmi:id="All-ClassLibrary-Three-association3-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-Three-association3-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
+						<upperValue xmi:id="All-ClassLibrary-PackageThree-association3-ownedEnd-upperValue" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-ClassLibrary-PackageThree-association3-ownedEnd-upperValue" xmi:type="uml:LiteralInteger">
 							<value>1</value>
 						</upperValue>
-						<association xmi:idref="All-ClassLibrary-Three-association3"/>
+						<association xmi:idref="All-ClassLibrary-PackageThree-association3"/>
 					</ownedEnd>
 					<name>c16a1</name>
 				</packagedElement>
