@@ -1,11 +1,13 @@
 const fs = require('fs')
-const CircularJSON = require('circular-json')
+const jsonCycles = require('circular-json')
+// const jsonCycles = require('flatted')
 
   const XSD = 'http://www.w3.org/2001/XMLSchema#'
   const UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
   const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
-
+  // const expect = require('chai').expect
   const normalizeType = function (type) {
+    return type
     if (!type) {
       return type // pass undefined on
     }
@@ -47,8 +49,8 @@ const CircularJSON = require('circular-json')
     }
   }
 
-describe('A suite', function() {
-  it('contains spec with an expectation', function(done) {
+describe('A UML Model', function() {
+  it('should parse and compare', function(done) {
     const UmlModel = require('../doc/uml-model')({
       externalDatatype: n => n.startsWith(XSD)
     })
@@ -59,12 +61,12 @@ describe('A suite', function() {
       timestamp: new Date().toISOString()
     }
     // let filePath = '../doc/DDI4_PIM_canonical.xmi'
-    let filePath = './XMI/forwardRefs.xmi'
+    let filePath = './XMI/all.xmi'
     UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + filePath, 'UTF-8'), source, parserCallback)
 
     function parserCallback (err, xmiGraph) {
       if (err) {
-        done(err)
+        throw (err)
       } else {
         if (false) {
           let p1 = new UmlModel.Point(1, 2)
@@ -74,24 +76,24 @@ describe('A suite', function() {
           p1.other = p2
           p2.other = p1
           let p3 = new UmlModel.Point(p1, p2)
-          let p1t = CircularJSON.stringify(p3)
+          let p1t = jsonCycles.stringify(p3)
           console.log(p1t)
           let s1 = '{"x":{"x":1,"y":2,"self":"~x","other":{"x":3,"y":4,"self":"~x~other","other":"~x"}},"y":"~x~other"}'
           let s2 = `
           { "x": { "x": 1, "y": 2, "self": "~x", "other": "~y" },
             "y": { "x": 3, "y": 4, "self": "~y", "other": "~x" }
           }`
-          expect(p1t).toEqual(s1)
-          let p1c = CircularJSON.parse(p1t)
-          expect(p1c).toEqual(p3)
-          let p2c = CircularJSON.parse(s2)
-          expect(p2c).toEqual(p3)
+          // expect(p1t).toEqual(s1)
+          expect(p1t).to.deep.equal(s1)
+          let p1c = jsonCycles.parse(p1t)
+          // expect(p1c).toEqual(p3)
+          expect(p1c).to.deep.equal(p3)
+          let p2c = jsonCycles.parse(s2)
+          // expect(p2c).toEqual(p3)
+          expect(p2c).to.deep.equal(p3)
         }
 
         let model = UmlParser.toUML(xmiGraph)
-        let str = CircularJSON.stringify(model)
-        console.warn(str)
-        let obj = CircularJSON.parse(str)
         let x = [
           "getClasses",
           "getDatatypes",
@@ -101,7 +103,17 @@ describe('A suite', function() {
         x.forEach(
           k => delete model[k]
         )
-        expect(obj).toEqual(model);
+        let str = jsonCycles.stringify(model)
+        // fs.writeFileSync(__dirname + '/' + 'all.jscycle', str, { encoding: 'utf-8' })
+        // console.warn(str)
+        // let obj = jsonCycles.parse(str)
+        let obj = jsonCycles.parse(fs.readFileSync(__dirname + '/' + 'all.jscycle', 'utf-8'))
+        // expect(obj).to.deep.equal(model);
+        // expect(obj).toEqual(model);
+        let diffs = model.diffs(obj)
+        if (diffs.length) {
+          throw Error('unexpected diffs: ' + diffs.join('\n'))
+        }
 
         done()
       }
