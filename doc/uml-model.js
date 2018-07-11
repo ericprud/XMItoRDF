@@ -59,6 +59,12 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   function objDiffs (l, r, seen) {
+    if (!(l instanceof Object) || !(r instanceof Object)) {
+      throw Error('invocation error: odjDifs called with non-object')
+    }
+    if (l.constructor === Array || r.constructor === Array) {
+      throw Error('invocation error: odjDifs called with Array')
+    }
     return []
       .concat(Object.keys(l).reduce(
         (acc, x) => x in r ? acc : acc.concat(x +  ' missing in left'), []
@@ -102,6 +108,16 @@ function UmlModel (modelOptions = {}, $ = null) {
     return l.rtti === r.rtti
       ? []
       : [topic + ' rtti ' + l.rtti + ' != ' + r.rtti ]
+  }
+
+  function compareList (topic, l, r) {
+    let ret = []
+    for (let i = 0; i < l.length || i < r.length; ++i) {
+      if (l[i] !== r[i]) {
+        ret.push(topic + '\'s' + i + 'th entry is ' + l[i] + ' not ' + r[i])
+      }
+    }
+    return ret
   }
 
   const COLLAPSED = 'collapsed', EXPANDED = 'expanded'
@@ -157,7 +173,7 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (revisiting(seen, this, other)) { return [] }
       let topic = 'Model'
       return testRTTI(topic, this, other)
-        .concat(objDiffs(this.elements, other.elements, seen))
+        .concat(objDiffs(hashById(this.elements), hashById(other.elements), seen))
         .concat(objDiffs(this.missingElements, other.missingElements, seen))
     }
 
@@ -199,9 +215,16 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
 
     diffs (other, seen = []) {
-      debugger
-      throw Error('diffs not implemented for ' + this.id)
-      return []
+      let topic = this.rtti + ' ' + this.id
+      return testRTTI(topic, this, other)
+        .concat(objDiffs(hashById(this.references), hashById(other.references), seen))
+        .concat(this.name !== other.name ? [
+          topic + ' name:' + other.name + ' doesn\'t match ' + this.name
+        ] : [])
+        .concat(this.parent ? this.parent.diffs(other.parent, seen).map(
+          d => topic + d
+        ) : [])
+        .concat(this.comments || other.comments ? compareList(topic, this.comments, other.comments) : [])
     }
 
     remove (missingElements) {
@@ -262,9 +285,8 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     diffs (other, seen = []) {
       if (revisiting(seen, this, other)) { return [] }
-      let topic = 'Package ' + this.id
-      return testRTTI(topic, this, other)
-        .concat(objDiffs(this.elements, other.elements, seen))
+      return super.diffs(other, seen)
+        .concat(objDiffs(hashById(this.elements), hashById(other.elements), seen))
     }
 
     remove (missingElements/*, rtti*/) {
@@ -343,13 +365,15 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (this.id !== other.id) {
         return [topic + ' doesn\'t match id ' + other.id]
       }
-      let ret = testRTTI(topic, this, other)
-      for (let i = 0; i < this.values.length && i < other.values.length; ++i) {
-        if (this.values[i] !== other.values[i]) {
-          ret.push(topic + '\'s' + i + 'th entry is ' + this.values[i] + ' not ' + other.values[i])
-        }
-      }
-      return ret
+      return super.diffs(other, seen)
+        .concat(compareList(topic, this.values, other.values))
+      // let ret = super.diffs(other, seen)
+      // for (let i = 0; i < this.values.length && i < other.values.length; ++i) {
+      //   if (this.values[i] !== other.values[i]) {
+      //     ret.push(topic + '\'s' + i + 'th entry is ' + this.values[i] + ' not ' + other.values[i])
+      //   }
+      // }
+      // return ret
     }
 
     render () {
@@ -401,7 +425,7 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (this.id !== other.id) {
         return [topic + ' doesn\'t match id ' + other.id]
       }
-      return testRTTI(topic, this, other)
+      return super.diffs(other, seen)
     }
 
     render () {
@@ -456,7 +480,7 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (this.id !== other.id) {
         return [topic + ' doesn\'t match id ' + other.id]
       }
-      return testRTTI(topic, this, other)
+      return super.diffs(other, seen)
         .concat(objDiffs(hashById(this.generalizations),
                          hashById(other.generalizations),
                          seen))
@@ -654,10 +678,7 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
 
     diffs (other, seen = []) {
-      if (revisiting(seen, this, other)) {
-        // assuming for now that a cycle is pathological.
-        throw Error('Unexpected cycle for import ' + this.id)
-      }
+      if (revisiting(seen, this, other)) { return [] }
       let topic = 'Import ' + this.id
       return testRTTI(topic, this, other)
         .concat(this.target.diffs(other.target, seen))
