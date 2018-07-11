@@ -58,12 +58,58 @@ function UmlModel (modelOptions = {}, $ = null) {
     return packages
   }
 
+  function objDiffs (l, r, seen) {
+    return []
+      .concat(Object.keys(l).reduce(
+        (acc, x) => x in r ? acc : acc.concat(x +  ' missing in left'), []
+      ))
+      .concat(Object.keys(r).reduce(
+        (acc, x) => x in l ? acc : acc.concat(x +  ' missing in right'), []
+      ))
+      .concat(Object.keys(l).reduce(
+        (acc, x) => x in r ? acc.concat(x) : acc, []
+      ).reduce(
+        (acc, x) => acc.concat(l[x].diffs(r[x], seen)), []
+      ))
+  }
+
+  function hashById (list) {
+    return list.reduce(
+      (acc, x) => add(acc, x.id, x), {}
+    )
+    function add (obj, key, val) {
+      if (key in obj) {
+        throw Error('key ' + key + ' already in ' + obj)
+      }
+      let ret = Object.assign({}, obj)
+      ret[key] = val
+      return ret
+    }
+  }
+
+  function revisiting (seen, l, r) {
+    // console.warn(seen.length ? seen[seen.length - 2].id : 'top', l.id)
+    if (seen.indexOf(l) !== -1  || seen.indexOf(r) !== -1) {
+      return true
+    } else {
+      seen.push(l)
+      seen.push(r)
+      return false
+    }
+  }
+
+  function testRTTI (topic, l, r) {
+    return l.rtti === r.rtti
+      ? []
+      : [topic + ' rtti ' + l.rtti + ' != ' + r.rtti ]
+  }
+
   const COLLAPSED = 'collapsed', EXPANDED = 'expanded'
 
   class Model {
     constructor (source, elements, missingElements) {
       Object.assign(this, {
-        get type () { return 'Model' },
+        get rtti () { return 'Model' },
         source,
         elements,
         missingElements,
@@ -107,6 +153,14 @@ function UmlModel (modelOptions = {}, $ = null) {
       })
     }
 
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Model'
+      return testRTTI(topic, this, other)
+        .concat(objDiffs(this.elements, other.elements, seen))
+        .concat(objDiffs(this.missingElements, other.missingElements, seen))
+    }
+
     render () {
       let ret = $('<div/>').addClass('uml model ' + EXPANDED)
       let sourceString = [this.source.resource, this.source.method, this.source.timestamp].join(' ')
@@ -144,6 +198,12 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (comments) { Object.assign(this, { comments }) }
     }
 
+    diffs (other, seen = []) {
+      debugger
+      throw Error('diffs not implemented for ' + this.id)
+      return []
+    }
+
     remove (missingElements) {
       let from = this.references.find(ref => ref instanceof Package || ref instanceof Model) // parent.elements
       let fromIndex = from ? from.elements.indexOf(this) : -1
@@ -167,7 +227,7 @@ function UmlModel (modelOptions = {}, $ = null) {
         return
       }
       if (this.id in missingElements) {
-        throw Error(this.type() + ' ' + this.id + ' already listed in missingElements')
+        throw Error(this.rtti + ' ' + this.id + ' already listed in missingElements')
       }
       let missingElt = new MissingElement(this.id, this.references)
       missingElements[this.id] = missingElt
@@ -195,12 +255,19 @@ function UmlModel (modelOptions = {}, $ = null) {
       // pass the same falsy reference value to Packagable
       super(id, reference ? [reference] : reference, name, parent, comments)
       Object.assign(this, {
-        get type () { return 'Package' },
+        get rtti () { return 'Package' },
         elements
       })
     }
 
-    remove (missingElements/*, type*/) {
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Package ' + this.id
+      return testRTTI(topic, this, other)
+        .concat(objDiffs(this.elements, other.elements, seen))
+    }
+
+    remove (missingElements/*, rtti*/) {
       this.elements.forEach(
         doomed => {
           let idx = doomed.references.indexOf(this)
@@ -214,9 +281,9 @@ function UmlModel (modelOptions = {}, $ = null) {
       )
       super.remove(missingElements)
       /*
-      let doomed = this.list(type)
+      let doomed = this.list(rtti)
       console.log('detach', doomed)
-      this.list(type).forEach(
+      this.list(rtti).forEach(
         doomed => doomed.detach(missingElements)
       )
        */
@@ -237,15 +304,15 @@ function UmlModel (modelOptions = {}, $ = null) {
       this.elements[idx] = to
     }
 
-    list (type) {
+    list (rtti) {
       return this.elements.reduce(
         (acc, elt) => {
           let add = []
-          if (!type || elt.type === type) {
+          if (!rtti || elt.rtti === rtti) {
             add = add.concat([elt])
           }
-          if (elt.type === 'Package') {
-            add = add.concat(elt.list(type))
+          if (elt.rtti === 'Package') {
+            add = add.concat(elt.list(rtti))
           }
           return acc.concat(add)
         }, []
@@ -265,9 +332,24 @@ function UmlModel (modelOptions = {}, $ = null) {
     constructor (id, references, name, values, parent, comments) {
       super(id, references, name, parent, comments)
       Object.assign(this, {
-        get type () { return 'Enumeration' },
+        get rtti () { return 'Enumeration' },
         values
       })
+    }
+
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Enumeration ' + this.id
+      if (this.id !== other.id) {
+        return [topic + ' doesn\'t match id ' + other.id]
+      }
+      let ret = testRTTI(topic, this, other)
+      for (let i = 0; i < this.values.length && i < other.values.length; ++i) {
+        if (this.values[i] !== other.values[i]) {
+          ret.push(topic + '\'s' + i + 'th entry is ' + this.values[i] + ' not ' + other.values[i])
+        }
+      }
+      return ret
     }
 
     render () {
@@ -309,8 +391,17 @@ function UmlModel (modelOptions = {}, $ = null) {
       super(id, references, name, parent, comments)
       Object.assign(this, {
         external: modelOptions.externalDatatype(name),
-        get type () { return 'Datatype' }
+        get rtti () { return 'Datatype' }
       })
+    }
+
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Datatype ' + this.id
+      if (this.id !== other.id) {
+        return [topic + ' doesn\'t match id ' + other.id]
+      }
+      return testRTTI(topic, this, other)
     }
 
     render () {
@@ -352,13 +443,30 @@ function UmlModel (modelOptions = {}, $ = null) {
     constructor (id, references, name, generalizations, properties, isAbstract, parent, comments) {
       super(id, references, name, parent, comments)
       Object.assign(this, {
-        get type () { return 'Class' },
+        get rtti () { return 'Class' },
         generalizations,
         properties,
         isAbstract
       })
     }
 
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Class ' + this.id
+      if (this.id !== other.id) {
+        return [topic + ' doesn\'t match id ' + other.id]
+      }
+      return testRTTI(topic, this, other)
+        .concat(objDiffs(hashById(this.generalizations),
+                         hashById(other.generalizations),
+                         seen))
+        .concat(objDiffs(hashById(this.properties),
+                         hashById(other.properties),
+                         seen))
+        .concat(this.aggregation !== other.aggregation ? [
+          topic + ' aggregation:' + other.aggregation + ' doesn\'t match ' + this.aggregation
+        ] : [])
+    }
 
     remove (missingElements) {
       this.properties.forEach(
@@ -446,7 +554,7 @@ function UmlModel (modelOptions = {}, $ = null) {
   class Property {
     constructor (id, inClass, name, type, min, max, association, aggregation, comments) {
       Object.assign(this, {
-        get type () { return 'Property' },
+        get rtti () { return 'Property' },
         id,
         inClass,
         name,
@@ -457,6 +565,37 @@ function UmlModel (modelOptions = {}, $ = null) {
         aggregation
       })
       if (comments && comments.length) { this.comments = comments }
+    }
+
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'Property ' + this.id
+      if (this.id !== other.id) {
+        return [topic + ' doesn\'t match id ' + other.id]
+      }
+      return testRTTI(topic, this, other)
+        .concat(this.inClass.diffs(other.inClass, seen).map(
+          d => topic + d
+        ))
+        .concat(this.name !== other.name ? [
+          topic + ' name:' + other.name + ' doesn\'t match ' + this.name
+        ] : [])
+        // This takes forever for even a small-ish model.
+        .concat(this.type.diffs(other.type, seen).map(
+          d => topic + d
+        ))
+        .concat(this.min !== other.min ? [
+          topic + ' min:' + other.min + ' doesn\'t match ' + this.min
+        ] : [])
+        .concat(this.max !== other.max ? [
+          topic + ' max:' + other.max + ' doesn\'t match ' + this.max
+        ] : [])
+        .concat(this.assocation ? this.assocation.diffs(other.assocation, seen).map(
+          d => topic + d
+        ) : [])
+        .concat(this.aggregation !== other.aggregation ? [
+          topic + ' aggregation:' + other.aggregation + ' doesn\'t match ' + this.aggregation
+        ] : [])
     }
 
     update (from, to) {
@@ -483,7 +622,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 
     propToShExJ (options) {
       let valueExpr =
-            this.type.type === 'Datatype' && this.type.external === true
+            this.type.rtti === 'Datatype' && this.type.external === true
             ? {
                 "type": "NodeConstraint",
                 "datatype": this.type.name
@@ -509,9 +648,20 @@ function UmlModel (modelOptions = {}, $ = null) {
   class Import {
     constructor (id, target, reference) {
       Object.assign(this, {
-        get type () { return 'Import' },
+        get rtti () { return 'Import' },
         id, target, reference
       })
+    }
+
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) {
+        // assuming for now that a cycle is pathological.
+        throw Error('Unexpected cycle for import ' + this.id)
+      }
+      let topic = 'Import ' + this.id
+      return testRTTI(topic, this, other)
+        .concat(this.target.diffs(other.target, seen))
+        .concat(this.reference.diffs(other.reference, seen))
     }
 
     toShExJ (parents = [], options = {}) {
@@ -532,10 +682,19 @@ function UmlModel (modelOptions = {}, $ = null) {
   class MissingElement {
     constructor (id, references = []) {
       Object.assign(this, {
-        get type () { return 'MissingElement' },
+        get rtti () { return 'MissingElement' },
         id,
         references
       })
+    }
+
+    diffs (other, seen = []) {
+      if (revisiting(seen, this, other)) { return [] }
+      let topic = 'MissingElement ' + this.id
+      return testRTTI(topic, this, other)
+        .concat(objDiffs(hashById(this.references),
+                         hashById(other.references),
+                         seen))
     }
 
     render () {
