@@ -110,7 +110,7 @@ describe('A UML Model', function() {
         let obj = jsonCycles.parse(fs.readFileSync(__dirname + '/' + 'all.jscycle', 'utf-8'))
         // expect(obj).to.deep.equal(model);
         // expect(obj).toEqual(model);
-        let diffs = model.diffs(obj)
+        let diffs = model.diffs(obj, s => {throw Error(s)})
         if (diffs.length) {
           throw Error('unexpected diffs: ' + diffs.join('\n'))
         }
