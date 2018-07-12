@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xmi:XMI xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:mofext="http://www.omg.org/spec/MOF/20110701" xmlns:uml="http://www.omg.org/spec/UML/20110701">
-	<uml:Model xmi:id="All" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi" xmi:type="uml:Model">
-		<name>All</name>
+	<uml:Model xmi:id="MyModel" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#MyModel" xmi:type="uml:Model">
+		<name>MyModel</name>
 		<packagedElement xmi:id="All-Views" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-Views" xmi:type="uml:Package">
 
 			<packagedElement xmi:id="All-Views-ViewAll" xmi:uuid="http://github.com/ericprud/uml-model/blob/master/test/XMI/All.xmi#All-Views-ViewAll" xmi:type="uml:Package">

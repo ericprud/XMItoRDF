@@ -1,10 +1,12 @@
 {
   "rtti":"Model",
+  "id": "MyModel",
+  "name": "MyModel",
   "source": {"method":"fs.readFileSync","resource":"../doc/canonical-uml-xmi-parser","timestamp":"2018-07-11T07:16:56.910Z"},
   "elements":[
-    {"id":"All","references":[
+    {"id":"MyModel","references":[
       "~"
-    ],"name":"All","parent":"~","rtti":"Package","elements":[
+    ],"name":"MyModel","parent":"~","rtti":"Package","elements":[
       {"id":"All-Views","references":[
         "~elements~0"
       ],"name":"Views","parent":"~elements~0","rtti":"Package","elements":[

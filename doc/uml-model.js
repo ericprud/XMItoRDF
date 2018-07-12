@@ -123,9 +123,11 @@ function UmlModel (modelOptions = {}, $ = null) {
   const COLLAPSED = 'collapsed', EXPANDED = 'expanded'
 
   class Model {
-    constructor (source, elements, missingElements) {
+    constructor (id, name, source, elements, missingElements) {
       Object.assign(this, {
         get rtti () { return 'Model' },
+        id,
+        name,
         source,
         elements,
         missingElements,

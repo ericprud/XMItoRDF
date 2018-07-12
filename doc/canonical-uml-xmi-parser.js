@@ -133,9 +133,12 @@ let CanonicalUmlXmiParser = function (opts) {
 
     let associations = {}
     let assocSrcToClass = {}
+    let modelRoot = document['xmi:XMI']['uml:Model'][0]
 
     // return structure
     let model = Object.assign(new ModelRecord(), {
+      id: modelRoot.$['xmi:id'],
+      name: parseName(modelRoot),
       source: source,
       packages: packages,
       classes: classes,
@@ -149,7 +152,7 @@ let CanonicalUmlXmiParser = function (opts) {
     })
 
     // Build the model
-    visitPackage(document['xmi:XMI']['uml:Model'][0], [])
+    visitPackage(modelRoot, [])
 
     // Turn associations into properties.
     Object.keys(associations).forEach(
@@ -816,6 +819,8 @@ let CanonicalUmlXmiParser = function (opts) {
       let missingElements = {}
 
       let ret = new UmlModel.Model(
+        xmiGraph.id,
+        xmiGraph.name,
         xmiGraph.source,
         null,
         missingElements
