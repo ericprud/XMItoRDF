@@ -22,6 +22,7 @@ function UmlModel (modelOptions = {}, $ = null) {
   const AGGREGATION_shared = 'AGGREGATION_shared'
   const AGGREGATION_composite = 'AGGREGATION_composite'
   const XSD = 'http://www.w3.org/2001/XMLSchema#'
+  const jsonCycles = require('circular-json')
 
   /** render members of a Model or a Package
    */
@@ -887,6 +888,33 @@ function UmlModel (modelOptions = {}, $ = null) {
 
   }
 
+  function toJSON (term, options = { fixed: 0}) {
+    return jsonCycles.stringify(term, function (key, value) {
+      let references = {
+        'Package': ['references', 'parent'],
+        'Import': ['target', 'reference'],
+        'Property': ['type', 'inClass'],
+        'Enumeration': ['references', 'parent'],
+        'Datatype': ['references', 'parent'],
+        'Class': ['references', 'parent', 'generalizations']
+      }
+      let keys = references[this.rtti] || []
+      if (keys.indexOf(key) !== -1) {
+        if (typeof value === 'object' && value.constructor === Array) {
+          return value.map(
+            ent => {
+              ++options.fixed
+              return { _idref: ent.id } }
+          )
+        } else {
+          ++options.fixed
+          return { _idref: this[key].id }
+        }
+      }
+      return value
+    }, null, true)
+  }
+
   class Point {
     constructor (x, y) {
       Object.assign(this, {x, y})
@@ -907,6 +935,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 //    Association,
     Aggregation: { shared: AGGREGATION_shared, composite: AGGREGATION_composite },
     fromJSON,
+    toJSON,
     Point
   }
 }
