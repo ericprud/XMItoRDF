@@ -5,7 +5,8 @@ const jsonCycles = require('circular-json')
   const XSD = 'http://www.w3.org/2001/XMLSchema#'
   const UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
   const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
-  // const expect = require('chai').expect
+  const assert = require('chai').assert
+  const expect = require('chai').expect
   const normalizeType = function (type) {
     return type
     if (!type) {
@@ -49,11 +50,59 @@ const jsonCycles = require('circular-json')
     }
   }
 
-describe('A UML Model', function() {
-  it('should parse and compare', function(done) {
-    const UmlModel = require('../doc/uml-model')({
-      externalDatatype: n => n.startsWith(XSD)
-    })
+const UmlModel = require('../doc/uml-model')({
+  externalDatatype: n => n && (n.startsWith(XSD) || n.startsWith(UMLP))
+})
+
+describe ('A UML Model', function() {
+  it ('should parse a manual structure', function(done) {
+    let mod1 = { rtti: 'Model', id: 'mod1', source: { a:1, b:2 }, elements: [
+    ]}
+    let pak1 = { rtti: 'Package', id: 'pak1', elements: [], references: [mod1] }
+    mod1.elements.push(pak1)
+    let cls1 = { rtti: 'Class', id: 'cls1', properties: [], references: [pak1] }
+    pak1.elements.push(cls1)
+    let prp1 = { rtti: 'Property', id: 'prp1', type: cls1 }
+    cls1.properties.push(prp1)
+    cls1.references.push(prp1)
+
+    let j = {
+      "rtti":"Model",
+      "id":"mod1",
+      "source":{"a":1,"b":2},
+      "elements":[
+        { "rtti":"Package",
+          "id":"pak1",
+          "elements":[
+            { "rtti":"Class",
+              "id":"cls1",
+              "properties":[
+                { "rtti":"Property","id":"prp1","type":{"_idref":"cls1"} }
+              ],"references":[
+                {"_idref":"pak1"},
+                {"_idref":"prp1"}
+              ]}
+          ],
+          "references":[
+            {"_idref":"mod1"}
+          ]}
+      ]}
+    let um1 = UmlModel.fromJSON(JSON.stringify(j))
+    assert(typeof um1.diffs === 'function')
+    let pk1 = um1.elements[0]
+    assert(typeof pk1.diffs === 'function')
+    assert(pk1.references[0] === um1)
+    let cl1 = pk1.elements[0]
+    assert(typeof cl1.diffs === 'function')
+    assert(cl1.references[0] === pk1)
+    let pr1 = cl1.properties[0]
+    assert(typeof pr1.diffs === 'function')
+    assert(cl1.references[1] === pr1)
+    assert(pr1.type === cl1)
+    done()
+  })
+
+  it ('should parse and compare all.xmi', function(done) {
     const UmlParser = require('../doc/canonical-uml-xmi-parser')(ParserOpts)
     let source = {
       method: 'fs.readFileSync',
@@ -67,56 +116,35 @@ describe('A UML Model', function() {
     function parserCallback (err, xmiGraph) {
       if (err) {
         throw (err)
-      } else {
-        if (false) {
-          let p1 = new UmlModel.Point(1, 2)
-          let p2 = new UmlModel.Point(3, 4)
-          p1.self = p1
-          p2.self = p2
-          p1.other = p2
-          p2.other = p1
-          let p3 = new UmlModel.Point(p1, p2)
-          let p1t = jsonCycles.stringify(p3)
-          console.log(p1t)
-          let s1 = '{"x":{"x":1,"y":2,"self":"~x","other":{"x":3,"y":4,"self":"~x~other","other":"~x"}},"y":"~x~other"}'
-          let s2 = `
-          { "x": { "x": 1, "y": 2, "self": "~x", "other": "~y" },
-            "y": { "x": 3, "y": 4, "self": "~y", "other": "~x" }
-          }`
-          // expect(p1t).toEqual(s1)
-          expect(p1t).to.deep.equal(s1)
-          let p1c = jsonCycles.parse(p1t)
-          // expect(p1c).toEqual(p3)
-          expect(p1c).to.deep.equal(p3)
-          let p2c = jsonCycles.parse(s2)
-          // expect(p2c).toEqual(p3)
-          expect(p2c).to.deep.equal(p3)
-        }
-
-        let model = UmlParser.toUML(xmiGraph)
-        let x = [
-          "getClasses",
-          "getDatatypes",
-          "getEnumerations",
-          "getProperties",
-        ]
-        x.forEach(
-          k => delete model[k]
-        )
-        let str = jsonCycles.stringify(model)
-        // fs.writeFileSync(__dirname + '/' + 'all.jscycle', str, { encoding: 'utf-8' })
-        // console.warn(str)
-        // let obj = jsonCycles.parse(str)
-        let obj = jsonCycles.parse(fs.readFileSync(__dirname + '/' + 'all.jscycle', 'utf-8'))
-        // expect(obj).to.deep.equal(model);
-        // expect(obj).toEqual(model);
-        let diffs = model.diffs(obj, s => {throw Error(s)})
-        if (diffs.length) {
-          throw Error('unexpected diffs: ' + diffs.join('\n'))
-        }
-
-        done()
       }
+      let model = UmlParser.toUML(xmiGraph)
+      let x = [
+        "getClasses",
+        "getDatatypes",
+        "getEnumerations",
+        "getProperties",
+      ]
+      x.forEach(
+        k => delete model[k]
+      )
+
+      let options = { fixed: 0 }
+      let str = UmlModel.toJSON(model, options)
+      // let str = jsonCycles.stringify(model)
+      // fs.writeFileSync(__dirname + '/' + 't.json', str, { encoding: 'utf-8' })
+      // console.log('fixed:', options.fixed)
+      // console.log(str)
+      // let obj = jsonCycles.parse(str)
+      // let obj = jsonCycles.parse(fs.readFileSync(__dirname + '/' + 'all.jscycle', 'utf-8'))
+      let obj = UmlModel.fromJSON(str/*fs.readFileSync(__dirname + '/' + 'all.json', 'utf-8')*/)
+      // expect(obj).to.deep.equal(model);
+      // expect(obj).toEqual(model);
+      let diffs = model.diffs(obj, s => {throw Error(s)})
+      if (diffs.length) {
+        throw Error('unexpected diffs: ' + diffs.join('\n'))
+      }
+
+      done()
     }
   });
 });

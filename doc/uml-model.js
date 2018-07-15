@@ -744,7 +744,219 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
   }
 
-  function fromJSON (obj) {
+  function fromJSON (from, options = {}) {
+    let M = this
+    from = JSON.parse(from)
+
+    let objs = {}
+    function makeObjs (obj) {
+      if (!!obj && typeof obj !== 'string') {
+        if (obj.id) {
+          objs[obj.id] = new M[obj.rtti]()
+        }
+        Object.keys(obj).forEach(k => {
+          makeObjs(obj[k])
+        })
+      }
+    }
+    makeObjs(from)
+
+    function populate (obj) {
+      Object.keys(obj).forEach(k => {
+        let v = obj[k]
+        if (!!v && typeof v !== 'string') {
+          populate(v)
+          if (obj.rtti === 'Property' && k === 'type' && modelOptions.externalDatatype(v._idref)) {
+            objs[v._idref] = new M.Datatype(v._idref, [objs[v.id]], v._idref, null, null)
+          }
+          if (v._idref) {
+            v = obj[k] = objs[v._idref]
+          }
+          if (v.id) {
+            obj[k] = Object.assign(objs[v.id], v)
+          }
+        }
+      })
+    }
+    populate(from)
+    if (from.id) {
+      from = Object.assign(objs[from.id], from)
+    }
+
+    return from
+
+    // Below is an attempt to use a single pass in circular-json's parse callback.
+    // It results in an incomplete substitution, possibly because target objects
+    // get replaced before substitution.
+
+
+        let needed = { }
+        let known = { }
+        let ret = jsonCycles.parse(from, function (key, value) {
+          let references = {
+            'Model': ['elements'],
+            'Package': ['references', 'parent', 'elements'],
+            'Import': ['target', 'reference'],
+            'Property': ['type', 'inClass'],
+            'Enumeration': ['references', 'parent'],
+            'Datatype': ['references', 'parent'],
+            'Class': ['references', 'parent', 'generalizations', 'properties']
+          }
+          let keys = references[this.rtti] || []
+          // if (this.rtti === 'Property' && key === 'type' ||
+          //     this.rtti === 'Class' && key === 'properties' ||
+          //     this.rtti === 'pak1' && key === 'elements' ||
+          //     this.rtti === 'Model' && key === 'elements') {
+          //   console.log('this:', this, '\n', 'key:', key, '\n', 'value:', value, '\n')
+          // }
+          if (keys.indexOf(key) !== -1) {
+            if (typeof value === 'object' && value.constructor === Array) {
+              return value.map(
+                (ent, idx) => resolve(value, idx, ent)
+              )
+            } else {
+              return resolve(this, key, value)
+            }
+          }
+          return value
+
+          function resolve (obj, key, value) {
+            let idref = value._idref
+            let id = value.id
+            if (idref) {
+              if (idref in known) {
+                value = known[idref]
+              } else {
+                if (!(idref in needed)) {
+                  needed[idref] = []
+                } else if (needed.idref.length === 0) {
+                  throw Error('it seems ' + idref + ' was previously resolved')
+                }
+                needed[idref].push({ obj:obj, key, idref: idref })
+              }
+            } else {
+              if (id in known) {
+                throw Error('duplicate definition of ' + id)
+              }
+              known[id] = value
+              // known[id] = Object.assign(new UmlModel[value.rtti], value)
+              // Object.keys(needed).forEach(nid => {
+              //   let nz = needed[nid];
+              //   nz.forEach(n => {
+              //     if (n.obj === value) {
+              //       n.obj = known[id]
+              //       // console.log(nid, n)
+              //     }
+              //   })
+              // })
+              // value = known[id]
+              // if (id in needed) {
+              //   needed[id].forEach(n => {
+              //     n.obj[n.key] = value
+              //   })
+              //   // could just delete needed[id] but curious about resolutions
+              //   needed[id].length = 0
+              // }
+            }
+            return value
+          }
+        })
+        // ret = known[ret.id] = Object.assign(new UmlModel[ret.rtti], ret)
+        ret = known[ret.id] = ret
+        // trim to just id=ret.id
+        Object.keys(needed).forEach(id => {
+          let nz = needed[id]
+          if (!(id in known)) {
+            throw Error('no definition for ' + id + ' needed in ' + nz.length + ' place(s)')
+          }
+          nz.forEach(n => {
+            n.obj[n.key] = known[id]
+          })
+        })
+        /*
+        let ret = jsonCycles.parse(JSON.stringify(j), function (key, value) {
+          let references = {
+            'Model': ['elements'],
+            'Package': ['references', 'parent', 'elements'],
+            'Import': ['target', 'reference'],
+            'Property': ['type', 'inClass'],
+            'Enumeration': ['references', 'parent'],
+            'Datatype': ['references', 'parent'],
+            'Class': ['references', 'parent', 'generalizations', 'properties']
+          }
+          let keys = references[this.rtti] || []
+          console.log('this:', this, '\n', 'key:', key, '\n', 'value:', value, '\n')
+          if (keys.indexOf(key) !== -1) {
+            if (typeof value === 'object' && value.constructor === Array) {
+              return value.map(
+                (ent, idx) => resolve(value, idx, ent)
+              )
+            } else {
+              return resolve(this, key, value)
+            }
+          }
+          return value
+
+          function resolve (obj, key, value) {
+            let idref = value._idref
+            let id = value.id
+            if (idref) {
+              if (idref in known) {
+                value = known[idref]
+              } else {
+                if (!(idref in needed)) {
+                  needed[idref] = []
+                } else if (needed.idref.length === 0) {
+                  throw Error('it seems ' + idref + ' was previously resolved')
+                }
+                needed[idref].push({ obj:obj, key, idref: idref })
+              }
+            } else {
+              if (id in known) {
+                throw Error('duplicate definition of ' + id)
+              }
+              // known[id] = Object.assign(new UmlModel[value.rtti], value)
+              known[id] = new UmlModel[value.rtti]
+              Object.keys(value).forEach(k => {
+                known[id][k] = value[k]
+              })
+              Object.keys(needed).forEach(nid => {
+                let nz = needed[nid];
+                nz.forEach(n => {
+                  if (n.obj === value) {
+                    n.obj = known[id]
+                    // console.log(nid, n)
+                  }
+                })
+              })
+              value = known[id]
+              if (id in needed) {
+                needed[id].forEach(n => {
+                  n.obj[n.key] = value
+                })
+                // could just delete needed[id] but curious about resolutions
+                needed[id].length = 0
+              }
+            }
+            return value
+          }
+        })
+        ret = known[ret.id] = Object.assign(new UmlModel[ret.rtti], ret)
+        // trim to just id=ret.id
+        Object.keys(needed).forEach(id => {
+          let nz = needed[id]
+          if (!(id in known)) {
+            throw Error('no definition for ' + id + ' needed in ' + nz.length + ' place(s)')
+          }
+          nz.forEach(n => {
+            n.obj[n.key] = known[id]
+          })
+        })
+        */
+    return ret
+  }
+
+  function fromJSON999 (obj) {
     let packages = {}
     let enums = {}
     let classes = {}
