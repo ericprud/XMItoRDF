@@ -1,0 +1,845 @@
+{
+  "missingElements": null,
+      "elements": [
+        {
+          "elements": [
+            {
+              "rtti": "Package", "id": "All-Views-ViewAll", "name": "ViewAll",
+              "parent": { "_idref": "All-Views" },
+              "references": [ { "_idref": "All-Views" } ],
+              "elements": [
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-1",
+                  "target": { "_idref": "All-Library-PackageOne-EnumOne" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-2",
+                  "target": { "_idref": "All-Library-PackageOne-NoAttributes" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-3",
+                  "target": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-4",
+                  "target": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-5",
+                  "target": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-6",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralization" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-7",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-8",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageRef1" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-9",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-10",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInherit1" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-11",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-12",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-13",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageRef2" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-14",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-15",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInherit2" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-16",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-17",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-18",
+                  "target": { "_idref": "All-Library-PackageFour-EnumTwo" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-19",
+                  "target": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                  "reference": { "_idref": "All-Views-ViewAll" } },
+                { "rtti": "Import", "id": "All-Views-ViewAll-elementImport-20",
+                  "target": { "_idref": "All-Library-PackageFour-anyURI" },
+                  "reference": { "_idref": "All-Views-ViewAll" } }
+              ]
+            },
+            {
+              "elements": [
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-1",
+                  "target": { "_idref": "All-Library-PackageOne-EnumOne" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-2",
+                  "target": { "_idref": "All-Library-PackageOne-NoAttributes" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-3",
+                  "target": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-4",
+                  "target": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-5",
+                  "target": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-6",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralization" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-7",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-13",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageRef2" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-14",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-15",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInherit2" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-16",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-17",
+                  "target": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-18",
+                  "target": { "_idref": "All-Library-PackageFour-EnumTwo" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-19",
+                  "target": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                  "reference": { "_idref": "All-Views-ViewOne" } },
+                { "rtti": "Import", "id": "All-Views-ViewOne-elementImport-20",
+                  "target": { "_idref": "All-Library-PackageFour-anyURI" },
+                  "reference": { "_idref": "All-Views-ViewOne" } }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Views" },
+              "name": "ViewOne",
+              "references": [ { "_idref": "All-Views" } ],
+              "id": "All-Views-ViewOne"
+            },
+            {
+              "elements": [
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-1",
+                  "target": { "_idref": "All-Library-PackageOne-EnumOne" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-2",
+                  "target": { "_idref": "All-Library-PackageOne-NoAttributes" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-3",
+                  "target": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-4",
+                  "target": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-5",
+                  "target": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-6",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralization" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-7",
+                  "target": { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-8",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageRef1" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-9",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-10",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInherit1" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-11",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-12",
+                  "target": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-18",
+                  "target": { "_idref": "All-Library-PackageFour-EnumTwo" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-19",
+                  "target": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } },
+                { "rtti": "Import", "id": "All-Views-ViewTwo-elementImport-20",
+                  "target": { "_idref": "All-Library-PackageFour-anyURI" },
+                  "reference": { "_idref": "All-Views-ViewTwo" } }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Views" },
+              "name": "ViewTwo",
+              "references": [ { "_idref": "All-Views" } ],
+              "id": "All-Views-ViewTwo"
+            }
+          ],
+          "rtti": "Package",
+          "parent": { "_idref": "MyModel" },
+          "name": "Views",
+          "references": [ { "_idref": "MyModel" } ],
+          "id": "All-Views"
+        },
+        {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "values": [
+                    "EnumEltOne",
+                    "EnumEltTwo",
+                    "EnumEltThree"
+                  ],
+                  "rtti": "Enumeration",
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-1" },
+                  "name": "EnumOne",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-1" },
+                    { "_idref": "All-Library-PackageOne-NoAssociations-c2p2" },
+                    { "_idref": "All-Views-ViewOne-elementImport-1" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-1" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-EnumOne"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-2" },
+                  "name": "NoAttributes",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-2" },
+                    { "_idref": "All-Views-ViewOne-elementImport-2" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-2" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-NoAttributes"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c2p1",
+                      "inClass": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                      "id": "All-Library-PackageOne-NoAssociations-uri",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-EnumOne" },
+                      "name": "c2p2",
+                      "inClass": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                      "id": "All-Library-PackageOne-NoAssociations-c2p2",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "http:\/\/www.omg.org\/spec\/UML\/20110701\/PrimitiveTypes.xmi#Integer" },
+                      "name": "c2p3",
+                      "inClass": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                      "id": "All-Library-PackageOne-NoAssociations-c2p3",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-3" },
+                  "name": "NoAssociations",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-3" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageOne-OneGeneralization" },
+                    { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation-ownedAttribute-1" },
+                    { "_idref": "All-Views-ViewOne-elementImport-3" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-3" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-NoAssociations"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c3p1",
+                      "inClass": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                      "id": "All-Library-PackageOne-OneAssociation-c3p1",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                      "name": "c3a1",
+                      "inClass": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                      "id": "All-Library-PackageOne-OneAssociation-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-4" },
+                  "name": "OneAssociation",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-4" },
+                    { "_idref": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-2" },
+                    { "_idref": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-3" },
+                    { "_idref": "All-Views-ViewOne-elementImport-4" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-4" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-OneAssociation"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                      "name": "c4a1",
+                      "inClass": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                      "id": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-1",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                      "name": "c4a2",
+                      "inClass": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                      "id": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-2",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-OneAssociation" },
+                      "name": "c4a3",
+                      "inClass": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                      "id": "All-Library-PackageOne-ThreeAssociations-ownedAttribute-3",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "http:\/\/www.omg.org\/spec\/UML\/20110701\/PrimitiveTypes.xmi#Integer" },
+                      "name": "c4a1",
+                      "inClass": { "_idref": "All-Library-PackageOne-ThreeAssociations" },
+                      "id": "All-Library-PackageOne-ThreeAssociations-index",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-5" },
+                  "name": "ThreeAssociations",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-5" },
+                    { "_idref": "All-Views-ViewOne-elementImport-5" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-5" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-ThreeAssociations"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c5p1",
+                      "inClass": { "_idref": "All-Library-PackageOne-OneGeneralization" },
+                      "id": "All-Library-PackageOne-OneGeneralization-c3p1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageOne-NoAssociations" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-6" },
+                  "name": "OneGeneralization",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-6" },
+                    { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                    { "_idref": "All-Views-ViewOne-elementImport-6" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-6" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-OneGeneralization"
+                },
+                {
+                  "isAbstract": false,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c6p1",
+                      "inClass": { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                      "id": "All-Library-PackageOne-OneGeneralizationOneAssociation-c3p1",
+                      "rtti": "Property"
+                    },
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageOne-NoAssociations" },
+                      "name": "c6a1",
+                      "inClass": { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation" },
+                      "id": "All-Library-PackageOne-OneGeneralizationOneAssociation-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageOne-OneGeneralization" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-7" },
+                  "name": "OneGeneralizationOneAssociation",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-7" },
+                    { "_idref": "All-Views-ViewOne-elementImport-7" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-7" },
+                    { "_idref": "All-Library-PackageOne" }
+                  ],
+                  "id": "All-Library-PackageOne-OneGeneralizationOneAssociation"
+                }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Library" },
+              "name": "PackageOne",
+              "references": [ { "_idref": "All-Library" } ],
+              "id": "All-Library-PackageOne"
+            },
+            {
+              "elements": [
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                      "name": "c7a1",
+                      "inClass": { "_idref": "All-Library-PackageTwo-ExtraPackageRef1" },
+                      "id": "All-Library-PackageTwo-ExtraPackageRef1-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-8" },
+                  "name": "ExtraPackageRef1",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-8" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-8" },
+                    { "_idref": "All-Library-PackageTwo" }
+                  ],
+                  "id": "All-Library-PackageTwo-ExtraPackageRef1"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c8p1",
+                      "inClass": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                      "id": "All-Library-PackageOne-OneAssociation-c8p1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-9" },
+                  "name": "ExtraPackageNoAssociations1",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-9" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageRef2-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageInherit2" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2" },
+                    { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-9" },
+                    { "_idref": "All-Library-PackageTwo" }
+                  ],
+                  "id": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c9p1",
+                      "inClass": { "_idref": "All-Library-PackageTwo-ExtraPackageInherit1" },
+                      "id": "All-Library-PackageOne-OneAssociation-c9p1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-10" },
+                  "name": "ExtraPackageInherit1",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-10" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-10" },
+                    { "_idref": "All-Library-PackageTwo" }
+                  ],
+                  "id": "All-Library-PackageTwo-ExtraPackageInherit1"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                      "name": "c10a1",
+                      "inClass": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1" },
+                      "id": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-11" },
+                  "name": "ExtraPackageInheritAndSameRef1",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-11" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-11" },
+                    { "_idref": "All-Library-PackageTwo" }
+                  ],
+                  "id": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                      "name": "c11a1",
+                      "inClass": { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1" },
+                      "id": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-12" },
+                  "name": "ExtraPackageInheritAndCircularRef1",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-12" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-12" },
+                    { "_idref": "All-Library-PackageTwo" }
+                  ],
+                  "id": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1"
+                }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Library" },
+              "name": "PackageTwo",
+              "references": [ { "_idref": "All-Library" } ],
+              "id": "All-Library-PackageTwo"
+            },
+            {
+              "elements": [
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                      "name": "c12a1",
+                      "inClass": { "_idref": "All-Library-PackageThree-ExtraPackageRef2" },
+                      "id": "All-Library-PackageThree-ExtraPackageRef2-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-13" },
+                  "name": "ExtraPackageRef2",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-13" },
+                    { "_idref": "All-Views-ViewOne-elementImport-13" },
+                    { "_idref": "All-Library-PackageThree" }
+                  ],
+                  "id": "All-Library-PackageThree-ExtraPackageRef2"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c13p1",
+                      "inClass": { "_idref": "All-Library-PackageThree-ExtraPackageNoAssociations2" },
+                      "id": "All-Library-PackageOne-OneAssociation-c13p1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Library-PackageTwo-ExtraPackageRef1-ownedAttribute-1" },
+                  "name": "ExtraPackageNoAssociations2",
+                  "references": [
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageRef1-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageInherit1" },
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1" },
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndSameRef1-ownedAttribute-1" },
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1" },
+                    { "_idref": "All-Library-PackageTwo-ExtraPackageInheritAndCircularRef1-ownedAttribute-1" },
+                    { "_idref": "All-Views-ViewAll-elementImport-14" },
+                    { "_idref": "All-Views-ViewOne-elementImport-14" },
+                    { "_idref": "All-Library-PackageThree" }
+                  ],
+                  "id": "All-Library-PackageThree-ExtraPackageNoAssociations2"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageFour-DTypeOne" },
+                      "name": "c14p1",
+                      "inClass": { "_idref": "All-Library-PackageThree-ExtraPackageInherit2" },
+                      "id": "All-Library-PackageOne-OneAssociation-c14p1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-15" },
+                  "name": "ExtraPackageInherit2",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-15" },
+                    { "_idref": "All-Views-ViewOne-elementImport-15" },
+                    { "_idref": "All-Library-PackageThree" }
+                  ],
+                  "id": "All-Library-PackageThree-ExtraPackageInherit2"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                      "name": "c15a1",
+                      "inClass": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2" },
+                      "id": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-16" },
+                  "name": "ExtraPackageInheritAndSameRef2",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-16" },
+                    { "_idref": "All-Views-ViewOne-elementImport-16" },
+                    { "_idref": "All-Library-PackageThree" }
+                  ],
+                  "id": "All-Library-PackageThree-ExtraPackageInheritAndSameRef2"
+                },
+                {
+                  "isAbstract": true,
+                  "properties": [
+                    {
+                      "comments": [
+                        "Comment 1"
+                      ],
+                      "type": { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" },
+                      "name": "c16a1",
+                      "inClass": { "_idref": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2" },
+                      "id": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2-ownedAttribute-1",
+                      "rtti": "Property"
+                    }
+                  ],
+                  "generalizations": [ { "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1" } ],
+                  "rtti": "Class",
+                  "comments": [
+                    "Comment 1"
+                  ],
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-17" },
+                  "name": "ExtraPackageInheritAndCircularRef2",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-17" },
+                    { "_idref": "All-Views-ViewOne-elementImport-17" },
+                    { "_idref": "All-Library-PackageThree" }
+                  ],
+                  "id": "All-Library-PackageThree-ExtraPackageInheritAndCircularRef2"
+                }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Library" },
+              "name": "PackageThree",
+              "references": [ { "_idref": "All-Library" } ],
+              "id": "All-Library-PackageThree"
+            },
+            {
+              "elements": [
+                {
+                  "values": [
+                    "Nominal",
+                    "Ordinal",
+                    "Interval",
+                    "Ratio",
+                    "Continuous"
+                  ],
+                  "rtti": "Enumeration",
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-18" },
+                  "name": "EnumTwo",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-18" },
+                    { "_idref": "All-Views-ViewOne-elementImport-18" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-18" },
+                    { "_idref": "All-Library-PackageFour" }
+                  ],
+                  "id": "All-Library-PackageFour-EnumTwo"
+                },
+                {
+                  "rtti": "Datatype",
+                  "external": false,
+                  "parent": { "_idref": "All-Library-PackageOne-NoAssociations-uri" },
+                  "name": "DTypeOne",
+                  "references": [
+                    { "_idref": "All-Library-PackageOne-NoAssociations-uri" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-c3p1" },
+                    { "_idref": "All-Library-PackageOne-OneGeneralization-c3p1" },
+                    { "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation-c3p1" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-c13p1" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-c8p1" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-c9p1" },
+                    { "_idref": "All-Library-PackageOne-OneAssociation-c14p1" },
+                    { "_idref": "All-Views-ViewAll-elementImport-19" },
+                    { "_idref": "All-Views-ViewOne-elementImport-19" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-19" },
+                    { "_idref": "All-Library-PackageFour" }
+                  ],
+                  "id": "All-Library-PackageFour-DTypeOne"
+                },
+                {
+                  "rtti": "Datatype",
+                  "external": false,
+                  "parent": { "_idref": "All-Views-ViewAll-elementImport-20" },
+                  "name": "anyURI",
+                  "references": [
+                    { "_idref": "All-Views-ViewAll-elementImport-20" },
+                    { "_idref": "All-Views-ViewOne-elementImport-20" },
+                    { "_idref": "All-Views-ViewTwo-elementImport-20" },
+                    { "_idref": "All-Library-PackageFour" }
+                  ],
+                  "id": "All-Library-PackageFour-anyURI"
+                }
+              ],
+              "rtti": "Package",
+              "parent": { "_idref": "All-Library" },
+              "name": "PackageFour",
+              "references": [ { "_idref": "All-Library" } ],
+              "id": "All-Library-PackageFour"
+            }
+          ],
+          "rtti": "Package",
+          "parent": { "_idref": "MyModel" },
+          "name": "Library",
+          "references": [ { "_idref": "MyModel" } ],
+          "id": "All-Library"
+        }
+      ],
+  "source": {
+    "timestamp": "2018-07-12T06:50:42.750Z",
+    "resource": "..\/doc\/canonical-uml-xmi-parser",
+    "method": "fs.readFileSync"
+  },
+  "rtti": "Model",
+  "name": "MyModel",
+  "id": "MyModel"
+}
