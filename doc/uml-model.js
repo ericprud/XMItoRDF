@@ -60,15 +60,16 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   function objDiffs (l, r, render, seen) {
-    if (l instanceof Object && Object.keys(l).length === 0 && r === null ||
+    if (l === null && r === null ||
+        l instanceof Object && Object.keys(l).length === 0 && r === null ||
         r instanceof Object && Object.keys(r).length === 0 && l === null) {
       return []
     }
     if (!(l instanceof Object) || !(r instanceof Object)) {
-      throw Error('invocation error: odjDifs called with non-object')
+      throw Error('invocation error: objDiffs called with non-object')
     }
     if (l.constructor === Array || r.constructor === Array) {
-      throw Error('invocation error: odjDifs called with Array')
+      throw Error('invocation error: objDiffs called with Array')
     }
     return []
       .concat(Object.keys(l).reduce(

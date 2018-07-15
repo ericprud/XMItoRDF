@@ -1,13 +1,12 @@
 const fs = require('fs')
-const jsonCycles = require('circular-json')
-// const jsonCycles = require('flatted')
+const CanonXmiParser = require('../doc/canonical-uml-xmi-parser')
 
   const XSD = 'http://www.w3.org/2001/XMLSchema#'
   const UMLD = 'http://schema.omg.org/spec/UML/2.1/uml.xml#'
   const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
   const assert = require('chai').assert
   const expect = require('chai').expect
-  const normalizeType = function (type) {
+  const normalizeType999 = function (type) {
     if (!type) {
       return type // pass undefined on
     }
@@ -35,26 +34,33 @@ const jsonCycles = require('circular-json')
       return UMLD + type.substr(UMLP.length)
     }
     return type
-  }
-  const ParserOpts = {
-    viewPattern: /Functional999Views/,
-    // normalizeType: normalizeType,
-    nameMap: {
-      'Views (Exported from Drupal)': 'Views',
-      'Class Model (Exported from Drupal)': 'ddi4_model',
-      'ClassLibrary': 'ddi4_model', // minimize diffs
-      'FunctionalViews': 'Views',
-      'xsd:anyUri': XSD + 'anyURI',
-      'xsd:anguage': XSD + 'language'
+
+    function objSet (obj, key, value) {
+      let add = { }
+      add[key] = value
+      return Object.assign({}, obj, add)
     }
   }
+
+const ParserOpts = {
+  viewPattern: /Functional999Views/,
+  // normalizeType: normalizeType,
+  nameMap: {
+    // 'Views (Exported from Drupal)': 'Views',
+    // 'Class Model (Exported from Drupal)': 'ddi4_model',
+    'ClassLibrary': 'ddi4_model', // minimize diffs
+    'FunctionalViews': 'Views',
+    // 'xsd:anyUri': XSD + 'anyURI',
+    // 'xsd:anguage': XSD + 'language'
+  }
+}
 
 const UmlModel = require('../doc/uml-model')({
   externalDatatype: n => n && n.startsWith(UMLP)
 })
 
 describe ('A UML Model', function() {
-  it ('should parse a manual structure', function(done) {
+  it ('should construct Model from a manual structure', function(done) {
     let mod1 = { rtti: 'Model', id: 'mod1', source: { a:1, b:2 }, elements: [
     ]}
     let pak1 = { rtti: 'Package', id: 'pak1', elements: [], references: [mod1] }
@@ -101,53 +107,79 @@ describe ('A UML Model', function() {
     done()
   })
 
-  it ('should parse and compare all.xmi', function(done) {
-    const UmlParser = require('../doc/canonical-uml-xmi-parser')(ParserOpts)
-    let source = {
-      method: 'fs.readFileSync',
-      resource: '../doc/canonical-uml-xmi-parser',
-      timestamp: new Date().toISOString()
-    }
-    let filePath = '../doc/DDI4_PIM_canonical.xmi'
-    // let filePath = './XMI/all.xmi'
-    UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + filePath, 'UTF-8'), source, parserCallback)
-
-    function parserCallback (err, xmiGraph) {
-      if (err) {
-        throw (err)
-      }
-      let model = UmlParser.toUML(xmiGraph)
-      let x = [
-        "getClasses",
-        "getDatatypes",
-        "getEnumerations",
-        "getProperties",
-      ]
-      x.forEach(
-        k => delete model[k]
-      )
-
-      // let options = { fixed: 0 }
-      // let str = UmlModel.toJSON(model, options)
-      // fs.writeFileSync(__dirname + '/' + 't.json', str, { encoding: 'utf-8' })
-      // console.log(str)
-      // let obj = UmlModel.fromJSON(str/*fs.readFileSync(__dirname + '/' + 'all.json', 'utf-8')*/)
-      let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + 'DDI4_PIM_canonical.json', 'utf-8'))
-      // expect(obj).to.deep.equal(model);
-      // expect(obj).toEqual(model);
-      debugger
-      let diffs = model.diffs(obj, s => {throw Error(s)})
-      if (diffs.length) {
-        throw Error('unexpected diffs: ' + diffs.join('\n'))
-      }
-
-      done()
-    }
-  });
+  it ('all XMI should parse and compare', done => testParser('./XMI/all.xmi', 'all.json', done));
+  it ('DDI4 XMI should parse and compare', done => testParser('../doc/DDI4_PIM_canonical.xmi', 'DDI4_PIM_canonical.json', done));
+  it ('all XMI should parse, toJSON, fromJSON', done => parseToFromJSON('./XMI/all.xmi', 200, done));
+  it ('all XMI should round-trip through JSON', done => roundTripJSON('all.json', 200, done));
 });
 
-  function objSet (obj, key, value) {
-    let add = { }
-    add[key] = value
-    return Object.assign({}, obj, add)
+function testParser (xmi, json, done) {
+  const UmlParser = CanonXmiParser(ParserOpts)
+  let source = {
+    method: 'fs.readFileSync',
+    resource: xmi,
+    timestamp: new Date().toISOString()
   }
+  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, parserCallback)
+
+  function parserCallback (err, xmiGraph) {
+    if (err) {
+      throw (err)
+    }
+    let model = UmlParser.toUML(xmiGraph)
+    let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + json, 'utf-8'))
+    // let diffs = model.diffs(obj /*, s => {throw Error(s)} */) // uncomment to throw immediately
+    let diffs = model.diffs(obj, s => {throw Error(s)})
+    if (diffs.length) {
+      throw Error('unexpected diffs: ' + diffs.join('\n'))
+    }
+    // both mocha and jest are too slow to test equivalence:
+    // expect(obj).to.deep.equal(model); // mocha
+    // expect(obj).toEqual(model); // jest
+    done()
+  }
+}
+
+function parseToFromJSON (xmi, minFixups, done) {
+  const UmlParser = CanonXmiParser(ParserOpts)
+  let source = {
+    method: 'fs.readFileSync',
+    resource: xmi,
+    timestamp: new Date().toISOString()
+  }
+  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, parserCallback)
+
+  function parserCallback (err, xmiGraph) {
+    if (err) {
+      throw (err)
+    }
+    let model = UmlParser.toUML(xmiGraph)
+    let options = { fixed: 0 }
+    let str = UmlModel.toJSON(model, options)
+    // fs.writeFileSync(__dirname + '/' + 't.json', str, { encoding: 'utf-8' })
+    assert(options.fixed > minFixups)
+
+    let obj = UmlModel.fromJSON(str)
+    // let diffs = model.diffs(obj /*, s => {throw Error(s)} */) // uncomment to throw immediately
+    let diffs = model.diffs(obj, s => {throw Error(s)})
+    if (diffs.length) {
+      throw Error('unexpected diffs: ' + diffs.join('\n'))
+    }
+    done()
+  }
+}
+
+function roundTripJSON (json, minFixups, done) {
+  let model = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + json, 'utf-8'))
+  let options = { fixed: 0 }
+  let str = UmlModel.toJSON(model, options)
+  assert(options.fixed > minFixups)
+
+  let obj = UmlModel.fromJSON(str)
+  // let diffs = model.diffs(obj /*, s => {throw Error(s)} */) // uncomment to throw immediately
+  let diffs = model.diffs(obj, s => {throw Error(s)})
+  if (diffs.length) {
+    throw Error('unexpected diffs: ' + diffs.join('\n'))
+  }
+  done()
+}
