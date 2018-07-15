@@ -8,7 +8,6 @@ const jsonCycles = require('circular-json')
   const assert = require('chai').assert
   const expect = require('chai').expect
   const normalizeType = function (type) {
-    return type
     if (!type) {
       return type // pass undefined on
     }
@@ -39,7 +38,7 @@ const jsonCycles = require('circular-json')
   }
   const ParserOpts = {
     viewPattern: /Functional999Views/,
-    normalizeType: normalizeType,
+    // normalizeType: normalizeType,
     nameMap: {
       'Views (Exported from Drupal)': 'Views',
       'Class Model (Exported from Drupal)': 'ddi4_model',
@@ -51,7 +50,7 @@ const jsonCycles = require('circular-json')
   }
 
 const UmlModel = require('../doc/uml-model')({
-  externalDatatype: n => n && (n.startsWith(XSD) || n.startsWith(UMLP))
+  externalDatatype: n => n && n.startsWith(UMLP)
 })
 
 describe ('A UML Model', function() {
@@ -109,8 +108,8 @@ describe ('A UML Model', function() {
       resource: '../doc/canonical-uml-xmi-parser',
       timestamp: new Date().toISOString()
     }
-    // let filePath = '../doc/DDI4_PIM_canonical.xmi'
-    let filePath = './XMI/all.xmi'
+    let filePath = '../doc/DDI4_PIM_canonical.xmi'
+    // let filePath = './XMI/all.xmi'
     UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + filePath, 'UTF-8'), source, parserCallback)
 
     function parserCallback (err, xmiGraph) {
@@ -128,17 +127,15 @@ describe ('A UML Model', function() {
         k => delete model[k]
       )
 
-      let options = { fixed: 0 }
-      let str = UmlModel.toJSON(model, options)
-      // let str = jsonCycles.stringify(model)
+      // let options = { fixed: 0 }
+      // let str = UmlModel.toJSON(model, options)
       // fs.writeFileSync(__dirname + '/' + 't.json', str, { encoding: 'utf-8' })
-      // console.log('fixed:', options.fixed)
       // console.log(str)
-      // let obj = jsonCycles.parse(str)
-      // let obj = jsonCycles.parse(fs.readFileSync(__dirname + '/' + 'all.jscycle', 'utf-8'))
-      let obj = UmlModel.fromJSON(str/*fs.readFileSync(__dirname + '/' + 'all.json', 'utf-8')*/)
+      // let obj = UmlModel.fromJSON(str/*fs.readFileSync(__dirname + '/' + 'all.json', 'utf-8')*/)
+      let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + 'DDI4_PIM_canonical.json', 'utf-8'))
       // expect(obj).to.deep.equal(model);
       // expect(obj).toEqual(model);
+      debugger
       let diffs = model.diffs(obj, s => {throw Error(s)})
       if (diffs.length) {
         throw Error('unexpected diffs: ' + diffs.join('\n'))

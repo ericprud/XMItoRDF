@@ -3,7 +3,7 @@
 
 let CanonicalUmlXmiParser = function (opts) {
 
-  let NormalizeType = opts.normalizeType || (type => type)
+  /* let NormalizeType = opts.normalizeType || (type => type) */
   let ViewPattern = opts.viewPattern || null
   let NameMap = opts.nameMap || { }
   const UmlModel = require('./uml-model')()
@@ -50,7 +50,7 @@ let CanonicalUmlXmiParser = function (opts) {
       let association = parseAssociation(elt)
       let newPropertyRec = new PropertyRecord(
         model, classId, id, name, elt.type[0].$['xmi:idref'],
-        NormalizeType(elt.type[0].$['href']),
+        /* NormalizeType( */ elt.type[0].$['href'] /* ) */,
         parseValue(elt.lowerValue[0], 0),
         parseValue(elt.upperValue[0], UPPER_UNLIMITED),
         parseComments(elt))

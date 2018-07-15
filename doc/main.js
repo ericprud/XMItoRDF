@@ -85,7 +85,7 @@ function main () {
   }
   const ParserOpts = {
     viewPattern: /Functional999Views/,
-    normalizeType: normalizeType,
+    // normalizeType: normalizeType,
     nameMap: {
       'Views (Exported from Drupal)': 'Views',
       'Class Model (Exported from Drupal)': 'ddi4_model',

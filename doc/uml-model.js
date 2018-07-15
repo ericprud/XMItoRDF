@@ -60,6 +60,10 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   function objDiffs (l, r, render, seen) {
+    if (l instanceof Object && Object.keys(l).length === 0 && r === null ||
+        r instanceof Object && Object.keys(r).length === 0 && l === null) {
+      return []
+    }
     if (!(l instanceof Object) || !(r instanceof Object)) {
       throw Error('invocation error: odjDifs called with non-object')
     }
