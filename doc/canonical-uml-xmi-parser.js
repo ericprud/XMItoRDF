@@ -152,7 +152,9 @@ let CanonicalUmlXmiParser = function (opts) {
     })
 
     // Build the model
-    visitPackage(modelRoot, [])
+    modelRoot.packagedElement.forEach(sub => {
+      visitPackage(sub, [])
+    })
 
     // Turn associations into properties.
     Object.keys(associations).forEach(
@@ -886,7 +888,7 @@ let CanonicalUmlXmiParser = function (opts) {
             datatypes[propertyRecord.href].references.push(reference)
             return datatypes[propertyRecord.href]
           }
-          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, [reference], propertyRecord.href, null, propertyRecord.comments)
+          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, [reference], propertyRecord.href, null, [])
         }
         return createdReferencedValueType(propertyRecord.idref, reference)
       }

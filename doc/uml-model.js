@@ -100,7 +100,7 @@ function UmlModel (modelOptions = {}, $ = null) {
 
   function revisiting (seen, l, r) {
     // console.warn(seen.length ? seen[seen.length - 2].id : 'top', l.id)
-    if (seen.indexOf(l) !== -1  || seen.indexOf(r) !== -1) {
+    if (seen.indexOf(l) !== -1 ) {
       return true
     } else {
       seen.push(l)
@@ -771,7 +771,12 @@ function UmlModel (modelOptions = {}, $ = null) {
         if (!!v && typeof v !== 'string') {
           populate(v)
           if (obj.rtti === 'Property' && k === 'type' && modelOptions.externalDatatype(v._idref)) {
-            objs[v._idref] = new M.Datatype(v._idref, [objs[v.id]], v._idref, null, null)
+            let prop = objs[obj.id]
+            if (v._idref in objs) {
+              objs[v._idref].references.push(prop)
+            } else {
+              objs[v._idref] = new M.Datatype(v._idref, [prop], v._idref, prop, [])
+            }
           }
           if (v._idref) {
             v = obj[k] = objs[v._idref]
