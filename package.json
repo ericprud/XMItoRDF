@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ecore": "^0.11.0",
     "marked": "^0.4.0",
