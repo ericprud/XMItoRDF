@@ -111,6 +111,54 @@ describe ('A UML Model', function() {
   it ('DDI4 XMI should parse and compare', done => testParser('../doc/DDI4_PIM_canonical.xmi', 'DDI4_PIM_canonical.json', done));
   it ('all XMI should parse, toJSON, fromJSON', done => parseToFromJSON('./XMI/all.xmi', 200, done));
   it ('all XMI should round-trip through JSON', done => roundTripJSON('all.json', 200, done));
+  it ('removing packages from trim0 XMI', done => removePackages('trim0.json', 'trim0-trimmedPackages.json', done));
+  xit ('removing packages from all XMI', done => removePackages('all.json', 'all-trimmedPackages.json', done));
+  it ('removing packages from trim0 XMI', done => removeProperties('trim0.json', 'trim0-trimmedProperties.json', done));
+
+function removePackages (json, trimmed, done) {
+  let model = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + json, 'utf-8'))
+  model.list('Package').filter(
+    pkg => ['PackageTwo', 'PackageThree'].indexOf(pkg.name) !== -1
+  ).forEach(
+    pkg => pkg.remove(model.missingElements)
+  )
+
+  let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + trimmed, 'utf-8'), {
+    missing: (obj, key, target) => {
+      console.log('missing', target)
+      return new UmlModel.MissingElement(target, [])
+    }
+  })
+  let diffs = model.diffs(obj, s => {throw Error(s)})
+  if (diffs.length) {
+    throw Error('unexpected diffs: ' + diffs.join('\n'))
+  }
+  done()
+}
+
+function removeProperties (json, trimmed, done) {
+  let model = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + json, 'utf-8'))
+  model.list('Class').forEach(
+    cls => cls.properties.filter(
+      prp => prp.name.endsWith('p1')
+    ).forEach(
+      prp => prp.remove(model.missingElements)
+    )
+  )
+
+  let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + trimmed, 'utf-8'), {
+    missing: (obj, key, target) => {
+      console.log('missing', target)
+      return new UmlModel.MissingElement(target, [])
+    }
+  })
+  let diffs = model.diffs(obj, s => {throw Error(s)})
+  if (diffs.length) {
+    throw Error('unexpected diffs: ' + diffs.join('\n'))
+  }
+  done()
+}
+
 });
 
 function testParser (xmi, json, done) {
@@ -120,11 +168,9 @@ function testParser (xmi, json, done) {
     resource: xmi,
     timestamp: new Date().toISOString()
   }
-  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, parserCallback)
-
-  function parserCallback (err, xmiGraph) {
+  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, (err, xmiGraph) => {
     if (err) {
-      throw (err)
+      done(err)
     }
     let model = UmlParser.toUML(xmiGraph)
     let obj = UmlModel.fromJSON(fs.readFileSync(__dirname + '/' + json, 'utf-8'))
@@ -137,7 +183,7 @@ function testParser (xmi, json, done) {
     // expect(obj).to.deep.equal(model); // mocha
     // expect(obj).toEqual(model); // jest
     done()
-  }
+  })
 }
 
 function parseToFromJSON (xmi, minFixups, done) {
@@ -147,11 +193,9 @@ function parseToFromJSON (xmi, minFixups, done) {
     resource: xmi,
     timestamp: new Date().toISOString()
   }
-  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, parserCallback)
-
-  function parserCallback (err, xmiGraph) {
+  UmlParser.parseXMI(fs.readFileSync(__dirname + '/' + xmi, 'UTF-8'), source, (err, xmiGraph) => {
     if (err) {
-      throw (err)
+      done(err)
     }
     let model = UmlParser.toUML(xmiGraph)
     let options = { fixed: 0 }
@@ -166,7 +210,7 @@ function parseToFromJSON (xmi, minFixups, done) {
       throw Error('unexpected diffs: ' + diffs.join('\n'))
     }
     done()
-  }
+  })
 }
 
 function roundTripJSON (json, minFixups, done) {
@@ -183,3 +227,4 @@ function roundTripJSON (json, minFixups, done) {
   }
   done()
 }
+

@@ -200,6 +200,21 @@ function UmlModel (modelOptions = {}, $ = null) {
       return ret
     }
 
+    list (rtti) {
+      return this.elements.reduce(
+        (acc, elt) => {
+          let add = []
+          if (!rtti || elt.rtti === rtti) {
+            add = add.concat([elt])
+          }
+          if (elt.rtti === 'Package') {
+            add = add.concat(elt.list(rtti))
+          }
+          return acc.concat(add)
+        }, []
+      )
+    }
+
     toShExJ (options = {}) {
       return {
         "@context": "http://www.w3.org/ns/shex.jsonld",
@@ -241,13 +256,13 @@ function UmlModel (modelOptions = {}, $ = null) {
       if (fromIndex === -1) {
         // throw Error('detach package: ' + this.id + ' not found in parent ' + from.id)
       } else {
-        from.elements.slice(fromIndex, 1)
+        from.elements.splice(fromIndex, 1)
       }
       let refIndex = from ? this.references.indexOf(from) : -1
       if (refIndex === -1) {
         // throw Error('detach package: ' + this.id + ' has no reference to parent ' + from.id)
       } else {
-        this.references.slice(refIndex, 1)
+        this.references.splice(refIndex, 1)
       }
       this.detach(missingElements)
     }
@@ -297,6 +312,14 @@ function UmlModel (modelOptions = {}, $ = null) {
         .concat(objDiffs(hashById(this.elements), hashById(other.elements), render, seen))
     }
 
+    update (from, to) {
+      let idx = this.elements.indexOf(from)
+      if (idx === -1) {
+        throw Error('update package: ' + from.id + ' not found in elements')
+      }
+      this.elements[idx] = to
+    }
+
     remove (missingElements/*, rtti*/) {
       this.elements.forEach(
         doomed => {
@@ -304,7 +327,7 @@ function UmlModel (modelOptions = {}, $ = null) {
           if (idx === -1) {
             // throw Error('detach package: ' + this.id + ' not found in references of child ' + doomed.id)
           } else {
-            doomed.references.splice(idx, 1) // detach package from references
+            doomed.references.splice(idx, 1) // detach package from references ?? redundant against Packagable.remove this.references.find(Package || Model)
           }
           doomed.remove(missingElements)
         }
@@ -324,14 +347,6 @@ function UmlModel (modelOptions = {}, $ = null) {
       let packages = renderElement(_ => this.renderTitle(), this.elements, elt => elt.render(), 'package')
       ret.append(packages)
       return ret
-    }
-
-    update (from, to) {
-      let idx = this.elements.indexOf(from)
-      if (idx === -1) {
-        throw Error('update package: ' + from.id + ' not found in elements')
-      }
-      this.elements[idx] = to
     }
 
     list (rtti) {
@@ -500,6 +515,14 @@ function UmlModel (modelOptions = {}, $ = null) {
         ] : [])
     }
 
+    update (from, to) {
+      let idx = this.generalizations.indexOf(from)
+      if (idx === -1) {
+        throw Error('update package: ' + from.id + ' not found in elements')
+      }
+      this.generalizations[idx] = to
+    }
+
     remove (missingElements) {
       this.properties.forEach(
         prop => prop.remove(missingElements)
@@ -643,6 +666,11 @@ function UmlModel (modelOptions = {}, $ = null) {
         throw Error('property type ' + this.type.id + ' does not list ' + this.id + ' in references')
       }
       this.type.references.splice(idx, 1) // detach prop from references.
+      idx = this.inClass.properties.indexOf(this)
+      if (idx === -1) {
+        throw Error('Property ' + this.id + ' does not appear in Class ' + this.inClass.id)
+      }
+      this.inClass.properties.splice(idx, 1) // detach prop from references.
     }
 
     renderProp () {
@@ -691,6 +719,13 @@ function UmlModel (modelOptions = {}, $ = null) {
       return testRTTI(topic, this, other, render)
         .concat(this.target.diffs(other.target, render, seen))
         .concat(this.reference.diffs(other.reference, render, seen))
+    }
+
+    update (from, to) {
+      if (this.target !== from) {
+        throw Error('update import: ' + from.id + ' not import type')
+      }
+      this.target = to
     }
 
     toShExJ (parents = [], options = {}) {
@@ -750,6 +785,11 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   function fromJSON (from, options = {}) {
+    if (!options.missing) {
+      options.missing = (obj, key, target) => {
+        throw Error(obj.id + '[' + key + '] references unknown object ' + target)
+      }
+    }
     let M = this
     from = JSON.parse(from)
 
@@ -766,6 +806,7 @@ function UmlModel (modelOptions = {}, $ = null) {
     }
     makeObjs(from)
 
+    let myMissing = { }
     function populate (obj) {
       Object.keys(obj).forEach(k => {
         let v = obj[k]
@@ -780,6 +821,12 @@ function UmlModel (modelOptions = {}, $ = null) {
             }
           }
           if (v._idref) {
+            if (!(v._idref in objs)) {
+              myMissing[v._idref] = objs[v._idref] = options.missing(obj, k, v._idref)
+            }
+            if (v._idref in myMissing) {
+              myMissing[v._idref].references.push(objs[obj.id] || obj)
+            }
             v = obj[k] = objs[v._idref]
           }
           if (v.id) {

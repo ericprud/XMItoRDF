@@ -1,7 +1,7 @@
 /**
  */
 
-let CanonicalUmlXmiParser = function (opts) {
+let CanonicalUmlXmiParser = function (opts = {}) {
 
   /* let NormalizeType = opts.normalizeType || (type => type) */
   let ViewPattern = opts.viewPattern || null

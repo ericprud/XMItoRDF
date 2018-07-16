@@ -1,0 +1,349 @@
+{
+  "rtti": "Model",
+  "id": "MyModel",
+  "name": "MyModel",
+  "source": {
+    "method": "xmi-to-json",
+    "resource": "test/XMI/trim0.xmi",
+    "timestamp": "2018-07-15T18:25:55.491Z"
+  },
+  "elements": [
+    {
+      "id": "All-Views",
+      "references": [
+        {
+          "_idref": "MyModel"
+        }
+      ],
+      "name": "Views",
+      "parent": {
+        "_idref": "MyModel"
+      },
+      "rtti": "Package",
+      "elements": [
+        {
+          "id": "All-Views-ViewAll",
+          "references": [
+            {
+              "_idref": "All-Views"
+            }
+          ],
+          "name": "ViewAll",
+          "parent": {
+            "_idref": "All-Views"
+          },
+          "rtti": "Package",
+          "elements": [
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-1",
+              "target": {
+                "_idref": "All-Library-PackageOne-EnumOne"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            },
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-3",
+              "target": {
+                "_idref": "All-Library-PackageOne-NoAssociations"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            },
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-4",
+              "target": {
+                "_idref": "All-Library-PackageOne-OneAssociation"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            },
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-6",
+              "target": {
+                "_idref": "All-Library-PackageOne-OneGeneralization"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            },
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-7",
+              "target": {
+                "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            },
+            {
+              "rtti": "Import",
+              "id": "All-Views-ViewAll-elementImport-9",
+              "target": {
+                "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+              },
+              "reference": {
+                "_idref": "All-Views-ViewAll"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "All-Library",
+      "references": [
+        {
+          "_idref": "MyModel"
+        }
+      ],
+      "name": "Library",
+      "parent": {
+        "_idref": "MyModel"
+      },
+      "rtti": "Package",
+      "elements": [
+        {
+          "id": "All-Library-PackageOne",
+          "references": [
+            {
+              "_idref": "All-Library"
+            }
+          ],
+          "name": "PackageOne",
+          "parent": {
+            "_idref": "All-Library"
+          },
+          "rtti": "Package",
+          "elements": [
+            {
+              "id": "All-Library-PackageOne-EnumOne",
+              "references": [
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-1"
+                },
+                {
+                  "_idref": "All-Library-PackageOne-NoAssociations-c2p2"
+                },
+                {
+                  "_idref": "All-Library-PackageOne"
+                }
+              ],
+              "name": "EnumOne",
+              "parent": {
+                "_idref": "All-Views-ViewAll-elementImport-1"
+              },
+              "rtti": "Enumeration",
+              "values": [
+                "EnumEltOne",
+                "EnumEltTwo",
+                "EnumEltThree"
+              ]
+            },
+            {
+              "id": "All-Library-PackageOne-NoAssociations",
+              "references": [
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-3"
+                },
+                {
+                  "_idref": "All-Library-PackageOne"
+                }
+              ],
+              "name": "NoAssociations",
+              "parent": {
+                "_idref": "All-Views-ViewAll-elementImport-3"
+              },
+              "comments": [
+                "Comment 1"
+              ],
+              "rtti": "Class",
+              "generalizations": [],
+              "properties": [
+                {
+                  "rtti": "Property",
+                  "id": "All-Library-PackageOne-NoAssociations-c2p2",
+                  "inClass": {
+                    "_idref": "All-Library-PackageOne-NoAssociations"
+                  },
+                  "name": "c2p2",
+                  "type": {
+                    "_idref": "All-Library-PackageOne-EnumOne"
+                  },
+                  "comments": [
+                    "Comment 1"
+                  ]
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "id": "All-Library-PackageOne-OneAssociation",
+              "references": [
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-4"
+                },
+                {
+                  "_idref": "All-Library-PackageOne"
+                }
+              ],
+              "name": "OneAssociation",
+              "parent": {
+                "_idref": "All-Views-ViewAll-elementImport-4"
+              },
+              "comments": [
+                "Comment 1"
+              ],
+              "rtti": "Class",
+              "generalizations": [],
+              "properties": [
+                {
+                  "rtti": "Property",
+                  "id": "All-Library-PackageOne-OneAssociation-ownedAttribute-1",
+                  "inClass": {
+                    "_idref": "All-Library-PackageOne-OneAssociation"
+                  },
+                  "name": "c3a1",
+                  "type": {
+                    "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+                  },
+                  "comments": [
+                    "Comment 1"
+                  ]
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "id": "All-Library-PackageOne-OneGeneralization",
+              "references": [
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-6"
+                },
+                {
+                  "_idref": "All-Library-PackageOne"
+                }
+              ],
+              "name": "OneGeneralization",
+              "parent": {
+                "_idref": "All-Views-ViewAll-elementImport-6"
+              },
+              "comments": [
+                "Comment 1"
+              ],
+              "rtti": "Class",
+              "generalizations": [
+                {
+                  "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+                }
+              ],
+              "properties": [
+              ],
+              "isAbstract": false
+            },
+            {
+              "id": "All-Library-PackageOne-OneGeneralizationOneAssociation",
+              "references": [
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-7"
+                },
+                {
+                  "_idref": "All-Library-PackageOne"
+                }
+              ],
+              "name": "OneGeneralizationOneAssociation",
+              "parent": {
+                "_idref": "All-Views-ViewAll-elementImport-7"
+              },
+              "comments": [
+                "Comment 1"
+              ],
+              "rtti": "Class",
+              "generalizations": [
+                {
+                  "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+                }
+              ],
+              "properties": [
+                {
+                  "rtti": "Property",
+                  "id": "All-Library-PackageOne-OneGeneralizationOneAssociation-ownedAttribute-1",
+                  "inClass": {
+                    "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation"
+                  },
+                  "name": "c6a1",
+                  "type": {
+                    "_idref": "All-Library-PackageTwo-ExtraPackageNoAssociations1"
+                  },
+                  "comments": [
+                    "Comment 1"
+                  ]
+                }
+              ],
+              "isAbstract": false
+            }
+          ]
+        },
+        {
+          "id": "All-Library-PackageTwo",
+          "references": [
+            {
+              "_idref": "All-Library"
+            }
+          ],
+          "name": "PackageTwo",
+          "parent": {
+            "_idref": "All-Library"
+          },
+          "rtti": "Package",
+          "elements": [
+            {
+              "id": "All-Library-PackageTwo-ExtraPackageNoAssociations1",
+              "references": [
+                {
+                  "_idref": "All-Library-PackageOne-OneAssociation-ownedAttribute-1"
+                },
+                {
+                  "_idref": "All-Library-PackageOne-OneGeneralization"
+                },
+                {
+                  "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation"
+                },
+                {
+                  "_idref": "All-Library-PackageOne-OneGeneralizationOneAssociation-ownedAttribute-1"
+                },
+                {
+                  "_idref": "All-Views-ViewAll-elementImport-9"
+                },
+                {
+                  "_idref": "All-Library-PackageTwo"
+                }
+              ],
+              "name": "ExtraPackageNoAssociations1",
+              "parent": {
+                "_idref": "All-Library-PackageOne-OneAssociation-ownedAttribute-1"
+              },
+              "comments": [
+                "Comment 1"
+              ],
+              "rtti": "Class",
+              "generalizations": [],
+              "properties": [
+              ],
+              "isAbstract": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "missingElements": {}
+}
