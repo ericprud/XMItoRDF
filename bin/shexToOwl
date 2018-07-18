@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+// shexToOwl http://tracker.example/schemas/Issue.shex
+
+let ShEx = require('shex')
+let ShExToOwl = require('../lib/ShExToOwl')
+
+// Generate command line interface
+var CLI = require("command-line-args")([
+    { name: "help",  alias: "h", type: Boolean },
+    { name: "shex",  alias: "x", type: String, multiple:  true, defaultValue:   [], defaultOption:  true },
+    { name: "json",  alias: "j", type: String, multiple:  true, defaultValue:   [] },
+    { name: "prefix",alias: "p", type: String, multiple:  true, defaultValue:   [] },
+    // { name: "prefix",alias: "p", type: String, multiple: true
+]);
+function abort (msg) {
+  console.error(msg);
+  console.error(CLI.getUsage({
+    title: "shexToOwl",
+    description: "load some number of schema files from web or filesystem and display as JSON (ShExJ), for example:\n    shexToOwl http://tracker.example/schemas/Issue.shex",
+    footer: "Project home: [underline]{https://github.com/shexSpec/shex.js}"
+  }));
+  process.exit(1);
+}
+
+// Extract user commands
+if (CLI.help)
+    abort("");
+if (CLI.shex.length === 0 && CLI.json.length === 0) abort("no shex specified");
+let prefixMap = CLI.prefix.map(
+  pair => {
+    let m = pair.match(/^([^:]*):\s*(.*)$/)
+    if (!m) { throw Error('--prefix argument didn\'t lead with viable prefix: ' + pair) }
+    return { prefix: m[1], url: m[2] }
+  }
+)
+
+ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
+  console.log('%s', ShExToOwl(loaded.schema, {
+    source: {
+      resource: CLI.shex.concat(CLI.json).join(', '),
+      method: 'shexToOwl',
+      timestamp: new Date().toISOString()
+    },
+    shorten: CLI.shorten,
+    prefixMap: prefixMap,
+    suppressDuplicateClasses: true
+  }).owlx);
+}).catch(function (e) {
+  console.error("aborting:", e.stack || e);
+  process.exit(1);
+})
