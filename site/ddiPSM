@@ -1,0 +1,187 @@
+#!/usr/bin/env node
+
+// Generate command line interface
+var CLI = require("command-line-args")([
+    { name: "help",  alias: "h", type: Boolean },
+    { name: "out",  alias: "o", type: String, description: "file prefix for json, owl, and shex" },
+    { name: "xmi",  alias: "i", type: String, description: "input XMI file", defaultOption:  true }
+]);
+function abort (msg) {
+  console.error(msg);
+  console.error(CLI.getUsage({
+    title: "ddiPSM",
+    description: "DDI-specific tweaks for UML Model",
+    footer: "Project home: [underline]{https://github.com/shexSpec/shex.js}"
+  }));
+  process.exit(1);
+}
+
+// Extract user commands
+if (CLI.help)
+    abort("");
+if (!CLI.xmi) abort("no input XMI specified (--xmi)");
+if (!CLI.out) abort("no output file prefix specified (--out)");
+
+
+
+const XSD = 'http://www.w3.org/2001/XMLSchema#'
+const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
+const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
+const SHEXMI = 'http://www.w3.org/ns/shex-xmi#'
+const DDI = 'http://ddi-alliance.org/ns/#'
+const normalizeType = function (type) {
+  if (!type) {
+    return type // pass undefined on
+  }
+  if (type === 'xs:language') {
+    return XSD + 'language'
+  }
+  let dtList = [
+    { from: UMLP + 'String', to: XSD + 'string' },
+    { from: UMLP + 'Integer', to: XSD + 'integer' },
+    { from: UMLP + 'Boolean', to: XSD + 'boolean' },
+    { from: UMLP + 'Real', to: XSD + 'double' },
+    { from: UMLP + 'UnlimitedNatural', to: XSD + 'double' }
+  ]
+  let dtMap = dtList.reduce(
+    (acc, elt) => objSet(acc, elt.from, elt.to),
+    {}
+  )
+  if (type in dtMap) {
+    return dtMap[type]
+  }
+  if (type.startsWith(UMLP)) {
+    throw Error('unknown datatype ' + type)
+    // return UMLD + type.substr(UMLP.length)
+  }
+  return type
+}
+
+const fs = require('fs')
+const UmlModel = require('../doc/uml-model')({
+  externalDatatype: n => n && n.startsWith(XSD)
+})
+const CanonXmiParser = require('../doc/canonical-uml-xmi-parser')
+const UmlParser = CanonXmiParser({
+  umlModel: UmlModel,
+  viewPattern: /Functional999Views/,
+  normalizeType: normalizeType,
+  nameMap: {
+    // 'Views (Exported from Drupal)': 'Views',
+    // 'Class Model (Exported from Drupal)': 'ddi4_model',
+    'ClassLibrary': 'ddi4_model', // minimize diffs
+    'FunctionalViews': 'Views',
+  }
+})
+
+let source = {
+  method: 'xmi-to-json',
+  resource: CLI.xmi,
+  timestamp: new Date().toISOString()
+}
+UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) => {
+  if (err) {
+    throw err
+  }
+  let model = UmlParser.toUML(xmiGraph)
+
+  // Remove realizes properties.
+  model.list('Class').forEach(
+    cls => cls.properties.filter(
+      prp => prp.name === 'realizes'
+    ).forEach(
+      prp => prp.remove(model.missingElements)
+    )
+  )
+  // Remove everying inside *Pattern packages.
+  model.list('Package').filter(
+    pkg => pkg.name.endsWith('Pattern')
+  ).forEach(
+    pkg => pkg.remove(model.missingElements)
+  )
+
+  // Switch to XSD datatypes.
+  let xsdTypeFixups = {
+    'DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-anyURI': XSD + 'anyURI',
+    'DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language': XSD + 'language'
+  }
+  model.list('Datatype').filter(d => Object.keys(xsdTypeFixups).indexOf(d.id) !== -1).forEach(d => {
+    d.name = xsdTypeFixups[d.id]
+    d.external = true
+  })
+
+  // Remove properties with missing types.
+  let removeProps = model.list('Class').reduce((acc, c) =>
+    acc.concat(c.properties.filter(p => p.type.rtti === 'MissingElement')
+               .map(p => { return { class: c, property: p } })), [])
+  if (removeProps) {
+    console.warn('Warning: removing ' + removeProps.length + ' badly-typed properties:')
+    removeProps.forEach(missing => {
+      console.warn('  ' + missing.class.name + '.' + missing.property.name + ' missing ' + missing.property.type.id)
+      missing.property.remove(model.missingElements)
+    })
+  }
+
+  fs.writeFileSync(CLI.out + '.json', UmlModel.toJSON(model), { encoding: 'utf-8' })
+
+  let shexj = model.toShExJ({
+    iri: function (suffix, elt) {
+      return DDI + suffix
+    },
+    annotations: function (elt) {
+      // ShEx 2.0 doesn't allow annotations on NodeConstraints.
+      if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+      let ret = [{
+        "type": "Annotation",
+        "predicate": RDFS + "definedBy",
+        "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
+      }]
+
+      let pkg = (elt.references || []).find(ref => ref instanceof UmlModel.Package)
+      if (pkg) {
+        ret = ret.concat({
+          "type": "Annotation",
+          "predicate": "http://www.w3.org/ns/shex-xmi#package",
+          "object": {
+            "value": "http://lion.ddialliance.org/ddiobjects/" + pkg.name // just the inner-most package
+          }
+        })
+      }
+      if (elt.comments) {
+        ret = ret.concat({
+          "type": "Annotation",
+          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+          "object": {
+            "value": elt.comments[0], // !! just the first comment
+            "type": "https://github.com/commonmark/commonmark.js"
+          }
+        })
+      }
+      if (elt.aggregation) {
+        ret = ret.concat({
+          "type": "Annotation",
+          "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
+          "object": {
+            "value": (elt.aggregation === UmlModel.Aggregation.shared
+                      ? "shexmi:sharedAggregation"
+                      : elt.aggregation === UmlModel.Aggregation.composite
+                      ? "shexmi:compositeAggregation"
+                      : "\"???\"")
+          }
+        })
+      }
+      return ret
+    }
+  })
+  // Alternative way to handle xsdTypeFixups:
+  //   shexj.shapes.find(s => s.id === DDI + 'anyURI').datatype = XSD + 'anyURI'
+  //   shexj.shapes.find(s => s.id === DDI + 'langauge').datatype = XSD + 'language'
+
+  fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+})
+
+function objSet (obj, key, value) {
+  let add = { }
+  add[key] = value
+  return Object.assign({}, obj, add)
+}
