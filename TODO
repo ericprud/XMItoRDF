@@ -1,3 +1,7 @@
+
+DDI4_PIM-ClassLibrary-Utility-DDI4Version has a fixed, default value "DR0.2"
+  referenced from "DDI4_PIM-ClassLibrary-Utility-DocumentInformation-ofType"
+
 DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language <name>language</name>:
   doesn't have leading cap. conflicts with:
     ExternalControlledVocabularyEntry.language

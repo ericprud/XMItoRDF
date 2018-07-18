@@ -952,7 +952,7 @@ let CanonicalUmlXmiParser = function (opts = {}) {
       function createProperty (propertyRecord, inClass) {
         let ret = new UmlModel.Property(propertyRecord.id, inClass, propertyRecord.name,
                             null, // so we can pass the Property to unresolved types
-                            propertyRecord.min, propertyRecord.max,
+                            propertyRecord.lower, propertyRecord.upper,
                             propertyRecord.association,
                             propertyRecord.aggregation,
                             propertyRecord.comments)

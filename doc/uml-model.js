@@ -575,12 +575,12 @@ function UmlModel (modelOptions = {}, $ = null) {
         "type": "Shape"
       }
       if ('generalizations' in this && this.generalizations.length > 0) {
-        shape.extends = this.generalizations.map(options.iri)
+        shape.extends = this.generalizations.map(c => options.iri(c.name))
       }
       let ret = {
         "id": options.iri(this.name, this),
         "type": "ShapeDecl",
-        "isAbstract": this.isAbstract,
+        "abstract": this.isAbstract,
         "shapeExpr": shape
       }
       if (this.properties.length > 0) {
@@ -607,15 +607,15 @@ function UmlModel (modelOptions = {}, $ = null) {
   }
 
   class Property {
-    constructor (id, inClass, name, type, min, max, association, aggregation, comments) {
+    constructor (id, inClass, name, type, lower, upper, association, aggregation, comments) {
       Object.assign(this, {
         get rtti () { return 'Property' },
         id,
         inClass,
         name,
         type,
-        min,
-        max,
+        lower,
+        upper,
         association,
         aggregation
       })
@@ -639,11 +639,11 @@ function UmlModel (modelOptions = {}, $ = null) {
         .concat(this.type.diffs(other.type, render, seen).map(
           d => render(topic + d)
         ))
-        .concat(this.min !== other.min ? [
-          render(topic + ' min:' + other.min + ' doesn\'t match ' + this.min)
+        .concat(this.lower !== other.lower ? [
+          render(topic + ' lower:' + other.lower + ' doesn\'t match ' + this.lower)
         ] : [])
-        .concat(this.max !== other.max ? [
-          render(topic + ' max:' + other.max + ' doesn\'t match ' + this.max)
+        .concat(this.upper !== other.upper ? [
+          render(topic + ' upper:' + other.upper + ' doesn\'t match ' + this.upper)
         ] : [])
         .concat(this.assocation ? this.assocation.diffs(other.assocation, render, seen).map(
           d => render(topic + d)
@@ -693,8 +693,8 @@ function UmlModel (modelOptions = {}, $ = null) {
         "predicate": options.iri(this.name, this),
         "valueExpr": valueExpr
       }
-      if (this.min !== undefined) { ret.min = this.min }
-      if (this.max !== undefined) { ret.max = this.max }
+      if (this.lower !== undefined) { ret.min = this.lower }
+      if (this.upper !== undefined) { ret.max = this.upper }
       if (options.annotations) {
         let toAdd = options.annotations(this)
         if (toAdd && toAdd.length) {
@@ -1147,7 +1147,7 @@ function UmlModel (modelOptions = {}, $ = null) {
     function createProperty (propertyRecord, inClass) {
       let ret = new UmlModel.Property(propertyRecord.id, inClass, propertyRecord.name,
                                       null, // so we can pass the Property to unresolved types
-                                      propertyRecord.min, propertyRecord.max,
+                                      propertyRecord.lower, propertyRecord.upper,
                                       propertyRecord.association,
                                       propertyRecord.aggregation,
                                       propertyRecord.comments)
@@ -1181,7 +1181,7 @@ function UmlModel (modelOptions = {}, $ = null) {
         }
       }
       return value
-    }, null, true)
+    }, 2, true)
   }
 
   class Point {
