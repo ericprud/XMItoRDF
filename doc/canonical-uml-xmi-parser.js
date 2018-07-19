@@ -311,7 +311,10 @@ let CanonicalUmlXmiParser = function (opts = {}) {
                 name: name,
                 id: id,
                 packages: parents,
-                elements: []
+                elements: [],
+                comments: (elt.ownedComment || []).map(
+                  cmnt => cmnt.body[0]
+                )
               })
               if (parents.length) {
                 if (id.match(/Pattern999/)) { // !! DDI-specific
