@@ -182,31 +182,38 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   // Render package and view hierarchy.
   let owlx = []
   function visitPackage (pkg, parent) {
-    let me = 'ddi:' + pkg.name
-    if (!pkg.name.match(/Views?$/) && !pkg.name.endsWith('_model')) {
-      me = me + '_Package'
-    }
     pkg.elements.forEach(elt => {
-      owlx.push(`    <SubClassOf>
-        <Class abbreviatedIRI="${me}"/>
+      if (elt.rtti === 'Import') {
+        elt = elt.target
+      } else if (elt.rtti !== 'Package') {
+        return // package members are covered by shexToOwl
+      }
+      let eltName = 'ddi:' + elt.name
+      if (elt.rtti === 'Package' && !eltName.match(/Views?$/) && parent) {
+        eltName = eltName + '_Package'
+      }
+      if (parent) {
+        owlx.push(`    <SubClassOf>
+        <Class abbreviatedIRI="${eltName}"/>
         <Class abbreviatedIRI="${parent}"/>
     </SubClassOf>`)
+      }
       if ('commment' in pkg) {
         pkg.comments.forEach(comment => {
           owlx.push(`    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>${me}</AbbreviatedIRI>
+        <AbbreviatedIRI>${eltName}</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
     </AnnotationAssertion>`)
         })
       }
       if (elt.rtti === 'Package') {
-        visitPackage(elt, me)
+        visitPackage(elt, eltName)
       }
     })
   }
   model.elements.forEach(pkg => {
-    visitPackage(pkg, 'ddi:' + model.name)
+    visitPackage(model, null)
   })
   fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
 })
