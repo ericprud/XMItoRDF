@@ -2,19 +2,22 @@
 
 // shexToOwl http://tracker.example/schemas/Issue.shex
 
+const fs = require('fs')
 let ShEx = require('shex')
 let ShExToOwl = require('../lib/ShExToOwl')
 
 // Generate command line interface
 var CLI = require("command-line-args")([
     { name: "help",  alias: "h", type: Boolean },
-    { name: "shex",  alias: "x", type: String, multiple:  true, defaultValue:   [], defaultOption:  true },
-    { name: "json",  alias: "j", type: String, multiple:  true, defaultValue:   [] },
-    { name: "prefix",alias: "p", type: String, multiple:  true, defaultValue:   [] },
+    { name: "shex",  alias: "x", type: String, multiple:  true, defaultValue: [], defaultOption:  true },
+    { name: "json",  alias: "j", type: String, multiple:  true, defaultValue: [] },
+    { name: "prefix",alias: "p", type: String, multiple:  true, defaultValue: [] },
+    { name: "append",            type: String, multiple:  true, defaultValue: [] },
     // { name: "prefix",alias: "p", type: String, multiple: true
 ]);
 function abort (msg) {
   console.error(msg);
+  if (false)
   console.error(CLI.getUsage({
     title: "shexToOwl",
     description: "load some number of schema files from web or filesystem and display as JSON (ShExJ), for example:\n    shexToOwl http://tracker.example/schemas/Issue.shex",
@@ -36,6 +39,7 @@ let prefixMap = CLI.prefix.map(
 )
 
 ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
+  let errors = {}
   console.log('%s', ShExToOwl(loaded.schema, {
     source: {
       resource: CLI.shex.concat(CLI.json).join(', '),
@@ -44,8 +48,21 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     },
     shorten: CLI.shorten,
     prefixMap: prefixMap,
-    suppressDuplicateClasses: true
+    suppressDuplicateClasses: true,
+    append: CLI.append.map(
+      filepath => fs.readFileSync(filepath, 'UTF-8')
+    ).join(''),
+    errors: errors
   }).owlx);
+  if ('untyped' in errors) {
+    Object.keys(errors.untyped).forEach(badP => {
+      let rec = errors.untyped[badP]
+      console.warn(`${rec.shapeLabel} ${rec.predicate} :\n  ${rec.newType} isn\'t related to ${rec.curType}\n  ${rec.references.length} later references:`)
+      rec.references.forEach(ref => {
+        console.warn(`  ${ref.shapeLabel} : ${ref.newType}`)
+      })
+    })
+  }
 }).catch(function (e) {
   console.error("aborting:", e.stack || e);
   process.exit(1);

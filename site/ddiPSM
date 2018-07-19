@@ -143,7 +143,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
           "type": "Annotation",
           "predicate": "http://www.w3.org/ns/shex-xmi#package",
           "object": {
-            "value": "http://lion.ddialliance.org/ddiobjects/" + pkg.name // just the inner-most package
+            "value": "http://ddi-alliance.org/ns/#" + pkg.name // just the inner-most package
           }
         })
       }
@@ -178,6 +178,69 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   //   shexj.shapes.find(s => s.id === DDI + 'langauge').datatype = XSD + 'language'
 
   fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+
+  let owlx = []
+  function visitPackage (pkg, parent) {
+    let me = 'ddi:' + pkg.name
+    if (!pkg.name.endsWith('View') && !pkg.name.endsWith('_model')) {
+      me = me + '_Package'
+    }
+    pkg.elements.forEach(elt => {
+      owlx.push(`    <SubClassOf>
+        <Class abbreviatedIRI="${me}"/>
+        <Class abbreviatedIRI="${parent}"/>
+    </SubClassOf>`)
+      if ('commment' in pkg) {
+        pkg.comments.forEach(comment => {
+          owlx.push(`    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>${me}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`)
+        })
+      }
+      if (elt.rtti === 'Package') {
+        visitPackage(elt, me)
+      }
+    })
+  }
+  model.elements.forEach(pkg => {
+    visitPackage(pkg, 'ddi:' + model.name)
+  })
+/*
+  // Render package hierarchy.
+  Array().push.apply(owlx, Object.keys(xmiGraph.packages).map(
+    p => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${xmiGraph.packages[p].name}_Package"/>
+        <Class abbreviatedIRI="ddi:Packages"/>
+    </SubClassOf>`
+  ))
+
+  // Render view hierarchy.
+  let views = xmiGraph.packageHierarchy.children['DDI4_PIM-FunctionalViews']
+  if (views) {
+    Array().push.apply(owlx, xmiGraph.views.reduce(
+      (acc, view) => acc.concat([`    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${view.name}"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>`], view.members.map(
+      member => `    <SubClassOf>
+        <Class abbreviatedIRI="ddi:${xmiGraph.classes[member].name}"/>
+        <Class abbreviatedIRI="ddi:${view.name}"/>
+    </SubClassOf>`
+    ), view.comments.map(
+      comment =>
+        `    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:${view.name}</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
+    </AnnotationAssertion>`
+    )
+                               ), []
+    ))
+  }
+*/
+  fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
 })
 
 function objSet (obj, key, value) {
@@ -185,3 +248,15 @@ function objSet (obj, key, value) {
   add[key] = value
   return Object.assign({}, obj, add)
 }
+
+function trimMarkdown (md) {
+  return md.replace(/\u001e/g, '\n').replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
+}
+
+function encodeCharData (text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
