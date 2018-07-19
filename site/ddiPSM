@@ -117,7 +117,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   if (removeProps) {
     console.warn('Warning: removing ' + removeProps.length + ' badly-typed properties:')
     removeProps.forEach(missing => {
-      console.warn('  ' + missing.class.name + '.' + missing.property.name + ' missing ' + missing.property.type.id)
+      console.warn('  ' + missing.class.name + ' ' + missing.property.name + ' missing ' + missing.property.type.id)
       missing.property.remove(model.missingElements)
     })
   }
@@ -179,10 +179,11 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
 
   fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
 
+  // Render package and view hierarchy.
   let owlx = []
   function visitPackage (pkg, parent) {
     let me = 'ddi:' + pkg.name
-    if (!pkg.name.endsWith('View') && !pkg.name.endsWith('_model')) {
+    if (!pkg.name.match(/Views?$/) && !pkg.name.endsWith('_model')) {
       me = me + '_Package'
     }
     pkg.elements.forEach(elt => {
@@ -207,39 +208,6 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   model.elements.forEach(pkg => {
     visitPackage(pkg, 'ddi:' + model.name)
   })
-/*
-  // Render package hierarchy.
-  Array().push.apply(owlx, Object.keys(xmiGraph.packages).map(
-    p => `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${xmiGraph.packages[p].name}_Package"/>
-        <Class abbreviatedIRI="ddi:Packages"/>
-    </SubClassOf>`
-  ))
-
-  // Render view hierarchy.
-  let views = xmiGraph.packageHierarchy.children['DDI4_PIM-FunctionalViews']
-  if (views) {
-    Array().push.apply(owlx, xmiGraph.views.reduce(
-      (acc, view) => acc.concat([`    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${view.name}"/>
-        <Class abbreviatedIRI="ddi:Views"/>
-    </SubClassOf>`], view.members.map(
-      member => `    <SubClassOf>
-        <Class abbreviatedIRI="ddi:${xmiGraph.classes[member].name}"/>
-        <Class abbreviatedIRI="ddi:${view.name}"/>
-    </SubClassOf>`
-    ), view.comments.map(
-      comment =>
-        `    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:${view.name}</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">${encodeCharData(trimMarkdown(comment))}</Literal>
-    </AnnotationAssertion>`
-    )
-                               ), []
-    ))
-  }
-*/
   fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
 })
 
