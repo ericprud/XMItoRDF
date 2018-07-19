@@ -1,0 +1,2824 @@
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Access"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AttributeRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AuthorizationSource"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Budget"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComplianceStatement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Coverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPoint"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Datum"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DesignOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Embargo"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExPostEvaluation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalAid"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FundingInformation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IdentifierRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Instruction"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MeasureRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ProcessOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:QualityStatement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RecordRelation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedMeasurement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcedure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SegmentByText"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SpatialCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Standard"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StandardWeight"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Study"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudySeries"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TemporalCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TopicalCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataViewpoint"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitSegmentLayout"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueMapping"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableCollection"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableStatistics"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Access"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AppliedUse"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Goal"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Guide"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Precondition"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SampleFrame"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplePopulationResult"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingDesign"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingGoal"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcedure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcess"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Split"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SplitJoin"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowService"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AuthorizationSource"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationFamily"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationIndex"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationItem"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationSeries"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationSeriesRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CorrespondenceTable"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IndexEntryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassification"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessAlgorithm"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessProcess"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Coverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPipeline"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DesignOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MetadataDrivenAction"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SpatialCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Split"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SplitJoin"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredWorkflowSteps"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Study"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TemporalCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TopicalCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AttributeRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPoint"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStoreLibrary"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStoreRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Datum"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IdentifierRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MeasureRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RecordRelation"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SegmentByText"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataViewpoint"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitSegmentLayout"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueMapping"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualVariable"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableCollection"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VocabularyEntry"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomInstance"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomItem"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomItemRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomValue"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BooleanResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeListResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualVariable"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalAid"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceMeasurement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceQuestion"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Instruction"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstrumentCode"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:NumericResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RankingResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedMeasurement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ScaleResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Statement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TextResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentListing"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentRelationStructure"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Identification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Access"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AttributeRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AuthorizationSource"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Budget"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComplianceStatement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Coverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPoint"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Datum"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DesignOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Embargo"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExPostEvaluation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalAid"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FundingInformation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IdentifierRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Instruction"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MeasureRole"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ProcessOverview"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:QualityStatement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RecordRelation"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedMeasurement"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcedure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SegmentByText"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SpatialCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Standard"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StandardWeight"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Study"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudySeries"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TemporalCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TopicalCoverage"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataViewpoint"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitSegmentLayout"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueMapping"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableCollection"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableStatistics"/>
+        <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Access"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AppliedUse"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Goal"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Guide"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Precondition"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SampleFrame"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplePopulationResult"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingDesign"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingGoal"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcedure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingProcess"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Split"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SplitJoin"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowService"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AuthorizationSource"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationFamily"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationIndex"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationItem"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationSeries"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationSeriesRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CorrespondenceTable"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IndexEntryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassification"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StatisticalClassificationView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BoundingBox"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicExtent"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnit"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:StructuredGeographyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessAlgorithm"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessProcess"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Coverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPipeline"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DesignOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MetadataDrivenAction"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Parameter"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SpatialCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Split"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SplitJoin"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredWorkflowSteps"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Study"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TemporalCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TopicalCoverage"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:DataManagementView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AttributeRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPoint"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStore"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStoreLibrary"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataStoreRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Datum"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IdentifierRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:MeasureRole"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RecordRelation"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SegmentByText"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitDataViewpoint"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitSegmentLayout"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueMapping"/>
+        <Class abbreviatedIRI="ddi:DataDescriptionView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualVariable"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Population"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Unit"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableCollection"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VocabularyEntry"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ControlledVocabularyView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomInstance"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomItem"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomItemRelationStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomValue"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceVariable"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
+        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BooleanResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Category"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategorySet"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeListResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComputationAction"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptualVariable"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalAid"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:IfThenElse"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceMeasurement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstanceQuestion"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Instruction"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:InstrumentCode"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LevelStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Loop"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:NumericResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RankingResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatUntil"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepeatWhile"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedMeasurement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ScaleResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Statement"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:TextResponseDomain"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:UnitType"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+        <Class abbreviatedIRI="ddi:Views"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentListing"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:AgentRelationStructure"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ExternalMaterial"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Individual"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Machine"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Organization"/>
+        <Class abbreviatedIRI="ddi:AgentRegistryView"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Identification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
