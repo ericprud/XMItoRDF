@@ -16,7 +16,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
 
 
-    <!-- START ComplexDataTypes Package -->
+    <!-- START ddi:ComplexDataTypes Package -->
     <EquivalentClasses>
         <Class abbreviatedIRI="ddi:RelationSpecification"/>
         <ObjectOneOf>
@@ -31,7 +31,7 @@
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
 
     <Declaration>
@@ -66,7 +66,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AccessLocation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -275,7 +275,7 @@ A set of access information for a Machine including URI, mime type, and physical
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Address"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -411,7 +411,7 @@ a:AddressType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentAssociation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -487,7 +487,7 @@ r:ContributorType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentId"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -538,7 +538,7 @@ ORCID</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -637,7 +637,7 @@ Member Indicator for use with member type Agent</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -868,7 +868,7 @@ An Organization (source/parent) employing and Individual (target/child); An Indi
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Annotation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1078,7 +1078,7 @@ Equivalent of http://purl.org/dc/elements/1.1/date where the type of date may id
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AreaCoverage"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1154,7 +1154,7 @@ r:AreaCoverageType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AudioSegment"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1224,7 +1224,7 @@ r:AudioType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BasedOnObjectInformation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1313,7 +1313,7 @@ r:BibliographicNameType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Binding"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1388,7 +1388,7 @@ Binding is used to define the flow of data into, out of, and within a process. I
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BusinessProcessCondition"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1447,7 +1447,7 @@ A BusinessProcess precondition or post condition which describes the condition w
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BusinessProcessIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1494,7 +1494,7 @@ Allows for the identification of the BusinessProcess specifically as a member an
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1580,7 +1580,7 @@ Member Indicator for use when the member type is restricted to Category.</Litera
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1678,7 +1678,7 @@ Source target relationship between categories in a classification relation struc
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryStatistic"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1766,7 +1766,7 @@ pi:CategoryStatisticType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CharacterOffset"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1823,7 +1823,7 @@ r:CharacterParameterType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationIndexEntryIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1883,7 +1883,7 @@ Member Indicator for use with member type ClassificationIndexEntry</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationItemIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1936,7 +1936,7 @@ A ClassificationItemIndicator realizes and extends a MemberIndicator which provi
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationSeriesIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2022,7 +2022,7 @@ Member Indicator for use with member type ClassificationSeries</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationSeriesRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2100,7 +2100,7 @@ Defines the Classification Series in a complex relation and specifies the relati
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2159,7 +2159,7 @@ A CodeIndicator realizes and extends a MemberIndicator which provides a Code wit
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Command"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2217,7 +2217,7 @@ r:CommandType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CommandCode"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2293,7 +2293,7 @@ r:CommandCodeType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CommandFile"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2350,7 +2350,7 @@ r:CommandFileType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2436,7 +2436,7 @@ Member Indicator for use with member type Concept and all subtypes of Concept: C
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2554,7 +2554,7 @@ d:ConditionalTextType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ContactInformation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2706,7 +2706,7 @@ r:ContentDateOffsetType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CorrespondenceType"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2769,7 +2769,7 @@ cm:CorrespondenceType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2855,7 +2855,7 @@ Member Indicator for use with member type CustomItem</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2920,7 +2920,7 @@ Defines a relationship between CustomItems .</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomValueIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3006,7 +3006,7 @@ Member Indicator for use with member type CustomValue</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3071,7 +3071,7 @@ Defines the relation between CustomValues</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPointIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3157,7 +3157,7 @@ Member Indicator for use with member type DataPoint</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPointRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3222,7 +3222,7 @@ Data Point relations used by the Data Point Relation Structure of a Logical Reco
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStoreIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3308,7 +3308,7 @@ Member Indicator for use with member type DataStore</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStoreRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3373,7 +3373,7 @@ Defines the complex relationship between 2 or more DataStores in a DataLibrary</
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Date"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3434,7 +3434,7 @@ r:DateType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DateRange"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3485,7 +3485,7 @@ r:DateType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3542,7 +3542,7 @@ r:RelationshipType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DoubleNumberRangeValue"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3612,7 +3612,7 @@ r:DoubleNumberRangeValueType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DynamicText"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3680,7 +3680,7 @@ d:DynamicTextType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DynamicTextContent"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3776,7 +3776,7 @@ d:TextContentType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ElectronicMessageSystem"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3849,7 +3849,7 @@ a:InstantMessagingType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ElseIfAction"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3941,7 +3941,7 @@ An additional condition and resulting step to take if the condition in the paren
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Email"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4102,7 +4102,7 @@ r:EmailType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4259,7 +4259,7 @@ d:TextType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Form"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4335,7 +4335,7 @@ a:FormType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4440,7 +4440,7 @@ Provides ability to declare an optional sequence or index order to a Geographic 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4528,7 +4528,7 @@ A member might have a ParentChild relation to several other members which is Ant
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4646,7 +4646,7 @@ Provides ability to declare an optional sequence or index order to a Unit Type d
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4759,7 +4759,7 @@ A member might have a ParentChild relation to several other members which is Ant
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Image"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4828,7 +4828,7 @@ r:ImageType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImageArea"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4918,7 +4918,7 @@ r:ImageAreaType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IndexEntryRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5126,7 +5126,7 @@ Relationship between Index Entries defined by RelationSpecification.</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IndividualName"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5243,7 +5243,7 @@ a:IndividualNameType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5333,7 +5333,7 @@ Note if multiple types of Variables may be included in a collection use Variable
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5447,7 +5447,7 @@ Use when relationships are limited to InstanceVariables only. Use VariableRelati
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableValueMap"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5535,7 +5535,7 @@ Logical Records: Household and Person, Key: Household ID (HHID in Household Reco
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InternationalIdentifier"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5583,7 +5583,7 @@ r:InternationalIdentifierType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InternationalString"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5621,7 +5621,7 @@ r:InternationalStringType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5800,7 +5800,7 @@ r:LabelType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LanguageSpecificStringType"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5940,7 +5940,7 @@ r:StringType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LanguageSpecificStructuredStringType"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6034,7 +6034,7 @@ r:ContentType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Level"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6123,7 +6123,7 @@ ISCO-08: index='1' label of associated category 'Major',  index='2' label of ass
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LineParameter"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6255,7 +6255,7 @@ d:LiteralTextType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LocalIdFormat"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6350,7 +6350,7 @@ a:LocationNameType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LogicalRecordIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6436,7 +6436,7 @@ Member Indicator for use with member type LogicalRecord</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LogicalRecordRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6547,7 +6547,7 @@ Defines complex relationship between LogicalRecords.</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Map"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6669,7 +6669,7 @@ Map</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:NonIsoDateType"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6816,7 +6816,7 @@ r:HistoricalDateType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:NumberRange"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6909,7 +6909,7 @@ r:NumberRangeType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:NumberRangeValue"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -6966,7 +6966,7 @@ r:NumberRangeValueType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ObjectName"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7128,7 +7128,7 @@ a:OrganizationNameType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PairedExternalControlledVocabularyEntry"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7181,7 +7181,7 @@ Alternatively. the term might be a controlled vocabulary from a list of controll
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegmentIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7267,7 +7267,7 @@ Member Indicator for use with member type PhysicalRecordSegment</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegmentRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7364,7 +7364,7 @@ Defines structured relationship between PhysicalRecordSegments.</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Polygon"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7628,7 +7628,7 @@ Makes use of a controlled vocabulary for typing the relationship.</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Segment"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7703,7 +7703,7 @@ r:SegmentType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialCoordinate"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7786,7 +7786,7 @@ r:SpatialCoordinateType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialLine"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7855,7 +7855,7 @@ Street, River</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialPoint"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7932,7 +7932,7 @@ r:PointType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialRelationship"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -7997,7 +7997,7 @@ Used to specify a relationship between one spatial object and another. Includes 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8080,7 +8080,7 @@ r:StandardKeyValuePairType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8143,7 +8143,7 @@ pi:StatisticType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StatisticalClassificationIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8229,7 +8229,7 @@ Member Indicator for use with member type StatisticalClassification</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StatisticalClassificationRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8294,7 +8294,7 @@ Specifies the Statistical Classifications for the source and target of the compl
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudyIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8380,7 +8380,7 @@ Member Indicator for use with member type Study</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudyRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8445,7 +8445,7 @@ Relation specification between source and target studies in a relation structure
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SummaryStatistic"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8551,7 +8551,7 @@ pi:SummaryStatisticType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TargetSample"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8661,7 +8661,7 @@ Specifies details of target sample size, percentage, type, and universe</Literal
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Telephone"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8740,7 +8740,7 @@ a:TelephoneType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TextualSegment"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8797,7 +8797,7 @@ r:TextualType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TypedDescriptiveText"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8856,7 +8856,7 @@ This Complex Data Type bundles a descriptiveText with an External Controlled Voc
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TypedString"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8911,7 +8911,7 @@ This is a generic type + string where property name and documentation should be 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueMappingIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -8997,7 +8997,7 @@ Member Indicator for use with member type ValueMapping</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueMappingRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9068,7 +9068,7 @@ Variable relationships in PhysicalLayout as defined using ValueMappingRelation</
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueString"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9119,7 +9119,7 @@ r:ValueType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9205,7 +9205,7 @@ Member Indicator for use with member type ConceptualVariable, RepresentedVariabl
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9289,7 +9289,7 @@ Ordered relations between any Variables in the Variable Cascade (Conceptual, Rep
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VideoSegment"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9385,7 +9385,7 @@ r:VideoType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9450,7 +9450,7 @@ Defines complex relationship between ViewpointRoles</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VocabularyEntryIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9536,7 +9536,7 @@ Member Indicator for use with member type VocabularyEntry</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VocabularyEntryRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9646,7 +9646,7 @@ Relation of Vocabulary Entries as defined using RelationSpecification</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WebLink"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9715,7 +9715,7 @@ a:URLType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9814,7 +9814,7 @@ Member Indicator for use with member type WorkflowStep, Act, and ConditionalCont
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9885,7 +9885,7 @@ Describes structured relations between WorkflowSteps</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <Class abbreviatedIRI="package:ComplexDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -9906,10 +9906,11 @@ Identify WorkflowStepSequence's that are organized into a master sequence for ex
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:member - Member of the collection, restricted to a single instance
 </Literal>
     </AnnotationAssertion>
-    <!-- END ComplexDataTypes Package -->
+
+    <!-- END ddi:ComplexDataTypes Package -->
 
 
-    <!-- START Conceptual Package -->
+    <!-- START ddi:Conceptual Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:Category"/>
     </Declaration>
@@ -10036,7 +10037,7 @@ l:CategoryType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10155,7 +10156,7 @@ A CategorySet for an occupational classification system like ISCO-08 could use a
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Concept"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10254,7 +10255,7 @@ Concept</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10372,7 +10373,7 @@ The ConceptRelationStructure employs a set of ConceptRelations to describe the r
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptSystem"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10502,7 +10503,7 @@ Concept System</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10585,7 +10586,7 @@ Describes correspondence with one or more Maps which identify a source and targe
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualDomain"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11235,7 +11236,7 @@ Conceptual Domain</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Unit"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11586,7 +11587,7 @@ Population</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableCollection"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11723,7 +11724,7 @@ l:VariableGroupType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
-        <Class abbreviatedIRI="package:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11760,10 +11761,11 @@ A VariableCollection can be described as a simple list, or as having a more comp
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasMemberRelation - Member relations that comprise the relation structure
 </Literal>
     </AnnotationAssertion>
-    <!-- END Conceptual Package -->
+
+    <!-- END ddi:Conceptual Package -->
 
 
-    <!-- START SimpleCodebook Package -->
+    <!-- START ddi:SimpleCodebook Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:StandardWeight"/>
     </Declaration>
@@ -11786,7 +11788,7 @@ A VariableCollection can be described as a simple list, or as having a more comp
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StandardWeight"/>
-        <Class abbreviatedIRI="package:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11878,7 +11880,7 @@ d:StandardWeightType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableStatistics"/>
-        <Class abbreviatedIRI="package:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11941,10 +11943,11 @@ pi:VariableStatisticsType</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasFilterVariable - A variable that may be used to filter the summary and/or category statistics (for example by country or by gender)
 </Literal>
     </AnnotationAssertion>
-    <!-- END SimpleCodebook Package -->
+
+    <!-- END ddi:SimpleCodebook Package -->
 
 
-    <!-- START SimpleMethodologyOverview Package -->
+    <!-- START ddi:SimpleMethodologyOverview Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
     </Declaration>
@@ -11987,7 +11990,7 @@ pi:VariableStatisticsType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
-        <Class abbreviatedIRI="package:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12089,7 +12092,7 @@ This would most commonly be used in a Codebook along with a MethodologyOverview 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DesignOverview"/>
-        <Class abbreviatedIRI="package:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12242,7 +12245,7 @@ Allows for the use of any realized Process. The methodology, design, and algorit
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
-        <Class abbreviatedIRI="package:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12360,7 +12363,7 @@ Note that the algorithm may be implemented by multiple processes which are not l
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ProcessOverview"/>
-        <Class abbreviatedIRI="package:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12395,10 +12398,11 @@ In a descriptive document, Process Overview provides a means of presenting the r
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:implementsAlgorithm - An implementation and/or execution of an algorithm which is associated with the design of the process.
 </Literal>
     </AnnotationAssertion>
-    <!-- END SimpleMethodologyOverview Package -->
+
+    <!-- END ddi:SimpleMethodologyOverview Package -->
 
 
-    <!-- START GeographicClassification Package -->
+    <!-- START ddi:GeographicClassification Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:GeographicExtent"/>
     </Declaration>
@@ -12488,7 +12492,7 @@ In a descriptive document, Process Overview provides a means of presenting the r
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicExtent"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12601,7 +12605,7 @@ r:GeographicBoundaryType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnit"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12773,7 +12777,7 @@ r:GeographicLocationType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -12922,7 +12926,7 @@ Describes the classification of specific geographic units into a classification 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13086,7 +13090,7 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13239,7 +13243,7 @@ Country--State--County</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
-        <Class abbreviatedIRI="package:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13272,10 +13276,11 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasMemberRelation - MemberRelation used to define the relationship of members within the collection
 </Literal>
     </AnnotationAssertion>
-    <!-- END GeographicClassification Package -->
+
+    <!-- END ddi:GeographicClassification Package -->
 
 
-    <!-- START SamplingMethodology Package -->
+    <!-- START ddi:SamplingMethodology Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:SampleFrame"/>
     </Declaration>
@@ -13445,7 +13450,7 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SampleFrame"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13617,7 +13622,7 @@ A listing of all business enterprises by their primary office address with infor
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplePopulationResult"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13683,7 +13688,7 @@ A list of phone numbers representing a random sample from a telephone book. The 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13733,7 +13738,7 @@ Random Sample; Stratified Random Sample</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingDesign"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13803,7 +13808,7 @@ Sampling plan defines the how the sample is to be obtained through the descripti
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingGoal"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13868,7 +13873,7 @@ Provides general description and specific targets for sample sizes including sub
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcedure"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -13966,7 +13971,7 @@ This is a summary of the methodology of sampling providing both an overview of p
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcess"/>
-        <Class abbreviatedIRI="package:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14011,10 +14016,11 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:implementsAlgorithm - The sampling algorithm implanted by this sampling process. Constraint of the relationship implementsAlgorithm in Process pattern class by limiting the target to a SamplingAlgorithm
 </Literal>
     </AnnotationAssertion>
-    <!-- END SamplingMethodology Package -->
+
+    <!-- END ddi:SamplingMethodology Package -->
 
 
-    <!-- START EnumerationsRegExp Package -->
+    <!-- START ddi:EnumerationsRegExp Package -->
     <EquivalentClasses>
         <Class abbreviatedIRI="ddi:CategoryRelationCode"/>
         <ObjectOneOf>
@@ -14027,7 +14033,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryRelationCode"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14039,7 +14045,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CollectionType"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14052,7 +14058,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationBaseList"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <DatatypeDefinition>
@@ -14070,7 +14076,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MappingRelation"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <DatatypeDefinition>
@@ -14090,7 +14096,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PointFormat"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14103,7 +14109,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SexSpecificationType"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14117,7 +14123,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ShapeCoded"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14133,7 +14139,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialObjectPairs"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14148,7 +14154,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialObjectType"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14163,7 +14169,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialRelationSpecification"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14176,7 +14182,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TableDirectionValues"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14193,7 +14199,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TemporalRelationSpecification"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14207,7 +14213,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TextDirectionValues"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14220,7 +14226,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TotalityType"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14234,7 +14240,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TrimValues"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14250,7 +14256,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueRelationshipType"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
 
     <EquivalentClasses>
@@ -14263,12 +14269,13 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </EquivalentClasses>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WhiteSpaceRule"/>
-        <Class abbreviatedIRI="package:EnumerationsRegExp_Package"/>
+        <Class abbreviatedIRI="ddi:EnumerationsRegExp_Package"/>
     </SubClassOf>
-    <!-- END EnumerationsRegExp Package -->
+
+    <!-- END ddi:EnumerationsRegExp Package -->
 
 
-    <!-- START CustomMetadata Package -->
+    <!-- START ddi:CustomMetadata Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
     </Declaration>
@@ -14345,7 +14352,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14473,7 +14480,7 @@ The specification of a controlled vocabulary defines a set of values and their d
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomInstance"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14600,7 +14607,7 @@ The set of openEHR protocol information to be attached to a blood pressure Captu
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItem"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14745,7 +14752,7 @@ This definition will be referenced by a CustomValue when recording a key,value i
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelationStructure"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14873,7 +14880,7 @@ Contains a set of CustomItemRelations which together define the relationships of
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomStructure"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -14980,7 +14987,7 @@ The set of CustomItems used to describe an openEHR blood pressure protocol.</Lit
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomValue"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15055,7 +15062,7 @@ openEHRBPposition, "upper arm"</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VocabularyEntry"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15169,7 +15176,7 @@ aunt - The female sibling of a parent</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
-        <Class abbreviatedIRI="package:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15220,10 +15227,11 @@ Contains the Vocabulary Relations used to structure the ControlledVocabulary</Li
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasMemberRelation - Relation between VocabularyEntries
 </Literal>
     </AnnotationAssertion>
-    <!-- END CustomMetadata Package -->
+
+    <!-- END ddi:CustomMetadata Package -->
 
 
-    <!-- START FormatDescription Package -->
+    <!-- START ddi:FormatDescription Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
     </Declaration>
@@ -15279,7 +15287,7 @@ Contains the Vocabulary Relations used to structure the ControlledVocabulary</Li
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15435,7 +15443,7 @@ A means for describing the complex relational structure of Data Points in a Logi
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15591,7 +15599,7 @@ p:PhysicalDataProductType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15705,7 +15713,7 @@ The PhysicalRelationStructure in this case would describe a BpSys_Dia  list vari
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -15820,7 +15828,7 @@ The same LogicalRecordLayout may be the sourceMember in several adjacency lists.
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -16270,7 +16278,7 @@ p:PhysicalRecordSegmentType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalSegmentLayout"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -16481,7 +16489,7 @@ A PhysicalLayout is a physical description (EventLayout, UnitSegmentLayout, or C
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalSegmentLocation"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -16839,7 +16847,7 @@ This is the classic rectangular data table used by most statistical packages, wi
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueMapping"/>
-        <Class abbreviatedIRI="package:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -16947,10 +16955,11 @@ The ValueMapping describes how the value of an InstanceVariable is physically ex
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:describesSegmentLocation - Uses a PhysicalSegmentLocation to describe where in the physical record a segment representing the InstanceVarible is. This could be, for example, described as a start position and end position value for characters in a text record via the SegmentByText extension of PhysicalSegmentLocation.
 </Literal>
     </AnnotationAssertion>
-    <!-- END FormatDescription Package -->
+
+    <!-- END ddi:FormatDescription Package -->
 
 
-    <!-- START StudyRelated Package -->
+    <!-- START ddi:StudyRelated Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:Budget"/>
     </Declaration>
@@ -16987,7 +16996,7 @@ The ValueMapping describes how the value of an InstanceVariable is physically ex
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Budget"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17067,7 +17076,7 @@ r:BudgetType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComplianceStatement"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17155,7 +17164,7 @@ r:ComplianceType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Embargo"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17249,7 +17258,7 @@ r:EmbargoType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExPostEvaluation"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17362,7 +17371,7 @@ r:ExPostEvaluationType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:QualityStatement"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17441,7 +17450,7 @@ r:QualityStatementType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Standard"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17662,7 +17671,7 @@ r:StandardType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Study"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17844,7 +17853,7 @@ s:StudyUnitType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudyControl"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -17915,7 +17924,7 @@ StudyControl references a Study. StudyControl enables the representation of a re
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudyRelationStructure"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -18038,7 +18047,7 @@ Allows for a complex nested structure for a Study Series</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudySeries"/>
-        <Class abbreviatedIRI="package:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -18105,10 +18114,11 @@ A simple ordered or unordered sequence of studies can be described via the "cont
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:definingConcept - The conceptual basis for the collection of members.
 </Literal>
     </AnnotationAssertion>
-    <!-- END StudyRelated Package -->
+
+    <!-- END ddi:StudyRelated Package -->
 
 
-    <!-- START BusinessWorkflow Package -->
+    <!-- START ddi:BusinessWorkflow Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:BusinessAlgorithm"/>
     </Declaration>
@@ -18118,7 +18128,7 @@ A simple ordered or unordered sequence of studies can be described via the "cont
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BusinessAlgorithm"/>
-        <Class abbreviatedIRI="package:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -18163,7 +18173,7 @@ There are several well-established algorithms for performing data anonymization 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BusinessProcess"/>
-        <Class abbreviatedIRI="package:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -18285,7 +18295,7 @@ Task</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPipeline"/>
-        <Class abbreviatedIRI="package:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -18349,10 +18359,11 @@ Traversal, Data Lifecycle</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:definingConcept - The conceptual basis for the collection of members.
 </Literal>
     </AnnotationAssertion>
-    <!-- END BusinessWorkflow Package -->
+
+    <!-- END ddi:BusinessWorkflow Package -->
 
 
-    <!-- START Workflows Package -->
+    <!-- START ddi:Workflows Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:Act"/>
     </Declaration>
@@ -18889,7 +18900,7 @@ We would like NOT to create specific subtypes of MetadataDrivenAction -- one for
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Parameter"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19226,7 +19237,7 @@ A WorkflowMasterSequence is a SimpleCollection that is normally ordered. It allo
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowProcess"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19325,7 +19336,7 @@ Overall description of steps taken when ingesting a dataset into an archive; A S
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowService"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19466,7 +19477,7 @@ A specification for an air flow monitor used to capture a measure for an Impleme
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStep"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19612,7 +19623,7 @@ Process Step</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepRelationStructure"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19746,7 +19757,7 @@ Dataflow, Data Provenance, Data Lineage</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
-        <Class abbreviatedIRI="package:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -19816,10 +19827,11 @@ d:SequenceType</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:definingConcept - The conceptual basis for the collection of members.
 </Literal>
     </AnnotationAssertion>
-    <!-- END Workflows Package -->
+
+    <!-- END ddi:Workflows Package -->
 
 
-    <!-- START Utility Package -->
+    <!-- START ddi:Utility Package -->
     <DatatypeDefinition>
         <Datatype abbreviatedIRI="ddi:DDI4Version"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -19927,7 +19939,7 @@ d:SequenceType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DocumentInformation"/>
-        <Class abbreviatedIRI="package:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20077,7 +20089,7 @@ Annotation associated with a specific class is the annotation of the metadata cl
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalMaterial"/>
-        <Class abbreviatedIRI="package:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20191,7 +20203,7 @@ r:OtherMaterialType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:FundingInformation"/>
-        <Class abbreviatedIRI="package:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20232,10 +20244,11 @@ r:FundingInformationType</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasFunder - The source of the funding expressed as an Organization or Individual.
 </Literal>
     </AnnotationAssertion>
-    <!-- END Utility Package -->
+
+    <!-- END ddi:Utility Package -->
 
 
-    <!-- START Representations Package -->
+    <!-- START ddi:Representations Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:AuthorizationSource"/>
     </Declaration>
@@ -20304,7 +20317,7 @@ r:FundingInformationType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AuthorizationSource"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20443,7 +20456,7 @@ r:AuthorizationSourceType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationFamily"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20656,7 +20669,7 @@ Classification Family</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationIndex"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20811,7 +20824,7 @@ Classification Index</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21101,7 +21114,7 @@ Classification Item</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21272,7 +21285,7 @@ The ClassificationRelationStructure has a set of CategoryRelations which are bas
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationSeries"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21418,7 +21431,7 @@ Classification Series</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationSeriesRelationStructure"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21619,7 +21632,7 @@ Code</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21776,7 +21789,7 @@ Code List</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CorrespondenceTable"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21887,7 +21900,7 @@ Correspondence Table</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Designation"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -21976,7 +21989,7 @@ Designation</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IndexEntryRelationStructure"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -22059,7 +22072,7 @@ Structures relationship of Classification Index Entries in a Classification Inde
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LevelStructure"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -22605,7 +22618,7 @@ Statistical Classification</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StatisticalClassificationRelationStructure"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -22855,7 +22868,7 @@ value domain [ISO11179]</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueAndConceptDescription"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -22972,7 +22985,7 @@ The logical expression should conform to the expression syntax of VTL. https://s
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueDomain"/>
-        <Class abbreviatedIRI="package:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23013,10 +23026,11 @@ Value Domain</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:recommendedDataType - The data types that are recommended for use with this domain
 </Literal>
     </AnnotationAssertion>
-    <!-- END Representations Package -->
+
+    <!-- END ddi:Representations Package -->
 
 
-    <!-- START LogicalDataDescription Package -->
+    <!-- START ddi:LogicalDataDescription Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:AttributeRole"/>
     </Declaration>
@@ -23081,7 +23095,7 @@ An InstanceVariable with an AttributeRole assigned might contain data about the 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPoint"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23269,7 +23283,7 @@ Data Point</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStore"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23459,7 +23473,7 @@ Data Set</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStoreLibrary"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23596,7 +23610,7 @@ Structured metadata archive</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStoreRelationStructure"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23669,7 +23683,7 @@ If the succession of DataStores are created by a StudySeries that is a time seri
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Datum"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23840,7 +23854,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -23982,7 +23996,7 @@ An information model, a struct in C, a nested object in JSON</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LogicalRecord"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24109,7 +24123,7 @@ Data Structure</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24237,7 +24251,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RecordRelation"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24389,7 +24403,7 @@ Table Definition if the UnitDataRecord is a SimpleCollection, Information Model 
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:UnitDataViewpoint"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24510,7 +24524,7 @@ Viewpoints are not fixed attributes of variables. This is why there is a separat
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ViewpointRole"/>
-        <Class abbreviatedIRI="package:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24561,10 +24575,11 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:definingConcept - The conceptual basis for the collection of members.
 </Literal>
     </AnnotationAssertion>
-    <!-- END LogicalDataDescription Package -->
+
+    <!-- END ddi:LogicalDataDescription Package -->
 
 
-    <!-- START DataCapture Package -->
+    <!-- START ddi:DataCapture Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:BooleanResponseDomain"/>
     </Declaration>
@@ -24699,7 +24714,7 @@ Exactly what is captured may be dependent upon the Implemented Instrument, howev
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Capture"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24888,7 +24903,7 @@ d:CodeDomainType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -24963,7 +24978,7 @@ Idea; Intention; Theory; Design; LogicalInstrument</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalAid"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -25050,7 +25065,7 @@ r:OtherMaterialType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -25216,7 +25231,7 @@ Examples
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Instruction"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -25349,7 +25364,7 @@ d:ComputationItemType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstrumentComponent"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -25649,7 +25664,7 @@ d:QuestionItemType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ResponseDomain"/>
-        <Class abbreviatedIRI="package:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -25847,10 +25862,11 @@ r:TextDomainType</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:regularExpression - A regular expression limiting the allowed characters or character order of the content. Use typeOfContent to specify the syntax of the regularExpression found in content.
 </Literal>
     </AnnotationAssertion>
-    <!-- END DataCapture Package -->
+
+    <!-- END ddi:DataCapture Package -->
 
 
-    <!-- START Discovery Package -->
+    <!-- START ddi:Discovery Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:Access"/>
     </Declaration>
@@ -25978,7 +25994,7 @@ r:TextDomainType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Access"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26141,7 +26157,7 @@ a:AccessType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BoundingBox"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26248,7 +26264,7 @@ r:BoundingBox</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Coverage"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26385,7 +26401,7 @@ r:CoverageType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialCoverage"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26483,7 +26499,7 @@ r:SpatialCoverage, place</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TemporalCoverage"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26526,7 +26542,7 @@ The association of subjects or keywords with the date periods allows for describ
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:TopicalCoverage"/>
-        <Class abbreviatedIRI="package:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -26551,10 +26567,11 @@ r:TopicalCoverageType</Literal>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:keyword - A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.
 </Literal>
     </AnnotationAssertion>
-    <!-- END Discovery Package -->
+
+    <!-- END ddi:Discovery Package -->
 
 
-    <!-- START Identification Package -->
+    <!-- START ddi:Identification Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
     </Declaration>
@@ -27062,7 +27079,7 @@ Used to identify objects for purposes of internal and/or external referencing. E
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Identifiable"/>
-        <Class abbreviatedIRI="package:Identification_Package"/>
+        <Class abbreviatedIRI="ddi:Identification_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27131,10 +27148,11 @@ Used to identify objects for purposes of internal and/or external referencing. E
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:basedOnObject - The object/version that this object version is based on.
 </Literal>
     </AnnotationAssertion>
-    <!-- END Identification Package -->
+
+    <!-- END ddi:Identification Package -->
 
 
-    <!-- START Methodologies Package -->
+    <!-- START ddi:Methodologies Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:AppliedUse"/>
     </Declaration>
@@ -27178,7 +27196,7 @@ Used to identify objects for purposes of internal and/or external referencing. E
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AppliedUse"/>
-        <Class abbreviatedIRI="package:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27244,7 +27262,7 @@ Links a guide for the use of a sample (result) obtained in the first stage of co
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:BusinessFunction"/>
-        <Class abbreviatedIRI="package:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27339,7 +27357,7 @@ Business Function</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Guide"/>
-        <Class abbreviatedIRI="package:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27475,7 +27493,7 @@ A precondition related to a design defines the state that must exist in order fo
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Result"/>
-        <Class abbreviatedIRI="package:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27524,10 +27542,11 @@ The use of a weight resulting from a sampling process by an analyst within the c
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasOutputParameter - Used by Binding to link the output of this class to the input of another class
 </Literal>
     </AnnotationAssertion>
-    <!-- END Methodologies Package -->
+
+    <!-- END ddi:Methodologies Package -->
 
 
-    <!-- START Agents Package -->
+    <!-- START ddi:Agents Package -->
     <Declaration>
         <Class abbreviatedIRI="ddi:Agent"/>
     </Declaration>
@@ -27570,7 +27589,7 @@ The use of a weight resulting from a sampling process by an analyst within the c
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Agent"/>
-        <Class abbreviatedIRI="package:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27694,7 +27713,7 @@ Agent</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentListing"/>
-        <Class abbreviatedIRI="package:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -27854,7 +27873,7 @@ Relationships between agents are fluid and reflect effective dates of the relati
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentRelationStructure"/>
-        <Class abbreviatedIRI="package:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -28174,10 +28193,11 @@ related to org:Organization which is described as "Represents a collection of pe
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasContactInformation - Contact information for the organization including location specification, address, URL, phone numbers, and other means of communication access. Sets of information can be repeated and date-stamped.
 </Literal>
     </AnnotationAssertion>
-    <!-- END Agents Package -->
+
+    <!-- END ddi:Agents Package -->
 
 
-    <!-- START XMLSchemaDatatypes Package -->
+    <!-- START ddi:XMLSchemaDatatypes Package -->
     <DatatypeDefinition>
         <Datatype abbreviatedIRI="xsd:anyURI"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -28192,8 +28212,8 @@ related to org:Organization which is described as "Represents a collection of pe
         <Datatype abbreviatedIRI="ddi:LanguageSpecification"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DatatypeDefinition>
-    <!-- END XMLSchemaDatatypes Package -->
 
+    <!-- END ddi:XMLSchemaDatatypes Package -->
 
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComplexDataTypes_Package"/>
@@ -34729,3 +34749,4 @@ The primary class is the Agent List which can be structured by Agent Relation St
     </ObjectPropertyRange>
 
 </Ontology>
+
