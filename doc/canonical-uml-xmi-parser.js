@@ -82,7 +82,7 @@ let CanonicalUmlXmiParser = function (opts = {}) {
         // e.g. canonical *-owned-attribute-n properties.
         // throw Error('expected name in ' + JSON.stringify(elt.$) + ' in ' + parent)
       } else if (name.charAt(0).match(/[A-Z]/)) {
-        throw Error('unexpected property name ' + name + ' in ' + classId)
+        console.warn('unexpected initial capital in property name ' + name + ' in class ' + classId)
       }
     })
     return ret
