@@ -5,7 +5,7 @@
   "source": {
     "method": "xmi-to-json",
     "resource": "../doc/DDI4_PIM_canonical.xmi",
-    "timestamp": "2018-07-20T04:38:02.160Z"
+    "timestamp": "2018-07-20T05:08:09.714Z"
   },
   "elements": [
     {
@@ -35007,79 +35007,6 @@
           ],
           "rtti": "Package",
           "elements": [
-            {
-              "id": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-anyURI",
-              "references": [
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-ExternalControlledVocabularyEntry-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-Image-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-Utility-ExternalMaterial-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-Form-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-Polygon-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-SpatialLine-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-WebLink-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-DataCapture-ImplementedInstrument-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-CommandFile-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-AccessLocation-uri"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes"
-                }
-              ],
-              "name": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "parent": {
-                "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-ExternalControlledVocabularyEntry-uri"
-              },
-              "rtti": "Datatype",
-              "external": true
-            },
-            {
-              "id": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language",
-              "references": [
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStringType-language"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStringType-translationSourceLanguage"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-ExternalControlledVocabularyEntry-language"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStructuredStringType-language"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStructuredStringType-translationSourceLanguage"
-                },
-                {
-                  "_idref": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes"
-                }
-              ],
-              "name": "http://www.w3.org/2001/XMLSchema#language",
-              "parent": {
-                "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStringType-language"
-              },
-              "rtti": "Datatype",
-              "external": true
-            },
             {
               "id": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-LanguageSpecification",
               "references": [

@@ -39282,44 +39282,6 @@
       }
     },
     {
-      "id": "http://ddi-alliance.org/ns/#http://www.w3.org/2001/XMLSchema#anyURI",
-      "type": "NodeConstraint",
-      "nodeKind": "Literal",
-      "annotations": [
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-          "object": "http://lion.ddialliance.org/ddiobjects/http://www.w3.org/2001/xmlschema#anyuri"
-        },
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#package",
-          "object": {
-            "value": "http://ddi-alliance.org/ns/#XMLSchemaDatatypes"
-          }
-        }
-      ]
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#http://www.w3.org/2001/XMLSchema#language",
-      "type": "NodeConstraint",
-      "nodeKind": "Literal",
-      "annotations": [
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-          "object": "http://lion.ddialliance.org/ddiobjects/http://www.w3.org/2001/xmlschema#language"
-        },
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#package",
-          "object": {
-            "value": "http://ddi-alliance.org/ns/#XMLSchemaDatatypes"
-          }
-        }
-      ]
-    },
-    {
       "id": "http://ddi-alliance.org/ns/#LanguageSpecification",
       "type": "NodeConstraint",
       "nodeKind": "Literal",
