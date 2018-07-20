@@ -201,8 +201,8 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
         <Class abbreviatedIRI="${parent}"/>
     </SubClassOf>`)
       }
-      if ('commment' in pkg) {
-        pkg.comments.forEach(comment => {
+      if ('comments' in elt) {
+        elt.comments.forEach(comment => {
           owlx.push(`    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>${eltName}</AbbreviatedIRI>
