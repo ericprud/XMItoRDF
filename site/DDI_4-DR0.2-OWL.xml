@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-20T05:08:11.752Z -->
+     shexToOwl 2018-07-20T06:09:32.444Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://ddi-alliance.org/ns/ddi4"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -40,10 +40,10 @@
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AccessLocation"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AccessLocation"/>
@@ -2281,16 +2281,16 @@ r:CommandCodeType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CommandFile"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CommandFile"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CommandFile"/>
@@ -4064,16 +4064,16 @@ r:EmailType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
@@ -4221,16 +4221,16 @@ d:TextType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Form"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Form"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Form"/>
@@ -4708,16 +4708,16 @@ A member might have a ParentChild relation to several other members which is Ant
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Image"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Image"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Image"/>
@@ -7313,16 +7313,16 @@ Defines structured relationship between PhysicalRecordSegments.</Literal>
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Polygon"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Polygon"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Polygon"/>
@@ -7735,16 +7735,16 @@ r:SpatialCoordinateType</Literal>
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialLine"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialLine"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialLine"/>
@@ -9595,16 +9595,16 @@ Relation of Vocabulary Entries as defined using RelationSpecification</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WebLink"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WebLink"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-        </DataMaxCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WebLink"/>
@@ -20020,10 +20020,10 @@ Annotation associated with a specific class is the annotation of the metadata cl
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalMaterial"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ExternalMaterial"/>
@@ -24990,10 +24990,10 @@ r:OtherMaterialType</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:uri"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataAllValuesFrom>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:uri"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImplementedInstrument"/>
@@ -28175,7 +28175,7 @@ related to org:Organization which is described as "Represents a collection of pe
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:uri"/>
-        <Datatype abbreviatedIRI="xsd:anyURI"/>
+        <Datatype abbreviatedIRI="owl:Thing"/>
     </DataPropertyRange>
 
     <Declaration>
