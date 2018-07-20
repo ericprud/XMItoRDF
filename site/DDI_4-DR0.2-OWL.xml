@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-19T12:20:33.933Z -->
+     shexToOwl 2018-07-20T04:03:36.503Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://ddi-alliance.org/ns/ddi4"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -534,7 +534,7 @@ ORCID</Literal>
         <Class abbreviatedIRI="ddi:AgentIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Agent"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -626,14 +626,14 @@ Member Indicator for use with member type Agent</Literal>
         <Class abbreviatedIRI="ddi:AgentRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Agent"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:AgentRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Agent"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1443,7 +1443,7 @@ A BusinessProcess precondition or post condition which describes the condition w
         <Class abbreviatedIRI="ddi:BusinessProcessIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:BusinessProcess"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1490,7 +1490,7 @@ Allows for the identification of the BusinessProcess specifically as a member an
         <Class abbreviatedIRI="ddi:CategoryIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Category"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1569,14 +1569,14 @@ Member Indicator for use when the member type is restricted to Category.</Litera
         <Class abbreviatedIRI="ddi:CategoryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Category"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategoryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Category"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1819,7 +1819,7 @@ r:CharacterParameterType</Literal>
         <Class abbreviatedIRI="ddi:ClassificationIndexEntryIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1879,7 +1879,7 @@ Member Indicator for use with member type ClassificationIndexEntry</Literal>
         <Class abbreviatedIRI="ddi:ClassificationItemIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationItem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1932,7 +1932,7 @@ A ClassificationItemIndicator realizes and extends a MemberIndicator which provi
         <Class abbreviatedIRI="ddi:ClassificationSeriesIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeries"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2011,14 +2011,14 @@ Member Indicator for use with member type ClassificationSeries</Literal>
         <Class abbreviatedIRI="ddi:ClassificationSeriesRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeries"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ClassificationSeriesRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeries"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2096,7 +2096,7 @@ Defines the Classification Series in a complex relation and specifies the relati
         <Class abbreviatedIRI="ddi:CodeIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Code"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2346,7 +2346,7 @@ r:CommandFileType</Literal>
         <Class abbreviatedIRI="ddi:ConceptIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2425,14 +2425,14 @@ Member Indicator for use with member type Concept and all subtypes of Concept: C
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2765,7 +2765,7 @@ cm:CorrespondenceType</Literal>
         <Class abbreviatedIRI="ddi:CustomItemIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2844,14 +2844,14 @@ Member Indicator for use with member type CustomItem</Literal>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2916,7 +2916,7 @@ Defines a relationship between CustomItems .</Literal>
         <Class abbreviatedIRI="ddi:CustomValueIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomValue"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2995,14 +2995,14 @@ Member Indicator for use with member type CustomValue</Literal>
         <Class abbreviatedIRI="ddi:CustomValueRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomValue"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomValueRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomValue"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3067,7 +3067,7 @@ Defines the relation between CustomValues</Literal>
         <Class abbreviatedIRI="ddi:DataPointIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPoint"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3146,14 +3146,14 @@ Member Indicator for use with member type DataPoint</Literal>
         <Class abbreviatedIRI="ddi:DataPointRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPoint"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataPointRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPoint"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3218,7 +3218,7 @@ Data Point relations used by the Data Point Relation Structure of a Logical Reco
         <Class abbreviatedIRI="ddi:DataStoreIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStore"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -3297,14 +3297,14 @@ Member Indicator for use with member type DataStore</Literal>
         <Class abbreviatedIRI="ddi:DataStoreRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStore"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DataStoreRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStore"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4331,7 +4331,7 @@ a:FormType</Literal>
         <Class abbreviatedIRI="ddi:GeographicUnitIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnit"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4429,14 +4429,14 @@ Provides ability to declare an optional sequence or index order to a Geographic 
         <Class abbreviatedIRI="ddi:GeographicUnitRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnit"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnit"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4524,7 +4524,7 @@ A member might have a ParentChild relation to several other members which is Ant
         <Class abbreviatedIRI="ddi:GeographicUnitTypeIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:UnitType"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4635,14 +4635,14 @@ Provides ability to declare an optional sequence or index order to a Unit Type d
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:UnitType"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:UnitType"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -4907,14 +4907,14 @@ r:ImageAreaType</Literal>
         <Class abbreviatedIRI="ddi:IndexEntryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IndexEntryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationIndexEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -5239,7 +5239,7 @@ a:IndividualNameType</Literal>
         <Class abbreviatedIRI="ddi:InstanceVariableIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -5322,14 +5322,14 @@ Note if multiple types of Variables may be included in a collection use Variable
         <Class abbreviatedIRI="ddi:InstanceVariableRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -5436,14 +5436,14 @@ Use when relationships are limited to InstanceVariables only. Use VariableRelati
         <Class abbreviatedIRI="ddi:InstanceVariableValueMap"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariableValueMap"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -6346,7 +6346,7 @@ a:LocationNameType</Literal>
         <Class abbreviatedIRI="ddi:LogicalRecordIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecord"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -6425,14 +6425,14 @@ Member Indicator for use with member type LogicalRecord</Literal>
         <Class abbreviatedIRI="ddi:LogicalRecordRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecord"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:LogicalRecordRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecord"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -6536,14 +6536,14 @@ Defines complex relationship between LogicalRecords.</Literal>
         <Class abbreviatedIRI="ddi:Map"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Map"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -7177,7 +7177,7 @@ Alternatively. the term might be a controlled vocabulary from a list of controll
         <Class abbreviatedIRI="ddi:PhysicalRecordSegmentIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -7256,14 +7256,14 @@ Member Indicator for use with member type PhysicalRecordSegment</Literal>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegmentRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:PhysicalRecordSegmentRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8139,7 +8139,7 @@ pi:StatisticType</Literal>
         <Class abbreviatedIRI="ddi:StatisticalClassificationIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8218,14 +8218,14 @@ Member Indicator for use with member type StatisticalClassification</Literal>
         <Class abbreviatedIRI="ddi:StatisticalClassificationRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StatisticalClassificationRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8290,7 +8290,7 @@ Specifies the Statistical Classifications for the source and target of the compl
         <Class abbreviatedIRI="ddi:StudyIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Study"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8369,14 +8369,14 @@ Member Indicator for use with member type Study</Literal>
         <Class abbreviatedIRI="ddi:StudyRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Study"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:StudyRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Study"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8907,7 +8907,7 @@ This is a generic type + string where property name and documentation should be 
         <Class abbreviatedIRI="ddi:ValueMappingIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ValueMapping"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -8986,14 +8986,14 @@ Member Indicator for use with member type ValueMapping</Literal>
         <Class abbreviatedIRI="ddi:ValueMappingRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ValueMapping"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueMappingRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ValueMapping"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9115,7 +9115,7 @@ r:ValueType</Literal>
         <Class abbreviatedIRI="ddi:VariableIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptualVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9194,14 +9194,14 @@ Member Indicator for use with member type ConceptualVariable, RepresentedVariabl
         <Class abbreviatedIRI="ddi:VariableRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptualVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VariableRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptualVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9374,14 +9374,14 @@ r:VideoType</Literal>
         <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9446,7 +9446,7 @@ Defines complex relationship between ViewpointRoles</Literal>
         <Class abbreviatedIRI="ddi:VocabularyEntryIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9525,14 +9525,14 @@ Member Indicator for use with member type VocabularyEntry</Literal>
         <Class abbreviatedIRI="ddi:VocabularyEntryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:VocabularyEntryRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9711,7 +9711,7 @@ a:URLType</Literal>
         <Class abbreviatedIRI="ddi:WorkflowStepIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStep"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9803,14 +9803,14 @@ Member Indicator for use with member type WorkflowStep, Act, and ConditionalCont
         <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStep"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStep"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -9881,7 +9881,7 @@ Describes structured relations between WorkflowSteps</Literal>
         <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10029,7 +10029,7 @@ l:CategoryType</Literal>
         <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CategoryRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10088,14 +10088,14 @@ This is a kind of a ConceptRelationStructure restricted to categories (which are
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CategoryIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10247,7 +10247,7 @@ Concept</Literal>
         <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10338,7 +10338,7 @@ The ConceptRelationStructure employs a set of ConceptRelations to describe the r
         <Class abbreviatedIRI="ddi:ConceptSystem"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10358,7 +10358,7 @@ The ConceptRelationStructure employs a set of ConceptRelations to describe the r
         <Class abbreviatedIRI="ddi:ConceptSystem"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10482,14 +10482,14 @@ Concept System</Literal>
         <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:correspondence"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Map"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:maps"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptSystem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -10786,7 +10786,7 @@ Variable</Literal>
         <Class abbreviatedIRI="ddi:InstanceVariable"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:measures"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Population"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11074,7 +11074,7 @@ Population</Literal>
         <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:measures"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Universe"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11552,7 +11552,7 @@ Population</Literal>
         <Class abbreviatedIRI="ddi:VariableCollection"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VariableIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11572,7 +11572,7 @@ Population</Literal>
         <Class abbreviatedIRI="ddi:VariableCollection"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11716,7 +11716,7 @@ l:VariableGroupType</Literal>
         <Class abbreviatedIRI="ddi:VariableRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VariableRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12070,14 +12070,14 @@ This would most commonly be used in a Codebook along with a MethodologyOverview 
         <Class abbreviatedIRI="ddi:DesignOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Goal"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:DesignOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12223,21 +12223,21 @@ Allows for the use of any realized Process. The methodology, design, and algorit
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DesignOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:MethodologyOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12342,7 +12342,7 @@ Note that the algorithm may be implemented by multiple processes which are not l
         <Class abbreviatedIRI="ddi:ProcessOverview"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12636,7 +12636,7 @@ r:GeographicLocationType</Literal>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12715,14 +12715,14 @@ r:GeographicLocationType</Literal>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:references"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptSystem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12736,21 +12736,21 @@ r:GeographicLocationType</Literal>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:replaces"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12899,7 +12899,7 @@ Describes the classification of specific geographic units into a classification 
         <Class abbreviatedIRI="ddi:GeographicUnitRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -12949,7 +12949,7 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13028,14 +13028,14 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:references"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ConceptSystem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13049,21 +13049,21 @@ Defines the relationships between Geographic Unit Types in a collection.</Litera
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:replaces"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13216,7 +13216,7 @@ Country--State--County</Literal>
         <Class abbreviatedIRI="ddi:GeographicUnitTypeRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:GeographicUnitTypeRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13697,14 +13697,14 @@ Random Sample; Stratified Random Sample</Literal>
         <Class abbreviatedIRI="ddi:SamplingDesign"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingDesign"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingGoal"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13825,28 +13825,28 @@ Provides general description and specific targets for sample sizes including sub
         <Class abbreviatedIRI="ddi:SamplingProcedure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingDesign"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcedure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingProcess"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcedure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcedure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingProcedure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -13944,7 +13944,7 @@ This is a summary of the methodology of sampling providing both an overview of p
         <Class abbreviatedIRI="ddi:SamplingProcess"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SamplingAlgorithm"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14298,7 +14298,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
         <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyEntryIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14318,7 +14318,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
         <Class abbreviatedIRI="ddi:ControlledVocabulary"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14426,7 +14426,7 @@ The specification of a controlled vocabulary defines a set of values and their d
         <Class abbreviatedIRI="ddi:CustomInstance"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomValueIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14446,7 +14446,7 @@ The specification of a controlled vocabulary defines a set of values and their d
         <Class abbreviatedIRI="ddi:CustomInstance"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14580,7 +14580,7 @@ The set of openEHR protocol information to be attached to a blood pressure Captu
         <Class abbreviatedIRI="ddi:CustomItem"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14725,7 +14725,7 @@ This definition will be referenced by a CustomValue when recording a key,value i
         <Class abbreviatedIRI="ddi:CustomItemRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14826,7 +14826,7 @@ Contains a set of CustomItemRelations which together define the relationships of
         <Class abbreviatedIRI="ddi:CustomStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItemIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14846,7 +14846,7 @@ Contains a set of CustomItemRelations which together define the relationships of
         <Class abbreviatedIRI="ddi:CustomStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItemRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -14953,14 +14953,14 @@ The set of CustomItems used to describe an openEHR blood pressure protocol.</Lit
         <Class abbreviatedIRI="ddi:CustomValue"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CustomItem"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomValue"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariable"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15149,7 +15149,7 @@ aunt - The female sibling of a parent</Literal>
         <Class abbreviatedIRI="ddi:VocabularyRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:VocabularyEntryRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15260,7 +15260,7 @@ Contains the Vocabulary Relations used to structure the ControlledVocabulary</Li
         <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPointRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15349,7 +15349,7 @@ A means for describing the complex relational structure of Data Points in a Logi
         <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalRecordSegmentIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15402,7 +15402,7 @@ A means for describing the complex relational structure of Data Points in a Logi
         <Class abbreviatedIRI="ddi:PhysicalDataSet"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15572,7 +15572,7 @@ p:PhysicalDataProductType</Literal>
         <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ValueMappingRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15686,7 +15686,7 @@ The PhysicalRelationStructure in this case would describe a BpSys_Dia  list vari
         <Class abbreviatedIRI="ddi:PhysicalOrderRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalRecordSegmentRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15753,7 +15753,7 @@ The same LogicalRecordLayout may be the sourceMember in several adjacency lists.
         <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPointIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -15794,7 +15794,7 @@ The same LogicalRecordLayout may be the sourceMember in several adjacency lists.
         <Class abbreviatedIRI="ddi:PhysicalRecordSegment"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataPointRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -16217,7 +16217,7 @@ p:PhysicalRecordSegmentType</Literal>
         <Class abbreviatedIRI="ddi:PhysicalSegmentLayout"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ValueMappingIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -16244,7 +16244,7 @@ p:PhysicalRecordSegmentType</Literal>
         <Class abbreviatedIRI="ddi:PhysicalSegmentLayout"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:PhysicalLayoutRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -17533,14 +17533,14 @@ r:StandardType</Literal>
         <Class abbreviatedIRI="ddi:Study"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DesignOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Study"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ProcessOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -17897,7 +17897,7 @@ StudyControl references a Study. StudyControl enables the representation of a re
         <Class abbreviatedIRI="ddi:StudyRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StudyRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -17993,7 +17993,7 @@ Allows for a complex nested structure for a Study Series</Literal>
         <Class abbreviatedIRI="ddi:StudySeries"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StudyIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -18013,7 +18013,7 @@ Allows for a complex nested structure for a Study Series</Literal>
         <Class abbreviatedIRI="ddi:StudySeries"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StudyRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -18241,7 +18241,7 @@ Task</Literal>
         <Class abbreviatedIRI="ddi:DataPipeline"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:BusinessProcessIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -19082,7 +19082,7 @@ Supports parallel processing that requires completion of all included process st
         <Class abbreviatedIRI="ddi:StructuredWorkflowSteps"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStepRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -19114,7 +19114,7 @@ Data Integration might combine multiple data source and make multiple data produ
         <Class abbreviatedIRI="ddi:WorkflowMasterSequence"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -19197,7 +19197,7 @@ A WorkflowMasterSequence is a SimpleCollection that is normally ordered. It allo
         <Class abbreviatedIRI="ddi:WorkflowProcess"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -19583,7 +19583,7 @@ Process Step</Literal>
         <Class abbreviatedIRI="ddi:WorkflowStepRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -19690,7 +19690,7 @@ Dataflow, Data Provenance, Data Lineage</Literal>
         <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:WorkflowStepIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -20395,7 +20395,7 @@ r:AuthorizationSourceType</Literal>
         <Class abbreviatedIRI="ddi:ClassificationFamily"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeriesIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -20422,7 +20422,7 @@ r:AuthorizationSourceType</Literal>
         <Class abbreviatedIRI="ddi:ClassificationFamily"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeriesRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -20588,7 +20588,7 @@ Classification Family</Literal>
         <Class abbreviatedIRI="ddi:ClassificationIndex"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationIndexEntryIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -20615,7 +20615,7 @@ Classification Family</Literal>
         <Class abbreviatedIRI="ddi:ClassificationIndex"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:IndexEntryRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21087,7 +21087,7 @@ Classification Item</Literal>
         <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CategoryRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21224,7 +21224,7 @@ The ClassificationRelationStructure has a set of CategoryRelations which are bas
         <Class abbreviatedIRI="ddi:ClassificationSeries"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassificationIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21244,7 +21244,7 @@ The ClassificationRelationStructure has a set of CategoryRelations which are bas
         <Class abbreviatedIRI="ddi:ClassificationSeries"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassificationRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21404,7 +21404,7 @@ Classification Series</Literal>
         <Class abbreviatedIRI="ddi:ClassificationSeriesRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationSeriesRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21473,7 +21473,7 @@ Describes the complex relation structure of a classification family.</Literal>
         <Class abbreviatedIRI="ddi:Code"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:denotes"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Category"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21558,7 +21558,7 @@ Code</Literal>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CodeIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21578,14 +21578,14 @@ Code</Literal>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:references"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:CategorySet"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21713,14 +21713,14 @@ Code List</Literal>
         <Class abbreviatedIRI="ddi:CorrespondenceTable"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:correspondence"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Map"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CorrespondenceTable"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:maps"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21860,7 +21860,7 @@ Correspondence Table</Literal>
         <Class abbreviatedIRI="ddi:Designation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:denotes"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -21943,7 +21943,7 @@ Designation</Literal>
         <Class abbreviatedIRI="ddi:IndexEntryRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:IndexEntryRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -22112,7 +22112,7 @@ Level</Literal>
         <Class abbreviatedIRI="ddi:SentinelValueDomain"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -22347,7 +22347,7 @@ Enumerated Value Domain</Literal>
         <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:ClassificationItemIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -22368,7 +22368,7 @@ Enumerated Value Domain</Literal>
         <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -22572,7 +22572,7 @@ Statistical Classification</Literal>
         <Class abbreviatedIRI="ddi:StatisticalClassificationRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:StatisticalClassificationRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -22630,7 +22630,7 @@ Can use relation specification information to more fully describe the relationsh
         <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:SubstantiveConceptualDomain"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23184,7 +23184,7 @@ Data Point</Literal>
         <Class abbreviatedIRI="ddi:DataStore"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecordIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23204,7 +23204,7 @@ Data Point</Literal>
         <Class abbreviatedIRI="ddi:DataStore"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23393,7 +23393,7 @@ Data Set</Literal>
         <Class abbreviatedIRI="ddi:DataStoreLibrary"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStoreIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23413,7 +23413,7 @@ Data Set</Literal>
         <Class abbreviatedIRI="ddi:DataStoreLibrary"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStoreRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23564,7 +23564,7 @@ Structured metadata archive</Literal>
         <Class abbreviatedIRI="ddi:DataStoreRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:DataStoreRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23808,7 +23808,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
         <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariableRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -23930,7 +23930,7 @@ An information model, a struct in C, a nested object in JSON</Literal>
         <Class abbreviatedIRI="ddi:LogicalRecord"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariableIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -24077,7 +24077,7 @@ Data Structure</Literal>
         <Class abbreviatedIRI="ddi:LogicalRecordRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:LogicalRecordRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -24198,14 +24198,14 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
         <Class abbreviatedIRI="ddi:RecordRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:correspondence"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariableValueMap"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RecordRelation"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:maps"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:UnitDataRecord"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -24269,7 +24269,7 @@ A household-level LogicalRecord might contain an InstanceVariable called Househo
         <Class abbreviatedIRI="ddi:UnitDataRecord"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariableRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -24458,7 +24458,7 @@ Viewpoints are not fixed attributes of variables. This is why there is a separat
         <Class abbreviatedIRI="ddi:ViewpointRole"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:InstanceVariableIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -25091,7 +25091,7 @@ aka PhysicalInstrument</Literal>
         <Class abbreviatedIRI="ddi:InstanceMeasurement"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:RepresentedMeasurement"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -25126,7 +25126,7 @@ An instance measurement instantiates a represented measurement, so that it can b
         <Class abbreviatedIRI="ddi:InstanceQuestion"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:RepresentedQuestion"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -27633,7 +27633,7 @@ Agent</Literal>
         <Class abbreviatedIRI="ddi:AgentListing"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:contains"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AgentIndicator"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -27653,7 +27653,7 @@ Agent</Literal>
         <Class abbreviatedIRI="ddi:AgentListing"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AgentRelationStructure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -27827,7 +27827,7 @@ Relationships between agents are fluid and reflect effective dates of the relati
         <Class abbreviatedIRI="ddi:AgentRelationStructure"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:hasMemberRelation"/>
-            <Class abbreviatedIRI="owl:Thing"/>
+            <Class abbreviatedIRI="ddi:AgentRelation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -28161,15 +28161,15 @@ related to org:Organization which is described as "Represents a collection of pe
 
 
     <!-- START ddi:XMLSchemaDatatypes Package -->
-    <!-- <DatatypeDefinition> -->
-    <!--     <Datatype abbreviatedIRI="ddi:http://www.w3.org/2001/XMLSchema#anyURI"/> -->
-    <!--     <Datatype abbreviatedIRI="xsd:string"/> -->
-    <!-- </DatatypeDefinition> -->
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="ddi:http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DatatypeDefinition>
 
-    <!-- <DatatypeDefinition> -->
-    <!--     <Datatype abbreviatedIRI="ddi:http://www.w3.org/2001/XMLSchema#language"/> -->
-    <!--     <Datatype abbreviatedIRI="xsd:string"/> -->
-    <!-- </DatatypeDefinition> -->
+    <DatatypeDefinition>
+        <Datatype abbreviatedIRI="ddi:http://www.w3.org/2001/XMLSchema#language"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DatatypeDefinition>
 
     <DatatypeDefinition>
         <Datatype abbreviatedIRI="ddi:LanguageSpecification"/>
@@ -28364,7 +28364,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#member with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:member"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:member"/>
+        <Class abbreviatedIRI="ddi:Identifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:semantic"/>
@@ -28390,9 +28396,21 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:TotalityType"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#source with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:source"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:source"/>
+        <Class abbreviatedIRI="ddi:Identifiable"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#target with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:target"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:target"/>
+        <Class abbreviatedIRI="ddi:Identifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:title"/>
@@ -29990,7 +30008,13 @@ related to org:Organization which is described as "Represents a collection of pe
 
     <!-- skipping http://ddi-alliance.org/ns/#contains with no common type -->
 
-    <!-- skipping http://ddi-alliance.org/ns/#isStructuredBy with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
+        <Class abbreviatedIRI="ddi:Identifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:name"/>
@@ -30034,7 +30058,13 @@ related to org:Organization which is described as "Represents a collection of pe
 
     <!-- skipping http://ddi-alliance.org/ns/#correspondence with no common type -->
 
-    <!-- skipping http://ddi-alliance.org/ns/#maps with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:maps"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:maps"/>
+        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:describedConceptualDomain"/>
@@ -30108,7 +30138,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#measures with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:measures"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:measures"/>
+        <Class abbreviatedIRI="ddi:Concept"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:basedOnRepresentedVariable"/>
@@ -30326,9 +30362,21 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:Precondition"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#specifiesGoal with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
+        <Class abbreviatedIRI="ddi:Goal"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#expressesAlgorithm with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:implementedBy"/>
@@ -30346,13 +30394,37 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#hasDesign with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
+        <Class abbreviatedIRI="ddi:DesignOverview"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#isExpressedBy with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#componentMethodology with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
+        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#implementsAlgorithm with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
+        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:boundingPolygon"/>
@@ -30466,7 +30538,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#references with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:references"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:references"/>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:isMaintainedBy"/>
@@ -30476,11 +30554,29 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:Organization"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#variantOf with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#replaces with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:replaces"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:replaces"/>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+    </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#isReplacedBy with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
+        <Class abbreviatedIRI="ddi:CodeList"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:limitations"/>
@@ -30658,7 +30754,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:TargetSample"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#hasProcess with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
+        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
@@ -30684,7 +30786,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:SamplePopulationResult"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#correspondsTo with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
+        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:maxOccurs"/>
@@ -30726,7 +30834,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:Concept"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#comparesTo with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
+        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:criteria"/>
@@ -31912,7 +32026,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ValueString"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#denotes with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:denotes"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:denotes"/>
+        <Class abbreviatedIRI="ddi:Category"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:usesLevelStructure"/>
@@ -31954,7 +32074,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:DateRange"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#takesConceptsFrom with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
+        <Class abbreviatedIRI="ddi:ConceptualDomain"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:describedValueDomain"/>
@@ -32308,7 +32434,13 @@ related to org:Organization which is described as "Represents a collection of pe
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
     </ObjectPropertyRange>
 
-    <!-- skipping http://ddi-alliance.org/ns/#instantiates with no common type -->
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
+        <Class abbreviatedIRI="ddi:Capture"/>
+    </ObjectPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:instructionText"/>
