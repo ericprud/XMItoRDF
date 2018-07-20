@@ -52,7 +52,8 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     append: CLI.append.map(
       filepath => fs.readFileSync(filepath, 'UTF-8')
     ).join(''),
-    errors: errors
+    errors: errors,
+    anyURIasDataProperty: false
   }).owlx);
   if ('untyped' in errors) {
     Object.keys(errors.untyped).forEach(badP => {
