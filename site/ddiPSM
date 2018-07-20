@@ -58,9 +58,7 @@ const normalizeType = function (type) {
 }
 
 const fs = require('fs')
-const UmlModel = require('../doc/uml-model')({
-  externalDatatype: n => n && n.startsWith(XSD)
-})
+const UmlModel = require('../doc/uml-model')()
 const CanonXmiParser = require('../doc/canonical-uml-xmi-parser')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,

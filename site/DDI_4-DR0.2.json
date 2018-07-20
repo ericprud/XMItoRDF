@@ -5,7 +5,7 @@
   "source": {
     "method": "xmi-to-json",
     "resource": "../doc/DDI4_PIM_canonical.xmi",
-    "timestamp": "2018-07-20T04:03:34.518Z"
+    "timestamp": "2018-07-20T04:38:02.160Z"
   },
   "elements": [
     {
@@ -19706,8 +19706,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-Identification-Identifiable-versionDate"
               },
-              "external": false,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": false
             },
             {
               "id": "DDI4_PIM-ClassLibrary-EnumerationsRegExp-MappingRelation",
@@ -19747,8 +19747,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-FormatDescription-ValueMapping-defaultDecimalSeparator"
               },
-              "external": false,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": false
             },
             {
               "id": "DDI4_PIM-ClassLibrary-EnumerationsRegExp-PointFormat",
@@ -26034,8 +26034,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-Utility"
               },
-              "external": false,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": false
             },
             {
               "id": "DDI4_PIM-ClassLibrary-Utility-DocumentInformation",
@@ -35048,8 +35048,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-ExternalControlledVocabularyEntry-uri"
               },
-              "external": true,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": true
             },
             {
               "id": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language",
@@ -35077,8 +35077,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-LanguageSpecificStringType-language"
               },
-              "external": true,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": true
             },
             {
               "id": "DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-LanguageSpecification",
@@ -35106,8 +35106,8 @@
               "parent": {
                 "_idref": "DDI4_PIM-ClassLibrary-ComplexDataTypes-Image-languageOfImage"
               },
-              "external": false,
-              "rtti": "Datatype"
+              "rtti": "Datatype",
+              "external": false
             }
           ]
         }

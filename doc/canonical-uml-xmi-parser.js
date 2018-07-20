@@ -891,7 +891,7 @@ let CanonicalUmlXmiParser = function (opts = {}) {
             datatypes[propertyRecord.href].references.push(reference)
             return datatypes[propertyRecord.href]
           }
-          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, [reference], propertyRecord.href, null, [])
+          return datatypes[propertyRecord.href] = new UmlModel.Datatype(propertyRecord.href, [reference], propertyRecord.href, true, null, [])
         }
         return createdReferencedValueType(propertyRecord.idref, reference)
       }
@@ -923,7 +923,7 @@ let CanonicalUmlXmiParser = function (opts = {}) {
           return datatypes[datatypeId]
         }
         const datatypeRecord = xmiGraph.datatypes[datatypeId]
-        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, [reference], datatypeRecord.name, reference, datatypeRecord.comments)
+        return datatypes[datatypeId] = new UmlModel.Datatype(datatypeId, [reference], datatypeRecord.name, false, reference, datatypeRecord.comments)
       }
 
       function createClass (classId, reference) {
