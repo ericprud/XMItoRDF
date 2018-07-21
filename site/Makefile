@@ -4,7 +4,7 @@
 all: DDI_4-DR0.2-OWL.xml # DDI_4-DR0.2.shexj DDI_4-DR0.2.json
 
 DDI_4-DR0.2.shexj DDI_4-DR0.2.json: ../doc/DDI4_PIM_canonical.xmi ddiPSM ../doc/uml-model.js ../doc/canonical-uml-xmi-parser.js
-	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2
+	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2 --nestShapes
 
 DDI_4-DR0.2-OWL.xml: DDI_4-DR0.2.shexj ../bin/shexToOwl ../lib/ShExToOwl.js DDI_4-DR0.2-packagesAndViews-OWL.xml
 	$(DEBUG) ../bin/shexToOwl --json $< \

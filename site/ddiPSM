@@ -2,9 +2,10 @@
 
 // Generate command line interface
 var CLI = require("command-line-args")([
-    { name: "help",  alias: "h", type: Boolean },
+    { name: "help", alias: "h", type: Boolean },
     { name: "out",  alias: "o", type: String, description: "file prefix for json, owl, and shex" },
-    { name: "xmi",  alias: "i", type: String, description: "input XMI file", defaultOption:  true }
+    { name: "xmi",  alias: "i", type: String, description: "input XMI file" },
+    { name: "nestShapes",       type: Boolean, description: "nest inner shapes with no coreferences", defaultOption:  false }
 ]);
 function abort (msg) {
   console.error(msg);
@@ -60,6 +61,7 @@ const normalizeType = function (type) {
 const fs = require('fs')
 const UmlModel = require('../doc/uml-model')()
 const CanonXmiParser = require('../doc/canonical-uml-xmi-parser')
+const ShEx = require('shex')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,
   viewPattern: /Functional999Views/,
@@ -146,7 +148,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
           "type": "Annotation",
           "predicate": "http://www.w3.org/ns/shex-xmi#package",
           "object": {
-            "value": "http://ddi-alliance.org/ns/#" + pkg.name // just the inner-most package
+            "value": DDI + pkg.name // just the inner-most package
           }
         })
       }
@@ -176,9 +178,6 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
       return ret
     }
   })
-  // Alternative way to handle xsdTypeFixups:
-  //   shexj.shapes.find(s => s.id === DDI + 'anyURI').datatype = XSD + 'anyURI'
-  //   shexj.shapes.find(s => s.id === DDI + 'langauge').datatype = XSD + 'language'
 
   fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
 
@@ -219,6 +218,22 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     visitPackage(model, null)
   })
   fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
+
+  if (CLI.nestShapes) {
+    let renamed = ShEx.Util.nestShapes(shexj, {
+      transform: function (id, shapeExpr) {
+        if (!id.startsWith(DDI)) {
+          throw Error('transformation target "' + id + '" doesn\'t start  with "' + DDI + '"')
+        }
+        return '_:' + id.substr(DDI.length)
+      }
+    }).map(l => l.substr(DDI.length))
+    let listFile = CLI.out + '-nested.list'
+    console.log('simplied ' + renamed.length + ' shapes. see ' + listFile)
+    fs.writeFileSync(listFile, JSON.stringify(renamed, null, 2), { encoding: 'utf-8' })
+    fs.writeFileSync(CLI.out + '-nested.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+  }
+
 })
 
 function objSet (obj, key, value) {
