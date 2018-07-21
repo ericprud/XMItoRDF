@@ -1,21 +1,13 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-20T11:34:03.613Z -->
+     shexToOwl 2018-07-21T13:54:08.725Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://ddi-alliance.org/ns/ddi4"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
-    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>
     <Prefix name="ddi" IRI="http://ddi-alliance.org/ns/#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-
 
     <!-- START ddi:StructuredDataTypes Package -->
     <EquivalentClasses>

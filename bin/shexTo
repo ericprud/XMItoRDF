@@ -5,6 +5,7 @@
 const fs = require('fs')
 let ShEx = require('shex')
 let ShExToOwl = require('../lib/ShExTo')
+const ontologyIRI = "http://ddi-alliance.org/ns/ddi4"
 
 // Generate command line interface
 var CLI = require("command-line-args")([
@@ -39,14 +40,16 @@ let prefixMap = CLI.prefix.map(
   }
 )
 
+let source = {
+  resource: CLI.shex.concat(CLI.json).join(', '),
+  method: 'shexToOwl',
+  timestamp: new Date().toISOString()
+}
+
 ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
   let errors = {}
   let formatTransformer = ShExToOwl(loaded.schema, {
-    source: {
-      resource: CLI.shex.concat(CLI.json).join(', '),
-      method: 'shexToOwl',
-      timestamp: new Date().toISOString()
-    },
+    source,
     shorten: CLI.shorten,
     prefixMap: prefixMap,
     suppressDuplicateClasses: true,
@@ -60,7 +63,7 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
       // { v: owlx, s: OWLXMLSerializer(schema, chattyOWL), m: OWLXMLMarkup() },
       // { v: shexc, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExCMarkup() },
       // { v: shexh, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExHMarkup(schema) }
-  console.log('%s', formatTransformer.run(formatTransformer.format.owl(true), formatTransformer.markup.xml(), true, true));
+  console.log('%s', formatTransformer.run(formatTransformer.format.owl(true), formatTransformer.markup.xml(ontologyIRI, prefixMap, source), true, true));
   if ('untyped' in errors) {
     Object.keys(errors.untyped).forEach(badP => {
       let rec = errors.untyped[badP]
