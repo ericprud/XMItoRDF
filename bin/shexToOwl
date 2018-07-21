@@ -11,6 +11,7 @@ var CLI = require("command-line-args")([
     { name: "help",  alias: "h", type: Boolean },
     { name: "shex",  alias: "x", type: String, multiple:  true, defaultValue: [], defaultOption:  true },
     { name: "json",  alias: "j", type: String, multiple:  true, defaultValue: [] },
+    { name: "to",    alias: "t", type: String, defaultValue: 'owl' },
     { name: "prefix",alias: "p", type: String, multiple:  true, defaultValue: [] },
     { name: "append",            type: String, multiple:  true, defaultValue: [] },
     // { name: "prefix",alias: "p", type: String, multiple: true
@@ -40,7 +41,7 @@ let prefixMap = CLI.prefix.map(
 
 ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
   let errors = {}
-  console.log('%s', ShExToOwl(loaded.schema, {
+  let formatTransformer = ShExToOwl(loaded.schema, {
     source: {
       resource: CLI.shex.concat(CLI.json).join(', '),
       method: 'shexToOwl',
@@ -54,7 +55,12 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     ).join(''),
     errors: errors,
     anyURIasDataProperty: false
-  }).owlx);
+  })
+      
+      // { v: owlx, s: OWLXMLSerializer(schema, chattyOWL), m: OWLXMLMarkup() },
+      // { v: shexc, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExCMarkup() },
+      // { v: shexh, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExHMarkup(schema) }
+  console.log('%s', formatTransformer.run(formatTransformer.format.owl(true), formatTransformer.markup.xml(), true, true));
   if ('untyped' in errors) {
     Object.keys(errors.untyped).forEach(badP => {
       let rec = errors.untyped[badP]

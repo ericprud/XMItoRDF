@@ -7,7 +7,7 @@ DDI_4-DR0.2.shexj DDI_4-DR0.2.json: ../doc/DDI4_PIM_canonical.xmi ddiPSM ../doc/
 	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2 --nestShapes
 
 DDI_4-DR0.2-OWL.xml: DDI_4-DR0.2.shexj ../bin/shexToOwl ../lib/ShExToOwl.js DDI_4-DR0.2-packagesAndViews-OWL.xml
-	$(DEBUG) ../bin/shexToOwl --json $< \
+	$(DEBUG) ../bin/shexToOwl --to owl --json $< \
 	  --prefix "package: http://lion.ddialliance.org/ddiobjects/" \
 	  --prefix "ddi: http://ddi-alliance.org/ns/#" \
 	  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
