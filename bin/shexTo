@@ -4,7 +4,7 @@
 
 const fs = require('fs')
 let ShEx = require('shex')
-let ShExToOwl = require('../lib/ShExToOwl')
+let ShExToOwl = require('../lib/ShExTo')
 
 // Generate command line interface
 var CLI = require("command-line-args")([
