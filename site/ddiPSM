@@ -130,6 +130,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   fs.writeFileSync(CLI.out + '.json', UmlModel.toJSON(model), { encoding: 'utf-8' })
 
   let shexj = model.toShExJ({
+    anyURIasDataProperty: false,
     iri: function (suffix, elt) {
       return DDI + suffix
     },

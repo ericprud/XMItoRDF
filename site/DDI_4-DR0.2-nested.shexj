@@ -43,7 +43,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",
@@ -3655,7 +3655,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -4294,7 +4294,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMappingRelation",
-              "valueExpr": "_:MappingRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#MappingRelation",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -6278,7 +6278,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -6468,7 +6468,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -7148,7 +7148,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -7303,7 +7303,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#shape",
-              "valueExpr": "_:ShapeCoded",
+              "valueExpr": "http://ddi-alliance.org/ns/#ShapeCoded",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -7718,7 +7718,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#sex",
-              "valueExpr": "_:SexSpecificationType",
+              "valueExpr": "http://ddi-alliance.org/ns/#SexSpecificationType",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -8074,7 +8074,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#valueRelationship",
-              "valueExpr": "_:ValueRelationshipType",
+              "valueExpr": "http://ddi-alliance.org/ns/#ValueRelationshipType",
               "min": "1",
               "max": "1",
               "annotations": [
@@ -8775,7 +8775,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#structureUsed",
-              "valueExpr": "_:StringStructureType",
+              "valueExpr": "http://ddi-alliance.org/ns/#StringStructureType",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -10638,7 +10638,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -11294,7 +11294,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#coordinateType",
-              "valueExpr": "_:PointFormat",
+              "valueExpr": "http://ddi-alliance.org/ns/#PointFormat",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -11353,7 +11353,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -11559,7 +11559,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialObjectPair",
-              "valueExpr": "_:SpatialObjectPairs",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectPairs",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -11786,7 +11786,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#computationBase",
-              "valueExpr": "_:ComputationBaseList",
+              "valueExpr": "http://ddi-alliance.org/ns/#ComputationBaseList",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -14013,7 +14013,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -20441,7 +20441,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#trim",
-              "valueExpr": "_:TrimValues",
+              "valueExpr": "http://ddi-alliance.org/ns/#TrimValues",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -20585,7 +20585,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#tableDirection",
-              "valueExpr": "_:TableDirectionValues",
+              "valueExpr": "http://ddi-alliance.org/ns/#TableDirectionValues",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -20607,7 +20607,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#textDirection",
-              "valueExpr": "_:TextDirectionValues",
+              "valueExpr": "http://ddi-alliance.org/ns/#TextDirectionValues",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -25725,7 +25725,7 @@
       }
     },
     {
-      "id": "_:CategoryRelationCode",
+      "id": "http://ddi-alliance.org/ns/#CategoryRelationCode",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Nominal",
@@ -25772,7 +25772,7 @@
       ]
     },
     {
-      "id": "_:ComputationBaseList",
+      "id": "http://ddi-alliance.org/ns/#ComputationBaseList",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Total",
@@ -25795,7 +25795,7 @@
       ]
     },
     {
-      "id": "_:MappingRelation",
+      "id": "http://ddi-alliance.org/ns/#MappingRelation",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#ExactMatch",
@@ -25818,7 +25818,7 @@
       ]
     },
     {
-      "id": "_:PointFormat",
+      "id": "http://ddi-alliance.org/ns/#PointFormat",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#DecimalDegree",
@@ -25843,7 +25843,7 @@
       ]
     },
     {
-      "id": "_:SexSpecificationType",
+      "id": "http://ddi-alliance.org/ns/#SexSpecificationType",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Masculine",
@@ -25866,7 +25866,7 @@
       ]
     },
     {
-      "id": "_:ShapeCoded",
+      "id": "http://ddi-alliance.org/ns/#ShapeCoded",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Rectangle",
@@ -25890,7 +25890,7 @@
       ]
     },
     {
-      "id": "_:SpatialObjectPairs",
+      "id": "http://ddi-alliance.org/ns/#SpatialObjectPairs",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#PointToPoint",
@@ -25916,7 +25916,7 @@
       ]
     },
     {
-      "id": "_:SpatialObjectType",
+      "id": "http://ddi-alliance.org/ns/#SpatialObjectType",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Point",
@@ -25966,7 +25966,7 @@
       ]
     },
     {
-      "id": "_:StringStructureType",
+      "id": "http://ddi-alliance.org/ns/#StringStructureType",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#XHTML",
@@ -25989,7 +25989,7 @@
       ]
     },
     {
-      "id": "_:TableDirectionValues",
+      "id": "http://ddi-alliance.org/ns/#TableDirectionValues",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Ltr",
@@ -26039,7 +26039,7 @@
       ]
     },
     {
-      "id": "_:TextDirectionValues",
+      "id": "http://ddi-alliance.org/ns/#TextDirectionValues",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Ltr",
@@ -26086,7 +26086,7 @@
       ]
     },
     {
-      "id": "_:TrimValues",
+      "id": "http://ddi-alliance.org/ns/#TrimValues",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Start",
@@ -26110,7 +26110,7 @@
       ]
     },
     {
-      "id": "_:ValueRelationshipType",
+      "id": "http://ddi-alliance.org/ns/#ValueRelationshipType",
       "type": "NodeConstraint",
       "values": [
         "http://ddi-alliance.org/ns/#Equal",
@@ -26491,7 +26491,7 @@
       }
     },
     {
-      "id": "_:DDI4Version",
+      "id": "http://ddi-alliance.org/ns/#DDI4Version",
       "type": "NodeConstraint",
       "nodeKind": "Literal",
       "annotations": [
@@ -26596,7 +26596,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#ofType",
-              "valueExpr": "_:DDI4Version",
+              "valueExpr": "http://ddi-alliance.org/ns/#DDI4Version",
               "min": "1",
               "max": "1",
               "annotations": [
@@ -26812,7 +26812,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",
@@ -29992,7 +29992,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#spatialObject",
-              "valueExpr": "_:SpatialObjectType",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectType",
               "min": 0,
               "max": "1",
               "annotations": [
@@ -31029,7 +31029,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",
@@ -39307,7 +39307,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#classificationLevel",
-              "valueExpr": "_:CategoryRelationCode",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelationCode",
               "min": 0,
               "max": "1",
               "annotations": [

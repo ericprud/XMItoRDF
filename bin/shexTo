@@ -56,8 +56,7 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     append: CLI.append.map(
       filepath => fs.readFileSync(filepath, 'UTF-8')
     ).join(''),
-    errors: errors,
-    anyURIasDataProperty: false
+    errors: errors
   })
       
   // { v: owlx, s: OWLXMLSerializer(schema, chattyOWL), m: OWLXMLMarkup() },
@@ -77,7 +76,7 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     throw Error('unknown format: --to ' + CLI.to)
   }
   console.log('%s', formatTransformer.run(format, markup, true, true));
-  if ('untyped' in errors) {
+  if (CLI.to === 'owl' && 'untyped' in errors) {
     Object.keys(errors.untyped).forEach(badP => {
       let rec = errors.untyped[badP]
       console.warn(`${rec.shapeLabel} ${rec.predicate} :\n  ${rec.newType} isn\'t related to ${rec.curType}\n  ${rec.references.length} later references:`)

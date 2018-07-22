@@ -43,7 +43,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",
@@ -3655,7 +3655,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -6278,7 +6278,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -6468,7 +6468,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -7148,7 +7148,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -10638,7 +10638,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -11353,7 +11353,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -14013,7 +14013,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "1",
@@ -26812,7 +26812,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",
@@ -31029,7 +31029,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uri",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+                "nodeKind": "iri"
               },
               "min": 0,
               "max": "*",

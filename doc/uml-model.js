@@ -680,7 +680,12 @@ function UmlModel (modelOptions = {}, $ = null) {
     propToShExJ (options) {
       let valueExpr =
             this.type.rtti === 'Datatype' && this.type.external === true
+            ? !modelOptions.anyURIasDataProperty && this.type.name === XSD + 'anyURI'
             ? {
+                "type": "NodeConstraint",
+                "nodeKind": 'iri'
+              }
+            : {
                 "type": "NodeConstraint",
                 "datatype": this.type.name
               }
