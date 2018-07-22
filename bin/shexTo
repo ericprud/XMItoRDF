@@ -60,10 +60,23 @@ ShEx.Loader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
     anyURIasDataProperty: false
   })
       
-      // { v: owlx, s: OWLXMLSerializer(schema, chattyOWL), m: OWLXMLMarkup() },
-      // { v: shexc, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExCMarkup() },
-      // { v: shexh, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExHMarkup(schema) }
-  console.log('%s', formatTransformer.run(formatTransformer.format.owl(true), formatTransformer.markup.xml(ontologyIRI, prefixMap, source), true, true));
+  // { v: owlx, s: OWLXMLSerializer(schema, chattyOWL), m: OWLXMLMarkup() },
+  // { v: shexc, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExCMarkup() },
+  // { v: shexh, s: ShExCSerializer(schema, nestInlinableStructure), m: ShExHMarkup(schema) }
+  let format, markup
+  if (CLI.to === 'owl') {
+    format = formatTransformer.format.owl(true)
+    markup = formatTransformer.markup.xml(ontologyIRI, prefixMap, source)
+  } else if (CLI.to === 'shexc') {
+    format = formatTransformer.format.shex(true)
+    markup = formatTransformer.markup.compact(ontologyIRI, prefixMap, source)
+  } else if (CLI.to === 'shexh') {
+    format = formatTransformer.format.shex(true)
+    markup = formatTransformer.markup.html(ontologyIRI, prefixMap, source)
+  } else {
+    throw Error('unknown format: --to ' + CLI.to)
+  }
+  console.log('%s', formatTransformer.run(format, markup, true, true));
   if ('untyped' in errors) {
     Object.keys(errors.untyped).forEach(badP => {
       let rec = errors.untyped[badP]
