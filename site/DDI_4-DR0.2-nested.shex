@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2018-07-22T12:10:57.390Z
+# shexToOwl 2018-07-22T12:22:04.905Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -440,7 +440,7 @@ DDI 3.2 mapping
 =================
 d:DynamicTextType"""^^mark:
 
-ddi:DynamicTextContent {
+ABSTRACT ddi:DynamicTextContent {
   ddi:purpose @ddi:InternationalStructuredString *
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured tex""";
   ddi:orderPosition xsd:integer *
@@ -1103,7 +1103,7 @@ Explanatory notes
 ===================
 Describes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies."""^^mark:
 
-ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:describedConceptualDomain @ddi:ValueAndConceptDescription *
@@ -1873,7 +1873,7 @@ DDI 3.2 mapping
 =================
 p:PhysicalRecordSegmentType"""^^mark:
 
-ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   ddi:isDelimited xsd:boolean *
   // shexmi:comment """Indicates that the data are in a delimited format. If not set to true, is FixedWitdh must be set to true. """;
   ddi:delimiter xsd:string *
@@ -1975,7 +1975,7 @@ Explanatory notes
 ===================
 A PhysicalLayout is a physical description (e.g. UnitSegmentLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical interrelationship of each related ValueMapping and associated Instance Variable."""^^mark:
 
-ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#FormatDescription"
 // shexmi:comment """Definition
@@ -3070,7 +3070,7 @@ r:FundingInformationType"""^^mark:
 
 # START ddi:Workflows Package
 
-ddi:Act EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:Act EXTENDS ddi:WorkflowStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3311,7 +3311,7 @@ Explanatory notes
 ===================
 Supports parallel processing that requires completion of all included process steps to exit."""^^mark:
 
-ddi:TemporalRelationControlStep EXTENDS ddi:WorkflowControlStep {
+ABSTRACT ddi:TemporalRelationControlStep EXTENDS ddi:WorkflowControlStep {
   ddi:typeOfTemporalRelationship @ddi:TemporalRelationSpecification *
   // shexmi:comment """Specify the type of temporal relationhship between identified WorkflowSteps using Allen's Interval definitions.""";
 }
@@ -3324,7 +3324,7 @@ Explanatory notes
 ===================
 When creating a specific subtype identify the workflow steps included in a structure that is appropriate to the subtype. For example, Split contains a relationship \"executeConcurrently\"."""^^mark:
 
-ddi:WorkflowControlStep EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:WorkflowControlStep EXTENDS ddi:WorkflowStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3359,7 +3359,7 @@ Examples
 ==========
 Overall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM)."""^^mark:
 
-ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -3453,7 +3453,7 @@ d:SequenceType"""^^mark:
 
 # START ddi:Methodologies Package
 
-ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
 }
@@ -3493,7 +3493,7 @@ GSIM mapping
 ==============
 Business Function"""^^mark:
 
-ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:hasBinding @ddi:Binding *
@@ -3691,7 +3691,7 @@ Explanatory notes
 ===================
 Exactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)"""^^mark:
 
-ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A name for the measurement. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -3871,7 +3871,7 @@ DDI 3.2 mapping
 =================
 d:ComputationItemType"""^^mark:
 
-ddi:InstrumentComponent EXTENDS ddi:Act {
+ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
   ddi:hasInstruction @ddi:Instruction *
   // shexmi:comment """An instrument compoment can have zero to many instructions"""
   shexmi:sharedAggregation;
@@ -4023,7 +4023,7 @@ r:TextDomainType"""^^mark:
 
 # START ddi:Identification Package
 
-ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
+ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation *
   // shexmi:comment """Provides annotation information on the object to support citation and crediting of the creator(s) of the object.""";
   ddi:relatedMaterial @ddi:ExternalMaterial *
@@ -4034,7 +4034,7 @@ ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
 ============
 Used to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned. Provides identification and administrative metadata about the object. Adds optional annotation. Use this as the extension base for First Order Classes that contain intellectual content that needs to be discoverable in its own right."""^^mark:
 
-ddi:Identifiable {
+ABSTRACT ddi:Identifiable {
   ddi:agency xsd:string *
   // shexmi:comment """This is the registered agency code with optional sub-agencies separated by dots. For example, diw.soep, ucl.qss, abs.essg.""";
   ddi:id xsd:string *
@@ -4333,7 +4333,7 @@ Synonyms
 ==========
 Structured metadata archive"""^^mark:
 
-ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4378,7 +4378,7 @@ GSIM mapping
 ==============
 Data Structure"""^^mark:
 
-ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -4408,7 +4408,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
 
 # START ddi:Agents Package
 
-ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasAgentId {
     ddi:agentIdValue xsd:string *
     // shexmi:comment """The identifier for the agent.""";
@@ -4924,7 +4924,7 @@ GSIM mapping
 ==============
 Correspondence Table"""^^mark:
 
-ddi:Designation EXTENDS ddi:Identifiable {
+ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
   ddi:denotes @ddi:Concept *
   // shexmi:comment """The concept denoted by the designation. """;
 }
@@ -4945,7 +4945,7 @@ GSIM mapping
 ==============
 Designation"""^^mark:
 
-ddi:EnumerationDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:EnumerationDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -5233,7 +5233,7 @@ Some Conceptual Domains might be described with just a narrative. Others, though
 In ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.
 The logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096"""^^mark:
 
-ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the object. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
   ddi:recommendedDataType @ddi:ExternalControlledVocabularyEntry *
