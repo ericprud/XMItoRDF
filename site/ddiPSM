@@ -221,6 +221,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
 
   if (CLI.nestShapes) {
+    let compiled = ShEx.Util.ShExJtoAS(shexj)
     let renamed = ShEx.Util.nestShapes(shexj, {
       transform: function (id, shapeExpr) {
         if (!id.startsWith(DDI)) {
@@ -228,11 +229,12 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
         }
         return '_:' + id.substr(DDI.length)
       }
-    }).map(l => l.substr(DDI.length))
+    }) // .map(l => l.substr(DDI.length))
     let listFile = CLI.out + '-nested.list'
-    console.log('simplied ' + renamed.length + ' shapes. see ' + listFile)
+    let nested = ShEx.Util.AStoShExJ(compiled)
+    console.log('simplied ' + Object.keys(renamed).length + ' shapes. see ' + listFile)
     fs.writeFileSync(listFile, JSON.stringify(renamed, null, 2), { encoding: 'utf-8' })
-    fs.writeFileSync(CLI.out + '-nested.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+    fs.writeFileSync(CLI.out + '-nested.shexj', JSON.stringify(nested, null, 2), { encoding: 'utf-8' })
   }
 
 })
