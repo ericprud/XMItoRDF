@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2018-07-22T12:22:04.905Z
+# shexToOwl 2018-07-25T10:13:40.181Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -18,6 +18,7 @@ ddi:RelationSpecification [
   ddi:Equivalence
   ddi:GeneralSpecfic
 ]
+
 
 ddi:AgentAssociation {
   ddi:agentName EXTENDS ddi:InternationalString {
@@ -1209,14 +1210,14 @@ ddi:Population EXTENDS ddi:Concept {
   // shexmi:comment """The time period associated with the Population""";
   ddi:composedOf @ddi:Unit *
   // shexmi:comment """Units in the Population """
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:usesConcept @ddi:Concept *
   // shexmi:comment """Reference to the Concept that is being used""";
   ddi:narrowsUniverse @ddi:Universe *
   // shexmi:comment """Reference to a Universe that the Population narrows""";
   ddi:geographyOfPopulation @ddi:GeographicUnit *
   // shexmi:comment """The geographic location related to this population. May be repeated for inclusion of multiple locations."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Conceptual"
 // shexmi:comment """Definition
@@ -1454,7 +1455,7 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The algorithm that is expressed by the design. Constraint of the pattern relationship expressesAlgorithm by limiting the target to a DescribedAlgorithm.""";
   ddi:implementedBy @ddi:WorkflowProcess *
   // shexmi:comment """The process used to implement the Design. WorkflowProcess is a generic realization of the ProcessPattern."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#SimpleMethodologyOverview"
 // shexmi:comment """Definition
@@ -1481,13 +1482,13 @@ ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An external document or other source that provides descriptive information on the object.""";
   ddi:hasDesign @ddi:DesignOverview *
   // shexmi:comment """The design used by the methodology. A restriction of the Methdology class to constrain the target to DescribedDesign."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:isExpressedBy @ddi:AlgorithmOverview *
   // shexmi:comment """The algorithm which expresses the methodology. A restriction of the Methdology class to constrain the target to DescribedAlgorithm."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:componentMethodology @ddi:MethodologyOverview *
   // shexmi:comment """A methodology which is a component part of this methodology. The target may be any realized Methodology. This allows the DescribedMethodology to incorporate more explicit or detailed methodologies for different forms of use without replicating the descriptive content."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#SimpleMethodologyOverview"
 // shexmi:comment """Definition
@@ -1513,7 +1514,9 @@ Note that the algorithm may be implemented by multiple processes which are not l
 
 ddi:Char xsd:string
 
+
 ddi:IsoDateType xsd:string
+
 
 
 # END ddi:RegularExpressions Package
@@ -1791,7 +1794,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A variable that may be used to filter the summary and/or category statistics (for example by country or by gender)""";
   } *
   // shexmi:comment """Variable Statistics related to the Physical Data Set. May be summary or category level statistics."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:definingConcept @ddi:Concept *
   // shexmi:comment """The conceptual basis for the collection of members.""";
 }
@@ -2330,16 +2333,16 @@ ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
     // shexmi:comment """The design of the expressed algorithm is implemented by the Sampling Process. Constrains impliementedBy of the Design Pattern by limiting the target to a Sampling Process.""";
   } *
   // shexmi:comment """Sampling Design used to perform the Sampling Procedure"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasProcess @ddi:SamplingProcess *
   // shexmi:comment """Sampling Process used to perform the Sampling Procedure"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:isExpressedBy @ddi:SamplingAlgorithm *
   // shexmi:comment """Sampling Algorithm that defines the methodology in a generic way"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:componentMethodology @ddi:SamplingProcedure *
   // shexmi:comment """A Sampling Procedure that is a component part of this Sampling Procedure"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#SamplingMethodology"
 // shexmi:comment """Definition
@@ -2361,7 +2364,7 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Description and link to external material discussing this Sampling Process""";
   ddi:hasProcessSequence @ddi:WorkflowStepSequence *
   // shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasResults EXTENDS ddi:Result {
     ddi:sizeOfSample xsd:integer *
     // shexmi:comment """The overall size of the sample""";
@@ -2420,7 +2423,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
     ddi:organizedBy @ddi:WorkflowControlStep *
     // shexmi:comment """The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process."""
-    shexmi:sharedAggregation;
+    // shexmi:partonomy shexmi:sharedAggregation;
     ddi:implementsAlgorithm @ddi:AlgorithmOverview *
     // shexmi:comment """An implementation and/or execution of an algorithm which is associated with the design of the process.""";
   } *
@@ -2447,10 +2450,10 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
       ddi:organizes @ddi:Capture *
       // shexmi:comment """Refers to the RepresentedMeasures and RepresentedQuestions used by the ConceptualInstrument."""
-      shexmi:sharedAggregation;
+      // shexmi:partonomy shexmi:sharedAggregation;
     } *
     // shexmi:comment """The ConceptualInstrument which informs the design of the ImplementedInstrument."""
-    shexmi:sharedAggregation;
+    // shexmi:partonomy shexmi:sharedAggregation;
   } *
   // shexmi:comment """The implemented instruments used in capturing the data. The ImplentedInstrument designates the mode of delivery, a relation to an external representation of the instrument, and reference to the conceptual instrument that contains more detailed information on the content of the instrument.""";
   ddi:hasEmbargo EXTENDS ddi:AnnotatedIdentifiable {
@@ -2493,10 +2496,10 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
         // shexmi:comment """A reference to a concept which relates to an area of coverage of the standard.""";
       } *
       // shexmi:comment """Allows for a quality statement based on frameworks to be described using itemized properties. A reference to a concept, a coded value, or both can be used to specify the property from the standard framework identified in StandardUsed. Usage can provide further details or a general description of compliance with a standard."""
-      shexmi:sharedAggregation;
+      // shexmi:partonomy shexmi:sharedAggregation;
       ddi:standardUsed @ddi:ExternalMaterial *
       // shexmi:comment """Provide the citation and location of the published standard using the OtherMaterialType."""
-      shexmi:sharedAggregation;
+      // shexmi:partonomy shexmi:sharedAggregation;
     } *
     // shexmi:comment """Identifies the external standard used and describes the level of compliance with the standard in terms specific aspects of the standard's content.""";
   } *
@@ -2732,10 +2735,12 @@ ddi:CategoryRelationCode [
   ddi:Continuous
 ]
 
+
 ddi:CollectionType [
   ddi:Bag
   ddi:Set
 ]
+
 
 ddi:ComputationBaseList [
   ddi:Total
@@ -2743,11 +2748,13 @@ ddi:ComputationBaseList [
   ddi:MissingOnly
 ]
 
+
 ddi:MappingRelation [
   ddi:ExactMatch
   ddi:CloseMatch
   ddi:Disjoint
 ]
+
 
 ddi:PointFormat [
   ddi:DecimalDegree
@@ -2757,11 +2764,13 @@ ddi:PointFormat [
   ddi:Feet
 ]
 
+
 ddi:SexSpecificationType [
   ddi:Masculine
   ddi:Feminine
   ddi:GenderNeutral
 ]
+
 
 ddi:ShapeCoded [
   ddi:Rectangle
@@ -2769,6 +2778,7 @@ ddi:ShapeCoded [
   ddi:Polygon
   ddi:LinearRing
 ]
+
 
 ddi:SpatialObjectPairs [
   ddi:PointToPoint
@@ -2779,6 +2789,7 @@ ddi:SpatialObjectPairs [
   ddi:AreaToArea
 ]
 
+
 ddi:SpatialObjectType [
   ddi:Point
   ddi:Polygon
@@ -2786,6 +2797,7 @@ ddi:SpatialObjectType [
   ddi:LinearRing
   ddi:Raster
 ]
+
 
 ddi:SpatialRelationSpecification [
   ddi:Equals
@@ -2795,17 +2807,20 @@ ddi:SpatialRelationSpecification [
   ddi:Touches
 ]
 
+
 ddi:StringStructureType [
   ddi:XHTML
   ddi:RST
   ddi:Other
 ]
 
+
 ddi:TableDirectionValues [
   ddi:Ltr
   ddi:Rtl
   ddi:Auto
 ]
+
 
 ddi:TemporalRelationSpecification [
   ddi:TemporalMeets
@@ -2817,6 +2832,7 @@ ddi:TemporalRelationSpecification [
   ddi:TemporalEquals
 ]
 
+
 ddi:TextDirectionValues [
   ddi:Ltr
   ddi:Rtl
@@ -2824,11 +2840,13 @@ ddi:TextDirectionValues [
   ddi:Inherit
 ]
 
+
 ddi:TotalityType [
   ddi:Total
   ddi:Partial
   ddi:Unknown
 ]
+
 
 ddi:TrimValues [
   ddi:Start
@@ -2836,6 +2854,7 @@ ddi:TrimValues [
   ddi:Both
   ddi:Neither
 ]
+
 
 ddi:ValueRelationshipType [
   ddi:Equal
@@ -2846,11 +2865,13 @@ ddi:ValueRelationshipType [
   ddi:LessThanOrEqualTo
 ]
 
+
 ddi:WhiteSpaceRule [
   ddi:Preserve
   ddi:Replace
   ddi:Collapse
 ]
+
 
 
 # END ddi:Enumerations Package
@@ -2921,6 +2942,7 @@ Traversal, Data Lifecycle"""^^mark:
 # START ddi:Utility Package
 
 ddi:DDI4Version xsd:string
+
 
 ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contentCoverage {
@@ -3050,7 +3072,7 @@ ddi:FundingInformation EXTENDS ddi:Identifiable {
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured tex""";
   ddi:hasFunder @ddi:Agent *
   // shexmi:comment """The source of the funding expressed as an Organization or Individual."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Utility"
 // shexmi:comment """Definition
@@ -3114,7 +3136,7 @@ ddi:ConditionalControlStep EXTENDS ddi:WorkflowControlStep {
   // shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false""";
   ddi:executesSequence @ddi:WorkflowStepSequence *
   // shexmi:comment """The Workflow Sequence is executed depending on the result of the condition evaluation. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false. Specialization of contains in Control Construct."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3136,7 +3158,7 @@ ddi:IfThenElse EXTENDS ddi:ConditionalControlStep {
   // shexmi:comment """The condition to check if the IfThenElse condition is false. """;
   ddi:elseContains @ddi:WorkflowStepSequence *
   // shexmi:comment """Optional sequence of Process Steps that are triggered when the condition is false."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3348,7 +3370,7 @@ ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The algorithms implemented by the process. May be expressed by AlgorithmOverview or any subclass""";
   ddi:organizedBy @ddi:WorkflowControlStep *
   // shexmi:comment """Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3385,10 +3407,10 @@ ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Identifies the Service Implementation which performs the Workflow Step. Specialization of isPerformedBy in Process Step for Service Implementations.""";
   ddi:hasInputParameter @ddi:Parameter *
   // shexmi:comment """An identification for a Parameter related to the WorkflowStep and referred to by a Binding indicating the Input to the WorkflowStep """
-  shexmi:compositeAggregation;
+  // shexmi:partonomy shexmi:compositeAggregation;
   ddi:hasOutputParameter @ddi:Parameter *
   // shexmi:comment """An identification for a Parameter related to the WorkflowStep and referred to by a Binding indicating the Output from the WorkflowStep"""
-  shexmi:compositeAggregation;
+  // shexmi:partonomy shexmi:compositeAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3508,7 +3530,7 @@ ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Identifies material discussing the precondition. The material may be in DDI or other format.""";
     } *
     // shexmi:comment """The guide describing the appropriate usage of the result in the context of specified unit types and/or objects."""
-    shexmi:sharedAggregation;
+    // shexmi:partonomy shexmi:sharedAggregation;
     ddi:appliesToUnitType @ddi:UnitType *
     // shexmi:comment """The unit type or types for which the guide is appropriate""";
     ddi:isUsedBy @ddi:AnnotatedIdentifiable *
@@ -3519,10 +3541,10 @@ ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Comparison of Result of the Process against the Goal to inform further activities.""";
   ddi:hasInputParameter @ddi:Parameter *
   // shexmi:comment """Used by Binding to link the output of another class to the input of this class """
-  shexmi:compositeAggregation;
+  // shexmi:partonomy shexmi:compositeAggregation;
   ddi:hasOutputParameter @ddi:Parameter *
   // shexmi:comment """Used by Binding to link the output of this class to the input of another class """
-  shexmi:compositeAggregation;
+  // shexmi:partonomy shexmi:compositeAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Methodologies"
 // shexmi:comment """Definition
@@ -3622,7 +3644,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).""";
   } *
   // shexmi:comment """The dates and time periods described by the contents of the annotated object."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasTopicalCoverage EXTENDS ddi:AnnotatedIdentifiable {
     ddi:subject @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
@@ -3630,7 +3652,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.""";
   } *
   // shexmi:comment """The topics covered by the contents of the annotated object. These may be expressed by subject classification systems and structured or unstructured keywords."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasSpatialCoverage EXTENDS ddi:AnnotatedIdentifiable {
     ddi:description @ddi:InternationalStructuredString *
     // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
@@ -3654,7 +3676,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """The lowest geographic unit type identified within this coverage. Repeat if multiple geographic hierarchies are used and there is no single lowest level that can be used to compile geographic areas into higher levels. For example a file that has one hierarchy using State-County-CensusTract/BNA and also data identified for Place which cannot be constructed directly from Census Tracts as they may cross Place boundaries.""";
   } *
   // shexmi:comment """Description of the spatial (geographic) coverage of the contents of the annotated object."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Discovery"
 // shexmi:comment """Definition
@@ -3705,15 +3727,15 @@ ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
   ddi:analysisUnit @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Identifies the unit being analyzed such as a Person, Housing Unit, Enterprise, etc. """;
   ddi:hasResponseDomain @ddi:ResponseDomain *
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasConcept @ddi:Concept *
   // shexmi:comment """Capture has a Concept""";
   ddi:hasInstruction @ddi:Instruction *
   // shexmi:comment """Capture has an Instruction"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasExternalAid @ddi:ExternalAid *
   // shexmi:comment """Capture has an External Aid"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
 // shexmi:comment """Definition
@@ -3874,10 +3896,10 @@ d:ComputationItemType"""^^mark:
 ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
   ddi:hasInstruction @ddi:Instruction *
   // shexmi:comment """An instrument compoment can have zero to many instructions"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:hasExternalAid @ddi:ExternalAid *
   // shexmi:comment """Any external object used to clarify, inform, or support the role of the instrument component"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
 // shexmi:comment """Definition
@@ -3943,7 +3965,7 @@ ddi:ResponseDomain EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Associates the ResponseDomain with the RepresentedVariable that the question will populate into an InstanceVariable when fielded.""";
   ddi:hasOutputParameter @ddi:Parameter *
   // shexmi:comment """A parameter which can be used to bind the output of this response domain to another parameter to direct the flow of the captured datum."""
-  shexmi:compositeAggregation;
+  // shexmi:partonomy shexmi:compositeAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
 // shexmi:comment """Definition
@@ -4095,7 +4117,7 @@ ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A Datum is bounded by an InstanceVariable. The Datum is drawn from a set of values, either substantive or sentinel described by the value domain of the InstanceVariable """;
   } *
   // shexmi:comment """The Datum populating the DataPoint."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#LogicalDataDescription"
 // shexmi:comment """Definition
@@ -4215,15 +4237,15 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
         ddi:hasIdentifierRole EXTENDS ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as identifiers"""
-        shexmi:compositeAggregation;
+        // shexmi:partonomy shexmi:compositeAggregation;
         ddi:hasMeasureRole EXTENDS ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as measures"""
-        shexmi:compositeAggregation;
+        // shexmi:partonomy shexmi:compositeAggregation;
         ddi:hasAttributeRole EXTENDS ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as attributes"""
-        shexmi:compositeAggregation;
+        // shexmi:partonomy shexmi:compositeAggregation;
       } *
       // shexmi:comment """A UnitDataRecord may have multiple ViewPoints, each of which assigns among roles identifier, measure, and attribute to the InstanceVariables associated with each Datapoint""";
       ddi:definingConcept @ddi:Concept *
@@ -4233,7 +4255,7 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
   """;
   } *
   // shexmi:comment """The Record Relation that defines the relationship and linking requirements between LogicalRecords in the DataStore """
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:definingConcept @ddi:Concept *
   // shexmi:comment """The conceptual basis for the collection of members.""";
 }
@@ -4572,7 +4594,7 @@ ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
   ddi:authorizingAgent @ddi:Agent *
   // shexmi:comment """References the authorizing agent generally described as an organization or individual"""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Representations"
 // shexmi:comment """Definition
@@ -4681,7 +4703,7 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
   ddi:hasPublication @ddi:ExternalMaterial *
   // shexmi:comment """A list of the publications in which the Classification Index has been published."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
@@ -4767,7 +4789,7 @@ ddi:ClassificationItem EXTENDS ddi:Designation {
   // shexmi:comment """The value as expressed in the data file. """;
   ddi:caseLaw @ddi:AuthorizationSource *
   // shexmi:comment """Case law rulings related to the Classification Item."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:exclude @ddi:ClassificationItem *
   // shexmi:comment """Classification Items to which the excluded cases belong (as described in explanatoryNotes).""";
   ddi:denotes @ddi:Category *
@@ -5133,7 +5155,7 @@ ddi:StatisticalClassification EXTENDS ddi:EnumerationDomain {
   // shexmi:comment """Organization, agency, or group within an agency responsible for the maintenance and upkeep of the statistical classification.""";
   ddi:distributedAs @ddi:ExternalMaterial *
   // shexmi:comment """Description and link to a publication, including print, PDF, HTML and other electronic formats, in which the Statistical Classification has been published. This is similar to dcat:Distribution."""
-  shexmi:sharedAggregation;
+  // shexmi:partonomy shexmi:sharedAggregation;
   ddi:variantOf @ddi:StatisticalClassification *
   // shexmi:comment """Statistical Classification on which the current variant is based, and any subsequent versions of that Statistical Classification to which it is also applicable.
 """;
