@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:agency "int.example" ;
   ddi:id "IdDDIMetadata" ;
   ddi:version "1" ;
-  ddi:versionDate "2017-10-20"^^ddi:IsoDateType ;
+  ddi:versionDate "2017-10-20" ;
   ddi:localId  [ 
     ddi:localIdValue "au.edu.anu.ada.ddi.01259" ;
   ] ;
@@ -31,13 +31,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                  The study is documented with information copied from the pdf of the codebook from the 
                  Australian Data Archive restructured into DDI4 XML.
          """ ;
-      ] ;
+      ]
     ] ;
     ddi:contributor  [ 
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Larry Hoyle" ;
-        ] ;
+        ]
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -52,7 +52,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Larry Hoyle" ;
-        ] ;
+        ]
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -67,7 +67,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Dan Gillman" ;
-        ] ;
+        ]
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -82,7 +82,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Knut Wenzig" ;
-        ] ;
+        ]
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -97,7 +97,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Arofan Gregory" ;
-        ] ;
+        ]
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -111,12 +111,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:copyright  [ 
       ddi:languageSpecificString  [
         ddi:content "Original Study Copyright © 2014, The Australian National University. All rights reserved" ;
-      ] ;
+      ]
     ] ;
     ddi:title  [ 
       ddi:languageSpecificString  [
         ddi:content "DDI4 Subset of the Australian Election Study, 2013" ;
-      ] ;
+      ]
     ] ;
   ] ;
   .
@@ -130,7 +130,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:rationaleDescription  [ 
       ddi:languageSpecificString  [
         ddi:content "Version 1.0 First release" ;
-      ] ;
+      ]
     ] ;
   ] ;
   ddi:localId  [ 
@@ -168,7 +168,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Bean, Clive" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Individual" ;
@@ -196,7 +196,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "McAllister, Ian" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Individual" ;
@@ -241,7 +241,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Pietsch, Juliet" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Individual" ;
@@ -269,7 +269,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Gibson, Rachel Kay" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Individual" ;
@@ -297,7 +297,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "The Social Research Centre (SRC)" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Organization" ;
@@ -316,7 +316,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:agentName  [ 
         ddi:languageSpecificString  [
           ddi:content "Australian Data Archive" ;
-        ] ;
+        ]
       ] ;
       ddi:associatedAgent  [ 
         ddi:typeOfClass "Organization" ;
@@ -334,17 +334,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:title  [ 
       ddi:languageSpecificString  [
         ddi:content "Australian Election Study, 2013" ;
-      ] ;
+      ]
     ] ;
     ddi:subTitle  [ 
       ddi:languageSpecificString  [
         ddi:content "Study Documentation" ;
-      ] ;
+      ]
     ] ;
     ddi:copyright  [ 
       ddi:languageSpecificString  [
         ddi:content "Copyright © 2014, The Australian National University. All rights reserved" ;
-      ] ;
+      ]
     ] ;
     ddi:typeOfResource  [ 
       ddi:content "Australian Election Study" ;
@@ -374,7 +374,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 variable group "AEC Election Results". Information on the source of these election results and the method by which they
                 were created is available in a Stata *.do syntax file located in the other study materials section.results and the method by
                 which they were created is available in a Stata *.do syntax file located in the other study materials section.""" ;
-      ] ;
+      ]
     ] ;
   ] ;
   ddi:hasInstanceVariable  [ 
@@ -610,7 +610,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:fullName  [ 
       ddi:languageSpecificString  [
         ddi:content "Clive Bean" ;
-      ] ;
+      ]
     ] ;
     ddi:firstGiven "Clive" ;
     ddi:lastFamily "Bean" ;
@@ -632,7 +632,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:fullName  [ 
       ddi:languageSpecificString  [
         ddi:content "Ian McAllister" ;
-      ] ;
+      ]
     ] ;
     ddi:firstGiven "Ian" ;
     ddi:lastFamily "McAllister" ;
@@ -660,7 +660,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:fullName  [ 
       ddi:languageSpecificString  [
         ddi:content "Juliet Pietsch" ;
-      ] ;
+      ]
     ] ;
     ddi:firstGiven "Juliet" ;
     ddi:lastFamily "Pietsch" ;
@@ -682,7 +682,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:fullName  [ 
       ddi:languageSpecificString  [
         ddi:content "Rachel Kay Gibson" ;
-      ] ;
+      ]
     ] ;
     ddi:firstGiven "Rachel" ;
     ddi:middle "Kay" ;
@@ -4675,4 +4675,4 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:descriptiveText  [ 
     ddi:languageSpecificStructuredString "Original codebook, with highlighting to show information elements covered by DDI4 subset" ;
   ] ;
-.
+  .
