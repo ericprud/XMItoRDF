@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:agency "int.example" ;
   ddi:id "IdDDIMetadata" ;
   ddi:version "1" ;
-  ddi:versionDate "2017-10-20" ;
+  ddi:versionDate "2017-10-20"^^ddi:IsoDateType ;
   ddi:localId  [ 
     ddi:localIdValue "au.edu.anu.ada.ddi.01259" ;
   ] ;
