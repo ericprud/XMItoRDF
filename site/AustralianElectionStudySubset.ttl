@@ -125,7 +125,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:agency "int.example" ;
   ddi:id "IdStudy" ;
   ddi:version "1" ;
-  ddi:versionDate "2014-02-28" ;
+  ddi:versionDate "2014-02-28"^^ddi:IsoDateType ;
   ddi:versionRationale  [ 
     ddi:rationaleDescription  [ 
       ddi:languageSpecificString  [
@@ -176,7 +176,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -185,7 +185,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Lead" ;
@@ -204,7 +204,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -213,7 +213,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Lead" ;
@@ -222,7 +222,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Digital Preservation Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Lead" ;
@@ -249,7 +249,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -258,7 +258,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -277,7 +277,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -286,7 +286,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Equal" ;
@@ -305,7 +305,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Data Collection Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Lead" ;
@@ -324,7 +324,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role  [ 
         ddi:term  [ 
           ddi:content "cro:Archivist Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent  [ 
           ddi:content "Lead" ;
@@ -380,39 +380,39 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:hasInstanceVariable  [ 
     ddi:typeOfClass "InstanceVariable" ;
   ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
-  ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
-  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
+#  ddi:hasInstanceVariable  [ 
+#    ddi:typeOfClass "InstanceVariable" ;
+#  ] ;
   .
 
 <#urn:ddi:int.example:IdStudyAccess:1_Access>
@@ -499,43 +499,43 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdTemporalCoverage" ;
   ddi:version "1" ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2013/2014" ;
+    ddi:isoDate "2013/2014"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Time Period(s)" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2013-09-01/2013-09-06" ;
+    ddi:isoDate "2013-09-01/2013-09-06"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Data Collection Time Period(s)" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2016_10_05" ;
+    ddi:isoDate "2016_10_05"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Codebook Download" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2010_10_13" ;
+    ddi:isoDate "2010_10_13"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Metadata Production" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2013" ;
+    ddi:isoDate "2013"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Title" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2014-02-28" ;
+    ddi:isoDate "2014-02-28"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Production Date" ;
     ] ;
   ] ;
   ddi:coverageDate  [ 
-    ddi:isoDate "2013-09-06/2014-01-06" ;
+    ddi:isoDate "2013-09-06/2014-01-06"^^ddi:IsoDateType ;
     ddi:subject  [ 
       ddi:content "Data Collection" ;
     ] ;
@@ -647,7 +647,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ] ;
     ] ;
     ddi:website  [ 
-      ddi:uri "http://aes.anu.edu.au" ;
+      ddi:uri <http://aes.anu.edu.au> ;
     ] ;
   ] ;
   .
@@ -847,7 +847,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -869,7 +869,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -888,7 +888,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -907,7 +907,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -926,7 +926,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -945,7 +945,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -964,7 +964,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -990,7 +990,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:unitOfMeasurement "year" ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -1015,7 +1015,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -1037,7 +1037,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -1059,7 +1059,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -1081,7 +1081,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType  [ 
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
     ddi:typeOfClass "SubstantiveValueDomain" ;
@@ -1099,37 +1099,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Group Administration Variables" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "8" ;
+    ddi:index 8 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -1144,7 +1144,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Group Section A: The Election Campaign" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -1159,13 +1159,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Group Section G: Education and Work" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "7" ;
+    ddi:index 7 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -1180,7 +1180,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Group Weight Variables" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -1195,13 +1195,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Group AEC Election Results" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "30" ;
+    ddi:index 30 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "28" ;
+    ddi:index 28 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -1222,7 +1222,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdMinus1" ;
   ddi:version "1" ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -1257,7 +1257,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "CodeList" ;
@@ -1273,37 +1273,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:isOrdered "true"^^xsd:boolean ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "5" ;
+    ddi:index 5 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -1445,7 +1445,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -1472,7 +1472,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "CodeList" ;
@@ -1485,13 +1485,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:isOrdered "true"^^xsd:boolean ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -1542,7 +1542,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -1570,7 +1570,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "CodeList" ;
@@ -1582,55 +1582,55 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdCodesState" ;
   ddi:version "1" ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "5" ;
+    ddi:index 5 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "7" ;
+    ddi:index 7 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "8" ;
+    ddi:index 8 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "9" ;
+    ddi:index 9 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -1814,7 +1814,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -1839,7 +1839,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "CodeList" ;
@@ -1852,25 +1852,25 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:isOrdered "true"^^xsd:boolean ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -1959,7 +1959,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -1990,7 +1990,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "StatisticalClassification" ;
@@ -2004,7 +2004,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -2032,7 +2032,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
     ddi:typeOfClass "CodeList" ;
@@ -2044,55 +2044,55 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdCodesPartyAby" ;
   ddi:version "1" ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "5" ;
+    ddi:index 5 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "7" ;
+    ddi:index 7 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "8" ;
+    ddi:index 8 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "9" ;
+    ddi:index 9 ;
     ddi:member  [ 
       ddi:typeOfClass "Code" ;
     ] ;
@@ -2276,7 +2276,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType  [ 
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
     ddi:typeOfClass "ValueAndConceptDescription" ;
@@ -2338,7 +2338,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdQuestXg5" ;
   ddi:version "1" ;
   ddi:captureSource  [ 
-    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+    ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial  [ 
     ddi:typeOfClass "ExternalMaterial" ;
@@ -2354,7 +2354,7 @@ If you have never worked for pay, please skip this section and go to Section H""
                 http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
                 See Note in Related Materials for further information on derivation of variables.""" ;
   ] ;
-  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   .
 
 <#urn:ddi:int.example:IDMeasSwingn:1_RepresentedMeasurement>
@@ -2362,7 +2362,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDMeasSwingn" ;
   ddi:version "1" ;
   ddi:captureSource  [ 
-    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+    ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial  [ 
     ddi:typeOfClass "ExternalMaterial" ;
@@ -2378,7 +2378,7 @@ If you have never worked for pay, please skip this section and go to Section H""
                 http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
                 See Note in Related Materials for further information on derivation of variables.""" ;
   ] ;
-  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   .
 
 <#urn:ddi:int.example:IdUnitType:1_UnitType>
@@ -2420,7 +2420,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:recordCount "3955" ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "UnitDataRecord" ;
     ] ;
@@ -2433,73 +2433,73 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:version "1" ;
   ddi:isOrdered "true"^^xsd:boolean ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "5" ;
+    ddi:index 5 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "7" ;
+    ddi:index 7 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "8" ;
+    ddi:index 8 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "9" ;
+    ddi:index 9 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "10" ;
+    ddi:index 10 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "11" ;
+    ddi:index 11 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "12" ;
+    ddi:index 12 ;
     ddi:member  [ 
       ddi:typeOfClass "InstanceVariable" ;
     ] ;
@@ -2521,7 +2521,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:typeOfClass "DataStore" ;
   ] ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "PhysicalRecordSegment" ;
     ] ;
@@ -2588,73 +2588,73 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:languageSpecificStructuredString "A simple comma delimited layout with one header line containing variable names. No text values contain commas so quotes are not used." ;
   ] ;
   ddi:contains  [ 
-    ddi:index "1" ;
+    ddi:index 1 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "2" ;
+    ddi:index 2 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "3" ;
+    ddi:index 3 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "4" ;
+    ddi:index 4 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "5" ;
+    ddi:index 5 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "6" ;
+    ddi:index 6 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "7" ;
+    ddi:index 7 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "8" ;
+    ddi:index 8 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "9" ;
+    ddi:index 9 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "10" ;
+    ddi:index 10 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "11" ;
+    ddi:index 11 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
-    ddi:index "12" ;
+    ddi:index 12 ;
     ddi:member  [ 
       ddi:typeOfClass "ValueMapping" ;
     ] ;
@@ -2671,8 +2671,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "3.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2698,8 +2698,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "8.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2725,8 +2725,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "1.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2754,7 +2754,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:format  [ 
     ddi:content "MM-dd-yyyy" ;
-    ddi:uri "https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#formats-for-dates-and-times" ;
+    ddi:uri <https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#formats-for-dates-and-times> ;
   ] ;
   .
 
@@ -2777,8 +2777,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "1.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2804,7 +2804,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "xs:string" ;
   ] ;
-  ddi:maximumLength "255" ;
+  ddi:maximumLength 255 ;
   .
 
 <#urn:ddi:int.example:IDDptDivision:1_DataPoint>
@@ -2826,8 +2826,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "2.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2853,8 +2853,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "2.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2880,8 +2880,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "0" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 0 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "4.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2907,8 +2907,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "15" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 15 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "17.15" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2934,7 +2934,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "xs:string" ;
   ] ;
-  ddi:maximumLength "3" ;
+  ddi:maximumLength 3 ;
   .
 
 <#urn:ddi:int.example:IDDptPartyAby:1_DataPoint>
@@ -2956,8 +2956,8 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
   ] ;
-  ddi:decimalPositions "13" ;
-  ddi:defaultDecimalSeparator "." ;
+  ddi:decimalPositions 13 ;
+  ddi:defaultDecimalSeparator "."^^ddi:Char ;
   ddi:format  [ 
     ddi:content "17.13" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -4628,7 +4628,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_1" ;
   ddi:version "1" ;
-  ddi:uri "https://www.ada.edu.au/ada/01259" ;
+  ddi:uri <https://www.ada.edu.au/ada/01259> ;
   ddi:descriptiveText  [ 
     ddi:languageSpecificStructuredString """This study metadata describesa subset of the complete Australian Election Study, 2013. 
                     The subset was created at Dagstuhl event 16433, October 23 – 28 , 2016. 
@@ -4641,21 +4641,21 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_2" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2> ;
   .
 
 <#urn:ddi:int.example:ExtMat_3:1_ExternalMaterial>
   ddi:agency "int.example" ;
   ddi:id "ExtMat_3" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2> ;
   .
 
 <#urn:ddi:int.example:ExtMat_4:1_ExternalMaterial>
   ddi:agency "int.example" ;
   ddi:id "ExtMat_4" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2> ;
   ddi:typeOfMaterial  [ 
     ddi:content "Original.Subset" ;
   ] ;
@@ -4668,7 +4668,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_5" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2> ;
   ddi:typeOfMaterial  [ 
     ddi:content "Source" ;
   ] ;
