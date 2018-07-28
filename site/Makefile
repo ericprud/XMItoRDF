@@ -1,10 +1,13 @@
 # DDI4_PIM_canonical.json: ../doc/DDI4_PIM_canonical.xmi
 # 	../bin/xmiToJson $< > $@
 
-all: DDI_4-DR0.2-nested.shex DDI_4-DR0.2-nested.html DDI_4-DR0.2-OWL.xml # DDI_4-DR0.2.shexj DDI_4-DR0.2.json
+all: DDI_4-DR0.2-nested.shex DDI_4-DR0.2-nested.html DDI_4-DR0.2-nested.js DDI_4-DR0.2-OWL.xml # DDI_4-DR0.2.shexj DDI_4-DR0.2.json
 
 DDI_4-DR0.2.shexj DDI_4-DR0.2-nested.shexj DDI_4-DR0.2.json: ../doc/DDI4_PIM_canonical.xmi ddiPSM ../doc/uml-model.js ../doc/canonical-uml-xmi-parser.js
 	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2 --nestShapes
+
+DDI_4-DR0.2-nested.js: DDI_4-DR0.2.shexj
+	(echo -n 'DDIschema = ' && cat $<) > $@
 
 DDI_4-DR0.2-OWL.xml: DDI_4-DR0.2.shexj ../bin/shexTo ../lib/ShExTo.js DDI_4-DR0.2-packagesAndViews-OWL.xml
 	$(DEBUG) ../bin/shexTo --to owl --json $< \
@@ -41,6 +44,9 @@ DDI_4-DR0.2-nested.html: DDI_4-DR0.2-nested.shexj ../bin/shexTo ../lib/ShExTo.js
 	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
 	  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
 	  --prefix "mark: https://github.com/commonmark/commonmark.js" > $@
+
+x:
+	~/checkouts/shexSpec/shex.js/bin/validate -d AustralianElectionStudySubset-ericP.ttl -x DDI_4-DR0.2-nested.shex --map '[{ "node": "#urn:ddi:int.example:IdDDIMetadata:1_DocumentInformation" , "shape": "http://ddi-alliance.org/ns/#DocumentInformation" }, { "node": "#urn:ddi:int.example:IdDDIMetadata:1_DocumentInformation" , "shape": "http://ddi-alliance.org/ns/#DocumentInformation" }]'
 
 .DELETE_ON_ERROR:
 
