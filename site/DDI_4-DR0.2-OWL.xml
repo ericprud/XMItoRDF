@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-21T13:54:08.725Z -->
+     shexToOwl 2018-07-28T12:04:24.426Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
     <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>

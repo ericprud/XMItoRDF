@@ -1,4 +1,5 @@
-{
+DDIschema = {
+  "@context": "http://www.w3.org/ns/shex.jsonld",
   "type": "Schema",
   "shapes": [
     {
@@ -29,7 +30,7 @@
       ]
     },
     {
-      "id": "_:AccessLocation",
+      "id": "http://ddi-alliance.org/ns/#AccessLocation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -133,7 +134,7 @@
       }
     },
     {
-      "id": "_:Address",
+      "id": "http://ddi-alliance.org/ns/#Address",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -502,7 +503,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#agentName",
-              "valueExpr": "_:BibliographicName",
+              "valueExpr": "http://ddi-alliance.org/ns/#BibliographicName",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -592,7 +593,7 @@
       }
     },
     {
-      "id": "_:AgentId",
+      "id": "http://ddi-alliance.org/ns/#AgentId",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -677,7 +678,7 @@
       }
     },
     {
-      "id": "_:AgentIndicator",
+      "id": "http://ddi-alliance.org/ns/#AgentIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -759,7 +760,7 @@
       }
     },
     {
-      "id": "_:AgentRelation",
+      "id": "http://ddi-alliance.org/ns/#AgentRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1273,7 +1274,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#relatedResource",
-              "valueExpr": "_:ResourceIdentifier",
+              "valueExpr": "http://ddi-alliance.org/ns/#ResourceIdentifier",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -1462,7 +1463,7 @@
       }
     },
     {
-      "id": "_:AreaCoverage",
+      "id": "http://ddi-alliance.org/ns/#AreaCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1566,7 +1567,7 @@
       }
     },
     {
-      "id": "_:AudioSegment",
+      "id": "http://ddi-alliance.org/ns/#AudioSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1673,7 +1674,7 @@
       }
     },
     {
-      "id": "_:BasedOnObjectInformation",
+      "id": "http://ddi-alliance.org/ns/#BasedOnObjectInformation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1774,7 +1775,7 @@
       }
     },
     {
-      "id": "_:BibliographicName",
+      "id": "http://ddi-alliance.org/ns/#BibliographicName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2037,7 +2038,7 @@
       }
     },
     {
-      "id": "_:BusinessProcessIndicator",
+      "id": "http://ddi-alliance.org/ns/#BusinessProcessIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2073,7 +2074,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
-              "valueExpr": "_:BusinessProcess",
+              "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcess",
               "min": 1,
               "max": 1,
               "annotations": [
@@ -2119,7 +2120,7 @@
       }
     },
     {
-      "id": "_:CategoryIndicator",
+      "id": "http://ddi-alliance.org/ns/#CategoryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2201,7 +2202,7 @@
       }
     },
     {
-      "id": "_:CategoryRelation",
+      "id": "http://ddi-alliance.org/ns/#CategoryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2346,7 +2347,7 @@
       }
     },
     {
-      "id": "_:CategoryStatistic",
+      "id": "http://ddi-alliance.org/ns/#CategoryStatistic",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2491,7 +2492,7 @@
       }
     },
     {
-      "id": "_:CharacterOffset",
+      "id": "http://ddi-alliance.org/ns/#CharacterOffset",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2601,7 +2602,7 @@
       }
     },
     {
-      "id": "_:ClassificationIndexEntryIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2683,7 +2684,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2790,7 +2791,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemRelation",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2935,7 +2936,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3017,7 +3018,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesRelation",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3269,7 +3270,7 @@
       }
     },
     {
-      "id": "_:CodeRelation",
+      "id": "http://ddi-alliance.org/ns/#CodeRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3414,7 +3415,7 @@
       }
     },
     {
-      "id": "_:Command",
+      "id": "http://ddi-alliance.org/ns/#Command",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3529,7 +3530,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCommandFile",
-              "valueExpr": "_:CommandFile",
+              "valueExpr": "http://ddi-alliance.org/ns/#CommandFile",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -3551,7 +3552,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCommand",
-              "valueExpr": "_:Command",
+              "valueExpr": "http://ddi-alliance.org/ns/#Command",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -3597,7 +3598,7 @@
       }
     },
     {
-      "id": "_:CommandFile",
+      "id": "http://ddi-alliance.org/ns/#CommandFile",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3701,7 +3702,7 @@
       }
     },
     {
-      "id": "_:ConceptIndicator",
+      "id": "http://ddi-alliance.org/ns/#ConceptIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3783,7 +3784,7 @@
       }
     },
     {
-      "id": "_:ConceptRelation",
+      "id": "http://ddi-alliance.org/ns/#ConceptRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3994,7 +3995,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#website",
-              "valueExpr": "_:WebLink",
+              "valueExpr": "http://ddi-alliance.org/ns/#WebLink",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -4016,7 +4017,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasEmail",
-              "valueExpr": "_:Email",
+              "valueExpr": "http://ddi-alliance.org/ns/#Email",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -4038,7 +4039,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#electronicMessaging",
-              "valueExpr": "_:ElectronicMessageSystem",
+              "valueExpr": "http://ddi-alliance.org/ns/#ElectronicMessageSystem",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -4060,7 +4061,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAddress",
-              "valueExpr": "_:Address",
+              "valueExpr": "http://ddi-alliance.org/ns/#Address",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -4082,7 +4083,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTelephone",
-              "valueExpr": "_:Telephone",
+              "valueExpr": "http://ddi-alliance.org/ns/#Telephone",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -4339,7 +4340,7 @@
       }
     },
     {
-      "id": "_:CustomItemIndicator",
+      "id": "http://ddi-alliance.org/ns/#CustomItemIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4421,7 +4422,7 @@
       }
     },
     {
-      "id": "_:CustomItemRelation",
+      "id": "http://ddi-alliance.org/ns/#CustomItemRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4566,7 +4567,7 @@
       }
     },
     {
-      "id": "_:CustomValueIndicator",
+      "id": "http://ddi-alliance.org/ns/#CustomValueIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4793,7 +4794,7 @@
       }
     },
     {
-      "id": "_:DataPointIndicator",
+      "id": "http://ddi-alliance.org/ns/#DataPointIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4875,7 +4876,7 @@
       }
     },
     {
-      "id": "_:DataPointRelation",
+      "id": "http://ddi-alliance.org/ns/#DataPointRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5020,7 +5021,7 @@
       }
     },
     {
-      "id": "_:DataStoreIndicator",
+      "id": "http://ddi-alliance.org/ns/#DataStoreIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5102,7 +5103,7 @@
       }
     },
     {
-      "id": "_:DataStoreRelation",
+      "id": "http://ddi-alliance.org/ns/#DataStoreRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5280,7 +5281,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#nonIsoDate",
-              "valueExpr": "_:NonIsoDateType",
+              "valueExpr": "http://ddi-alliance.org/ns/#NonIsoDateType",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -5758,7 +5759,7 @@
       }
     },
     {
-      "id": "_:ElectronicMessageSystem",
+      "id": "http://ddi-alliance.org/ns/#ElectronicMessageSystem",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5909,7 +5910,7 @@
       }
     },
     {
-      "id": "_:ElseIfAction",
+      "id": "http://ddi-alliance.org/ns/#ElseIfAction",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5988,7 +5989,7 @@
       }
     },
     {
-      "id": "_:Email",
+      "id": "http://ddi-alliance.org/ns/#Email",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6429,7 +6430,7 @@
       }
     },
     {
-      "id": "_:Form",
+      "id": "http://ddi-alliance.org/ns/#Form",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6561,7 +6562,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitIndicator",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6668,7 +6669,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitRelation",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6835,7 +6836,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeIndicator",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6942,7 +6943,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeRelation",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7266,7 +7267,7 @@
       }
     },
     {
-      "id": "_:ImageArea",
+      "id": "http://ddi-alliance.org/ns/#ImageArea",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7348,7 +7349,7 @@
       }
     },
     {
-      "id": "_:IndexEntryRelation",
+      "id": "http://ddi-alliance.org/ns/#IndexEntryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7493,7 +7494,7 @@
       }
     },
     {
-      "id": "_:IndividualName",
+      "id": "http://ddi-alliance.org/ns/#IndividualName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7917,7 +7918,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableRelation",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8062,7 +8063,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableValueMap",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableValueMap",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8845,7 +8846,7 @@
       }
     },
     {
-      "id": "_:Level",
+      "id": "http://ddi-alliance.org/ns/#Level",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8949,7 +8950,7 @@
       }
     },
     {
-      "id": "_:LineParameter",
+      "id": "http://ddi-alliance.org/ns/#LineParameter",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9139,7 +9140,7 @@
       }
     },
     {
-      "id": "_:LocalIdFormat",
+      "id": "http://ddi-alliance.org/ns/#LocalIdFormat",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9304,7 +9305,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordIndicator",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9386,7 +9387,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordRelation",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9698,7 +9699,7 @@
       }
     },
     {
-      "id": "_:NonIsoDateType",
+      "id": "http://ddi-alliance.org/ns/#NonIsoDateType",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9802,7 +9803,7 @@
       }
     },
     {
-      "id": "_:NumberRange",
+      "id": "http://ddi-alliance.org/ns/#NumberRange",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10189,7 +10190,7 @@
       }
     },
     {
-      "id": "_:OrganizationName",
+      "id": "http://ddi-alliance.org/ns/#OrganizationName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10397,7 +10398,7 @@
       }
     },
     {
-      "id": "_:PhysicalRecordSegmentIndicator",
+      "id": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10479,7 +10480,7 @@
       }
     },
     {
-      "id": "_:PhysicalRecordSegmentRelation",
+      "id": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10753,7 +10754,7 @@
       }
     },
     {
-      "id": "_:PrivateImage",
+      "id": "http://ddi-alliance.org/ns/#PrivateImage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10893,7 +10894,7 @@
       }
     },
     {
-      "id": "_:RationaleDefinition",
+      "id": "http://ddi-alliance.org/ns/#RationaleDefinition",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10972,7 +10973,7 @@
       }
     },
     {
-      "id": "_:ReferenceDate",
+      "id": "http://ddi-alliance.org/ns/#ReferenceDate",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11054,7 +11055,7 @@
       }
     },
     {
-      "id": "_:ResourceIdentifier",
+      "id": "http://ddi-alliance.org/ns/#ResourceIdentifier",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11109,7 +11110,7 @@
       }
     },
     {
-      "id": "_:Segment",
+      "id": "http://ddi-alliance.org/ns/#Segment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11120,7 +11121,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesAudioSegment",
-              "valueExpr": "_:AudioSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#AudioSegment",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -11142,7 +11143,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesVideoSegment",
-              "valueExpr": "_:VideoSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#VideoSegment",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -11189,7 +11190,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#useseTextualSegment",
-              "valueExpr": "_:TextualSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#TextualSegment",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -11211,7 +11212,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesImageArea",
-              "valueExpr": "_:ImageArea",
+              "valueExpr": "http://ddi-alliance.org/ns/#ImageArea",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -11339,7 +11340,7 @@
       }
     },
     {
-      "id": "_:SpatialLine",
+      "id": "http://ddi-alliance.org/ns/#SpatialLine",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11881,7 +11882,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationIndicator",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11963,7 +11964,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationRelation",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12108,7 +12109,7 @@
       }
     },
     {
-      "id": "_:StudyIndicator",
+      "id": "http://ddi-alliance.org/ns/#StudyIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12190,7 +12191,7 @@
       }
     },
     {
-      "id": "_:StudyRelation",
+      "id": "http://ddi-alliance.org/ns/#StudyRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12335,7 +12336,7 @@
       }
     },
     {
-      "id": "_:SummaryStatistic",
+      "id": "http://ddi-alliance.org/ns/#SummaryStatistic",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12414,7 +12415,7 @@
       }
     },
     {
-      "id": "_:TargetSample",
+      "id": "http://ddi-alliance.org/ns/#TargetSample",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12568,7 +12569,7 @@
       }
     },
     {
-      "id": "_:Telephone",
+      "id": "http://ddi-alliance.org/ns/#Telephone",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12719,7 +12720,7 @@
       }
     },
     {
-      "id": "_:TextualSegment",
+      "id": "http://ddi-alliance.org/ns/#TextualSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12730,7 +12731,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#lineParamenter",
-              "valueExpr": "_:LineParameter",
+              "valueExpr": "http://ddi-alliance.org/ns/#LineParameter",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -12752,7 +12753,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#characterParameter",
-              "valueExpr": "_:CharacterOffset",
+              "valueExpr": "http://ddi-alliance.org/ns/#CharacterOffset",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -12798,7 +12799,7 @@
       }
     },
     {
-      "id": "_:TypedDescriptiveText",
+      "id": "http://ddi-alliance.org/ns/#TypedDescriptiveText",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12959,7 +12960,7 @@
       }
     },
     {
-      "id": "_:ValueMappingIndicator",
+      "id": "http://ddi-alliance.org/ns/#ValueMappingIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13041,7 +13042,7 @@
       }
     },
     {
-      "id": "_:ValueMappingRelation",
+      "id": "http://ddi-alliance.org/ns/#ValueMappingRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13268,7 +13269,7 @@
       }
     },
     {
-      "id": "_:VariableIndicator",
+      "id": "http://ddi-alliance.org/ns/#VariableIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13350,7 +13351,7 @@
       }
     },
     {
-      "id": "_:VariableRelation",
+      "id": "http://ddi-alliance.org/ns/#VariableRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13495,7 +13496,7 @@
       }
     },
     {
-      "id": "_:VideoSegment",
+      "id": "http://ddi-alliance.org/ns/#VideoSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13747,7 +13748,7 @@
       }
     },
     {
-      "id": "_:VocabularyEntryIndicator",
+      "id": "http://ddi-alliance.org/ns/#VocabularyEntryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13829,7 +13830,7 @@
       }
     },
     {
-      "id": "_:VocabularyEntryRelation",
+      "id": "http://ddi-alliance.org/ns/#VocabularyEntryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13974,7 +13975,7 @@
       }
     },
     {
-      "id": "_:WebLink",
+      "id": "http://ddi-alliance.org/ns/#WebLink",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14125,7 +14126,7 @@
       }
     },
     {
-      "id": "_:WorkflowStepOrder",
+      "id": "http://ddi-alliance.org/ns/#WorkflowStepOrder",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14511,7 +14512,7 @@
       }
     },
     {
-      "id": "_:CategoryRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14591,7 +14592,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CategoryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -14637,7 +14638,7 @@
       }
     },
     {
-      "id": "_:CategorySet",
+      "id": "http://ddi-alliance.org/ns/#CategorySet",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14651,7 +14652,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CategoryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -14673,7 +14674,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CategoryRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -14823,7 +14824,7 @@
       }
     },
     {
-      "id": "_:ConceptRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ConceptRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14903,7 +14904,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ConceptRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -15029,7 +15030,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ConceptIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -15076,7 +15077,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ConceptRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -16025,7 +16026,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveValuesFrom",
-              "valueExpr": "_:SubstantiveValueDomain",
+              "valueExpr": "http://ddi-alliance.org/ns/#SubstantiveValueDomain",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -16540,7 +16541,7 @@
       }
     },
     {
-      "id": "_:VariableCollection",
+      "id": "http://ddi-alliance.org/ns/#VariableCollection",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16686,7 +16687,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:VariableIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -16733,7 +16734,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:VariableRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -16801,7 +16802,7 @@
       }
     },
     {
-      "id": "_:VariableRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#VariableRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16881,7 +16882,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:VariableRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -16927,7 +16928,7 @@
       }
     },
     {
-      "id": "_:StandardWeight",
+      "id": "http://ddi-alliance.org/ns/#StandardWeight",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16985,7 +16986,7 @@
       }
     },
     {
-      "id": "_:VariableStatistics",
+      "id": "http://ddi-alliance.org/ns/#VariableStatistics",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17024,7 +17025,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSummaryStatistic",
-              "valueExpr": "_:SummaryStatistic",
+              "valueExpr": "http://ddi-alliance.org/ns/#SummaryStatistic",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -17046,7 +17047,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasCategoryStatistic",
-              "valueExpr": "_:CategoryStatistic",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryStatistic",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -17090,7 +17091,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesStandardWeight",
-              "valueExpr": "_:StandardWeight",
+              "valueExpr": "http://ddi-alliance.org/ns/#StandardWeight",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -17364,7 +17365,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#assumesPrecondition",
-              "valueExpr": "_:Precondition",
+              "valueExpr": "http://ddi-alliance.org/ns/#Precondition",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -17740,7 +17741,7 @@
       }
     },
     {
-      "id": "_:ProcessOverview",
+      "id": "http://ddi-alliance.org/ns/#ProcessOverview",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17911,7 +17912,7 @@
       ]
     },
     {
-      "id": "_:GeographicExtent",
+      "id": "http://ddi-alliance.org/ns/#GeographicExtent",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17991,7 +17992,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAreaCoverage",
-              "valueExpr": "_:AreaCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#AreaCoverage",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -18057,7 +18058,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isSpatialLine",
-              "valueExpr": "_:SpatialLine",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialLine",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -18205,7 +18206,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasGeographicExtent",
-              "valueExpr": "_:GeographicExtent",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicExtent",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -18265,7 +18266,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:GeographicUnitIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -18447,7 +18448,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:GeographicUnitRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -18581,7 +18582,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -18661,7 +18662,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:GeographicUnitRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -18721,7 +18722,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:GeographicUnitTypeIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -18903,7 +18904,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:GeographicUnitTypeRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -19037,7 +19038,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19117,7 +19118,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:GeographicUnitTypeRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19163,7 +19164,7 @@
       }
     },
     {
-      "id": "_:DataPointRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#DataPointRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19243,7 +19244,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:DataPointRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19375,7 +19376,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:PhysicalRecordSegmentIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19488,7 +19489,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:PhysicalOrderRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19510,7 +19511,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasVariableStatistics",
-              "valueExpr": "_:VariableStatistics",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableStatistics",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19585,7 +19586,7 @@
       }
     },
     {
-      "id": "_:PhysicalLayoutRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19687,7 +19688,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ValueMappingRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ValueMappingRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19733,7 +19734,7 @@
       }
     },
     {
-      "id": "_:PhysicalOrderRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19813,7 +19814,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:PhysicalRecordSegmentRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -19898,7 +19899,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:DataPointIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -20011,7 +20012,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:DataPointRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -20694,7 +20695,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ValueMappingIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ValueMappingIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -20763,7 +20764,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:PhysicalLayoutRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -21532,7 +21533,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:VocabularyEntryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntryIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -21579,7 +21580,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:VocabularyRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -21727,7 +21728,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CustomValueIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomValueIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -21774,7 +21775,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
-              "valueExpr": "_:CustomStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomStructure",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -22021,7 +22022,7 @@
       }
     },
     {
-      "id": "_:CustomItemRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22167,7 +22168,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CustomItemRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -22213,7 +22214,7 @@
       }
     },
     {
-      "id": "_:CustomStructure",
+      "id": "http://ddi-alliance.org/ns/#CustomStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22293,7 +22294,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CustomItemIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -22340,7 +22341,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CustomItemRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -22619,7 +22620,7 @@
       }
     },
     {
-      "id": "_:VocabularyRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#VocabularyRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22765,7 +22766,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:VocabularyEntryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntryRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -22811,7 +22812,7 @@
       }
     },
     {
-      "id": "_:SampleFrame",
+      "id": "http://ddi-alliance.org/ns/#SampleFrame",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23132,7 +23133,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#sourceFrame",
-              "valueExpr": "_:SampleFrame",
+              "valueExpr": "http://ddi-alliance.org/ns/#SampleFrame",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -23236,7 +23237,7 @@
       }
     },
     {
-      "id": "_:SamplePopulationResult",
+      "id": "http://ddi-alliance.org/ns/#SamplePopulationResult",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23445,7 +23446,7 @@
       }
     },
     {
-      "id": "_:SamplingDesign",
+      "id": "http://ddi-alliance.org/ns/#SamplingDesign",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23481,7 +23482,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#specifiesGoal",
-              "valueExpr": "_:SamplingGoal",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplingGoal",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -23549,7 +23550,7 @@
       }
     },
     {
-      "id": "_:SamplingGoal",
+      "id": "http://ddi-alliance.org/ns/#SamplingGoal",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23613,7 +23614,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#targetSampleSize",
-              "valueExpr": "_:TargetSample",
+              "valueExpr": "http://ddi-alliance.org/ns/#TargetSample",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -23673,7 +23674,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasDesign",
-              "valueExpr": "_:SamplingDesign",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplingDesign",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -23900,7 +23901,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasResults",
-              "valueExpr": "_:SamplePopulationResult",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplePopulationResult",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -23968,7 +23969,7 @@
       }
     },
     {
-      "id": "_:Budget",
+      "id": "http://ddi-alliance.org/ns/#Budget",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24072,7 +24073,7 @@
       }
     },
     {
-      "id": "_:ComplianceStatement",
+      "id": "http://ddi-alliance.org/ns/#ComplianceStatement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24176,7 +24177,7 @@
       }
     },
     {
-      "id": "_:Embargo",
+      "id": "http://ddi-alliance.org/ns/#Embargo",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24324,7 +24325,7 @@
       }
     },
     {
-      "id": "_:ExPostEvaluation",
+      "id": "http://ddi-alliance.org/ns/#ExPostEvaluation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24472,7 +24473,7 @@
       }
     },
     {
-      "id": "_:QualityStatement",
+      "id": "http://ddi-alliance.org/ns/#QualityStatement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24596,7 +24597,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesStandard",
-              "valueExpr": "_:Standard",
+              "valueExpr": "http://ddi-alliance.org/ns/#Standard",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -24642,7 +24643,7 @@
       }
     },
     {
-      "id": "_:Standard",
+      "id": "http://ddi-alliance.org/ns/#Standard",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24656,7 +24657,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#compliance",
-              "valueExpr": "_:ComplianceStatement",
+              "valueExpr": "http://ddi-alliance.org/ns/#ComplianceStatement",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -24950,7 +24951,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasProcess",
-              "valueExpr": "_:ProcessOverview",
+              "valueExpr": "http://ddi-alliance.org/ns/#ProcessOverview",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -24972,7 +24973,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasInstrument",
-              "valueExpr": "_:ImplementedInstrument",
+              "valueExpr": "http://ddi-alliance.org/ns/#ImplementedInstrument",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -24994,7 +24995,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasEmbargo",
-              "valueExpr": "_:Embargo",
+              "valueExpr": "http://ddi-alliance.org/ns/#Embargo",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -25082,7 +25083,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasQualityStatement",
-              "valueExpr": "_:QualityStatement",
+              "valueExpr": "http://ddi-alliance.org/ns/#QualityStatement",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -25104,7 +25105,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasBudget",
-              "valueExpr": "_:Budget",
+              "valueExpr": "http://ddi-alliance.org/ns/#Budget",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25148,7 +25149,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasExPostEvaluation",
-              "valueExpr": "_:ExPostEvaluation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExPostEvaluation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25258,7 +25259,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection",
-              "valueExpr": "_:VariableCollection",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableCollection",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25280,7 +25281,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAgentListing",
-              "valueExpr": "_:AgentListing",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentListing",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25381,7 +25382,7 @@
       }
     },
     {
-      "id": "_:StudyRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#StudyRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -25461,7 +25462,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:StudyRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25609,7 +25610,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:StudyIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25656,7 +25657,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:StudyRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -26191,7 +26192,7 @@
       }
     },
     {
-      "id": "_:BusinessProcess",
+      "id": "http://ddi-alliance.org/ns/#BusinessProcess",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -26375,7 +26376,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:BusinessProcessIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcessIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -26523,7 +26524,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contentCoverage",
-              "valueExpr": "_:TypedDescriptiveText",
+              "valueExpr": "http://ddi-alliance.org/ns/#TypedDescriptiveText",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -26878,7 +26879,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesSegment",
-              "valueExpr": "_:Segment",
+              "valueExpr": "http://ddi-alliance.org/ns/#Segment",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -27322,7 +27323,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#elseIf",
-              "valueExpr": "_:ElseIfAction",
+              "valueExpr": "http://ddi-alliance.org/ns/#ElseIfAction",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -28297,7 +28298,7 @@
       }
     },
     {
-      "id": "_:WorkflowService",
+      "id": "http://ddi-alliance.org/ns/#WorkflowService",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -28569,7 +28570,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isPerformedBy",
-              "valueExpr": "_:WorkflowService",
+              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowService",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -28709,7 +28710,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#orderedStep",
-              "valueExpr": "_:WorkflowStepOrder",
+              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepOrder",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -28799,7 +28800,7 @@
       }
     },
     {
-      "id": "_:AppliedUse",
+      "id": "http://ddi-alliance.org/ns/#AppliedUse",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -28835,7 +28836,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasGuide",
-              "valueExpr": "_:Guide",
+              "valueExpr": "http://ddi-alliance.org/ns/#Guide",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -29042,7 +29043,7 @@
       }
     },
     {
-      "id": "_:Guide",
+      "id": "http://ddi-alliance.org/ns/#Guide",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -29124,7 +29125,7 @@
       }
     },
     {
-      "id": "_:Precondition",
+      "id": "http://ddi-alliance.org/ns/#Precondition",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -29264,7 +29265,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAppliedUse",
-              "valueExpr": "_:AppliedUse",
+              "valueExpr": "http://ddi-alliance.org/ns/#AppliedUse",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -29448,7 +29449,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#accessPermission",
-              "valueExpr": "_:Form",
+              "valueExpr": "http://ddi-alliance.org/ns/#Form",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -29822,7 +29823,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage",
-              "valueExpr": "_:TemporalCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#TemporalCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -29851,7 +29852,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage",
-              "valueExpr": "_:TopicalCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#TopicalCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -29880,7 +29881,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage",
-              "valueExpr": "_:SpatialCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -29933,7 +29934,7 @@
       }
     },
     {
-      "id": "_:SpatialCoverage",
+      "id": "http://ddi-alliance.org/ns/#SpatialCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30191,7 +30192,7 @@
       }
     },
     {
-      "id": "_:TemporalCoverage",
+      "id": "http://ddi-alliance.org/ns/#TemporalCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30202,7 +30203,7 @@
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#coverageDate",
-          "valueExpr": "_:ReferenceDate",
+          "valueExpr": "http://ddi-alliance.org/ns/#ReferenceDate",
           "min": 0,
           "max": -1,
           "annotations": [
@@ -30246,7 +30247,7 @@
       }
     },
     {
-      "id": "_:TopicalCoverage",
+      "id": "http://ddi-alliance.org/ns/#TopicalCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30668,7 +30669,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCodeList",
-              "valueExpr": "_:CodeList",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeList",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -30758,7 +30759,7 @@
       }
     },
     {
-      "id": "_:ConceptualInstrument",
+      "id": "http://ddi-alliance.org/ns/#ConceptualInstrument",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30968,7 +30969,7 @@
       }
     },
     {
-      "id": "_:ImplementedInstrument",
+      "id": "http://ddi-alliance.org/ns/#ImplementedInstrument",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -31095,7 +31096,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesConceptualInstrument",
-              "valueExpr": "_:ConceptualInstrument",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptualInstrument",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -31159,7 +31160,7 @@
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#instantiates",
-          "valueExpr": "_:RepresentedMeasurement",
+          "valueExpr": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
           "min": 0,
           "max": 1,
           "annotations": [
@@ -31239,7 +31240,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#instantiates",
-              "valueExpr": "_:RepresentedQuestion",
+              "valueExpr": "http://ddi-alliance.org/ns/#RepresentedQuestion",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -31647,7 +31648,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesNumberRange",
-              "valueExpr": "_:NumberRange",
+              "valueExpr": "http://ddi-alliance.org/ns/#NumberRange",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -31726,7 +31727,7 @@
       }
     },
     {
-      "id": "_:RepresentedMeasurement",
+      "id": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -31808,7 +31809,7 @@
       }
     },
     {
-      "id": "_:RepresentedQuestion",
+      "id": "http://ddi-alliance.org/ns/#RepresentedQuestion",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -32466,7 +32467,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#versionRationale",
-              "valueExpr": "_:RationaleDefinition",
+              "valueExpr": "http://ddi-alliance.org/ns/#RationaleDefinition",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -32560,7 +32561,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#localId",
-              "valueExpr": "_:LocalIdFormat",
+              "valueExpr": "http://ddi-alliance.org/ns/#LocalIdFormat",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -32582,7 +32583,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#basedOnObject",
-              "valueExpr": "_:BasedOnObjectInformation",
+              "valueExpr": "http://ddi-alliance.org/ns/#BasedOnObjectInformation",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -32628,7 +32629,7 @@
       }
     },
     {
-      "id": "_:AttributeRole",
+      "id": "http://ddi-alliance.org/ns/#AttributeRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -32697,7 +32698,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasDatum",
-              "valueExpr": "_:Datum",
+              "valueExpr": "http://ddi-alliance.org/ns/#Datum",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -32924,7 +32925,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:LogicalRecordIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -32971,7 +32972,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:LogicalRecordRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -33015,7 +33016,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesRecordRelation",
-              "valueExpr": "_:RecordRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#RecordRelation",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -33170,7 +33171,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:DataStoreIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -33217,7 +33218,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:DataStoreRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -33307,7 +33308,7 @@
       }
     },
     {
-      "id": "_:DataStoreRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#DataStoreRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33387,7 +33388,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:DataStoreRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -33433,7 +33434,7 @@
       }
     },
     {
-      "id": "_:Datum",
+      "id": "http://ddi-alliance.org/ns/#Datum",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33515,7 +33516,7 @@
       }
     },
     {
-      "id": "_:IdentifierRole",
+      "id": "http://ddi-alliance.org/ns/#IdentifierRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33548,7 +33549,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33694,7 +33695,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:InstanceVariableRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -33913,7 +33914,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33993,7 +33994,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:LogicalRecordRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34039,7 +34040,7 @@
       }
     },
     {
-      "id": "_:MeasureRole",
+      "id": "http://ddi-alliance.org/ns/#MeasureRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34072,7 +34073,7 @@
       }
     },
     {
-      "id": "_:RecordRelation",
+      "id": "http://ddi-alliance.org/ns/#RecordRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34152,7 +34153,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#correspondence",
-              "valueExpr": "_:InstanceVariableValueMap",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableValueMap",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34174,7 +34175,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#maps",
-              "valueExpr": "_:UnitDataRecord",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitDataRecord",
               "min": 2,
               "max": -1,
               "annotations": [
@@ -34220,7 +34221,7 @@
       }
     },
     {
-      "id": "_:UnitDataRecord",
+      "id": "http://ddi-alliance.org/ns/#UnitDataRecord",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34234,7 +34235,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:InstanceVariableRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34256,7 +34257,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isViewedFrom",
-              "valueExpr": "_:UnitDataViewpoint",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34324,7 +34325,7 @@
       }
     },
     {
-      "id": "_:UnitDataViewpoint",
+      "id": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34338,7 +34339,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasIdentifierRole",
-              "valueExpr": "_:IdentifierRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#IdentifierRole",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34367,7 +34368,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMeasureRole",
-              "valueExpr": "_:MeasureRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#MeasureRole",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34396,7 +34397,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAttributeRole",
-              "valueExpr": "_:AttributeRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#AttributeRole",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34636,7 +34637,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAgentId",
-              "valueExpr": "_:AgentId",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentId",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34680,7 +34681,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#image",
-              "valueExpr": "_:PrivateImage",
+              "valueExpr": "http://ddi-alliance.org/ns/#PrivateImage",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34726,7 +34727,7 @@
       }
     },
     {
-      "id": "_:AgentListing",
+      "id": "http://ddi-alliance.org/ns/#AgentListing",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34806,7 +34807,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:AgentIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34853,7 +34854,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:AgentRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -34943,7 +34944,7 @@
       }
     },
     {
-      "id": "_:AgentRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#AgentRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -35089,7 +35090,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:AgentRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -35149,7 +35150,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasIndividualName",
-              "valueExpr": "_:IndividualName",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndividualName",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -35300,7 +35301,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAccessLocation",
-              "valueExpr": "_:AccessLocation",
+              "valueExpr": "http://ddi-alliance.org/ns/#AccessLocation",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -35426,7 +35427,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasOrganizationName",
-              "valueExpr": "_:OrganizationName",
+              "valueExpr": "http://ddi-alliance.org/ns/#OrganizationName",
               "min": 1,
               "max": -1,
               "annotations": [
@@ -35754,7 +35755,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationSeriesIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -35823,7 +35824,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ClassificationSeriesRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -36062,7 +36063,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationIndexEntryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -36138,7 +36139,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:IndexEntryRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -36669,7 +36670,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -36771,7 +36772,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ClassificationItemRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -36985,7 +36986,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:StatisticalClassificationIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -37032,7 +37033,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:StatisticalClassificationRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -37122,7 +37123,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37202,7 +37203,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ClassificationSeriesRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -37330,7 +37331,7 @@
       }
     },
     {
-      "id": "_:CodeList",
+      "id": "http://ddi-alliance.org/ns/#CodeList",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37366,7 +37367,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CodeRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeRelationStructure",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -37412,7 +37413,7 @@
       }
     },
     {
-      "id": "_:CodeRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CodeRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37492,7 +37493,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CodeRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -37934,7 +37935,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#references",
-              "valueExpr": "_:CategorySet",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategorySet",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -38024,7 +38025,7 @@
       }
     },
     {
-      "id": "_:IndexEntryRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -38104,7 +38105,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:IndexEntryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndexEntryRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -38208,7 +38209,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#containsLevel",
-              "valueExpr": "_:Level",
+              "valueExpr": "http://ddi-alliance.org/ns/#Level",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -38689,7 +38690,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationItemIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemIndicator",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -38850,7 +38851,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ClassificationItemRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -38896,7 +38897,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -38976,7 +38977,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:StatisticalClassificationRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationRelation",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -39022,7 +39023,7 @@
       }
     },
     {
-      "id": "_:SubstantiveValueDomain",
+      "id": "http://ddi-alliance.org/ns/#SubstantiveValueDomain",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -39455,6 +39456,5 @@
         ]
       }
     }
-  ],
-  "@context": "http://www.w3.org/ns/shex.jsonld"
+  ]
 }

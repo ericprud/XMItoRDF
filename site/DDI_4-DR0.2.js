@@ -1,4 +1,5 @@
-{
+DDIschema = {
+  "@context": "http://www.w3.org/ns/shex.jsonld",
   "type": "Schema",
   "shapes": [
     {
@@ -29,7 +30,7 @@
       ]
     },
     {
-      "id": "_:AccessLocation",
+      "id": "http://ddi-alliance.org/ns/#AccessLocation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -45,7 +46,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -67,7 +68,7 @@
               "predicate": "http://ddi-alliance.org/ns/#mimeType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -89,7 +90,7 @@
               "predicate": "http://ddi-alliance.org/ns/#physicalLocation",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -125,7 +126,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA set of access information for a Machine including URI, mime type, and physical location\n\n",
+              "value": "\nDefinition\n============\nA set of access information for a Machine including URI, mime type, and physical location\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -133,7 +134,7 @@
       }
     },
     {
-      "id": "_:Address",
+      "id": "http://ddi-alliance.org/ns/#Address",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -146,7 +147,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfAddress",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -171,7 +172,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -196,7 +197,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -221,7 +222,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -246,7 +247,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -268,7 +269,7 @@
               "predicate": "http://ddi-alliance.org/ns/#countryCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -290,7 +291,7 @@
               "predicate": "http://ddi-alliance.org/ns/#timeZone",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -312,7 +313,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -334,7 +335,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -359,7 +360,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -381,7 +382,7 @@
               "predicate": "http://ddi-alliance.org/ns/#geographicPoint",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialPoint",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -403,7 +404,7 @@
               "predicate": "http://ddi-alliance.org/ns/#regionalCoverage",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -425,7 +426,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfLocation",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -447,7 +448,7 @@
               "predicate": "http://ddi-alliance.org/ns/#locationName",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -483,7 +484,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nLocation address identifying each part of the address as separate elements, identifying the type of address, the level of privacy associated with the release of the address, and a flag to identify the preferred address for contact.\n\nExamples\n==========\nFor example:\n1.  OFFICE, ABS HOUSE, 45 Benjamin Way, Belconnen, Canberra, ACT, 2617, AU\n2.  OFFICE, Institute of Education, 20 Bedford Way, London, WC1H 0AL, UK\n\nDDI 3.2 mapping\n=================\na:AddressType\n\n",
+              "value": "\nDefinition\n============\nLocation address identifying each part of the address as separate elements, identifying the type of address, the level of privacy associated with the release of the address, and a flag to identify the preferred address for contact.\n\nExamples\n==========\nFor example:\n1.  OFFICE, ABS HOUSE, 45 Benjamin Way, Belconnen, Canberra, ACT, 2617, AU\n2.  OFFICE, Institute of Education, 20 Bedford Way, London, WC1H 0AL, UK\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:AddressType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -502,9 +503,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#agentName",
-              "valueExpr": "_:BibliographicName",
+              "valueExpr": "http://ddi-alliance.org/ns/#BibliographicName",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -526,7 +527,7 @@
               "predicate": "http://ddi-alliance.org/ns/#role",
               "valueExpr": "http://ddi-alliance.org/ns/#PairedExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -548,7 +549,7 @@
               "predicate": "http://ddi-alliance.org/ns/#associatedAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -584,7 +585,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA basic structure for declaring the name of an Agent inline, reference to an Agent, and role specification. This object is used primarily within Annotation.\n\n\nDDI 3.2 mapping\n=================\nr:ContributorType\n\n",
+              "value": "\nDefinition\n============\nA basic structure for declaring the name of an Agent inline, reference to an Agent, and role specification. This object is used primarily within Annotation.\n\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ContributorType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -592,7 +593,7 @@
       }
     },
     {
-      "id": "_:AgentId",
+      "id": "http://ddi-alliance.org/ns/#AgentId",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -607,8 +608,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -632,8 +633,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -669,7 +670,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nPersistent identifier for a researcher using a system like ORCID\n\nExamples\n==========\nORCID\n\n",
+              "value": "\nDefinition\n============\nPersistent identifier for a researcher using a system like ORCID\n\nExamples\n==========\nORCID\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -677,7 +678,7 @@
       }
     },
     {
-      "id": "_:AgentIndicator",
+      "id": "http://ddi-alliance.org/ns/#AgentIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -693,7 +694,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -714,8 +715,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -751,7 +752,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type Agent\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type Agent\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -759,7 +760,7 @@
       }
     },
     {
-      "id": "_:AgentRelation",
+      "id": "http://ddi-alliance.org/ns/#AgentRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -772,7 +773,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -794,7 +795,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -815,8 +816,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -838,7 +839,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -859,8 +860,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -881,8 +882,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -918,7 +919,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUsed to define the relation agents in a hierarchical structure\n\nExamples\n==========\nAn Organization (source/parent) employing and Individual (target/child); An Individual (source/parent) supervisory to an Individual (target/child); An Organization (source/parent) overseeing a project (Organization) (target/child). Select appropriate relationship using the controlled vocabulary available through hasRelationshipSpecification. \n\n",
+              "value": "\nDefinition\n============\nUsed to define the relation agents in a hierarchical structure\n\nExamples\n==========\nAn Organization (source/parent) employing and Individual (target/child); An Individual (source/parent) supervisory to an Individual (target/child); An Organization (source/parent) overseeing a project (Organization) (target/child). Select appropriate relationship using the controlled vocabulary available through hasRelationshipSpecification. \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -939,7 +940,7 @@
               "predicate": "http://ddi-alliance.org/ns/#title",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -961,7 +962,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subTitle",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -983,7 +984,7 @@
               "predicate": "http://ddi-alliance.org/ns/#alternativeTitle",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1005,7 +1006,7 @@
               "predicate": "http://ddi-alliance.org/ns/#creator",
               "valueExpr": "http://ddi-alliance.org/ns/#AgentAssociation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1027,7 +1028,7 @@
               "predicate": "http://ddi-alliance.org/ns/#publisher",
               "valueExpr": "http://ddi-alliance.org/ns/#AgentAssociation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1049,7 +1050,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contributor",
               "valueExpr": "http://ddi-alliance.org/ns/#AgentAssociation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1071,7 +1072,7 @@
               "predicate": "http://ddi-alliance.org/ns/#date",
               "valueExpr": "http://ddi-alliance.org/ns/#AnnotationDate",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1096,7 +1097,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1118,7 +1119,7 @@
               "predicate": "http://ddi-alliance.org/ns/#identifier",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalIdentifier",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1140,7 +1141,7 @@
               "predicate": "http://ddi-alliance.org/ns/#copyright",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1162,7 +1163,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfResource",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1184,7 +1185,7 @@
               "predicate": "http://ddi-alliance.org/ns/#informationSource",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1209,7 +1210,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1231,7 +1232,7 @@
               "predicate": "http://ddi-alliance.org/ns/#versioningAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#AgentAssociation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1253,7 +1254,7 @@
               "predicate": "http://ddi-alliance.org/ns/#summary",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1273,9 +1274,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#relatedResource",
-              "valueExpr": "_:ResourceIdentifier",
+              "valueExpr": "http://ddi-alliance.org/ns/#ResourceIdentifier",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1297,7 +1298,7 @@
               "predicate": "http://ddi-alliance.org/ns/#provenance",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1319,7 +1320,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rights",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1341,7 +1342,7 @@
               "predicate": "http://ddi-alliance.org/ns/#recordCreationDate",
               "valueExpr": "http://ddi-alliance.org/ns/#IsoDateType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1363,7 +1364,7 @@
               "predicate": "http://ddi-alliance.org/ns/#recordLastRevisionDate",
               "valueExpr": "http://ddi-alliance.org/ns/#IsoDateType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1399,7 +1400,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides annotation information on the object to support citation and crediting of the creator(s) of the object.\n\nDDI 3.2 mapping\n=================\nr:CitationType\n\n",
+              "value": "\nDefinition\n============\nProvides annotation information on the object to support citation and crediting of the creator(s) of the object.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CitationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1420,7 +1421,7 @@
           "predicate": "http://ddi-alliance.org/ns/#typeOfDate",
           "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -1454,7 +1455,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA generic date type for use in Annotation which provides the standard date structure plus a property to define the date type (Publication date,  Accepted date, Copyrighted date, Submitted date, etc.). \n\nSynonyms\n==========\nEquivalent of http://purl.org/dc/elements/1.1/date where the type of date may identify the Dublin Core refinement term.\n\n",
+              "value": "\nDefinition\n============\nA generic date type for use in Annotation which provides the standard date structure plus a property to define the date type (Publication date,  Accepted date, Copyrighted date, Submitted date, etc.). \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\nEquivalent of http://purl.org/dc/elements/1.1/date where the type of date may identify the Dublin Core refinement term.\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1462,7 +1463,7 @@
       }
     },
     {
-      "id": "_:AreaCoverage",
+      "id": "http://ddi-alliance.org/ns/#AreaCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1475,7 +1476,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfArea",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1497,7 +1498,7 @@
               "predicate": "http://ddi-alliance.org/ns/#measurementUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1522,7 +1523,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1558,7 +1559,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUse to specify the area of land, water, total or other area coverage in terms of square miles/kilometers or other measure as part of a Geographic Extent.\n\nDDI 3.2 mapping\n=================\nr:AreaCoverageType\n\n",
+              "value": "\nDefinition\n============\nUse to specify the area of land, water, total or other area coverage in terms of square miles/kilometers or other measure as part of a Geographic Extent.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:AreaCoverageType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1566,7 +1567,7 @@
       }
     },
     {
-      "id": "_:AudioSegment",
+      "id": "http://ddi-alliance.org/ns/#AudioSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1579,7 +1580,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfAudioClip",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1604,7 +1605,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1629,7 +1630,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1665,7 +1666,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the type and length of the audio segment.\n\nDDI 3.2 mapping\n=================\nr:AudioType\n\n",
+              "value": "\nDefinition\n============\nDescribes the type and length of the audio segment.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:AudioType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1673,7 +1674,7 @@
       }
     },
     {
-      "id": "_:BasedOnObjectInformation",
+      "id": "http://ddi-alliance.org/ns/#BasedOnObjectInformation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1686,7 +1687,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnRationaleDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1708,7 +1709,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnRationaleCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1729,8 +1730,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#basedOn",
               "valueExpr": "http://ddi-alliance.org/ns/#Identifiable",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1766,7 +1767,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUse when creating an object that is based on an existing object or objects that are managed by a different agency or when the new object is NOT simply a version change but you wish to maintain a reference to the object that served as a basis for the new object. BasedOnObject may contain references to any number of objects which serve as a basis for this object, a BasedOnRationaleDescription of how the content of the referenced object was incorporated or altered, and a BasedOnRationaleCode to allow for specific typing of the BasedOnReference according to an external controlled vocabulary.\n\nDDI 3.2 mapping\n=================\nr:BasedOnObjectType\n\n",
+              "value": "\nDefinition\n============\nUse when creating an object that is based on an existing object or objects that are managed by a different agency or when the new object is NOT simply a version change but you wish to maintain a reference to the object that served as a basis for the new object. BasedOnObject may contain references to any number of objects which serve as a basis for this object, a BasedOnRationaleDescription of how the content of the referenced object was incorporated or altered, and a BasedOnRationaleCode to allow for specific typing of the BasedOnReference according to an external controlled vocabulary.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:BasedOnObjectType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1774,7 +1775,7 @@
       }
     },
     {
-      "id": "_:BibliographicName",
+      "id": "http://ddi-alliance.org/ns/#BibliographicName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -1790,7 +1791,7 @@
             "datatype": "http://www.w3.org/2001/XMLSchema#string"
           },
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -1824,7 +1825,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nPersonal names should be listed surname or family name first, followed by forename or given name. When in doubt, give the name as it appears, and do not invert. In the case of organizations where there is clearly a hierarchy present, list the parts of the hierarchy from largest to smallest, separated by full stops and a space. If it is not clear whether there is a hierarchy present, or unclear which is the larger or smaller portion of the body, give the name as it appears in the item. The name may be provided in one or more languages.\n\nDDI 3.2 mapping\n=================\nr:BibliographicNameType\n\n",
+              "value": "\nDefinition\n============\nPersonal names should be listed surname or family name first, followed by forename or given name. When in doubt, give the name as it appears, and do not invert. In the case of organizations where there is clearly a hierarchy present, list the parts of the hierarchy from largest to smallest, separated by full stops and a space. If it is not clear whether there is a hierarchy present, or unclear which is the larger or smaller portion of the body, give the name as it appears in the item. The name may be provided in one or more languages.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:BibliographicNameType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1844,8 +1845,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#fromParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1866,8 +1867,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#toParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1903,7 +1904,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nBinds two parameters together to direct flow of data through a process\n\nExamples\n==========\nFrom the output of an InstanceQuestion to the input of a ComputationAction\n\nExplanatory notes\n===================\nBinding is used to define the flow of data into, out of, and within a process. It is separate from the flow of a process. When used in the workflow of a data capture process most data may go from a capture to an instance variable, but when needed as a check sum in a loop, a recoding process, or conditional content for DynamicText, Binding provides the means for explicitly directing the movement of data from one point to another in the process.\n\n",
+              "value": "\nDefinition\n============\nBinds two parameters together to direct flow of data through a process\n\nExamples\n==========\nFrom the output of an InstanceQuestion to the input of a ComputationAction\n\nExplanatory notes\n===================\nBinding is used to define the flow of data into, out of, and within a process. It is separate from the flow of a process. When used in the workflow of a data capture process most data may go from a capture to an instance variable, but when needed as a check sum in a loop, a recoding process, or conditional content for DynamicText, Binding provides the means for explicitly directing the movement of data from one point to another in the process.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -1927,7 +1928,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1949,7 +1950,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rejectionCriteria",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1971,7 +1972,7 @@
               "predicate": "http://ddi-alliance.org/ns/#dataDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -1993,7 +1994,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesLogicalRecord",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2029,7 +2030,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance.\n\n",
+              "value": "\nDefinition\n============\nA BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2037,7 +2038,7 @@
       }
     },
     {
-      "id": "_:BusinessProcessIndicator",
+      "id": "http://ddi-alliance.org/ns/#BusinessProcessIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2053,7 +2054,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2073,9 +2074,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
-              "valueExpr": "_:BusinessProcess",
-              "min": 1,
-              "max": 1,
+              "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcess",
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2111,7 +2112,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for the identification of the BusinessProcess specifically as a member and optionally provides an index for the member within an ordered array. \n\n",
+              "value": "\nDefinition\n============\nAllows for the identification of the BusinessProcess specifically as a member and optionally provides an index for the member within an ordered array. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2119,7 +2120,7 @@
       }
     },
     {
-      "id": "_:CategoryIndicator",
+      "id": "http://ddi-alliance.org/ns/#CategoryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2135,7 +2136,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2156,8 +2157,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#Category",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2193,7 +2194,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use when the member type is restricted to Category.\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use when the member type is restricted to Category.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2201,7 +2202,7 @@
       }
     },
     {
-      "id": "_:CategoryRelation",
+      "id": "http://ddi-alliance.org/ns/#CategoryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2214,7 +2215,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2235,8 +2236,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2258,7 +2259,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2279,8 +2280,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Category",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2302,7 +2303,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Category",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2338,7 +2339,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSource target relationship between categories in a classification relation structure\n\n\n",
+              "value": "\nDefinition\n============\nSource target relationship between categories in a classification relation structure\n\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2346,7 +2347,7 @@
       }
     },
     {
-      "id": "_:CategoryStatistic",
+      "id": "http://ddi-alliance.org/ns/#CategoryStatistic",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2359,7 +2360,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfCategoryStatistic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2381,7 +2382,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasStatistic",
               "valueExpr": "http://ddi-alliance.org/ns/#Statistic",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2403,7 +2404,7 @@
               "predicate": "http://ddi-alliance.org/ns/#categoryValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2425,7 +2426,7 @@
               "predicate": "http://ddi-alliance.org/ns/#filterValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2447,7 +2448,7 @@
               "predicate": "http://ddi-alliance.org/ns/#forCodeItem",
               "valueExpr": "http://ddi-alliance.org/ns/#CodeIndicator",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2483,7 +2484,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStatistics related to a specific category of an InstanceVariable within a data set.\n\nDDI 3.2 mapping\n=================\npi:CategoryStatisticType\n\n",
+              "value": "\nDefinition\n============\nStatistics related to a specific category of an InstanceVariable within a data set.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\npi:CategoryStatisticType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2491,7 +2492,7 @@
       }
     },
     {
-      "id": "_:CharacterOffset",
+      "id": "http://ddi-alliance.org/ns/#CharacterOffset",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2507,7 +2508,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2532,7 +2533,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2557,7 +2558,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2593,7 +2594,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecification of the character offset for the beginning and end of the segment, or beginning and length.\n\nDDI 3.2 mapping\n=================\nr:CharacterParameterType\n\n",
+              "value": "\nDefinition\n============\nSpecification of the character offset for the beginning and end of the segment, or beginning and length.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CharacterParameterType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2601,7 +2602,7 @@
       }
     },
     {
-      "id": "_:ClassificationIndexEntryIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2617,7 +2618,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2638,8 +2639,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndexEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2675,7 +2676,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type ClassificationIndexEntry\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type ClassificationIndexEntry\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2683,7 +2684,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2699,7 +2700,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2724,7 +2725,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2745,8 +2746,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItem",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2782,7 +2783,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA ClassificationItemIndicator realizes and extends a MemberIndicator which provides a Classification Item with an index indicating order and a level reference providing the level location of the Classification Item within a hierarchical structure.\n\n",
+              "value": "\nDefinition\n============\nA ClassificationItemIndicator realizes and extends a MemberIndicator which provides a Classification Item with an index indicating order and a level reference providing the level location of the Classification Item within a hierarchical structure.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2790,7 +2791,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemRelation",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2803,7 +2804,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2824,8 +2825,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2847,7 +2848,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2868,8 +2869,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItem",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2891,7 +2892,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2927,7 +2928,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSource target relationship between classification items in a classification item relation structure\n\n",
+              "value": "\nDefinition\n============\nSource target relationship between classification items in a classification item relation structure\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2935,7 +2936,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesIndicator",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -2951,7 +2952,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -2972,8 +2973,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeries",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3009,7 +3010,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type ClassificationSeries\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type ClassificationSeries\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3017,7 +3018,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesRelation",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3029,8 +3030,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3052,7 +3053,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3074,7 +3075,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3096,7 +3097,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeries",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3118,7 +3119,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeries",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3154,7 +3155,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the Classification Series in a complex relation and specifies the relationshi\n\n",
+              "value": "\nDefinition\n============\nDefines the Classification Series in a complex relation and specifies the relationshi\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3178,7 +3179,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3203,7 +3204,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3224,8 +3225,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#Code",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3261,7 +3262,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure.\n\n",
+              "value": "\nDefinition\n============\nA CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3269,7 +3270,7 @@
       }
     },
     {
-      "id": "_:CodeRelation",
+      "id": "http://ddi-alliance.org/ns/#CodeRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3282,7 +3283,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3303,8 +3304,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3326,7 +3327,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3347,8 +3348,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Code",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3370,7 +3371,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Code",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3406,7 +3407,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSource target relationship between codes in a code relation structure\n\n",
+              "value": "\nDefinition\n============\nSource target relationship between codes in a code relation structure\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3414,7 +3415,7 @@
       }
     },
     {
-      "id": "_:Command",
+      "id": "http://ddi-alliance.org/ns/#Command",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3427,7 +3428,7 @@
               "predicate": "http://ddi-alliance.org/ns/#programLanguage",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3452,7 +3453,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3488,7 +3489,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides the following information on the command. The content of the command and the programming language used.\n\nDDI 3.2 mapping\n=================\nr:CommandType\n\n",
+              "value": "\nDefinition\n============\nProvides the following information on the command. The content of the command and the programming language used.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CommandType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3509,7 +3510,7 @@
               "predicate": "http://ddi-alliance.org/ns/#description",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3529,9 +3530,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCommandFile",
-              "valueExpr": "_:CommandFile",
+              "valueExpr": "http://ddi-alliance.org/ns/#CommandFile",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3551,9 +3552,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCommand",
-              "valueExpr": "_:Command",
+              "valueExpr": "http://ddi-alliance.org/ns/#Command",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3589,7 +3590,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nContains information on the command used for processing data. Contains a description of the command which should clarify for the user the purpose and process of the command, an in-line provision of the command itself, and a reference to an external version of the command such as a coding script. \n\nDDI 3.2 mapping\n=================\nr:CommandCodeType\n\n",
+              "value": "\nDefinition\n============\nContains information on the command used for processing data. Contains a description of the command which should clarify for the user the purpose and process of the command, an in-line provision of the command itself, and a reference to an external version of the command such as a coding script. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CommandCodeType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3597,7 +3598,7 @@
       }
     },
     {
-      "id": "_:CommandFile",
+      "id": "http://ddi-alliance.org/ns/#CommandFile",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3610,7 +3611,7 @@
               "predicate": "http://ddi-alliance.org/ns/#programLanguage",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3632,7 +3633,7 @@
               "predicate": "http://ddi-alliance.org/ns/#location",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3657,7 +3658,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3693,7 +3694,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIdentifies and provides a link to an external copy of the command, for example, a SAS Command Code script. Designates the programming language of the command file, a description of the location of the file , and a URN or URL for the command file.\n\nDDI 3.2 mapping\n=================\nr:CommandFileType\n\n",
+              "value": "\nDefinition\n============\nIdentifies and provides a link to an external copy of the command, for example, a SAS Command Code script. Designates the programming language of the command file, a description of the location of the file , and a URN or URL for the command file.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CommandFileType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3701,7 +3702,7 @@
       }
     },
     {
-      "id": "_:ConceptIndicator",
+      "id": "http://ddi-alliance.org/ns/#ConceptIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3717,7 +3718,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3738,8 +3739,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3775,7 +3776,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type Concept and all subtypes of Concept: Category, Universe, Population, Unit Type\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type Concept and all subtypes of Concept: Category, Universe, Population, Unit Type\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3783,7 +3784,7 @@
       }
     },
     {
-      "id": "_:ConceptRelation",
+      "id": "http://ddi-alliance.org/ns/#ConceptRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -3795,8 +3796,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSepcification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3818,7 +3819,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3840,7 +3841,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3861,8 +3862,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3883,8 +3884,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -3920,7 +3921,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecifies the relationship between concepts in a collection of concepts. Use controlled vocabulary provided in hasRelationSpecification to identify the type of relationship (e.g. ParentChild, WholePart, etc.)\n\n",
+              "value": "\nDefinition\n============\nSpecifies the relationship between concepts in a collection of concepts. Use controlled vocabulary provided in hasRelationSpecification to identify the type of relationship (e.g. ParentChild, WholePart, etc.)\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3941,7 +3942,7 @@
           "predicate": "http://ddi-alliance.org/ns/#expression",
           "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -3975,7 +3976,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nText which has a changeable value depending on a stated condition, response to earlier questions, or as input from a set of metrics (pre-supplied data). The command code indicates the condition and/or calculation used to determine the content of the text.\n\nDDI 3.2 mapping\n=================\nd:ConditionalTextType\n\n",
+              "value": "\nDefinition\n============\nText which has a changeable value depending on a stated condition, response to earlier questions, or as input from a set of metrics (pre-supplied data). The command code indicates the condition and/or calculation used to determine the content of the text.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:ConditionalTextType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -3994,9 +3995,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#website",
-              "valueExpr": "_:WebLink",
+              "valueExpr": "http://ddi-alliance.org/ns/#WebLink",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4016,9 +4017,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasEmail",
-              "valueExpr": "_:Email",
+              "valueExpr": "http://ddi-alliance.org/ns/#Email",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4038,9 +4039,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#electronicMessaging",
-              "valueExpr": "_:ElectronicMessageSystem",
+              "valueExpr": "http://ddi-alliance.org/ns/#ElectronicMessageSystem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4060,9 +4061,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAddress",
-              "valueExpr": "_:Address",
+              "valueExpr": "http://ddi-alliance.org/ns/#Address",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4082,9 +4083,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTelephone",
-              "valueExpr": "_:Telephone",
+              "valueExpr": "http://ddi-alliance.org/ns/#Telephone",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4120,7 +4121,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nContact information for the individual or organization including location specification, address, web site, phone numbers, and other means of communication access. Address, location, telephone, and other means of communication can be repeated to express multiple means of a single type or change over time. Each major piece of contact information contains the element EffectiveDates in order to date stamp the period for which the information is valid.\n\nDDI 3.2 mapping\n=================\na:ContactInformationType\n\n",
+              "value": "\nDefinition\n============\nContact information for the individual or organization including location specification, address, web site, phone numbers, and other means of communication access. Address, location, telephone, and other means of communication can be repeated to express multiple means of a single type or change over time. Each major piece of contact information contains the element EffectiveDates in order to date stamp the period for which the information is valid.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:ContactInformationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4147,7 +4148,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4172,7 +4173,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4208,7 +4209,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIdentifies the difference between the date applied to the data as a whole and this specific item such as previous year's income or residence 5 years ago. A value of true for the attribute isNegativeOffset indicates that the offset is the specified number of declared units prior to the date of the data as a whole and false indicates information regarding a future state.\n\nDDI 3.2 mapping\n=================\nr:ContentDateOffsetType\n\n",
+              "value": "\nDefinition\n============\nIdentifies the difference between the date applied to the data as a whole and this specific item such as previous year's income or residence 5 years ago. A value of true for the attribute isNegativeOffset indicates that the offset is the specified number of declared units prior to the date of the data as a whole and false indicates information regarding a future state.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ContentDateOffsetType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4229,7 +4230,7 @@
               "predicate": "http://ddi-alliance.org/ns/#commonality",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4251,7 +4252,7 @@
               "predicate": "http://ddi-alliance.org/ns/#difference",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4273,7 +4274,7 @@
               "predicate": "http://ddi-alliance.org/ns/#commonalityTypeCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4295,7 +4296,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasMappingRelation",
               "valueExpr": "http://ddi-alliance.org/ns/#MappingRelation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4331,7 +4332,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the commonalities and differences between two members using a textual description of both commonalities and differences plus an optional coding of the type of commonality.\n\nDDI 3.2 mapping\n=================\ncm:CorrespondenceType\n\n",
+              "value": "\nDefinition\n============\nDescribes the commonalities and differences between two members using a textual description of both commonalities and differences plus an optional coding of the type of commonality.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\ncm:CorrespondenceType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4339,7 +4340,7 @@
       }
     },
     {
-      "id": "_:CustomItemIndicator",
+      "id": "http://ddi-alliance.org/ns/#CustomItemIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4355,7 +4356,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4376,8 +4377,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4413,7 +4414,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type CustomItem\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type CustomItem\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4421,7 +4422,7 @@
       }
     },
     {
-      "id": "_:CustomItemRelation",
+      "id": "http://ddi-alliance.org/ns/#CustomItemRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4433,8 +4434,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSepcification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4456,7 +4457,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4478,7 +4479,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4499,8 +4500,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4522,7 +4523,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4558,7 +4559,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines a relationship between CustomItems .\n\n",
+              "value": "\nDefinition\n============\nDefines a relationship between CustomItems .\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4566,7 +4567,7 @@
       }
     },
     {
-      "id": "_:CustomValueIndicator",
+      "id": "http://ddi-alliance.org/ns/#CustomValueIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4582,7 +4583,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4603,8 +4604,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4640,7 +4641,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type CustomValue\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type CustomValue\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4660,8 +4661,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4683,7 +4684,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4705,7 +4706,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4726,8 +4727,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4749,7 +4750,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4785,7 +4786,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the relation between CustomValues\n\n",
+              "value": "\nDefinition\n============\nDefines the relation between CustomValues\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4793,7 +4794,7 @@
       }
     },
     {
-      "id": "_:DataPointIndicator",
+      "id": "http://ddi-alliance.org/ns/#DataPointIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4809,7 +4810,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4830,8 +4831,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#DataPoint",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4867,7 +4868,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type DataPoint\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type DataPoint\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -4875,7 +4876,7 @@
       }
     },
     {
-      "id": "_:DataPointRelation",
+      "id": "http://ddi-alliance.org/ns/#DataPointRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -4887,8 +4888,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4910,7 +4911,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4932,7 +4933,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4954,7 +4955,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#DataPoint",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -4976,7 +4977,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#DataPoint",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5012,7 +5013,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nData Point relations used by the Data Point Relation Structure of a Logical Record to describe specific source target Data Points and their relationship\n\n",
+              "value": "\nDefinition\n============\nData Point relations used by the Data Point Relation Structure of a Logical Record to describe specific source target Data Points and their relationship\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5020,7 +5021,7 @@
       }
     },
     {
-      "id": "_:DataStoreIndicator",
+      "id": "http://ddi-alliance.org/ns/#DataStoreIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5036,7 +5037,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5057,8 +5058,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#DataStore",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5094,7 +5095,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type DataStore\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type DataStore\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5102,7 +5103,7 @@
       }
     },
     {
-      "id": "_:DataStoreRelation",
+      "id": "http://ddi-alliance.org/ns/#DataStoreRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5114,8 +5115,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5137,7 +5138,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5159,7 +5160,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5181,7 +5182,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#DataStore",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5203,7 +5204,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#DataStore",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5239,7 +5240,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the complex relationship between 2 or more DataStores in a DataLibrary\n\n",
+              "value": "\nDefinition\n============\nDefines the complex relationship between 2 or more DataStores in a DataLibrary\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5260,7 +5261,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isoDate",
               "valueExpr": "http://ddi-alliance.org/ns/#IsoDateType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5280,9 +5281,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#nonIsoDate",
-              "valueExpr": "_:NonIsoDateType",
+              "valueExpr": "http://ddi-alliance.org/ns/#NonIsoDateType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5318,7 +5319,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides the structure of a single Date expressed in an ISO date structure along with equivalent expression in any number of non-ISO formats. While it supports the use of the ISO time interval structure this should only be used when the exact date is unclear (i.e. occurring at some point in time between the two specified dates) or in specified applications. Ranges with specified start and end dates should use the DateRange as a datatype. Commonly uses property names include: eventDate, issueDate, and releaseDate.\n\nExplanatory notes\n===================\nDate allows one of a set of date-time (YYYY-MM-DDThh:mm:ss), date (YYYY-MM-DD), year-month (YYYY-MM), year (YYYY), time (hh:mm:ss) and duration (PnYnMnDnHnMnS), or time interval (YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss, YYYY-MM-DDThh:mm:ss/PnYnMnDnHnMnS, PnYnMnDnHnMnS/ YYYY-MM-DDThh:mm:ss) which is formatted according to ISO 8601 and backed supported by regular expressions in the BaseDateType. Time Zone designation and negative/positive prefixes are allowed as are dates before and after 0000 through 9999.\n\nDDI 3.2 mapping\n=================\nr:DateType\n\n",
+              "value": "\nDefinition\n============\nProvides the structure of a single Date expressed in an ISO date structure along with equivalent expression in any number of non-ISO formats. While it supports the use of the ISO time interval structure this should only be used when the exact date is unclear (i.e. occurring at some point in time between the two specified dates) or in specified applications. Ranges with specified start and end dates should use the DateRange as a datatype. Commonly uses property names include: eventDate, issueDate, and releaseDate.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nDate allows one of a set of date-time (YYYY-MM-DDThh:mm:ss), date (YYYY-MM-DD), year-month (YYYY-MM), year (YYYY), time (hh:mm:ss) and duration (PnYnMnDnHnMnS), or time interval (YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss, YYYY-MM-DDThh:mm:ss/PnYnMnDnHnMnS, PnYnMnDnHnMnS/ YYYY-MM-DDThh:mm:ss) which is formatted according to ISO 8601 and backed supported by regular expressions in the BaseDateType. Time Zone designation and negative/positive prefixes are allowed as are dates before and after 0000 through 9999.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:DateType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5339,7 +5340,7 @@
               "predicate": "http://ddi-alliance.org/ns/#startDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5361,7 +5362,7 @@
               "predicate": "http://ddi-alliance.org/ns/#endDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5397,7 +5398,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nExpresses a date/time range using a start date and end date (both with the structure of Date and supporting the use of ISO and non-ISO date structures). Use in all locations where a range of dates is required, i.e. validFor, embargoPeriod, collectionPeriod, etc.\n\nDDI 3.2 mapping\n=================\nr:DateType\n\n",
+              "value": "\nDefinition\n============\nExpresses a date/time range using a start date and end date (both with the structure of Date and supporting the use of ISO and non-ISO date structures). Use in all locations where a range of dates is required, i.e. validFor, embargoPeriod, collectionPeriod, etc.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:DateType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5418,7 +5419,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rationale",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5439,8 +5440,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#relatedTo",
               "valueExpr": "http://ddi-alliance.org/ns/#Identifiable",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5476,7 +5477,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.\n\nDDI 3.2 mapping\n=================\nr:RelationshipType\n\n",
+              "value": "\nDefinition\n============\nRelationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:RelationshipType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5500,7 +5501,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5525,7 +5526,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5561,7 +5562,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes a bounding value for a number range expressed as an xs:double.\n\nDDI 3.2 mapping\n=================\nr:DoubleNumberRangeValueType\n\n",
+              "value": "\nDefinition\n============\nDescribes a bounding value for a number range expressed as an xs:double.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:DoubleNumberRangeValueType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5581,8 +5582,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#textContent",
               "valueExpr": "http://ddi-alliance.org/ns/#DynamicTextContent",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5607,7 +5608,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5632,7 +5633,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5668,7 +5669,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStructure supporting the use of dynamic text, where portions of the textual content change depending on external information (pre-loaded data, response to an earlier query, environmental situations, etc.). \n\nExamples\n==========\nPurpose: Provide customized number of hours within a question text\nInput is the OutputParameter from Question \"What time did you take this medication?\"\nLiteral Text: \"During the past \" [0]\nConditional Text / Command: PastTime=Input; Round PastTime to nearest hour; Round CurrentTime to nearest hour; CurrentTime - PastTime = HOURS; content=HOURS [1]\nLiteral Text: \" hours which of the following symptoms have you experienced?\" [2]\n\nResult in question text for a PastTime= 06:10; CurrentTime=14:54\n\"During the past 9 hours which of the following symptoms have you experienced?\"\n\nDDI 3.2 mapping\n=================\nd:DynamicTextType\n\n",
+              "value": "\nDefinition\n============\nStructure supporting the use of dynamic text, where portions of the textual content change depending on external information (pre-loaded data, response to an earlier query, environmental situations, etc.). \n\nExamples\n==========\nPurpose: Provide customized number of hours within a question text\nInput is the OutputParameter from Question \"What time did you take this medication?\"\nLiteral Text: \"During the past \" [0]\nConditional Text / Command: PastTime=Input; Round PastTime to nearest hour; Round CurrentTime to nearest hour; CurrentTime - PastTime = HOURS; content=HOURS [1]\nLiteral Text: \" hours which of the following symptoms have you experienced?\" [2]\n\nResult in question text for a PastTime= 06:10; CurrentTime=14:54\n\"During the past 9 hours which of the following symptoms have you experienced?\"\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:DynamicTextType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5689,7 +5690,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5714,7 +5715,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5750,7 +5751,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAbstract type existing as the head of a substitution group. May be replaced by any valid member of the substitution group TextContent. Provides the common property of purpose to all members using TextContent as an extension base. Provides a Purpose for the content and ordering information within the Dynamic Text. May be a LiteralText or ConditionalText.\n\nDDI 3.2 mapping\n=================\nd:TextContentType\n\n",
+              "value": "\nDefinition\n============\nAbstract type existing as the head of a substitution group. May be replaced by any valid member of the substitution group TextContent. Provides the common property of purpose to all members using TextContent as an extension base. Provides a Purpose for the content and ordering information within the Dynamic Text. May be a LiteralText or ConditionalText.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:TextContentType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5758,7 +5759,7 @@
       }
     },
     {
-      "id": "_:ElectronicMessageSystem",
+      "id": "http://ddi-alliance.org/ns/#ElectronicMessageSystem",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5774,7 +5775,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5796,7 +5797,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfService",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5818,7 +5819,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5840,7 +5841,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5865,7 +5866,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5901,7 +5902,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAny non-email means of relaying a message electronically. This would include text messaging, Skype, Twitter, ICQ, or other emerging means of electronic message conveyance. \n\nExamples\n==========\nSkype account, etc.\n\nDDI 3.2 mapping\n=================\na:InstantMessagingType\n\n",
+              "value": "\nDefinition\n============\nAny non-email means of relaying a message electronically. This would include text messaging, Skype, Twitter, ICQ, or other emerging means of electronic message conveyance. \n\nExamples\n==========\nSkype account, etc.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:InstantMessagingType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5909,7 +5910,7 @@
       }
     },
     {
-      "id": "_:ElseIfAction",
+      "id": "http://ddi-alliance.org/ns/#ElseIfAction",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -5922,7 +5923,7 @@
               "predicate": "http://ddi-alliance.org/ns/#condition",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5944,7 +5945,7 @@
               "predicate": "http://ddi-alliance.org/ns/#thenWorkflowStepCollection",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -5980,7 +5981,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn additional condition and resulting step to take if the condition in the parent IfThenElse is false. It cannot exist without a parent IfThenElse.\n\n\n\n",
+              "value": "\nDefinition\n============\nAn additional condition and resulting step to take if the condition in the parent IfThenElse is false. It cannot exist without a parent IfThenElse.\n\n\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5988,7 +5989,7 @@
       }
     },
     {
-      "id": "_:Email",
+      "id": "http://ddi-alliance.org/ns/#Email",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6004,7 +6005,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6026,7 +6027,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfEmail",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6048,7 +6049,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6070,7 +6071,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6095,7 +6096,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6131,7 +6132,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn e-mail address which conforms to the internet format (RFC 822) including its type and time period for which it is valid.\n\nExamples\n==========\ninfo@ddialliance.org; ex.ample@somewhere.org\n\nSynonyms\n==========\ne-mail address; internet email address\n\nDDI 3.2 mapping\n=================\nr:EmailType\n\n",
+              "value": "\nDefinition\n============\nAn e-mail address which conforms to the internet format (RFC 822) including its type and time period for which it is valid.\n\nExamples\n==========\ninfo@ddialliance.org; ex.ample@somewhere.org\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\ne-mail address; internet email address\n\nDDI 3.2 mapping\n=================\nr:EmailType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6155,7 +6156,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6180,7 +6181,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6205,7 +6206,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6230,7 +6231,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6255,7 +6256,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6280,7 +6281,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6305,7 +6306,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6330,7 +6331,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6366,7 +6367,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for unstructured content which may be an entry from an externally maintained controlled vocabulary.If the content is from a controlled vocabulary provide the code value of the entry, as well as a reference to the controlled vocabulary from which the value is taken. Provide as many of the identifying attributes as needed to adequately identify the controlled vocabulary. Note that DDI has published a number of controlled vocabularies applicable to several locations using the ExternalControlledVocabularyEntry structure. If the code portion of the controlled vocabulary entry is language specific (i.e. a list of keywords or subject headings) use language to specify that language. In most cases the code portion of an entry is not language specific although the description and usage may be managed in one or more languages. Use of shared controlled vocabularies helps support interoperability and machine actionability.\n\nDDI 3.2 mapping\n=================\nr:CodeValueType\n\n",
+              "value": "\nDefinition\n============\nAllows for unstructured content which may be an entry from an externally maintained controlled vocabulary.If the content is from a controlled vocabulary provide the code value of the entry, as well as a reference to the controlled vocabulary from which the value is taken. Provide as many of the identifying attributes as needed to adequately identify the controlled vocabulary. Note that DDI has published a number of controlled vocabularies applicable to several locations using the ExternalControlledVocabularyEntry structure. If the code portion of the controlled vocabulary entry is language specific (i.e. a list of keywords or subject headings) use language to specify that language. In most cases the code portion of an entry is not language specific although the description and usage may be managed in one or more languages. Use of shared controlled vocabularies helps support interoperability and machine actionability.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CodeValueType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6387,7 +6388,7 @@
           "predicate": "http://ddi-alliance.org/ns/#whiteSpace",
           "valueExpr": "http://ddi-alliance.org/ns/#WhiteSpaceRule",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -6421,7 +6422,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe static portion of the text expressed as a StructuredString with the ability to preserve whitespace if critical to the understanding of the content.\n\nDDI 3.2 mapping\n=================\nd:TextType\n\n",
+              "value": "\nDefinition\n============\nThe static portion of the text expressed as a StructuredString with the ability to preserve whitespace if critical to the understanding of the content.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:TextType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6429,7 +6430,7 @@
       }
     },
     {
-      "id": "_:Form",
+      "id": "http://ddi-alliance.org/ns/#Form",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6445,7 +6446,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6470,7 +6471,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6492,7 +6493,7 @@
               "predicate": "http://ddi-alliance.org/ns/#statement",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6517,7 +6518,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6553,7 +6554,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA link to a form used by the metadata containing the form number, a statement regarding the contents of the form, a statement as to the mandatory nature of the form and a privacy level designation.\n\nDDI 3.2 mapping\n=================\na:FormType\n\n",
+              "value": "\nDefinition\n============\nA link to a form used by the metadata containing the form number, a statement regarding the contents of the form, a statement as to the mandatory nature of the form and a privacy level designation.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:FormType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6561,7 +6562,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitIndicator",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6577,7 +6578,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6602,7 +6603,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6623,8 +6624,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6660,7 +6661,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides ability to declare an optional sequence or index order to a Geographic Unit\n\n",
+              "value": "\nDefinition\n============\nProvides ability to declare an optional sequence or index order to a Geographic Unit\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6668,7 +6669,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitRelation",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6680,8 +6681,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6703,7 +6704,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialRelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6725,7 +6726,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6747,7 +6748,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6769,7 +6770,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6791,7 +6792,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6827,7 +6828,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes structured relationship between Geographic Units.\n\nExplanatory notes\n===================\nA member might have a ParentChild relation to several other members which is Anti-Reflexive, Anti-Symmetric, and Anti-Transitive. For a process this might have a semantic of \"immediately follows\". \n\n",
+              "value": "\nDefinition\n============\nDescribes structured relationship between Geographic Units.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nA member might have a ParentChild relation to several other members which is Anti-Reflexive, Anti-Symmetric, and Anti-Transitive. For a process this might have a semantic of \"immediately follows\". \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6835,7 +6836,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeIndicator",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6851,7 +6852,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6876,7 +6877,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6897,8 +6898,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6934,7 +6935,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides ability to declare an optional sequence or index order to a Unit Type describing a Geographic Unit Type. Extended to support membership in a specific level.\n\n",
+              "value": "\nDefinition\n============\nProvides ability to declare an optional sequence or index order to a Unit Type describing a Geographic Unit Type. Extended to support membership in a specific level.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6942,7 +6943,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeRelation",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -6954,8 +6955,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -6977,7 +6978,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialRelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7002,7 +7003,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7024,7 +7025,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7046,7 +7047,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7068,7 +7069,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7090,7 +7091,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7126,7 +7127,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes structured relationship between Unit Types used to define Geographic Unit Types. Extended to include the ability to define a Spatial Relationship using a controlled vocabulary.\n\nExplanatory notes\n===================\nA member might have a ParentChild relation to several other members which is Anti-Reflexive, Anti-Symmetric, and Anti-Transitive. For a process this might have a semantic of \"immediately follows\". \n\n",
+              "value": "\nDefinition\n============\nDescribes structured relationship between Unit Types used to define Geographic Unit Types. Extended to include the ability to define a Spatial Relationship using a controlled vocabulary.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nA member might have a ParentChild relation to several other members which is Anti-Reflexive, Anti-Symmetric, and Anti-Transitive. For a process this might have a semantic of \"immediately follows\". \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7150,7 +7151,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7172,7 +7173,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfImage",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7197,7 +7198,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7222,7 +7223,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7258,7 +7259,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA reference to an image, with a description of its properties and type.\n\nDDI 3.2 mapping\n=================\nr:ImageType\n\n",
+              "value": "\nDefinition\n============\nA reference to an image, with a description of its properties and type.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ImageType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7266,7 +7267,7 @@
       }
     },
     {
-      "id": "_:ImageArea",
+      "id": "http://ddi-alliance.org/ns/#ImageArea",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7282,7 +7283,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7304,7 +7305,7 @@
               "predicate": "http://ddi-alliance.org/ns/#shape",
               "valueExpr": "http://ddi-alliance.org/ns/#ShapeCoded",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7340,7 +7341,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and Coordinates provides the information required to define it.\n\nDDI 3.2 mapping\n=================\nr:ImageAreaType\n\n",
+              "value": "\nDefinition\n============\nDefines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and Coordinates provides the information required to define it.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ImageAreaType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7348,7 +7349,7 @@
       }
     },
     {
-      "id": "_:IndexEntryRelation",
+      "id": "http://ddi-alliance.org/ns/#IndexEntryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7360,8 +7361,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7383,7 +7384,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7405,7 +7406,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7426,8 +7427,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndexEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7448,8 +7449,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndexEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7485,7 +7486,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelationship between Index Entries defined by RelationSpecification.\n\n",
+              "value": "\nDefinition\n============\nRelationship between Index Entries defined by RelationSpecification.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7493,7 +7494,7 @@
       }
     },
     {
-      "id": "_:IndividualName",
+      "id": "http://ddi-alliance.org/ns/#IndividualName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7509,7 +7510,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7534,7 +7535,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7559,7 +7560,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7584,7 +7585,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7609,7 +7610,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7631,7 +7632,7 @@
               "predicate": "http://ddi-alliance.org/ns/#fullName",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7653,7 +7654,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7675,7 +7676,7 @@
               "predicate": "http://ddi-alliance.org/ns/#abbreviation",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7697,7 +7698,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfIndividualName",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7719,7 +7720,7 @@
               "predicate": "http://ddi-alliance.org/ns/#sex",
               "valueExpr": "http://ddi-alliance.org/ns/#SexSpecificationType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7744,7 +7745,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7766,7 +7767,7 @@
               "predicate": "http://ddi-alliance.org/ns/#context",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7791,7 +7792,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7827,7 +7828,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe name of an individual broken out into its component parts of prefix, first/given name, middle name, last/family/surname, and suffix. The preferred compilation of the name parts may also be provided. The legal or formal name of the individual should have the isFormal attribute set to true. The preferred name should be noted with the isPreferred attribute. The attribute sex provides information to assist in the appropriate use of pronouns.\n\nDDI 3.2 mapping\n=================\na:IndividualNameType\n\n",
+              "value": "\nDefinition\n============\nThe name of an individual broken out into its component parts of prefix, first/given name, middle name, last/family/surname, and suffix. The preferred compilation of the name parts may also be provided. The legal or formal name of the individual should have the isFormal attribute set to true. The preferred name should be noted with the isPreferred attribute. The attribute sex provides information to assist in the appropriate use of pronouns.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:IndividualNameType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7851,7 +7852,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7872,8 +7873,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7909,7 +7910,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for the identification of the InstanceVariable specifically as a member and optionally provides an index for the member within an ordered array. \n\nExplanatory notes\n===================\nNote if multiple types of Variables may be included in a collection use VariableIndicator.\n\n",
+              "value": "\nDefinition\n============\nAllows for the identification of the InstanceVariable specifically as a member and optionally provides an index for the member within an ordered array. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\nNote if multiple types of Variables may be included in a collection use VariableIndicator.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -7917,7 +7918,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableRelation",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -7930,7 +7931,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7951,8 +7952,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7974,7 +7975,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -7995,8 +7996,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8018,7 +8019,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8054,7 +8055,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the relationship between 2 or more InstanceVariables.\n\nExplanatory notes\n===================\nUse when relationships are limited to InstanceVariables only. Use VariableRelation when mixing relationships between various levels in the Variable Cascade. Use ConceptRelation when any subtype of Concept may be part of the relationship.\n\n",
+              "value": "\nDefinition\n============\nDefines the relationship between 2 or more InstanceVariables.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nUse when relationships are limited to InstanceVariables only. Use VariableRelation when mixing relationships between various levels in the Variable Cascade. Use ConceptRelation when any subtype of Concept may be part of the relationship.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8062,7 +8063,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableValueMap",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableValueMap",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8074,8 +8075,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#valueRelationship",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueRelationshipType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8097,7 +8098,7 @@
               "predicate": "http://ddi-alliance.org/ns/#setValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8118,8 +8119,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasCorrespondenceType",
               "valueExpr": "http://ddi-alliance.org/ns/#CorrespondenceType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8140,8 +8141,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8163,7 +8164,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8199,7 +8200,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA key value relationship for two or more logical records where the key is one or more equivalent instance variables and the value is a defined relationship or a relationship to a set value. Correspondence type refers to the variables themselves rather than the value of the variables concerned. In this context Correspondence type will normally be set to ExactMatch.\n\nExplanatory notes\n===================\nLogical Records: Household and Person, Key: Household ID (HHID in Household Record, HHIDP in Person Record), ValueRelaitonship: Equal, Set Value: n.a.\n\n",
+              "value": "\nDefinition\n============\nA key value relationship for two or more logical records where the key is one or more equivalent instance variables and the value is a defined relationship or a relationship to a set value. Correspondence type refers to the variables themselves rather than the value of the variables concerned. In this context Correspondence type will normally be set to ExactMatch.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nLogical Records: Household and Person, Key: Household ID (HHID in Household Record, HHIDP in Person Record), ValueRelaitonship: Equal, Set Value: n.a.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8223,7 +8224,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8245,7 +8246,7 @@
               "predicate": "http://ddi-alliance.org/ns/#managingAgency",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8270,7 +8271,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8306,7 +8307,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn identifier whose scope of uniqueness is broader than the local archive. Common forms of an international identifier are ISBN, ISSN, DOI or similar designator. Provides both the value of the identifier and the agency who manages it.\n\nExplanatory notes\n===================\nFor use in Annotation or other citation format. \n\nDDI 3.2 mapping\n=================\nr:InternationalIdentifierType\n\n",
+              "value": "\nDefinition\n============\nAn identifier whose scope of uniqueness is broader than the local archive. Common forms of an international identifier are ISBN, ISSN, DOI or similar designator. Provides both the value of the identifier and the agency who manages it.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nFor use in Annotation or other citation format. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:InternationalIdentifierType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8324,7 +8325,7 @@
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificString",
           "valueExpr": "http://ddi-alliance.org/ns/#LanguageSpecificStringType",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -8358,7 +8359,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nPackaging structure for multiple language versions of the same string content. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages. The language designation goes on the individual String.\n\nDDI 3.2 mapping\n=================\nr:InternationalStringType\n\n",
+              "value": "\nDefinition\n============\nPackaging structure for multiple language versions of the same string content. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages. The language designation goes on the individual String.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:InternationalStringType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8375,8 +8376,8 @@
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificStructuredString",
           "valueExpr": "http://ddi-alliance.org/ns/#LanguageSpecificStructuredStringType",
-          "min": 1,
-          "max": -1,
+          "min": "1",
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -8410,7 +8411,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nPackaging structure for multiple language versions of the same string content, for objects that allow for internal formatting using XHTML tags. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages.\n\nDDI 3.2 mapping\n=================\nr:StructuredStringType\n\n",
+              "value": "\nDefinition\n============\nPackaging structure for multiple language versions of the same string content, for objects that allow for internal formatting using XHTML tags. Where an element of this type is repeatable, the expectation is that each repetition contains different content, each of which can be expressed in multiple languages.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:StructuredStringType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8434,7 +8435,7 @@
               "predicate": "http://ddi-alliance.org/ns/#locationVariant",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8456,7 +8457,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8481,7 +8482,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8517,7 +8518,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA structured display label. Label provides display content of a fully human readable display for the identification of the object. \n\nDDI 3.2 mapping\n=================\nr:LabelType\n\n",
+              "value": "\nDefinition\n============\nA structured display label. Label provides display content of a fully human readable display for the identification of the object. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:LabelType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8540,8 +8541,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8566,7 +8567,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8591,7 +8592,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8616,7 +8617,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8641,7 +8642,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8666,7 +8667,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8691,7 +8692,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8727,7 +8728,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for non-formatted language specific strings that may be translations from other languages, or that may be translatable into other languages. Only one string per language/scope type is allowed. LanguageSpecificString contains the following attributes, xmlang to designate the language, isTranslated with a default value of false to designate if an object is a translation of another language, isTranslatable with a default value of true to designate if the content can be translated, translationSourceLanguage to indicate the source languages used in creating this translation,  translationDate, and scope which can be used to define intended audience or use such as internal, external, etc.\n\nDDI 3.2 mapping\n=================\nr:StringType\n\n",
+              "value": "\nDefinition\n============\nAllows for non-formatted language specific strings that may be translations from other languages, or that may be translatable into other languages. Only one string per language/scope type is allowed. LanguageSpecificString contains the following attributes, xmlang to designate the language, isTranslated with a default value of false to designate if an object is a translation of another language, isTranslatable with a default value of true to designate if the content can be translated, translationSourceLanguage to indicate the source languages used in creating this translation,  translationDate, and scope which can be used to define intended audience or use such as internal, external, etc.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:StringType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8754,7 +8755,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8776,7 +8777,7 @@
               "predicate": "http://ddi-alliance.org/ns/#structureUsed",
               "valueExpr": "http://ddi-alliance.org/ns/#StringStructureType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8801,7 +8802,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8837,7 +8838,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSupports the optional use of formatting tags expressed with escape characters within the string structure. Language of the string is defined by the attribute language. Scope of the string is defined by scope. Language and Scope are used to filter selection and use of content based on unique combinations of these two properties. The content can be identified as translated (isTranslated), subject to translation (isTranslatable), the result of translation from one or more languages (translationSourceLanguages), carry an indication whether or not it should be treated as plain text (isPlain), identification of the structure used (structureUsed) which is an internal enumeration, and the ability to identify a structure not available in the enumeration by declaring structureUsed=\"Other\" and specifying the other structure (otherDefined).\n\nExamples\n==========\nThe content:\n<p>a bit of text</p> <p>with some specialties <span class=\"highlight\">highlighted</span> </p> \n\nWould be entered as:\n<p>with some specialties <span class=\"highlight\">highlighted</span> </p> \n\nDDI 3.2 mapping\n=================\nr:ContentType\n\n",
+              "value": "\nDefinition\n============\nSupports the optional use of formatting tags expressed with escape characters within the string structure. Language of the string is defined by the attribute language. Scope of the string is defined by scope. Language and Scope are used to filter selection and use of content based on unique combinations of these two properties. The content can be identified as translated (isTranslated), subject to translation (isTranslatable), the result of translation from one or more languages (translationSourceLanguages), carry an indication whether or not it should be treated as plain text (isPlain), identification of the structure used (structureUsed) which is an internal enumeration, and the ability to identify a structure not available in the enumeration by declaring structureUsed=\"Other\" and specifying the other structure (otherDefined).\n\nExamples\n==========\nThe content:\n<p>a bit of text</p> <p>with some specialties <span class=\"highlight\">highlighted</span> </p> \n\nWould be entered as:\n<p>with some specialties <span class=\"highlight\">highlighted</span> </p> \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ContentType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8845,7 +8846,7 @@
       }
     },
     {
-      "id": "_:Level",
+      "id": "http://ddi-alliance.org/ns/#Level",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8860,8 +8861,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8883,7 +8884,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8905,7 +8906,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8941,7 +8942,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides Level information for the members of the LevelStructure. levelNumber provides the level number which may or may not be associated with a category which defines level.\n\nExplanatory notes\n===================\nISCO-08: index='1' label of associated category 'Major',  index='2' label of associated category 'Sub-Major',  index='3' label of associated category 'Minor', \n\n",
+              "value": "\nDefinition\n============\nProvides Level information for the members of the LevelStructure. levelNumber provides the level number which may or may not be associated with a category which defines level.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nISCO-08: index='1' label of associated category 'Major',  index='2' label of associated category 'Sub-Major',  index='3' label of associated category 'Minor', \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -8949,7 +8950,7 @@
       }
     },
     {
-      "id": "_:LineParameter",
+      "id": "http://ddi-alliance.org/ns/#LineParameter",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -8965,7 +8966,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -8990,7 +8991,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9015,7 +9016,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9040,7 +9041,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9076,7 +9077,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecification of the line and offset for the beginning and end of the segment.\n\nDDI 3.2 mapping\n=================\nr:LineParameterType\n\n",
+              "value": "\nDefinition\n============\nSpecification of the line and offset for the beginning and end of the segment.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:LineParameterType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9097,7 +9098,7 @@
           "predicate": "http://ddi-alliance.org/ns/#text",
           "valueExpr": "http://ddi-alliance.org/ns/#LanguageSpecificStructuredStringType",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -9131,7 +9132,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nLiteral (static) text to be used in an instrument.  The value is a LanguageSpecificStruccturedString with the addition of an attribute allowing for the specification that white space is to be preserved.\n\nExamples\n==========\nThe text string \"     Comment vous appelez-vous?\" with the leading spaces included, described as being in French.\n\nDDI 3.2 mapping\n=================\nd:LiteralTextType\n\n",
+              "value": "\nDefinition\n============\nLiteral (static) text to be used in an instrument.  The value is a LanguageSpecificStruccturedString with the addition of an attribute allowing for the specification that white space is to be preserved.\n\nExamples\n==========\nThe text string \"     Comment vous appelez-vous?\" with the leading spaces included, described as being in French.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:LiteralTextType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9139,7 +9140,7 @@
       }
     },
     {
-      "id": "_:LocalIdFormat",
+      "id": "http://ddi-alliance.org/ns/#LocalIdFormat",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9154,8 +9155,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9179,8 +9180,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9205,7 +9206,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9241,7 +9242,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThis is an identifier in a given local context that uniquely references an object, as opposed to the full ddi identifier which has an agency plus the id.\n\nExamples\n==========\nThe name of a variable within a dataset is a localId. Software systems might use their own identifier systems for performance reasons (e.g. incrementing integers).\n\n",
+              "value": "\nDefinition\n============\nThis is an identifier in a given local context that uniquely references an object, as opposed to the full ddi identifier which has an agency plus the id.\n\nExamples\n==========\nThe name of a variable within a dataset is a localId. Software systems might use their own identifier systems for performance reasons (e.g. incrementing integers).\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9262,7 +9263,7 @@
           "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
           "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -9296,7 +9297,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nName of the location using the DDI Name structure and the ability to add an effective date.\n\nDDI 3.2 mapping\n=================\na:LocationNameType\n\n",
+              "value": "\nDefinition\n============\nName of the location using the DDI Name structure and the ability to add an effective date.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:LocationNameType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9304,7 +9305,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordIndicator",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9320,7 +9321,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9341,8 +9342,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9378,7 +9379,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type LogicalRecord\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type LogicalRecord\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9386,7 +9387,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordRelation",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9398,8 +9399,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9421,7 +9422,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9443,7 +9444,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9465,7 +9466,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9487,7 +9488,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9523,7 +9524,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines complex relationship between LogicalRecords. \n\n",
+              "value": "\nDefinition\n============\nDefines complex relationship between LogicalRecords. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9544,7 +9545,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9566,7 +9567,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasCorrespondenceType",
               "valueExpr": "http://ddi-alliance.org/ns/#CorrespondenceType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9588,7 +9589,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9610,7 +9611,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9631,8 +9632,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9653,8 +9654,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9690,7 +9691,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the correspondence between concepts in a correspondence table related to one or more Statistical Classifications.\n\nExplanatory notes\n===================\nA Map is the pairing of similar Concepts. Each Concept in the Map belongs to a different Collection. The collection of maps for all the Concepts in corresponding Collections is a Correspondence Table.\n\nA simple example might map the following 2 martial status category sets:\nMS1 -\nsingle\nmarried\nwidowed\ndivorced\n\nMS2 -\nsingle\nmarried\n\nSo, a correspondence table between these 2 category sets might look like this:\nMS1                                               MS2\nsingle                                             single\nwidowed                                          \"\ndivorced                                          \"\nmarried                                            married\n\nGSIM mapping\n==============\nMap\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nDescribes the correspondence between concepts in a correspondence table related to one or more Statistical Classifications.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nA Map is the pairing of similar Concepts. Each Concept in the Map belongs to a different Collection. The collection of maps for all the Concepts in corresponding Collections is a Correspondence Table.\n\nA simple example might map the following 2 martial status category sets:\nMS1 -\nsingle\nmarried\nwidowed\ndivorced\n\nMS2 -\nsingle\nmarried\n\nSo, a correspondence table between these 2 category sets might look like this:\nMS1                                               MS2\nsingle                                             single\nwidowed                                          \"\ndivorced                                          \"\nmarried                                            married\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nMap\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9698,7 +9699,7 @@
       }
     },
     {
-      "id": "_:NonIsoDateType",
+      "id": "http://ddi-alliance.org/ns/#NonIsoDateType",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9713,8 +9714,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9736,7 +9737,7 @@
               "predicate": "http://ddi-alliance.org/ns/#nonIsoDateFormat",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9758,7 +9759,7 @@
               "predicate": "http://ddi-alliance.org/ns/#calendar",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9794,7 +9795,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUsed to preserve an historical date, formatted in a non-ISO fashion.\n\nDDI 3.2 mapping\n=================\nr:HistoricalDateType\n\n",
+              "value": "\nDefinition\n============\nUsed to preserve an historical date, formatted in a non-ISO fashion.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:HistoricalDateType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -9802,7 +9803,7 @@
       }
     },
     {
-      "id": "_:NumberRange",
+      "id": "http://ddi-alliance.org/ns/#NumberRange",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -9815,7 +9816,7 @@
               "predicate": "http://ddi-alliance.org/ns/#label",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9837,7 +9838,7 @@
               "predicate": "http://ddi-alliance.org/ns/#highCode",
               "valueExpr": "http://ddi-alliance.org/ns/#NumberRangeValue",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9859,7 +9860,7 @@
               "predicate": "http://ddi-alliance.org/ns/#highCodeDouble",
               "valueExpr": "http://ddi-alliance.org/ns/#DoubleNumberRangeValue",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9881,7 +9882,7 @@
               "predicate": "http://ddi-alliance.org/ns/#lowCode",
               "valueExpr": "http://ddi-alliance.org/ns/#NumberRangeValue",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9903,7 +9904,7 @@
               "predicate": "http://ddi-alliance.org/ns/#lowCodeDouble",
               "valueExpr": "http://ddi-alliance.org/ns/#DoubleNumberRangeValue",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9928,7 +9929,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9952,8 +9953,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -9977,8 +9978,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10014,7 +10015,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStructures a numeric range. Low and High values are designated. The structure identifies Low values that should be treated as bottom coded (Stated value and bellow, High values that should be treated as top coded (stated value and higher), and provides a regular expression to further define the valid content of the range.\n\nDDI 3.2 mapping\n=================\nr:NumberRangeType\n\n",
+              "value": "\nDefinition\n============\nStructures a numeric range. Low and High values are designated. The structure identifies Low values that should be treated as bottom coded (Stated value and bellow, High values that should be treated as top coded (stated value and higher), and provides a regular expression to further define the valid content of the range.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:NumberRangeType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10038,7 +10039,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10063,7 +10064,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10099,7 +10100,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes a bounding value for a number range expressed as an xs:demical.\n\nDDI 3.2 mapping\n=================\nr:NumberRangeValueType\n\n",
+              "value": "\nDefinition\n============\nDescribes a bounding value for a number range expressed as an xs:demical.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:NumberRangeValueType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10123,7 +10124,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10145,7 +10146,7 @@
               "predicate": "http://ddi-alliance.org/ns/#context",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10181,7 +10182,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA standard means of expressing a Name for a class object.  A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles.\n\nExplanatory notes\n===================\nUSE in Model: In general the property name should be \"name\" as it is the name of the class object which contains it. Use a specific name (i.e. xxxName) only when naming something other than the class object which contains it.\n\nDDI 3.2 mapping\n=================\nr:NameType\n\n",
+              "value": "\nDefinition\n============\nA standard means of expressing a Name for a class object.  A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nUSE in Model: In general the property name should be \"name\" as it is the name of the class object which contains it. Use a specific name (i.e. xxxName) only when naming something other than the class object which contains it.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:NameType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10189,7 +10190,7 @@
       }
     },
     {
-      "id": "_:OrganizationName",
+      "id": "http://ddi-alliance.org/ns/#OrganizationName",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10205,7 +10206,7 @@
               "predicate": "http://ddi-alliance.org/ns/#abbreviation",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10227,7 +10228,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfOrganizationName",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10249,7 +10250,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10274,7 +10275,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10310,7 +10311,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nNames by which the organization is known. Use the attribute isFormal=\"true\" to designate the legal or formal name of the Organization. The preferred name should be noted with the isPreferred attribute. Names may be typed with TypeOfOrganizationName to indicate their appropriate usage.\n\nDDI 3.2 mapping\n=================\na:OrganizationNameType\n\n",
+              "value": "\nDefinition\n============\nNames by which the organization is known. Use the attribute isFormal=\"true\" to designate the legal or formal name of the Organization. The preferred name should be noted with the isPreferred attribute. Names may be typed with TypeOfOrganizationName to indicate their appropriate usage.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:OrganizationNameType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10330,8 +10331,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#term",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10353,7 +10354,7 @@
               "predicate": "http://ddi-alliance.org/ns/#extent",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10389,7 +10390,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA tightly bound pair of items from an external controlled vocabulary. The extent property describes the extent to which the parent term applies for the specific case. \n\nExamples\n==========\nWhen used to assign a role to an actor within a specific activity this term would express the degree of contribution. Contributor with Role=Editor and extent=Lead.\n\nAlternatively. the term might be a controlled vocabulary from a list of controlled vocabularies, e.g. the Generic Longitudinal Business Process Model (GLBPM) in a list that could include other business process model frameworks. In this context the extent becomes the name of a business process model task, e.g. \"integrate data\" from the GLBPM.\n\n",
+              "value": "\nDefinition\n============\nA tightly bound pair of items from an external controlled vocabulary. The extent property describes the extent to which the parent term applies for the specific case. \n\nExamples\n==========\nWhen used to assign a role to an actor within a specific activity this term would express the degree of contribution. Contributor with Role=Editor and extent=Lead.\n\nAlternatively. the term might be a controlled vocabulary from a list of controlled vocabularies, e.g. the Generic Longitudinal Business Process Model (GLBPM) in a list that could include other business process model frameworks. In this context the extent becomes the name of a business process model task, e.g. \"integrate data\" from the GLBPM.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10397,7 +10398,7 @@
       }
     },
     {
-      "id": "_:PhysicalRecordSegmentIndicator",
+      "id": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10413,7 +10414,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10434,8 +10435,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10471,7 +10472,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type PhysicalRecordSegment\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type PhysicalRecordSegment\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10479,7 +10480,7 @@
       }
     },
     {
-      "id": "_:PhysicalRecordSegmentRelation",
+      "id": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10491,8 +10492,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10514,7 +10515,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10536,7 +10537,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10558,7 +10559,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10580,7 +10581,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10616,7 +10617,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines structured relationship between PhysicalRecordSegments.\n\n",
+              "value": "\nDefinition\n============\nDefines structured relationship between PhysicalRecordSegments.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10640,7 +10641,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10665,7 +10666,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10687,7 +10688,7 @@
               "predicate": "http://ddi-alliance.org/ns/#shapeFileFormat",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10708,8 +10709,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#point",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialPoint",
-              "min": 4,
-              "max": -1,
+              "min": "4",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10745,7 +10746,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA closed plane figure bounded by three or more line segments, representing a geographic area. Contains either the URI of the file containing the polygon, a specific link code for the shape within the file, and a file format, or a minimum of 4 points to describe the polygon in-line. Note that the first and last point must be identical in order to close the polygon. A triangle has 4 points.\n\nDDI 3.2 mapping\n=================\nr:PolygonType\n\n",
+              "value": "\nDefinition\n============\nA closed plane figure bounded by three or more line segments, representing a geographic area. Contains either the URI of the file containing the polygon, a specific link code for the shape within the file, and a file format, or a minimum of 4 points to describe the polygon in-line. Note that the first and last point must be identical in order to close the polygon. A triangle has 4 points.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:PolygonType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10753,7 +10754,7 @@
       }
     },
     {
-      "id": "_:PrivateImage",
+      "id": "http://ddi-alliance.org/ns/#PrivateImage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10769,7 +10770,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10791,7 +10792,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10827,7 +10828,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nReferences an image using the standard Image description. In addition to the standard attributes provides an effective date (period), the type of image, and a privacy ranking.\n\nDDI 3.2 mapping\n=================\na:PrivateImageType\n\n",
+              "value": "\nDefinition\n============\nReferences an image using the standard Image description. In addition to the standard attributes provides an effective date (period), the type of image, and a privacy ranking.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:PrivateImageType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10851,7 +10852,7 @@
             "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
           },
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -10885,7 +10886,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes a bounding value of a string.\n\nDDI 3.2 mapping\n=================\nr:RangeValueType\n\n",
+              "value": "\nDefinition\n============\nDescribes a bounding value of a string.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:RangeValueType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10893,7 +10894,7 @@
       }
     },
     {
-      "id": "_:RationaleDefinition",
+      "id": "http://ddi-alliance.org/ns/#RationaleDefinition",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10906,7 +10907,7 @@
               "predicate": "http://ddi-alliance.org/ns/#RationaleDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10928,7 +10929,7 @@
               "predicate": "http://ddi-alliance.org/ns/#RationaleCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -10964,7 +10965,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nTextual description of the rationale/purpose for the version change and a coded value to provide an internal processing flag within and organization or system. Note that versioning can only take place on objects owned by the specified DDI Agency. If you are creating a local instance of an object from another agency for current or future modification use BasedOnObject. If the changes being made result in what you determine to be new object rather than a version of a previous object, i.e. the change is too extensive to consider it a version of the existing object, create a new object and use BasedOnObject to provide a link to the object or objects that were a basis for the new object.\n\nDDI 3.2 mapping\n=================\nr:VersionRationaleType\n\n",
+              "value": "\nDefinition\n============\nTextual description of the rationale/purpose for the version change and a coded value to provide an internal processing flag within and organization or system. Note that versioning can only take place on objects owned by the specified DDI Agency. If you are creating a local instance of an object from another agency for current or future modification use BasedOnObject. If the changes being made result in what you determine to be new object rather than a version of a previous object, i.e. the change is too extensive to consider it a version of the existing object, create a new object and use BasedOnObject to provide a link to the object or objects that were a basis for the new object.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:VersionRationaleType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -10972,7 +10973,7 @@
       }
     },
     {
-      "id": "_:ReferenceDate",
+      "id": "http://ddi-alliance.org/ns/#ReferenceDate",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -10988,7 +10989,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subject",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11010,7 +11011,7 @@
               "predicate": "http://ddi-alliance.org/ns/#keyword",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11046,7 +11047,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe date covered by the annotated object. In addition to specifying a type of date (e.g. collection period, census year, etc.) the date or time span may be associated with a particular subject or keyword. This allows for the expression of a referent date associated with specific subjects or keywords. \n\nExamples\n==========\nA set of date items on income and labor force status may have a referent date for the year prior to the collection date. To express a duration the preference is for Start and End dates expressing two time points separated by a \"/\". \n\nExplanatory notes\n===================\nNote that if needed you may use Start and Duration or Duration and End. These options may not be recognizable by all systems.\n\nDDI 3.2 mapping\n=================\nr:ReferenceDateType\n\n",
+              "value": "\nDefinition\n============\nThe date covered by the annotated object. In addition to specifying a type of date (e.g. collection period, census year, etc.) the date or time span may be associated with a particular subject or keyword. This allows for the expression of a referent date associated with specific subjects or keywords. \n\nExamples\n==========\nA set of date items on income and labor force status may have a referent date for the year prior to the collection date. To express a duration the preference is for Start and End dates expressing two time points separated by a \"/\". \n\nExplanatory notes\n===================\nNote that if needed you may use Start and Duration or Duration and End. These options may not be recognizable by all systems.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ReferenceDateType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11054,7 +11055,7 @@
       }
     },
     {
-      "id": "_:ResourceIdentifier",
+      "id": "http://ddi-alliance.org/ns/#ResourceIdentifier",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11067,7 +11068,7 @@
           "predicate": "http://ddi-alliance.org/ns/#typeOfRelatedResource",
           "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -11101,7 +11102,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides a means of identifying a related resource and provides the typeOfRelationship.  \n\n\n\nExamples\n==========\nStandard usage may include: describesDate, isDescribedBy,  isFormatOf, isPartOf, isReferencedBy, isReplacedBy, isRequiredBy, isVersionOf, references, replaces, requires, etc.\n\nExplanatory notes\n===================\nMakes use of a controlled vocabulary for typing the relationship.\n\n",
+              "value": "\nDefinition\n============\nProvides a means of identifying a related resource and provides the typeOfRelationship.  \n\n\n\nExamples\n==========\nStandard usage may include: describesDate, isDescribedBy,  isFormatOf, isPartOf, isReferencedBy, isReplacedBy, isRequiredBy, isVersionOf, references, replaces, requires, etc.\n\nExplanatory notes\n===================\nMakes use of a controlled vocabulary for typing the relationship.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11109,7 +11110,7 @@
       }
     },
     {
-      "id": "_:Segment",
+      "id": "http://ddi-alliance.org/ns/#Segment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11120,9 +11121,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesAudioSegment",
-              "valueExpr": "_:AudioSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#AudioSegment",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11142,9 +11143,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesVideoSegment",
-              "valueExpr": "_:VideoSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#VideoSegment",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11169,7 +11170,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11189,9 +11190,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#useseTextualSegment",
-              "valueExpr": "_:TextualSegment",
+              "valueExpr": "http://ddi-alliance.org/ns/#TextualSegment",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11211,9 +11212,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesImageArea",
-              "valueExpr": "_:ImageArea",
+              "valueExpr": "http://ddi-alliance.org/ns/#ImageArea",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11249,7 +11250,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA structure used to express explicit segments or regions within different types of external materials (Textual, Audio, Video, XML, and Image). Provides the appropriate start, stop, or region definitions for each type.\n\nDDI 3.2 mapping\n=================\nr:SegmentType\n\n",
+              "value": "\nDefinition\n============\nA structure used to express explicit segments or regions within different types of external materials (Textual, Audio, Video, XML, and Image). Provides the appropriate start, stop, or region definitions for each type.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:SegmentType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11273,7 +11274,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11295,7 +11296,7 @@
               "predicate": "http://ddi-alliance.org/ns/#coordinateType",
               "valueExpr": "http://ddi-alliance.org/ns/#PointFormat",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11331,7 +11332,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nLists the value and format type for the coordinate value. Note that this is a single value (X coordinate or Y coordinate) rather than a coordinate pair.\n\nDDI 3.2 mapping\n=================\nr:SpatialCoordinateType\n\n",
+              "value": "\nDefinition\n============\nLists the value and format type for the coordinate value. Note that this is a single value (X coordinate or Y coordinate) rather than a coordinate pair.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:SpatialCoordinateType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11339,7 +11340,7 @@
       }
     },
     {
-      "id": "_:SpatialLine",
+      "id": "http://ddi-alliance.org/ns/#SpatialLine",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11355,7 +11356,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11380,7 +11381,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11402,7 +11403,7 @@
               "predicate": "http://ddi-alliance.org/ns/#shapeFileFormat",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11423,8 +11424,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#point",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialPoint",
-              "min": 2,
-              "max": -1,
+              "min": "2",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11460,7 +11461,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines a geographic line (minimum of 2 points)\n\nExamples\n==========\nStreet, River\n\n",
+              "value": "\nDefinition\n============\nDefines a geographic line (minimum of 2 points)\n\nExamples\n==========\nStreet, River\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11481,7 +11482,7 @@
               "predicate": "http://ddi-alliance.org/ns/#xCoordinate",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialCoordinate",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11503,7 +11504,7 @@
               "predicate": "http://ddi-alliance.org/ns/#yCoordinate",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialCoordinate",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11539,7 +11540,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA geographic point consisting of an X and Y coordinate. Each coordinate value is expressed separately providing its value and format.\n\nDDI 3.2 mapping\n=================\nr:PointType\n\n",
+              "value": "\nDefinition\n============\nA geographic point consisting of an X and Y coordinate. Each coordinate value is expressed separately providing its value and format.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:PointType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11560,7 +11561,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialObjectPair",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectPairs",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11582,7 +11583,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialRelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11604,7 +11605,7 @@
               "predicate": "http://ddi-alliance.org/ns/#eventDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11626,7 +11627,7 @@
               "predicate": "http://ddi-alliance.org/ns/#relatesTo",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11662,7 +11663,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUsed to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date.\n\n",
+              "value": "\nDefinition\n============\nUsed to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11683,7 +11684,7 @@
               "predicate": "http://ddi-alliance.org/ns/#attributeKey",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11705,7 +11706,7 @@
               "predicate": "http://ddi-alliance.org/ns/#attributeValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11741,7 +11742,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.\n\nDDI 3.2 mapping\n=================\nr:StandardKeyValuePairType\n\n",
+              "value": "\nDefinition\n============\nA basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:StandardKeyValuePairType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11765,7 +11766,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11787,7 +11788,7 @@
               "predicate": "http://ddi-alliance.org/ns/#computationBase",
               "valueExpr": "http://ddi-alliance.org/ns/#ComputationBaseList",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11812,7 +11813,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11837,7 +11838,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11873,7 +11874,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe value of the statistic expressed as an xs:decimal and/or xs:double. Indicates whether it is weighted value and the computation base.\n\nDDI 3.2 mapping\n=================\npi:StatisticType\n\n",
+              "value": "\nDefinition\n============\nThe value of the statistic expressed as an xs:decimal and/or xs:double. Indicates whether it is weighted value and the computation base.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\npi:StatisticType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11881,7 +11882,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationIndicator",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11897,7 +11898,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11918,8 +11919,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11955,7 +11956,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type StatisticalClassification\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type StatisticalClassification\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -11963,7 +11964,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationRelation",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -11975,8 +11976,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -11998,7 +11999,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12020,7 +12021,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12042,7 +12043,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12064,7 +12065,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12100,7 +12101,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecifies the Statistical Classifications for the source and target of the complex relationship and defines the relationship.\n\n",
+              "value": "\nDefinition\n============\nSpecifies the Statistical Classifications for the source and target of the complex relationship and defines the relationship.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12108,7 +12109,7 @@
       }
     },
     {
-      "id": "_:StudyIndicator",
+      "id": "http://ddi-alliance.org/ns/#StudyIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12124,7 +12125,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12146,7 +12147,7 @@
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#Study",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12182,7 +12183,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type Study\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type Study\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12190,7 +12191,7 @@
       }
     },
     {
-      "id": "_:StudyRelation",
+      "id": "http://ddi-alliance.org/ns/#StudyRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12202,8 +12203,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12225,7 +12226,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12247,7 +12248,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12269,7 +12270,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#Study",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12291,7 +12292,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#Study",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12327,7 +12328,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelation specification between source and target studies in a relation structure\n\n",
+              "value": "\nDefinition\n============\nRelation specification between source and target studies in a relation structure\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12335,7 +12336,7 @@
       }
     },
     {
-      "id": "_:SummaryStatistic",
+      "id": "http://ddi-alliance.org/ns/#SummaryStatistic",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12348,7 +12349,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfSummaryStatistic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12370,7 +12371,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasStatistic",
               "valueExpr": "http://ddi-alliance.org/ns/#Statistic",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12406,7 +12407,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes summary statistics for a variable.\n\nExamples\n==========\nMean, standard deviation\n\nDDI 3.2 mapping\n=================\npi:SummaryStatisticType\n\n",
+              "value": "\nDefinition\n============\nDescribes summary statistics for a variable.\n\nExamples\n==========\nMean, standard deviation\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\npi:SummaryStatisticType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12414,7 +12415,7 @@
       }
     },
     {
-      "id": "_:TargetSample",
+      "id": "http://ddi-alliance.org/ns/#TargetSample",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12429,8 +12430,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12455,7 +12456,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12480,7 +12481,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12502,7 +12503,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12524,7 +12525,7 @@
               "predicate": "http://ddi-alliance.org/ns/#fromUniverse",
               "valueExpr": "http://ddi-alliance.org/ns/#Universe",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12560,7 +12561,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecifies details of target sample size, percentage, type, and universe\n\n",
+              "value": "\nDefinition\n============\nSpecifies details of target sample size, percentage, type, and universe\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12568,7 +12569,7 @@
       }
     },
     {
-      "id": "_:Telephone",
+      "id": "http://ddi-alliance.org/ns/#Telephone",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12584,7 +12585,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12606,7 +12607,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfTelephone",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12628,7 +12629,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12650,7 +12651,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12675,7 +12676,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12711,7 +12712,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDetails of a telephone number including the number, type of number, a privacy setting and an indication of whether this is the preferred contact number.\n\nExamples\n==========\n+12 345 67890123\n\nDDI 3.2 mapping\n=================\na:TelephoneType\n\n",
+              "value": "\nDefinition\n============\nDetails of a telephone number including the number, type of number, a privacy setting and an indication of whether this is the preferred contact number.\n\nExamples\n==========\n+12 345 67890123\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:TelephoneType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12719,7 +12720,7 @@
       }
     },
     {
-      "id": "_:TextualSegment",
+      "id": "http://ddi-alliance.org/ns/#TextualSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12730,9 +12731,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#lineParamenter",
-              "valueExpr": "_:LineParameter",
+              "valueExpr": "http://ddi-alliance.org/ns/#LineParameter",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12752,9 +12753,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#characterParameter",
-              "valueExpr": "_:CharacterOffset",
+              "valueExpr": "http://ddi-alliance.org/ns/#CharacterOffset",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12790,7 +12791,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the segment of textual content used by the parent object. Can identify a set of lines and or characters used to define the segment.\n\nDDI 3.2 mapping\n=================\nr:TextualType\n\n",
+              "value": "\nDefinition\n============\nDefines the segment of textual content used by the parent object. Can identify a set of lines and or characters used to define the segment.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:TextualType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12798,7 +12799,7 @@
       }
     },
     {
-      "id": "_:TypedDescriptiveText",
+      "id": "http://ddi-alliance.org/ns/#TypedDescriptiveText",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12811,7 +12812,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfContent",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12833,7 +12834,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12869,7 +12870,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThis Complex Data Type bundles a descriptiveText with an External Controlled Vocabulary Entry allowing structured content and a means of typing that content. For example specifying that the description provides a Table of Contents for a document.\n\n",
+              "value": "\nDefinition\n============\nThis Complex Data Type bundles a descriptiveText with an External Controlled Vocabulary Entry allowing structured content and a means of typing that content. For example specifying that the description provides a Table of Contents for a document.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12890,7 +12891,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfContent",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12914,8 +12915,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12951,7 +12952,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nTypedString combines a typeOfContent with a content defined as a simple string. May be used wherever a simple string needs to support a type definition to clarify its content\n\nExamples\n==========\ncontent is a regular expression and typeOfContent is used to define the syntax used.\n\nExplanatory notes\n===================\nThis is a generic type + string where property name and documentation should be used to define any specification for the content. If international structured string content is required use TypedStructuredString \n\n",
+              "value": "\nDefinition\n============\nTypedString combines a typeOfContent with a content defined as a simple string. May be used wherever a simple string needs to support a type definition to clarify its content\n\nExamples\n==========\ncontent is a regular expression and typeOfContent is used to define the syntax used.\n\nExplanatory notes\n===================\nThis is a generic type + string where property name and documentation should be used to define any specification for the content. If international structured string content is required use TypedStructuredString \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -12959,7 +12960,7 @@
       }
     },
     {
-      "id": "_:ValueMappingIndicator",
+      "id": "http://ddi-alliance.org/ns/#ValueMappingIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -12975,7 +12976,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -12996,8 +12997,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueMapping",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13033,7 +13034,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type ValueMapping\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type ValueMapping\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13041,7 +13042,7 @@
       }
     },
     {
-      "id": "_:ValueMappingRelation",
+      "id": "http://ddi-alliance.org/ns/#ValueMappingRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13053,8 +13054,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13076,7 +13077,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13098,7 +13099,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13119,8 +13120,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueMapping",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13141,8 +13142,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueMapping",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13178,7 +13179,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nVariable relationships in PhysicalLayout as defined using ValueMappingRelation\n\n",
+              "value": "\nDefinition\n============\nVariable relationships in PhysicalLayout as defined using ValueMappingRelation\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13202,7 +13203,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13224,7 +13225,7 @@
               "predicate": "http://ddi-alliance.org/ns/#whiteSpace",
               "valueExpr": "http://ddi-alliance.org/ns/#WhiteSpaceRule",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13260,7 +13261,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe Value expressed as an xs:string with the ability to preserve whitespace if critical to the understanding of the content. \n\nDDI 3.2 mapping\n=================\nr:ValueType\n\n",
+              "value": "\nDefinition\n============\nThe Value expressed as an xs:string with the ability to preserve whitespace if critical to the understanding of the content. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ValueType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13268,7 +13269,7 @@
       }
     },
     {
-      "id": "_:VariableIndicator",
+      "id": "http://ddi-alliance.org/ns/#VariableIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13284,7 +13285,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13305,8 +13306,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13342,7 +13343,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type ConceptualVariable, RepresentedVariable, and InstanceVariable\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type ConceptualVariable, RepresentedVariable, and InstanceVariable\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13350,7 +13351,7 @@
       }
     },
     {
-      "id": "_:VariableRelation",
+      "id": "http://ddi-alliance.org/ns/#VariableRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13362,8 +13363,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13385,7 +13386,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13407,7 +13408,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13429,7 +13430,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13451,7 +13452,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13487,7 +13488,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nOrdered relations between any Variables in the Variable Cascade (Conceptual, Represented, Instance)\n\n",
+              "value": "\nDefinition\n============\nOrdered relations between any Variables in the Variable Cascade (Conceptual, Represented, Instance)\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13495,7 +13496,7 @@
       }
     },
     {
-      "id": "_:VideoSegment",
+      "id": "http://ddi-alliance.org/ns/#VideoSegment",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13508,7 +13509,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfVideoClip",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13533,7 +13534,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13558,7 +13559,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13594,7 +13595,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the type and length of the video segment.\n\nDDI 3.2 mapping\n=================\nr:VideoType\n\n",
+              "value": "\nDefinition\n============\nDescribes the type and length of the video segment.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:VideoType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13614,8 +13615,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13637,7 +13638,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13659,7 +13660,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13681,7 +13682,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13703,7 +13704,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13739,7 +13740,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines complex relationship between ViewpointRoles\n\n",
+              "value": "\nDefinition\n============\nDefines complex relationship between ViewpointRoles\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13747,7 +13748,7 @@
       }
     },
     {
-      "id": "_:VocabularyEntryIndicator",
+      "id": "http://ddi-alliance.org/ns/#VocabularyEntryIndicator",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13763,7 +13764,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13784,8 +13785,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13821,7 +13822,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type VocabularyEntry\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type VocabularyEntry\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13829,7 +13830,7 @@
       }
     },
     {
-      "id": "_:VocabularyEntryRelation",
+      "id": "http://ddi-alliance.org/ns/#VocabularyEntryRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13841,8 +13842,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13864,7 +13865,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13886,7 +13887,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13907,8 +13908,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13929,8 +13930,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntry",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -13966,7 +13967,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelation of Vocabulary Entries as defined using RelationSpecification \n\n",
+              "value": "\nDefinition\n============\nRelation of Vocabulary Entries as defined using RelationSpecification \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -13974,7 +13975,7 @@
       }
     },
     {
-      "id": "_:WebLink",
+      "id": "http://ddi-alliance.org/ns/#WebLink",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -13990,7 +13991,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14015,7 +14016,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14037,7 +14038,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfWebsite",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14059,7 +14060,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14081,7 +14082,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14117,7 +14118,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA web site (normally a URL) with information on type of site, privacy flag, and effective dates.\n\nDDI 3.2 mapping\n=================\na:URLType\n\n",
+              "value": "\nDefinition\n============\nA web site (normally a URL) with information on type of site, privacy flag, and effective dates.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:URLType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14125,7 +14126,7 @@
       }
     },
     {
-      "id": "_:WorkflowStepOrder",
+      "id": "http://ddi-alliance.org/ns/#WorkflowStepOrder",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14140,8 +14141,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14162,8 +14163,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#indexedWorkflowStep",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14199,7 +14200,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMember Indicator for use with member type WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes\n\n",
+              "value": "\nDefinition\n============\nMember Indicator for use with member type WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14219,8 +14220,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14242,7 +14243,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14264,7 +14265,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14286,7 +14287,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasTemporalRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#TemporalRelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14308,7 +14309,7 @@
               "predicate": "http://ddi-alliance.org/ns/#source",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14330,7 +14331,7 @@
               "predicate": "http://ddi-alliance.org/ns/#target",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14366,7 +14367,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes structured relations between WorkflowSteps\n\n",
+              "value": "\nDefinition\n============\nDescribes structured relations between WorkflowSteps\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14390,7 +14391,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14411,8 +14412,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#member",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14448,7 +14449,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIdentify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess.\n\n",
+              "value": "\nDefinition\n============\nIdentify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14469,7 +14470,7 @@
           "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
           "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -14503,7 +14504,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Concept whose role is to define and measure a characteristic.\n\nExamples\n==========\nSelf-identified as \"Male\".  \"Extremely Satisfied\" as a response category.\n\nExplanatory notes\n===================\nThe Category is a Concept. It can have multiple name and display label properties as well as a definition and some descriptive text. As a \"Signified\" class there can be one or more \"Sign\" classes (e.g. a Code) that denotes it with some representation. The relationship is from the Code to the Category.\n\nDDI 3.2 mapping\n=================\nl:CategoryType\n\n",
+              "value": "\nDefinition\n============\nA Concept whose role is to define and measure a characteristic.\n\nExamples\n==========\nSelf-identified as \"Male\".  \"Extremely Satisfied\" as a response category.\n\nExplanatory notes\n===================\nThe Category is a Concept. It can have multiple name and display label properties as well as a definition and some descriptive text. As a \"Signified\" class there can be one or more \"Sign\" classes (e.g. a Code) that denotes it with some representation. The relationship is from the Code to the Category.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:CategoryType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14511,7 +14512,7 @@
       }
     },
     {
-      "id": "_:CategoryRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14526,8 +14527,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14549,7 +14550,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14570,8 +14571,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14591,9 +14592,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CategoryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14629,7 +14630,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelation structure of categories within a collection. Allows for the specification of complex relationships among categories.\n\nExamples\n==========\nThe category of student might be described as having sub-types of primary school student and high school student.\n\nExplanatory notes\n===================\nThe CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. \nThis is a kind of a ConceptRelationStructure restricted to categories (which are concepts).\n\n",
+              "value": "\nDefinition\n============\nRelation structure of categories within a collection. Allows for the specification of complex relationships among categories.\n\nExamples\n==========\nThe category of student might be described as having sub-types of primary school student and high school student.\n\nExplanatory notes\n===================\nThe CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. \nThis is a kind of a ConceptRelationStructure restricted to categories (which are concepts).\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14637,7 +14638,7 @@
       }
     },
     {
-      "id": "_:CategorySet",
+      "id": "http://ddi-alliance.org/ns/#CategorySet",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14651,9 +14652,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CategoryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14673,9 +14674,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CategoryRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14711,7 +14712,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSpecialization of a Concept System focusing on sets of categories used as specifications for a generalized concept. Can be used directly by questions to express a set of categories for a response domain or as the related source for a CodeList or StatisticalClassification\n\nExamples\n==========\n\"Male\" and \"Female\" categories in a CategorySet named \"Gender\"\n\nA CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.\n\n\n",
+              "value": "\nDefinition\n============\nSpecialization of a Concept System focusing on sets of categories used as specifications for a generalized concept. Can be used directly by questions to express a set of categories for a response domain or as the related source for a CodeList or StatisticalClassification\n\nExamples\n==========\n\"Male\" and \"Female\" categories in a CategorySet named \"Gender\"\n\nA CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14735,7 +14736,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14757,7 +14758,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definition",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14779,7 +14780,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14815,7 +14816,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUnit of thought differentiated by characteristics [GSIM 1.1]\n\nExamples\n==========\nPoverty, Income, Household relationship, Family, Gender, Business Establishment, Satisfaction, etc.\n\nExplanatory notes\n===================\nMany DDI4 classes are subtypes of the Concept class including Category, Universe, UnitType, ConceptualVariable. This class realizes the pattern class Signified and as such a Concept can be denoted by a Sign.\n\nDDI 3.2 mapping\n=================\nc:ConceptType\n\nGSIM mapping\n==============\nConcept\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nUnit of thought differentiated by characteristics [GSIM 1.1]\n\nExamples\n==========\nPoverty, Income, Household relationship, Family, Gender, Business Establishment, Satisfaction, etc.\n\nExplanatory notes\n===================\nMany DDI4 classes are subtypes of the Concept class including Category, Universe, UnitType, ConceptualVariable. This class realizes the pattern class Signified and as such a Concept can be denoted by a Sign.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nc:ConceptType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nConcept\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14823,7 +14824,7 @@
       }
     },
     {
-      "id": "_:ConceptRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ConceptRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -14838,8 +14839,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14861,7 +14862,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14883,7 +14884,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14903,9 +14904,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ConceptRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14941,7 +14942,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.\n\nExamples\n==========\nA concept of vacation might be described as having sub-types of beach vacation and mountain vacation.\n\nExplanatory notes\n===================\nThe ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.\n\n",
+              "value": "\nDefinition\n============\nRelation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.\n\nExamples\n==========\nA concept of vacation might be described as having sub-types of beach vacation and mountain vacation.\n\nExplanatory notes\n===================\nThe ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -14965,7 +14966,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -14987,7 +14988,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15009,7 +15010,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15029,9 +15030,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ConceptIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15056,7 +15057,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15076,9 +15077,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ConceptRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15100,7 +15101,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15136,7 +15137,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA set of Concepts structured by the relations among them. [GSIM 1.1] \n\nExamples\n==========\n1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  \n\nExplanatory notes\n===================\nNote that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.\n\nDDI 3.2 mapping\n=================\nc:ConceptSchemeType\n\nGSIM mapping\n==============\nConcept System\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA set of Concepts structured by the relations among them. [GSIM 1.1] \n\nExamples\n==========\n1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  \n\nExplanatory notes\n===================\nNote that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nc:ConceptSchemeType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nConcept System\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15160,7 +15161,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15182,7 +15183,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15204,7 +15205,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15226,7 +15227,7 @@
               "predicate": "http://ddi-alliance.org/ns/#correspondence",
               "valueExpr": "http://ddi-alliance.org/ns/#Map",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15247,8 +15248,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#maps",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptSystem",
-              "min": 2,
-              "max": -1,
+              "min": "2",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15284,7 +15285,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelationship between 2 or more ConceptSystems described through mapping similarity relationships between their member Concepts.\n\nExamples\n==========\nCorrespondence between the concepts used to define the populations in the censuses of two countries with similarity mapping of Concepts \"Resident Population\", \"Labor Force\", \"Housing Unit\", etc. \n\nExplanatory notes\n===================\nDescribes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies.\n\n",
+              "value": "\nDefinition\n============\nRelationship between 2 or more ConceptSystems described through mapping similarity relationships between their member Concepts.\n\nExamples\n==========\nCorrespondence between the concepts used to define the populations in the censuses of two countries with similarity mapping of Concepts \"Resident Population\", \"Labor Force\", \"Housing Unit\", etc. \n\nExplanatory notes\n===================\nDescribes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15308,7 +15309,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15330,7 +15331,7 @@
               "predicate": "http://ddi-alliance.org/ns/#describedConceptualDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueAndConceptDescription",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15352,7 +15353,7 @@
               "predicate": "http://ddi-alliance.org/ns/#enumeratedConceptualDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptSystem",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15388,7 +15389,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSet of Concepts, both sentinel and substantive, that can be described by either enumeration or by an expression.\n\nExamples\n==========\nSubstantive: Housing Unit Tenure - Owned, Rented, Vacant; Sentinel: Non-response - Refused, Don't Know, Not Applicable \n\nExplanatory notes\n===================\nIntent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept.  \n\n",
+              "value": "\nDefinition\n============\nSet of Concepts, both sentinel and substantive, that can be described by either enumeration or by an expression.\n\nExamples\n==========\nSubstantive: Housing Unit Tenure - Owned, Rented, Vacant; Sentinel: Non-response - Refused, Don't Know, Not Applicable \n\nExplanatory notes\n===================\nIntent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept.  \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15412,7 +15413,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15434,7 +15435,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15456,7 +15457,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveConceptsFrom",
               "valueExpr": "http://ddi-alliance.org/ns/#SubstantiveConceptualDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15478,7 +15479,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15500,7 +15501,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesSentinelConceptsFrom",
               "valueExpr": "http://ddi-alliance.org/ns/#SentinelConceptualDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15536,7 +15537,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe use of a Concept as a characteristic of a UnitType intended to be measured\n\nExamples\n==========\n1. Sex of person\n2. Number of employees \n3. Value of endowment\n\nExplanatory notes\n===================\nNote that DDI varies from GSIM in the use of a UnitType rather than a Universe. \"The use of a Concept as a characteristic of a Universe intended to be measured\" [GSIM 1.1]\n\nDDI 3.2 mapping\n=================\nc:ConceptualVariableType\n\nGSIM mapping\n==============\nVariable\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe use of a Concept as a characteristic of a UnitType intended to be measured\n\nExamples\n==========\n1. Sex of person\n2. Number of employees \n3. Value of endowment\n\nExplanatory notes\n===================\nNote that DDI varies from GSIM in the use of a UnitType rather than a Universe. \"The use of a Concept as a characteristic of a Universe intended to be measured\" [GSIM 1.1]\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nc:ConceptualVariableType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nVariable\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15560,7 +15561,7 @@
               "predicate": "http://ddi-alliance.org/ns/#variableFunction",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15582,7 +15583,7 @@
               "predicate": "http://ddi-alliance.org/ns/#physicalDataType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15604,7 +15605,7 @@
               "predicate": "http://ddi-alliance.org/ns/#platformType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15625,8 +15626,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#measures",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15648,7 +15649,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnRepresentedVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15670,7 +15671,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnConceptualVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15692,7 +15693,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesPlatformSpecificSentinelValues",
               "valueExpr": "http://ddi-alliance.org/ns/#SentinelValueDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15714,7 +15715,7 @@
               "predicate": "http://ddi-alliance.org/ns/#sourceCapture",
               "valueExpr": "http://ddi-alliance.org/ns/#Capture",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15736,7 +15737,7 @@
               "predicate": "http://ddi-alliance.org/ns/#generatedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#Act",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15772,7 +15773,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe use of a Represented Variable within a Data Set.  The InstanceVariable describes actual instances of data that have been collected. \n\nExamples\n==========\n1) Gender: Dan Gillman has gender <m, male>, Arofan Gregory has gender<m, male>, etc. \n2) Number of employees: Microsoft has 90,000 employees; IBM has 433,000 employees, etc. \n3) Endowment: Johns Hopkins has endowment of <3, $1,000,000 and above>, \nYale has endowment of <3, $1,000,000 and above>, etc.\n\nTwo InstanceVariables of a person's height reference the same RepresentedVariable. This indicates that they are intended to: be measured with the same unit of measurement, have the same intended data type, have the same SubstantativeValueDomain, use a SentinelValueDomain drawn from the same set of SentinelValueDomains, have the same sentinel (missing value) concepts, and draw their Population from the same Universe. In other words, the two InstanceVariables should be comparable.\n\nExplanatory notes\n===================\nThe InstanceVariable class inherits all of the properties and relationships of the RepresentedVariable (RV) class and, in turn, the ConceptualVariable (CV) class. This means that an InstanceVariable can be completely populated without the need to create an associated RepresentedVariable or ConceptualVariable. If, however, a user wishes to indicate that a particular InstanceVariable is patterned after a particular RepresentedVariable or a particular ConceptualVariable that may be indicated by including a relationship to the RV and or CV. Including these references is an important method of indicating that multiple InstanceVariables have the same representation, measure the same concept, and are drawn from the same Universe. If two InstanceVariables of a person's height reference the same RepresentedVariable. This indicates that they are intended to: be measured with the same unit of measurement, have the same intended data type, have the same SubstantativeValueDomain, use a SentinelValueDomain drawn from the same set of SentinelValueDomains, have the same sentinel (missing value) concepts, and draw their Population from the same Universe. In other words, the two InstanceVariables should be comparable. \n\n\nGSIM mapping\n==============\nInstance Variable\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe use of a Represented Variable within a Data Set.  The InstanceVariable describes actual instances of data that have been collected. \n\nExamples\n==========\n1) Gender: Dan Gillman has gender <m, male>, Arofan Gregory has gender<m, male>, etc. \n2) Number of employees: Microsoft has 90,000 employees; IBM has 433,000 employees, etc. \n3) Endowment: Johns Hopkins has endowment of <3, $1,000,000 and above>, \nYale has endowment of <3, $1,000,000 and above>, etc.\n\nTwo InstanceVariables of a person's height reference the same RepresentedVariable. This indicates that they are intended to: be measured with the same unit of measurement, have the same intended data type, have the same SubstantativeValueDomain, use a SentinelValueDomain drawn from the same set of SentinelValueDomains, have the same sentinel (missing value) concepts, and draw their Population from the same Universe. In other words, the two InstanceVariables should be comparable.\n\nExplanatory notes\n===================\nThe InstanceVariable class inherits all of the properties and relationships of the RepresentedVariable (RV) class and, in turn, the ConceptualVariable (CV) class. This means that an InstanceVariable can be completely populated without the need to create an associated RepresentedVariable or ConceptualVariable. If, however, a user wishes to indicate that a particular InstanceVariable is patterned after a particular RepresentedVariable or a particular ConceptualVariable that may be indicated by including a relationship to the RV and or CV. Including these references is an important method of indicating that multiple InstanceVariables have the same representation, measure the same concept, and are drawn from the same Universe. If two InstanceVariables of a person's height reference the same RepresentedVariable. This indicates that they are intended to: be measured with the same unit of measurement, have the same intended data type, have the same SubstantativeValueDomain, use a SentinelValueDomain drawn from the same set of SentinelValueDomains, have the same sentinel (missing value) concepts, and draw their Population from the same Universe. In other words, the two InstanceVariables should be comparable. \n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nInstance Variable\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15796,7 +15797,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15818,7 +15819,7 @@
               "predicate": "http://ddi-alliance.org/ns/#timePeriodOfPopulation",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15840,7 +15841,7 @@
               "predicate": "http://ddi-alliance.org/ns/#composedOf",
               "valueExpr": "http://ddi-alliance.org/ns/#Unit",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15869,7 +15870,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15891,7 +15892,7 @@
               "predicate": "http://ddi-alliance.org/ns/#narrowsUniverse",
               "valueExpr": "http://ddi-alliance.org/ns/#Universe",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15913,7 +15914,7 @@
               "predicate": "http://ddi-alliance.org/ns/#geographyOfPopulation",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15956,7 +15957,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSet of specific units (people, entities, objects, events) with specification of time and geography.\n\nExamples\n==========\n1. Canadian adult persons residing in Canada on 13 November 1956\n2. US computer companies at the end of 2012  \n3. Universities in Denmark 1 January 2011.\n\nExplanatory notes\n===================\nPopulation is the most specific in the conceptually narrowing hierarchy of UnitType, Universe and Population. Several Populations having differing time and or geography may specialize the same Universe.\n\nGSIM mapping\n==============\nPopulation\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nSet of specific units (people, entities, objects, events) with specification of time and geography.\n\nExamples\n==========\n1. Canadian adult persons residing in Canada on 13 November 1956\n2. US computer companies at the end of 2012  \n3. Universities in Denmark 1 January 2011.\n\nExplanatory notes\n===================\nPopulation is the most specific in the conceptually narrowing hierarchy of UnitType, Universe and Population. Several Populations having differing time and or geography may specialize the same Universe.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nPopulation\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -15983,7 +15984,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16005,7 +16006,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasIntendedDataType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16025,9 +16026,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveValuesFrom",
-              "valueExpr": "_:SubstantiveValueDomain",
+              "valueExpr": "http://ddi-alliance.org/ns/#SubstantiveValueDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16049,7 +16050,7 @@
               "predicate": "http://ddi-alliance.org/ns/#measures",
               "valueExpr": "http://ddi-alliance.org/ns/#Universe",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16071,7 +16072,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnConceptualVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16093,7 +16094,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesPlatformSpecificSentinelValues",
               "valueExpr": "http://ddi-alliance.org/ns/#SentinelValueDomain",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16129,7 +16130,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA combination of a characteristic of a universe to be measured and how that measure will be represented.\n\n\nExamples\n==========\nThe pair (Number of Employees, Integer), where \"Number of Employees\" is the characteristic of the population (Variable) and \"Integer\" is how that measure will be represented (Value Domain).\n\nExplanatory notes\n===================\nExtends from ConceptualVariable and can contain all descriptive fields without creating a ConceptualVariable. By referencing a ConceptualVariable it can indicate a common relationship with RepresentedVariables expressing the same characteristic of a universe measured in another way, such as Age of Persons in hours rather than years. RepresentedVariable constrains the coverage of the UnitType to a specific Universe. In the above case the Universe with the measurement of Age in hours may be constrained to Persons under 5 days (120 hours old). RepresentedVariable can define sentinel values for multiple storage systems which have the same conceptual domain but specialized value domains.\n\nDDI 3.2 mapping\n=================\nl:RepresentedVariableType\n\n",
+              "value": "\nDefinition\n============\nA combination of a characteristic of a universe to be measured and how that measure will be represented.\n\n\nExamples\n==========\nThe pair (Number of Employees, Integer), where \"Number of Employees\" is the characteristic of the population (Variable) and \"Integer\" is how that measure will be represented (Value Domain).\n\nExplanatory notes\n===================\nExtends from ConceptualVariable and can contain all descriptive fields without creating a ConceptualVariable. By referencing a ConceptualVariable it can indicate a common relationship with RepresentedVariables expressing the same characteristic of a universe measured in another way, such as Age of Persons in hours rather than years. RepresentedVariable constrains the coverage of the UnitType to a specific Universe. In the above case the Universe with the measurement of Age in hours may be constrained to Persons under 5 days (120 hours old). RepresentedVariable can define sentinel values for multiple storage systems which have the same conceptual domain but specialized value domains.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:RepresentedVariableType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16162,7 +16163,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescription or list of possible sentinel concepts , e.g. missing values.\n\nExamples\n==========\nRefused, \nDon't know, \nLost in processing\n\nSynonyms\n==========\nmissing categories\n\n",
+              "value": "\nDefinition\n============\nDescription or list of possible sentinel concepts , e.g. missing values.\n\nExamples\n==========\nRefused, \nDon't know, \nLost in processing\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\nmissing categories\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16195,7 +16196,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSet of valid Concepts. The Concepts can be described by either enumeration or by an expression.\n\nExamples\n==========\nAn enumeration of concepts for a categorical variable like \"male\" and \"female\" for gender.\n\nExplanatory notes\n===================\nA ConceptualVariable links a UnitType to a SubstantiveConceptualDomain. The latter can be an enumeration or description of the values (Signified) that the variable may take on. In the enumerated case these are the categories in a CategorySet that can be values, not the codes that represent the values. \nAn example might be the conceptual domain for a variable representing self-identified gender. An enumeration might include the concept of “male” and the concept of “female”. These, in turn, would be represented in a SubstantiveValueDomain by codes in a CodeList like “m” and “f”, or “0” and “1”. \nA conceptual domain might be described through a ValueAndConceptDescription’s description property of “a real number greater than 0” or through a more formal logicalExpression of “(all reals x such that x >0) “. Even in the described case, what is being described are conceptual, not the symbols used to represent the values. This may be a subtle distinction, but allows specifying that the same numeric value might be represented by 32 bits or by 64 bits or by an Arabic numeral or a Roman numeral.\n\n\nGSIM mapping\n==============\nConceptual Domain\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nSet of valid Concepts. The Concepts can be described by either enumeration or by an expression.\n\nExamples\n==========\nAn enumeration of concepts for a categorical variable like \"male\" and \"female\" for gender.\n\nExplanatory notes\n===================\nA ConceptualVariable links a UnitType to a SubstantiveConceptualDomain. The latter can be an enumeration or description of the values (Signified) that the variable may take on. In the enumerated case these are the categories in a CategorySet that can be values, not the codes that represent the values. \nAn example might be the conceptual domain for a variable representing self-identified gender. An enumeration might include the concept of “male” and the concept of “female”. These, in turn, would be represented in a SubstantiveValueDomain by codes in a CodeList like “m” and “f”, or “0” and “1”. \nA conceptual domain might be described through a ValueAndConceptDescription’s description property of “a real number greater than 0” or through a more formal logicalExpression of “(all reals x such that x >0) “. Even in the described case, what is being described are conceptual, not the symbols used to represent the values. This may be a subtle distinction, but allows specifying that the same numeric value might be represented by 32 bits or by 64 bits or by an Arabic numeral or a Roman numeral.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nConceptual Domain\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16219,7 +16220,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16241,7 +16242,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16263,7 +16264,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definition",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16285,7 +16286,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16321,7 +16322,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe object of interest in a process step related to the collection or use of observational data.\n\nExamples\n==========\nHere are 3 examples - 1. Individual US person (i.e., Arofan Gregory, Dan Gillman, Barack Obama, etc.) 2. Individual US computer companies (i.e., Microsoft, Apple, IBM, etc.) 3. Individual US universities (i.e., Johns Hopkins, University of Maryland, Yale, etc.) [GSIM 1.1]\n\nExplanatory notes\n===================\nIn a traditional data table each column might represent some variable (measurement). Each row would represent the entity (Unit)  to which those variables relate. Height measurements might be made on persons (UnitType) of primary school age (Universe) at Pinckney Elementary School on September 1, 2005 (Population). The height for Mary Roe (Unit)  might be 139 cm.\nThe Unit is not invariably tied to some value. A median income might be calculated for a block in the U.S. but then used as an attribute of a person residing on that block. For the initial measurement the Unit was the block. In the reuse the unit would be that specific person to which the value was applied.\nIn a big data table each row represents a unit/variable double. Together a unit identifier and a variable identifier define the key. And for each key there is just one value – the measure of the unit  on the variable. \nA big data table is sometimes referred to as a column-oriented data store whereas a traditional database is sometimes referred to as a row-oriented data store. The unit plays an identifier role in both types of data stores.\n\n\nGSIM mapping\n==============\nUnit\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe object of interest in a process step related to the collection or use of observational data.\n\nExamples\n==========\nHere are 3 examples - 1. Individual US person (i.e., Arofan Gregory, Dan Gillman, Barack Obama, etc.) 2. Individual US computer companies (i.e., Microsoft, Apple, IBM, etc.) 3. Individual US universities (i.e., Johns Hopkins, University of Maryland, Yale, etc.) [GSIM 1.1]\n\nExplanatory notes\n===================\nIn a traditional data table each column might represent some variable (measurement). Each row would represent the entity (Unit)  to which those variables relate. Height measurements might be made on persons (UnitType) of primary school age (Universe) at Pinckney Elementary School on September 1, 2005 (Population). The height for Mary Roe (Unit)  might be 139 cm.\nThe Unit is not invariably tied to some value. A median income might be calculated for a block in the U.S. but then used as an attribute of a person residing on that block. For the initial measurement the Unit was the block. In the reuse the unit would be that specific person to which the value was applied.\nIn a big data table each row represents a unit/variable double. Together a unit identifier and a variable identifier define the key. And for each key there is just one value – the measure of the unit  on the variable. \nA big data table is sometimes referred to as a column-oriented data store whereas a traditional database is sometimes referred to as a row-oriented data store. The unit plays an identifier role in both types of data stores.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nUnit\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16345,7 +16346,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16367,7 +16368,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16403,7 +16404,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Unit Type is a type or class of objects of interest.\n\nExamples\n==========\nPerson, Establishment, Household, State, Country, Dog, Automobile\n\nExplanatory notes\n===================\nUnitType is the most general in the hierarchy of UnitType, Universe, and Population. It is a description of the basic characteristic for a general set of Units.  A Universe is a set of entities defined by a more narrow specification than that of an underlying UnitType. A Population further narrows the specification to a specific time and geography.\nA Unit Type is used to describe a class or group of Units based on a single characteristic with no specification of time and geography.  For example, the Unit Type of “Person” groups together a set of Units based on the characteristic that they are ‘Persons’.\nIt concerns not only Unit Types used in dissemination, but anywhere in the statistical process. E.g. using administrative data might involve the use of a fiscal unit. [GSIM 1.1]\n\nSynonyms\n==========\nObject Class [ISO11179]\n\nGSIM mapping\n==============\nUnit Type\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Unit Type is a type or class of objects of interest.\n\nExamples\n==========\nPerson, Establishment, Household, State, Country, Dog, Automobile\n\nExplanatory notes\n===================\nUnitType is the most general in the hierarchy of UnitType, Universe, and Population. It is a description of the basic characteristic for a general set of Units.  A Universe is a set of entities defined by a more narrow specification than that of an underlying UnitType. A Population further narrows the specification to a specific time and geography.\nA Unit Type is used to describe a class or group of Units based on a single characteristic with no specification of time and geography.  For example, the Unit Type of “Person” groups together a set of Units based on the characteristic that they are ‘Persons’.\nIt concerns not only Unit Types used in dissemination, but anywhere in the statistical process. E.g. using administrative data might involve the use of a fiscal unit. [GSIM 1.1]\n\nSynonyms\n==========\nObject Class [ISO11179]\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nUnit Type\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16430,7 +16431,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16452,7 +16453,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16474,7 +16475,7 @@
               "predicate": "http://ddi-alliance.org/ns/#narrowsUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16496,7 +16497,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16532,7 +16533,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA defined set or class of people, entities, events, or objects, with no specification of time and geography, contextualizing a Unit Type\n\nExamples\n==========\n1. Canadian adults (not limited to those residing in Canada)\n2. Computer companies \n3. Universities\n\nExplanatory notes\n===================\nUniverse sits in a hierarchy between UnitType and Population, with UnitType being most general and Population most specific. A Universe is a set of entities defined by a more narrow specification than that of an underlying UnitType. A Population further narrows the specification to a specific time and geography.\n\nIf the Universe consists of people, a number of factors may be used in defining membership in the Universe, such as age, sex, race, residence, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. A universe may be described as \"inclusive\" or \"exclusive\". \n\nNot to be confused with Population, which includes the specification of time and geography.\n\nDDI 3.2 mapping\n=================\nc:UniverseType\n\nGSIM mapping\n==============\nPopulation\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA defined set or class of people, entities, events, or objects, with no specification of time and geography, contextualizing a Unit Type\n\nExamples\n==========\n1. Canadian adults (not limited to those residing in Canada)\n2. Computer companies \n3. Universities\n\nExplanatory notes\n===================\nUniverse sits in a hierarchy between UnitType and Population, with UnitType being most general and Population most specific. A Universe is a set of entities defined by a more narrow specification than that of an underlying UnitType. A Population further narrows the specification to a specific time and geography.\n\nIf the Universe consists of people, a number of factors may be used in defining membership in the Universe, such as age, sex, race, residence, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. A universe may be described as \"inclusive\" or \"exclusive\". \n\nNot to be confused with Population, which includes the specification of time and geography.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nc:UniverseType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nPopulation\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16540,7 +16541,7 @@
       }
     },
     {
-      "id": "_:VariableCollection",
+      "id": "http://ddi-alliance.org/ns/#VariableCollection",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16556,7 +16557,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16578,7 +16579,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16600,7 +16601,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16622,7 +16623,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16644,7 +16645,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16666,7 +16667,7 @@
               "predicate": "http://ddi-alliance.org/ns/#groupingSemantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16686,9 +16687,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:VariableIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16713,7 +16714,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16733,9 +16734,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:VariableRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16757,7 +16758,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16793,7 +16794,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA collection (group) of any type of Variable within the Variable Cascade (Conceptual, Represented, Instance) for purposes of management, conceptualization or anything other than organizing a logical record or physical layout.\n\nExamples\n==========\nVariables within a specific section of a study, Variables related to a specific subject or keyword. Variables at a specified level of development or review.\n\nExplanatory notes\n===================\nA simple ordered or unordered list of variables can be described via a set of VariableIndicator parameters. An optional VariableRelationStructure can describe a more complex structure for the collection. We might, for example, use the VariableRelationStructure to group variables by content within a Study or across a StudySeries.\n\nDDI 3.2 mapping\n=================\nl:VariableGroupType\n\n",
+              "value": "\nDefinition\n============\nA collection (group) of any type of Variable within the Variable Cascade (Conceptual, Represented, Instance) for purposes of management, conceptualization or anything other than organizing a logical record or physical layout.\n\nExamples\n==========\nVariables within a specific section of a study, Variables related to a specific subject or keyword. Variables at a specified level of development or review.\n\nExplanatory notes\n===================\nA simple ordered or unordered list of variables can be described via a set of VariableIndicator parameters. An optional VariableRelationStructure can describe a more complex structure for the collection. We might, for example, use the VariableRelationStructure to group variables by content within a Study or across a StudySeries.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:VariableGroupType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16801,7 +16802,7 @@
       }
     },
     {
-      "id": "_:VariableRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#VariableRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16817,7 +16818,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16839,7 +16840,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16861,7 +16862,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16881,9 +16882,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:VariableRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -16919,7 +16920,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelationStructure for use with any mixture of Variables in the Variable Cascade (Conceptual, Represented, Instance).\n\nExplanatory notes\n===================\nA VariableCollection can be described as a simple list, or as having a more complex structure. All of the \"administrative\" variables for a study might be described as just a simple list without a VariableRelationStructure. If, however, the administrative variables needed to be described in subgroups, a VariableRelationStructure could be employed.\n\n",
+              "value": "\nDefinition\n============\nRelationStructure for use with any mixture of Variables in the Variable Cascade (Conceptual, Represented, Instance).\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nA VariableCollection can be described as a simple list, or as having a more complex structure. All of the \"administrative\" variables for a study might be described as just a simple list without a VariableRelationStructure. If, however, the administrative variables needed to be described in subgroups, a VariableRelationStructure could be employed.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16927,7 +16928,7 @@
       }
     },
     {
-      "id": "_:StandardWeight",
+      "id": "http://ddi-alliance.org/ns/#StandardWeight",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -16943,7 +16944,7 @@
             "datatype": "http://www.w3.org/2001/XMLSchema#double"
           },
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -16977,7 +16978,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides an identified value for a standard weight expressed as an xs:float. This object may be referenced by a variable or statistic and used as a weight for analysis.\n\nExamples\n==========\nA simple sample survey without an individual weight variable will have a StandardWeight to be used on all cases: 1% sample has a sample weight of 100\n\nExplanatory notes\n===================\nA simple random sample survey without an individual weight variable will have a StandardWeight to be used on all cases. This is common when the sample is a simple random sample of a population with no oversampling to provide larger case counts for small populations.\n\nDDI 3.2 mapping\n=================\nd:StandardWeightType\n\n",
+              "value": "\nDefinition\n============\nProvides an identified value for a standard weight expressed as an xs:float. This object may be referenced by a variable or statistic and used as a weight for analysis.\n\nExamples\n==========\nA simple sample survey without an individual weight variable will have a StandardWeight to be used on all cases: 1% sample has a sample weight of 100\n\nExplanatory notes\n===================\nA simple random sample survey without an individual weight variable will have a StandardWeight to be used on all cases. This is common when the sample is a simple random sample of a population with no oversampling to provide larger case counts for small populations.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:StandardWeightType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -16985,7 +16986,7 @@
       }
     },
     {
-      "id": "_:VariableStatistics",
+      "id": "http://ddi-alliance.org/ns/#VariableStatistics",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17004,7 +17005,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17024,9 +17025,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSummaryStatistic",
-              "valueExpr": "_:SummaryStatistic",
+              "valueExpr": "http://ddi-alliance.org/ns/#SummaryStatistic",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17046,9 +17047,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasCategoryStatistic",
-              "valueExpr": "_:CategoryStatistic",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategoryStatistic",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17070,7 +17071,7 @@
               "predicate": "http://ddi-alliance.org/ns/#forInstanceVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17090,9 +17091,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesStandardWeight",
-              "valueExpr": "_:StandardWeight",
+              "valueExpr": "http://ddi-alliance.org/ns/#StandardWeight",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17114,7 +17115,7 @@
               "predicate": "http://ddi-alliance.org/ns/#applicableWeightVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17136,7 +17137,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasFilterVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17172,7 +17173,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nContains summary and category level statistics for the referenced variable.\n\nExamples\n==========\nA mean of values for a variable \"Height\". Counts for each level of variable \"Gender\" (male and female)\n\nExplanatory notes\n===================\n Includes information on the total number of responses, the weights in calculating the statistics, variable level summary statistics, and category statistics. The category statistics may be provided as unfiltered values or filtered through a single variable. For example the category statistics for Sex filtered by the variable Country for a multi-national data file. Note that if no weighting factor is identified, all of the statistics provided are unweighted.\n\nDDI 3.2 mapping\n=================\npi:VariableStatisticsType\n\n",
+              "value": "\nDefinition\n============\nContains summary and category level statistics for the referenced variable.\n\nExamples\n==========\nA mean of values for a variable \"Height\". Counts for each level of variable \"Gender\" (male and female)\n\nExplanatory notes\n===================\n Includes information on the total number of responses, the weights in calculating the statistics, variable level summary statistics, and category statistics. The category statistics may be provided as unfiltered values or filtered through a single variable. For example the category statistics for Sex filtered by the variable Country for a multi-national data file. Note that if no weighting factor is identified, all of the statistics provided are unweighted.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\npi:VariableStatisticsType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17196,7 +17197,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subjectOfAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17218,7 +17219,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17240,7 +17241,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDescribedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17276,7 +17277,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nHigh level, descriptive, human informative, algorithm statement used to describe the overall methodology. \n\nExplanatory notes\n===================\nThis would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.\n\n\n",
+              "value": "\nDefinition\n============\nHigh level, descriptive, human informative, algorithm statement used to describe the overall methodology. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\nThis would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17300,7 +17301,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subectOfDesign",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17322,7 +17323,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17344,7 +17345,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDescribedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17364,9 +17365,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#assumesPrecondition",
-              "valueExpr": "_:Precondition",
+              "valueExpr": "http://ddi-alliance.org/ns/#Precondition",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17388,7 +17389,7 @@
               "predicate": "http://ddi-alliance.org/ns/#specifiesGoal",
               "valueExpr": "http://ddi-alliance.org/ns/#Goal",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17410,7 +17411,7 @@
               "predicate": "http://ddi-alliance.org/ns/#expressesAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#AlgorithmOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17432,7 +17433,7 @@
               "predicate": "http://ddi-alliance.org/ns/#implementedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowProcess",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17475,7 +17476,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nHigh level, descriptive, human informative, design statement The design may be used to specify how a process will be performed in general. This would most commonly be used in a Codebook along with an AlgorithmOverview and a MethodologyOverview. The design informs a specific or implemented process as to its general parameters. Supports specification of any realization of Goal. \n\n\nExplanatory notes\n===================\nAllows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View.\n\n\n",
+              "value": "\nDefinition\n============\nHigh level, descriptive, human informative, design statement The design may be used to specify how a process will be performed in general. This would most commonly be used in a Codebook along with an AlgorithmOverview and a MethodologyOverview. The design informs a specific or implemented process as to its general parameters. Supports specification of any realization of Goal. \n\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nAllows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17499,7 +17500,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subjectOfMethodology",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17521,7 +17522,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17543,7 +17544,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17565,7 +17566,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rationale",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17587,7 +17588,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17609,7 +17610,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDescribedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17631,7 +17632,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasDesign",
               "valueExpr": "http://ddi-alliance.org/ns/#DesignOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17660,7 +17661,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isExpressedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#AlgorithmOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17689,7 +17690,7 @@
               "predicate": "http://ddi-alliance.org/ns/#componentMethodology",
               "valueExpr": "http://ddi-alliance.org/ns/#MethodologyOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17732,7 +17733,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nHigh level, descriptive, human informative methodology statement used to describe the overall methodology, identify related design, algorithm, and process information. A methodology is normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work. \n\n\n\nExamples\n==========\nThe target of the relationship from Study: \"hasMethodology\"\n\n\nExplanatory notes\n===================\nThis would most commonly be used in a Codebook along with an AlgorithmOverview and a DesignOverview. Note that Process may be described in more detail than a high level overview.\nNote that the algorithm may be implemented by multiple processes which are not limited to any specific type of Process. This can be constrained by the inclusion of only specific realizations of Process within a Functional View. Note that this MethodologyOverview can be used as a collective description of specific methodologies used by a Study or other broad set of metadata.\n\n",
+              "value": "\nDefinition\n============\nHigh level, descriptive, human informative methodology statement used to describe the overall methodology, identify related design, algorithm, and process information. A methodology is normally informed by earlier research and clarifies how earlier research methods were incorporated into the current work. \n\n\n\nExamples\n==========\nThe target of the relationship from Study: \"hasMethodology\"\n\n\nExplanatory notes\n===================\nThis would most commonly be used in a Codebook along with an AlgorithmOverview and a DesignOverview. Note that Process may be described in more detail than a high level overview.\nNote that the algorithm may be implemented by multiple processes which are not limited to any specific type of Process. This can be constrained by the inclusion of only specific realizations of Process within a Functional View. Note that this MethodologyOverview can be used as a collective description of specific methodologies used by a Study or other broad set of metadata.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17740,7 +17741,7 @@
       }
     },
     {
-      "id": "_:ProcessOverview",
+      "id": "http://ddi-alliance.org/ns/#ProcessOverview",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17756,7 +17757,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17778,7 +17779,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17800,7 +17801,7 @@
               "predicate": "http://ddi-alliance.org/ns/#organizedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowControlStep",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17829,7 +17830,7 @@
               "predicate": "http://ddi-alliance.org/ns/#implementsAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#AlgorithmOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17865,7 +17866,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProcess is an implementation of an algorithm. It is the series of steps taken as a whole. It is decomposable into ProcessSteps, but this decomposition is not necessary. \n\nExamples\n==========\nIn descriptive document regarding ingest of a study into a repository: \"Validation processes were run comparing all data against the provided documentation to check for out-of-range and invalid content.\"\n\nExplanatory notes\n===================\nIn a descriptive document, Process Overview provides a means of presenting the reader with a clear view of an overall process without going into the details of the process steps. Process Overview should be used when a description of the process in general is all that is desired.\n\n",
+              "value": "\nDefinition\n============\nProcess is an implementation of an algorithm. It is the series of steps taken as a whole. It is decomposable into ProcessSteps, but this decomposition is not necessary. \n\nExamples\n==========\nIn descriptive document regarding ingest of a study into a repository: \"Validation processes were run comparing all data against the provided documentation to check for out-of-range and invalid content.\"\n\nExplanatory notes\n===================\nIn a descriptive document, Process Overview provides a means of presenting the reader with a clear view of an overall process without going into the details of the process steps. Process Overview should be used when a description of the process in general is all that is desired.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17911,7 +17912,7 @@
       ]
     },
     {
-      "id": "_:GeographicExtent",
+      "id": "http://ddi-alliance.org/ns/#GeographicExtent",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -17927,7 +17928,7 @@
               "predicate": "http://ddi-alliance.org/ns/#boundingPolygon",
               "valueExpr": "http://ddi-alliance.org/ns/#Polygon",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17949,7 +17950,7 @@
               "predicate": "http://ddi-alliance.org/ns/#excludingPolygon",
               "valueExpr": "http://ddi-alliance.org/ns/#Polygon",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17971,7 +17972,7 @@
               "predicate": "http://ddi-alliance.org/ns/#geographicTime",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -17991,9 +17992,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAreaCoverage",
-              "valueExpr": "_:AreaCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#AreaCoverage",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18015,7 +18016,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasCentroid",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialPoint",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18037,7 +18038,7 @@
               "predicate": "http://ddi-alliance.org/ns/#locationPoint",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialPoint",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18057,9 +18058,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isSpatialLine",
-              "valueExpr": "_:SpatialLine",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialLine",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18081,7 +18082,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasBoundingBox",
               "valueExpr": "http://ddi-alliance.org/ns/#BoundingBox",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18117,7 +18118,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the extent of a geographic unit for a specified period of time using Bounding Box, Inclusive and Exclusive Polygons, and an area coverage that notes a type of coverage (land, water, etc.) and measurement for the coverage. The same geographic extent may be used by multiple versions of a single geographic version or by different geographic units occupying the same spatial area.\n\nExamples\n==========\nBounding box for Burkino Faso: (N) 15.082773; (S) 9.395691; (E) 2.397927; (W) -5.520837.  Minnesota Land area: 206207.099 sq K, Water area: 18974.589 sq K \n\nExplanatory notes\n===================\nClarifies the source of a change in terms of footprint of an area as opposed to a name or coding change. \n\nDDI 3.2 mapping\n=================\nr:GeographicBoundaryType\n\n",
+              "value": "\nDefinition\n============\nDefines the extent of a geographic unit for a specified period of time using Bounding Box, Inclusive and Exclusive Polygons, and an area coverage that notes a type of coverage (land, water, etc.) and measurement for the coverage. The same geographic extent may be used by multiple versions of a single geographic version or by different geographic units occupying the same spatial area.\n\nExamples\n==========\nBounding box for Burkino Faso: (N) 15.082773; (S) 9.395691; (E) 2.397927; (W) -5.520837.  Minnesota Land area: 206207.099 sq K, Water area: 18974.589 sq K \n\nExplanatory notes\n===================\nClarifies the source of a change in terms of footprint of an area as opposed to a name or coding change. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:GeographicBoundaryType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -18141,7 +18142,7 @@
               "predicate": "http://ddi-alliance.org/ns/#geographicTime",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18163,7 +18164,7 @@
               "predicate": "http://ddi-alliance.org/ns/#supercedes",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialRelationship",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18185,7 +18186,7 @@
               "predicate": "http://ddi-alliance.org/ns/#precedes",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialRelationship",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18205,9 +18206,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasGeographicExtent",
-              "valueExpr": "_:GeographicExtent",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicExtent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18243,7 +18244,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA specific geographic unit of a defined Unit Type. A geographic unit may change its name, composition, or geographic extent over time. This may be tracked by versioning the content of the geographic unit. Normally a new version of a geographic unit would have a geographic (spatial) overlap with its previous version (a city annexing new area). A geographic unit ends when it is no longer a unit of the same unit type.\n\nExamples\n==========\nThe State of Minnesota from 1858 to date where the Unit Type is a State as defined by the United States Census Bureau. It has a geographic extent and supersedes a portion of the Territory of Minnesota and a portion of the Territory of Wisconsin. Minnesota territory had both a broader geographic extent, different Unit Type, and earlier time period (1849-1858) as did the Territory of Wisconsin. \n\nDDI 3.2 mapping\n=================\nr:GeographicLocationType\n\n",
+              "value": "\nDefinition\n============\nA specific geographic unit of a defined Unit Type. A geographic unit may change its name, composition, or geographic extent over time. This may be tracked by versioning the content of the geographic unit. Normally a new version of a geographic unit would have a geographic (spatial) overlap with its previous version (a city annexing new area). A geographic unit ends when it is no longer a unit of the same unit type.\n\nExamples\n==========\nThe State of Minnesota from 1858 to date where the Unit Type is a State as defined by the United States Census Bureau. It has a geographic extent and supersedes a portion of the Territory of Minnesota and a portion of the Territory of Wisconsin. Minnesota territory had both a broader geographic extent, different Unit Type, and earlier time period (1849-1858) as did the Territory of Wisconsin. \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:GeographicLocationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -18265,9 +18266,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:GeographicUnitIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18289,7 +18290,7 @@
               "predicate": "http://ddi-alliance.org/ns/#releaseDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18311,7 +18312,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18336,7 +18337,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18361,7 +18362,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18383,7 +18384,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18405,7 +18406,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18427,7 +18428,7 @@
               "predicate": "http://ddi-alliance.org/ns/#references",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptSystem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18447,9 +18448,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:GeographicUnitRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18471,7 +18472,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isMaintainedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#Organization",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18493,7 +18494,7 @@
               "predicate": "http://ddi-alliance.org/ns/#variantOf",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18515,7 +18516,7 @@
               "predicate": "http://ddi-alliance.org/ns/#replaces",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18537,7 +18538,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isReplacedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18573,7 +18574,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the classification of specific geographic units into a classification system. As a subtype of Code List it can be used directly for the description of a value domain.\n\n",
+              "value": "\nDefinition\n============\nDescribes the classification of specific geographic units into a classification system. As a subtype of Code List it can be used directly for the description of a value domain.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -18581,7 +18582,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -18596,8 +18597,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18619,7 +18620,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18641,7 +18642,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18661,9 +18662,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:GeographicUnitRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18699,7 +18700,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the relationships between Geographic Unit Types in a collection. \n\n",
+              "value": "\nDefinition\n============\nDefines the relationships between Geographic Unit Types in a collection. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -18721,9 +18722,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:GeographicUnitTypeIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18745,7 +18746,7 @@
               "predicate": "http://ddi-alliance.org/ns/#releaseDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18767,7 +18768,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18792,7 +18793,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18817,7 +18818,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18839,7 +18840,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18861,7 +18862,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18883,7 +18884,7 @@
               "predicate": "http://ddi-alliance.org/ns/#references",
               "valueExpr": "http://ddi-alliance.org/ns/#ConceptSystem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18903,9 +18904,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:GeographicUnitTypeRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18927,7 +18928,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isMaintainedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#Organization",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18949,7 +18950,7 @@
               "predicate": "http://ddi-alliance.org/ns/#variantOf",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18971,7 +18972,7 @@
               "predicate": "http://ddi-alliance.org/ns/#replaces",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -18993,7 +18994,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isReplacedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19029,7 +19030,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA structured collection of Unit Types defining a geographic structure. As a subtype of CodeList it may be used directly to describe a value domain.\n\nExamples\n==========\nCountry--State--County\n\n",
+              "value": "\nDefinition\n============\nA structured collection of Unit Types defining a geographic structure. As a subtype of CodeList it may be used directly to describe a value domain.\n\nExamples\n==========\nCountry--State--County\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19037,7 +19038,7 @@
       }
     },
     {
-      "id": "_:GeographicUnitTypeRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19052,8 +19053,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19075,7 +19076,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19097,7 +19098,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19117,9 +19118,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:GeographicUnitTypeRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19155,7 +19156,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the relationships between Geographic Unit Types in a collection.\n\n",
+              "value": "\nDefinition\n============\nDefines the relationships between Geographic Unit Types in a collection.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19163,7 +19164,7 @@
       }
     },
     {
-      "id": "_:DataPointRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#DataPointRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19179,7 +19180,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19201,7 +19202,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19223,7 +19224,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19243,9 +19244,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:DataPointRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19281,7 +19282,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA means for describing the complex relational structure of Data Points in a Logical Record \n\n",
+              "value": "\nDefinition\n============\nA means for describing the complex relational structure of Data Points in a Logical Record \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19305,7 +19306,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19330,7 +19331,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19355,7 +19356,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19375,9 +19376,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:PhysicalRecordSegmentIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19402,7 +19403,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19424,7 +19425,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19446,7 +19447,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19468,7 +19469,7 @@
               "predicate": "http://ddi-alliance.org/ns/#formatsDataStore",
               "valueExpr": "http://ddi-alliance.org/ns/#DataStore",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19488,9 +19489,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:PhysicalOrderRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19510,9 +19511,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasVariableStatistics",
-              "valueExpr": "_:VariableStatistics",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableStatistics",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19541,7 +19542,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19577,7 +19578,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe information needed for understanding the physical structure of data coming from a file or other source. A StructureDescription also points to the Data Store it physically represents.\n\nExamples\n==========\nThe PhysicalDataProduct is the entry point for information about a file or other source. It includes information about the name of a file, the structure of segments in a file and the layout of segments.\n\nExplanatory notes\n===================\nMultiple styles of structural description are supported: including describing files as unit-record (UnitSegmentLayout) files; describing cubes; and describing event-history (spell) data.\n\nDDI 3.2 mapping\n=================\np:PhysicalDataProductType\n\n",
+              "value": "\nDefinition\n============\nThe information needed for understanding the physical structure of data coming from a file or other source. A StructureDescription also points to the Data Store it physically represents.\n\nExamples\n==========\nThe PhysicalDataProduct is the entry point for information about a file or other source. It includes information about the name of a file, the structure of segments in a file and the layout of segments.\n\nExplanatory notes\n===================\nMultiple styles of structural description are supported: including describing files as unit-record (UnitSegmentLayout) files; describing cubes; and describing event-history (spell) data.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\np:PhysicalDataProductType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19585,7 +19586,7 @@
       }
     },
     {
-      "id": "_:PhysicalLayoutRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19601,7 +19602,7 @@
               "predicate": "http://ddi-alliance.org/ns/#criteria",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19623,7 +19624,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19645,7 +19646,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19667,7 +19668,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19687,9 +19688,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ValueMappingRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ValueMappingRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19725,7 +19726,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the sequence of Value Mappings in a Physical Layout. This can be more complex than a simple sequence. \n\nExamples\n==========\nThe W3C Tabular Data on the Web specification allows for a list datatype. In the example below there are three top level InstanceVariables\nPersonID – the person identifier\nAgeYr – age in year\nBpSys_Dia – blood pressure (a list containing Systolic and Diastolic values)\n\nThere are two variables at a secondary level of the hierarchy\nSystolic – the systolic pressure\nDiastolic – the diastolic pressure\n\nThe delimited file below uses the comma to separate \"columns\" and forward slash to separate elements of a blood pressure list.\n\nPersonID, AgeYr, BpSys_Dia\n1,22,119/67\n2,68,122/70\n\nThe PhysicalRelationStructure in this case would describe a BpSys_Dia  list variable as containing an ordered sequence of the Systolic and Diastolic InstanceVariables.\n\n\n",
+              "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the sequence of Value Mappings in a Physical Layout. This can be more complex than a simple sequence. \n\nExamples\n==========\nThe W3C Tabular Data on the Web specification allows for a list datatype. In the example below there are three top level InstanceVariables\nPersonID – the person identifier\nAgeYr – age in year\nBpSys_Dia – blood pressure (a list containing Systolic and Diastolic values)\n\nThere are two variables at a secondary level of the hierarchy\nSystolic – the systolic pressure\nDiastolic – the diastolic pressure\n\nThe delimited file below uses the comma to separate \"columns\" and forward slash to separate elements of a blood pressure list.\n\nPersonID, AgeYr, BpSys_Dia\n1,22,119/67\n2,68,122/70\n\nThe PhysicalRelationStructure in this case would describe a BpSys_Dia  list variable as containing an ordered sequence of the Systolic and Diastolic InstanceVariables.\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19733,7 +19734,7 @@
       }
     },
     {
-      "id": "_:PhysicalOrderRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -19749,7 +19750,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19771,7 +19772,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19793,7 +19794,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19813,9 +19814,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:PhysicalRecordSegmentRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19851,7 +19852,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nPhysicalStructureOrder orders thePhysicalRecordSegments  which map to a LogicalRecord.\n\nExplanatory notes\n===================\nThe same LogicalRecordLayout may be the sourceMember in several adjacency lists. This can happen when PhysicalRecordSegments are also population specific. In this instance each adjacency list associated with a LogicalRecordLayout is associated with a different population.\n\n",
+              "value": "\nDefinition\n============\nPhysicalStructureOrder orders thePhysicalRecordSegments  which map to a LogicalRecord.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nThe same LogicalRecordLayout may be the sourceMember in several adjacency lists. This can happen when PhysicalRecordSegments are also population specific. In this instance each adjacency list associated with a LogicalRecordLayout is associated with a different population.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -19878,7 +19879,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19898,9 +19899,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:DataPointIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19925,7 +19926,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19947,7 +19948,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPhysicalLayout",
               "valueExpr": "http://ddi-alliance.org/ns/#PhysicalSegmentLayout",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19969,7 +19970,7 @@
               "predicate": "http://ddi-alliance.org/ns/#representsPopulation",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -19991,7 +19992,7 @@
               "predicate": "http://ddi-alliance.org/ns/#mapTo",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20011,9 +20012,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:DataPointRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataPointRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20035,7 +20036,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20071,7 +20072,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA description of each physical storage segment required to completely cover the logical record. A logical record may be stored in one or more segments housed hierarchically in a single file or in separate data files. All logical records have at least one segment.\n\nExamples\n==========\nThe file below has four InstanceVariables: PersonId, SegmentId, AgeYr, HeightCm. The data for each person (identified by PersonId) is recorded in two segments (identified by SegmentId), \"a\" and \"b\". AgeYr is on physical segment a, and HeightCm is on segment b. These are the same data as described in the UnitSegmentLayout documentation.\n1 a  22\n1 b 183\n2 a 45\n2 b 175\n\n\nDDI 3.2 mapping\n=================\np:PhysicalRecordSegmentType\n\n",
+              "value": "\nDefinition\n============\nA description of each physical storage segment required to completely cover the logical record. A logical record may be stored in one or more segments housed hierarchically in a single file or in separate data files. All logical records have at least one segment.\n\nExamples\n==========\nThe file below has four InstanceVariables: PersonId, SegmentId, AgeYr, HeightCm. The data for each person (identified by PersonId) is recorded in two segments (identified by SegmentId), \"a\" and \"b\". AgeYr is on physical segment a, and HeightCm is on segment b. These are the same data as described in the UnitSegmentLayout documentation.\n1 a  22\n1 b 183\n2 a 45\n2 b 175\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\np:PhysicalRecordSegmentType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -20097,8 +20098,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20123,7 +20124,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20147,8 +20148,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20173,7 +20174,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20198,7 +20199,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20223,7 +20224,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20248,7 +20249,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20270,7 +20271,7 @@
               "predicate": "http://ddi-alliance.org/ns/#encoding",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20295,7 +20296,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20320,7 +20321,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20345,7 +20346,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20370,7 +20371,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20395,7 +20396,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20420,7 +20421,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20442,7 +20443,7 @@
               "predicate": "http://ddi-alliance.org/ns/#trim",
               "valueExpr": "http://ddi-alliance.org/ns/#TrimValues",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20467,7 +20468,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20492,7 +20493,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20517,7 +20518,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20542,7 +20543,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20564,7 +20565,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20586,7 +20587,7 @@
               "predicate": "http://ddi-alliance.org/ns/#tableDirection",
               "valueExpr": "http://ddi-alliance.org/ns/#TableDirectionValues",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20608,7 +20609,7 @@
               "predicate": "http://ddi-alliance.org/ns/#textDirection",
               "valueExpr": "http://ddi-alliance.org/ns/#TextDirectionValues",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20630,7 +20631,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20652,7 +20653,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20674,7 +20675,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20694,9 +20695,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ValueMappingIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ValueMappingIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20721,7 +20722,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20743,7 +20744,7 @@
               "predicate": "http://ddi-alliance.org/ns/#formatsLogicalRecord",
               "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecord",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20763,9 +20764,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:PhysicalLayoutRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20787,7 +20788,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20823,7 +20824,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe PhysicalSegmentLayout is an abstract class used as an extension point in the description of the different layout styles of data structure description.\n\nExamples\n==========\nExamples include UnitSegmentLayouts, event data layouts, and cube layouts (e.g. summary data).\n\nExplanatory notes\n===================\nA PhysicalLayout is a physical description (e.g. UnitSegmentLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical interrelationship of each related ValueMapping and associated Instance Variable.\n\n\n",
+              "value": "\nDefinition\n============\nThe PhysicalSegmentLayout is an abstract class used as an extension point in the description of the different layout styles of data structure description.\n\nExamples\n==========\nExamples include UnitSegmentLayouts, event data layouts, and cube layouts (e.g. summary data).\n\nExplanatory notes\n===================\nA PhysicalLayout is a physical description (e.g. UnitSegmentLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical interrelationship of each related ValueMapping and associated Instance Variable.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -20856,7 +20857,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAmong other things defines the location of a DataPoint in a PhysicalSegment (e.g. the location of the representation of a variable in a text file). This is abstract since there are many different ways to describe the location of a segment - character counts, start and end times, etc.\n\nExamples\n==========\nA segment of text in a plain text file beginning at character 3 and ending at character 123.\n\nExplanatory notes\n===================\nWhile this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve.\n\n",
+              "value": "\nDefinition\n============\nAmong other things defines the location of a DataPoint in a PhysicalSegment (e.g. the location of the representation of a variable in a text file). This is abstract since there are many different ways to describe the location of a segment - character counts, start and end times, etc.\n\nExamples\n==========\nA segment of text in a plain text file beginning at character 3 and ending at character 123.\n\nExplanatory notes\n===================\nWhile this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -20883,7 +20884,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20908,7 +20909,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20933,7 +20934,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20958,7 +20959,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -20983,7 +20984,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21019,7 +21020,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the location of a segment of text through character, and optionally line, counts. An adequate description will always include a startCharacterPosition and then may include an endCharacterPosition or a characterLength.\nIf StartLine is specified, the character counts begin within that line.\nAn endCharacterPosition of 0 indicates that whole lines are specified\n\n\nExamples\n==========\nThe segment beginning at line 3, character 4 and ending at line 27 character 13.\nAlternatively the segment beginning at character 257 and ending at character 1350 of the whole body of text.\nStartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12. \n\n",
+              "value": "\nDefinition\n============\nDefines the location of a segment of text through character, and optionally line, counts. An adequate description will always include a startCharacterPosition and then may include an endCharacterPosition or a characterLength.\nIf StartLine is specified, the character counts begin within that line.\nAn endCharacterPosition of 0 indicates that whole lines are specified\n\n\nExamples\n==========\nThe segment beginning at line 3, character 4 and ending at line 27 character 13.\nAlternatively the segment beginning at character 257 and ending at character 1350 of the whole body of text.\nStartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12. \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -21052,7 +21053,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUnitSegmentLayout supports the description of unit-record (\"wide\") data sets, where each row in the data set provides the same group of values for variables all relating to a single unit. Each logical column will contain data relating to the values for a single variable. \n\nExamples\n==========\nA simple spreadsheet. Commonly the first row of the table will contain variable names or descriptions.\n\nThe following csv file has a rectangular layout and would import into a simple table in a spreadsheet:\nPersonId,AgeYr,HeightCm\n1,22,183\n2,45,175\n\n\nExplanatory notes\n===================\nThis is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable. \n\n",
+              "value": "\nDefinition\n============\nUnitSegmentLayout supports the description of unit-record (\"wide\") data sets, where each row in the data set provides the same group of values for variables all relating to a single unit. Each logical column will contain data relating to the values for a single variable. \n\nExamples\n==========\nA simple spreadsheet. Commonly the first row of the table will contain variable names or descriptions.\n\nThe following csv file has a rectangular layout and would import into a simple table in a spreadsheet:\nPersonId,AgeYr,HeightCm\n1,22,183\n2,45,175\n\n\nExplanatory notes\n===================\nThis is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -21076,7 +21077,7 @@
               "predicate": "http://ddi-alliance.org/ns/#physicalDataType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21098,7 +21099,7 @@
               "predicate": "http://ddi-alliance.org/ns/#defaultDecimalSeparator",
               "valueExpr": "http://ddi-alliance.org/ns/#Char",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21120,7 +21121,7 @@
               "predicate": "http://ddi-alliance.org/ns/#defaultDigitGroupSeparator",
               "valueExpr": "http://ddi-alliance.org/ns/#Char",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21145,7 +21146,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21167,7 +21168,7 @@
               "predicate": "http://ddi-alliance.org/ns/#defaultValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21192,7 +21193,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21214,7 +21215,7 @@
               "predicate": "http://ddi-alliance.org/ns/#format",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21239,7 +21240,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21264,7 +21265,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21289,7 +21290,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21314,7 +21315,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21339,7 +21340,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21364,7 +21365,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21385,8 +21386,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#formatsDataPoint",
               "valueExpr": "http://ddi-alliance.org/ns/#DataPoint",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21408,7 +21409,7 @@
               "predicate": "http://ddi-alliance.org/ns/#describesSegmentLocation",
               "valueExpr": "http://ddi-alliance.org/ns/#PhysicalSegmentLocation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21444,7 +21445,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides physical characteristics for an InstanceVariable as part of a PhysicalSegmentLayout\n\nExamples\n==========\nA variable \"age\" might be represented in a file as a string with a maximum length of 5 characters and a number pattern of ##0.0\n\nExplanatory notes\n===================\nAn InstanceVariable has details of value domain and datatype, but will not have the final details of how a value is physically represented in a data file. A variable for height, for example, may be represented as a real number, but may be represented as a string in multiple ways. The decimal separator might be, for example a period or a comma. The string representing the value of a payment might be preceded by a currency symbol. The same numeric value might be written as “1,234,567” or “1.234567 E6”. A missing value might be written as “.”, “NA”, “.R” or as “R”. \nThe ValueMapping describes how the value of an InstanceVariable is physically expressed. The properties of the ValueMapping as intended to be compatible with the W3C Metadata Vocabulary for Tabular Data (https://www.w3.org/TR/tabular-metadata/ ) as well as common programming languages and statistical packages. The “format” property, for example can draw from an external controlled vocabulary such as the set of formats for Stata, SPSS, or SAS.\n\n\n",
+              "value": "\nDefinition\n============\nProvides physical characteristics for an InstanceVariable as part of a PhysicalSegmentLayout\n\nExamples\n==========\nA variable \"age\" might be represented in a file as a string with a maximum length of 5 characters and a number pattern of ##0.0\n\nExplanatory notes\n===================\nAn InstanceVariable has details of value domain and datatype, but will not have the final details of how a value is physically represented in a data file. A variable for height, for example, may be represented as a real number, but may be represented as a string in multiple ways. The decimal separator might be, for example a period or a comma. The string representing the value of a payment might be preceded by a currency symbol. The same numeric value might be written as “1,234,567” or “1.234567 E6”. A missing value might be written as “.”, “NA”, “.R” or as “R”. \nThe ValueMapping describes how the value of an InstanceVariable is physically expressed. The properties of the ValueMapping as intended to be compatible with the W3C Metadata Vocabulary for Tabular Data (https://www.w3.org/TR/tabular-metadata/ ) as well as common programming languages and statistical packages. The “format” property, for example can draw from an external controlled vocabulary such as the set of formats for Stata, SPSS, or SAS.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -21468,7 +21469,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21490,7 +21491,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21512,7 +21513,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21532,9 +21533,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:VocabularyEntryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntryIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21559,7 +21560,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21579,9 +21580,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:VocabularyRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21603,7 +21604,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21639,7 +21640,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries.\n\n",
+              "value": "\nDefinition\n============\nThe specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -21663,7 +21664,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21685,7 +21686,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21707,7 +21708,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21727,9 +21728,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CustomValueIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomValueIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21754,7 +21755,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21774,9 +21775,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
-              "valueExpr": "_:CustomStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21798,7 +21799,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21834,7 +21835,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA set of CustomValues to be attached to some object.\n\nExamples\n==========\nA set of OMB required information about a question.\n\nThe set of openEHR protocol information to be attached to a blood pressure Capture\n\n",
+              "value": "\nDefinition\n============\nA set of CustomValues to be attached to some object.\n\nExamples\n==========\nA set of OMB required information about a question.\n\nThe set of openEHR protocol information to be attached to a blood pressure Capture\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -21861,7 +21862,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21886,7 +21887,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21911,7 +21912,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21933,7 +21934,7 @@
               "predicate": "http://ddi-alliance.org/ns/#uses",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21955,7 +21956,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -21977,7 +21978,7 @@
               "predicate": "http://ddi-alliance.org/ns/#comparesTo",
               "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22013,7 +22014,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA custom item description. This allows the definition of an item which is a member of a CustomStructure.\nIt defines the minimum and maximum number of occurrences and representation of a CustomValue.\n\nExamples\n==========\nDegreeOfBurden for a question as required by the U.S. OMB.\n\nBloodPressureCuffSize - the size of a blood pressure cuff specified for a particular protocol.\n\nExplanatory notes\n===================\nThis definition will be referenced by a CustomValue when recording a key,value instance\n\n",
+              "value": "\nDefinition\n============\nA custom item description. This allows the definition of an item which is a member of a CustomStructure.\nIt defines the minimum and maximum number of occurrences and representation of a CustomValue.\n\nExamples\n==========\nDegreeOfBurden for a question as required by the U.S. OMB.\n\nBloodPressureCuffSize - the size of a blood pressure cuff specified for a particular protocol.\n\nExplanatory notes\n===================\nThis definition will be referenced by a CustomValue when recording a key,value instance\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22021,7 +22022,7 @@
       }
     },
     {
-      "id": "_:CustomItemRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22037,7 +22038,7 @@
               "predicate": "http://ddi-alliance.org/ns/#criteria",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22059,7 +22060,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22081,7 +22082,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22103,7 +22104,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22125,7 +22126,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22147,7 +22148,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22167,9 +22168,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CustomItemRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22205,7 +22206,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nContains a set of CustomItemRelations which together define the relationships of Custom Structure.\n\n",
+              "value": "\nDefinition\n============\nContains a set of CustomItemRelations which together define the relationships of Custom Structure.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22213,7 +22214,7 @@
       }
     },
     {
-      "id": "_:CustomStructure",
+      "id": "http://ddi-alliance.org/ns/#CustomStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22229,7 +22230,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22251,7 +22252,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22273,7 +22274,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22293,9 +22294,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:CustomItemIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22320,7 +22321,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22340,9 +22341,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CustomItemRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22364,7 +22365,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22400,7 +22401,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Collection containing a set of item descriptions defining a structure for a set of key,value pairs\n\nExamples\n==========\nThe set of CustomItems which are to be used to document the OMB required information for a question.\n\nThe set of CustomItems used to describe an openEHR blood pressure protocol.\n\n",
+              "value": "\nDefinition\n============\nA Collection containing a set of item descriptions defining a structure for a set of key,value pairs\n\nExamples\n==========\nThe set of CustomItems which are to be used to document the OMB required information for a question.\n\nThe set of CustomItems used to describe an openEHR blood pressure protocol.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22424,7 +22425,7 @@
               "predicate": "http://ddi-alliance.org/ns/#value",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22449,7 +22450,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22470,8 +22471,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
               "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22493,7 +22494,7 @@
               "predicate": "http://ddi-alliance.org/ns/#comparesTo",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22529,7 +22530,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn instance of a  key, value pair for a  particular  key.\n\nExamples\n==========\nOMBBurden,\"High\"\n\nopenEHRBPposition, \"upper arm\"\n\n",
+              "value": "\nDefinition\n============\nAn instance of a  key, value pair for a  particular  key.\n\nExamples\n==========\nOMBBurden,\"High\"\n\nopenEHRBPposition, \"upper arm\"\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22553,7 +22554,7 @@
               "predicate": "http://ddi-alliance.org/ns/#entryTerm",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22575,7 +22576,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definition",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22611,7 +22612,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nOne entry term and its definition in an ordered list comprising a controlled vocabulary.\n\nExamples\n==========\naunt - The female sibling of a parent\n\n",
+              "value": "\nDefinition\n============\nOne entry term and its definition in an ordered list comprising a controlled vocabulary.\n\nExamples\n==========\naunt - The female sibling of a parent\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22619,7 +22620,7 @@
       }
     },
     {
-      "id": "_:VocabularyRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#VocabularyRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22635,7 +22636,7 @@
               "predicate": "http://ddi-alliance.org/ns/#criteria",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22657,7 +22658,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22679,7 +22680,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22701,7 +22702,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22723,7 +22724,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22745,7 +22746,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22765,9 +22766,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:VocabularyEntryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#VocabularyEntryRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22803,7 +22804,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nContains the Vocabulary Relations used to structure the ControlledVocabulary\n\n",
+              "value": "\nDefinition\n============\nContains the Vocabulary Relations used to structure the ControlledVocabulary\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -22811,7 +22812,7 @@
       }
     },
     {
-      "id": "_:SampleFrame",
+      "id": "http://ddi-alliance.org/ns/#SampleFrame",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -22827,7 +22828,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22849,7 +22850,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22871,7 +22872,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22893,7 +22894,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22915,7 +22916,7 @@
               "predicate": "http://ddi-alliance.org/ns/#limitations",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22937,7 +22938,7 @@
               "predicate": "http://ddi-alliance.org/ns/#updateProcedures",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22959,7 +22960,7 @@
               "predicate": "http://ddi-alliance.org/ns/#referencePeriod",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -22981,7 +22982,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validPeriod",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23003,7 +23004,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasCustodian",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23025,7 +23026,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAccess",
               "valueExpr": "http://ddi-alliance.org/ns/#Access",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23047,7 +23048,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPopulation",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23076,7 +23077,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPrimaryUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23105,7 +23106,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSecondaryUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23132,9 +23133,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#sourceFrame",
-              "valueExpr": "_:SampleFrame",
+              "valueExpr": "http://ddi-alliance.org/ns/#SampleFrame",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23156,7 +23157,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23185,7 +23186,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasOutputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23228,7 +23229,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA set of information used to identify a sample population within a larger population. The sample frame will contain identifying information for individual units within the frame as well as characteristics which will support analysis and the division of the frame population into sub-groups.\n\nExamples\n==========\nA listing of all business enterprises by their primary office address with information on their industry classification, work staff size, and production costs. A telephone directory. An address list of housing units.\n\n",
+              "value": "\nDefinition\n============\nA set of information used to identify a sample population within a larger population. The sample frame will contain identifying information for individual units within the frame as well as characteristics which will support analysis and the division of the frame population into sub-groups.\n\nExamples\n==========\nA listing of all business enterprises by their primary office address with information on their industry classification, work staff size, and production costs. A telephone directory. An address list of housing units.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23236,7 +23237,7 @@
       }
     },
     {
-      "id": "_:SamplePopulationResult",
+      "id": "http://ddi-alliance.org/ns/#SamplePopulationResult",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23255,7 +23256,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23280,7 +23281,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23302,7 +23303,7 @@
               "predicate": "http://ddi-alliance.org/ns/#sampleDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23324,7 +23325,7 @@
               "predicate": "http://ddi-alliance.org/ns/#sampleUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23346,7 +23347,7 @@
               "predicate": "http://ddi-alliance.org/ns/#populationSampled",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23382,7 +23383,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe Sample Population is the result of a sampling process. It is the subset of the population selected from the Sample Frame or Frames that will be used as respondents to represent the target population. Sample Populations may occur at a number of stages in the sampling process and serve as input to a subsequent sampling stage. The Sample Population should be validated against the intended sample population as described in the goal of the design and/or process.\n\nExamples\n==========\nA list of phone numbers representing a random sample from a telephone book. The Counties selected from within a State from which Households will be selected using another sampling method.\n\n",
+              "value": "\nDefinition\n============\nThe Sample Population is the result of a sampling process. It is the subset of the population selected from the Sample Frame or Frames that will be used as respondents to represent the target population. Sample Populations may occur at a number of stages in the sampling process and serve as input to a subsequent sampling stage. The Sample Population should be validated against the intended sample population as described in the goal of the design and/or process.\n\nExamples\n==========\nA list of phone numbers representing a random sample from a telephone book. The Counties selected from within a State from which Households will be selected using another sampling method.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23403,7 +23404,7 @@
           "predicate": "http://ddi-alliance.org/ns/#codifiedExpressionOfAlgorithm",
           "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -23437,7 +23438,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nGeneric description of a sampling algorithm expressed by a Sampling Design and implemented by a Sampling Process. May include common algebraic formula or statistical package instructions (use of specific selection models).\n\nExamples\n==========\nRandom Sample; Stratified Random Sample\n\n",
+              "value": "\nDefinition\n============\nGeneric description of a sampling algorithm expressed by a Sampling Design and implemented by a Sampling Process. May include common algebraic formula or statistical package instructions (use of specific selection models).\n\nExamples\n==========\nRandom Sample; Stratified Random Sample\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23445,7 +23446,7 @@
       }
     },
     {
-      "id": "_:SamplingDesign",
+      "id": "http://ddi-alliance.org/ns/#SamplingDesign",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23461,7 +23462,7 @@
               "predicate": "http://ddi-alliance.org/ns/#expressesAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingAlgorithm",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23481,9 +23482,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#specifiesGoal",
-              "valueExpr": "_:SamplingGoal",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplingGoal",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23505,7 +23506,7 @@
               "predicate": "http://ddi-alliance.org/ns/#implementedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingProcess",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23541,7 +23542,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSampling plan defines the how the sample is to be obtained through the description of methodology or a model based approach, defining the intended target population, stratification or split procedures and recommended sample frames. The content of a sampling plan is intended to be reusable. The application of the sample plan is captured in Sampling Process.\n\n",
+              "value": "\nDefinition\n============\nSampling plan defines the how the sample is to be obtained through the description of methodology or a model based approach, defining the intended target population, stratification or split procedures and recommended sample frames. The content of a sampling plan is intended to be reusable. The application of the sample plan is captured in Sampling Process.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23549,7 +23550,7 @@
       }
     },
     {
-      "id": "_:SamplingGoal",
+      "id": "http://ddi-alliance.org/ns/#SamplingGoal",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23568,7 +23569,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23593,7 +23594,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23613,9 +23614,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#targetSampleSize",
-              "valueExpr": "_:TargetSample",
+              "valueExpr": "http://ddi-alliance.org/ns/#TargetSample",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23651,7 +23652,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides general description and specific targets for sample sizes including sub-populations.\n\n",
+              "value": "\nDefinition\n============\nProvides general description and specific targets for sample sizes including sub-populations.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23673,9 +23674,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasDesign",
-              "valueExpr": "_:SamplingDesign",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplingDesign",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23704,7 +23705,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasProcess",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingProcess",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23733,7 +23734,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isExpressedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingAlgorithm",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23762,7 +23763,7 @@
               "predicate": "http://ddi-alliance.org/ns/#componentMethodology",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingProcedure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23805,7 +23806,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe Sampling Procedure describes the population being sampled, the sampling frame and the sampling plan including steps and sub steps by referencing the universe, sample frames and sampling plans described in schemes. Target sample sizes for each stage can be noted as well as the process for determining sample size, the date of the sample and the person or organization responsible for drawing the sample.\n\nExamples\n==========\nCensus of Population and Housing, 1980 Summary Tape File 4, chapter on Technical Information. Overview is the Introduction generally describing the sample; there is a sample design section which provides a more detailed overview of the design. Additional external documentation provides detailed processes for sample adjustments needed for small area estimations, sample frames etc.\n\nExplanatory notes\n===================\nThis is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample.\n\n",
+              "value": "\nDefinition\n============\nThe Sampling Procedure describes the population being sampled, the sampling frame and the sampling plan including steps and sub steps by referencing the universe, sample frames and sampling plans described in schemes. Target sample sizes for each stage can be noted as well as the process for determining sample size, the date of the sample and the person or organization responsible for drawing the sample.\n\nExamples\n==========\nCensus of Population and Housing, 1980 Summary Tape File 4, chapter on Technical Information. Overview is the Introduction generally describing the sample; there is a sample design section which provides a more detailed overview of the design. Additional external documentation provides detailed processes for sample adjustments needed for small area estimations, sample frames etc.\n\nExplanatory notes\n===================\nThis is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23829,7 +23830,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23851,7 +23852,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDiscussedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23873,7 +23874,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasProcessSequence",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23900,9 +23901,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasResults",
-              "valueExpr": "_:SamplePopulationResult",
+              "valueExpr": "http://ddi-alliance.org/ns/#SamplePopulationResult",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23924,7 +23925,7 @@
               "predicate": "http://ddi-alliance.org/ns/#implementsAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingAlgorithm",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -23960,7 +23961,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides the details of the process used to apply the sampling design and obtain the sample. Sampling Process contains a Workflow Step which provides the constituents of a Workflow. It can be a composition (a set of Control Constructs) or atomic (an Act) and may be performed by a service. This allows the use of existing Workflow models to express various sampling process actions. Sampling Frames and Sample Population can be used as designated Inputs or Outputs using Parameters.\n\nExamples\n==========\nA Split which takes a sampling stage and divides the sample frame into different subsets. A different sampling technique is applied to each subset. Once a split occurs each subset can have stages underneath, and the number of states under each split subset may differ.\nA Stage is the application of a single sampling algorithm applied to a sampling frame. For instance, the US Current Population Survey samples geographic areas first before identifying household to contact within each of those areas.\nA Stratification of a stage into multiple subsets. Each stratified group will be sampled using the same sampling approach. For example stratifying a state by ZIP Code areas in each of 5 mean income quintiles and then doing a random sample of the households in a set of Zip Codes. Allows for oversampling of identified subpopulations.\n\n",
+              "value": "\nDefinition\n============\nProvides the details of the process used to apply the sampling design and obtain the sample. Sampling Process contains a Workflow Step which provides the constituents of a Workflow. It can be a composition (a set of Control Constructs) or atomic (an Act) and may be performed by a service. This allows the use of existing Workflow models to express various sampling process actions. Sampling Frames and Sample Population can be used as designated Inputs or Outputs using Parameters.\n\nExamples\n==========\nA Split which takes a sampling stage and divides the sample frame into different subsets. A different sampling technique is applied to each subset. Once a split occurs each subset can have stages underneath, and the number of states under each split subset may differ.\nA Stage is the application of a single sampling algorithm applied to a sampling frame. For instance, the US Current Population Survey samples geographic areas first before identifying household to contact within each of those areas.\nA Stratification of a stage into multiple subsets. Each stratified group will be sampled using the same sampling approach. For example stratifying a state by ZIP Code areas in each of 5 mean income quintiles and then doing a random sample of the households in a set of Zip Codes. Allows for oversampling of identified subpopulations.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -23968,7 +23969,7 @@
       }
     },
     {
-      "id": "_:Budget",
+      "id": "http://ddi-alliance.org/ns/#Budget",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -23984,7 +23985,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24006,7 +24007,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24028,7 +24029,7 @@
               "predicate": "http://ddi-alliance.org/ns/#budgetDocument",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24064,7 +24065,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA description of the budget for any of the main publication types that can contain a reference to an external budget document.\n\nDDI 3.2 mapping\n=================\nr:BudgetType\n\n",
+              "value": "\nDefinition\n============\nA description of the budget for any of the main publication types that can contain a reference to an external budget document.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:BudgetType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24072,7 +24073,7 @@
       }
     },
     {
-      "id": "_:ComplianceStatement",
+      "id": "http://ddi-alliance.org/ns/#ComplianceStatement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24088,7 +24089,7 @@
               "predicate": "http://ddi-alliance.org/ns/#externalComplianceCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24110,7 +24111,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24132,7 +24133,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24168,7 +24169,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for a quality statement based on frameworks to be described using itemized properties. A reference to a concept, a coded value, or both can be used to specify the property from the standard framework identified in StandardUsed. Usage can provide further details or a general description of compliance with a standard.\n\nDDI 3.2 mapping\n=================\nr:ComplianceType\n\n",
+              "value": "\nDefinition\n============\nAllows for a quality statement based on frameworks to be described using itemized properties. A reference to a concept, a coded value, or both can be used to specify the property from the standard framework identified in StandardUsed. Usage can provide further details or a general description of compliance with a standard.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ComplianceType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24176,7 +24177,7 @@
       }
     },
     {
-      "id": "_:Embargo",
+      "id": "http://ddi-alliance.org/ns/#Embargo",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24192,7 +24193,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24214,7 +24215,7 @@
               "predicate": "http://ddi-alliance.org/ns/#embargoDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24236,7 +24237,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rationale",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24258,7 +24259,7 @@
               "predicate": "http://ddi-alliance.org/ns/#responsibleAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24280,7 +24281,7 @@
               "predicate": "http://ddi-alliance.org/ns/#enforcementAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24316,7 +24317,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides information about data that are not currently available because of policies established by the principal investigators and/or data producers. Embargo provides a name and label of the embargo, the dates covered by the embargo, the rationale or reason for the embargo, a reference to the agency establishing the embargo, and a reference to the agency enforcing the embargo.\n\nDDI 3.2 mapping\n=================\nr:EmbargoType\n\n",
+              "value": "\nDefinition\n============\nProvides information about data that are not currently available because of policies established by the principal investigators and/or data producers. Embargo provides a name and label of the embargo, the dates covered by the embargo, the rationale or reason for the embargo, a reference to the agency establishing the embargo, and a reference to the agency enforcing the embargo.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:EmbargoType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24324,7 +24325,7 @@
       }
     },
     {
-      "id": "_:ExPostEvaluation",
+      "id": "http://ddi-alliance.org/ns/#ExPostEvaluation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24340,7 +24341,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfEvaluation",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24362,7 +24363,7 @@
               "predicate": "http://ddi-alliance.org/ns/#evaluationProcess",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24384,7 +24385,7 @@
               "predicate": "http://ddi-alliance.org/ns/#outcomes",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24406,7 +24407,7 @@
               "predicate": "http://ddi-alliance.org/ns/#completionDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24428,7 +24429,7 @@
               "predicate": "http://ddi-alliance.org/ns/#evaluator",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24464,7 +24465,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nEvaluation for the purpose of reviewing the study, data collection, data processing, or management processes. Results may feed into a revision process for future data collection or management. Identifies the type of evaluation undertaken, who did the evaluation, the evaluation process, outcomes and completion date.\n\nDDI 3.2 mapping\n=================\nr:ExPostEvaluationType\n\n",
+              "value": "\nDefinition\n============\nEvaluation for the purpose of reviewing the study, data collection, data processing, or management processes. Results may feed into a revision process for future data collection or management. Identifies the type of evaluation undertaken, who did the evaluation, the evaluation process, outcomes and completion date.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:ExPostEvaluationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24472,7 +24473,7 @@
       }
     },
     {
-      "id": "_:QualityStatement",
+      "id": "http://ddi-alliance.org/ns/#QualityStatement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24488,7 +24489,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24510,7 +24511,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24532,7 +24533,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24554,7 +24555,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rationale",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24576,7 +24577,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24596,9 +24597,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesStandard",
-              "valueExpr": "_:Standard",
+              "valueExpr": "http://ddi-alliance.org/ns/#Standard",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24634,7 +24635,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA statement of quality which may be related to an external standard or contain a simple overview, rationale, and usage statement. When relating to an external standard information on compliance may be added via the ComplianceStatement referenced by the Standard class.\n\nDDI 3.2 mapping\n=================\nr:QualityStatementType\n\n",
+              "value": "\nDefinition\n============\nA statement of quality which may be related to an external standard or contain a simple overview, rationale, and usage statement. When relating to an external standard information on compliance may be added via the ComplianceStatement referenced by the Standard class.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:QualityStatementType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24642,7 +24643,7 @@
       }
     },
     {
-      "id": "_:Standard",
+      "id": "http://ddi-alliance.org/ns/#Standard",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -24656,9 +24657,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#compliance",
-              "valueExpr": "_:ComplianceStatement",
+              "valueExpr": "http://ddi-alliance.org/ns/#ComplianceStatement",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24687,7 +24688,7 @@
               "predicate": "http://ddi-alliance.org/ns/#standardUsed",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24730,7 +24731,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIdentifies the external standard used and describes the level of compliance with the standard in terms specific aspects of the standard's content.\n\nDDI 3.2 mapping\n=================\nr:StandardType\n\n",
+              "value": "\nDefinition\n============\nIdentifies the external standard used and describes the level of compliance with the standard in terms specific aspects of the standard's content.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:StandardType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24754,7 +24755,7 @@
               "predicate": "http://ddi-alliance.org/ns/#kindOfData",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24776,7 +24777,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24798,7 +24799,7 @@
               "predicate": "http://ddi-alliance.org/ns/#bibliographicCitation",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24820,7 +24821,7 @@
               "predicate": "http://ddi-alliance.org/ns/#partOfSeries",
               "valueExpr": "http://ddi-alliance.org/ns/#StudySeries",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24842,7 +24843,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasCoverage",
               "valueExpr": "http://ddi-alliance.org/ns/#Coverage",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24864,7 +24865,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAnalysisUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24886,7 +24887,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPopulation",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24908,7 +24909,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasUniverse",
               "valueExpr": "http://ddi-alliance.org/ns/#Universe",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24930,7 +24931,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasDesign",
               "valueExpr": "http://ddi-alliance.org/ns/#DesignOverview",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24950,9 +24951,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasProcess",
-              "valueExpr": "_:ProcessOverview",
+              "valueExpr": "http://ddi-alliance.org/ns/#ProcessOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24972,9 +24973,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasInstrument",
-              "valueExpr": "_:ImplementedInstrument",
+              "valueExpr": "http://ddi-alliance.org/ns/#ImplementedInstrument",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -24994,9 +24995,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasEmbargo",
-              "valueExpr": "_:Embargo",
+              "valueExpr": "http://ddi-alliance.org/ns/#Embargo",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25018,7 +25019,7 @@
               "predicate": "http://ddi-alliance.org/ns/#accessInformation",
               "valueExpr": "http://ddi-alliance.org/ns/#Access",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25040,7 +25041,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasFundingInformation",
               "valueExpr": "http://ddi-alliance.org/ns/#FundingInformation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25062,7 +25063,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAuthorizationSource",
               "valueExpr": "http://ddi-alliance.org/ns/#AuthorizationSource",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25082,9 +25083,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasQualityStatement",
-              "valueExpr": "_:QualityStatement",
+              "valueExpr": "http://ddi-alliance.org/ns/#QualityStatement",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25104,9 +25105,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasBudget",
-              "valueExpr": "_:Budget",
+              "valueExpr": "http://ddi-alliance.org/ns/#Budget",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25128,7 +25129,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInstanceVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25148,9 +25149,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasExPostEvaluation",
-              "valueExpr": "_:ExPostEvaluation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExPostEvaluation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25172,7 +25173,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasSamplingProcedure",
               "valueExpr": "http://ddi-alliance.org/ns/#SamplingProcedure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25194,7 +25195,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasMethodology",
               "valueExpr": "http://ddi-alliance.org/ns/#MethodologyOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25216,7 +25217,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#AlgorithmOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25238,7 +25239,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25258,9 +25259,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection",
-              "valueExpr": "_:VariableCollection",
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableCollection",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25280,9 +25281,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAgentListing",
-              "valueExpr": "_:AgentListing",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentListing",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25318,7 +25319,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStudy is the conceptual anchor for an individual collection activity resulting in a data set or data file. It can be both a part of a StudySeries as a wave etc. or an unrelated activity like a single survey project.\n\nExamples\n==========\nICPSR study 35575 Americans and the Arts [1973 - 1992] (ICPSR 35575). https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35575?dataFormat%5B0%5D=SAS&keyword%5B0%5D=public+opinion&geography%5B0%5D=United+States&searchSource=revise  \n\nExplanatory notes\n===================\nThe Study class brings together many properties and relationships describing a set of data – coverage, kind of data, methodology, citation information, access information and more.\n\nDDI 3.2 mapping\n=================\ns:StudyUnitType\n\n",
+              "value": "\nDefinition\n============\nStudy is the conceptual anchor for an individual collection activity resulting in a data set or data file. It can be both a part of a StudySeries as a wave etc. or an unrelated activity like a single survey project.\n\nExamples\n==========\nICPSR study 35575 Americans and the Arts [1973 - 1992] (ICPSR 35575). https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35575?dataFormat%5B0%5D=SAS&keyword%5B0%5D=public+opinion&geography%5B0%5D=United+States&searchSource=revise  \n\nExplanatory notes\n===================\nThe Study class brings together many properties and relationships describing a set of data – coverage, kind of data, methodology, citation information, access information and more.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\ns:StudyUnitType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -25339,7 +25340,7 @@
           "predicate": "http://ddi-alliance.org/ns/#hasStudy",
           "valueExpr": "http://ddi-alliance.org/ns/#Study",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -25373,7 +25374,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStudyControl references a Study. StudyControl enables the representation of a research protocol at the Study level. [If the only purpose of the object is to carry a Study, it should be seriously considered for melting with another object. Modeling rules state that any object needs to have a reality of its own. Carrying another object is not a reality. If I misunderstood, please clarify the description instead]\n\n",
+              "value": "\nDefinition\n============\nStudyControl references a Study. StudyControl enables the representation of a research protocol at the Study level. [If the only purpose of the object is to carry a Study, it should be seriously considered for melting with another object. Modeling rules state that any object needs to have a reality of its own. Carrying another object is not a reality. If I misunderstood, please clarify the description instead]\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -25381,7 +25382,7 @@
       }
     },
     {
-      "id": "_:StudyRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#StudyRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -25397,7 +25398,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25419,7 +25420,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25441,7 +25442,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25461,9 +25462,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:StudyRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25499,7 +25500,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for a complex nested structure for a Study Series\n\n",
+              "value": "\nDefinition\n============\nAllows for a complex nested structure for a Study Series\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -25523,7 +25524,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25545,7 +25546,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25567,7 +25568,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25589,7 +25590,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25609,9 +25610,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:StudyIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25636,7 +25637,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25656,9 +25657,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:StudyRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#StudyRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25680,7 +25681,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -25716,7 +25717,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA collection of studies which can be structured as a simple sequence, or with a more complex structure.\n\nExamples\n==========\nAn annual series of surveys.\n\nExplanatory notes\n===================\nA set of studies may be defined in many ways. A study may be repeated over time. One or more studies may attempt to replicate an earlier study. The StudySeries allows for the description of the relationships among a set of studies.\n\nA simple ordered or unordered sequence of studies can be described via the \"contains StudyIndicator\" property. More complex relationships among studies may also be described using the optional \"isStructuredBy StudyRelationsStructure\".\n\n",
+              "value": "\nDefinition\n============\nA collection of studies which can be structured as a simple sequence, or with a more complex structure.\n\nExamples\n==========\nAn annual series of surveys.\n\nExplanatory notes\n===================\nA set of studies may be defined in many ways. A study may be repeated over time. One or more studies may attempt to replicate an earlier study. The StudySeries allows for the description of the relationships among a set of studies.\n\nA simple ordered or unordered sequence of studies can be described via the \"contains StudyIndicator\" property. More complex relationships among studies may also be described using the optional \"isStructuredBy StudyRelationsStructure\".\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26183,7 +26184,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Business Algorithm is used to express the generalized function of the Business Process.\nThe underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.\n\nExamples\n==========\nThere are several well-established algorithms for performing data anonymization including \"local suppression\", \"global attribute generalization\" and \"k-Anonymization with suppression\" which is a specific combination of the two. An anonymizing business process might implement one of these algorithms.\n\n",
+              "value": "\nDefinition\n============\nA Business Algorithm is used to express the generalized function of the Business Process.\nThe underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation.\n\nExamples\n==========\nThere are several well-established algorithms for performing data anonymization including \"local suppression\", \"global attribute generalization\" and \"k-Anonymization with suppression\" which is a specific combination of the two. An anonymizing business process might implement one of these algorithms.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26191,7 +26192,7 @@
       }
     },
     {
-      "id": "_:BusinessProcess",
+      "id": "http://ddi-alliance.org/ns/#BusinessProcess",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -26207,7 +26208,7 @@
               "predicate": "http://ddi-alliance.org/ns/#standardModelUsed",
               "valueExpr": "http://ddi-alliance.org/ns/#PairedExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26229,7 +26230,7 @@
               "predicate": "http://ddi-alliance.org/ns/#preCondition",
               "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcessCondition",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26251,7 +26252,7 @@
               "predicate": "http://ddi-alliance.org/ns/#postCondition",
               "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcessCondition",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26287,7 +26288,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nBusinessProcesses could be Generic Longitudinal Business Process Model (GLBPM) and/or Generic Statistical Business Process Model (GSBPM) steps and/or sub-steps. BusinessProcesses participate in a DataPipeline by virtue of their preconditions and postconditions. \n\nA BusinessProcess differs from a WorkflowStep by virtue of its granularity. Higher level operations are the subject of BusinessProcesses. A BusinessProcess has a WorkflowStepSequence through which these higher levels operations may optionally be decomposed into WorkflowSteps.\n\nBusinessProcess preconditions and postconditions differ from input and output parameters because they don't take variables and values. Instead the subject of preconditions and postconditions are typically whole datasets.\n\nGiven this level of granularity it is possible to view a BusinessProcess through the Open Archival Information System (OAIS) Reference Model. So a BusinessProcess may optionally be described as a component of a Submission Information Package (SIP), an Archival Information Package (AIP) or a Dissemination Information Package (DIP).\n\nExamples\n==========\nIn a single BusinessProcess we might receive data from a data source or merge data from different data sources or create new variables and recodes or format data for data dissemination\n\nExplanatory notes\n===================\nOne or more PairedExternalControlledVocabularyEntry objects may be used to identify and characterize controlled vocabularies like the GLBPM, GSBPM and OAIS. The PairedExternalControlledVocabularyEntry both identifies both the model (term) and the step/sub-step of the model (extent). If a BusinessProcess combines two steps from the same model (GLBPM, GSBPM, OAIS, etc.) or from different models, multiple PairedExternalControlledVocabularyEntry objects can be specified.\n\nSynonyms\n==========\nTask\n\n",
+              "value": "\nDefinition\n============\nBusinessProcesses could be Generic Longitudinal Business Process Model (GLBPM) and/or Generic Statistical Business Process Model (GSBPM) steps and/or sub-steps. BusinessProcesses participate in a DataPipeline by virtue of their preconditions and postconditions. \n\nA BusinessProcess differs from a WorkflowStep by virtue of its granularity. Higher level operations are the subject of BusinessProcesses. A BusinessProcess has a WorkflowStepSequence through which these higher levels operations may optionally be decomposed into WorkflowSteps.\n\nBusinessProcess preconditions and postconditions differ from input and output parameters because they don't take variables and values. Instead the subject of preconditions and postconditions are typically whole datasets.\n\nGiven this level of granularity it is possible to view a BusinessProcess through the Open Archival Information System (OAIS) Reference Model. So a BusinessProcess may optionally be described as a component of a Submission Information Package (SIP), an Archival Information Package (AIP) or a Dissemination Information Package (DIP).\n\nExamples\n==========\nIn a single BusinessProcess we might receive data from a data source or merge data from different data sources or create new variables and recodes or format data for data dissemination\n\nExplanatory notes\n===================\nOne or more PairedExternalControlledVocabularyEntry objects may be used to identify and characterize controlled vocabularies like the GLBPM, GSBPM and OAIS. The PairedExternalControlledVocabularyEntry both identifies both the model (term) and the step/sub-step of the model (extent). If a BusinessProcess combines two steps from the same model (GLBPM, GSBPM, OAIS, etc.) or from different models, multiple PairedExternalControlledVocabularyEntry objects can be specified.\n\nSynonyms\n==========\nTask\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26311,7 +26312,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26333,7 +26334,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26355,7 +26356,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26375,9 +26376,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:BusinessProcessIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#BusinessProcessIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26402,7 +26403,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26424,7 +26425,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isInStudy",
               "valueExpr": "http://ddi-alliance.org/ns/#Study",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26446,7 +26447,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26482,7 +26483,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA DataPipeline is a single traversal of the Generic Longitudinal Business Model (GLBPM) and/or the Generic Statistical Business process Model (GSBPM) in the course of a study where a study is either one off or a wave in a StudySeries.\n\nExamples\n==========\nIn a study where the study is a wave in a StudySeries, we do a single traversal of the Generic Longitudinal Business Process Model. From one wave to the next the traversal may be different. Each traversal is described in a DataPipeline.\n\nExtract Transform and Load (ETL) platforms support data pipelines to move data between systems. Using an ETL platform, data engineers create data pipelines to orchestrate the movement, transformation, validation, and loading of data, from source to final destination. The DataPipeline describes this \"orchestration\".\n\nA prospective DataPipeline gives guidance to data engineers. It is a design pattern. A retrospective DataPipeline documents an ETL data pipeline after the fact.\n\n\nSynonyms\n==========\nTraversal, Data Lifecycle\n\n",
+              "value": "\nDefinition\n============\nA DataPipeline is a single traversal of the Generic Longitudinal Business Model (GLBPM) and/or the Generic Statistical Business process Model (GSBPM) in the course of a study where a study is either one off or a wave in a StudySeries.\n\nExamples\n==========\nIn a study where the study is a wave in a StudySeries, we do a single traversal of the Generic Longitudinal Business Process Model. From one wave to the next the traversal may be different. Each traversal is described in a DataPipeline.\n\nExtract Transform and Load (ETL) platforms support data pipelines to move data between systems. Using an ETL platform, data engineers create data pipelines to orchestrate the movement, transformation, validation, and loading of data, from source to final destination. The DataPipeline describes this \"orchestration\".\n\nA prospective DataPipeline gives guidance to data engineers. It is a design pattern. A retrospective DataPipeline documents an ETL data pipeline after the fact.\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\nTraversal, Data Lifecycle\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26523,9 +26524,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contentCoverage",
-              "valueExpr": "_:TypedDescriptiveText",
+              "valueExpr": "http://ddi-alliance.org/ns/#TypedDescriptiveText",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26549,8 +26550,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26575,7 +26576,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26596,8 +26597,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#ofType",
               "valueExpr": "http://ddi-alliance.org/ns/#DDI4Version",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26619,7 +26620,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasDocumentCoverage",
               "valueExpr": "http://ddi-alliance.org/ns/#Coverage",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26641,7 +26642,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPersistentAccessControl",
               "valueExpr": "http://ddi-alliance.org/ns/#Access",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26663,7 +26664,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasLocalAccessControl",
               "valueExpr": "http://ddi-alliance.org/ns/#Access",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26685,7 +26686,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasFundingSource",
               "valueExpr": "http://ddi-alliance.org/ns/#FundingInformation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26707,7 +26708,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasExternalMaterial",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26743,7 +26744,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides a consistent path to identifying information regarding the DDI Document and is automatically available for all Functional Views (/DocumentInformation/Annotation etc.). It covers annotation information, coverage (general, plus specific spatial, temporal, and topical coverage), access information from the producer (persistent access control), access information from the local distributor (Local Access Control), information on related series (i.e. a study done as a series of data capture events over time, qualitative material that is part of a larger set, one of a series of funded data capture activities, etc.), funding information, and other document level information used to identify and discover information about a DDI document regardless of its Functional View type. Use the Annotation at this level to provide the full annotation of the DDI Document. Note that related materials can be entered within the Annotation fields.\n\nExplanatory notes\n===================\nAnnotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance. \n\n",
+              "value": "\nDefinition\n============\nProvides a consistent path to identifying information regarding the DDI Document and is automatically available for all Functional Views (/DocumentInformation/Annotation etc.). It covers annotation information, coverage (general, plus specific spatial, temporal, and topical coverage), access information from the producer (persistent access control), access information from the local distributor (Local Access Control), information on related series (i.e. a study done as a series of data capture events over time, qualitative material that is part of a larger set, one of a series of funded data capture activities, etc.), funding information, and other document level information used to identify and discover information about a DDI document regardless of its Functional View type. Use the Annotation at this level to provide the full annotation of the DDI Document. Note that related materials can be entered within the Annotation fields.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nAnnotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26767,7 +26768,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfMaterial",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26789,7 +26790,7 @@
               "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26814,7 +26815,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26836,7 +26837,7 @@
               "predicate": "http://ddi-alliance.org/ns/#relationshipDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26858,7 +26859,7 @@
               "predicate": "http://ddi-alliance.org/ns/#mimeType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26878,9 +26879,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesSegment",
-              "valueExpr": "_:Segment",
+              "valueExpr": "http://ddi-alliance.org/ns/#Segment",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26902,7 +26903,7 @@
               "predicate": "http://ddi-alliance.org/ns/#citationOfExternalMaterial",
               "valueExpr": "http://ddi-alliance.org/ns/#Annotation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26938,7 +26939,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nExternalMaterial describes the location, structure, and relationship to the DDI metadata instance for any material held external to that instance. This includes citations to such material, an external reference to a URL (or other URI), and a statement about the relationship between the cited ExternalMaterial the contents of the DDI instance. It should be used as follows:as a target object from a relationship which clarifies its role within a class; or as the target of a relatedResource within an annotation.\n\n\nExamples\n==========\nExternalMaterial is used to identify material and optionally specific sections of the material that have a relationship to a class. There is a generic relatedMaterial on AnnotatedIdentifiable. This should be used to attach any additional material that the user identifies as important to the class. The properties typeOfMaterial, descriptiveText, and relationshipDescription should be used to clarify the purpose and coverage of the related material.\n\nExplanatory notes\n===================\nWithin the DDI model, ExternalMaterial is used as an extension base for specific external materials found such as an External Aid. It is used as a base for specifically related material (e.g. ExternalAid) by creating a relationship whose name clarifies the purpose of the related material.\n\nDDI 3.2 mapping\n=================\nr:OtherMaterialType\n\n",
+              "value": "\nDefinition\n============\nExternalMaterial describes the location, structure, and relationship to the DDI metadata instance for any material held external to that instance. This includes citations to such material, an external reference to a URL (or other URI), and a statement about the relationship between the cited ExternalMaterial the contents of the DDI instance. It should be used as follows:as a target object from a relationship which clarifies its role within a class; or as the target of a relatedResource within an annotation.\n\n\nExamples\n==========\nExternalMaterial is used to identify material and optionally specific sections of the material that have a relationship to a class. There is a generic relatedMaterial on AnnotatedIdentifiable. This should be used to attach any additional material that the user identifies as important to the class. The properties typeOfMaterial, descriptiveText, and relationshipDescription should be used to clarify the purpose and coverage of the related material.\n\nExplanatory notes\n===================\nWithin the DDI model, ExternalMaterial is used as an extension base for specific external materials found such as an External Aid. It is used as a base for specifically related material (e.g. ExternalAid) by creating a relationship whose name clarifies the purpose of the related material.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:OtherMaterialType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -26962,7 +26963,7 @@
               "predicate": "http://ddi-alliance.org/ns/#funderRole",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -26987,7 +26988,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27009,7 +27010,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27031,7 +27032,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasFunder",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27074,7 +27075,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides information about the individual, agency and/or grant(s) which funded the described entity. Lists a reference to the agency or individual as described by a DDI Agent, the role of the funder, the grant number(s) and a description of the funding activity.\n\nExamples\n==========\nA \"millionaire grant\" (funding description) from John Beresford Tipton, Jr. (individual). Exploration of the effect of sudden wealth and basis for a television episode (funder role).\n\nDDI 3.2 mapping\n=================\nr:FundingInformationType\n\n",
+              "value": "\nDefinition\n============\nProvides information about the individual, agency and/or grant(s) which funded the described entity. Lists a reference to the agency or individual as described by a DDI Agent, the role of the funder, the grant number(s) and a description of the funding activity.\n\nExamples\n==========\nA \"millionaire grant\" (funding description) from John Beresford Tipton, Jr. (individual). Exploration of the effect of sudden wealth and basis for a television episode (funder role).\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:FundingInformationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27107,7 +27108,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn Act is an indivisible, atomic step, i.e. not composed of other steps. An Act can also be viewed as a terminal node in a hierarchy of Workflow Steps. \n\nExamples\n==========\nQuestionConstructType from DDI 3.x is an example of an Act.\nGenerationInstructionType from DDI 3..x is an example of an Act extended to include a CommandCode used to create a derivation or recode for an InstanceVariable or other similar use \n\nExplanatory notes\n===================\nAct is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth.\n\n",
+              "value": "\nDefinition\n============\nAn Act is an indivisible, atomic step, i.e. not composed of other steps. An Act can also be viewed as a terminal node in a hierarchy of Workflow Steps. \n\nExamples\n==========\nQuestionConstructType from DDI 3.x is an example of an Act.\nGenerationInstructionType from DDI 3..x is an example of an Act extended to include a CommandCode used to create a derivation or recode for an InstanceVariable or other similar use \n\nExplanatory notes\n===================\nAct is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27131,7 +27132,7 @@
               "predicate": "http://ddi-alliance.org/ns/#activityDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27153,7 +27154,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesCommandCode",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27175,7 +27176,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfComputation",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27211,7 +27212,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides an extensible framework for specific computation or transformation objects.\n\nExamples\n==========\nIn data processing, a ComputationAction might be a code statement in a code sequence.\n\nIn data capture, a ComputationAction might takes the form of a question, a measurement or instrument code.\n\nDDI 3.2 mapping\n=================\nd:ComputationItemType\n\n",
+              "value": "\nDefinition\n============\nProvides an extensible framework for specific computation or transformation objects.\n\nExamples\n==========\nIn data processing, a ComputationAction might be a code statement in a code sequence.\n\nIn data capture, a ComputationAction might takes the form of a question, a measurement or instrument code.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:ComputationItemType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27235,7 +27236,7 @@
               "predicate": "http://ddi-alliance.org/ns/#condition",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27257,7 +27258,7 @@
               "predicate": "http://ddi-alliance.org/ns/#executesSequence",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27300,7 +27301,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nType of WorkflowControlStep in which the execution flow is determined by one or more conditions.\n\n\nExamples\n==========\nIf-then-else and iterative structures.\n\n",
+              "value": "\nDefinition\n============\nType of WorkflowControlStep in which the execution flow is determined by one or more conditions.\n\n\nExamples\n==========\nIf-then-else and iterative structures.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27322,9 +27323,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#elseIf",
-              "valueExpr": "_:ElseIfAction",
+              "valueExpr": "http://ddi-alliance.org/ns/#ElseIfAction",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27346,7 +27347,7 @@
               "predicate": "http://ddi-alliance.org/ns/#elseContains",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27389,7 +27390,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIfThenElse describes an if-then-else decision type of control construct. If the stated condition is met, then the associated Workflow Sequence in containsSubSeqence is triggered, otherwise the Workflow Sequence that is triggered is the one associated via elseContains.\n\n\nExamples\n==========\nAn IfThenElse object describes the conditional logic in the flow of a questionnaire or other data collection instrument, where if a stated condition is met, one path is followed through the flow, and if the stated condition is met, another path is taken.\n\nExplanatory notes\n===================\nContains a condition and two associations:\n- one to the Workflow Sequence that is triggered when the condition is true (containsSubSequence), and \n- another to the Workflow Sequence that is triggered when the condition is false (elseContains). \n\n\nDDI 3.2 mapping\n=================\nd:IfThenElseType\n\n",
+              "value": "\nDefinition\n============\nIfThenElse describes an if-then-else decision type of control construct. If the stated condition is met, then the associated Workflow Sequence in containsSubSeqence is triggered, otherwise the Workflow Sequence that is triggered is the one associated via elseContains.\n\n\nExamples\n==========\nAn IfThenElse object describes the conditional logic in the flow of a questionnaire or other data collection instrument, where if a stated condition is met, one path is followed through the flow, and if the stated condition is met, another path is taken.\n\nExplanatory notes\n===================\nContains a condition and two associations:\n- one to the Workflow Sequence that is triggered when the condition is true (containsSubSequence), and \n- another to the Workflow Sequence that is triggered when the condition is false (elseContains). \n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:IfThenElseType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27413,7 +27414,7 @@
               "predicate": "http://ddi-alliance.org/ns/#initialValue",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27435,7 +27436,7 @@
               "predicate": "http://ddi-alliance.org/ns/#stepValue",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27471,7 +27472,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIterative control structure to be repeated a specified number of times based on one or more conditions. Inside the loop, one or more Workflow Steps are evaluated and processed in the order they appear.\n\nExamples\n==========\nA loop is set to repeat a fixed number of times (initialValue). A stepValue is initially specified. At the end of the loop the current value is decremented by the stepValue. The current value might be the initialValue or it might be the current value after the initialValue has been decremented one or more times.\n\nExplanatory notes\n===================\nThe Workflow Sequence contained in the Loop is executed until the condition is met, and then control is handed back to the containing control construct.\n\nSynonyms\n==========\nForLoop\n\nDDI 3.2 mapping\n=================\nd:LoopType\n\n",
+              "value": "\nDefinition\n============\nIterative control structure to be repeated a specified number of times based on one or more conditions. Inside the loop, one or more Workflow Steps are evaluated and processed in the order they appear.\n\nExamples\n==========\nA loop is set to repeat a fixed number of times (initialValue). A stepValue is initially specified. At the end of the loop the current value is decremented by the stepValue. The current value might be the initialValue or it might be the current value after the initialValue has been decremented one or more times.\n\nExplanatory notes\n===================\nThe Workflow Sequence contained in the Loop is executed until the condition is met, and then control is handed back to the containing control construct.\n\nSynonyms\n==========\nForLoop\n\nDDI 3.2 mapping\n=================\nd:LoopType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27495,7 +27496,7 @@
               "predicate": "http://ddi-alliance.org/ns/#activityDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27517,7 +27518,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfMetadataDrivenAction",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27539,7 +27540,7 @@
               "predicate": "http://ddi-alliance.org/ns/#quasiVTL",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27575,7 +27576,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nWhereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.\n\nIn ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.\n\nIn ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.\n\nIn the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.\n\nMetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.\n\nExamples\n==========\nSome data management systems present users with a menu of actions they can use in a sequence to perform a specific task. The system engages the user in a dialog driven by an action template. The dialog completes the template which the system then uses to perform the action. The user doesn't write any code.\n\nExplanatory notes\n===================\nWe would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema.\n\n",
+              "value": "\nDefinition\n============\nWhereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.\n\nIn ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.\n\nIn ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.\n\nIn the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.\n\nMetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.\n\nExamples\n==========\nSome data management systems present users with a menu of actions they can use in a sequence to perform a specific task. The system engages the user in a dialog driven by an action template. The dialog completes the template which the system then uses to perform the action. The user doesn't write any code.\n\nExplanatory notes\n===================\nWe would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27599,7 +27600,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27621,7 +27622,7 @@
               "predicate": "http://ddi-alliance.org/ns/#defaultValue",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27646,7 +27647,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27671,7 +27672,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27695,8 +27696,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27720,8 +27721,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27745,8 +27746,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27768,7 +27769,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27790,7 +27791,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27812,7 +27813,7 @@
               "predicate": "http://ddi-alliance.org/ns/#valueRepresentation",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -27848,7 +27849,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn Input or Output to a Process Step defined by as a unique identifier. It may be a single value or an array. \n\nExamples\n==========\nA question might have dynamic text or, again, \"fills\". Depending on the gender of the subject, a question might say \"he\" or \"she\" and/or \"him\" or \"her\". A gender variable is passed into the question, and question code resolves the dynamic text.\nA computation action may be expecting a numeric array of values [result of looping an \"Age in years\" question through every member of a household]. isArray = \"true\"; valueRepresentation would link to a SubstantiveValueDomain defining a numeric value with a possible valid range; and because the parameter occurs in the context of a computation action it is necessary to specify an alias (e.g. AGE). The alias links the parameter to the code in the computation.\n\nExplanatory notes\n===================\nWhen used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value.\n\n",
+              "value": "\nDefinition\n============\nAn Input or Output to a Process Step defined by as a unique identifier. It may be a single value or an array. \n\nExamples\n==========\nA question might have dynamic text or, again, \"fills\". Depending on the gender of the subject, a question might say \"he\" or \"she\" and/or \"him\" or \"her\". A gender variable is passed into the question, and question code resolves the dynamic text.\nA computation action may be expecting a numeric array of values [result of looping an \"Age in years\" question through every member of a household]. isArray = \"true\"; valueRepresentation would link to a SubstantiveValueDomain defining a numeric value with a possible valid range; and because the parameter occurs in the context of a computation action it is necessary to specify an alias (e.g. AGE). The alias links the parameter to the code in the computation.\n\nExplanatory notes\n===================\nWhen used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27881,7 +27882,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIterative control structure to be repeated until a specified condition is met. After each iteration the condition is tested. If the condition is not met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is met, control passes back to the containing Workflow Step.\n\nExamples\n==========\nA RepeatUntil loop is similar to a RepeatWhile loop, except that it tests the Boolean expression after the loop rather than before. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, in a household there is at last one person and a loop might contain a block of person questions. After the first person the last question in the block might be \"Anyone else in the household\"? The RepeatUntil would continue iterating until there was no-one else in the household.\n\nDDI 3.2 mapping\n=================\nd:RepeatUntilType\n\n",
+              "value": "\nDefinition\n============\nIterative control structure to be repeated until a specified condition is met. After each iteration the condition is tested. If the condition is not met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is met, control passes back to the containing Workflow Step.\n\nExamples\n==========\nA RepeatUntil loop is similar to a RepeatWhile loop, except that it tests the Boolean expression after the loop rather than before. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, in a household there is at last one person and a loop might contain a block of person questions. After the first person the last question in the block might be \"Anyone else in the household\"? The RepeatUntil would continue iterating until there was no-one else in the household.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:RepeatUntilType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27914,7 +27915,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIterative control structure to be repeated while a specified condition is met. Before each iteration the condition is tested. If the condition is met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is not met, control passes back to the containing Workflow Step.\n\nExamples\n==========\nA RepeatWhile loop is similar to a RepeatUntil loop, except that it tests the Boolean expression before the loop rather than after. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, RepeatWhile may be used to pre-test a certain condition like if \"the number of new people in a household is greater than 0\" in which case a block of questions might be asked for each new person.\n\nDDI 3.2 mapping\n=================\nd:RepeatWhileType\n\n",
+              "value": "\nDefinition\n============\nIterative control structure to be repeated while a specified condition is met. Before each iteration the condition is tested. If the condition is met, the associated Workflow Sequence in contains (inherited from Conditional Control Construct) is triggered. When the condition is not met, control passes back to the containing Workflow Step.\n\nExamples\n==========\nA RepeatWhile loop is similar to a RepeatUntil loop, except that it tests the Boolean expression before the loop rather than after. Thus, a RepeatUntil loop always executes the loop once, whereas if the Boolean expression is initially False, a RepeatWhile loop does not execute the loop at all. For example, RepeatWhile may be used to pre-test a certain condition like if \"the number of new people in a household is greater than 0\" in which case a block of questions might be asked for each new person.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:RepeatWhileType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27935,7 +27936,7 @@
           "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
           "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -27969,7 +27970,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe components of a Split consists of a number of process steps to be executed concurrently with partial synchronization. Split completes as soon as all of its component process steps have been scheduled for execution.\n\nExplanatory notes\n===================\nSupports parallel processing that does not require completion to exit. \n\n",
+              "value": "\nDefinition\n============\nThe components of a Split consists of a number of process steps to be executed concurrently with partial synchronization. Split completes as soon as all of its component process steps have been scheduled for execution.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nSupports parallel processing that does not require completion to exit. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27990,7 +27991,7 @@
           "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
           "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -28024,7 +28025,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSplitJoin consists of process steps that are executed concurrently (execution with barrier synchronization). That is, SplitJoin completes when all of its components processes have completed. \n\nExamples\n==========\nA GANTT chart where a number of processes running parallel to each other are all prerequisites of a subsequent step.\n\nExplanatory notes\n===================\nSupports parallel processing that requires completion of all included process steps to exit.\n\n",
+              "value": "\nDefinition\n============\nSplitJoin consists of process steps that are executed concurrently (execution with barrier synchronization). That is, SplitJoin completes when all of its components processes have completed. \n\nExamples\n==========\nA GANTT chart where a number of processes running parallel to each other are all prerequisites of a subsequent step.\n\nExplanatory notes\n===================\nSupports parallel processing that requires completion of all included process steps to exit.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28045,7 +28046,7 @@
           "predicate": "http://ddi-alliance.org/ns/#typeOfTemporalRelationship",
           "valueExpr": "http://ddi-alliance.org/ns/#TemporalRelationSpecification",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -28079,7 +28080,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines complex synchronous or asynchronous temporal ordering control. Defines temporal relationships using Allen's Intervals.\n\nExplanatory notes\n===================\nWhen creating a specific subtype identify the workflow steps included in a structure that is appropriate to the subtype. For example, Split contains a relationship \"executeConcurrently\".\n\n",
+              "value": "\nDefinition\n============\nDefines complex synchronous or asynchronous temporal ordering control. Defines temporal relationships using Allen's Intervals.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nWhen creating a specific subtype identify the workflow steps included in a structure that is appropriate to the subtype. For example, Split contains a relationship \"executeConcurrently\".\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28112,7 +28113,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA subtype of WorkflowStep which controls the ordering of Workflow Steps within a Process. Abstract base for specialized ordering conditions that have specific requirements to relay ordering information.\n\nExamples\n==========\nA WorkflowStepSequence is a subtype of WorkflowControlStep which defines a sequential order for included steps.\n\n",
+              "value": "\nDefinition\n============\nA subtype of WorkflowStep which controls the ordering of Workflow Steps within a Process. Abstract base for specialized ordering conditions that have specific requirements to relay ordering information.\n\nExamples\n==========\nA WorkflowStepSequence is a subtype of WorkflowControlStep which defines a sequential order for included steps.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28136,7 +28137,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28158,7 +28159,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28180,7 +28181,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28202,7 +28203,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28224,7 +28225,7 @@
               "predicate": "http://ddi-alliance.org/ns/#implementsAlgorithm",
               "valueExpr": "http://ddi-alliance.org/ns/#AlgorithmOverview",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28246,7 +28247,7 @@
               "predicate": "http://ddi-alliance.org/ns/#organizedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowControlStep",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28289,7 +28290,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Workflow Process is a realization of Process which identifies the Workflow Step Sequence which contains the WorkflowSteps and their order. It may identify the algorithm that it implements.\n\nExamples\n==========\nOverall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM).\n\n",
+              "value": "\nDefinition\n============\nA Workflow Process is a realization of Process which identifies the Workflow Step Sequence which contains the WorkflowSteps and their order. It may identify the algorithm that it implements.\n\nExamples\n==========\nOverall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM).\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28297,7 +28298,7 @@
       }
     },
     {
-      "id": "_:WorkflowService",
+      "id": "http://ddi-alliance.org/ns/#WorkflowService",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -28313,7 +28314,7 @@
               "predicate": "http://ddi-alliance.org/ns/#serviceInterface",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28335,7 +28336,7 @@
               "predicate": "http://ddi-alliance.org/ns/#serviceLocation",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28357,7 +28358,7 @@
               "predicate": "http://ddi-alliance.org/ns/#estimatedDuration",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28379,7 +28380,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28415,7 +28416,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA means of performing a Workflow Step as part of a concrete implementation of a Business Function  (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve).\n\nExamples\n==========\nA specification for an air flow monitor used to capture a measure for an ImplementedMeasure (a subtype of Act).\n\n",
+              "value": "\nDefinition\n============\nA means of performing a Workflow Step as part of a concrete implementation of a Business Function  (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve).\n\nExamples\n==========\nA specification for an air flow monitor used to capture a measure for an ImplementedMeasure (a subtype of Act).\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28439,7 +28440,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28461,7 +28462,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28483,7 +28484,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28505,7 +28506,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28527,7 +28528,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28549,7 +28550,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInformationFlow",
               "valueExpr": "http://ddi-alliance.org/ns/#Binding",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28569,9 +28570,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isPerformedBy",
-              "valueExpr": "_:WorkflowService",
+              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowService",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28593,7 +28594,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28622,7 +28623,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasOutputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28665,7 +28666,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nOne of the constituents of a Workflow. It can be a composition or atomic and might be performed by a Service.\n\nExamples\n==========\nA ControlConstruct that orchestrates steps and substeps in a Workflow is a WorkflowStep. An Act is a WorkflowStep.\n\nExplanatory notes\n===================\nAn atomic Workflow Step has no Control Constructs -- it's an Act. A composition consists of a tree of Control Constructs. In this tree Acts are associated with the leaf nodes.\n\nFurthermore, a composition might be a glass box or a black box from the perspective of a service. If a service performs a WorkflowStep, it might invoke just the topmost ControlConstruct -- for example a WorkflowSequence. It may know nothing about the internal workings of the sequence. In this case the WorkflowStep is a black box.\n\nGSIM mapping\n==============\nProcess Step\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nOne of the constituents of a Workflow. It can be a composition or atomic and might be performed by a Service.\n\nExamples\n==========\nA ControlConstruct that orchestrates steps and substeps in a Workflow is a WorkflowStep. An Act is a WorkflowStep.\n\nExplanatory notes\n===================\nAn atomic Workflow Step has no Control Constructs -- it's an Act. A composition consists of a tree of Control Constructs. In this tree Acts are associated with the leaf nodes.\n\nFurthermore, a composition might be a glass box or a black box from the perspective of a service. If a service performs a WorkflowStep, it might invoke just the topmost ControlConstruct -- for example a WorkflowSequence. It may know nothing about the internal workings of the sequence. In this case the WorkflowStep is a black box.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nProcess Step\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28689,7 +28690,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfWorkflowStepSequence",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28709,9 +28710,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#orderedStep",
-              "valueExpr": "_:WorkflowStepOrder",
+              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepOrder",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28733,7 +28734,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28755,7 +28756,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28791,7 +28792,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA WorkflowStepSequence controls the order of WorkflowSteps by defining a simple sequence.\n\nWorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .\n\nMembers in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.\n\n\nExamples\n==========\nA WorkflowStepSequence can be used to describe the flow of questions in a questionnaire. \n\nA WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.\n\nExplanatory notes\n===================\nIf more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.\n\nDDI 3.2 mapping\n=================\nd:SequenceType\n\n",
+              "value": "\nDefinition\n============\nA WorkflowStepSequence controls the order of WorkflowSteps by defining a simple sequence.\n\nWorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .\n\nMembers in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.\n\n\nExamples\n==========\nA WorkflowStepSequence can be used to describe the flow of questions in a questionnaire. \n\nA WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.\n\nExplanatory notes\n===================\nIf more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:SequenceType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28799,7 +28800,7 @@
       }
     },
     {
-      "id": "_:AppliedUse",
+      "id": "http://ddi-alliance.org/ns/#AppliedUse",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -28815,7 +28816,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28835,9 +28836,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasGuide",
-              "valueExpr": "_:Guide",
+              "valueExpr": "http://ddi-alliance.org/ns/#Guide",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28866,7 +28867,7 @@
               "predicate": "http://ddi-alliance.org/ns/#appliesToUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28888,7 +28889,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isUsedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#AnnotatedIdentifiable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -28924,7 +28925,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nLinks the guidance instructions to specific unit types.\n\nExamples\n==========\nLinks one or more guides for the use of a sample (result) obtained in the first stage of complex sample with the unit type. A sample of Counties from which households will be selected in the next sample stage.\n\n",
+              "value": "\nDefinition\n============\nLinks the guidance instructions to specific unit types.\n\nExamples\n==========\nLinks one or more guides for the use of a sample (result) obtained in the first stage of complex sample with the unit type. A sample of Counties from which households will be selected in the next sample stage.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -28945,7 +28946,7 @@
           "predicate": "http://ddi-alliance.org/ns/#overview",
           "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -28979,7 +28980,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nSomething an enterprise does, or needs to do, in order to achieve its objectives.\n\nA Business Function delivers added value from a business point of view. It is delivered by bringing together people, processes and technology (resources), for a specific business purpose. \n\nBusiness Functions answer in a generic sense \"What business purpose does this Business Service or Process Step serve?\" Through identifying the Business Function associated with each Business Service or Process Step it increases the documentation of the use of the associated Business Services and Process Steps, to enable future reuse.\n\nExamples\n==========\nA Business Function may be defined directly with descriptive text and/or through reference to an existing catalogue of Business Functions. \n\nGSIM mapping\n==============\nBusiness Function\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nSomething an enterprise does, or needs to do, in order to achieve its objectives.\n\nA Business Function delivers added value from a business point of view. It is delivered by bringing together people, processes and technology (resources), for a specific business purpose. \n\nBusiness Functions answer in a generic sense \"What business purpose does this Business Service or Process Step serve?\" Through identifying the Business Function associated with each Business Service or Process Step it increases the documentation of the use of the associated Business Services and Process Steps, to enable future reuse.\n\nExamples\n==========\nA Business Function may be defined directly with descriptive text and/or through reference to an existing catalogue of Business Functions. \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nBusiness Function\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29000,7 +29001,7 @@
           "predicate": "http://ddi-alliance.org/ns/#isDiscussedIn",
           "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -29034,7 +29035,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nGoals are the \"things\" a method aims to achieve. A goal may be a business function (GSIM) corresponding to a function in a catalog of functions such as GSBPM or GLBMN. However, goals may be specified more broadly. For example, conducting a clinical trial might be the goal of a method. Machine learning might be the goal of a method. \n\n\n\nExamples\n==========\nTo further distinguish a \"goal\" from an \"output\", consider the construction of a statistic. A goal may be the construction of the statistic. The output is the statistic. The output is data. The statistic by itself -- the output -- is arguably meaningless even if we capture the process of its construction. \n\nGSIM mapping\n==============\nBusiness Function\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nGoals are the \"things\" a method aims to achieve. A goal may be a business function (GSIM) corresponding to a function in a catalog of functions such as GSBPM or GLBMN. However, goals may be specified more broadly. For example, conducting a clinical trial might be the goal of a method. Machine learning might be the goal of a method. \n\n\n\nExamples\n==========\nTo further distinguish a \"goal\" from an \"output\", consider the construction of a statistic. A goal may be the construction of the statistic. The output is the statistic. The output is data. The statistic by itself -- the output -- is arguably meaningless even if we capture the process of its construction. \n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nBusiness Function\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29042,7 +29043,7 @@
       }
     },
     {
-      "id": "_:Guide",
+      "id": "http://ddi-alliance.org/ns/#Guide",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -29058,7 +29059,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29080,7 +29081,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDiscussedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29116,7 +29117,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides a guide for the usage of a result within a specified application\n\nExamples\n==========\nThe applied use of a weight determined by a weighting process in analyzing a data set\n\n",
+              "value": "\nDefinition\n============\nProvides a guide for the usage of a result within a specified application\n\nExamples\n==========\nThe applied use of a weight determined by a weighting process in analyzing a data set\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29124,7 +29125,7 @@
       }
     },
     {
-      "id": "_:Precondition",
+      "id": "http://ddi-alliance.org/ns/#Precondition",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -29140,7 +29141,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isDiscussedIn",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29162,7 +29163,7 @@
               "predicate": "http://ddi-alliance.org/ns/#basedOnPriorResult",
               "valueExpr": "http://ddi-alliance.org/ns/#Result",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29198,7 +29199,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA precondition is a state. The state includes one or more goals that were previously achieved. This state is the necessary condition before a process can begin.\n\nExamples\n==========\nUsing goals and preconditions processes can be chained to form work flows. Note that these work flows do not include data flows. Instead data flows consisting ouf outputs, inputs and bindings are a separate swim lane. \n\nExplanatory notes\n===================\nA precondition related to a design defines the state that must exist in order for a design being applied. For example in applying a Sampling Design there may be a precondition for the existance of a sampling frame meeting certain specifications.\n\n",
+              "value": "\nDefinition\n============\nA precondition is a state. The state includes one or more goals that were previously achieved. This state is the necessary condition before a process can begin.\n\nExamples\n==========\nUsing goals and preconditions processes can be chained to form work flows. Note that these work flows do not include data flows. Instead data flows consisting ouf outputs, inputs and bindings are a separate swim lane. \n\nExplanatory notes\n===================\nA precondition related to a design defines the state that must exist in order for a design being applied. For example in applying a Sampling Design there may be a precondition for the existance of a sampling frame meeting certain specifications.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29222,7 +29223,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29244,7 +29245,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasBinding",
               "valueExpr": "http://ddi-alliance.org/ns/#Binding",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29264,9 +29265,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAppliedUse",
-              "valueExpr": "_:AppliedUse",
+              "valueExpr": "http://ddi-alliance.org/ns/#AppliedUse",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29288,7 +29289,7 @@
               "predicate": "http://ddi-alliance.org/ns/#evaluateAgainstGoal",
               "valueExpr": "http://ddi-alliance.org/ns/#Goal",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29310,7 +29311,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29339,7 +29340,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasOutputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29382,7 +29383,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the results of a process for the purpose of linking these results to guidance for future usage in specified situations. Result is abstract and serves as a substitution base for the specified result of a specific instantiation of a methodology process.\n\nExamples\n==========\nThe use of a weight resulting from a sampling process by an analyst within the context of a specific set of variables. The class containing the weight would use the extension base Result, adding any additional required properties and relationships to describe it.\n\n",
+              "value": "\nDefinition\n============\nDescribes the results of a process for the purpose of linking these results to guidance for future usage in specified situations. Result is abstract and serves as a substitution base for the specified result of a specific instantiation of a methodology process.\n\nExamples\n==========\nThe use of a weight resulting from a sampling process by an analyst within the context of a specific set of variables. The class containing the weight would use the extension base Result, adding any additional required properties and relationships to describe it.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29406,7 +29407,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29428,7 +29429,7 @@
               "predicate": "http://ddi-alliance.org/ns/#confidentialityStatement",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29448,9 +29449,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#accessPermission",
-              "valueExpr": "_:Form",
+              "valueExpr": "http://ddi-alliance.org/ns/#Form",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29472,7 +29473,7 @@
               "predicate": "http://ddi-alliance.org/ns/#restrictions",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29494,7 +29495,7 @@
               "predicate": "http://ddi-alliance.org/ns/#citationRequirement",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29516,7 +29517,7 @@
               "predicate": "http://ddi-alliance.org/ns/#depositRequirement",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29538,7 +29539,7 @@
               "predicate": "http://ddi-alliance.org/ns/#accessConditions",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29560,7 +29561,7 @@
               "predicate": "http://ddi-alliance.org/ns/#disclaimer",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29582,7 +29583,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contactAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#AgentAssociation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29604,7 +29605,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29640,7 +29641,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes access to the annotated object. This item includes a confidentiality statement, descriptions of the access permissions required, restrictions to access, citation requirements, depositor requirements, conditions for access, a disclaimer, any time limits for access restrictions, and contact information regarding access.\n\nExamples\n==========\nA proprietary InstanceQuestion might have specific access restrictions.\n\nDDI 3.2 mapping\n=================\na:AccessType\n\n",
+              "value": "\nDefinition\n============\nDescribes access to the annotated object. This item includes a confidentiality statement, descriptions of the access permissions required, restrictions to access, citation requirements, depositor requirements, conditions for access, a disclaimer, any time limits for access restrictions, and contact information regarding access.\n\nExamples\n==========\nA proprietary InstanceQuestion might have specific access restrictions.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\na:AccessType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29666,8 +29667,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29691,8 +29692,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29716,8 +29717,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29741,8 +29742,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29778,7 +29779,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA type of Spatial coverage describing a rectangular area within which the actual range of location fits. A BoundingBox is described by 4 numbers - the maxima of the north, south, east, and west coordinates found in the area.\n\nExamples\n==========\nBurkino Faso: (N) 15.082773; (S) 9.395691; (E) 2.397927; (W) -5.520837\n\nExplanatory notes\n===================\nA BoundingBox is often described by two x,y coordinates where the x coordinates are used for the North and South Latitudes and y coordinates for the West and East Longitudes\n\nSynonyms\n==========\nr:BoundingBox\n\n",
+              "value": "\nDefinition\n============\nA type of Spatial coverage describing a rectangular area within which the actual range of location fits. A BoundingBox is described by 4 numbers - the maxima of the north, south, east, and west coordinates found in the area.\n\nExamples\n==========\nBurkino Faso: (N) 15.082773; (S) 9.395691; (E) 2.397927; (W) -5.520837\n\nExplanatory notes\n===================\nA BoundingBox is often described by two x,y coordinates where the x coordinates are used for the North and South Latitudes and y coordinates for the West and East Longitudes\n\nSynonyms\n==========\nr:BoundingBox\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29802,7 +29803,7 @@
               "predicate": "http://ddi-alliance.org/ns/#overview",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29822,9 +29823,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage",
-              "valueExpr": "_:TemporalCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#TemporalCoverage",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29851,9 +29852,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage",
-              "valueExpr": "_:TopicalCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#TopicalCoverage",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29880,9 +29881,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage",
-              "valueExpr": "_:SpatialCoverage",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialCoverage",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29925,7 +29926,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nCoverage information for an annotated object. Includes coverage information for temporal, topical, and spatial coverage. \n\nExamples\n==========\nA survey might have ask people about motels they stayed in (topical coverage) in the year 2015 (temporal coverage), while they were travelling in Kansas (spatial coverage). This is different than the temporal, and spatial attributes of the population studied – (international travelers to the US surveyed in 2017).\n\nExplanatory notes\n===================\nCoverage is a container for the more specific temporal, spatial, and topical coverages to which it refers.\n\nDDI 3.2 mapping\n=================\nr:CoverageType\n\n",
+              "value": "\nDefinition\n============\nCoverage information for an annotated object. Includes coverage information for temporal, topical, and spatial coverage. \n\nExamples\n==========\nA survey might have ask people about motels they stayed in (topical coverage) in the year 2015 (temporal coverage), while they were travelling in Kansas (spatial coverage). This is different than the temporal, and spatial attributes of the population studied – (international travelers to the US surveyed in 2017).\n\nExplanatory notes\n===================\nCoverage is a container for the more specific temporal, spatial, and topical coverages to which it refers.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:CoverageType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -29933,7 +29934,7 @@
       }
     },
     {
-      "id": "_:SpatialCoverage",
+      "id": "http://ddi-alliance.org/ns/#SpatialCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -29949,7 +29950,7 @@
               "predicate": "http://ddi-alliance.org/ns/#description",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29971,7 +29972,7 @@
               "predicate": "http://ddi-alliance.org/ns/#spatialAreaCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -29993,7 +29994,7 @@
               "predicate": "http://ddi-alliance.org/ns/#spatialObject",
               "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30015,7 +30016,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasBoundingBox",
               "valueExpr": "http://ddi-alliance.org/ns/#BoundingBox",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30037,7 +30038,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitTypeClassification",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30059,7 +30060,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitClassification",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30081,7 +30082,7 @@
               "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnitType",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30103,7 +30104,7 @@
               "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30125,7 +30126,7 @@
               "predicate": "http://ddi-alliance.org/ns/#highestGeographicUnitTypeCovered",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30147,7 +30148,7 @@
               "predicate": "http://ddi-alliance.org/ns/#lowestGeographicUnitTypeCovered",
               "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30183,7 +30184,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA description of spatial coverage (geographic coverage) of the annotated object. Spatial coverage is described using a number of objects that support searching by a wide range of systems (geospatial coordinates, geographic classification systems, and general systems using dcterms:spatial).\n\nExamples\n==========\nA country, a neighborhood, the inside of a polygon on the surface of the earth, along a street, at a particular intersection, or perhaps even in a certain orbit around the planet Mars. For a data set within a study this may be used to define the geographic restriction of the data set within the geographic coverage of the study (eg. The study may cover all of Sweden but the spatial coverage of the data set is Stockholm). \n\nExplanatory notes\n===================\nDifferent systems support different approaches to descriptions of geographic or spatial coverage. Dublin Core has a descriptive text field that is the equivalent of SpatialCoverage/description. Geographers need to understand the spatial objects available (spatialObject, highest and lowest level geography, geographic units and unit types) so they know the building blocks they have to create a map. Spatial search engines do a first pass search by a simple bounding box (the north and south latitudes and east and west longitudes that define the spatial coverage area). Spatial Coverage provides basic support for all of these uses.\n\nSynonyms\n==========\nr:SpatialCoverage, place\n\n",
+              "value": "\nDefinition\n============\nA description of spatial coverage (geographic coverage) of the annotated object. Spatial coverage is described using a number of objects that support searching by a wide range of systems (geospatial coordinates, geographic classification systems, and general systems using dcterms:spatial).\n\nExamples\n==========\nA country, a neighborhood, the inside of a polygon on the surface of the earth, along a street, at a particular intersection, or perhaps even in a certain orbit around the planet Mars. For a data set within a study this may be used to define the geographic restriction of the data set within the geographic coverage of the study (eg. The study may cover all of Sweden but the spatial coverage of the data set is Stockholm). \n\nExplanatory notes\n===================\nDifferent systems support different approaches to descriptions of geographic or spatial coverage. Dublin Core has a descriptive text field that is the equivalent of SpatialCoverage/description. Geographers need to understand the spatial objects available (spatialObject, highest and lowest level geography, geographic units and unit types) so they know the building blocks they have to create a map. Spatial search engines do a first pass search by a simple bounding box (the north and south latitudes and east and west longitudes that define the spatial coverage area). Spatial Coverage provides basic support for all of these uses.\n\nSynonyms\n==========\nr:SpatialCoverage, place\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30191,7 +30192,7 @@
       }
     },
     {
-      "id": "_:TemporalCoverage",
+      "id": "http://ddi-alliance.org/ns/#TemporalCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30202,9 +30203,9 @@
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#coverageDate",
-          "valueExpr": "_:ReferenceDate",
+          "valueExpr": "http://ddi-alliance.org/ns/#ReferenceDate",
           "min": 0,
-          "max": -1,
+          "max": "*",
           "annotations": [
             {
               "type": "Annotation",
@@ -30238,7 +30239,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the temporal coverage of the annotated object by specifying dates and optionally associating them with Subject and Keyword. The date itself may be expressed as either and ISO and/or NonISO date. Dates may be catagorized by use of optional typeOfDate using and external controlled vocabulary entry.\n\nExplanatory notes\n===================\nThe association of subjects or keywords with the date periods allows for describing the meaning of the temporal period. A survey, for example might be administered in one time period, but ask questions about the preceding decade. Temporal coverage might then include the data collection coverage as well as the referenced time period.\n\n",
+              "value": "\nDefinition\n============\nDescribes the temporal coverage of the annotated object by specifying dates and optionally associating them with Subject and Keyword. The date itself may be expressed as either and ISO and/or NonISO date. Dates may be catagorized by use of optional typeOfDate using and external controlled vocabulary entry.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nThe association of subjects or keywords with the date periods allows for describing the meaning of the temporal period. A survey, for example might be administered in one time period, but ask questions about the preceding decade. Temporal coverage might then include the data collection coverage as well as the referenced time period.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30246,7 +30247,7 @@
       }
     },
     {
-      "id": "_:TopicalCoverage",
+      "id": "http://ddi-alliance.org/ns/#TopicalCoverage",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30262,7 +30263,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subject",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30284,7 +30285,7 @@
               "predicate": "http://ddi-alliance.org/ns/#keyword",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30320,7 +30321,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the topical coverage of the module using Subject and Keyword. Subjects are members of structured classification systems such as formal subject headings in libraries. Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.\n\nDDI 3.2 mapping\n=================\nr:TopicalCoverageType\n\n",
+              "value": "\nDefinition\n============\nDescribes the topical coverage of the module using Subject and Keyword. Subjects are members of structured classification systems such as formal subject headings in libraries. Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:TopicalCoverageType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30341,7 +30342,7 @@
           "predicate": "http://ddi-alliance.org/ns/#forCategory",
           "valueExpr": "http://ddi-alliance.org/ns/#Category",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -30375,7 +30376,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a binary response, such as selected/unselected or checked/unchecked or true/false.\n\nExplanatory notes\n===================\nExactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a binary response, such as selected/unselected or checked/unchecked or true/false.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nExactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30399,7 +30400,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30421,7 +30422,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30443,7 +30444,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30465,7 +30466,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30487,7 +30488,7 @@
               "predicate": "http://ddi-alliance.org/ns/#captureSource",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30509,7 +30510,7 @@
               "predicate": "http://ddi-alliance.org/ns/#analysisUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30531,7 +30532,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasResponseDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ResponseDomain",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30552,7 +30553,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30574,7 +30575,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInstruction",
               "valueExpr": "http://ddi-alliance.org/ns/#Instruction",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30603,7 +30604,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasExternalAid",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalAid",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30646,7 +30647,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA measurement that describes a means of capturing data. This class can be extended to account for different specific means. Use a specific instantiation of a Capture to describe a means of capturing a measurement.\n\n\n\n\nExamples\n==========\nA survey question, blood pressure reading; MRI images; thermometer; web service; experimental observation. Classes could include InstanceQuestion, InstanceMeasurement or other class extending Capture.\n\nExplanatory notes\n===================\nProvides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions).\n\n",
+              "value": "\nDefinition\n============\nA measurement that describes a means of capturing data. This class can be extended to account for different specific means. Use a specific instantiation of a Capture to describe a means of capturing a measurement.\n\n\n\n\nExamples\n==========\nA survey question, blood pressure reading; MRI images; thermometer; web service; experimental observation. Classes could include InstanceQuestion, InstanceMeasurement or other class extending Capture.\n\nExplanatory notes\n===================\nProvides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions).\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30668,9 +30669,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesCodeList",
-              "valueExpr": "_:CodeList",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeList",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30692,7 +30693,7 @@
               "predicate": "http://ddi-alliance.org/ns/#specifyOtherResponseDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ResponseDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30714,7 +30715,7 @@
               "predicate": "http://ddi-alliance.org/ns/#specifyOtherCorrespondingCode",
               "valueExpr": "http://ddi-alliance.org/ns/#Code",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30750,7 +30751,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a coded response (where both codes and their related category value are displayed) for a question. This response domain allows the single selection of one coded response.\n\nDDI 3.2 mapping\n=================\nd:CodeDomainType\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a coded response (where both codes and their related category value are displayed) for a question. This response domain allows the single selection of one coded response.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:CodeDomainType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30758,7 +30759,7 @@
       }
     },
     {
-      "id": "_:ConceptualInstrument",
+      "id": "http://ddi-alliance.org/ns/#ConceptualInstrument",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30774,7 +30775,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30796,7 +30797,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30818,7 +30819,7 @@
               "predicate": "http://ddi-alliance.org/ns/#description",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30840,7 +30841,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30862,7 +30863,7 @@
               "predicate": "http://ddi-alliance.org/ns/#organizes",
               "valueExpr": "http://ddi-alliance.org/ns/#Capture",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -30905,7 +30906,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDesign plan for creating a data capture tool. \n\nExamples\n==========\nDesign of a questionnaire regardless of mode; Design of an experiment\n\nExplanatory notes\n===================\nA single ConceptualInstrument would contain workflow sequences of the intended flow logic of the instrument, which could be implemented as a web survey or paper survey, utilizing the same sequence and questions.\nSimilarly a single ConceptualInstrument would contain workflow sequences of the intended flow logic of the instrument, which could be implemented as a protocol delivered by a nurse or by self-administration.\n\nSynonyms\n==========\nIdea; Intention; Theory; Design; LogicalInstrument\n\n",
+              "value": "\nDefinition\n============\nDesign plan for creating a data capture tool. \n\nExamples\n==========\nDesign of a questionnaire regardless of mode; Design of an experiment\n\nExplanatory notes\n===================\nA single ConceptualInstrument would contain workflow sequences of the intended flow logic of the instrument, which could be implemented as a web survey or paper survey, utilizing the same sequence and questions.\nSimilarly a single ConceptualInstrument would contain workflow sequences of the intended flow logic of the instrument, which could be implemented as a protocol delivered by a nurse or by self-administration.\n\nSynonyms\n==========\nIdea; Intention; Theory; Design; LogicalInstrument\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30926,7 +30927,7 @@
           "predicate": "http://ddi-alliance.org/ns/#stimulusType",
           "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -30960,7 +30961,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAny external material used in an instrument that aids or facilitates data capture, or that is presented to a respondent and about which measurements are made. \n\nExamples\n==========\nImage, link, external aid, stimulus, physical object.\n\nDDI 3.2 mapping\n=================\nr:OtherMaterialType\n\n",
+              "value": "\nDefinition\n============\nAny external material used in an instrument that aids or facilitates data capture, or that is presented to a respondent and about which measurements are made. \n\nExamples\n==========\nImage, link, external aid, stimulus, physical object.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:OtherMaterialType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -30968,7 +30969,7 @@
       }
     },
     {
-      "id": "_:ImplementedInstrument",
+      "id": "http://ddi-alliance.org/ns/#ImplementedInstrument",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -30984,7 +30985,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31006,7 +31007,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfInstrument",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31031,7 +31032,7 @@
                 "nodeKind": "iri"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31053,7 +31054,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31075,7 +31076,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31095,9 +31096,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesConceptualInstrument",
-              "valueExpr": "_:ConceptualInstrument",
+              "valueExpr": "http://ddi-alliance.org/ns/#ConceptualInstrument",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31140,7 +31141,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA specific data capture tool.  ImplementedInstruments are mode and/or unit specific.\n\nExamples\n==========\nTwo versions of a conceptual instrument, computer assisted personal interviewing (CAPI) and mail, would be separate ImplementedInstruments. These might both reference the same ConceptualInstrument. \nA piece of equipment used to measure blood pressure.\n\n\nSynonyms\n==========\naka PhysicalInstrument\n\n",
+              "value": "\nDefinition\n============\nA specific data capture tool.  ImplementedInstruments are mode and/or unit specific.\n\nExamples\n==========\nTwo versions of a conceptual instrument, computer assisted personal interviewing (CAPI) and mail, would be separate ImplementedInstruments. These might both reference the same ConceptualInstrument. \nA piece of equipment used to measure blood pressure.\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\naka PhysicalInstrument\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31159,9 +31160,9 @@
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#instantiates",
-          "valueExpr": "_:RepresentedMeasurement",
+          "valueExpr": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -31195,7 +31196,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process.\n\n",
+              "value": "\nDefinition\n============\nAn instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31219,7 +31220,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31239,9 +31240,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#instantiates",
-              "valueExpr": "_:RepresentedQuestion",
+              "valueExpr": "http://ddi-alliance.org/ns/#RepresentedQuestion",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31277,7 +31278,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn instance question is an instantiation of a represented question,to be used as an Act in the process steps that define a survey questionnaire.\n\nExamples\n==========\n“How old are you?”\n\n",
+              "value": "\nDefinition\n============\nAn instance question is an instantiation of a represented question,to be used as an Act in the process steps that define a survey questionnaire.\n\nExamples\n==========\n“How old are you?”\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31301,7 +31302,7 @@
               "predicate": "http://ddi-alliance.org/ns/#instructionText",
               "valueExpr": "http://ddi-alliance.org/ns/#DynamicText",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31323,7 +31324,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31345,7 +31346,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31367,7 +31368,7 @@
               "predicate": "http://ddi-alliance.org/ns/#associatedMaterial",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31403,7 +31404,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nProvides the content and description of data capture instructions. Contains the \"how to\" information for administering an instrument.\n\nExamples\n==========\nCompletion instructions in self-administered mail questionnaire, information for administering a blood pressure measurement, interviewer instructions for a CATI questionnaire, guidance for communicating between an interviewer and a respondent (note MIDUS cognitive assessment example).\n\nDDI 3.2 mapping\n=================\nd:InstructionType\n\n",
+              "value": "\nDefinition\n============\nProvides the content and description of data capture instructions. Contains the \"how to\" information for administering an instrument.\n\nExamples\n==========\nCompletion instructions in self-administered mail questionnaire, information for administering a blood pressure measurement, interviewer instructions for a CATI questionnaire, guidance for communicating between an interviewer and a respondent (note MIDUS cognitive assessment example).\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:InstructionType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31427,7 +31428,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purposeOfCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31449,7 +31450,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesCommandCode",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31485,7 +31486,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn InstrumentComponent that specifies the performance of a specific computation within the context of an instrument flow.\n\nExamples\n==========\nquality control, edit check, checksums, compute filler text, compute values for use in administering the instrument\n\nDDI 3.2 mapping\n=================\nd:ComputationItemType\n\n",
+              "value": "\nDefinition\n============\nAn InstrumentComponent that specifies the performance of a specific computation within the context of an instrument flow.\n\nExamples\n==========\nquality control, edit check, checksums, compute filler text, compute values for use in administering the instrument\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:ComputationItemType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31509,7 +31510,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasInstruction",
               "valueExpr": "http://ddi-alliance.org/ns/#Instruction",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31538,7 +31539,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasExternalAid",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalAid",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31581,7 +31582,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nInstrumentComponent is an abstract object which extends an Act (a type of Process Step). The purpose of InstrumentComponent is to provide a common parent for Capture (e.g., Question, Measure), Statement, and Instructions.\n\n\n\nExplanatory notes\n===================\nInstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument.\n\n",
+              "value": "\nDefinition\n============\nInstrumentComponent is an abstract object which extends an Act (a type of Process Step). The purpose of InstrumentComponent is to provide a common parent for Capture (e.g., Question, Measure), Statement, and Instructions.\n\n\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nInstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31605,7 +31606,7 @@
               "predicate": "http://ddi-alliance.org/ns/#numericTypeCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31627,7 +31628,7 @@
               "predicate": "http://ddi-alliance.org/ns/#unit",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31647,9 +31648,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesNumberRange",
-              "valueExpr": "_:NumberRange",
+              "valueExpr": "http://ddi-alliance.org/ns/#NumberRange",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31685,7 +31686,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a numeric response (the intent is to analyze the response as a number) for a question.\n\nExamples\n==========\nSystolic blood pressure level, as an integer from 0 to 200\n\nDDI 3.2 mapping\n=================\nd:NumericDomainType\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a numeric response (the intent is to analyze the response as a number) for a question.\n\nExamples\n==========\nSystolic blood pressure level, as an integer from 0 to 200\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:NumericDomainType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31718,7 +31719,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. \nNote: This item still must be modeled and is incomplete at this time.\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. \nNote: This item still must be modeled and is incomplete at this time.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31726,7 +31727,7 @@
       }
     },
     {
-      "id": "_:RepresentedMeasurement",
+      "id": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -31742,7 +31743,7 @@
               "predicate": "http://ddi-alliance.org/ns/#measurementType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31764,7 +31765,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31800,7 +31801,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.\n\nExamples\n==========\nA measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current\n\nExplanatory notes\n===================\nNon-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies.\n\n",
+              "value": "\nDefinition\n============\nThe description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.\n\nExamples\n==========\nA measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current\n\nExplanatory notes\n===================\nNon-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31808,7 +31809,7 @@
       }
     },
     {
-      "id": "_:RepresentedQuestion",
+      "id": "http://ddi-alliance.org/ns/#RepresentedQuestion",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -31824,7 +31825,7 @@
               "predicate": "http://ddi-alliance.org/ns/#questionText",
               "valueExpr": "http://ddi-alliance.org/ns/#DynamicText",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31846,7 +31847,7 @@
               "predicate": "http://ddi-alliance.org/ns/#questionIntent",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31871,7 +31872,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31893,7 +31894,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
               "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31929,7 +31930,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe description of a reusable question, that can be used as a template that describes the components of a question\n\nExamples\n==========\nA question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)\n\nExplanatory notes\n===================\nA question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.\n\nDDI 3.2 mapping\n=================\nd:QuestionItemType\n\n",
+              "value": "\nDefinition\n============\nThe description of a reusable question, that can be used as a template that describes the components of a question\n\nExamples\n==========\nA question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)\n\nExplanatory notes\n===================\nA question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nd:QuestionItemType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -31953,7 +31954,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31975,7 +31976,7 @@
               "predicate": "http://ddi-alliance.org/ns/#intendedRepresentation",
               "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -31997,7 +31998,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasOutputParameter",
               "valueExpr": "http://ddi-alliance.org/ns/#Parameter",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32040,7 +32041,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe possible list of values that are allowed by a Capture.\n\nExamples\n==========\nYes/No, Male/Female, Age in years, Open-ended text, Temperature, BP reading\n\nExplanatory notes\n===================\nIdentifies both the sentinel and substantive value domains used for capturing the response to a question\n\nSynonyms\n==========\nGSIM & DDI: ResponseDomain\n\n",
+              "value": "\nDefinition\n============\nThe possible list of values that are allowed by a Capture.\n\nExamples\n==========\nYes/No, Male/Female, Age in years, Open-ended text, Temperature, BP reading\n\nExplanatory notes\n===================\nIdentifies both the sentinel and substantive value domains used for capturing the response to a question\n\nSynonyms\n==========\nGSIM & DDI: ResponseDomain\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32073,7 +32074,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a scaled response, such as a Likert scale. \nNote: This item still must be modeled and is incomplete at this time.\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a scaled response, such as a Likert scale. \nNote: This item still must be modeled and is incomplete at this time.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32097,7 +32098,7 @@
               "predicate": "http://ddi-alliance.org/ns/#statementText",
               "valueExpr": "http://ddi-alliance.org/ns/#DynamicText",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32119,7 +32120,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purposeOfStatement",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32155,7 +32156,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Statement is a type of Instrument Component containing  human readable text or referred material. \n\nExamples\n==========\nIntroductory text; Explanations; Labels, Headers, Help screens, etc.  \"Thank you for agreeing to take this survey. We will start with a brief set of demographic questions.\" \"The following set of questions are related to your household income. Please consider all members of the household and all sources of income when answering these questions.\"\n\nExplanatory notes\n===================\nIt is not directly related to another specific Instrument Component such as an InstanceQueston or InstanceMeasurement. It may be placed anywhere in a WorkflowStepSequence. \n\nSynonyms\n==========\nDDI:StatementItem\n\nDDI 3.2 mapping\n=================\nd:StatementItemType\n\n",
+              "value": "\nDefinition\n============\nA Statement is a type of Instrument Component containing  human readable text or referred material. \n\nExamples\n==========\nIntroductory text; Explanations; Labels, Headers, Help screens, etc.  \"Thank you for agreeing to take this survey. We will start with a brief set of demographic questions.\" \"The following set of questions are related to your household income. Please consider all members of the household and all sources of income when answering these questions.\"\n\nExplanatory notes\n===================\nIt is not directly related to another specific Instrument Component such as an InstanceQueston or InstanceMeasurement. It may be placed anywhere in a WorkflowStepSequence. \n\nSynonyms\n==========\nDDI:StatementItem\n\nDDI 3.2 mapping\n=================\nd:StatementItemType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32182,7 +32183,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32207,7 +32208,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32229,7 +32230,7 @@
               "predicate": "http://ddi-alliance.org/ns/#regularExpression",
               "valueExpr": "http://ddi-alliance.org/ns/#TypedString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32265,7 +32266,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA response domain capturing a textual response including the length of the text and restriction of content using a regular expression.\n\nExamples\n==========\nCollecting the first name on an individual in an open ended text field\n\nDDI 3.2 mapping\n=================\nr:TextDomainType\n\n",
+              "value": "\nDefinition\n============\nA response domain capturing a textual response including the length of the text and restriction of content using a regular expression.\n\nExamples\n==========\nCollecting the first name on an individual in an open ended text field\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nr:TextDomainType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32289,7 +32290,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasAnnotation",
               "valueExpr": "http://ddi-alliance.org/ns/#Annotation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32311,7 +32312,7 @@
               "predicate": "http://ddi-alliance.org/ns/#relatedMaterial",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32347,7 +32348,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUsed to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned. Provides identification and administrative metadata about the object. Adds optional annotation. Use this as the extension base for First Order Classes that contain intellectual content that needs to be discoverable in its own right.\n\n",
+              "value": "\nDefinition\n============\nUsed to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned. Provides identification and administrative metadata about the object. Adds optional annotation. Use this as the extension base for First Order Classes that contain intellectual content that needs to be discoverable in its own right.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32370,8 +32371,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32395,8 +32396,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32420,8 +32421,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32446,7 +32447,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32466,9 +32467,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#versionRationale",
-              "valueExpr": "_:RationaleDefinition",
+              "valueExpr": "http://ddi-alliance.org/ns/#RationaleDefinition",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32490,7 +32491,7 @@
               "predicate": "http://ddi-alliance.org/ns/#versionDate",
               "valueExpr": "http://ddi-alliance.org/ns/#IsoDateType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32514,8 +32515,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32539,8 +32540,8 @@
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32560,9 +32561,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#localId",
-              "valueExpr": "_:LocalIdFormat",
+              "valueExpr": "http://ddi-alliance.org/ns/#LocalIdFormat",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32582,9 +32583,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#basedOnObject",
-              "valueExpr": "_:BasedOnObjectInformation",
+              "valueExpr": "http://ddi-alliance.org/ns/#BasedOnObjectInformation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32620,7 +32621,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nUsed to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned and provide administrative metadata properties. Use for First Order Classes whose content does not need to be discoverable in its own right but needs to be related to multiple classes. \n\n",
+              "value": "\nDefinition\n============\nUsed to identify objects for purposes of internal and/or external referencing. Elements of this type are versioned and provide administrative metadata properties. Use for First Order Classes whose content does not need to be discoverable in its own right but needs to be related to multiple classes. \n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32628,7 +32629,7 @@
       }
     },
     {
-      "id": "_:AttributeRole",
+      "id": "http://ddi-alliance.org/ns/#AttributeRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -32653,7 +32654,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn AttributeRole identifies one or more InstanceVariables as being attributes within a ViewPoint. An AttributeRole is a SimpleCollection of InstanceVariables acting in the AttributeRole.\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint.\nAn InstanceVariable with an AttributeRole assigned might contain data about the conditions under which the MeausreRole InstanceVariables were collected or other paradata.\n\n\n",
+              "value": "\nDefinition\n============\nAn AttributeRole identifies one or more InstanceVariables as being attributes within a ViewPoint. An AttributeRole is a SimpleCollection of InstanceVariables acting in the AttributeRole.\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint.\nAn InstanceVariable with an AttributeRole assigned might contain data about the conditions under which the MeausreRole InstanceVariables were collected or other paradata.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32676,8 +32677,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isDescribedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32697,9 +32698,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasDatum",
-              "valueExpr": "_:Datum",
+              "valueExpr": "http://ddi-alliance.org/ns/#Datum",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32742,7 +32743,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA DataPoint is a container for a Datum.\n\nExamples\n==========\nA cell in a spreadsheet table. Note that this could be empty. It exists independently of the value to be stored in it.\n\nExplanatory notes\n===================\nThe DataPoint is structural and distinct from the value (the Datum) that it holds. [GSIM 1.1]\n\nGSIM mapping\n==============\nData Point\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA DataPoint is a container for a Datum.\n\nExamples\n==========\nA cell in a spreadsheet table. Note that this could be empty. It exists independently of the value to be stored in it.\n\nExplanatory notes\n===================\nThe DataPoint is structural and distinct from the value (the Datum) that it holds. [GSIM 1.1]\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nData Point\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -32769,7 +32770,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32791,7 +32792,7 @@
               "predicate": "http://ddi-alliance.org/ns/#dataStoreType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32813,7 +32814,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32835,7 +32836,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32857,7 +32858,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32882,7 +32883,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#integer"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32904,7 +32905,7 @@
               "predicate": "http://ddi-alliance.org/ns/#aboutMissing",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32924,9 +32925,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:LogicalRecordIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32951,7 +32952,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32971,9 +32972,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:LogicalRecordRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -32995,7 +32996,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isInStudy",
               "valueExpr": "http://ddi-alliance.org/ns/#Study",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33015,9 +33016,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#usesRecordRelation",
-              "valueExpr": "_:RecordRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#RecordRelation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33046,7 +33047,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33082,7 +33083,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA DataStore is either a SimpleCollection or a StructuredCollection of LogicalRecords, keeping in mind that a LogicalRecords is a definition, not a \"datasets\".\n\nLogicalRecords organized in a StructuredCollection is called a LogicalRecordRelationStructure.\n\nInstances of LogicalRecords instantiated as organizations of DataPoints hosting data are described in FormatDescription.\n\nA DataStore is reusable across studies. Each Study has at most one DataStore.\n\n\nExamples\n==========\nThe data lineage of an individual BusinessProcess or an entire DataPipeline are both examples of  a LogicalRecordRelationStructures. In a data lineage we can observe how LogicalRecords are connected within a BusinessProcess or across BusinessProcesses.\n\nSynonyms\n==========\nSchema repository, data network\n\nGSIM mapping\n==============\nData Set\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA DataStore is either a SimpleCollection or a StructuredCollection of LogicalRecords, keeping in mind that a LogicalRecords is a definition, not a \"datasets\".\n\nLogicalRecords organized in a StructuredCollection is called a LogicalRecordRelationStructure.\n\nInstances of LogicalRecords instantiated as organizations of DataPoints hosting data are described in FormatDescription.\n\nA DataStore is reusable across studies. Each Study has at most one DataStore.\n\n\nExamples\n==========\nThe data lineage of an individual BusinessProcess or an entire DataPipeline are both examples of  a LogicalRecordRelationStructures. In a data lineage we can observe how LogicalRecords are connected within a BusinessProcess or across BusinessProcesses.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\nSchema repository, data network\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nData Set\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33106,7 +33107,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33128,7 +33129,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33150,7 +33151,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33170,9 +33171,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:DataStoreIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33197,7 +33198,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33217,9 +33218,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:DataStoreRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33241,7 +33242,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isInStudySeries",
               "valueExpr": "http://ddi-alliance.org/ns/#StudySeries",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33263,7 +33264,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33299,7 +33300,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA DataStoreLibrary is a collection or, again, a \"library\" of DataStores.\n\nAn individual DataStore is associated with a Study. A collection of DataStores is associated with a StudySeries.\n\nThe relationships among the DataStores in the DataStoreLibrary is described by the DataStoreRelationStructure. Relations may be more or less complicated depending on the StudySeries type. A StudySeries may be ad hoc. A StudySeries may form a time series. The variety of these collections has been described using the <a href=https://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/FieldLevelDocumentation/\">\"Group\"</a> in DDI 3.1.\n\nLike any RelationStructure, the DataStoreRelationStructure is able to describe both part/whole relations and generalization/specialization relations. See the controlled vocabulary at <a href=\"http://lion.ddialliance.org/datatypes/relationspecification\">RelationSpecification</a> to review all the types of relations a RelationStructure is able to describe. \n\nExamples\n==========\nA StudySeries is a time series and a DataStoreRelationStructure is dedicated to tracking \"supplements\".\n\nThere is a study at T0. Perhaps it is never executed. It is the \"core\" study. At T1 there is a study that includes the core and Supplement A. At T2 there is a study that includes the core, Supplement A and Supplement B. At T3 there is a study that includes the core and a one off supplement that is never asked again. T4 though T6 repeats T1 through T3.\n\n\n\nExplanatory notes\n===================\nIf we broke a study down into sub-studies where the core is a sub-study and each supplement is a sub-study, we could also use the DataStoreRelationStructure to track the generalization/specialization relationship or, again, \"going deep\" over time.\n\nSometimes across a StudySeries we add panels. If panels were also sub-studies, we could use the DataStoreRelationStructure to track both the core and supplements by panel over time.\n\nSynonyms\n==========\nStructured metadata archive\n\n",
+              "value": "\nDefinition\n============\nA DataStoreLibrary is a collection or, again, a \"library\" of DataStores.\n\nAn individual DataStore is associated with a Study. A collection of DataStores is associated with a StudySeries.\n\nThe relationships among the DataStores in the DataStoreLibrary is described by the DataStoreRelationStructure. Relations may be more or less complicated depending on the StudySeries type. A StudySeries may be ad hoc. A StudySeries may form a time series. The variety of these collections has been described using the <a href=https://www.ddialliance.org/Specification/DDI-Lifecycle/3.1/XMLSchema/FieldLevelDocumentation/\">\"Group\"</a> in DDI 3.1.\n\nLike any RelationStructure, the DataStoreRelationStructure is able to describe both part/whole relations and generalization/specialization relations. See the controlled vocabulary at <a href=\"http://lion.ddialliance.org/datatypes/relationspecification\">RelationSpecification</a> to review all the types of relations a RelationStructure is able to describe. \n\nExamples\n==========\nA StudySeries is a time series and a DataStoreRelationStructure is dedicated to tracking \"supplements\".\n\nThere is a study at T0. Perhaps it is never executed. It is the \"core\" study. At T1 there is a study that includes the core and Supplement A. At T2 there is a study that includes the core, Supplement A and Supplement B. At T3 there is a study that includes the core and a one off supplement that is never asked again. T4 though T6 repeats T1 through T3.\n\n\n\nExplanatory notes\n===================\nIf we broke a study down into sub-studies where the core is a sub-study and each supplement is a sub-study, we could also use the DataStoreRelationStructure to track the generalization/specialization relationship or, again, \"going deep\" over time.\n\nSometimes across a StudySeries we add panels. If panels were also sub-studies, we could use the DataStoreRelationStructure to track both the core and supplements by panel over time.\n\nSynonyms\n==========\nStructured metadata archive\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33307,7 +33308,7 @@
       }
     },
     {
-      "id": "_:DataStoreRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#DataStoreRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33323,7 +33324,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33345,7 +33346,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33367,7 +33368,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33387,9 +33388,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:DataStoreRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#DataStoreRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33425,7 +33426,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA structure for describing a complex relation of DataStores within a DataStoreLibrary\n\nExamples\n==========\nIf the succession of DataStores are created by a StudySeries that is a time series, from one DataStore to the next part/whole relations can obtain as supplements are added and subtracted.\n\n",
+              "value": "\nDefinition\n============\nA structure for describing a complex relation of DataStores within a DataStoreLibrary\n\nExamples\n==========\nIf the succession of DataStores are created by a StudySeries that is a time series, from one DataStore to the next part/whole relations can obtain as supplements are added and subtracted.\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33433,7 +33434,7 @@
       }
     },
     {
-      "id": "_:Datum",
+      "id": "http://ddi-alliance.org/ns/#Datum",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33448,8 +33449,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#representation",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33471,7 +33472,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isBoundedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33507,7 +33508,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Datum is a designation (a representation of a concept by a sign) with a notion of equality defined. The sign itself is a perceivable object.\n\nExamples\n==========\nA systolic blood pressure of 122 is measured. The Signifier for that measurement in this paragraph is the character string \"122\". The Datum in this case is a kind of Designation (Sign), which is the association of the underlying measured concept (a blood pressure at that level) with that Signifier.  The Datum has an association with an InstanceVariable which allows the attachment of a unit of measurement (mm Hg), a datatype, a Population, and the Act which produced the measurement.  These InstanceVariable attributes are critical for interpreting the Signifier.\n\nExplanatory notes\n===================\nFrom GSIM 1.1 \"A Datum is the actual instance of data that was collected or derived. It is the value which populates one or more Data Points. A Datum is the value found in a cell of a table.\" (https://statswiki.unece.org/display/GSIMclick/Datum )  A Datum could be copied to one or more datasets.\nDDI4 takes a little more formal (semiotic) description of a Datum using the Signification Pattern. See the attached example.\n\n\nNOTE: This is NOT datum from DDI3.2 (which is quite specific).\n\nGSIM mapping\n==============\nDatum\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Datum is a designation (a representation of a concept by a sign) with a notion of equality defined. The sign itself is a perceivable object.\n\nExamples\n==========\nA systolic blood pressure of 122 is measured. The Signifier for that measurement in this paragraph is the character string \"122\". The Datum in this case is a kind of Designation (Sign), which is the association of the underlying measured concept (a blood pressure at that level) with that Signifier.  The Datum has an association with an InstanceVariable which allows the attachment of a unit of measurement (mm Hg), a datatype, a Population, and the Act which produced the measurement.  These InstanceVariable attributes are critical for interpreting the Signifier.\n\nExplanatory notes\n===================\nFrom GSIM 1.1 \"A Datum is the actual instance of data that was collected or derived. It is the value which populates one or more Data Points. A Datum is the value found in a cell of a table.\" (https://statswiki.unece.org/display/GSIMclick/Datum )  A Datum could be copied to one or more datasets.\nDDI4 takes a little more formal (semiotic) description of a Datum using the Signification Pattern. See the attached example.\n\n\nNOTE: This is NOT datum from DDI3.2 (which is quite specific).\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nDatum\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33515,7 +33516,7 @@
       }
     },
     {
-      "id": "_:IdentifierRole",
+      "id": "http://ddi-alliance.org/ns/#IdentifierRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33540,7 +33541,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn IdentifierRole identifies one or more InstanceVariables as being identifiers within a ViewPoint. An IdentifierRole is a SimpleCollection of InstanceVariables acting in the IdentifierRole.\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\n",
+              "value": "\nDefinition\n============\nAn IdentifierRole identifies one or more InstanceVariables as being identifiers within a ViewPoint. An IdentifierRole is a SimpleCollection of InstanceVariables acting in the IdentifierRole.\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33548,7 +33549,7 @@
       }
     },
     {
-      "id": "_:InstanceVariableRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33564,7 +33565,7 @@
               "predicate": "http://ddi-alliance.org/ns/#criteria",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33586,7 +33587,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33608,7 +33609,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33630,7 +33631,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33651,8 +33652,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33673,8 +33674,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33694,9 +33695,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:InstanceVariableRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33732,7 +33733,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.\n\n\nExamples\n==========\nThe HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.\n\nThe openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.\n\nExplanatory notes\n===================\nFor a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. \n\nIn terms of ISO-11404 an InstanceVariableRelationStructure is able to create \"aggregate datatypes\". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a \"datatype generator\".\n\nSynonyms\n==========\nAn information model, a struct in C, a nested object in JSON\n\n",
+              "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.\n\n\nExamples\n==========\nThe HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.\n\nThe openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.\n\nExplanatory notes\n===================\nFor a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. \n\nIn terms of ISO-11404 an InstanceVariableRelationStructure is able to create \"aggregate datatypes\". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a \"datatype generator\".\n\nSynonyms\n==========\nAn information model, a struct in C, a nested object in JSON\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33756,7 +33757,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33778,7 +33779,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33800,7 +33801,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33822,7 +33823,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contains",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33847,7 +33848,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33869,7 +33870,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33905,7 +33906,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe LogicalRecord is a record definition. It is abstract.\n\nThe actual realization of record definitions are provided by the UnitDataRecord and the DataCube. UnitDataRecords support two types of record definitions. The first is based on the SimpleCollection it inherits from LogicalRecord. The second type is a StructuredCollection that specializes the LogicalRecord. As a SimpleCollection a UnitDataRecord can, for example, provide table definitions. As a StructuredCollection, UnitDataRecord can define structures comparable to a \"struct\" in C or a JSON nested object. A UnitDataRecord, then, inherits SimpleCollection from LogicalRecord but adds its own StructuredCollection into the mix. The DataCube brings into play its own StructuredCollection which is distinct from the UnitDataRecord StructuredCollection.The DataCube StructuredCollection is not currently in scope.\n\nThe various record definitions -- simple and structured -- when they are actually instantiated with data is described by the PhysicalLayout of a LogicalRecord in the FormatDescription package. The PhysicalLayout places data into DataPoints formed at the direction of a LogicalRecord and its instance variables. At this point a LogicalRecord turn into a \"dataset\" that hosts unit records, A record definition is not a record. So we conflate metadata and data when we refer to a LogicalRecord as an empty table.\n\nExamples\n==========\nSQL Data Definition Language (DDL) traffics in record definitions. SQL queries on \"system tables\" discover record definitions.\n\nExplanatory notes\n===================\nIn GSIM a DataPoint is a member of a \"DataSet\" and a UnitDataRecord. Since a DataPoint contains \"Datum\", this can lead to the conflation of a DataSet and a record definition. In the presence of a DataPoint it is difficult to be clear that a record definition does not have any rows. \n\nIn DDI4 we defer the introduction of DataPoints until PhysicalLayouts are described. In this approach the instance variables that make up a LogicalRecord work downstream where they help to give each DataPoint in a PhysicalRecord its format.\n\nSynonyms\n==========\nRecord Type, Data Structure\n\nDDI 3.2 mapping\n=================\nl:LogicalRecordType\n\nGSIM mapping\n==============\nData Structure\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe LogicalRecord is a record definition. It is abstract.\n\nThe actual realization of record definitions are provided by the UnitDataRecord and the DataCube. UnitDataRecords support two types of record definitions. The first is based on the SimpleCollection it inherits from LogicalRecord. The second type is a StructuredCollection that specializes the LogicalRecord. As a SimpleCollection a UnitDataRecord can, for example, provide table definitions. As a StructuredCollection, UnitDataRecord can define structures comparable to a \"struct\" in C or a JSON nested object. A UnitDataRecord, then, inherits SimpleCollection from LogicalRecord but adds its own StructuredCollection into the mix. The DataCube brings into play its own StructuredCollection which is distinct from the UnitDataRecord StructuredCollection.The DataCube StructuredCollection is not currently in scope.\n\nThe various record definitions -- simple and structured -- when they are actually instantiated with data is described by the PhysicalLayout of a LogicalRecord in the FormatDescription package. The PhysicalLayout places data into DataPoints formed at the direction of a LogicalRecord and its instance variables. At this point a LogicalRecord turn into a \"dataset\" that hosts unit records, A record definition is not a record. So we conflate metadata and data when we refer to a LogicalRecord as an empty table.\n\nExamples\n==========\nSQL Data Definition Language (DDL) traffics in record definitions. SQL queries on \"system tables\" discover record definitions.\n\nExplanatory notes\n===================\nIn GSIM a DataPoint is a member of a \"DataSet\" and a UnitDataRecord. Since a DataPoint contains \"Datum\", this can lead to the conflation of a DataSet and a record definition. In the presence of a DataPoint it is difficult to be clear that a record definition does not have any rows. \n\nIn DDI4 we defer the introduction of DataPoints until PhysicalLayouts are described. In this approach the instance variables that make up a LogicalRecord work downstream where they help to give each DataPoint in a PhysicalRecord its format.\n\nSynonyms\n==========\nRecord Type, Data Structure\n\nDDI 3.2 mapping\n=================\nl:LogicalRecordType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nData Structure\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -33913,7 +33914,7 @@
       }
     },
     {
-      "id": "_:LogicalRecordRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -33929,7 +33930,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33951,7 +33952,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33973,7 +33974,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -33993,9 +33994,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:LogicalRecordRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#LogicalRecordRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34031,7 +34032,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAllows for the complex structuring of relationships between LogicalRecords in a DataStore\n\nExamples\n==========\nA DataStore with a Household, Family, and Person LogicalRecord type. Allows for describing parent/child, whole/part, or other relationships as appropriate\n\n",
+              "value": "\nDefinition\n============\nAllows for the complex structuring of relationships between LogicalRecords in a DataStore\n\nExamples\n==========\nA DataStore with a Household, Family, and Person LogicalRecord type. Allows for describing parent/child, whole/part, or other relationships as appropriate\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34039,7 +34040,7 @@
       }
     },
     {
-      "id": "_:MeasureRole",
+      "id": "http://ddi-alliance.org/ns/#MeasureRole",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34064,7 +34065,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA MeasureRole identifies one or more InstanceVariables as being measures within a ViewPoint. A MeasureRole is a SimpleCollection of InstanceVariables acting in the MeasureRole.\n\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\n",
+              "value": "\nDefinition\n============\nA MeasureRole identifies one or more InstanceVariables as being measures within a ViewPoint. A MeasureRole is a SimpleCollection of InstanceVariables acting in the MeasureRole.\n\n\n\nExamples\n==========\nA data record with four variables: \"PersonId\", \"Systolic\", \"Diastolic\", \"Seated\" might have a Viewpoint with \nPersonId defined as having the IdentifierRole\nSystolic defined as having the MeasureRole\nDiastolic defined as having the MeasureRole\nSeated defined as having the AttributeRole\n\nPersonId, Systolic, Diastolic, Seated\n123,122,20,yes\n145,130,90,no\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34072,7 +34073,7 @@
       }
     },
     {
-      "id": "_:RecordRelation",
+      "id": "http://ddi-alliance.org/ns/#RecordRelation",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34088,7 +34089,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34110,7 +34111,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34132,7 +34133,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34152,9 +34153,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#correspondence",
-              "valueExpr": "_:InstanceVariableValueMap",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableValueMap",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34174,9 +34175,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#maps",
-              "valueExpr": "_:UnitDataRecord",
-              "min": 2,
-              "max": -1,
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitDataRecord",
+              "min": "2",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34212,7 +34213,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe RecordRelation object is used to indicate relationships among record types within and between LogicalRecords. For InstanceVariables existing in a LogicalRecord with multiple record layouts, pairs of InstanceVariables may function as paired keys to permit the expression of hierarchical links between records of different types. These links between keys in different record types could also be used to link records in a relational structure.\n\nExamples\n==========\nOne LogicalRecord containing a PersonIdentifier and a PersonName and another LogicalRecord containing a MeasurementID, a PersonID, a SystolicPressure, and a DiastolicPressure could be linked by a RecordRelation. The RecordRelation could employ an InstanceVariableValueMap to describe the linkage between  PersonIdentifier and PersonID.\n\nExplanatory notes\n===================\nA household-level LogicalRecord might contain an InstanceVariable called HouseholdID and a person-level LogicalRecord might contain an InstanceVariable called HID. Describing a link between HouseholdID and HID would allow the linking of a person-level LogicalRecord to their corresponding household-level LogicalRecord.\n\n",
+              "value": "\nDefinition\n============\nThe RecordRelation object is used to indicate relationships among record types within and between LogicalRecords. For InstanceVariables existing in a LogicalRecord with multiple record layouts, pairs of InstanceVariables may function as paired keys to permit the expression of hierarchical links between records of different types. These links between keys in different record types could also be used to link records in a relational structure.\n\nExamples\n==========\nOne LogicalRecord containing a PersonIdentifier and a PersonName and another LogicalRecord containing a MeasurementID, a PersonID, a SystolicPressure, and a DiastolicPressure could be linked by a RecordRelation. The RecordRelation could employ an InstanceVariableValueMap to describe the linkage between  PersonIdentifier and PersonID.\n\nExplanatory notes\n===================\nA household-level LogicalRecord might contain an InstanceVariable called HouseholdID and a person-level LogicalRecord might contain an InstanceVariable called HID. Describing a link between HouseholdID and HID would allow the linking of a person-level LogicalRecord to their corresponding household-level LogicalRecord.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34220,7 +34221,7 @@
       }
     },
     {
-      "id": "_:UnitDataRecord",
+      "id": "http://ddi-alliance.org/ns/#UnitDataRecord",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34234,9 +34235,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:InstanceVariableRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34256,9 +34257,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isViewedFrom",
-              "valueExpr": "_:UnitDataViewpoint",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34280,7 +34281,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34316,7 +34317,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nGives a UnitDataRecord structure to a Logical Record. UnitDataRecord structures a LogicalRecord as either a SimpleCollection or a StructuredCollection (InstanceVariableRelationStructure) of instance variables.\n\nThe UnitDataRecord also organizes instance variables in a UnitDataViewpoint. The UnitDataViewpoint assigns roles to Instance Variables. In any one UnitDataViewpoint UnitDataRecord instance variables play one of three roles: identifier, measure or attribute. The same UnitDataRecord may have many UnitDataViewpoints.\n\nThe UnitDataViewPoint can work in conjunction with the InstanceVariableRelationStructure. Together they can break out instance variables into complex (hierarchical) identifier, measure and attribute groups. \n\nExamples\n==========\nThe UnitDataRecord can be used to specify the structure of a table in a relational database. It can be used to specify the structure of both the fact and dimension tables in a data warehouse. It can be used to specify the structure of a big data table. Likewise it can be used to specify the structures of \"column-based\" and \"row-based\" tables.\n\nThe UnitDataRecord may also form an information model if it is a StructuredCollection. Blood Pressure as described by an openEHR archetype is an information model. So is a collection of FHIR (HL7) resources that form an Electronic Health Record (EHR). \n\nExplanatory notes\n===================\nThe <a href=\"http://www.openehr.org/ckm/\">openEHR archetype</a> is a use case that motivates the use of the InstanceVariableRelationStructure together with a UnitDataViewPoint. In the Blood Pressure archetype as well as most other archetypes attributes are not a SimpleCollection. Instead they are part of a StructuredCollection that breaks out attributes into \"Protocol\", \"State\" and \"Events\". In other archetypes the measure may be structured. For example body composition data includes a \"base model\" (fat mass, fat percentage, fat free mass), an \"atomic level\" (chemical elements, hydrogen, carbon, oxygen), a \"molecular level\" (minerals, protein, fat, water) and so forth.\n\nIt is, however, possible to break out attributes into not one but many SimpleCollections in the event attributes and/or data do not form StructuredCollections. That is because the UnitDataViewpoint supports not just one but many attribute roles within the same viewpoint.\n\nSynonyms\n==========\nTable Definition if the UnitDataRecord is a SimpleCollection, Information Model if the UnitDataRecord is a StructuredCollection\n\n",
+              "value": "\nDefinition\n============\nGives a UnitDataRecord structure to a Logical Record. UnitDataRecord structures a LogicalRecord as either a SimpleCollection or a StructuredCollection (InstanceVariableRelationStructure) of instance variables.\n\nThe UnitDataRecord also organizes instance variables in a UnitDataViewpoint. The UnitDataViewpoint assigns roles to Instance Variables. In any one UnitDataViewpoint UnitDataRecord instance variables play one of three roles: identifier, measure or attribute. The same UnitDataRecord may have many UnitDataViewpoints.\n\nThe UnitDataViewPoint can work in conjunction with the InstanceVariableRelationStructure. Together they can break out instance variables into complex (hierarchical) identifier, measure and attribute groups. \n\nExamples\n==========\nThe UnitDataRecord can be used to specify the structure of a table in a relational database. It can be used to specify the structure of both the fact and dimension tables in a data warehouse. It can be used to specify the structure of a big data table. Likewise it can be used to specify the structures of \"column-based\" and \"row-based\" tables.\n\nThe UnitDataRecord may also form an information model if it is a StructuredCollection. Blood Pressure as described by an openEHR archetype is an information model. So is a collection of FHIR (HL7) resources that form an Electronic Health Record (EHR). \n\nExplanatory notes\n===================\nThe <a href=\"http://www.openehr.org/ckm/\">openEHR archetype</a> is a use case that motivates the use of the InstanceVariableRelationStructure together with a UnitDataViewPoint. In the Blood Pressure archetype as well as most other archetypes attributes are not a SimpleCollection. Instead they are part of a StructuredCollection that breaks out attributes into \"Protocol\", \"State\" and \"Events\". In other archetypes the measure may be structured. For example body composition data includes a \"base model\" (fat mass, fat percentage, fat free mass), an \"atomic level\" (chemical elements, hydrogen, carbon, oxygen), a \"molecular level\" (minerals, protein, fat, water) and so forth.\n\nIt is, however, possible to break out attributes into not one but many SimpleCollections in the event attributes and/or data do not form StructuredCollections. That is because the UnitDataViewpoint supports not just one but many attribute roles within the same viewpoint.\n\nSynonyms\n==========\nTable Definition if the UnitDataRecord is a SimpleCollection, Information Model if the UnitDataRecord is a StructuredCollection\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34324,7 +34325,7 @@
       }
     },
     {
-      "id": "_:UnitDataViewpoint",
+      "id": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34338,9 +34339,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasIdentifierRole",
-              "valueExpr": "_:IdentifierRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#IdentifierRole",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34367,9 +34368,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMeasureRole",
-              "valueExpr": "_:MeasureRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#MeasureRole",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34396,9 +34397,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAttributeRole",
-              "valueExpr": "_:AttributeRole",
+              "valueExpr": "http://ddi-alliance.org/ns/#AttributeRole",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34441,7 +34442,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe assignment of measure, identifier and attribute roles to InstanceVariables\n\nEach of three roles within a UnitDataViewpoint is a SimpleCollection of instance variables. \n\nExamples\n==========\nAssigning \nPatientID the role of identifier\nsystolic the role of measure\ndiastolic the role of measure\ndevice the role of attribute\ntime the role of attribute\nposition (sitting, standing) the role of attribute\n\nExplanatory notes\n===================\nViewpoint is a UnitDataViewpoint to underline that the composition of a UnitDataRecord viewpoint is different from the composition of DataCube viewpoint. The DataCube viewpoint is out of scope currently. \nIt is sometimes useful to describe a set of variables and their roles within the set. In the blood pressure example above, values for a set of variables are captured in one setting - the taking of a blood pressure. Some of the variables may be the measures of interest, for example the systolic and diastolic pressure. Other variables may take on the role of identifiers, such as the hospital’s patient ID and a government ID such as the U.S. Social Security Number. A third subgroup of variables may serve as attributes. The age of the patient, whether she is sitting or standing, the time of day. The assignment of these three roles, identifier, measure, and attribute, is the function of the Viewpoint.\nViewpoints are not fixed attributes of variables. This is why there is a separate Viewpoint class which maps to InstanceVariables.   In the example above, the Viewpoint is within the context of the original measurement. In a reanalysis of the data the roles might change. Time of day might be the measure of interest in a study of hospital practices.\n\n\n",
+              "value": "\nDefinition\n============\nThe assignment of measure, identifier and attribute roles to InstanceVariables\n\nEach of three roles within a UnitDataViewpoint is a SimpleCollection of instance variables. \n\nExamples\n==========\nAssigning \nPatientID the role of identifier\nsystolic the role of measure\ndiastolic the role of measure\ndevice the role of attribute\ntime the role of attribute\nposition (sitting, standing) the role of attribute\n\nExplanatory notes\n===================\nViewpoint is a UnitDataViewpoint to underline that the composition of a UnitDataRecord viewpoint is different from the composition of DataCube viewpoint. The DataCube viewpoint is out of scope currently. \nIt is sometimes useful to describe a set of variables and their roles within the set. In the blood pressure example above, values for a set of variables are captured in one setting - the taking of a blood pressure. Some of the variables may be the measures of interest, for example the systolic and diastolic pressure. Other variables may take on the role of identifiers, such as the hospital’s patient ID and a government ID such as the U.S. Social Security Number. A third subgroup of variables may serve as attributes. The age of the patient, whether she is sitting or standing, the time of day. The assignment of these three roles, identifier, measure, and attribute, is the function of the Viewpoint.\nViewpoints are not fixed attributes of variables. This is why there is a separate Viewpoint class which maps to InstanceVariables.   In the example above, the Viewpoint is within the context of the original measurement. In a reanalysis of the data the roles might change. Time of day might be the measure of interest in a study of hospital practices.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34465,7 +34466,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34487,7 +34488,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34509,7 +34510,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34531,7 +34532,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contains",
               "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariableIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34556,7 +34557,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34578,7 +34579,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34614,7 +34615,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA ViewpointRole designates the function an InstanceVariable performs in the context of the Viewpoint. (IdentifierRole, AttributeRole, or MeasureRole of interest).\n\nEach of three roles within a Viewpoint may be a collection. This happens when a role is mapped to multiple instance variables. In this event a role forms a SimpleCollection. There are SimpleCollections of instance variables in each role.\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\n",
+              "value": "\nDefinition\n============\nA ViewpointRole designates the function an InstanceVariable performs in the context of the Viewpoint. (IdentifierRole, AttributeRole, or MeasureRole of interest).\n\nEach of three roles within a Viewpoint may be a collection. This happens when a role is mapped to multiple instance variables. In this event a role forms a SimpleCollection. There are SimpleCollections of instance variables in each role.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nSee the Viewpoint documentation for an in depth discussion of the uses of ViewpointRoles: http://lion.ddialliance.org/ddiobjects/viewpoint\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34636,9 +34637,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAgentId",
-              "valueExpr": "_:AgentId",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentId",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34660,7 +34661,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34680,9 +34681,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#image",
-              "valueExpr": "_:PrivateImage",
+              "valueExpr": "http://ddi-alliance.org/ns/#PrivateImage",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34718,7 +34719,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn actor that performs a role in relation to a process or product.\n\nExamples\n==========\nAnalyst performing edits on data, interviewer conducting an interview, a relational database management system managing data, organization publishing data on a regular basis, creator or contributor of a publication.\n\nExplanatory notes\n===================\nfoaf:Agent is: An agent (eg. person, group, software or physical artifact)\nprov:Agent is An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.\n\nSynonyms\n==========\nAgent\n\n",
+              "value": "\nDefinition\n============\nAn actor that performs a role in relation to a process or product.\n\nExamples\n==========\nAnalyst performing edits on data, interviewer conducting an interview, a relational database management system managing data, organization publishing data on a regular basis, creator or contributor of a publication.\n\nExplanatory notes\n===================\nfoaf:Agent is: An agent (eg. person, group, software or physical artifact)\nprov:Agent is An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.\n\nSynonyms\n==========\nAgent\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34726,7 +34727,7 @@
       }
     },
     {
-      "id": "_:AgentListing",
+      "id": "http://ddi-alliance.org/ns/#AgentListing",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34742,7 +34743,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34764,7 +34765,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34786,7 +34787,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34806,9 +34807,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:AgentIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34833,7 +34834,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34853,9 +34854,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:AgentRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34877,7 +34878,7 @@
               "predicate": "http://ddi-alliance.org/ns/#maintenanceUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34899,7 +34900,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34935,7 +34936,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA listing of Agents of any type. The AgentList may be organized to describe relationships between members using AgentRelationStructure.\n\nExamples\n==========\nOrganizations contributing to a project. Individuals within an agency. All organizations, indivduals, and machines identified within the collections of an archive.\n\nExplanatory notes\n===================\nRelationships between agents are fluid and reflect effective dates of the relationship. An agent may have multiple relationships which may be sequencial or concurrent. Relationships may or may not be hierarchical in nature. All Agents are serialized individually and brought into relationships as appropriate.\n\n",
+              "value": "\nDefinition\n============\nA listing of Agents of any type. The AgentList may be organized to describe relationships between members using AgentRelationStructure.\n\nExamples\n==========\nOrganizations contributing to a project. Individuals within an agency. All organizations, indivduals, and machines identified within the collections of an archive.\n\nExplanatory notes\n===================\nRelationships between agents are fluid and reflect effective dates of the relationship. An agent may have multiple relationships which may be sequencial or concurrent. Relationships may or may not be hierarchical in nature. All Agents are serialized individually and brought into relationships as appropriate.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -34943,7 +34944,7 @@
       }
     },
     {
-      "id": "_:AgentRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#AgentRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -34959,7 +34960,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -34981,7 +34982,7 @@
               "predicate": "http://ddi-alliance.org/ns/#privacy",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35003,7 +35004,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35025,7 +35026,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35047,7 +35048,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35069,7 +35070,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35089,9 +35090,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:AgentRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#AgentRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35127,7 +35128,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDefines the relationships between Agents in a collection. Clarifies valid period and the purpose the relationship serve\n\nExamples\n==========\nAn individual employed by an Organization. A unit or project (organization) within another Organization.\n\nExplanatory notes\n===================\nDescribes relations between agents not roles within a project or in relationship to a product. Roles are defined by the parent class and relationship name that uses an Agent as a target.\n\n",
+              "value": "\nDefinition\n============\nDefines the relationships between Agents in a collection. Clarifies valid period and the purpose the relationship serve\n\nExamples\n==========\nAn individual employed by an Organization. A unit or project (organization) within another Organization.\n\nExplanatory notes\n===================\nDescribes relations between agents not roles within a project or in relationship to a product. Roles are defined by the parent class and relationship name that uses an Agent as a target.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35149,9 +35150,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasIndividualName",
-              "valueExpr": "_:IndividualName",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndividualName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35176,7 +35177,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35198,7 +35199,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasContactInformation",
               "valueExpr": "http://ddi-alliance.org/ns/#ContactInformation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35234,7 +35235,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA person who may have a relationship to another Agent and who may be specified as being associated with an act.\n\nExamples\n==========\nAnalyst performing edits on data, interviewer conducting an interview, a creator.\n\nExplanatory notes\n===================\nA set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization).\n\n",
+              "value": "\nDefinition\n============\nA person who may have a relationship to another Agent and who may be specified as being associated with an act.\n\nExamples\n==========\nAnalyst performing edits on data, interviewer conducting an interview, a creator.\n\nExplanatory notes\n===================\nA set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization).\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35258,7 +35259,7 @@
               "predicate": "http://ddi-alliance.org/ns/#typeOfMachine",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35280,7 +35281,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35300,9 +35301,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasAccessLocation",
-              "valueExpr": "_:AccessLocation",
+              "valueExpr": "http://ddi-alliance.org/ns/#AccessLocation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35324,7 +35325,7 @@
               "predicate": "http://ddi-alliance.org/ns/#function",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35346,7 +35347,7 @@
               "predicate": "http://ddi-alliance.org/ns/#machineInterface",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35368,7 +35369,7 @@
               "predicate": "http://ddi-alliance.org/ns/#ownerOperatorContact",
               "valueExpr": "http://ddi-alliance.org/ns/#ContactInformation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35404,7 +35405,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nMechanism or computer program used to implement a process.\n\nExamples\n==========\nSAS program, photocopier\n\nExplanatory notes\n===================\nMay be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine.\n\n",
+              "value": "\nDefinition\n============\nMechanism or computer program used to implement a process.\n\nExamples\n==========\nSAS program, photocopier\n\nExplanatory notes\n===================\nMay be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35426,9 +35427,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasOrganizationName",
-              "valueExpr": "_:OrganizationName",
-              "min": 1,
-              "max": -1,
+              "valueExpr": "http://ddi-alliance.org/ns/#OrganizationName",
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35453,7 +35454,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35475,7 +35476,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasContactInformation",
               "valueExpr": "http://ddi-alliance.org/ns/#ContactInformation",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35511,7 +35512,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA framework of authority designated to act toward some purpose.\n\nExamples\n==========\nU.S. Census Bureau, University of Michigan/ISR, Norwegian Social Data Archive \n\nExplanatory notes\n===================\nrelated to org:Organization which is described as \"Represents a collection of people organized together into a community or other...\"\n\n",
+              "value": "\nDefinition\n============\nA framework of authority designated to act toward some purpose.\n\nExamples\n==========\nU.S. Census Bureau, University of Michigan/ISR, Norwegian Social Data Archive \n\nExplanatory notes\n===================\nrelated to org:Organization which is described as \"Represents a collection of people organized together into a community or other...\"\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35535,7 +35536,7 @@
               "predicate": "http://ddi-alliance.org/ns/#statementOfAuthorization",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35557,7 +35558,7 @@
               "predicate": "http://ddi-alliance.org/ns/#legalMandate",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35579,7 +35580,7 @@
               "predicate": "http://ddi-alliance.org/ns/#authorizationDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35601,7 +35602,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35623,7 +35624,7 @@
               "predicate": "http://ddi-alliance.org/ns/#authorizingAgent",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35666,7 +35667,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nIdentifies the authorizing agency and allows for the full text of the authorization (law, regulation, or other form of authorization).\n\nExamples\n==========\n May be used to list authorizations from oversight committees and other regulatory agencies.\n\nExplanatory notes\n===================\nSupports requirements for some statistical offices to identify the agency or law authorizing the collection or management of data or metadata.\n\nSynonyms\n==========\nUse for the Case Law, Case Law Description, and Case Law Date properties in ClassificationItem\n\nDDI 3.2 mapping\n=================\nr:AuthorizationSourceType\n\n",
+              "value": "\nDefinition\n============\nIdentifies the authorizing agency and allows for the full text of the authorization (law, regulation, or other form of authorization).\n\nExamples\n==========\n May be used to list authorizations from oversight committees and other regulatory agencies.\n\nExplanatory notes\n===================\nSupports requirements for some statistical offices to identify the agency or law authorizing the collection or management of data or metadata.\n\nSynonyms\n==========\nUse for the Case Law, Case Law Description, and Case Law Date properties in ClassificationItem\n\nDDI 3.2 mapping\n=================\nr:AuthorizationSourceType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35690,7 +35691,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35712,7 +35713,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35734,7 +35735,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35754,9 +35755,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationSeriesIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35781,7 +35782,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35803,7 +35804,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasClassificationIndex",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndex",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35823,9 +35824,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ClassificationSeriesRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35847,7 +35848,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35883,7 +35884,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Classification Family is a collection of Classification Series related from a particular point of view. The Classification Family is related by being based on a common Concept, as documented by the definingConcept relationship   (e.g. economic activity).[GSIM1.1]\n\nExamples\n==========\nA family of industrial classifications each a separate series (i.e. U.S. Standard Industrial Classification (SIC) and North American Industrial Classification System (NAICS)\n\nExplanatory notes\n===================\nDifferent classification databases may use different types of Classification Families and have different names for the families, as no standard has been agreed upon. [GSIM1.1]\n\nGSIM mapping\n==============\nClassification Family\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Classification Family is a collection of Classification Series related from a particular point of view. The Classification Family is related by being based on a common Concept, as documented by the definingConcept relationship   (e.g. economic activity).[GSIM1.1]\n\nExamples\n==========\nA family of industrial classifications each a separate series (i.e. U.S. Standard Industrial Classification (SIC) and North American Industrial Classification System (NAICS)\n\nExplanatory notes\n===================\nDifferent classification databases may use different types of Classification Families and have different names for the families, as no standard has been agreed upon. [GSIM1.1]\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nClassification Family\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -35907,7 +35908,7 @@
               "predicate": "http://ddi-alliance.org/ns/#releaseDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35932,7 +35933,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35954,7 +35955,7 @@
               "predicate": "http://ddi-alliance.org/ns/#corrections",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35976,7 +35977,7 @@
               "predicate": "http://ddi-alliance.org/ns/#codingInstruction",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -35998,7 +35999,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36020,7 +36021,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36042,7 +36043,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36062,9 +36063,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationIndexEntryIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36089,7 +36090,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36111,7 +36112,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPublication",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36138,9 +36139,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:IndexEntryRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36162,7 +36163,7 @@
               "predicate": "http://ddi-alliance.org/ns/#maintenanceUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36184,7 +36185,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contactPerson",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36206,7 +36207,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36242,7 +36243,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Classification Index is an ordered list (alphabetical, in code order etc) of Classification Index Entries. A Classification Index can relate to one particular or to several Statistical Classifications. [GSIM Statistical Classification Model]\n\nExamples\n==========\nAn alphabetical index of a topically ordered Statistical Classification\n\nExplanatory notes\n===================\nA Classification Index shows the relationship between text found in statistical data sources (responses to survey questionnaires, administrative records) and one or more Statistical Classifications.  A Classification Index may be used to assign the codes for Classification Items to observations in statistical collections. \nA Statistical Classification is a subtype of a Structured Collection.  [GSIM Statistical Classification Model]  Note that a GSIM Node is the equivalent of a DDI Member and a GSIM Node Set is a DDI Collection.\n\nGSIM mapping\n==============\nClassification Index\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Classification Index is an ordered list (alphabetical, in code order etc) of Classification Index Entries. A Classification Index can relate to one particular or to several Statistical Classifications. [GSIM Statistical Classification Model]\n\nExamples\n==========\nAn alphabetical index of a topically ordered Statistical Classification\n\nExplanatory notes\n===================\nA Classification Index shows the relationship between text found in statistical data sources (responses to survey questionnaires, administrative records) and one or more Statistical Classifications.  A Classification Index may be used to assign the codes for Classification Items to observations in statistical collections. \nA Statistical Classification is a subtype of a Structured Collection.  [GSIM Statistical Classification Model]  Note that a GSIM Node is the equivalent of a DDI Member and a GSIM Node Set is a DDI Collection.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nClassification Index\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -36266,7 +36267,7 @@
               "predicate": "http://ddi-alliance.org/ns/#entry",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36288,7 +36289,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36310,7 +36311,7 @@
               "predicate": "http://ddi-alliance.org/ns/#codingInstruction",
               "valueExpr": "http://ddi-alliance.org/ns/#CommandCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36346,7 +36347,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Classification Index Entry is a word or a short text (e.g. the name of a locality, an economic activity or an occupational title) describing a type of object/unit or object property to which a Classification Item applies, together with the code of the corresponding Classification Item. Each Classification Index Entry typically refers to one item of the Statistical Classification. Although a Classification Index Entry may be associated with a Classification Item at any Level of a Statistical Classification, Classification Index Entries are normally associated with items at the lowest Level.\n\nGSIM mapping\n==============\nClassification Index Entry\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Classification Index Entry is a word or a short text (e.g. the name of a locality, an economic activity or an occupational title) describing a type of object/unit or object property to which a Classification Item applies, together with the code of the corresponding Classification Item. Each Classification Index Entry typically refers to one item of the Statistical Classification. Although a Classification Index Entry may be associated with a Classification Item at any Level of a Statistical Classification, Classification Index Entries are normally associated with items at the lowest Level.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nClassification Index Entry\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -36373,7 +36374,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36398,7 +36399,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36420,7 +36421,7 @@
               "predicate": "http://ddi-alliance.org/ns/#explanatoryNotes",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36442,7 +36443,7 @@
               "predicate": "http://ddi-alliance.org/ns/#futureNotes",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36464,7 +36465,7 @@
               "predicate": "http://ddi-alliance.org/ns/#changeLog",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36486,7 +36487,7 @@
               "predicate": "http://ddi-alliance.org/ns/#changeFromPreviousVersion",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36508,7 +36509,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36530,7 +36531,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36551,8 +36552,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#representation",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36574,7 +36575,7 @@
               "predicate": "http://ddi-alliance.org/ns/#caseLaw",
               "valueExpr": "http://ddi-alliance.org/ns/#AuthorizationSource",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36603,7 +36604,7 @@
               "predicate": "http://ddi-alliance.org/ns/#exclude",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItem",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36625,7 +36626,7 @@
               "predicate": "http://ddi-alliance.org/ns/#denotes",
               "valueExpr": "http://ddi-alliance.org/ns/#Category",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36661,7 +36662,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Classification Item represents a Category at a certain Level within a Statistical Classification.\n\n\nExamples\n==========\nIn the  2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.\n\nExplanatory notes\n===================\nA Classification Item defines the content and the borders of the Category. A Unit can be classified to one and only one item at each Level of a Statistical Classification. As such a Classification Item is a placeholder for a position in a StatisitcalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. \n\nThis differentiates it from Code which is a kind of Designation, in particular it is an alphanumeric string assigned to stand in place of a category. For example, the letter M might stand for the category Male in the CodeList called Gender.\n\nGSIM mapping\n==============\nClassification Item\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Classification Item represents a Category at a certain Level within a Statistical Classification.\n\n\nExamples\n==========\nIn the  2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.\n\nExplanatory notes\n===================\nA Classification Item defines the content and the borders of the Category. A Unit can be classified to one and only one item at each Level of a Statistical Classification. As such a Classification Item is a placeholder for a position in a StatisitcalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. \n\nThis differentiates it from Code which is a kind of Designation, in particular it is an alphanumeric string assigned to stand in place of a category. For example, the letter M might stand for the category Male in the CodeList called Gender.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nClassification Item\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -36669,7 +36670,7 @@
       }
     },
     {
-      "id": "_:ClassificationItemRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -36684,8 +36685,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36707,7 +36708,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36729,7 +36730,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36751,7 +36752,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36771,9 +36772,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ClassificationItemRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36809,7 +36810,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA complex RelationStructure for use with statistical classification\n\nExamples\n==========\nA ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. \n\nExplanatory notes\n===================\nThe ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, \"parentOf\", or \"contains\", etc.. \n\n",
+              "value": "\nDefinition\n============\nA complex RelationStructure for use with statistical classification\n\nExamples\n==========\nA ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. \n\nExplanatory notes\n===================\nThe ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, \"parentOf\", or \"contains\", etc.. \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -36833,7 +36834,7 @@
               "predicate": "http://ddi-alliance.org/ns/#context",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36855,7 +36856,7 @@
               "predicate": "http://ddi-alliance.org/ns/#objectsOrUnitsClassified",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36877,7 +36878,7 @@
               "predicate": "http://ddi-alliance.org/ns/#subject",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36899,7 +36900,7 @@
               "predicate": "http://ddi-alliance.org/ns/#keyword",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36921,7 +36922,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36943,7 +36944,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36965,7 +36966,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -36985,9 +36986,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:StatisticalClassificationIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37012,7 +37013,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37032,9 +37033,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:StatisticalClassificationRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37056,7 +37057,7 @@
               "predicate": "http://ddi-alliance.org/ns/#owner",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37078,7 +37079,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37114,7 +37115,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Classification Series is an ensemble of one or more Statistical Classifications, based on the same concept, as documented by the definingConcept relationship, and related to each other as versions or updates. Typically, these Statistical Classifications have the same name.\n\nExamples\n==========\nISIC or ISCO\nSIC (with different published versions related to the publication year)\n\nGSIM mapping\n==============\nClassification Series\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Classification Series is an ensemble of one or more Statistical Classifications, based on the same concept, as documented by the definingConcept relationship, and related to each other as versions or updates. Typically, these Statistical Classifications have the same name.\n\nExamples\n==========\nISIC or ISCO\nSIC (with different published versions related to the publication year)\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nClassification Series\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37122,7 +37123,7 @@
       }
     },
     {
-      "id": "_:ClassificationSeriesRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37138,7 +37139,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37160,7 +37161,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37182,7 +37183,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37202,9 +37203,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:ClassificationSeriesRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationSeriesRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37240,7 +37241,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nDescribes the complex relation structure of a classification family.\n\n",
+              "value": "\nDefinition\n============\nDescribes the complex relation structure of a classification family.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37263,8 +37264,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#representation",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37286,7 +37287,7 @@
               "predicate": "http://ddi-alliance.org/ns/#denotes",
               "valueExpr": "http://ddi-alliance.org/ns/#Category",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37322,7 +37323,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.\n\nExamples\n==========\nThe letter M might stand for the category Male in the CodeList called Gender.\n\nExplanatory notes\n===================\nA Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. \n\nIt should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.\n\nDDI 3.2 mapping\n=================\nl:CodeType\n\nGSIM mapping\n==============\nCode\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.\n\nExamples\n==========\nThe letter M might stand for the category Male in the CodeList called Gender.\n\nExplanatory notes\n===================\nA Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. \n\nIt should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:CodeType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nCode\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37330,7 +37331,7 @@
       }
     },
     {
-      "id": "_:CodeList",
+      "id": "http://ddi-alliance.org/ns/#CodeList",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37346,7 +37347,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contains",
               "valueExpr": "http://ddi-alliance.org/ns/#CodeIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37366,9 +37367,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:CodeRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeRelationStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37404,7 +37405,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA list of Codes and associated Categories. May be flat or hierarchical. A hierarchical structure may have an indexed order for intended presentation even though the content within levels of the hierarchy are conceptually unordered. For hierarchical structures ClassificationRelationStructure is used to provide additional information on the structure and organization of the categories. Note that a CategorySet can be structured by a ClassificationRelationStructure without the need for associating any Codes with the Categories. This allows for the creation of a CategorySet, for example for a response domain, without an associated CodeList.\n\nExamples\n==========\nThe codes \"M\" and \"F\" could point to \"Male\" and \"Female\" categories respectively.\n\nA CodeList for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers)\n\n\nDDI 3.2 mapping\n=================\nl:CodeListType\n\nGSIM mapping\n==============\nCode List\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA list of Codes and associated Categories. May be flat or hierarchical. A hierarchical structure may have an indexed order for intended presentation even though the content within levels of the hierarchy are conceptually unordered. For hierarchical structures ClassificationRelationStructure is used to provide additional information on the structure and organization of the categories. Note that a CategorySet can be structured by a ClassificationRelationStructure without the need for associating any Codes with the Categories. This allows for the creation of a CategorySet, for example for a response domain, without an associated CodeList.\n\nExamples\n==========\nThe codes \"M\" and \"F\" could point to \"Male\" and \"Female\" categories respectively.\n\nA CodeList for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers)\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:CodeListType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nCode List\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37412,7 +37413,7 @@
       }
     },
     {
-      "id": "_:CodeRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#CodeRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -37427,8 +37428,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37450,7 +37451,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37471,8 +37472,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 1,
-              "max": 1,
+              "min": "1",
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37492,9 +37493,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:CodeRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#CodeRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37530,7 +37531,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nRelation structure of codes within a codelist. Allows for the specification of complex relationships among codes.\n\nExplanatory notes\n===================\nThe CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.\n\n\n",
+              "value": "\nDefinition\n============\nRelation structure of codes within a codelist. Allows for the specification of complex relationships among codes.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nThe CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37554,7 +37555,7 @@
               "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37576,7 +37577,7 @@
               "predicate": "http://ddi-alliance.org/ns/#correspondence",
               "valueExpr": "http://ddi-alliance.org/ns/#Map",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37597,8 +37598,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#maps",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
-              "min": 1,
-              "max": -1,
+              "min": "1",
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37620,7 +37621,7 @@
               "predicate": "http://ddi-alliance.org/ns/#sourceLevel",
               "valueExpr": "http://ddi-alliance.org/ns/#LevelStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37642,7 +37643,7 @@
               "predicate": "http://ddi-alliance.org/ns/#targetLevel",
               "valueExpr": "http://ddi-alliance.org/ns/#LevelStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37664,7 +37665,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPublication",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37686,7 +37687,7 @@
               "predicate": "http://ddi-alliance.org/ns/#owner",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37708,7 +37709,7 @@
               "predicate": "http://ddi-alliance.org/ns/#maintenanceUnit",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37730,7 +37731,7 @@
               "predicate": "http://ddi-alliance.org/ns/#contactPerson",
               "valueExpr": "http://ddi-alliance.org/ns/#Agent",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37766,7 +37767,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Correspondence Table expresses relationships between the members within or between StatisticalClassifications.\n\nExamples\n==========\nCorrespondence between the U.S. Standard Industrial Classification (SIC) and North American Industrial Classification System (NAICS)\n\nExplanatory notes\n===================\nCorrespondenceTables are used with Statistical Classifications. For instance, it can relate two versions from the same Classification Series; Statistical Classifications from different Classification Series; a variant and the version on which it is based; or, different versions of a variant. In the first and last examples, the Correspondence Table facilitates comparability over time.\n\nGSIM mapping\n==============\nCorrespondence Table\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Correspondence Table expresses relationships between the members within or between StatisticalClassifications.\n\nExamples\n==========\nCorrespondence between the U.S. Standard Industrial Classification (SIC) and North American Industrial Classification System (NAICS)\n\nExplanatory notes\n===================\nCorrespondenceTables are used with Statistical Classifications. For instance, it can relate two versions from the same Classification Series; Statistical Classifications from different Classification Series; a variant and the version on which it is based; or, different versions of a variant. In the first and last examples, the Correspondence Table facilitates comparability over time.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nCorrespondence Table\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37787,7 +37788,7 @@
           "predicate": "http://ddi-alliance.org/ns/#denotes",
           "valueExpr": "http://ddi-alliance.org/ns/#Concept",
           "min": 0,
-          "max": 1,
+          "max": "1",
           "annotations": [
             {
               "type": "Annotation",
@@ -37821,7 +37822,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA sign denoting a concept.\n\nExamples\n==========\nA linking of the term “Unemployment” to an particular underlying concept.\n\nExplanatory notes\n===================\nThe representation of a concept by a sign (e.g., string, pictogram, bitmap) which denotes it. An example is the code M designating the marital status Married, which is a concept. In this context, M means Married.\n\nGSIM mapping\n==============\nDesignation\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA sign denoting a concept.\n\nExamples\n==========\nA linking of the term “Unemployment” to an particular underlying concept.\n\nExplanatory notes\n===================\nThe representation of a concept by a sign (e.g., string, pictogram, bitmap) which denotes it. An example is the code M designating the marital status Married, which is a concept. In this context, M means Married.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nDesignation\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -37845,7 +37846,7 @@
               "predicate": "http://ddi-alliance.org/ns/#type",
               "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37867,7 +37868,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37889,7 +37890,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purpose",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37914,7 +37915,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37934,9 +37935,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#references",
-              "valueExpr": "_:CategorySet",
+              "valueExpr": "http://ddi-alliance.org/ns/#CategorySet",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37958,7 +37959,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usesLevelStructure",
               "valueExpr": "http://ddi-alliance.org/ns/#LevelStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -37980,7 +37981,7 @@
               "predicate": "http://ddi-alliance.org/ns/#definingConcept",
               "valueExpr": "http://ddi-alliance.org/ns/#Concept",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38016,7 +38017,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nAn abstract base to allow all codifications (CodeList, StatisticalClassification, etc.) to be used as enumerated value representations.\n\n",
+              "value": "\nDefinition\n============\nAn abstract base to allow all codifications (CodeList, StatisticalClassification, etc.) to be used as enumerated value representations.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -38024,7 +38025,7 @@
       }
     },
     {
-      "id": "_:IndexEntryRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -38040,7 +38041,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38062,7 +38063,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38084,7 +38085,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38104,9 +38105,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:IndexEntryRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#IndexEntryRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38142,7 +38143,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nStructures relationship of Classification Index Entries in a Classification Index.\n\n",
+              "value": "\nDefinition\n============\nStructures relationship of Classification Index Entries in a Classification Index.\n\nExamples\n==========\n\n\nExplanatory notes\n===================\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -38166,7 +38167,7 @@
               "predicate": "http://ddi-alliance.org/ns/#name",
               "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38188,7 +38189,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38208,9 +38209,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#containsLevel",
-              "valueExpr": "_:Level",
+              "valueExpr": "http://ddi-alliance.org/ns/#Level",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38232,7 +38233,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDateRange",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38268,7 +38269,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe LevelStructure describes the nesting structure of a hierarchical collection. The levels within the structure begin at the root level '1' and continue as an ordered array through each level of nesting.\n\n\n\nExamples\n==========\nISCO-08 (Major, Sub-Major, and Minor) or NAICS (2 digit sector codes, 3 digit subsector code list, 4 digit industry group code list, and 5 digit industry code list)\n\n\nExplanatory notes\n===================\nLevels are used to organize a hierarchy. Usually, a hierarchy often contains one root member at the top, though it could contain several. These are the first Level. All members directly related to those  in the first Level compose the second Level. The third and subsequent Levels are defined similarly. \n\nA Level often is associated with a Concept, which defines it. These correspond to kinds of aggregates. For example, in the US Standard Occupational Classification (2010), the Level below the top is called Major Occupation Groups, and the next Level is called Minor Occupational Groups. These ideas convey the structure. In particular, Health Care Practitioners (a Major Group) can be broken into Chiropractors, Dentists, Physicians, Vets, Therapists, etc. (Minor Groups) The Categories in the Nodes at the lower Level aggregate to the Category in Node above them.\n\n\"Classification schemes are frequently organized in nested levels of increasing detail. ISCO-08, for example, has four levels: at the top level are ten major groups, each of which contain sub-major groups, which in turn are subdivided in minor groups, which contain unit groups. Even when a classification is not structured in levels (\"flat classification\"), the usual convention, which is adopted here, is to consider that it contains one unique level.\" (http://rdf-vocabulary.ddialliance.org/xkos.html#) Individual classification items organized in a hierarchy may be associated with a specific level.\n\nDDI 3.2 mapping\n=================\nl:LevelType\n\nGSIM mapping\n==============\nLevel\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe LevelStructure describes the nesting structure of a hierarchical collection. The levels within the structure begin at the root level '1' and continue as an ordered array through each level of nesting.\n\n\n\nExamples\n==========\nISCO-08 (Major, Sub-Major, and Minor) or NAICS (2 digit sector codes, 3 digit subsector code list, 4 digit industry group code list, and 5 digit industry code list)\n\n\nExplanatory notes\n===================\nLevels are used to organize a hierarchy. Usually, a hierarchy often contains one root member at the top, though it could contain several. These are the first Level. All members directly related to those  in the first Level compose the second Level. The third and subsequent Levels are defined similarly. \n\nA Level often is associated with a Concept, which defines it. These correspond to kinds of aggregates. For example, in the US Standard Occupational Classification (2010), the Level below the top is called Major Occupation Groups, and the next Level is called Minor Occupational Groups. These ideas convey the structure. In particular, Health Care Practitioners (a Major Group) can be broken into Chiropractors, Dentists, Physicians, Vets, Therapists, etc. (Minor Groups) The Categories in the Nodes at the lower Level aggregate to the Category in Node above them.\n\n\"Classification schemes are frequently organized in nested levels of increasing detail. ISCO-08, for example, has four levels: at the top level are ten major groups, each of which contain sub-major groups, which in turn are subdivided in minor groups, which contain unit groups. Even when a classification is not structured in levels (\"flat classification\"), the usual convention, which is adopted here, is to consider that it contains one unique level.\" (http://rdf-vocabulary.ddialliance.org/xkos.html#) Individual classification items organized in a hierarchy may be associated with a specific level.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\nl:LevelType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nLevel\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -38292,7 +38293,7 @@
               "predicate": "http://ddi-alliance.org/ns/#platformType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38314,7 +38315,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesConceptsFrom",
               "valueExpr": "http://ddi-alliance.org/ns/#SentinelConceptualDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38336,7 +38337,7 @@
               "predicate": "http://ddi-alliance.org/ns/#describedValueDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueAndConceptDescription",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38358,7 +38359,7 @@
               "predicate": "http://ddi-alliance.org/ns/#enumeratedValueDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#EnumerationDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38394,7 +38395,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe Value Domain for a sentinel conceptual domain. Sentinel values are defined in ISO 11404 as\n\"element of a value space that is not completely consistent with a datatype's properties and characterizing operations...\". A common example would be codes for missing values.\n\nExamples\n==========\nMissing categories expressed as Codes <-9, refused>; <-8, Don't Know> for a numeric variable with values greater than zero.  \n\nExplanatory notes\n===================\nSentinel values are used for processing, not to describe subject matter. Typical examples include missing values or invalid entry codes. Sentinel Value Domains are typically of the enumerated type, but they can be the described type, too.\n\nThis is not to say that sentinel values carry no information. Data on gender might be enumerated by \"0, male\" and \"1, female\". These are the substantive values (see Substantive Value Domain). However, there may be the need to include missing values along with that data, such as \"m, missing\" and \"r, refused\". These are sentinel values.\n\nISO/IEC 11404 - General purpose datatypes, defines sentinel values in terms of how that standard defines datatypes. But, the fact that the sentinels don't fit in terms of the calculations and statistics one would perform on the \"clean\" data is a distinguishing characteristic. In the example above, one would not include missing or refused data in calculating a ratio of females to the total population.\n\nSentinel values may be described rather than enumerated. For instance, there might be a range of values, each representing an out of range value, but there could be too many to enumerate. It is easier to describe the range.\n\nIn some software missing values are represented as values not in the datatype of the valid values. R has values of NA, NaN, Inf, and -Inf. SAS and Stata have values displayed as \".\", \".A\" through \".Z\", and \"._\"\n\nOther software might use values like 999 for missing that would otherwise be the same datatype as valid values but outside the parameters of the domain.\n\nIn the gender example above:\nFor SPSS the sentinel values might be represented as:\n998 = \"refused\"\n999 = \"not recorded\"\n\nFor SAS or Stata the sentinel values might be represented as:\n.R = \"refused\"\n.N = \"not recorded\"\n\nSentinel values can also be used for other purposes beyond missing. For a numeric variable \"A\" might represent a value somewhere in a defined range to prevent disclosure of information about an individual. This might be considered a \"semi-missing value\".\nIn SAS or Stata for example:\n.A = \"greater than or equal to 100 and less than 1000 \"\n\n\nGSIM mapping\n==============\nEnumerated Value Domain\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe Value Domain for a sentinel conceptual domain. Sentinel values are defined in ISO 11404 as\n\"element of a value space that is not completely consistent with a datatype's properties and characterizing operations...\". A common example would be codes for missing values.\n\nExamples\n==========\nMissing categories expressed as Codes <-9, refused>; <-8, Don't Know> for a numeric variable with values greater than zero.  \n\nExplanatory notes\n===================\nSentinel values are used for processing, not to describe subject matter. Typical examples include missing values or invalid entry codes. Sentinel Value Domains are typically of the enumerated type, but they can be the described type, too.\n\nThis is not to say that sentinel values carry no information. Data on gender might be enumerated by \"0, male\" and \"1, female\". These are the substantive values (see Substantive Value Domain). However, there may be the need to include missing values along with that data, such as \"m, missing\" and \"r, refused\". These are sentinel values.\n\nISO/IEC 11404 - General purpose datatypes, defines sentinel values in terms of how that standard defines datatypes. But, the fact that the sentinels don't fit in terms of the calculations and statistics one would perform on the \"clean\" data is a distinguishing characteristic. In the example above, one would not include missing or refused data in calculating a ratio of females to the total population.\n\nSentinel values may be described rather than enumerated. For instance, there might be a range of values, each representing an out of range value, but there could be too many to enumerate. It is easier to describe the range.\n\nIn some software missing values are represented as values not in the datatype of the valid values. R has values of NA, NaN, Inf, and -Inf. SAS and Stata have values displayed as \".\", \".A\" through \".Z\", and \"._\"\n\nOther software might use values like 999 for missing that would otherwise be the same datatype as valid values but outside the parameters of the domain.\n\nIn the gender example above:\nFor SPSS the sentinel values might be represented as:\n998 = \"refused\"\n999 = \"not recorded\"\n\nFor SAS or Stata the sentinel values might be represented as:\n.R = \"refused\"\n.N = \"not recorded\"\n\nSentinel values can also be used for other purposes beyond missing. For a numeric variable \"A\" might represent a value somewhere in a defined range to prevent disclosure of information about an individual. This might be considered a \"semi-missing value\".\nIn SAS or Stata for example:\n.A = \"greater than or equal to 100 and less than 1000 \"\n\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nEnumerated Value Domain\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -38418,7 +38419,7 @@
               "predicate": "http://ddi-alliance.org/ns/#releaseDate",
               "valueExpr": "http://ddi-alliance.org/ns/#Date",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38440,7 +38441,7 @@
               "predicate": "http://ddi-alliance.org/ns/#validDates",
               "valueExpr": "http://ddi-alliance.org/ns/#DateRange",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38465,7 +38466,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38490,7 +38491,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38512,7 +38513,7 @@
               "predicate": "http://ddi-alliance.org/ns/#changeFromBase",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38534,7 +38535,7 @@
               "predicate": "http://ddi-alliance.org/ns/#purposeOfVariant",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38556,7 +38557,7 @@
               "predicate": "http://ddi-alliance.org/ns/#copyright",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38578,7 +38579,7 @@
               "predicate": "http://ddi-alliance.org/ns/#updateChanges",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38603,7 +38604,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#language"
               },
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38625,7 +38626,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38647,7 +38648,7 @@
               "predicate": "http://ddi-alliance.org/ns/#rationale",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38669,7 +38670,7 @@
               "predicate": "http://ddi-alliance.org/ns/#usage",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38689,9 +38690,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#contains",
-              "valueExpr": "_:ClassificationItemIndicator",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemIndicator",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38713,7 +38714,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isMaintainedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#Organization",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38735,7 +38736,7 @@
               "predicate": "http://ddi-alliance.org/ns/#distributedAs",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalMaterial",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38764,7 +38765,7 @@
               "predicate": "http://ddi-alliance.org/ns/#variantOf",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38786,7 +38787,7 @@
               "predicate": "http://ddi-alliance.org/ns/#isIndexedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#ClassificationIndex",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38808,7 +38809,7 @@
               "predicate": "http://ddi-alliance.org/ns/#predecessor",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38830,7 +38831,7 @@
               "predicate": "http://ddi-alliance.org/ns/#successor",
               "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassification",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38850,9 +38851,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-              "valueExpr": "_:ClassificationItemRelationStructure",
+              "valueExpr": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38888,7 +38889,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA Statistical Classification is a set of Categories represented by Classification Items which may be assigned to one or more variables registered in statistical surveys or administrative files, and used in the production and dissemination of statistics. The Categories at each Level of the classification structure must be mutually exclusive and jointly exhaustive of all objects/units in the population of interest. (Source: GSIM StatisticalClassification)\n\nExplanatory notes\n===================\nA Classification Item represents a Category at a certain Level within a Statistical Classification. The Categories are defined with reference to one or more characteristics of a particular universe of units of observation. A Statistical Classification may have a flat, linear structure or may be hierarchically structured, such that all Categories at lower Levels are sub-Categories of Categories at the next Level up. (Source: GSIM StatisticalClassification) \n\nGSIM mapping\n==============\nStatistical Classification\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nA Statistical Classification is a set of Categories represented by Classification Items which may be assigned to one or more variables registered in statistical surveys or administrative files, and used in the production and dissemination of statistics. The Categories at each Level of the classification structure must be mutually exclusive and jointly exhaustive of all objects/units in the population of interest. (Source: GSIM StatisticalClassification)\n\nExamples\n==========\n\n\nExplanatory notes\n===================\nA Classification Item represents a Category at a certain Level within a Statistical Classification. The Categories are defined with reference to one or more characteristics of a particular universe of units of observation. A Statistical Classification may have a flat, linear structure or may be hierarchically structured, such that all Categories at lower Levels are sub-Categories of Categories at the next Level up. (Source: GSIM StatisticalClassification) \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nStatistical Classification\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -38896,7 +38897,7 @@
       }
     },
     {
-      "id": "_:StatisticalClassificationRelationStructure",
+      "id": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -38912,7 +38913,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38934,7 +38935,7 @@
               "predicate": "http://ddi-alliance.org/ns/#semantic",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38956,7 +38957,7 @@
               "predicate": "http://ddi-alliance.org/ns/#totality",
               "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -38976,9 +38977,9 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-              "valueExpr": "_:StatisticalClassificationRelation",
+              "valueExpr": "http://ddi-alliance.org/ns/#StatisticalClassificationRelation",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39014,7 +39015,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA structure for describing the complex relationship between statistical classifications in a classification series\n\nExamples\n==========\nA classification series that branches into separately versioned classifications\n\nExplanatory notes\n===================\nCan use relation specification information to more fully describe the relationship between members such as parent/child, whole/part, general/specific, equivalence, etc.\n\n",
+              "value": "\nDefinition\n============\nA structure for describing the complex relationship between statistical classifications in a classification series\n\nExamples\n==========\nA classification series that branches into separately versioned classifications\n\nExplanatory notes\n===================\nCan use relation specification information to more fully describe the relationship between members such as parent/child, whole/part, general/specific, equivalence, etc.\n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -39022,7 +39023,7 @@
       }
     },
     {
-      "id": "_:SubstantiveValueDomain",
+      "id": "http://ddi-alliance.org/ns/#SubstantiveValueDomain",
       "type": "ShapeDecl",
       "abstract": false,
       "shapeExpr": {
@@ -39038,7 +39039,7 @@
               "predicate": "http://ddi-alliance.org/ns/#takesConceptsFrom",
               "valueExpr": "http://ddi-alliance.org/ns/#SubstantiveConceptualDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39060,7 +39061,7 @@
               "predicate": "http://ddi-alliance.org/ns/#describedValueDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#ValueAndConceptDescription",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39082,7 +39083,7 @@
               "predicate": "http://ddi-alliance.org/ns/#enumeratedValueDomain",
               "valueExpr": "http://ddi-alliance.org/ns/#EnumerationDomain",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39118,7 +39119,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe Value Domain for a substantive conceptual domain. \n\nExamples\n==========\nAll real decimal numbers relating to the subject matter of interest between 0 and 1 specified in Arabic numerals. [GSIM 1.1].\nThe codes \"M\" male and \"F\" for female .\n\n\nExplanatory notes\n===================\nIn DDI4 the value domain for a variable is separated into “substantive” and “sentinel” values. Substantive values are the values of primary interest. Sentinel values are additional values that may carry supplementary information, such as reasons for missing. This duality is described in ISO 11404. Substantive values for height might be real numbers expressed in meters. The full value domain might also include codes for different kinds of missing values - one code for “refused” and another for “don’t know”. Sentinel Values may also convey some substantive information and at the same time represent missing values. An example might be where a numeric variable like number of employees be sometimes a count and sometimes a code representing a range of counts in order to avoid disclosure of information about a specific entity. \n\nThe SubstantiveValueDomain may use either a ValueDescription, for described values,  or a CodeList for enumerated values, or both. \n\nA value domain may consist of substantive values or sentinel values. Substantive values are those associated directly with some subject matter area. They do not address concerns around processing, such as missing values. Substantive values are called \"regular values\" in ISO/IEC 11404 - General purpose datatypes.\n\nThe enumerated case is one where all values are listed. An example is the categorical values for gender:\nThe conceptual domain could consist of the concept of male and the concept of female. These might be represented in codes and associated labels as\n1 (=\"Male\")\n2 (=\"Female\")\n\nThe described case is one where some description is needed to define the set of values.\nTake the following description for height in meters:\n\"a real number between 0 and 3, represented to two Arabic decimal places\". This description might be structured in some way to be machine actionable (datatype=\"double\", min=0, max=3, decimals=2).\n\n\nSynonyms\n==========\nvalue domain [ISO11179]\n\n",
+              "value": "\nDefinition\n============\nThe Value Domain for a substantive conceptual domain. \n\nExamples\n==========\nAll real decimal numbers relating to the subject matter of interest between 0 and 1 specified in Arabic numerals. [GSIM 1.1].\nThe codes \"M\" male and \"F\" for female .\n\n\nExplanatory notes\n===================\nIn DDI4 the value domain for a variable is separated into “substantive” and “sentinel” values. Substantive values are the values of primary interest. Sentinel values are additional values that may carry supplementary information, such as reasons for missing. This duality is described in ISO 11404. Substantive values for height might be real numbers expressed in meters. The full value domain might also include codes for different kinds of missing values - one code for “refused” and another for “don’t know”. Sentinel Values may also convey some substantive information and at the same time represent missing values. An example might be where a numeric variable like number of employees be sometimes a count and sometimes a code representing a range of counts in order to avoid disclosure of information about a specific entity. \n\nThe SubstantiveValueDomain may use either a ValueDescription, for described values,  or a CodeList for enumerated values, or both. \n\nA value domain may consist of substantive values or sentinel values. Substantive values are those associated directly with some subject matter area. They do not address concerns around processing, such as missing values. Substantive values are called \"regular values\" in ISO/IEC 11404 - General purpose datatypes.\n\nThe enumerated case is one where all values are listed. An example is the categorical values for gender:\nThe conceptual domain could consist of the concept of male and the concept of female. These might be represented in codes and associated labels as\n1 (=\"Male\")\n2 (=\"Female\")\n\nThe described case is one where some description is needed to define the set of values.\nTake the following description for height in meters:\n\"a real number between 0 and 3, represented to two Arabic decimal places\". This description might be structured in some way to be machine actionable (datatype=\"double\", min=0, max=3, decimals=2).\n\n\nSynonyms\n==========\nvalue domain [ISO11179]\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -39142,7 +39143,7 @@
               "predicate": "http://ddi-alliance.org/ns/#description",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39164,7 +39165,7 @@
               "predicate": "http://ddi-alliance.org/ns/#logicalExpression",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39186,7 +39187,7 @@
               "predicate": "http://ddi-alliance.org/ns/#regularExpression",
               "valueExpr": "http://ddi-alliance.org/ns/#TypedString",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39211,7 +39212,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39236,7 +39237,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39261,7 +39262,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39286,7 +39287,7 @@
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39308,7 +39309,7 @@
               "predicate": "http://ddi-alliance.org/ns/#classificationLevel",
               "valueExpr": "http://ddi-alliance.org/ns/#CategoryRelationCode",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39330,7 +39331,7 @@
               "predicate": "http://ddi-alliance.org/ns/#formatPattern",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": 1,
+              "max": "1",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39366,7 +39367,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA formal description of a set of values. \n\nExamples\n==========\nExample 1) \nThe integers between 1 and 10 inclusive.  \nThe values of x satisfying the logicalExpression property:\n\" (1 <=x <= 10) AND mod(x,10)=0\"\nAlso described with minimumValueInclusive = 1 and maximumValueInclusive = 10 (and datatype of integer)\n\nExample 2)\nThe upper case letters A through C and X\ndescribed with the regularExpression \"/[A-CX]/\"\n\n\nExample 3)\nA date-time described with the Unicode Locale Data Markup Language pattern yyyy.MM.dd G 'at' HH:mm:ss zzz\n\n\nExplanatory notes\n===================\nThe ValueAndConceptDescription may be used to describe either a value domain or a conceptual domain. For a value domain, the ValueAndConceptDescription contains the details for a “described” domain (as opposed to an enumerated domain). There are a number of properties which can be used for the description. The description could be just text such as: “an even number greater than zero”. Or a more formal logical expression like “x>0 and mod(x,2)=0”. A regular expression might be useful for describing a textual domain. It could also employ a format pattern from the Unicode Locale Data Markup Language (LDML) (http://www.unicode.org/reports/tr35/tr35.html.\nSome Conceptual Domains might be described with just a narrative. Others, though, might be described in much the same way as a value domain depending on the specificity of the concept.\n\nIn ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.\nThe logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096 \n\n",
+              "value": "\nDefinition\n============\nA formal description of a set of values. \n\nExamples\n==========\nExample 1) \nThe integers between 1 and 10 inclusive.  \nThe values of x satisfying the logicalExpression property:\n\" (1 <=x <= 10) AND mod(x,10)=0\"\nAlso described with minimumValueInclusive = 1 and maximumValueInclusive = 10 (and datatype of integer)\n\nExample 2)\nThe upper case letters A through C and X\ndescribed with the regularExpression \"/[A-CX]/\"\n\n\nExample 3)\nA date-time described with the Unicode Locale Data Markup Language pattern yyyy.MM.dd G 'at' HH:mm:ss zzz\n\n\nExplanatory notes\n===================\nThe ValueAndConceptDescription may be used to describe either a value domain or a conceptual domain. For a value domain, the ValueAndConceptDescription contains the details for a “described” domain (as opposed to an enumerated domain). There are a number of properties which can be used for the description. The description could be just text such as: “an even number greater than zero”. Or a more formal logical expression like “x>0 and mod(x,2)=0”. A regular expression might be useful for describing a textual domain. It could also employ a format pattern from the Unicode Locale Data Markup Language (LDML) (http://www.unicode.org/reports/tr35/tr35.html.\nSome Conceptual Domains might be described with just a narrative. Others, though, might be described in much the same way as a value domain depending on the specificity of the concept.\n\nIn ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.\nThe logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096 \n\nSynonyms\n==========\n\n\nDDI 3.2 mapping\n=================\n\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\n\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -39390,7 +39391,7 @@
               "predicate": "http://ddi-alliance.org/ns/#displayLabel",
               "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39412,7 +39413,7 @@
               "predicate": "http://ddi-alliance.org/ns/#recommendedDataType",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
-              "max": -1,
+              "max": "*",
               "annotations": [
                 {
                   "type": "Annotation",
@@ -39448,13 +39449,12 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nThe permitted range of values for a characteristic of a variable. [GSIM 1.1]\n\nExamples\n==========\nAge categories with a numeric code list; Age in years; Young, Middle-aged and Old\n\nExplanatory notes\n===================\nThe values can be described by enumeration or by an expression. Value domains can be either substantive/sentinel, or described/enumeration\n\nSynonyms\n==========\nBUT NOT Grid/Numeric/Code/*_ResponseDomain [DDI-L/Questions] - this is \"ResponseDomain\"\n\nDDI 3.2 mapping\n=================\nr:RepresentationType\n\nGSIM mapping\n==============\nValue Domain\n\t\t\t\t\t\t\t\t\t",
+              "value": "\nDefinition\n============\nThe permitted range of values for a characteristic of a variable. [GSIM 1.1]\n\nExamples\n==========\nAge categories with a numeric code list; Age in years; Young, Middle-aged and Old\n\nExplanatory notes\n===================\nThe values can be described by enumeration or by an expression. Value domains can be either substantive/sentinel, or described/enumeration\n\nSynonyms\n==========\nBUT NOT Grid/Numeric/Code/*_ResponseDomain [DDI-L/Questions] - this is \"ResponseDomain\"\n\nDDI 3.2 mapping\n=================\nr:RepresentationType\n\nRDF mapping\n=============\n\n\nGSIM mapping\n==============\nValue Domain\n\t\t\t\t\t\t\t\t\t",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
         ]
       }
     }
-  ],
-  "@context": "http://www.w3.org/ns/shex.jsonld"
+  ]
 }
