@@ -695,8 +695,8 @@ function UmlModel (modelOptions = {}, $ = null) {
         "predicate": options.iri(this.name, this),
         "valueExpr": valueExpr
       }
-      if (this.lower !== undefined) { ret.min = this.lower }
-      if (this.upper !== undefined) { ret.max = this.upper }
+      if (this.lower !== undefined) { ret.min = parseInt(this.lower) }
+      if (this.upper !== undefined) { ret.max = this.upper === '*' ? -1 : parseInt(this.upper) }
       if (options.annotations) {
         let toAdd = options.annotations(this)
         if (toAdd && toAdd.length) {

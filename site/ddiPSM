@@ -154,14 +154,14 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
         })
       }
       if (elt.comments) {
-        ret = ret.concat({
+        ret = ret.concat(elt.comments.map(comment => { return {
           "type": "Annotation",
           "predicate": "http://www.w3.org/ns/shex-xmi#comment",
           "object": {
-            "value": elt.comments[0], // !! just the first comment
+            "value": trimUnusedMarkdownHeaders(comment),
             "type": "https://github.com/commonmark/commonmark.js"
           }
-        })
+        }}))
       }
       if (elt.aggregation) {
         ret = ret.concat({
@@ -179,6 +179,21 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
       return ret
     }
   })
+
+  /** get rid of markdown headers with no following section
+   *
+   *   "Ab\n==\nAb 1\nAb 2\n\nCd\n==\n\nEf\n==\n\nGh\n==\nGh 1\nGh 2\nIj\n=="
+   *  =>
+   *   "Ab\n==\nAb 1\nAb 2\n\nGh\n==\nGh 1\nGh 2\n"
+   */
+  function trimUnusedMarkdownHeaders (text) {
+    let oldLen
+    do {
+      oldLen = text.length
+      text = text.replace(/[^=\n]+\n=+(?:\n\n+([^=]+\n=+\n)|\s*$)/, '$1')
+    } while (text.length < oldLen)
+    return text
+  }
 
   fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
 
