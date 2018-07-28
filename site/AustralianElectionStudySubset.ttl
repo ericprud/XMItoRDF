@@ -1,0 +1,4678 @@
+PREFIX ddi: <http://ddi-alliance.org/ns/#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<#urn:ddi:int.example:IdDDIMetadata:1_DocumentInformation>
+  ddi:agency "int.example" ;
+  ddi:id "IdDDIMetadata" ;
+  ddi:version "1" ;
+  ddi:versionDate "2017-10-20"^^ddi:IsoDateType ;
+  ddi:localId  [ 
+    ddi:localIdValue "au.edu.anu.ada.ddi.01259" ;
+  ] ;
+  ddi:hasPrimaryContent "URN:DDI:int.example:IdStudy:1" ;
+  ddi:hasPrimaryContent "URN:DDI:int.example:IdPhysicalDataProduct:1" ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:hasAnnotation  [ 
+    ddi:summary  [ 
+      ddi:languageSpecificString  [
+        ddi:content """ 
+                 This is an example of documentation of a subset of the Australian Election Study 2013, first developed 
+                 at the DDI4 Dagstuhl week 2 Sprint 2016 as an example of physical formatting of data, and further 
+                 developed at the DDI4 Dagstuhl week 1 Sprint 2017 as a test case for the simple codebook view.
+                 Twelve variables were selected from the original set of 354.
+                 The study is documented with information copied from the pdf of the codebook from the 
+                 Australian Data Archive restructured into DDI4 XML.
+         """ ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Larry Hoyle" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "DDI4 XML entry" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Larry Hoyle" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "variable selection" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Dan Gillman" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "variable selection" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Knut Wenzig" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "variable selection" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Arofan Gregory" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "variable selection" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:copyright  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Original Study Copyright © 2014, The Australian National University. All rights reserved" ;
+      ] ;
+    ] ;
+    ddi:title  [ 
+      ddi:languageSpecificString  [
+        ddi:content "DDI4 Subset of the Australian Election Study, 2013" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdStudy:1_Study>
+  ddi:agency "int.example" ;
+  ddi:id "IdStudy" ;
+  ddi:version "1" ;
+  ddi:versionDate "2014-02-28" ;
+  ddi:versionRationale  [ 
+    ddi:rationaleDescription  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Version 1.0 First release" ;
+      ] ;
+    ] ;
+  ] ;
+  ddi:localId  [ 
+    ddi:localIdValue "au.edu.anu.ada.ddi.01259" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:hasAnalysisUnit  [ 
+    ddi:typeOfClass "UnitType" ;
+  ] ;
+  ddi:hasCoverage  [ 
+    ddi:typeOfClass "Coverage" ;
+  ] ;
+  ddi:hasFundingInformation  [ 
+    ddi:typeOfClass "FundingInformation" ;
+  ] ;
+  ddi:hasMethodology  [ 
+    ddi:typeOfClass "MethodologyOverview" ;
+  ] ;
+  ddi:hasMethodology  [ 
+    ddi:typeOfClass "MethodologyOverview" ;
+  ] ;
+  ddi:hasMethodology  [ 
+    ddi:typeOfClass "MethodologyOverview" ;
+  ] ;
+  ddi:hasSamplingProcedure  [ 
+    ddi:typeOfClass "SamplingProcedure" ;
+  ] ;
+  ddi:kindOfData  [ 
+    ddi:content "survey data" ;
+  ] ;
+  ddi:hasAnnotation  [ 
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Bean, Clive" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Individual" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Author" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Study Investigator Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "McAllister, Ian" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Individual" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Author" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Study Investigator Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Digital Preservation Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "Depositor" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Pietsch, Juliet" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Individual" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Author" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Study Investigator Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Gibson, Rachel Kay" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Individual" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Author" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Study Investigator Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Equal" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:contributor  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "The Social Research Centre (SRC)" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Organization" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Data Collection Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:publisher  [ 
+      ddi:agentName  [ 
+        ddi:languageSpecificString  [
+          ddi:content "Australian Data Archive" ;
+        ] ;
+      ] ;
+      ddi:associatedAgent  [ 
+        ddi:typeOfClass "Organization" ;
+      ] ;
+      ddi:role  [ 
+        ddi:term  [ 
+          ddi:content "cro:Archivist Role" ;
+          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+        ] ;
+        ddi:extent  [ 
+          ddi:content "Lead" ;
+        ] ;
+      ] ;
+    ] ;
+    ddi:title  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Australian Election Study, 2013" ;
+      ] ;
+    ] ;
+    ddi:subTitle  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Study Documentation" ;
+      ] ;
+    ] ;
+    ddi:copyright  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Copyright © 2014, The Australian National University. All rights reserved" ;
+      ] ;
+    ] ;
+    ddi:typeOfResource  [ 
+      ddi:content "Australian Election Study" ;
+    ] ;
+    ddi:summary  [ 
+      ddi:languageSpecificString  [
+        ddi:content """The 2013 Australian Election Study (au.edu.anu.ada.ddi.01259) is the tenth in a series of surveys beginning in 1987 that
+                have been timed to coincide with Australian Federal Elections. The series also builds on the 1967, 1969 and 1979 Australian
+                Political Attitudes Surveys. The Australian Election Studies aim to provide a long-term perspective on stability and change
+                in the political attitudes and behaviour of the Australian electorate, and investigate the changing social bases of Australian
+                politics as the economy and society modernise and change character. In addition to these long-term goals, they examine the
+                political issues prevalent in the current election and assess their importance for the election result.
+                The 2013 survey replicates many questions from the previous Australian Election Studies, but also introduces new questions
+                regarding immigrants to Australia. Other sections cover the respondent's interest in the election campaign and politics, their
+                past and present political affiliation, evaluation of parties and candidates, alignment with parties on various election issues,
+                evaluation of the current economic situation, and attitudes to a range of election issues including global warming, taxation,
+                education, unemployment, health and Medicare, refugees and asylum seekers, and population policy. Opinions on social
+                policy issues including abortion, equal opportunities, same sex marriages, and Australia's security were also covered in the
+                2013 Australian Election Study.
+                Background variables include level of education, employment status, occupation, type of employer, position at workplace,
+                trade union membership, sex, age, own and parents' country of birth, parents' political preferences, religion, marital status,
+                income, and where applicable, the occupation, trade union membership and political preference of the respondent's partner.
+                The 2013 Australian Election Study is the second in the AES series to provide the option of completing the questionnaire
+                online via a unique password, or via hardcopy. 576 of the 3,955 responses (14.6 percent) were completed online.
+                This data file is also supplemented with division level election results from the Australian Electoral Commission election
+                results website (http://www.aec.gov.au/Elections/Federal_Elections/2013/index.htm). These variables are found under the
+                variable group "AEC Election Results". Information on the source of these election results and the method by which they
+                were created is available in a Stata *.do syntax file located in the other study materials section.results and the method by
+                which they were created is available in a Stata *.do syntax file located in the other study materials section.""" ;
+      ] ;
+    ] ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdStudyAccess:1_Access>
+  ddi:agency "int.example" ;
+  ddi:id "IdStudyAccess" ;
+  ddi:version "1" ;
+  ddi:citationRequirement  [ 
+    ddi:languageSpecificStructuredString """All manuscripts based in whole or in part on these data should 
+                (i) identify the data and original investigators by using the recommended bibliographic reference to the data file;
+                (ii) acknowledge the Australian Data Archive and, where the data are made available through the Australian Data Archive by another archive, acknowledge that archive;
+                (iii) declare that those who carried out the original analysis and collection of the data bear no responsibility for the further analysis or interpretation of them.""" ;
+  ] ;
+  ddi:confidentialityStatement  [ 
+    ddi:languageSpecificStructuredString  [ 
+      ddi:isPlainText "true"^^xsd:boolean ;
+      ddi:isTranslated "false"^^xsd:boolean ;
+    ] ;
+  ] ;
+  ddi:contactAgent  [ 
+    ddi:associatedAgent  [ 
+      ddi:typeOfClass "Individual" ;
+    ] ;
+  ] ;
+  ddi:restrictions  [ 
+    ddi:languageSpecificStructuredString """Disclaimer: Use of the material is solely at the user's risk. The depositor, The Australian National University and the Australian Data
+                Archive shall not be held responsible for the accuracy and completeness of the material supplied.""" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCoverage:1_Coverage>
+  ddi:agency "int.example" ;
+  ddi:id "IdCoverage" ;
+  ddi:version "1" ;
+  ddi:hasSpatialCoverage  [ 
+    ddi:typeOfClass "SpatialCoverage" ;
+  ] ;
+  ddi:hasTemporalCoverage  [ 
+    ddi:typeOfClass "TemporalCoverage" ;
+  ] ;
+  ddi:hasTopicalCoverage  [ 
+    ddi:typeOfClass "TopicalCoverage" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSpatialCoverage:1_SpatialCoverage>
+  ddi:agency "int.example" ;
+  ddi:id "IdSpatialCoverage" ;
+  ddi:version "1" ;
+  ddi:spatialAreaCode  [ 
+    ddi:content "AU" ;
+    ddi:controlledVocabularyName "ISO3166-1" ;
+  ] ;
+  ddi:lowestGeographicUnitTypeCovered  [ 
+    ddi:typeOfClass "UnitType" ;
+  ] ;
+  ddi:includesGeographicUnit  [ 
+    ddi:typeOfClass "GeographicUnit" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdNationUnit:1_UnitType>
+  ddi:agency "int.example" ;
+  ddi:id "IdNationUnit" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Nation" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:GeoUnit_1:1_GeographicUnit>
+  ddi:agency "int.example" ;
+  ddi:id "GeoUnit_1" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Australia" ;
+  ] ;
+  ddi:hasUnitType  [ 
+    ddi:typeOfClass "UnitType" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdTemporalCoverage:1_TemporalCoverage>
+  ddi:agency "int.example" ;
+  ddi:id "IdTemporalCoverage" ;
+  ddi:version "1" ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2013/2014" ;
+    ddi:subject  [ 
+      ddi:content "Time Period(s)" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2013-09-01/2013-09-06" ;
+    ddi:subject  [ 
+      ddi:content "Data Collection Time Period(s)" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2016_10_05" ;
+    ddi:subject  [ 
+      ddi:content "Codebook Download" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2010_10_13" ;
+    ddi:subject  [ 
+      ddi:content "Metadata Production" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2013" ;
+    ddi:subject  [ 
+      ddi:content "Title" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2014-02-28" ;
+    ddi:subject  [ 
+      ddi:content "Production Date" ;
+    ] ;
+  ] ;
+  ddi:coverageDate  [ 
+    ddi:isoDate "2013-09-06/2014-01-06" ;
+    ddi:subject  [ 
+      ddi:content "Data Collection" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdTopicalCoverage:1_TopicalCoverage>
+  ddi:agency "int.example" ;
+  ddi:id "IdTopicalCoverage" ;
+  ddi:version "1" ;
+  ddi:keyword  [ 
+    ddi:content "Attitudes" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Defence" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Economic policy" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Elections" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Environment" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Ethnic groups" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Immigration" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "International relations" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Internet" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Political parties" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Politicians" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Politics" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Republicanism" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Shares" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Social policy" ;
+  ] ;
+  ddi:keyword  [ 
+    ddi:content "Taxation" ;
+  ] ;
+  ddi:subject  [ 
+    ddi:content "Politics" ;
+  ] ;
+  ddi:subject  [ 
+    ddi:content "Election and Campaign Studies" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdBean:1_Individual>
+  ddi:agency "int.example" ;
+  ddi:id "IdBean" ;
+  ddi:version "1" ;
+  ddi:hasIndividualName  [ 
+    ddi:fullName  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Clive Bean" ;
+      ] ;
+    ] ;
+    ddi:firstGiven "Clive" ;
+    ddi:lastFamily "Bean" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "Queensland University of Technology (QUT)" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdMcAllister:1_Individual>
+  ddi:agency "int.example" ;
+  ddi:id "IdMcAllister" ;
+  ddi:version "1" ;
+  ddi:hasIndividualName  [ 
+    ddi:fullName  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Ian McAllister" ;
+      ] ;
+    ] ;
+    ddi:firstGiven "Ian" ;
+    ddi:lastFamily "McAllister" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:line "Research School of Social Sciences," ;
+      ddi:line "The Australian National University" ;
+      ddi:line "ACTON, ACT, 0200" ;
+      ddi:locationName  [ 
+        ddi:content "The Australian National University" ;
+      ] ;
+    ] ;
+    ddi:website  [ 
+      ddi:uri "http://aes.anu.edu.au" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdPietsch:1_Individual>
+  ddi:agency "int.example" ;
+  ddi:id "IdPietsch" ;
+  ddi:version "1" ;
+  ddi:hasIndividualName  [ 
+    ddi:fullName  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Juliet Pietsch" ;
+      ] ;
+    ] ;
+    ddi:firstGiven "Juliet" ;
+    ddi:lastFamily "Pietsch" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "The Australian National University" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdGibson:1_Individual>
+  ddi:agency "int.example" ;
+  ddi:id "IdGibson" ;
+  ddi:version "1" ;
+  ddi:hasIndividualName  [ 
+    ddi:fullName  [ 
+      ddi:languageSpecificString  [
+        ddi:content "Rachel Kay Gibson" ;
+      ] ;
+    ] ;
+    ddi:firstGiven "Rachel" ;
+    ddi:middle "Kay" ;
+    ddi:lastFamily "Gibson" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "University of Manchester" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdOrgARC:1_Organization>
+  ddi:agency "int.example" ;
+  ddi:id "IdOrgARC" ;
+  ddi:version "1" ;
+  ddi:hasOrganizationName  [ 
+    ddi:content "Australian Research Council (ARC)" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdOrgSRC:1_Organization>
+  ddi:agency "int.example" ;
+  ddi:id "IdOrgSRC" ;
+  ddi:version "1" ;
+  ddi:hasOrganizationName  [ 
+    ddi:content "The Social Research Centre (SRC)" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdOrgADA:1_Organization>
+  ddi:agency "int.example" ;
+  ddi:id "IdOrgADA" ;
+  ddi:version "1" ;
+  ddi:hasOrganizationName  [ 
+    ddi:content "Australian Data Archive (ADA)" ;
+  ] ;
+  ddi:hasContactInformation  [ 
+    ddi:hasAddress  [ 
+      ddi:locationName  [ 
+        ddi:content "The Australian National University" ;
+      ] ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdFunding:1_FundingInformation>
+  ddi:agency "int.example" ;
+  ddi:id "IdFunding" ;
+  ddi:version "1" ;
+  ddi:hasFunder  [ 
+    ddi:typeOfClass "Organization" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdWeighting:1_MethodologyOverview>
+  ddi:agency "int.example" ;
+  ddi:id "IdWeighting" ;
+  ddi:version "1" ;
+  ddi:subjectOfMethodology  [ 
+    ddi:content "Weighting" ;
+  ] ;
+  ddi:overview  [ 
+    ddi:languageSpecificStructuredString """Sex, Age and State (based on AEC enrolment data for the 2013 election) and party vote (based on
+                AEC final election vote tallies). See Appendix A4 of the Technical Report for further details.""" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdDataCollection:1_MethodologyOverview>
+  ddi:agency "int.example" ;
+  ddi:id "IdDataCollection" ;
+  ddi:version "1" ;
+  ddi:subjectOfMethodology  [ 
+    ddi:content "Data Collection" ;
+  ] ;
+  ddi:overview  [ 
+    ddi:languageSpecificStructuredString """Data Collection Mode: Postal survey with online completion option
+                Data Collection Notes: An analysis of response patterns and sample performance is included in Sections 3 and 4 of the Technical Report.
+                Questionnaires: Structured
+                Supervision: 1. Follow-up mail-outs
+                One week after the initial mail out, a reminder / thank you card was sent to all respondents, excluding those that had opted
+                out of the survey (n=12,145). Approximately two weeks after this, the Social Research Centre downloaded a list of completed
+                surveys from the online survey provider, and along with Datatime Services, determined all records that remained incomplete.
+                A reminder survey booklet was then mailed on 4th October to 9,057 respondents. A reminder letter was then sent on 11th
+                October to participants who had yet to respond (n=8,728), followed by a second and final reminder letter to all remaining
+                non-respondents on 1 November (n=7,276).
+                2. Survey Helpline
+                A survey helpline, including an 1800 number and email address was printed on all survey materials to give sample members
+                the opportunity to seek clarification or ask for assistance regarding any survey matters. This included, but was not limited
+                help establishing survey bona fides, encourage response and record opt-outs to the survey.
+                The 1800 number and email address were operational from September 6 until the end of the fieldwork period. All calls to the
+                1800 number not answered in real time (all operators currently busy or the call was received outside hours of operation) were
+                routed to a messaging service and returned within 24 hours. All emails were also responded to within a 24 hour period, unless
+                received over the weekend.
+                The 1800 number operators were fully briefed on survey background and procedures, the administration of the survey, and
+                response maximisation techniques.
+                3. Telephone follow-up
+                Approximately one-third of the way through fieldwork, it was agreed that a telephone follow up would be conducted to try
+                and maximise response to the Candidates survey. A total of 394 records were included as part of the follow up activity.
+            """ ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSampling:1_MethodologyOverview>
+  ddi:agency "int.example" ;
+  ddi:id "IdSampling" ;
+  ddi:version "1" ;
+  ddi:subjectOfMethodology  [ 
+    ddi:content "Sampling" ;
+  ] ;
+  ddi:overview  [ 
+    ddi:languageSpecificStructuredString """One-stage stratified or systematic random sample
+                See Technical Report for further details
+                No deviations from Sampling design.
+                Response Rate: Of a total mailing of 12,200, there were 3,955 completed returns - 
+                with 3,379 mail returns and 576 online returns - giving a
+                raw response rate of 32.4 percent. An adjusted response rate of 34.2 percent was calculated by removing the Out of Scope
+                sample (deceased, incapable, return to sender, n=530).
+            """ ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdDataProcessing:1_MethodologyOverview>
+  ddi:agency "int.example" ;
+  ddi:id "IdDataProcessing" ;
+  ddi:version "1" ;
+  ddi:subjectOfMethodology  [ 
+    ddi:content "Data Processing" ;
+  ] ;
+  ddi:overview  [ 
+    ddi:languageSpecificStructuredString """Data Editing: The data was checked for out of range codes and that the skip patterns were followed. In consultation with the principal
+                investigators, cleaning rules were developed for interpreting multiple responses for single response questions. Coding rules
+                were also developed in consultation with the Principal Investigator where required. See Technical Report for further details.""" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarDivisNum:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarDivisNum" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "DivisNum" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Electoral Division – AES Numeric Code" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:takesPlatformSpecificSentinelValues  [ 
+    ddi:typeOfClass "SentinelValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarUniqueID:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarUniqueID" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "uniqueid" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "uniqueid: Unique Identifier" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarMode:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarMode" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Mode" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Mode: Mode of completion" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarDateComp:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarDateComp" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "DATECOMP" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "DATECOMP: Date of return (Responses received)" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "string" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarState:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarState" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "State" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "State (from sample)r" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarDivision:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarDivision" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Division" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Division: Division (from sample)" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "string" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarA4:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarA4" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "a4" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "A4. Interest in election campaign" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:takesPlatformSpecificSentinelValues  [ 
+    ddi:typeOfClass "SentinelValueDomain" ;
+  ] ;
+  ddi:sourceCapture  [ 
+    ddi:typeOfClass "RepresentedQuestion" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarG1Age:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarG1Age" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "g1age" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "G1. Age given (Numeric) (BASE: Age given)" ;
+  ] ;
+  ddi:unitOfMeasurement "year" ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:takesPlatformSpecificSentinelValues  [ 
+    ddi:typeOfClass "SentinelValueDomain" ;
+  ] ;
+  ddi:sourceCapture  [ 
+    ddi:typeOfClass "RepresentedQuestion" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarXg5:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarXg5" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "xg5" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "G5. Extended-Occupation (ANZSCO 4 digit)" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:sourceCapture  [ 
+    ddi:typeOfClass "RepresentedQuestion" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarWeight:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarWeight" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "weight" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Weight" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "double" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:variableFunction  [ 
+    ddi:content "weight" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarPartyAby:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarPartyAby" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "partyaby" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Party of 2CP elected candidate" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "string" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:sourceCapture  [ 
+    ddi:typeOfClass "RepresentedMeasurement" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarSwingn:1_InstanceVariable>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarSwingn" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "swingn" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "N swing" ;
+  ] ;
+  ddi:hasIntendedDataType  [ 
+    ddi:content "double" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+  ] ;
+  ddi:takesSubstantiveValuesFrom  [ 
+    ddi:typeOfClass "SubstantiveValueDomain" ;
+  ] ;
+  ddi:sourceCapture  [ 
+    ddi:typeOfClass "RepresentedMeasurement" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarGrpAdmim:1_VariableCollection>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarGrpAdmim" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Group Administration Variables" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "8" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarGrpCampaign:1_VariableCollection>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarGrpCampaign" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Group Section A: The Election Campaign" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarGrpEduc:1_VariableCollection>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarGrpEduc" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Group Section G: Education and Work" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "7" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarGrpWeight:1_VariableCollection>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarGrpWeight" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Group Weight Variables" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarGrpResults:1_VariableCollection>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarGrpResults" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "Group AEC Election Results" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "30" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "28" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSenMinus1:1_SentinelValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSenMinus1" ;
+  ddi:version "1" ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdMinus1:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IdMinus1" ;
+  ddi:version "1" ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodeMinus1:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodeMinus1" ;
+  ddi:version "1" ;
+  ddi:representation "-1" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcatMinus1:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IDcatMinus1" ;
+  ddi:version "1" ;
+  ddi:definition  [ 
+    ddi:languageSpecificStructuredString "missing value" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Missing" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubVDElectoralDivisions:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubVDElectoralDivisions" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodesElectoralDivis:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodesElectoralDivis" ;
+  ddi:version "1" ;
+  ddi:purpose  [ 
+    ddi:languageSpecificStructuredString "For demonstration. Only 6 of a much larger list documneted here" ;
+  ] ;
+  ddi:isOrdered "true"^^xsd:boolean ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "5" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode101EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode101EDC" ;
+  ddi:version "1" ;
+  ddi:representation "101" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode102EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode102EDC" ;
+  ddi:version "1" ;
+  ddi:representation "102" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode103EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode103EDC" ;
+  ddi:version "1" ;
+  ddi:representation "103" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode104EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode104EDC" ;
+  ddi:version "1" ;
+  ddi:representation "104" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode105EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode105EDC" ;
+  ddi:version "1" ;
+  ddi:representation "105" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode106EDC:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode106EDC" ;
+  ddi:version "1" ;
+  ddi:representation ">106" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatCanberra:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatCanberra" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "http://www.aec.gov.au/profiles/act/canberra.htm" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Canberra" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatFraser:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatFraser" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatBanks:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatBanks" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "http://www.aec.gov.au/profiles/nsw/banks.htm" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Banks" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatBarton:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatBarton" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "http://www.aec.gov.au/profiles/nsw/barton.htm" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Barton" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatBennelong:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatBennelong" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "http://www.aec.gov.au/profiles/nsw/bennelong.htm" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Bennelong" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatBerowra:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatBerowra" ;
+  ddi:version "1" ;
+  ddi:localId  [ 
+    ddi:localIdValue "http://www.aec.gov.au/profiles/nsw/berowra.htm" ;
+  ] ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Berowra" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDSubUniqueID:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IDSubUniqueID" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDRangeUniqueID:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IDRangeUniqueID" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "integers between 1000794 and 9872391" ;
+  ] ;
+  ddi:logicalExpression  [ 
+    ddi:content "(1000794 <= x <= 9872391) and mod(x,1)=0" ;
+  ] ;
+  ddi:maximumValueInclusive "9872391" ;
+  ddi:minimumValueInclusive "1000794" ;
+  .
+
+<#urn:ddi:int.example:IdSubMode:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubMode" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodesMode:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodesMode" ;
+  ddi:version "1" ;
+  ddi:isOrdered "true"^^xsd:boolean ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode1HardCopy:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode1HardCopy" ;
+  ddi:version "1" ;
+  ddi:representation "1" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode2Online:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode2Online" ;
+  ddi:version "1" ;
+  ddi:representation "8" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCatHardCopy:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCatHardCopy" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Hard Copy" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCaIdCatOnlinetBerowra:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCaIdCatOnlinetBerowra" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Online" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubDateComp:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubDateComp" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "string" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdValCharDate:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IdValCharDate" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "Date as an 11 character string MM-dd-yyyy" ;
+  ] ;
+  ddi:formatPattern  [ 
+    ddi:content "MM-dd-yyyy" ;
+  ] ;
+  ddi:regularExpression  [ 
+    ddi:content "/\\d\\d\\d\\d-\\d\\d-\\d\\d/" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubState:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubState" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCodesState:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IdCodesState" ;
+  ddi:version "1" ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "5" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "7" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "8" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "9" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode1State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode1State" ;
+  ddi:version "1" ;
+  ddi:representation "1" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode2State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode2State" ;
+  ddi:version "1" ;
+  ddi:representation "2" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode3State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode3State" ;
+  ddi:version "1" ;
+  ddi:representation "3" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode4State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode4State" ;
+  ddi:version "1" ;
+  ddi:representation "4" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode5State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode5State" ;
+  ddi:version "1" ;
+  ddi:representation "5" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode6State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode6State" ;
+  ddi:version "1" ;
+  ddi:representation "6" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode7State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode7State" ;
+  ddi:version "1" ;
+  ddi:representation "7" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode8State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode8State" ;
+  ddi:version "1" ;
+  ddi:representation "8" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode9State:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode9State" ;
+  ddi:version "1" ;
+  ddi:representation "9" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat1State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat1State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "NSW" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat2State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat2State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "VIC" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat3State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat3State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "QLD" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat4State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat4State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "SA" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat5State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat5State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "WA" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat6State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat6State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "TAS" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat7State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat7State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "NT" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat8State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat8State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "ACT" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat9State:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat9State" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Other Territories" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubDivision:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubDivision" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "string" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdValDivision:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IdValDivision" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "uppercase characters up to 255 characters long" ;
+  ] ;
+  ddi:regularExpression  [ 
+    ddi:content "/[ A-Z]{1,255}/" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubA4:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubA4" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodesNotMuch:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodesNotMuch" ;
+  ddi:version "1" ;
+  ddi:isOrdered "true"^^xsd:boolean ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodeNotMuch1:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodeNotMuch1" ;
+  ddi:version "1" ;
+  ddi:representation "1" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodeNotMuch2:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodeNotMuch2" ;
+  ddi:version "1" ;
+  ddi:representation "2" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodeNotMuch3:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodeNotMuch3" ;
+  ddi:version "1" ;
+  ddi:representation "3" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcodeNotMuch4:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcodeNotMuch4" ;
+  ddi:version "1" ;
+  ddi:representation "4" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcatNotMuch1:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IDcatNotMuch1" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "A good deal" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcatNotMuch2:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IDcatNotMuch2" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Some" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcatNotMuch3:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IDcatNotMuch3" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "Not much" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcatNotMuch4:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IDcatNotMuch4" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "None at all" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDSubG1Age:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IDSubG1Age" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDValsG1Age:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IDValsG1Age" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "integers" ;
+  ] ;
+  ddi:logicalExpression  [ 
+    ddi:content "mod(x,1)=0" ;
+  ] ;
+  ddi:formatPattern  [ 
+    ddi:content "###" ;
+  ] ;
+  ddi:regularExpression  [ 
+    ddi:content "/\\d{1,3}/" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubXg5:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubXg5" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "StatisticalClassification" ;
+    ddi:isExternal "true"^^xsd:boolean ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubWeight:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubWeight" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "double" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDValsWeight:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IDValsWeight" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "doubles" ;
+  ] ;
+  ddi:formatPattern  [ 
+    ddi:content "#.###############" ;
+  ] ;
+  ddi:regularExpression  [ 
+    ddi:content "/\\d.\\d{0,15}/" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubPartyaby:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubPartyaby" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:enumeratedValueDomain  [ 
+    ddi:typeOfClass "CodeList" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCodesPartyAby:1_CodeList>
+  ddi:agency "int.example" ;
+  ddi:id "IdCodesPartyAby" ;
+  ddi:version "1" ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "5" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "7" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "8" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "9" ;
+    ddi:member  [ 
+      ddi:typeOfClass "Code" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode1PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode1PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "ALP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode2PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode2PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "CLP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode3PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode3PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "GRN" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode4PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode4PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "IND" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode5PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode5PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "KAP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode6PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode6PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "LNP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode7PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode7PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "LP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode8PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode8PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "NP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDcode9PartyAby:1_Code>
+  ddi:agency "int.example" ;
+  ddi:id "IDcode9PartyAby" ;
+  ddi:version "1" ;
+  ddi:representation "PUP" ;
+  ddi:denotes  [ 
+    ddi:typeOfClass "Category" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat1PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat1PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "ALP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat2PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat2PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "CLP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat3PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat3PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "GRN" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat4PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat4PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "IND" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat5PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat5PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "KAP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat6PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat6PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "LNP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat7PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat7PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "LP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat8PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat8PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "NP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdCat9PartyAby:1_Category>
+  ddi:agency "int.example" ;
+  ddi:id "IdCat9PartyAby" ;
+  ddi:version "1" ;
+  ddi:displayLabel  [ 
+    ddi:languageSpecificStructuredString "PUP" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdSubSwingn:1_SubstantiveValueDomain>
+  ddi:agency "int.example" ;
+  ddi:id "IdSubSwingn" ;
+  ddi:version "1" ;
+  ddi:recommendedDataType  [ 
+    ddi:content "integer" ;
+    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+  ] ;
+  ddi:describedValueDomain  [ 
+    ddi:typeOfClass "ValueAndConceptDescription" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdValsSwingn:1_ValueAndConceptDescription>
+  ddi:agency "int.example" ;
+  ddi:id "IdValsSwingn" ;
+  ddi:version "1" ;
+  ddi:description  [ 
+    ddi:languageSpecificStructuredString "real numbers between -14.3000001907349 and 49.9700012207031" ;
+  ] ;
+  ddi:logicalExpression  [ 
+    ddi:content "(-14.3000001907349 <= x <= 49.9700012207031)" ;
+  ] ;
+  ddi:maximumValueInclusive "-14.3000001907349" ;
+  ddi:minimumValueInclusive "49.9700012207031" ;
+  .
+
+<#urn:ddi:int.example:IdQuestA4:1_RepresentedQuestion>
+  ddi:agency "int.example" ;
+  ddi:id "IdQuestA4" ;
+  ddi:version "1" ;
+  ddi:questionText  [ 
+    ddi:literalText  [ 
+      ddi:text "And how much interest would you say you took in the election campaign overall?" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdQuestAge:1_RepresentedQuestion>
+  ddi:agency "int.example" ;
+  ddi:id "IdQuestAge" ;
+  ddi:version "1" ;
+  ddi:questionText  [ 
+    ddi:literalText  [ 
+      ddi:text "How old were you when you left secondary school?" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdQuestXg5:1_RepresentedQuestion>
+  ddi:agency "int.example" ;
+  ddi:id "IdQuestXg5" ;
+  ddi:version "1" ;
+  ddi:questionText  [ 
+    ddi:literalText  [ 
+      ddi:text """What kind of work do you do? Please give your full job title, and as much detail as you can.
+For public servants, state official designation and occupation. For armed services personnel, state rank and occupation.
+If you are unemployed or retired, please describe your last regular paid job
+If you have never worked for pay, please skip this section and go to Section H""" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdQuestXg5:1_RepresentedMeasurement>
+  ddi:agency "int.example" ;
+  ddi:id "IdQuestXg5" ;
+  ddi:version "1" ;
+  ddi:captureSource  [ 
+    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdExternalXg5:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "IdExternalXg5" ;
+  ddi:version "1" ;
+  ddi:descriptiveText  [ 
+    ddi:languageSpecificStructuredString """AEC election result information for respondent's electoral division - sourced from
+                http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
+                See Note in Related Materials for further information on derivation of variables.""" ;
+  ] ;
+  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  .
+
+<#urn:ddi:int.example:IDMeasSwingn:1_RepresentedMeasurement>
+  ddi:agency "int.example" ;
+  ddi:id "IDMeasSwingn" ;
+  ddi:version "1" ;
+  ddi:captureSource  [ 
+    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdExternalSwingn:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "IdExternalSwingn" ;
+  ddi:version "1" ;
+  ddi:descriptiveText  [ 
+    ddi:languageSpecificStructuredString """AEC election result information for respondent's electoral division - sourced from
+                http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
+                See Note in Related Materials for further information on derivation of variables.""" ;
+  ] ;
+  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  .
+
+<#urn:ddi:int.example:IdUnitType:1_UnitType>
+  ddi:agency "int.example" ;
+  ddi:id "IdUnitType" ;
+  ddi:version "1" ;
+  ddi:definition  [ 
+    ddi:languageSpecificStructuredString "Individual" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdUniverse:1_Universe>
+  ddi:agency "int.example" ;
+  ddi:id "IdUniverse" ;
+  ddi:version "1" ;
+  ddi:definition  [ 
+    ddi:languageSpecificStructuredString "Australian adults aged 18 years or over, enrolled and eligible to vote in Australian elections" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdPopulation:1_Population>
+  ddi:agency "int.example" ;
+  ddi:id "IdPopulation" ;
+  ddi:version "1" ;
+  ddi:definition  [ 
+    ddi:languageSpecificStructuredString "Australian adults aged 18 years or over, enrolled and eligible to vote in Australian elections in 2013/2014" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdDataStore:1_DataStore>
+  ddi:agency "int.example" ;
+  ddi:id "IdDataStore" ;
+  ddi:version "1" ;
+  ddi:name  [ 
+    ddi:content "DDI4 example, a subset of the Australian Election Study 2013" ;
+  ] ;
+  ddi:dataStoreType  [ 
+    ddi:content "Rectangular Unit Records" ;
+  ] ;
+  ddi:recordCount "3955" ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "UnitDataRecord" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdLogRec:1_UnitDataRecord>
+  ddi:agency "int.example" ;
+  ddi:id "IdLogRec" ;
+  ddi:version "1" ;
+  ddi:isOrdered "true"^^xsd:boolean ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "5" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "7" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "8" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "9" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "10" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "11" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "12" ;
+    ddi:member  [ 
+      ddi:typeOfClass "InstanceVariable" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdPhysicalDataProduct:1_PhysicalDataSet>
+  ddi:agency "int.example" ;
+  ddi:id "IdPhysicalDataProduct" ;
+  ddi:version "1" ;
+  ddi:physicalFileName "aes_2013_01259Subset.csv" ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:relatedMaterial  [ 
+    ddi:typeOfClass "ExternalMaterial" ;
+  ] ;
+  ddi:formatsDataStore  [ 
+    ddi:typeOfClass "DataStore" ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "PhysicalRecordSegment" ;
+    ] ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  ddi:hasVariableStatistics  [ 
+    ddi:typeOfClass "VariableStatistics" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdPhysrecSeg:1_PhysicalRecordSegment>
+  ddi:agency "int.example" ;
+  ddi:id "IdPhysrecSeg" ;
+  ddi:version "1" ;
+  ddi:hasPhysicalLayout  [ 
+    ddi:typeOfClass "UnitSegmentLayout" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdRecLay:1_UnitSegmentLayout>
+  ddi:agency "int.example" ;
+  ddi:id "IdRecLay" ;
+  ddi:version "1" ;
+  ddi:isDelimited "true"^^xsd:boolean ;
+  ddi:delimiter "," ;
+  ddi:isOrdered "true"^^xsd:boolean ;
+  ddi:hasHeader "true"^^xsd:boolean ;
+  ddi:headerRowCount "1" ;
+  ddi:treatConsecutiveDelimitersAsOne "false"^^xsd:boolean ;
+  ddi:type "Set" ;
+  ddi:overview  [ 
+    ddi:languageSpecificStructuredString "A simple comma delimited layout with one header line containing variable names. No text values contain commas so quotes are not used." ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "1" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "2" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "3" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "4" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "5" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "6" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "7" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "8" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "9" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "10" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "11" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  ddi:contains  [ 
+    ddi:index "12" ;
+    ddi:member  [ 
+      ddi:typeOfClass "ValueMapping" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarDivisNum:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarDivisNum" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "3.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptVarDivisNum:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptVarDivisNum" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarUniqueID:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarUniqueID" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "8.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptVarUniqueID:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptVarUniqueID" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarMode:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarMode" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "1.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptMode:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptMode" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarDateComp:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarDateComp" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "date string" ;
+  ] ;
+  ddi:format  [ 
+    ddi:content "MM-dd-yyyy" ;
+    ddi:uri "https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#formats-for-dates-and-times" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptDateComp:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptDateComp" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarState:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarState" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "1.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptState:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptState" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarDivision:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarDivision" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "xs:string" ;
+  ] ;
+  ddi:maximumLength "255" ;
+  .
+
+<#urn:ddi:int.example:IDDptDivision:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptDivision" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarA4:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarA4" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "2.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptA4:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptA4" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarG1Age:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarG1Age" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "2.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptG1Age:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptG1Age" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarXg5:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarXg5" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "0" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "4.0" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptXg5:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptXg5" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarWeight:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarWeight" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "15" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "17.15" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptWeight:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptWeight" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarPartyAby:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarPartyAby" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "xs:string" ;
+  ] ;
+  ddi:maximumLength "3" ;
+  .
+
+<#urn:ddi:int.example:IDDptPartyAby:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptPartyAby" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDVmVarSwingn:1_ValueMapping>
+  ddi:agency "int.example" ;
+  ddi:id "IDVmVarSwingn" ;
+  ddi:version "1" ;
+  ddi:formatsDataPoint  [ 
+    ddi:typeOfClass "DataPoint" ;
+  ] ;
+  ddi:physicalDataType  [ 
+    ddi:content "numeric string" ;
+  ] ;
+  ddi:decimalPositions "13" ;
+  ddi:defaultDecimalSeparator "." ;
+  ddi:format  [ 
+    ddi:content "17.13" ;
+    ddi:controlledVocabularyName "SPSS Numeric" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IDDptSwingn:1_DataPoint>
+  ddi:agency "int.example" ;
+  ddi:id "IDDptSwingn" ;
+  ddi:version "1" ;
+  ddi:isDescribedBy  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsDivisNum:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsDivisNum" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "101"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "316"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Canberra" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "28"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Fraser" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "30"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Banks" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "25"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Barton" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "23"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Bennelong" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "29"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Berowra" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "35"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Canberra" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.7"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Fraser" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Banks" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Barton" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Bennelong" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.7"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "Berowra" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.9"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsUniqueID:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsUniqueID" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "1000794"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "9872391"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "5349839.27"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Mean" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "2546301.564"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "StdDev" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsMode:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsMode" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "1"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "2"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3379"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "2" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "576"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "85.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "2" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "14.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsDateComp:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsDateComp" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "2013-09-09" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "16"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "2013-09-10" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "58"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "2013-09-09" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "2013-09-10" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "1.5"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsState:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsState" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "1223"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "2" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "967"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "3" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "794"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "4" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "347"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "5" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "378"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "6" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "159"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "7" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "31"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "8" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "56"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "9" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "30.9"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "2" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "24.5"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "3" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "20.1"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "4" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "8.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "5" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "9.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "6" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "4.0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "7" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "8" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "1.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "9" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsDivision:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsDivision" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "ADELAIDE" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "32"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "ASTON" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "25"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "ADELAIDE" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "ASTON" ;
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsA4:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsA4" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "4"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3915"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "40"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:applicableWeightVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "3922.287"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "32.713"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1423"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "2" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1543"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "3" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "783"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "4" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "166"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "-1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "40"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "1283.0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "1515.3"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "887.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "236.1"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "-1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "32.7"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "32.7"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "38.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "22.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "1" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "6.0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsG1Age:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsG1Age" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "3"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "27"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3723"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "232"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "16.496"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Mean" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1.376"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "StdDev" ;
+    ] ;
+  ] ;
+  ddi:applicableWeightVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "3735.042"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "219.958"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "16.664"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Mean" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "1.344"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "StdDev" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsXg5:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsXg5" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1000"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "9999"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3378"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "577"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:applicableWeightVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "3407.124"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "547.876"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1000" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "65"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1111" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "61"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1112" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "27"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1210" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "16"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "-1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "577"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1000" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "60.2"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1111" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "49.0"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1112" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "27.3"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1210" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "12.9"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "-1" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "547.9"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1000" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "1.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1111" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "1.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1112" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:categoryValue "1210" ;
+    ddi:hasStatistic  [ 
+      ddi:computationBase "ValidOnly" ;
+      ddi:isWeighted "true"^^xsd:boolean ;
+      ddi:doubleValue "0.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsWeight:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsWeight" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "0.360120221577392"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "6.65336083134877"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Mean" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.556"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "StdDev" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsPartyAby:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsPartyAby" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "ALP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1392"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "CLP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "19"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "GRN" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "25"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "IND" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "57"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "KAP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "32"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "LNP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "574"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "LP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1578"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "NP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "247"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "PUP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "31"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Count" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "ALP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "35.2"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "CLP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.5"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "GRN" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.6"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "IND" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "1.4"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "KAP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "LNP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "14.5"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "LP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "39.9"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "NP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "6.2"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  ddi:hasCategoryStatistic  [ 
+    ddi:forCodeItem  [ 
+      ddi:typeOfClass "CodeIndicator" ;
+    ] ;
+    ddi:categoryValue "PUP" ;
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.8"^^xsd:double ;
+    ] ;
+    ddi:typeOfCategoryStatistic  [ 
+      ddi:content "Percentage" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:IdVarStatsSwingn:1_VariableStatistics>
+  ddi:agency "int.example" ;
+  ddi:id "IdVarStatsSwingn" ;
+  ddi:version "1" ;
+  ddi:forInstanceVariable  [ 
+    ddi:typeOfClass "InstanceVariable" ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "-14.3000001907349"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Minimum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:doubleValue "49.9700012207031"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Maximum" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "3955"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "ValidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "InvalidCount" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "0.93"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "Mean" ;
+    ] ;
+  ] ;
+  ddi:hasSummaryStatistic  [ 
+    ddi:hasStatistic  [ 
+      ddi:isWeighted "false"^^xsd:boolean ;
+      ddi:doubleValue "10.04"^^xsd:double ;
+    ] ;
+    ddi:typeOfSummaryStatistic  [ 
+      ddi:content "StdDev" ;
+    ] ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:ExtMat_1:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "ExtMat_1" ;
+  ddi:version "1" ;
+  ddi:uri "https://www.ada.edu.au/ada/01259" ;
+  ddi:descriptiveText  [ 
+    ddi:languageSpecificStructuredString """This study metadata describesa subset of the complete Australian Election Study, 2013. 
+                    The subset was created at Dagstuhl event 16433, October 23 – 28 , 2016. 
+                    At that sprint the subset was used to validate the ability of DDI4 to describe physical layout in both CSV and fixed column format.
+                    A a sprint the next year; Dagstuhl event 17423, October 16 - 20, 2017; the subset was chosen for documentation as a  complete codebook.""" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:ExtMat_2:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "ExtMat_2" ;
+  ddi:version "1" ;
+  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  .
+
+<#urn:ddi:int.example:ExtMat_3:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "ExtMat_3" ;
+  ddi:version "1" ;
+  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  .
+
+<#urn:ddi:int.example:ExtMat_4:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "ExtMat_4" ;
+  ddi:version "1" ;
+  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  ddi:typeOfMaterial  [ 
+    ddi:content "Original.Subset" ;
+  ] ;
+  ddi:descriptiveText  [ 
+    ddi:languageSpecificStructuredString "Twelve variable extract of original data, in CSV format" ;
+  ] ;
+  .
+
+<#urn:ddi:int.example:ExtMat_5:1_ExternalMaterial>
+  ddi:agency "int.example" ;
+  ddi:id "ExtMat_5" ;
+  ddi:version "1" ;
+  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  ddi:typeOfMaterial  [ 
+    ddi:content "Source" ;
+  ] ;
+  ddi:descriptiveText  [ 
+    ddi:languageSpecificStructuredString "Original codebook, with highlighting to show information elements covered by DDI4 subset" ;
+  ] ;
+.
