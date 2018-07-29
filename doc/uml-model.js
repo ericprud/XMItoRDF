@@ -571,6 +571,9 @@ function UmlModel (modelOptions = {}, $ = null) {
       let shape = {
         "type": "Shape"
       }
+      if (options.closedShapes) {
+        shape.closed = true
+      }
       if ('generalizations' in this && this.generalizations.length > 0) {
         shape.extends = this.generalizations.map(c => options.iri(c.name))
       }
