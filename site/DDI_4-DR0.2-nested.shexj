@@ -26572,7 +26572,7 @@
               "predicate": "http://ddi-alliance.org/ns/#hasPrimaryContent",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#double"
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
               "max": 1,

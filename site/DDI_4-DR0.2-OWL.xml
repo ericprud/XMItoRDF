@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-28T12:04:24.426Z -->
+     shexToOwl 2018-07-29T05:23:24.503Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
     <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>
@@ -19542,7 +19542,7 @@ Traversal, Data Lifecycle</Literal>
         <Class abbreviatedIRI="ddi:DocumentInformation"/>
         <DataAllValuesFrom>
             <DataProperty abbreviatedIRI="ddi:hasPrimaryContent"/>
-            <Datatype abbreviatedIRI="xsd:double"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -32906,7 +32906,7 @@ Value Domain</Literal>
     </Declaration>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:hasPrimaryContent"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
 
     <Declaration>

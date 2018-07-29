@@ -114,6 +114,10 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     let idx = p.elements.indexOf(d)
     p.elements.splice(idx, 1)
   })
+  model.getClasses()
+    .find(c => c.name === 'DocumentInformation')
+    .properties.find(p => p.name === 'hasPrimaryContent')
+    .type = fakeExternalDatatype(XSD + 'string')
 
   // Remove properties with missing types.
   let removeProps = model.list('Class').reduce((acc, c) =>
@@ -278,6 +282,17 @@ function encodeCharData (text) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
+}
+
+function fakeExternalDatatype (type) {
+  return {
+    rtti: 'Datatype',
+    id: type,
+    name: type,
+    external: true,
+    references: [],
+    comments: []
+  }
 }
 
 function objSet (obj, key, value) {

@@ -5,7 +5,7 @@
   "source": {
     "method": "xmi-to-json",
     "resource": "../doc/DDI4_PIM_canonical.xmi",
-    "timestamp": "2018-07-21T13:54:07.256Z"
+    "timestamp": "2018-07-29T05:23:20.720Z"
   },
   "elements": [
     {
@@ -24795,7 +24795,7 @@
                   },
                   "name": "hasPrimaryContent",
                   "type": {
-                    "_idref": "http://www.w3.org/2001/XMLSchema#double"
+                    "_idref": "http://www.w3.org/2001/XMLSchema#string"
                   },
                   "lower": 0,
                   "upper": "1",
