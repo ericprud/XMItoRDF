@@ -435,7 +435,97 @@ A set of Concepts structured by the relations among them. [GSIM 1.1] …
       </ol>
     </div>
 
-    <div id="product">
+    <div id="log">
+      <pre>-*- mode: compilation; default-directory: "~/checkouts/ericprud/XMItoRDF/site/" -*-
+Compilation started at Sun Jul 29 02:35:59
+
+make
+./ddiPSM --xmi ../doc/DDI4_PIM_canonical.xmi --out DDI_4-DR0.2 --nestShapes
+unexpected initial capital in property name RationaleDescription in class DDI4_PIM-ClassLibrary-StructuredDataTypes-RationaleDefinition
+unexpected initial capital in property name RationaleCode in class DDI4_PIM-ClassLibrary-StructuredDataTypes-RationaleDefinition
+Warning: removing 1 badly-typed properties:
+  Designation representation missing DDI4_PIM-ClassLibrary-SignificationPattern-Signifier
+simplied 137 shapes. see DDI_4-DR0.2-nested.list
+../bin/shexTo --to shexc --json DDI_4-DR0.2.shexj \
+  --prefix "ddi: http://ddi-alliance.org/ns/#" \
+  --prefix "owl: http://www.w3.org/2002/07/owl#" \
+  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
+  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
+  --prefix "mark: https://github.com/commonmark/commonmark.js" &gt; DDI_4-DR0.2.shex
+../bin/shexTo --to shexc --json DDI_4-DR0.2-nested.shexj \
+  --prefix "ddi: http://ddi-alliance.org/ns/#" \
+  --prefix "owl: http://www.w3.org/2002/07/owl#" \
+  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
+  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
+  --prefix "mark: https://github.com/commonmark/commonmark.js" &gt; DDI_4-DR0.2-nested.shex
+../bin/shexTo --to shexh --json DDI_4-DR0.2-nested.shexj \
+  --prefix "ddi: http://ddi-alliance.org/ns/#" \
+  --prefix "owl: http://www.w3.org/2002/07/owl#" \
+  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
+  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
+  --prefix "mark: https://github.com/commonmark/commonmark.js" &gt; DDI_4-DR0.2-nested.html
+(echo -n 'DDIschema = ' &amp;&amp; cat DDI_4-DR0.2.shexj) &gt; DDI_4-DR0.2-nested.js
+../bin/shexTo --to owl --json DDI_4-DR0.2.shexj \
+  --prefix "package: http://lion.ddialliance.org/ddiobjects/" \
+  --prefix "ddi: http://ddi-alliance.org/ns/#" \
+  --prefix "owl: http://www.w3.org/2002/07/owl#" \
+  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
+  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+  --append DDI_4-DR0.2-packagesAndViews-OWL.xml &gt; DDI_4-DR0.2-OWL.xml
+http://ddi-alliance.org/ns/#ConceptRelationStructure http://ddi-alliance.org/ns/#hasMemberRelation :
+  http://ddi-alliance.org/ns/#ConceptRelation isn't related to http://ddi-alliance.org/ns/#CategoryRelation
+  18 later references:
+  http://ddi-alliance.org/ns/#VariableRelationStructure : http://ddi-alliance.org/ns/#VariableRelation
+  http://ddi-alliance.org/ns/#GeographicUnitRelationStructure : http://ddi-alliance.org/ns/#GeographicUnitRelation
+  http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure : http://ddi-alliance.org/ns/#GeographicUnitTypeRelation
+  http://ddi-alliance.org/ns/#DataPointRelationStructure : http://ddi-alliance.org/ns/#DataPointRelation
+  http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure : http://ddi-alliance.org/ns/#ValueMappingRelation
+  http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure : http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation
+  http://ddi-alliance.org/ns/#CustomItemRelationStructure : http://ddi-alliance.org/ns/#CustomItemRelation
+  http://ddi-alliance.org/ns/#VocabularyRelationStructure : http://ddi-alliance.org/ns/#VocabularyEntryRelation
+  http://ddi-alliance.org/ns/#StudyRelationStructure : http://ddi-alliance.org/ns/#StudyRelation
+  http://ddi-alliance.org/ns/#DataStoreRelationStructure : http://ddi-alliance.org/ns/#DataStoreRelation
+  http://ddi-alliance.org/ns/#InstanceVariableRelationStructure : http://ddi-alliance.org/ns/#InstanceVariableRelation
+  http://ddi-alliance.org/ns/#LogicalRecordRelationStructure : http://ddi-alliance.org/ns/#LogicalRecordRelation
+  http://ddi-alliance.org/ns/#AgentRelationStructure : http://ddi-alliance.org/ns/#AgentRelation
+  http://ddi-alliance.org/ns/#ClassificationItemRelationStructure : http://ddi-alliance.org/ns/#ClassificationItemRelation
+  http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure : http://ddi-alliance.org/ns/#ClassificationSeriesRelation
+  http://ddi-alliance.org/ns/#CodeRelationStructure : http://ddi-alliance.org/ns/#CodeRelation
+  http://ddi-alliance.org/ns/#IndexEntryRelationStructure : http://ddi-alliance.org/ns/#IndexEntryRelation
+  http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure : http://ddi-alliance.org/ns/#StatisticalClassificationRelation
+http://ddi-alliance.org/ns/#ConceptSystem http://ddi-alliance.org/ns/#contains :
+  http://ddi-alliance.org/ns/#ConceptIndicator isn't related to http://ddi-alliance.org/ns/#CategoryIndicator
+  21 later references:
+  http://ddi-alliance.org/ns/#VariableCollection : http://ddi-alliance.org/ns/#VariableIndicator
+  http://ddi-alliance.org/ns/#GeographicUnitClassification : http://ddi-alliance.org/ns/#GeographicUnitIndicator
+  http://ddi-alliance.org/ns/#GeographicUnitTypeClassification : http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator
+  http://ddi-alliance.org/ns/#PhysicalDataSet : http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator
+  http://ddi-alliance.org/ns/#PhysicalRecordSegment : http://ddi-alliance.org/ns/#DataPointIndicator
+  http://ddi-alliance.org/ns/#PhysicalSegmentLayout : http://ddi-alliance.org/ns/#ValueMappingIndicator
+  http://ddi-alliance.org/ns/#ControlledVocabulary : http://ddi-alliance.org/ns/#VocabularyEntryIndicator
+  http://ddi-alliance.org/ns/#CustomInstance : http://ddi-alliance.org/ns/#CustomValueIndicator
+  http://ddi-alliance.org/ns/#CustomStructure : http://ddi-alliance.org/ns/#CustomItemIndicator
+  http://ddi-alliance.org/ns/#StudySeries : http://ddi-alliance.org/ns/#StudyIndicator
+  http://ddi-alliance.org/ns/#DataPipeline : http://ddi-alliance.org/ns/#BusinessProcessIndicator
+  http://ddi-alliance.org/ns/#DataStore : http://ddi-alliance.org/ns/#LogicalRecordIndicator
+  http://ddi-alliance.org/ns/#DataStoreLibrary : http://ddi-alliance.org/ns/#DataStoreIndicator
+  http://ddi-alliance.org/ns/#LogicalRecord : http://ddi-alliance.org/ns/#InstanceVariableIndicator
+  http://ddi-alliance.org/ns/#ViewpointRole : http://ddi-alliance.org/ns/#InstanceVariableIndicator
+  http://ddi-alliance.org/ns/#AgentListing : http://ddi-alliance.org/ns/#AgentIndicator
+  http://ddi-alliance.org/ns/#ClassificationFamily : http://ddi-alliance.org/ns/#ClassificationSeriesIndicator
+  http://ddi-alliance.org/ns/#ClassificationIndex : http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator
+  http://ddi-alliance.org/ns/#ClassificationSeries : http://ddi-alliance.org/ns/#StatisticalClassificationIndicator
+  http://ddi-alliance.org/ns/#CodeList : http://ddi-alliance.org/ns/#CodeIndicator
+  http://ddi-alliance.org/ns/#StatisticalClassification : http://ddi-alliance.org/ns/#ClassificationItemIndicator
+http://ddi-alliance.org/ns/#RecordRelation http://ddi-alliance.org/ns/#correspondence :
+  http://ddi-alliance.org/ns/#InstanceVariableValueMap isn't related to http://ddi-alliance.org/ns/#Map
+  1 later references:
+  http://ddi-alliance.org/ns/#CorrespondenceTable : http://ddi-alliance.org/ns/#Map
+
+Compilation finished at Sun Jul 29 02:36:05</pre>
     </div>
   </body>
 </html>
