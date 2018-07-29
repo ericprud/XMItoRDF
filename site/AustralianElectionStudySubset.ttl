@@ -12,13 +12,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:hasPrimaryContent "URN:DDI:int.example:IdStudy:1" ;
   ddi:hasPrimaryContent "URN:DDI:int.example:IdPhysicalDataProduct:1" ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:hasAnnotation  [ 
     ddi:summary  [ 
@@ -137,28 +137,28 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:localIdValue "au.edu.anu.ada.ddi.01259" ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:hasAnalysisUnit  [ 
-    ddi:typeOfClass "UnitType" ;
+#    ddi:typeOfClass "UnitType" ;
   ] ;
   ddi:hasCoverage  [ 
-    ddi:typeOfClass "Coverage" ;
+#    ddi:typeOfClass "Coverage" ;
   ] ;
   ddi:hasFundingInformation  [ 
-    ddi:typeOfClass "FundingInformation" ;
+#    ddi:typeOfClass "FundingInformation" ;
   ] ;
   ddi:hasMethodology  [ 
-    ddi:typeOfClass "MethodologyOverview" ;
+#    ddi:typeOfClass "MethodologyOverview" ;
   ] ;
   ddi:hasMethodology  [ 
-    ddi:typeOfClass "MethodologyOverview" ;
+#    ddi:typeOfClass "MethodologyOverview" ;
   ] ;
   ddi:hasMethodology  [ 
-    ddi:typeOfClass "MethodologyOverview" ;
+#    ddi:typeOfClass "MethodologyOverview" ;
   ] ;
   ddi:hasSamplingProcedure  [ 
-    ddi:typeOfClass "SamplingProcedure" ;
+#    ddi:typeOfClass "SamplingProcedure" ;
   ] ;
   ddi:kindOfData  [ 
     ddi:content "survey data" ;
@@ -171,7 +171,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Individual" ;
+#        ddi:typeOfClass "Individual" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -199,7 +199,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Individual" ;
+#        ddi:typeOfClass "Individual" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -244,7 +244,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Individual" ;
+#        ddi:typeOfClass "Individual" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -272,7 +272,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Individual" ;
+#        ddi:typeOfClass "Individual" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -300,7 +300,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Organization" ;
+#        ddi:typeOfClass "Organization" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -319,7 +319,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ]
       ] ;
       ddi:associatedAgent  [ 
-        ddi:typeOfClass "Organization" ;
+#        ddi:typeOfClass "Organization" ;
       ] ;
       ddi:role  [ 
         ddi:term  [ 
@@ -378,7 +378,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ] ;
   ] ;
   ddi:hasInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
 #  ddi:hasInstanceVariable  [ 
 #    ddi:typeOfClass "InstanceVariable" ;
@@ -433,7 +433,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:contactAgent  [ 
     ddi:associatedAgent  [ 
-      ddi:typeOfClass "Individual" ;
+#      ddi:typeOfClass "Individual" ;
     ] ;
   ] ;
   ddi:restrictions  [ 
@@ -447,13 +447,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdCoverage" ;
   ddi:version "1" ;
   ddi:hasSpatialCoverage  [ 
-    ddi:typeOfClass "SpatialCoverage" ;
+#    ddi:typeOfClass "SpatialCoverage" ;
   ] ;
   ddi:hasTemporalCoverage  [ 
-    ddi:typeOfClass "TemporalCoverage" ;
+#    ddi:typeOfClass "TemporalCoverage" ;
   ] ;
   ddi:hasTopicalCoverage  [ 
-    ddi:typeOfClass "TopicalCoverage" ;
+#    ddi:typeOfClass "TopicalCoverage" ;
   ] ;
   .
 
@@ -466,10 +466,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:controlledVocabularyName "ISO3166-1" ;
   ] ;
   ddi:lowestGeographicUnitTypeCovered  [ 
-    ddi:typeOfClass "UnitType" ;
+#    ddi:typeOfClass "UnitType" ;
   ] ;
   ddi:includesGeographicUnit  [ 
-    ddi:typeOfClass "GeographicUnit" ;
+#    ddi:typeOfClass "GeographicUnit" ;
   ] ;
   .
 
@@ -490,7 +490,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:content "Australia" ;
   ] ;
   ddi:hasUnitType  [ 
-    ddi:typeOfClass "UnitType" ;
+#    ddi:typeOfClass "UnitType" ;
   ] ;
   .
 
@@ -750,7 +750,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdFunding" ;
   ddi:version "1" ;
   ddi:hasFunder  [ 
-    ddi:typeOfClass "Organization" ;
+#    ddi:typeOfClass "Organization" ;
   ] ;
   .
 
@@ -850,10 +850,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:takesPlatformSpecificSentinelValues  [ 
-    ddi:typeOfClass "SentinelValueDomain" ;
+#    ddi:typeOfClass "SentinelValueDomain" ;
   ] ;
   .
 
@@ -872,7 +872,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   .
 
@@ -891,7 +891,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   .
 
@@ -910,7 +910,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   .
 
@@ -929,7 +929,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   .
 
@@ -948,7 +948,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   .
 
@@ -967,13 +967,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:takesPlatformSpecificSentinelValues  [ 
-    ddi:typeOfClass "SentinelValueDomain" ;
+#    ddi:typeOfClass "SentinelValueDomain" ;
   ] ;
   ddi:sourceCapture  [ 
-    ddi:typeOfClass "RepresentedQuestion" ;
+#    ddi:typeOfClass "RepresentedQuestion" ;
   ] ;
   .
 
@@ -993,13 +993,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:takesPlatformSpecificSentinelValues  [ 
-    ddi:typeOfClass "SentinelValueDomain" ;
+#    ddi:typeOfClass "SentinelValueDomain" ;
   ] ;
   ddi:sourceCapture  [ 
-    ddi:typeOfClass "RepresentedQuestion" ;
+#    ddi:typeOfClass "RepresentedQuestion" ;
   ] ;
   .
 
@@ -1018,10 +1018,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:sourceCapture  [ 
-    ddi:typeOfClass "RepresentedQuestion" ;
+#    ddi:typeOfClass "RepresentedQuestion" ;
   ] ;
   .
 
@@ -1040,7 +1040,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:variableFunction  [ 
     ddi:content "weight" ;
@@ -1062,10 +1062,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:sourceCapture  [ 
-    ddi:typeOfClass "RepresentedMeasurement" ;
+#    ddi:typeOfClass "RepresentedMeasurement" ;
   ] ;
   .
 
@@ -1084,10 +1084,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom  [ 
-    ddi:typeOfClass "SubstantiveValueDomain" ;
+#    ddi:typeOfClass "SubstantiveValueDomain" ;
   ] ;
   ddi:sourceCapture  [ 
-    ddi:typeOfClass "RepresentedMeasurement" ;
+#    ddi:typeOfClass "RepresentedMeasurement" ;
   ] ;
   .
 
@@ -1101,37 +1101,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 8 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -1146,7 +1146,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -1161,13 +1161,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 7 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -1182,7 +1182,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -1197,13 +1197,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 30 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 28 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -1213,7 +1213,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:id "IdSenMinus1" ;
   ddi:version "1" ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -1224,7 +1224,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -1235,7 +1235,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "-1" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1260,7 +1260,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -1275,37 +1275,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 5 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -1316,7 +1316,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "101" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1326,7 +1326,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "102" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1336,7 +1336,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "103" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1346,7 +1346,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "104" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1356,7 +1356,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "105" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1366,7 +1366,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation ">106" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1448,7 +1448,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -1475,7 +1475,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -1487,13 +1487,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -1504,7 +1504,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "1" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1514,7 +1514,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "8" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1545,7 +1545,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -1573,7 +1573,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -1584,55 +1584,55 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 5 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 7 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 8 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 9 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -1643,7 +1643,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "1" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1653,7 +1653,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "2" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1663,7 +1663,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "3" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1673,7 +1673,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "4" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1683,7 +1683,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "5" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1693,7 +1693,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "6" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1703,7 +1703,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "7" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1713,7 +1713,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "8" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1723,7 +1723,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "9" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1817,7 +1817,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -1842,7 +1842,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -1854,25 +1854,25 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -1883,7 +1883,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "1" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1893,7 +1893,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "2" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1903,7 +1903,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "3" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1913,7 +1913,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "4" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -1962,7 +1962,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -1993,7 +1993,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "StatisticalClassification" ;
+#    ddi:typeOfClass "StatisticalClassification" ;
     ddi:isExternal "true"^^xsd:boolean ;
   ] ;
   .
@@ -2007,7 +2007,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -2035,7 +2035,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain  [ 
-    ddi:typeOfClass "CodeList" ;
+#    ddi:typeOfClass "CodeList" ;
   ] ;
   .
 
@@ -2046,55 +2046,55 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 5 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 7 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 8 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 9 ;
     ddi:member  [ 
-      ddi:typeOfClass "Code" ;
+#      ddi:typeOfClass "Code" ;
     ] ;
   ] ;
   .
@@ -2105,7 +2105,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "ALP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2115,7 +2115,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "CLP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2125,7 +2125,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "GRN" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2135,7 +2135,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "IND" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2145,7 +2145,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "KAP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2155,7 +2155,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "LNP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2165,7 +2165,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "LP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2175,7 +2175,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "NP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2185,7 +2185,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:representation "PUP" ;
   ddi:denotes  [ 
-    ddi:typeOfClass "Category" ;
+#    ddi:typeOfClass "Category" ;
   ] ;
   .
 
@@ -2279,7 +2279,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain  [ 
-    ddi:typeOfClass "ValueAndConceptDescription" ;
+#    ddi:typeOfClass "ValueAndConceptDescription" ;
   ] ;
   .
 
@@ -2341,7 +2341,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   .
 
@@ -2365,7 +2365,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   .
 
@@ -2422,7 +2422,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "UnitDataRecord" ;
+#      ddi:typeOfClass "UnitDataRecord" ;
     ] ;
   ] ;
   .
@@ -2435,73 +2435,73 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 5 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 7 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 8 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 9 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 10 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 11 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 12 ;
     ddi:member  [ 
-      ddi:typeOfClass "InstanceVariable" ;
+#      ddi:typeOfClass "InstanceVariable" ;
     ] ;
   ] ;
   .
@@ -2512,55 +2512,55 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:version "1" ;
   ddi:physicalFileName "aes_2013_01259Subset.csv" ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:relatedMaterial  [ 
-    ddi:typeOfClass "ExternalMaterial" ;
+#    ddi:typeOfClass "ExternalMaterial" ;
   ] ;
   ddi:formatsDataStore  [ 
-    ddi:typeOfClass "DataStore" ;
+#    ddi:typeOfClass "DataStore" ;
   ] ;
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "PhysicalRecordSegment" ;
+#      ddi:typeOfClass "PhysicalRecordSegment" ;
     ] ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   ddi:hasVariableStatistics  [ 
-    ddi:typeOfClass "VariableStatistics" ;
+#    ddi:typeOfClass "VariableStatistics" ;
   ] ;
   .
 
@@ -2569,7 +2569,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdPhysrecSeg" ;
   ddi:version "1" ;
   ddi:hasPhysicalLayout  [ 
-    ddi:typeOfClass "UnitSegmentLayout" ;
+#    ddi:typeOfClass "UnitSegmentLayout" ;
   ] ;
   .
 
@@ -2590,73 +2590,73 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:contains  [ 
     ddi:index 1 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 2 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 3 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 4 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 5 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 6 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 7 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 8 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 9 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 10 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 11 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   ddi:contains  [ 
     ddi:index 12 ;
     ddi:member  [ 
-      ddi:typeOfClass "ValueMapping" ;
+#      ddi:typeOfClass "ValueMapping" ;
     ] ;
   ] ;
   .
@@ -2666,7 +2666,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarDivisNum" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2684,7 +2684,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptVarDivisNum" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2693,7 +2693,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarUniqueID" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2711,7 +2711,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptVarUniqueID" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2720,7 +2720,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarMode" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2738,7 +2738,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptMode" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2747,7 +2747,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarDateComp" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "date string" ;
@@ -2763,7 +2763,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptDateComp" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2772,7 +2772,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarState" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2790,7 +2790,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptState" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2799,7 +2799,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarDivision" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "xs:string" ;
@@ -2812,7 +2812,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptDivision" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2821,7 +2821,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarA4" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2839,7 +2839,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptA4" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2848,7 +2848,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarG1Age" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2866,7 +2866,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptG1Age" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2875,7 +2875,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarXg5" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2893,7 +2893,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptXg5" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2902,7 +2902,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarWeight" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2920,7 +2920,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptWeight" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2929,7 +2929,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarPartyAby" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "xs:string" ;
@@ -2942,7 +2942,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptPartyAby" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2951,7 +2951,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDVmVarSwingn" ;
   ddi:version "1" ;
   ddi:formatsDataPoint  [ 
-    ddi:typeOfClass "DataPoint" ;
+#    ddi:typeOfClass "DataPoint" ;
   ] ;
   ddi:physicalDataType  [ 
     ddi:content "numeric string" ;
@@ -2969,7 +2969,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDDptSwingn" ;
   ddi:version "1" ;
   ddi:isDescribedBy  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   .
 
@@ -2978,7 +2978,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsDivisNum" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3014,7 +3014,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Canberra" ;
     ddi:hasStatistic  [ 
@@ -3026,7 +3026,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Fraser" ;
     ddi:hasStatistic  [ 
@@ -3038,7 +3038,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Banks" ;
     ddi:hasStatistic  [ 
@@ -3050,7 +3050,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Barton" ;
     ddi:hasStatistic  [ 
@@ -3062,7 +3062,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Bennelong" ;
     ddi:hasStatistic  [ 
@@ -3074,7 +3074,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Berowra" ;
     ddi:hasStatistic  [ 
@@ -3086,7 +3086,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Canberra" ;
     ddi:hasStatistic  [ 
@@ -3098,7 +3098,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Fraser" ;
     ddi:hasStatistic  [ 
@@ -3110,7 +3110,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Banks" ;
     ddi:hasStatistic  [ 
@@ -3122,7 +3122,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Barton" ;
     ddi:hasStatistic  [ 
@@ -3134,7 +3134,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Bennelong" ;
     ddi:hasStatistic  [ 
@@ -3146,7 +3146,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "Berowra" ;
     ddi:hasStatistic  [ 
@@ -3163,7 +3163,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsUniqueID" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3220,7 +3220,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsMode" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3256,7 +3256,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3268,7 +3268,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "2" ;
     ddi:hasStatistic  [ 
@@ -3280,7 +3280,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3292,7 +3292,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "2" ;
     ddi:hasStatistic  [ 
@@ -3309,7 +3309,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsDateComp" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3370,7 +3370,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsState" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3390,7 +3390,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3402,7 +3402,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "2" ;
     ddi:hasStatistic  [ 
@@ -3414,7 +3414,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "3" ;
     ddi:hasStatistic  [ 
@@ -3426,7 +3426,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "4" ;
     ddi:hasStatistic  [ 
@@ -3438,7 +3438,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "5" ;
     ddi:hasStatistic  [ 
@@ -3450,7 +3450,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "6" ;
     ddi:hasStatistic  [ 
@@ -3462,7 +3462,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "7" ;
     ddi:hasStatistic  [ 
@@ -3474,7 +3474,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "8" ;
     ddi:hasStatistic  [ 
@@ -3486,7 +3486,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "9" ;
     ddi:hasStatistic  [ 
@@ -3498,7 +3498,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3510,7 +3510,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "2" ;
     ddi:hasStatistic  [ 
@@ -3522,7 +3522,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "3" ;
     ddi:hasStatistic  [ 
@@ -3534,7 +3534,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "4" ;
     ddi:hasStatistic  [ 
@@ -3546,7 +3546,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "5" ;
     ddi:hasStatistic  [ 
@@ -3558,7 +3558,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "6" ;
     ddi:hasStatistic  [ 
@@ -3570,7 +3570,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "7" ;
     ddi:hasStatistic  [ 
@@ -3582,7 +3582,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "8" ;
     ddi:hasStatistic  [ 
@@ -3594,7 +3594,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "9" ;
     ddi:hasStatistic  [ 
@@ -3611,7 +3611,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsDivision" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3649,7 +3649,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "ADELAIDE" ;
     ddi:hasStatistic  [ 
@@ -3661,7 +3661,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "ASTON" ;
     ddi:hasStatistic  [ 
@@ -3678,7 +3678,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsA4" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3717,7 +3717,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ] ;
   ] ;
   ddi:applicableWeightVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3739,7 +3739,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3752,7 +3752,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "2" ;
     ddi:hasStatistic  [ 
@@ -3765,7 +3765,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "3" ;
     ddi:hasStatistic  [ 
@@ -3778,7 +3778,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "4" ;
     ddi:hasStatistic  [ 
@@ -3791,7 +3791,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "-1" ;
     ddi:hasStatistic  [ 
@@ -3804,7 +3804,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3817,7 +3817,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3830,7 +3830,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3843,7 +3843,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3856,7 +3856,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "-1" ;
     ddi:hasStatistic  [ 
@@ -3869,7 +3869,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3883,7 +3883,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3897,7 +3897,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3911,7 +3911,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "1" ;
     ddi:hasStatistic  [ 
@@ -3930,7 +3930,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsG1Age" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -3985,7 +3985,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ] ;
   ] ;
   ddi:applicableWeightVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -4030,7 +4030,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsXg5" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -4069,7 +4069,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ] ;
   ] ;
   ddi:applicableWeightVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -4131,7 +4131,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "-1" ;
     ddi:hasStatistic  [ 
@@ -4184,7 +4184,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "-1" ;
     ddi:hasStatistic  [ 
@@ -4246,7 +4246,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsWeight" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -4307,7 +4307,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsPartyAby" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
@@ -4329,7 +4329,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "ALP" ;
     ddi:hasStatistic  [ 
@@ -4342,7 +4342,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "CLP" ;
     ddi:hasStatistic  [ 
@@ -4355,7 +4355,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "GRN" ;
     ddi:hasStatistic  [ 
@@ -4368,7 +4368,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "IND" ;
     ddi:hasStatistic  [ 
@@ -4381,7 +4381,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "KAP" ;
     ddi:hasStatistic  [ 
@@ -4394,7 +4394,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "LNP" ;
     ddi:hasStatistic  [ 
@@ -4407,7 +4407,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "LP" ;
     ddi:hasStatistic  [ 
@@ -4420,7 +4420,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "NP" ;
     ddi:hasStatistic  [ 
@@ -4433,7 +4433,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "PUP" ;
     ddi:hasStatistic  [ 
@@ -4446,7 +4446,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "ALP" ;
     ddi:hasStatistic  [ 
@@ -4459,7 +4459,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "CLP" ;
     ddi:hasStatistic  [ 
@@ -4472,7 +4472,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "GRN" ;
     ddi:hasStatistic  [ 
@@ -4485,7 +4485,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "IND" ;
     ddi:hasStatistic  [ 
@@ -4498,7 +4498,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "KAP" ;
     ddi:hasStatistic  [ 
@@ -4511,7 +4511,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "LNP" ;
     ddi:hasStatistic  [ 
@@ -4524,7 +4524,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "LP" ;
     ddi:hasStatistic  [ 
@@ -4537,7 +4537,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "NP" ;
     ddi:hasStatistic  [ 
@@ -4550,7 +4550,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:hasCategoryStatistic  [ 
     ddi:forCodeItem  [ 
-      ddi:typeOfClass "CodeIndicator" ;
+#      ddi:typeOfClass "CodeIndicator" ;
     ] ;
     ddi:categoryValue "PUP" ;
     ddi:hasStatistic  [ 
@@ -4568,7 +4568,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdVarStatsSwingn" ;
   ddi:version "1" ;
   ddi:forInstanceVariable  [ 
-    ddi:typeOfClass "InstanceVariable" ;
+#    ddi:typeOfClass "InstanceVariable" ;
   ] ;
   ddi:hasSummaryStatistic  [ 
     ddi:hasStatistic  [ 
