@@ -127,77 +127,114 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     })
   }
 
+  // UML model as JSON
   fs.writeFileSync(CLI.out + '.json', UmlModel.toJSON(model), { encoding: 'utf-8' })
 
   let shexj = model.toShExJ({
     anyURIasDataProperty: false,
-    iri: function (suffix, elt) {
-      return DDI + suffix
-    },
-    annotations: function (elt) {
-      // ShEx 2.0 doesn't allow annotations on NodeConstraints.
-      if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
-      let ret = [{
-        "type": "Annotation",
-        "predicate": RDFS + "definedBy",
-        "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
-      }]
-
-      let pkg = (elt.references || []).find(ref => ref instanceof UmlModel.Package)
-      if (pkg) {
-        ret = ret.concat({
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#package",
-          "object": {
-            "value": DDI + pkg.name // just the inner-most package
-          }
-        })
-      }
-      if (elt.comments) {
-        ret = ret.concat(elt.comments.map(comment => { return {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-          "object": {
-            "value": trimUnusedMarkdownHeaders(comment),
-            "type": "https://github.com/commonmark/commonmark.js"
-          }
-        }}))
-      }
-      if (elt.aggregation) {
-        ret = ret.concat({
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
-          "object": {
-            "value": (elt.aggregation === UmlModel.Aggregation.shared
-                      ? "shexmi:sharedAggregation"
-                      : elt.aggregation === UmlModel.Aggregation.composite
-                      ? "shexmi:compositeAggregation"
-                      : "\"???\"")
-          }
-        })
-      }
-      return ret
-    }
+    iri: prependDDI,
+    annotations: addDDIannotations,
+    closedShapes: true
   })
 
-  /** get rid of markdown headers with no following section
-   *
-   *   "Ab\n==\nAb 1\nAb 2\n\nCd\n==\n\nEf\n==\n\nGh\n==\nGh 1\nGh 2\nIj\n=="
-   *  =>
-   *   "Ab\n==\nAb 1\nAb 2\n\nGh\n==\nGh 1\nGh 2\n"
-   */
-  function trimUnusedMarkdownHeaders (text) {
-    let oldLen
-    do {
-      oldLen = text.length
-      text = text.replace(/[^=\n]+\n=+(?:\n\n+([^=]+\n=+\n)|\s*$)/, '$1')
-    } while (text.length < oldLen)
-    return text
+  // ShExJ model
+  fs.writeFileSync(CLI.out + '.shexj',
+                   JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+
+  // package hierarchy
+  fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml',
+                   packageHierarchy(model), { encoding: 'utf-8' })
+
+  if (CLI.nestShapes) {
+    let compiled = ShEx.Util.ShExJtoAS(shexj)
+    let renamed = ShEx.Util.nestShapes(shexj, {
+      transform: function (id, shapeExpr) {
+        if (!id.startsWith(DDI)) {
+          throw Error('transformation target "' + id + '" doesn\'t start  with "' + DDI + '"')
+        }
+        return '_:' + id.substr(DDI.length)
+      }
+    }) // .map(l => l.substr(DDI.length))
+    let listFile = CLI.out + '-nested.list'
+    let nested = ShEx.Util.AStoShExJ(compiled)
+
+    // nested ShExJ model
+    fs.writeFileSync(CLI.out + '-nested.shexj',
+                     JSON.stringify(nested, null, 2), { encoding: 'utf-8' })
+
+    // report on nested shapes
+    console.log('simplied ' + Object.keys(renamed).length + ' shapes. see ' + listFile)
+    fs.writeFileSync(listFile,
+                     JSON.stringify(renamed, null, 2), { encoding: 'utf-8' })
   }
 
-  fs.writeFileSync(CLI.out + '.shexj', JSON.stringify(shexj, null, 2), { encoding: 'utf-8' })
+})
 
-  // Render package and view hierarchy.
+function prependDDI (suffix, elt) {
+  return DDI + suffix
+}
+
+function addDDIannotations (elt) {
+  // ShEx 2.0 doesn't allow annotations on NodeConstraints.
+  if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+  let ret = [{
+    "type": "Annotation",
+    "predicate": RDFS + "definedBy",
+    "object": "http://lion.ddialliance.org/ddiobjects/" + elt.name.toLowerCase()
+  }]
+
+  let pkg = (elt.references || []).find(ref => ref instanceof UmlModel.Package)
+  if (pkg) {
+    ret = ret.concat({
+      "type": "Annotation",
+      "predicate": "http://www.w3.org/ns/shex-xmi#package",
+      "object": {
+        "value": DDI + pkg.name // just the inner-most package
+      }
+    })
+  }
+  if (elt.comments) {
+    ret = ret.concat(elt.comments.map(comment => { return {
+      "type": "Annotation",
+      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+      "object": {
+        "value": trimUnusedMarkdownHeaders(comment),
+        "type": "https://github.com/commonmark/commonmark.js"
+      }
+    }}))
+  }
+  if (elt.aggregation) {
+    ret = ret.concat({
+      "type": "Annotation",
+      "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
+      "object": {
+        "value": (elt.aggregation === UmlModel.Aggregation.shared
+                  ? "shexmi:sharedAggregation"
+                  : elt.aggregation === UmlModel.Aggregation.composite
+                  ? "shexmi:compositeAggregation"
+                  : "\"???\"")
+      }
+    })
+  }
+  return ret
+}
+
+/** get rid of markdown headers with no following section
+ *
+ *   "Ab\n==\nAb 1\nAb 2\n\nCd\n==\n\nEf\n==\n\nGh\n==\nGh 1\nGh 2\nIj\n=="
+ *  =>
+ *   "Ab\n==\nAb 1\nAb 2\n\nGh\n==\nGh 1\nGh 2\n"
+ */
+function trimUnusedMarkdownHeaders (text) {
+  let oldLen
+  do {
+    oldLen = text.length
+    text = text.replace(/[^=\n]+\n=+(?:\n\n+([^=]+\n=+\n)|\s*$)/, '$1')
+  } while (text.length < oldLen)
+  return text
+}
+
+function packageHierarchy (model) {
   let owlx = []
   function visitPackage (pkg, parent) {
     pkg.elements.forEach(elt => {
@@ -233,26 +270,15 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   model.elements.forEach(pkg => {
     visitPackage(model, null)
   })
-  fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml', owlx.join('\n'), { encoding: 'utf-8' })
+  return owlx.join('\n')
+}
 
-  if (CLI.nestShapes) {
-    let compiled = ShEx.Util.ShExJtoAS(shexj)
-    let renamed = ShEx.Util.nestShapes(shexj, {
-      transform: function (id, shapeExpr) {
-        if (!id.startsWith(DDI)) {
-          throw Error('transformation target "' + id + '" doesn\'t start  with "' + DDI + '"')
-        }
-        return '_:' + id.substr(DDI.length)
-      }
-    }) // .map(l => l.substr(DDI.length))
-    let listFile = CLI.out + '-nested.list'
-    let nested = ShEx.Util.AStoShExJ(compiled)
-    console.log('simplied ' + Object.keys(renamed).length + ' shapes. see ' + listFile)
-    fs.writeFileSync(listFile, JSON.stringify(renamed, null, 2), { encoding: 'utf-8' })
-    fs.writeFileSync(CLI.out + '-nested.shexj', JSON.stringify(nested, null, 2), { encoding: 'utf-8' })
-  }
-
-})
+function encodeCharData (text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
 
 function objSet (obj, key, value) {
   let add = { }
@@ -262,12 +288,5 @@ function objSet (obj, key, value) {
 
 function trimMarkdown (md) {
   return md.replace(/\u001e/g, '\n').replace(/^[^ \t].*\n=+\n\n/mg, '').trim()
-}
-
-function encodeCharData (text) {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
 }
 
