@@ -10995,7 +10995,7 @@
           "expressions": [
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#RationaleDescription",
+              "predicate": "http://ddi-alliance.org/ns/#rationaleDescription",
               "valueExpr": "http://ddi-alliance.org/ns/#InternationalString",
               "min": 0,
               "max": 1,
@@ -11017,7 +11017,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#RationaleCode",
+              "predicate": "http://ddi-alliance.org/ns/#rationaleCode",
               "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
               "min": 0,
               "max": 1,

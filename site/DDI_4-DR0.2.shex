@@ -1,5 +1,5 @@
 # DDI_4-DR0.2.shexj
-# shexToOwl 2018-07-29T21:25:21.968Z
+# shexToOwl 2018-07-30T12:17:29.015Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -1652,9 +1652,9 @@ DDI 3.2 mapping
 r:RangeValueType"""^^mark:
 
 ddi:RationaleDefinition CLOSED {
-  ddi:RationaleDescription @ddi:InternationalString *
+  ddi:rationaleDescription @ddi:InternationalString *
   // shexmi:comment """Textual description of the rationale/purpose for the version change to inform users as to the extent and implication of the version change. May be expressed in multiple languages.""";
-  ddi:RationaleCode @ddi:ExternalControlledVocabularyEntry *
+  ddi:rationaleCode @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """RationaleCode is primarily for internal processing flags within an organization or system. Supports the use of an external controlled vocabulary.""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"

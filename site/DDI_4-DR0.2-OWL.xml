@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-29T05:23:24.503Z -->
+     shexToOwl 2018-07-30T12:17:33.585Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
     <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>
@@ -8126,27 +8126,27 @@ r:RangeValueType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RationaleDefinition"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:RationaleDescription"/>
+            <ObjectProperty abbreviatedIRI="ddi:rationaleDescription"/>
             <Class abbreviatedIRI="ddi:InternationalString"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RationaleDefinition"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:RationaleDescription"/>
+            <ObjectProperty abbreviatedIRI="ddi:rationaleDescription"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RationaleDefinition"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:RationaleCode"/>
+            <ObjectProperty abbreviatedIRI="ddi:rationaleCode"/>
             <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RationaleDefinition"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:RationaleCode"/>
+            <ObjectProperty abbreviatedIRI="ddi:rationaleCode"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -8167,13 +8167,13 @@ r:VersionRationaleType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:RationaleDefinition</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:RationaleDescription - Textual description of the rationale/purpose for the version change to inform users as to the extent and implication of the version change. May be expressed in multiple languages.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:rationaleDescription - Textual description of the rationale/purpose for the version change to inform users as to the extent and implication of the version change. May be expressed in multiple languages.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:RationaleDefinition</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:RationaleCode - RationaleCode is primarily for internal processing flags within an organization or system. Supports the use of an external controlled vocabulary.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:rationaleCode - RationaleCode is primarily for internal processing flags within an organization or system. Supports the use of an external controlled vocabulary.
 </Literal>
     </AnnotationAssertion>
 
@@ -31056,18 +31056,18 @@ Value Domain</Literal>
     </DataPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:RationaleDescription"/>
+        <ObjectProperty abbreviatedIRI="ddi:rationaleDescription"/>
     </Declaration>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:RationaleDescription"/>
+        <ObjectProperty abbreviatedIRI="ddi:rationaleDescription"/>
         <Class abbreviatedIRI="ddi:InternationalString"/>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:RationaleCode"/>
+        <ObjectProperty abbreviatedIRI="ddi:rationaleCode"/>
     </Declaration>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:RationaleCode"/>
+        <ObjectProperty abbreviatedIRI="ddi:rationaleCode"/>
         <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
     </ObjectPropertyRange>
 

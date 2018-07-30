@@ -5,7 +5,7 @@
   "source": {
     "method": "xmi-to-json",
     "resource": "../doc/DDI4_PIM_canonical.xmi",
-    "timestamp": "2018-07-29T05:23:20.720Z"
+    "timestamp": "2018-07-30T12:17:29.993Z"
   },
   "elements": [
     {
@@ -12403,7 +12403,7 @@
                   "inClass": {
                     "_idref": "DDI4_PIM-ClassLibrary-StructuredDataTypes-RationaleDefinition"
                   },
-                  "name": "RationaleDescription",
+                  "name": "rationaleDescription",
                   "type": {
                     "_idref": "DDI4_PIM-ClassLibrary-StructuredDataTypes-InternationalString"
                   },
@@ -12419,7 +12419,7 @@
                   "inClass": {
                     "_idref": "DDI4_PIM-ClassLibrary-StructuredDataTypes-RationaleDefinition"
                   },
-                  "name": "RationaleCode",
+                  "name": "rationaleCode",
                   "type": {
                     "_idref": "DDI4_PIM-ClassLibrary-StructuredDataTypes-ExternalControlledVocabularyEntry"
                   },

@@ -71,7 +71,8 @@ const UmlParser = CanonXmiParser({
     // 'Class Model (Exported from Drupal)': 'ddi4_model',
     'ClassLibrary': 'ddi4_model', // minimize diffs
     'FunctionalViews': 'Views',
-  }
+  },
+  checkPropertyNameCase: true
 })
 
 let source = {
@@ -118,6 +119,14 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     .find(c => c.name === 'DocumentInformation')
     .properties.find(p => p.name === 'hasPrimaryContent')
     .type = fakeExternalDatatype(XSD + 'string')
+  let pz = model.getProperties()
+  Object.keys(pz)
+    .filter(k => k.substr(0,1) === k.substr(0,1).toUpperCase())
+    .forEach(k => pz[k].uses.forEach(u => {
+      let newName = u.property.name.substr(0, 1).toLowerCase() + u.property.name.substr(1)
+      console.warn('renaming ' + u.klass.name + ' property ' + u.property.name + ' to ' + newName)
+      u.property.name = newName
+    }))
 
   // Remove properties with missing types.
   let removeProps = model.list('Class').reduce((acc, c) =>

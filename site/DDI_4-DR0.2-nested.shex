@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2018-07-29T13:02:05.801Z
+# shexToOwl 2018-07-30T12:17:31.703Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
