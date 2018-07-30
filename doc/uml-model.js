@@ -155,7 +155,7 @@ function UmlModel (modelOptions = {}, $ = null) {
           )
         },
         getProperties: function () {
-          let cz = this.classes
+          let cz = this.getClasses()
           let ret = {}
           cz.forEach(
             klass => {
