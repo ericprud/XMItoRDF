@@ -34,6 +34,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -138,6 +139,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -496,6 +498,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -597,6 +600,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -682,6 +686,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -764,6 +769,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -931,6 +937,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1415,6 +1422,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Date"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#typeOfDate",
@@ -1467,6 +1475,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1571,6 +1580,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1678,6 +1688,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1782,6 +1793,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalString"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#affiliation",
@@ -1837,6 +1849,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1916,6 +1929,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2042,6 +2056,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2124,6 +2139,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2206,6 +2222,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2351,6 +2368,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2496,6 +2514,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2606,6 +2625,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2688,6 +2708,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2795,6 +2816,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2940,6 +2962,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3022,6 +3045,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3167,6 +3191,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3274,6 +3299,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3419,6 +3445,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3501,6 +3528,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3602,6 +3630,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3706,6 +3735,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3788,6 +3818,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3936,6 +3967,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#DynamicTextContent"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#expression",
@@ -3988,6 +4020,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4136,6 +4169,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4221,6 +4255,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4344,6 +4379,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4426,6 +4462,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4571,6 +4608,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4653,6 +4691,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4798,6 +4837,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4880,6 +4920,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5025,6 +5066,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5107,6 +5149,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5252,6 +5295,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5331,6 +5375,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5410,6 +5455,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5489,6 +5535,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5574,6 +5621,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5681,6 +5729,7 @@
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5763,6 +5812,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5914,6 +5964,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5993,6 +6044,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6144,6 +6196,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6382,6 +6435,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#LanguageSpecificStructuredStringType"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#whiteSpace",
@@ -6434,6 +6488,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6566,6 +6621,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6673,6 +6729,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6840,6 +6897,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6947,6 +7005,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7139,6 +7198,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7271,6 +7331,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7353,6 +7414,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7498,6 +7560,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7840,6 +7903,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7922,6 +7986,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8067,6 +8132,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8212,6 +8278,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8319,6 +8386,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificString",
@@ -8371,6 +8439,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificStructuredString",
@@ -8426,6 +8495,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalStructuredString"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8530,6 +8600,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8743,6 +8814,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#LanguageSpecificStringType"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8850,6 +8922,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8954,6 +9027,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9092,6 +9166,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#DynamicTextContent"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#text",
@@ -9144,6 +9219,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9257,6 +9333,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ObjectName"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#effectiveDates",
@@ -9309,6 +9386,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9391,6 +9469,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9536,6 +9615,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9703,6 +9783,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9807,6 +9888,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10027,6 +10109,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10112,6 +10195,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10197,6 +10281,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ObjectName"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10323,6 +10408,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10402,6 +10488,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10484,6 +10571,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10629,6 +10717,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10761,6 +10850,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Image"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10843,6 +10933,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ValueString"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#included",
@@ -10898,6 +10989,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10980,6 +11072,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotationDate"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11062,6 +11155,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalIdentifier"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#typeOfRelatedResource",
@@ -11114,6 +11208,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11262,6 +11357,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11344,6 +11440,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11473,6 +11570,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11552,6 +11650,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11675,6 +11774,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11754,6 +11854,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11886,6 +11987,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11968,6 +12070,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12113,6 +12216,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12195,6 +12299,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12340,6 +12445,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12419,6 +12525,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12573,6 +12680,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12724,6 +12832,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12803,6 +12912,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12882,6 +12992,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12964,6 +13075,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13046,6 +13158,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13191,6 +13304,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13273,6 +13387,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13355,6 +13470,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13500,6 +13616,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13607,6 +13724,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13752,6 +13870,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13834,6 +13953,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13979,6 +14099,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14130,6 +14251,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14212,6 +14334,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14379,6 +14502,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14464,6 +14588,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
@@ -14519,6 +14644,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14645,6 +14771,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptSystem"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14727,6 +14854,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14831,6 +14959,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14957,6 +15086,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15152,6 +15282,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15300,6 +15431,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15404,6 +15536,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15552,6 +15685,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#RepresentedVariable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15788,6 +15922,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -15972,6 +16107,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualVariable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16145,6 +16281,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualDomain"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -16178,6 +16315,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualDomain"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -16211,6 +16349,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16337,6 +16476,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16419,6 +16559,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16548,6 +16689,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16809,6 +16951,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -16935,6 +17078,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#standardWeightValue",
@@ -16993,6 +17137,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -17188,6 +17333,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -17292,6 +17438,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -17491,6 +17638,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -17748,6 +17896,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -17919,6 +18068,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -18133,6 +18283,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Unit"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -18259,6 +18410,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -18589,6 +18741,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -18715,6 +18868,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19045,6 +19199,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19171,6 +19326,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19297,6 +19453,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19593,6 +19750,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19741,6 +19899,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -19867,6 +20026,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -20087,6 +20247,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -20839,6 +21000,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -20872,6 +21034,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#PhysicalSegmentLocation"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -21035,6 +21198,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#PhysicalSegmentLayout"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -21068,6 +21232,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -21460,6 +21625,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -21655,6 +21821,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -21850,6 +22017,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22029,6 +22197,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22221,6 +22390,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22416,6 +22586,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22545,6 +22716,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22627,6 +22799,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -22819,6 +22992,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23244,6 +23418,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Result"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23398,6 +23573,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AlgorithmOverview"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#codifiedExpressionOfAlgorithm",
@@ -23453,6 +23629,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#DesignOverview"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23557,6 +23734,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Goal"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23667,6 +23845,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#MethodologyOverview"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23821,6 +24000,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -23976,6 +24156,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24080,6 +24261,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24184,6 +24366,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24332,6 +24515,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24480,6 +24664,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24650,6 +24835,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -24746,6 +24932,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -25334,6 +25521,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#hasStudy",
@@ -25389,6 +25577,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -25515,6 +25704,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -26166,6 +26356,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AlgorithmOverview"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -26199,6 +26390,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowProcess"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -26303,6 +26495,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -26517,6 +26710,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -26759,6 +26953,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -26954,6 +27149,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27090,6 +27286,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowStep"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -27123,6 +27320,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27227,6 +27425,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27316,6 +27515,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27405,6 +27605,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27487,6 +27688,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27588,6 +27790,7 @@
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27864,6 +28067,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -27897,6 +28101,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -27930,6 +28135,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
@@ -27985,6 +28191,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
@@ -28040,6 +28247,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#typeOfTemporalRelationship",
@@ -28095,6 +28303,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowStep"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -28128,6 +28337,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -28305,6 +28515,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -28431,6 +28642,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -28681,6 +28893,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -28807,6 +29020,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -28940,6 +29154,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#overview",
@@ -28995,6 +29210,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#BusinessFunction"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#isDiscussedIn",
@@ -29050,6 +29266,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29132,6 +29349,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#BusinessFunction"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29214,6 +29432,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29398,6 +29617,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29656,6 +29876,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29794,6 +30015,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -29941,6 +30163,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -30199,6 +30422,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#coverageDate",
@@ -30254,6 +30478,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -30336,6 +30561,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#forCategory",
@@ -30391,6 +30617,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -30662,6 +30889,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -30766,6 +30994,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowProcess"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -30921,6 +31150,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ExternalMaterial"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#stimulusType",
@@ -30976,6 +31206,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31156,6 +31387,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#instantiates",
@@ -31211,6 +31443,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31293,6 +31526,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31419,6 +31653,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31501,6 +31736,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31597,6 +31833,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31701,6 +31938,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -31734,6 +31972,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Capture"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31816,6 +32055,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Capture"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -31945,6 +32185,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32056,6 +32297,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -32089,6 +32331,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32171,6 +32414,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32281,6 +32525,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32360,6 +32605,7 @@
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32636,6 +32882,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -32669,6 +32916,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32758,6 +33006,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33098,6 +33347,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33315,6 +33565,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33441,6 +33692,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33523,6 +33775,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -33556,6 +33809,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33748,6 +34002,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -33921,6 +34176,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34047,6 +34303,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
+        "closed": true,
         "annotations": [
           {
             "type": "Annotation",
@@ -34080,6 +34337,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34228,6 +34486,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#LogicalRecord"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34332,6 +34591,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34457,6 +34717,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34630,6 +34891,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34734,6 +34996,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -34951,6 +35214,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35143,6 +35407,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35250,6 +35515,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35420,6 +35686,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35527,6 +35794,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35682,6 +35950,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -35899,6 +36168,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -36258,6 +36528,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -36362,6 +36633,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -36677,6 +36949,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -36825,6 +37098,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37130,6 +37404,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37256,6 +37531,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37338,6 +37614,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37420,6 +37697,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37546,6 +37824,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -37782,6 +38061,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#denotes",
@@ -37837,6 +38117,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -38032,6 +38313,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -38158,6 +38440,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -38284,6 +38567,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ValueDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -38410,6 +38694,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -38904,6 +39189,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -39030,6 +39316,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#ValueDomain"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -39134,6 +39421,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -39382,6 +39670,7 @@
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [

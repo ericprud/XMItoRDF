@@ -35,6 +35,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -139,6 +140,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -497,6 +499,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -598,6 +601,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -683,6 +687,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -765,6 +770,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -932,6 +938,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1413,6 +1420,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Date"
         ],
@@ -1468,6 +1476,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1572,6 +1581,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1679,6 +1689,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1780,6 +1791,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalString"
         ],
@@ -1838,6 +1850,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -1917,6 +1930,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2043,6 +2057,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2125,6 +2140,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2207,6 +2223,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2352,6 +2369,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2497,6 +2515,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2607,6 +2626,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2689,6 +2709,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2796,6 +2817,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -2941,6 +2963,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3023,6 +3046,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3168,6 +3192,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3275,6 +3300,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3420,6 +3446,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3502,6 +3529,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3603,6 +3631,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3707,6 +3736,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3789,6 +3819,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -3934,6 +3965,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#DynamicTextContent"
         ],
@@ -3989,6 +4021,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4134,6 +4167,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry"
         ],
@@ -4222,6 +4256,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4345,6 +4380,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4427,6 +4463,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4572,6 +4609,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4654,6 +4692,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4799,6 +4838,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -4881,6 +4921,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5026,6 +5067,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5108,6 +5150,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5253,6 +5296,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5332,6 +5376,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5411,6 +5456,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5490,6 +5536,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5575,6 +5622,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5682,6 +5730,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5764,6 +5813,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5915,6 +5965,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -5994,6 +6045,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6145,6 +6197,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6380,6 +6433,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#LanguageSpecificStructuredStringType"
         ],
@@ -6435,6 +6489,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6567,6 +6622,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6674,6 +6730,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6841,6 +6898,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -6948,6 +7006,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7140,6 +7199,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7272,6 +7332,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7354,6 +7415,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7499,6 +7561,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7841,6 +7904,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -7923,6 +7987,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8068,6 +8133,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8213,6 +8279,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8320,6 +8387,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificString",
@@ -8372,6 +8440,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#languageSpecificStructuredString",
@@ -8424,6 +8493,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalStructuredString"
         ],
@@ -8531,6 +8601,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8741,6 +8812,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#LanguageSpecificStringType"
         ],
@@ -8851,6 +8923,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -8955,6 +9028,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9090,6 +9164,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#DynamicTextContent"
         ],
@@ -9145,6 +9220,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9255,6 +9331,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ObjectName"
         ],
@@ -9310,6 +9387,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9392,6 +9470,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9537,6 +9616,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9704,6 +9784,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -9808,6 +9889,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10028,6 +10110,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10113,6 +10196,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10195,6 +10279,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ObjectName"
         ],
@@ -10324,6 +10409,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10403,6 +10489,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10485,6 +10572,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10630,6 +10718,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10759,6 +10848,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Image"
         ],
@@ -10841,6 +10931,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ValueString"
         ],
@@ -10899,6 +10990,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -10978,6 +11070,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotationDate"
         ],
@@ -11060,6 +11153,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InternationalIdentifier"
         ],
@@ -11115,6 +11209,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11263,6 +11358,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11345,6 +11441,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11474,6 +11571,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11553,6 +11651,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11676,6 +11775,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11755,6 +11855,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11887,6 +11988,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -11969,6 +12071,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12114,6 +12217,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12196,6 +12300,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12341,6 +12446,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12420,6 +12526,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12574,6 +12681,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12725,6 +12833,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12804,6 +12913,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12883,6 +12993,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -12965,6 +13076,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13047,6 +13159,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13192,6 +13305,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13274,6 +13388,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13356,6 +13471,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13501,6 +13617,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13608,6 +13725,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13753,6 +13871,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13835,6 +13954,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -13980,6 +14100,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14131,6 +14252,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14213,6 +14335,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14380,6 +14503,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -14462,6 +14586,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
@@ -14517,6 +14642,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -14643,6 +14769,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptSystem"
         ],
@@ -14725,6 +14852,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -14829,6 +14957,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -14955,6 +15084,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -15150,6 +15280,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -15298,6 +15429,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -15402,6 +15534,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
@@ -15550,6 +15683,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#RepresentedVariable"
         ],
@@ -15786,6 +15920,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
@@ -15970,6 +16105,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualVariable"
         ],
@@ -16143,6 +16279,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualDomain"
         ],
@@ -16176,6 +16313,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConceptualDomain"
         ],
@@ -16209,6 +16347,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -16335,6 +16474,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
@@ -16417,6 +16557,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Concept"
         ],
@@ -16546,6 +16687,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -16807,6 +16949,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -16933,6 +17076,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -16991,6 +17135,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -17186,6 +17331,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -17290,6 +17436,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -17489,6 +17636,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -17746,6 +17894,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -17917,6 +18066,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -18131,6 +18281,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Unit"
         ],
@@ -18257,6 +18408,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
@@ -18587,6 +18739,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -18713,6 +18866,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
@@ -19043,6 +19197,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -19169,6 +19324,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -19295,6 +19451,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -19591,6 +19748,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -19739,6 +19897,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -19865,6 +20024,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -20085,6 +20245,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -20837,6 +20998,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -20870,6 +21032,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#PhysicalSegmentLocation"
         ],
@@ -21033,6 +21196,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#PhysicalSegmentLayout"
         ],
@@ -21066,6 +21230,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -21458,6 +21623,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -21653,6 +21819,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -21848,6 +22015,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -22027,6 +22195,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -22219,6 +22388,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -22414,6 +22584,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -22543,6 +22714,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -22625,6 +22797,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -22817,6 +22990,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -23242,6 +23416,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Result"
         ],
@@ -23396,6 +23571,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AlgorithmOverview"
         ],
@@ -23451,6 +23627,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#DesignOverview"
         ],
@@ -23555,6 +23732,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Goal"
         ],
@@ -23665,6 +23843,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#MethodologyOverview"
         ],
@@ -23819,6 +23998,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -23974,6 +24154,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24078,6 +24259,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24182,6 +24364,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24330,6 +24513,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24478,6 +24662,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24648,6 +24833,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -24744,6 +24930,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -25332,6 +25519,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
@@ -25387,6 +25575,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -25513,6 +25702,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -26164,6 +26354,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AlgorithmOverview"
         ],
@@ -26197,6 +26388,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowProcess"
         ],
@@ -26301,6 +26493,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -26515,6 +26708,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -26757,6 +26951,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -26952,6 +27147,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -27088,6 +27284,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowStep"
         ],
@@ -27121,6 +27318,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
@@ -27225,6 +27423,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
@@ -27314,6 +27513,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
@@ -27403,6 +27603,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
@@ -27485,6 +27686,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
@@ -27589,6 +27791,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -27862,6 +28065,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
@@ -27895,6 +28099,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ConditionalControlStep"
         ],
@@ -27928,6 +28133,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
@@ -27983,6 +28189,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
@@ -28038,6 +28245,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
@@ -28093,6 +28301,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowStep"
         ],
@@ -28126,6 +28335,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -28303,6 +28513,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -28429,6 +28640,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -28679,6 +28891,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowControlStep"
         ],
@@ -28805,6 +29018,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -28938,6 +29152,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -28993,6 +29208,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#BusinessFunction"
         ],
@@ -29048,6 +29264,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -29130,6 +29347,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#BusinessFunction"
         ],
@@ -29212,6 +29430,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -29396,6 +29615,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -29654,6 +29874,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -29792,6 +30013,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -29939,6 +30161,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -30197,6 +30420,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -30252,6 +30476,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -30334,6 +30559,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -30389,6 +30615,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -30660,6 +30887,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -30764,6 +30992,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#WorkflowProcess"
         ],
@@ -30919,6 +31148,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ExternalMaterial"
         ],
@@ -30974,6 +31204,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -31154,6 +31385,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
@@ -31209,6 +31441,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
@@ -31291,6 +31524,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -31417,6 +31651,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
@@ -31499,6 +31734,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Act"
         ],
@@ -31595,6 +31831,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -31699,6 +31936,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -31732,6 +31970,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Capture"
         ],
@@ -31814,6 +32053,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Capture"
         ],
@@ -31943,6 +32183,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -32054,6 +32295,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -32087,6 +32329,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#InstrumentComponent"
         ],
@@ -32169,6 +32412,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ResponseDomain"
         ],
@@ -32279,6 +32523,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -32361,6 +32606,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
@@ -32634,6 +32880,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
@@ -32667,6 +32914,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -32756,6 +33004,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -33096,6 +33345,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -33313,6 +33563,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -33439,6 +33690,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
@@ -33521,6 +33773,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
@@ -33554,6 +33807,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -33746,6 +34000,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -33919,6 +34174,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -34045,6 +34301,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ViewpointRole"
         ],
@@ -34078,6 +34335,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -34226,6 +34484,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#LogicalRecord"
         ],
@@ -34330,6 +34589,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -34455,6 +34715,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -34628,6 +34889,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -34732,6 +34994,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -34949,6 +35212,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -35141,6 +35405,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
@@ -35248,6 +35513,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
@@ -35418,6 +35684,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Agent"
         ],
@@ -35525,6 +35792,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -35680,6 +35948,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -35897,6 +36166,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -36256,6 +36526,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -36360,6 +36631,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
@@ -36675,6 +36947,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -36823,6 +37096,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -37128,6 +37402,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -37254,6 +37529,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Designation"
         ],
@@ -37336,6 +37612,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
@@ -37418,6 +37695,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -37544,6 +37822,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -37780,6 +38059,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -37835,6 +38115,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -38030,6 +38311,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -38156,6 +38438,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
@@ -38282,6 +38565,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ValueDomain"
         ],
@@ -38408,6 +38692,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#EnumerationDomain"
         ],
@@ -38902,6 +39187,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -39028,6 +39314,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#ValueDomain"
         ],
@@ -39132,6 +39419,7 @@ DDIschema = {
       "abstract": false,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#Identifiable"
         ],
@@ -39380,6 +39668,7 @@ DDIschema = {
       "abstract": true,
       "shapeExpr": {
         "type": "Shape",
+        "closed": true,
         "extends": [
           "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
         ],
