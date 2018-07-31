@@ -1,743 +1,550 @@
 {
-  "_:AccessLocation": {
+  "http://ddi-alliance.org/ns/#AccessLocation": {
     "referrer": "http://ddi-alliance.org/ns/#Machine",
-    "predicate": "http://ddi-alliance.org/ns/#hasAccessLocation",
-    "was": "http://ddi-alliance.org/ns/#AccessLocation"
+    "predicate": "http://ddi-alliance.org/ns/#hasAccessLocation"
   },
-  "_:Address": {
+  "http://ddi-alliance.org/ns/#Address": {
     "referrer": "http://ddi-alliance.org/ns/#ContactInformation",
-    "predicate": "http://ddi-alliance.org/ns/#hasAddress",
-    "was": "http://ddi-alliance.org/ns/#Address"
+    "predicate": "http://ddi-alliance.org/ns/#hasAddress"
   },
-  "_:BibliographicName": {
+  "http://ddi-alliance.org/ns/#BibliographicName": {
     "referrer": "http://ddi-alliance.org/ns/#AgentAssociation",
-    "predicate": "http://ddi-alliance.org/ns/#agentName",
-    "was": "http://ddi-alliance.org/ns/#BibliographicName"
+    "predicate": "http://ddi-alliance.org/ns/#agentName"
   },
-  "_:AgentId": {
+  "http://ddi-alliance.org/ns/#AgentId": {
     "referrer": "http://ddi-alliance.org/ns/#Agent",
-    "predicate": "http://ddi-alliance.org/ns/#hasAgentId",
-    "was": "http://ddi-alliance.org/ns/#AgentId"
+    "predicate": "http://ddi-alliance.org/ns/#hasAgentId"
   },
-  "_:AgentIndicator": {
+  "http://ddi-alliance.org/ns/#AgentIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#AgentListing",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#AgentIndicator",
-    "newReferrer": "_:AgentListing"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:AgentRelation": {
+  "http://ddi-alliance.org/ns/#AgentRelation": {
     "referrer": "http://ddi-alliance.org/ns/#AgentRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#AgentRelation",
-    "newReferrer": "_:AgentRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:ResourceIdentifier": {
+  "http://ddi-alliance.org/ns/#ResourceIdentifier": {
     "referrer": "http://ddi-alliance.org/ns/#Annotation",
-    "predicate": "http://ddi-alliance.org/ns/#relatedResource",
-    "was": "http://ddi-alliance.org/ns/#ResourceIdentifier"
+    "predicate": "http://ddi-alliance.org/ns/#relatedResource"
   },
-  "_:AreaCoverage": {
+  "http://ddi-alliance.org/ns/#AreaCoverage": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicExtent",
-    "predicate": "http://ddi-alliance.org/ns/#hasAreaCoverage",
-    "was": "http://ddi-alliance.org/ns/#AreaCoverage",
-    "newReferrer": "_:GeographicExtent"
+    "predicate": "http://ddi-alliance.org/ns/#hasAreaCoverage"
   },
-  "_:AudioSegment": {
+  "http://ddi-alliance.org/ns/#AudioSegment": {
     "referrer": "http://ddi-alliance.org/ns/#Segment",
-    "predicate": "http://ddi-alliance.org/ns/#usesAudioSegment",
-    "was": "http://ddi-alliance.org/ns/#AudioSegment",
-    "newReferrer": "_:Segment"
+    "predicate": "http://ddi-alliance.org/ns/#usesAudioSegment"
   },
-  "_:BasedOnObjectInformation": {
+  "http://ddi-alliance.org/ns/#BasedOnObjectInformation": {
     "referrer": "http://ddi-alliance.org/ns/#Identifiable",
-    "predicate": "http://ddi-alliance.org/ns/#basedOnObject",
-    "was": "http://ddi-alliance.org/ns/#BasedOnObjectInformation"
+    "predicate": "http://ddi-alliance.org/ns/#basedOnObject"
   },
-  "_:BusinessProcessIndicator": {
+  "http://ddi-alliance.org/ns/#BusinessProcessIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#DataPipeline",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#BusinessProcessIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:BusinessProcess": {
+  "http://ddi-alliance.org/ns/#BusinessProcess": {
     "referrer": "http://ddi-alliance.org/ns/#BusinessProcessIndicator",
-    "predicate": "http://ddi-alliance.org/ns/#member",
-    "was": "http://ddi-alliance.org/ns/#BusinessProcess",
-    "newReferrer": "_:BusinessProcessIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#member"
   },
-  "_:CategoryIndicator": {
+  "http://ddi-alliance.org/ns/#CategoryIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#CategorySet",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#CategoryIndicator",
-    "newReferrer": "_:CategorySet"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:CategoryRelation": {
+  "http://ddi-alliance.org/ns/#CategoryRelation": {
     "referrer": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#CategoryRelation",
-    "newReferrer": "_:CategoryRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:CategoryStatistic": {
+  "http://ddi-alliance.org/ns/#CategoryStatistic": {
     "referrer": "http://ddi-alliance.org/ns/#VariableStatistics",
-    "predicate": "http://ddi-alliance.org/ns/#hasCategoryStatistic",
-    "was": "http://ddi-alliance.org/ns/#CategoryStatistic",
-    "newReferrer": "_:VariableStatistics"
+    "predicate": "http://ddi-alliance.org/ns/#hasCategoryStatistic"
   },
-  "_:CharacterOffset": {
+  "http://ddi-alliance.org/ns/#CharacterOffset": {
     "referrer": "http://ddi-alliance.org/ns/#TextualSegment",
-    "predicate": "http://ddi-alliance.org/ns/#characterParameter",
-    "was": "http://ddi-alliance.org/ns/#CharacterOffset",
-    "newReferrer": "_:TextualSegment"
+    "predicate": "http://ddi-alliance.org/ns/#characterParameter"
   },
-  "_:ClassificationIndexEntryIndicator": {
+  "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationIndex",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#ClassificationIndexEntryIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:ClassificationItemIndicator": {
+  "http://ddi-alliance.org/ns/#ClassificationItemIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#StatisticalClassification",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#ClassificationItemIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:ClassificationItemRelation": {
+  "http://ddi-alliance.org/ns/#ClassificationItemRelation": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#ClassificationItemRelation",
-    "newReferrer": "_:ClassificationItemRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:ClassificationSeriesIndicator": {
+  "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationFamily",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#ClassificationSeriesIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:ClassificationSeriesRelation": {
+  "http://ddi-alliance.org/ns/#ClassificationSeriesRelation": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#ClassificationSeriesRelation",
-    "newReferrer": "_:ClassificationSeriesRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:CodeRelation": {
+  "http://ddi-alliance.org/ns/#CodeRelation": {
     "referrer": "http://ddi-alliance.org/ns/#CodeRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#CodeRelation",
-    "newReferrer": "_:CodeRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:Command": {
+  "http://ddi-alliance.org/ns/#Command": {
     "referrer": "http://ddi-alliance.org/ns/#CommandCode",
-    "predicate": "http://ddi-alliance.org/ns/#usesCommand",
-    "was": "http://ddi-alliance.org/ns/#Command"
+    "predicate": "http://ddi-alliance.org/ns/#usesCommand"
   },
-  "_:CommandFile": {
+  "http://ddi-alliance.org/ns/#CommandFile": {
     "referrer": "http://ddi-alliance.org/ns/#CommandCode",
-    "predicate": "http://ddi-alliance.org/ns/#usesCommandFile",
-    "was": "http://ddi-alliance.org/ns/#CommandFile"
+    "predicate": "http://ddi-alliance.org/ns/#usesCommandFile"
   },
-  "_:ConceptIndicator": {
+  "http://ddi-alliance.org/ns/#ConceptIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#ConceptSystem",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#ConceptIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:ConceptRelation": {
+  "http://ddi-alliance.org/ns/#ConceptRelation": {
     "referrer": "http://ddi-alliance.org/ns/#ConceptRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#ConceptRelation",
-    "newReferrer": "_:ConceptRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:WebLink": {
+  "http://ddi-alliance.org/ns/#WebLink": {
     "referrer": "http://ddi-alliance.org/ns/#ContactInformation",
-    "predicate": "http://ddi-alliance.org/ns/#website",
-    "was": "http://ddi-alliance.org/ns/#WebLink"
+    "predicate": "http://ddi-alliance.org/ns/#website"
   },
-  "_:Email": {
+  "http://ddi-alliance.org/ns/#Email": {
     "referrer": "http://ddi-alliance.org/ns/#ContactInformation",
-    "predicate": "http://ddi-alliance.org/ns/#hasEmail",
-    "was": "http://ddi-alliance.org/ns/#Email"
+    "predicate": "http://ddi-alliance.org/ns/#hasEmail"
   },
-  "_:ElectronicMessageSystem": {
+  "http://ddi-alliance.org/ns/#ElectronicMessageSystem": {
     "referrer": "http://ddi-alliance.org/ns/#ContactInformation",
-    "predicate": "http://ddi-alliance.org/ns/#electronicMessaging",
-    "was": "http://ddi-alliance.org/ns/#ElectronicMessageSystem"
+    "predicate": "http://ddi-alliance.org/ns/#electronicMessaging"
   },
-  "_:Telephone": {
+  "http://ddi-alliance.org/ns/#Telephone": {
     "referrer": "http://ddi-alliance.org/ns/#ContactInformation",
-    "predicate": "http://ddi-alliance.org/ns/#hasTelephone",
-    "was": "http://ddi-alliance.org/ns/#Telephone"
+    "predicate": "http://ddi-alliance.org/ns/#hasTelephone"
   },
-  "_:CustomItemIndicator": {
+  "http://ddi-alliance.org/ns/#CustomItemIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#CustomStructure",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#CustomItemIndicator",
-    "newReferrer": "_:CustomStructure"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:CustomItemRelation": {
+  "http://ddi-alliance.org/ns/#CustomItemRelation": {
     "referrer": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#CustomItemRelation",
-    "newReferrer": "_:CustomItemRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:CustomValueIndicator": {
+  "http://ddi-alliance.org/ns/#CustomValueIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#CustomInstance",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#CustomValueIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:DataPointIndicator": {
+  "http://ddi-alliance.org/ns/#DataPointIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#DataPointIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:DataPointRelation": {
+  "http://ddi-alliance.org/ns/#DataPointRelation": {
     "referrer": "http://ddi-alliance.org/ns/#DataPointRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#DataPointRelation",
-    "newReferrer": "_:DataPointRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:DataStoreIndicator": {
+  "http://ddi-alliance.org/ns/#DataStoreIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#DataStoreLibrary",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#DataStoreIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:DataStoreRelation": {
+  "http://ddi-alliance.org/ns/#DataStoreRelation": {
     "referrer": "http://ddi-alliance.org/ns/#DataStoreRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#DataStoreRelation",
-    "newReferrer": "_:DataStoreRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:NonIsoDateType": {
+  "http://ddi-alliance.org/ns/#NonIsoDateType": {
     "referrer": "http://ddi-alliance.org/ns/#Date",
-    "predicate": "http://ddi-alliance.org/ns/#nonIsoDate",
-    "was": "http://ddi-alliance.org/ns/#NonIsoDateType"
+    "predicate": "http://ddi-alliance.org/ns/#nonIsoDate"
   },
-  "_:ElseIfAction": {
+  "http://ddi-alliance.org/ns/#ElseIfAction": {
     "referrer": "http://ddi-alliance.org/ns/#IfThenElse",
-    "predicate": "http://ddi-alliance.org/ns/#elseIf",
-    "was": "http://ddi-alliance.org/ns/#ElseIfAction"
+    "predicate": "http://ddi-alliance.org/ns/#elseIf"
   },
-  "_:Form": {
+  "http://ddi-alliance.org/ns/#Form": {
     "referrer": "http://ddi-alliance.org/ns/#Access",
-    "predicate": "http://ddi-alliance.org/ns/#accessPermission",
-    "was": "http://ddi-alliance.org/ns/#Form"
+    "predicate": "http://ddi-alliance.org/ns/#accessPermission"
   },
-  "_:GeographicUnitIndicator": {
+  "http://ddi-alliance.org/ns/#GeographicUnitIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:GeographicUnitRelation": {
+  "http://ddi-alliance.org/ns/#GeographicUnitRelation": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitRelation",
-    "newReferrer": "_:GeographicUnitRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:GeographicUnitTypeIndicator": {
+  "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitTypeIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:GeographicUnitTypeRelation": {
+  "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelation",
-    "newReferrer": "_:GeographicUnitTypeRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:ImageArea": {
+  "http://ddi-alliance.org/ns/#ImageArea": {
     "referrer": "http://ddi-alliance.org/ns/#Segment",
-    "predicate": "http://ddi-alliance.org/ns/#usesImageArea",
-    "was": "http://ddi-alliance.org/ns/#ImageArea",
-    "newReferrer": "_:Segment"
+    "predicate": "http://ddi-alliance.org/ns/#usesImageArea"
   },
-  "_:IndexEntryRelation": {
+  "http://ddi-alliance.org/ns/#IndexEntryRelation": {
     "referrer": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#IndexEntryRelation",
-    "newReferrer": "_:IndexEntryRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:IndividualName": {
+  "http://ddi-alliance.org/ns/#IndividualName": {
     "referrer": "http://ddi-alliance.org/ns/#Individual",
-    "predicate": "http://ddi-alliance.org/ns/#hasIndividualName",
-    "was": "http://ddi-alliance.org/ns/#IndividualName"
+    "predicate": "http://ddi-alliance.org/ns/#hasIndividualName"
   },
-  "_:InstanceVariableRelation": {
+  "http://ddi-alliance.org/ns/#InstanceVariableRelation": {
     "referrer": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#InstanceVariableRelation",
-    "newReferrer": "_:InstanceVariableRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:InstanceVariableValueMap": {
+  "http://ddi-alliance.org/ns/#InstanceVariableValueMap": {
     "referrer": "http://ddi-alliance.org/ns/#RecordRelation",
-    "predicate": "http://ddi-alliance.org/ns/#correspondence",
-    "was": "http://ddi-alliance.org/ns/#InstanceVariableValueMap",
-    "newReferrer": "_:RecordRelation"
+    "predicate": "http://ddi-alliance.org/ns/#correspondence"
   },
-  "_:Level": {
+  "http://ddi-alliance.org/ns/#Level": {
     "referrer": "http://ddi-alliance.org/ns/#LevelStructure",
-    "predicate": "http://ddi-alliance.org/ns/#containsLevel",
-    "was": "http://ddi-alliance.org/ns/#Level"
+    "predicate": "http://ddi-alliance.org/ns/#containsLevel"
   },
-  "_:LineParameter": {
+  "http://ddi-alliance.org/ns/#LineParameter": {
     "referrer": "http://ddi-alliance.org/ns/#TextualSegment",
-    "predicate": "http://ddi-alliance.org/ns/#lineParamenter",
-    "was": "http://ddi-alliance.org/ns/#LineParameter",
-    "newReferrer": "_:TextualSegment"
+    "predicate": "http://ddi-alliance.org/ns/#lineParamenter"
   },
-  "_:LocalIdFormat": {
+  "http://ddi-alliance.org/ns/#LocalIdFormat": {
     "referrer": "http://ddi-alliance.org/ns/#Identifiable",
-    "predicate": "http://ddi-alliance.org/ns/#localId",
-    "was": "http://ddi-alliance.org/ns/#LocalIdFormat"
+    "predicate": "http://ddi-alliance.org/ns/#localId"
   },
-  "_:LogicalRecordIndicator": {
+  "http://ddi-alliance.org/ns/#LogicalRecordIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#DataStore",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#LogicalRecordIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:LogicalRecordRelation": {
+  "http://ddi-alliance.org/ns/#LogicalRecordRelation": {
     "referrer": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#LogicalRecordRelation",
-    "newReferrer": "_:LogicalRecordRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:NumberRange": {
+  "http://ddi-alliance.org/ns/#NumberRange": {
     "referrer": "http://ddi-alliance.org/ns/#NumericResponseDomain",
-    "predicate": "http://ddi-alliance.org/ns/#usesNumberRange",
-    "was": "http://ddi-alliance.org/ns/#NumberRange"
+    "predicate": "http://ddi-alliance.org/ns/#usesNumberRange"
   },
-  "_:OrganizationName": {
+  "http://ddi-alliance.org/ns/#OrganizationName": {
     "referrer": "http://ddi-alliance.org/ns/#Organization",
-    "predicate": "http://ddi-alliance.org/ns/#hasOrganizationName",
-    "was": "http://ddi-alliance.org/ns/#OrganizationName"
+    "predicate": "http://ddi-alliance.org/ns/#hasOrganizationName"
   },
-  "_:PhysicalRecordSegmentIndicator": {
+  "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalDataSet",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:PhysicalRecordSegmentRelation": {
+  "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#PhysicalRecordSegmentRelation",
-    "newReferrer": "_:PhysicalOrderRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:PrivateImage": {
+  "http://ddi-alliance.org/ns/#PrivateImage": {
     "referrer": "http://ddi-alliance.org/ns/#Agent",
-    "predicate": "http://ddi-alliance.org/ns/#image",
-    "was": "http://ddi-alliance.org/ns/#PrivateImage"
+    "predicate": "http://ddi-alliance.org/ns/#image"
   },
-  "_:RationaleDefinition": {
+  "http://ddi-alliance.org/ns/#RationaleDefinition": {
     "referrer": "http://ddi-alliance.org/ns/#Identifiable",
-    "predicate": "http://ddi-alliance.org/ns/#versionRationale",
-    "was": "http://ddi-alliance.org/ns/#RationaleDefinition"
+    "predicate": "http://ddi-alliance.org/ns/#versionRationale"
   },
-  "_:ReferenceDate": {
+  "http://ddi-alliance.org/ns/#ReferenceDate": {
     "referrer": "http://ddi-alliance.org/ns/#TemporalCoverage",
-    "predicate": "http://ddi-alliance.org/ns/#coverageDate",
-    "was": "http://ddi-alliance.org/ns/#ReferenceDate",
-    "newReferrer": "_:TemporalCoverage"
+    "predicate": "http://ddi-alliance.org/ns/#coverageDate"
   },
-  "_:Segment": {
+  "http://ddi-alliance.org/ns/#Segment": {
     "referrer": "http://ddi-alliance.org/ns/#ExternalMaterial",
-    "predicate": "http://ddi-alliance.org/ns/#usesSegment",
-    "was": "http://ddi-alliance.org/ns/#Segment"
+    "predicate": "http://ddi-alliance.org/ns/#usesSegment"
   },
-  "_:VideoSegment": {
+  "http://ddi-alliance.org/ns/#VideoSegment": {
     "referrer": "http://ddi-alliance.org/ns/#Segment",
-    "predicate": "http://ddi-alliance.org/ns/#usesVideoSegment",
-    "was": "http://ddi-alliance.org/ns/#VideoSegment",
-    "newReferrer": "_:Segment"
+    "predicate": "http://ddi-alliance.org/ns/#usesVideoSegment"
   },
-  "_:TextualSegment": {
+  "http://ddi-alliance.org/ns/#TextualSegment": {
     "referrer": "http://ddi-alliance.org/ns/#Segment",
-    "predicate": "http://ddi-alliance.org/ns/#useseTextualSegment",
-    "was": "http://ddi-alliance.org/ns/#TextualSegment",
-    "newReferrer": "_:Segment"
+    "predicate": "http://ddi-alliance.org/ns/#useseTextualSegment"
   },
-  "_:SpatialLine": {
+  "http://ddi-alliance.org/ns/#SpatialLine": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicExtent",
-    "predicate": "http://ddi-alliance.org/ns/#isSpatialLine",
-    "was": "http://ddi-alliance.org/ns/#SpatialLine",
-    "newReferrer": "_:GeographicExtent"
+    "predicate": "http://ddi-alliance.org/ns/#isSpatialLine"
   },
-  "_:StatisticalClassificationIndicator": {
+  "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationSeries",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#StatisticalClassificationIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:StatisticalClassificationRelation": {
+  "http://ddi-alliance.org/ns/#StatisticalClassificationRelation": {
     "referrer": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#StatisticalClassificationRelation",
-    "newReferrer": "_:StatisticalClassificationRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:StudyIndicator": {
+  "http://ddi-alliance.org/ns/#StudyIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#StudySeries",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#StudyIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:StudyRelation": {
+  "http://ddi-alliance.org/ns/#StudyRelation": {
     "referrer": "http://ddi-alliance.org/ns/#StudyRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#StudyRelation",
-    "newReferrer": "_:StudyRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:SummaryStatistic": {
+  "http://ddi-alliance.org/ns/#SummaryStatistic": {
     "referrer": "http://ddi-alliance.org/ns/#VariableStatistics",
-    "predicate": "http://ddi-alliance.org/ns/#hasSummaryStatistic",
-    "was": "http://ddi-alliance.org/ns/#SummaryStatistic",
-    "newReferrer": "_:VariableStatistics"
+    "predicate": "http://ddi-alliance.org/ns/#hasSummaryStatistic"
   },
-  "_:TargetSample": {
+  "http://ddi-alliance.org/ns/#TargetSample": {
     "referrer": "http://ddi-alliance.org/ns/#SamplingGoal",
-    "predicate": "http://ddi-alliance.org/ns/#targetSampleSize",
-    "was": "http://ddi-alliance.org/ns/#TargetSample",
-    "newReferrer": "_:SamplingGoal"
+    "predicate": "http://ddi-alliance.org/ns/#targetSampleSize"
   },
-  "_:TypedDescriptiveText": {
+  "http://ddi-alliance.org/ns/#TypedDescriptiveText": {
     "referrer": "http://ddi-alliance.org/ns/#DocumentInformation",
-    "predicate": "http://ddi-alliance.org/ns/#contentCoverage",
-    "was": "http://ddi-alliance.org/ns/#TypedDescriptiveText"
+    "predicate": "http://ddi-alliance.org/ns/#contentCoverage"
   },
-  "_:ValueMappingIndicator": {
+  "http://ddi-alliance.org/ns/#ValueMappingIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalSegmentLayout",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#ValueMappingIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:ValueMappingRelation": {
+  "http://ddi-alliance.org/ns/#ValueMappingRelation": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#ValueMappingRelation",
-    "newReferrer": "_:PhysicalLayoutRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:VariableIndicator": {
+  "http://ddi-alliance.org/ns/#VariableIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#VariableCollection",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#VariableIndicator",
-    "newReferrer": "_:VariableCollection"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:VariableRelation": {
+  "http://ddi-alliance.org/ns/#VariableRelation": {
     "referrer": "http://ddi-alliance.org/ns/#VariableRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#VariableRelation",
-    "newReferrer": "_:VariableRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:VocabularyEntryIndicator": {
+  "http://ddi-alliance.org/ns/#VocabularyEntryIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#ControlledVocabulary",
-    "predicate": "http://ddi-alliance.org/ns/#contains",
-    "was": "http://ddi-alliance.org/ns/#VocabularyEntryIndicator"
+    "predicate": "http://ddi-alliance.org/ns/#contains"
   },
-  "_:VocabularyEntryRelation": {
+  "http://ddi-alliance.org/ns/#VocabularyEntryRelation": {
     "referrer": "http://ddi-alliance.org/ns/#VocabularyRelationStructure",
-    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-    "was": "http://ddi-alliance.org/ns/#VocabularyEntryRelation",
-    "newReferrer": "_:VocabularyRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
-  "_:WorkflowStepOrder": {
+  "http://ddi-alliance.org/ns/#WorkflowStepOrder": {
     "referrer": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
-    "predicate": "http://ddi-alliance.org/ns/#orderedStep",
-    "was": "http://ddi-alliance.org/ns/#WorkflowStepOrder"
+    "predicate": "http://ddi-alliance.org/ns/#orderedStep"
   },
-  "_:CategoryRelationStructure": {
+  "http://ddi-alliance.org/ns/#CategoryRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#CategorySet",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#CategoryRelationStructure",
-    "newReferrer": "_:CategorySet"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:CategorySet": {
+  "http://ddi-alliance.org/ns/#CategorySet": {
     "referrer": "http://ddi-alliance.org/ns/#EnumerationDomain",
-    "predicate": "http://ddi-alliance.org/ns/#references",
-    "was": "http://ddi-alliance.org/ns/#CategorySet"
+    "predicate": "http://ddi-alliance.org/ns/#references"
   },
-  "_:ConceptRelationStructure": {
+  "http://ddi-alliance.org/ns/#ConceptRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#ConceptSystem",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#ConceptRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:SubstantiveValueDomain": {
+  "http://ddi-alliance.org/ns/#SubstantiveValueDomain": {
     "referrer": "http://ddi-alliance.org/ns/#RepresentedVariable",
-    "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveValuesFrom",
-    "was": "http://ddi-alliance.org/ns/#SubstantiveValueDomain"
+    "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveValuesFrom"
   },
-  "_:VariableCollection": {
+  "http://ddi-alliance.org/ns/#VariableCollection": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection",
-    "was": "http://ddi-alliance.org/ns/#VariableCollection"
+    "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection"
   },
-  "_:VariableRelationStructure": {
+  "http://ddi-alliance.org/ns/#VariableRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#VariableCollection",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#VariableRelationStructure",
-    "newReferrer": "_:VariableCollection"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:StandardWeight": {
+  "http://ddi-alliance.org/ns/#StandardWeight": {
     "referrer": "http://ddi-alliance.org/ns/#VariableStatistics",
-    "predicate": "http://ddi-alliance.org/ns/#usesStandardWeight",
-    "was": "http://ddi-alliance.org/ns/#StandardWeight",
-    "newReferrer": "_:VariableStatistics"
+    "predicate": "http://ddi-alliance.org/ns/#usesStandardWeight"
   },
-  "_:VariableStatistics": {
+  "http://ddi-alliance.org/ns/#VariableStatistics": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalDataSet",
-    "predicate": "http://ddi-alliance.org/ns/#hasVariableStatistics",
-    "was": "http://ddi-alliance.org/ns/#VariableStatistics"
+    "predicate": "http://ddi-alliance.org/ns/#hasVariableStatistics"
   },
-  "_:Precondition": {
+  "http://ddi-alliance.org/ns/#Precondition": {
     "referrer": "http://ddi-alliance.org/ns/#DesignOverview",
-    "predicate": "http://ddi-alliance.org/ns/#assumesPrecondition",
-    "was": "http://ddi-alliance.org/ns/#Precondition"
+    "predicate": "http://ddi-alliance.org/ns/#assumesPrecondition"
   },
-  "_:ProcessOverview": {
+  "http://ddi-alliance.org/ns/#ProcessOverview": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasProcess",
-    "was": "http://ddi-alliance.org/ns/#ProcessOverview"
+    "predicate": "http://ddi-alliance.org/ns/#hasProcess"
   },
-  "_:GeographicExtent": {
+  "http://ddi-alliance.org/ns/#GeographicExtent": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnit",
-    "predicate": "http://ddi-alliance.org/ns/#hasGeographicExtent",
-    "was": "http://ddi-alliance.org/ns/#GeographicExtent"
+    "predicate": "http://ddi-alliance.org/ns/#hasGeographicExtent"
   },
-  "_:GeographicUnitRelationStructure": {
+  "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:GeographicUnitTypeRelationStructure": {
+  "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#GeographicUnitTypeRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:DataPointRelationStructure": {
+  "http://ddi-alliance.org/ns/#DataPointRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#DataPointRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:PhysicalOrderRelationStructure": {
+  "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalDataSet",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#PhysicalOrderRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:PhysicalLayoutRelationStructure": {
+  "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalSegmentLayout",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#PhysicalLayoutRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:VocabularyRelationStructure": {
+  "http://ddi-alliance.org/ns/#VocabularyRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#ControlledVocabulary",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#VocabularyRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:CustomStructure": {
+  "http://ddi-alliance.org/ns/#CustomStructure": {
     "referrer": "http://ddi-alliance.org/ns/#CustomInstance",
-    "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
-    "was": "http://ddi-alliance.org/ns/#CustomStructure"
+    "predicate": "http://ddi-alliance.org/ns/#correspondsTo"
   },
-  "_:CustomItemRelationStructure": {
+  "http://ddi-alliance.org/ns/#CustomItemRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#CustomStructure",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#CustomItemRelationStructure",
-    "newReferrer": "_:CustomStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:SampleFrame": {
+  "http://ddi-alliance.org/ns/#SampleFrame": {
     "referrer": "http://ddi-alliance.org/ns/#SampleFrame",
-    "predicate": "http://ddi-alliance.org/ns/#sourceFrame",
-    "was": "http://ddi-alliance.org/ns/#SampleFrame",
-    "newReferrer": "_:SampleFrame"
+    "predicate": "http://ddi-alliance.org/ns/#sourceFrame"
   },
-  "_:SamplePopulationResult": {
+  "http://ddi-alliance.org/ns/#SamplePopulationResult": {
     "referrer": "http://ddi-alliance.org/ns/#SamplingProcess",
-    "predicate": "http://ddi-alliance.org/ns/#hasResults",
-    "was": "http://ddi-alliance.org/ns/#SamplePopulationResult"
+    "predicate": "http://ddi-alliance.org/ns/#hasResults"
   },
-  "_:SamplingDesign": {
+  "http://ddi-alliance.org/ns/#SamplingDesign": {
     "referrer": "http://ddi-alliance.org/ns/#SamplingProcedure",
-    "predicate": "http://ddi-alliance.org/ns/#hasDesign",
-    "was": "http://ddi-alliance.org/ns/#SamplingDesign"
+    "predicate": "http://ddi-alliance.org/ns/#hasDesign"
   },
-  "_:SamplingGoal": {
+  "http://ddi-alliance.org/ns/#SamplingGoal": {
     "referrer": "http://ddi-alliance.org/ns/#SamplingDesign",
-    "predicate": "http://ddi-alliance.org/ns/#specifiesGoal",
-    "was": "http://ddi-alliance.org/ns/#SamplingGoal",
-    "newReferrer": "_:SamplingDesign"
+    "predicate": "http://ddi-alliance.org/ns/#specifiesGoal"
   },
-  "_:Budget": {
+  "http://ddi-alliance.org/ns/#Budget": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasBudget",
-    "was": "http://ddi-alliance.org/ns/#Budget"
+    "predicate": "http://ddi-alliance.org/ns/#hasBudget"
   },
-  "_:ComplianceStatement": {
+  "http://ddi-alliance.org/ns/#ComplianceStatement": {
     "referrer": "http://ddi-alliance.org/ns/#Standard",
-    "predicate": "http://ddi-alliance.org/ns/#compliance",
-    "was": "http://ddi-alliance.org/ns/#ComplianceStatement",
-    "newReferrer": "_:Standard"
+    "predicate": "http://ddi-alliance.org/ns/#compliance"
   },
-  "_:Embargo": {
+  "http://ddi-alliance.org/ns/#Embargo": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasEmbargo",
-    "was": "http://ddi-alliance.org/ns/#Embargo"
+    "predicate": "http://ddi-alliance.org/ns/#hasEmbargo"
   },
-  "_:ExPostEvaluation": {
+  "http://ddi-alliance.org/ns/#ExPostEvaluation": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasExPostEvaluation",
-    "was": "http://ddi-alliance.org/ns/#ExPostEvaluation"
+    "predicate": "http://ddi-alliance.org/ns/#hasExPostEvaluation"
   },
-  "_:QualityStatement": {
+  "http://ddi-alliance.org/ns/#QualityStatement": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasQualityStatement",
-    "was": "http://ddi-alliance.org/ns/#QualityStatement"
+    "predicate": "http://ddi-alliance.org/ns/#hasQualityStatement"
   },
-  "_:Standard": {
+  "http://ddi-alliance.org/ns/#Standard": {
     "referrer": "http://ddi-alliance.org/ns/#QualityStatement",
-    "predicate": "http://ddi-alliance.org/ns/#usesStandard",
-    "was": "http://ddi-alliance.org/ns/#Standard",
-    "newReferrer": "_:QualityStatement"
+    "predicate": "http://ddi-alliance.org/ns/#usesStandard"
   },
-  "_:ImplementedInstrument": {
+  "http://ddi-alliance.org/ns/#ImplementedInstrument": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasInstrument",
-    "was": "http://ddi-alliance.org/ns/#ImplementedInstrument"
+    "predicate": "http://ddi-alliance.org/ns/#hasInstrument"
   },
-  "_:AgentListing": {
+  "http://ddi-alliance.org/ns/#AgentListing": {
     "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasAgentListing",
-    "was": "http://ddi-alliance.org/ns/#AgentListing"
+    "predicate": "http://ddi-alliance.org/ns/#hasAgentListing"
   },
-  "_:StudyRelationStructure": {
+  "http://ddi-alliance.org/ns/#StudyRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#StudySeries",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#StudyRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:WorkflowService": {
+  "http://ddi-alliance.org/ns/#WorkflowService": {
     "referrer": "http://ddi-alliance.org/ns/#WorkflowStep",
-    "predicate": "http://ddi-alliance.org/ns/#isPerformedBy",
-    "was": "http://ddi-alliance.org/ns/#WorkflowService"
+    "predicate": "http://ddi-alliance.org/ns/#isPerformedBy"
   },
-  "_:AppliedUse": {
+  "http://ddi-alliance.org/ns/#AppliedUse": {
     "referrer": "http://ddi-alliance.org/ns/#Result",
-    "predicate": "http://ddi-alliance.org/ns/#hasAppliedUse",
-    "was": "http://ddi-alliance.org/ns/#AppliedUse"
+    "predicate": "http://ddi-alliance.org/ns/#hasAppliedUse"
   },
-  "_:Guide": {
+  "http://ddi-alliance.org/ns/#Guide": {
     "referrer": "http://ddi-alliance.org/ns/#AppliedUse",
-    "predicate": "http://ddi-alliance.org/ns/#hasGuide",
-    "was": "http://ddi-alliance.org/ns/#Guide",
-    "newReferrer": "_:AppliedUse"
+    "predicate": "http://ddi-alliance.org/ns/#hasGuide"
   },
-  "_:TemporalCoverage": {
+  "http://ddi-alliance.org/ns/#TemporalCoverage": {
     "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage",
-    "was": "http://ddi-alliance.org/ns/#TemporalCoverage"
+    "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage"
   },
-  "_:TopicalCoverage": {
+  "http://ddi-alliance.org/ns/#TopicalCoverage": {
     "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage",
-    "was": "http://ddi-alliance.org/ns/#TopicalCoverage"
+    "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage"
   },
-  "_:SpatialCoverage": {
+  "http://ddi-alliance.org/ns/#SpatialCoverage": {
     "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage",
-    "was": "http://ddi-alliance.org/ns/#SpatialCoverage"
+    "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage"
   },
-  "_:CodeList": {
+  "http://ddi-alliance.org/ns/#CodeList": {
     "referrer": "http://ddi-alliance.org/ns/#CodeListResponseDomain",
-    "predicate": "http://ddi-alliance.org/ns/#usesCodeList",
-    "was": "http://ddi-alliance.org/ns/#CodeList"
+    "predicate": "http://ddi-alliance.org/ns/#usesCodeList"
   },
-  "_:ConceptualInstrument": {
+  "http://ddi-alliance.org/ns/#ConceptualInstrument": {
     "referrer": "http://ddi-alliance.org/ns/#ImplementedInstrument",
-    "predicate": "http://ddi-alliance.org/ns/#usesConceptualInstrument",
-    "was": "http://ddi-alliance.org/ns/#ConceptualInstrument",
-    "newReferrer": "_:ImplementedInstrument"
+    "predicate": "http://ddi-alliance.org/ns/#usesConceptualInstrument"
   },
-  "_:RepresentedMeasurement": {
+  "http://ddi-alliance.org/ns/#RepresentedMeasurement": {
     "referrer": "http://ddi-alliance.org/ns/#InstanceMeasurement",
-    "predicate": "http://ddi-alliance.org/ns/#instantiates",
-    "was": "http://ddi-alliance.org/ns/#RepresentedMeasurement"
+    "predicate": "http://ddi-alliance.org/ns/#instantiates"
   },
-  "_:RepresentedQuestion": {
+  "http://ddi-alliance.org/ns/#RepresentedQuestion": {
     "referrer": "http://ddi-alliance.org/ns/#InstanceQuestion",
-    "predicate": "http://ddi-alliance.org/ns/#instantiates",
-    "was": "http://ddi-alliance.org/ns/#RepresentedQuestion"
+    "predicate": "http://ddi-alliance.org/ns/#instantiates"
   },
-  "_:AttributeRole": {
+  "http://ddi-alliance.org/ns/#AttributeRole": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
-    "predicate": "http://ddi-alliance.org/ns/#hasAttributeRole",
-    "was": "http://ddi-alliance.org/ns/#AttributeRole",
-    "newReferrer": "_:UnitDataViewpoint"
+    "predicate": "http://ddi-alliance.org/ns/#hasAttributeRole"
   },
-  "_:Datum": {
+  "http://ddi-alliance.org/ns/#Datum": {
     "referrer": "http://ddi-alliance.org/ns/#DataPoint",
-    "predicate": "http://ddi-alliance.org/ns/#hasDatum",
-    "was": "http://ddi-alliance.org/ns/#Datum"
+    "predicate": "http://ddi-alliance.org/ns/#hasDatum"
   },
-  "_:LogicalRecordRelationStructure": {
+  "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#DataStore",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#LogicalRecordRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:RecordRelation": {
+  "http://ddi-alliance.org/ns/#RecordRelation": {
     "referrer": "http://ddi-alliance.org/ns/#DataStore",
-    "predicate": "http://ddi-alliance.org/ns/#usesRecordRelation",
-    "was": "http://ddi-alliance.org/ns/#RecordRelation"
+    "predicate": "http://ddi-alliance.org/ns/#usesRecordRelation"
   },
-  "_:DataStoreRelationStructure": {
+  "http://ddi-alliance.org/ns/#DataStoreRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#DataStoreLibrary",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#DataStoreRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:IdentifierRole": {
+  "http://ddi-alliance.org/ns/#IdentifierRole": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
-    "predicate": "http://ddi-alliance.org/ns/#hasIdentifierRole",
-    "was": "http://ddi-alliance.org/ns/#IdentifierRole",
-    "newReferrer": "_:UnitDataViewpoint"
+    "predicate": "http://ddi-alliance.org/ns/#hasIdentifierRole"
   },
-  "_:InstanceVariableRelationStructure": {
+  "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataRecord",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#InstanceVariableRelationStructure",
-    "newReferrer": "_:UnitDataRecord"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:MeasureRole": {
+  "http://ddi-alliance.org/ns/#MeasureRole": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
-    "predicate": "http://ddi-alliance.org/ns/#hasMeasureRole",
-    "was": "http://ddi-alliance.org/ns/#MeasureRole",
-    "newReferrer": "_:UnitDataViewpoint"
+    "predicate": "http://ddi-alliance.org/ns/#hasMeasureRole"
   },
-  "_:UnitDataRecord": {
+  "http://ddi-alliance.org/ns/#UnitDataRecord": {
     "referrer": "http://ddi-alliance.org/ns/#RecordRelation",
-    "predicate": "http://ddi-alliance.org/ns/#maps",
-    "was": "http://ddi-alliance.org/ns/#UnitDataRecord",
-    "newReferrer": "_:RecordRelation"
+    "predicate": "http://ddi-alliance.org/ns/#maps"
   },
-  "_:UnitDataViewpoint": {
+  "http://ddi-alliance.org/ns/#UnitDataViewpoint": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataRecord",
-    "predicate": "http://ddi-alliance.org/ns/#isViewedFrom",
-    "was": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
-    "newReferrer": "_:UnitDataRecord"
+    "predicate": "http://ddi-alliance.org/ns/#isViewedFrom"
   },
-  "_:AgentRelationStructure": {
+  "http://ddi-alliance.org/ns/#AgentRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#AgentListing",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#AgentRelationStructure",
-    "newReferrer": "_:AgentListing"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:ClassificationSeriesRelationStructure": {
+  "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationFamily",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:IndexEntryRelationStructure": {
+  "http://ddi-alliance.org/ns/#IndexEntryRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationIndex",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#IndexEntryRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:ClassificationItemRelationStructure": {
+  "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#StatisticalClassification",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#ClassificationItemRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:StatisticalClassificationRelationStructure": {
+  "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#ClassificationSeries",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#StatisticalClassificationRelationStructure"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   },
-  "_:CodeRelationStructure": {
+  "http://ddi-alliance.org/ns/#CodeRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#CodeList",
-    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-    "was": "http://ddi-alliance.org/ns/#CodeRelationStructure",
-    "newReferrer": "_:CodeList"
+    "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
   }
 }
