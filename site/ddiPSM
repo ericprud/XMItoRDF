@@ -161,6 +161,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   if (CLI.nestShapes) {
     let compiled = ShEx.Util.ShExJtoAS(shexj)
     let renamed = ShEx.Util.nestShapes(shexj, {
+      rename: false,
       transform: function (id, shapeExpr) {
         if (!id.startsWith(DDI)) {
           throw Error('transformation target "' + id + '" doesn\'t start  with "' + DDI + '"')
