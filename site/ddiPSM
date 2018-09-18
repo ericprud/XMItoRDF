@@ -59,8 +59,8 @@ const normalizeType = function (type) {
 }
 
 const fs = require('fs')
-const UmlModel = require('../doc/uml-model')()
-const CanonXmiParser = require('../doc/canonical-uml-xmi-parser')
+const UmlModel = require('uml-model')()
+const CanonXmiParser = require('canonical-uml-xmi-parser')
 const ShEx = require('shex')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,

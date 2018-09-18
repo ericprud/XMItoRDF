@@ -95,7 +95,7 @@ function main () {
       'xsd:anguage': XSD + 'language'
     }
   }
-  const UmlModel = require('./uml-model')({
+  const UmlModel = require('uml-model')({
     externalDatatype: n => n.startsWith(XSD)
   }, $)
   const UmlParser = require('./canonical-uml-xmi-parser')(ParserOpts)

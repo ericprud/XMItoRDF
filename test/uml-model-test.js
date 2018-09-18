@@ -55,7 +55,7 @@ const ParserOpts = {
   }
 }
 
-const UmlModel = require('../doc/uml-model')({
+const UmlModel = require('uml-model')({
   externalDatatype: n => n && n.startsWith(UMLP)
 })
 
