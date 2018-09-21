@@ -1,4 +1,97 @@
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Identification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
         <Class abbreviatedIRI="ddi:Views"/>
     </SubClassOf>
@@ -739,17 +832,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -1916,25 +2002,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:SamplingView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:SamplingView"/>
     </SubClassOf>
@@ -1988,6 +2055,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
@@ -2787,7 +2869,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -2796,9 +2878,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -3969,17 +4055,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -4036,15 +4115,7 @@ d:LoopType</Literal>
         <AbbreviatedIRI>ddi:MetadataDrivenAction</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -4052,7 +4123,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" SDTL as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
@@ -4376,7 +4455,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -4385,9 +4464,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -4906,17 +4989,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -5506,6 +5582,35 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:Code</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.
+
+Examples
+==========
+The letter M might stand for the category Male in the CodeList called Gender.
+
+Explanatory notes
+===================
+A Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. 
+
+It should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.
+
+DDI 3.2 mapping
+=================
+l:CodeType
+
+GSIM mapping
+==============
+Code</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
     </SubClassOf>
@@ -5530,6 +5635,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Concept"/>
@@ -6281,25 +6401,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
     </SubClassOf>
@@ -6947,6 +7048,26 @@ DDI 3.2 mapping
 l:CategoryType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CategoryRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of categories within a collection. Allows for the specification of complex relationships among categories.
+
+Examples
+==========
+The category of student might be described as having sub-types of primary school student and high school student.
+
+Explanatory notes
+===================
+The CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. 
+This is a kind of a ConceptRelationStructure restricted to categories (which are concepts).</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -6962,25 +7083,6 @@ Examples
 "Male" and "Female" categories in a CategorySet named "Gender"
 
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
@@ -7053,6 +7155,21 @@ DDI 3.2 mapping
 d:CodeDomainType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -7099,6 +7216,52 @@ c:ConceptType
 GSIM mapping
 ==============
 Concept</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.
+
+Examples
+==========
+A concept of vacation might be described as having sub-types of beach vacation and mountain vacation.
+
+Explanatory notes
+===================
+The ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptSystem</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A set of Concepts structured by the relations among them. [GSIM 1.1] 
+
+Examples
+==========
+1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  
+
+Explanatory notes
+===================
+Note that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.
+
+DDI 3.2 mapping
+=================
+c:ConceptSchemeType
+
+GSIM mapping
+==============
+Concept System</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
@@ -7744,7 +7907,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -7753,9 +7916,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -8772,17 +8939,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -9949,25 +10109,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:SamplingView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:SamplingView"/>
     </SubClassOf>
@@ -10021,6 +10162,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
@@ -10820,7 +10976,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -10829,9 +10985,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -12002,17 +12162,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -12069,15 +12222,7 @@ d:LoopType</Literal>
         <AbbreviatedIRI>ddi:MetadataDrivenAction</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -12085,7 +12230,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" SDTL as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
@@ -12409,7 +12562,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -12418,9 +12571,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -12939,17 +13096,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -13539,6 +13689,35 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:Code</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.
+
+Examples
+==========
+The letter M might stand for the category Male in the CodeList called Gender.
+
+Explanatory notes
+===================
+A Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. 
+
+It should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.
+
+DDI 3.2 mapping
+=================
+l:CodeType
+
+GSIM mapping
+==============
+Code</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
     </SubClassOf>
@@ -13563,6 +13742,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Concept"/>
@@ -14314,25 +14508,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
     </SubClassOf>
@@ -14980,6 +15155,26 @@ DDI 3.2 mapping
 l:CategoryType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CategoryRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of categories within a collection. Allows for the specification of complex relationships among categories.
+
+Examples
+==========
+The category of student might be described as having sub-types of primary school student and high school student.
+
+Explanatory notes
+===================
+The CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. 
+This is a kind of a ConceptRelationStructure restricted to categories (which are concepts).</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -14995,25 +15190,6 @@ Examples
 "Male" and "Female" categories in a CategorySet named "Gender"
 
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
@@ -15086,6 +15262,21 @@ DDI 3.2 mapping
 d:CodeDomainType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -15132,6 +15323,52 @@ c:ConceptType
 GSIM mapping
 ==============
 Concept</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.
+
+Examples
+==========
+A concept of vacation might be described as having sub-types of beach vacation and mountain vacation.
+
+Explanatory notes
+===================
+The ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptSystem</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A set of Concepts structured by the relations among them. [GSIM 1.1] 
+
+Examples
+==========
+1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  
+
+Explanatory notes
+===================
+Note that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.
+
+DDI 3.2 mapping
+=================
+c:ConceptSchemeType
+
+GSIM mapping
+==============
+Concept System</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
@@ -15777,7 +16014,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -15786,9 +16023,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -15971,96 +16212,3 @@ Explanatory notes
 ===================
 related to org:Organization which is described as "Represents a collection of people organized together into a community or other..."</Literal>
     </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Utility_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Workflows_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Discovery_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Identification_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Agents_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Representations_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>

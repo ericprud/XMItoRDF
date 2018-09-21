@@ -5,49 +5,6 @@
 
 
       <section>
-        <h3 id="ddi:RelationSpecification">ddi:RelationSpecification</h3>
-        <div>
-          <p>20 references:</p>
-          <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:CustomValueRelation">ddi:CustomValueRelation</a></li>
-            <li><a href="#ddi:ViewpointRoleRelation">ddi:ViewpointRoleRelation</a></li>
-            <li><a href="#ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</a></li>
-            <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
-            <li><a href="#ddi:GeographicUnitClassification">ddi:GeographicUnitClassification</a></li>
-            <li><a href="#ddi:GeographicUnitTypeClassification">ddi:GeographicUnitTypeClassification</a></li>
-            <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
-            <li><a href="#ddi:PhysicalRecordSegment">ddi:PhysicalRecordSegment</a></li>
-            <li><a href="#ddi:PhysicalSegmentLayout">ddi:PhysicalSegmentLayout</a></li>
-            <li><a href="#ddi:ControlledVocabulary">ddi:ControlledVocabulary</a></li>
-            <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
-            <li><a href="#ddi:Study">ddi:Study</a></li>
-            <li><a href="#ddi:StudySeries">ddi:StudySeries</a></li>
-            <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
-            <li><a href="#ddi:DataStoreLibrary">ddi:DataStoreLibrary</a></li>
-            <li><a href="#ddi:ClassificationFamily">ddi:ClassificationFamily</a></li>
-            <li><a href="#ddi:ClassificationIndex">ddi:ClassificationIndex</a></li>
-            <li><a href="#ddi:ClassificationSeries">ddi:ClassificationSeries</a></li>
-            <li><a href="#ddi:EnumerationDomain">ddi:EnumerationDomain</a></li>
-            <li><a href="#ddi:StatisticalClassification">ddi:StatisticalClassification</a></li>
-
-          </ul></div>
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:RelationSpecification</dfn></span> [
-  <span class="type">ddi:</span><span class="constant">Unordered</span>
-  <span class="type">ddi:</span><span class="constant">List</span>
-  <span class="type">ddi:</span><span class="constant">ParentChild</span>
-  <span class="type">ddi:</span><span class="constant">WholePart</span>
-  <span class="type">ddi:</span><span class="constant">AcyclicPrecedence</span>
-  <span class="type">ddi:</span><span class="constant">Equivalence</span>
-  <span class="type">ddi:</span><span class="constant">GeneralSpecfic</span>
-]
-</pre>
-      </div>
-      </section>
-
-      <section>
         <h3 id="ddi:AgentAssociation">ddi:AgentAssociation</h3>
         <div>
           <p>2 references:</p>
@@ -236,33 +193,6 @@ Binding is used to define the flow of data into, out of, and within a process. I
 <span class="comment">// shexmi:comment """Definition
 ============
 A BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance."""</span>^^mark:
-
-      <section>
-        <h3 id="ddi:CodeIndicator">ddi:CodeIndicator</h3>
-        <div>
-          <p>2 references:</p>
-          <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
-            <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
-
-          </ul></div>
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:CodeIndicator</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> *
-  <span class="comment">// shexmi:comment """Provides an index for the member within an ordered array"""</span>;
-  <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> *
-  <span class="comment">// shexmi:comment """Indicates the level within which the CodeItem resides"""</span>;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name"><a href="#ddi:Code"><span class="type">ddi:</span><span class="costant">Code</span></a></span> *
-  <span class="comment">// shexmi:comment """The member containing the designation of the CodeItem"""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-A CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure."""</span>^^mark:
 
       <section>
         <h3 id="ddi:CommandCode">ddi:CommandCode</h3>
@@ -506,33 +436,6 @@ DDI 3.2 mapping
 cm:CorrespondenceType"""</span>^^mark:
 
       <section>
-        <h3 id="ddi:CustomValueRelation">ddi:CustomValueRelation</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:CustomValueRelation</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list"""</span>;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides semantic context for the relationship"""</span>;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name"><a href="#ddi:TotalityType"><span class="type">ddi:</span><span class="costant">TotalityType</span></a></span> *
-  <span class="comment">// shexmi:comment """Type of relation in terms of totality with respect to an associated collection."""</span>;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name"><a href="#ddi:CustomValue"><span class="type">ddi:</span><span class="costant">CustomValue</span></a></span> *
-  <span class="comment">// shexmi:comment """The source has been restricted to a CustomValue"""</span>;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name"><a href="#ddi:CustomValue"><span class="type">ddi:</span><span class="costant">CustomValue</span></a></span> *
-  <span class="comment">// shexmi:comment """The target object has been restricted to a single CustomValue"""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-Defines the relation between CustomValues"""</span>^^mark:
-
-      <section>
         <h3 id="ddi:Date">ddi:Date</h3>
         <div>
           <p>10 references:</p>
@@ -624,31 +527,6 @@ Expresses a date/time range using a start date and end date (both with the struc
 DDI 3.2 mapping
 =================
 r:DateType"""</span>^^mark:
-
-      <section>
-        <h3 id="ddi:DescribedRelationship">ddi:DescribedRelationship</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:DescribedRelationship</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">rationale</span> @<span class="shape-name"><a href="#ddi:InternationalStructuredString"><span class="type">ddi:</span><span class="costant">InternationalStructuredString</span></a></span> *
-  <span class="comment">// shexmi:comment """Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text.  """</span>;
-  <span class="type">ddi:</span><span class="constant">relatedTo</span> @<span class="shape-name"><a href="#ddi:Identifiable"><span class="type">ddi:</span><span class="costant">Identifiable</span></a></span> *
-  <span class="comment">// shexmi:comment """Reference to the item within the DDI Instance to which this item is related."""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-Relationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.
-
-DDI 3.2 mapping
-=================
-r:RelationshipType"""</span>^^mark:
 
       <section>
         <h3 id="ddi:DoubleNumberRangeValue">ddi:DoubleNumberRangeValue</h3>
@@ -752,23 +630,19 @@ d:TextContentType"""</span>^^mark:
       <section>
         <h3 id="ddi:ExternalControlledVocabularyEntry">ddi:ExternalControlledVocabularyEntry</h3>
         <div>
-          <p>60 references:</p>
+          <p>56 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:Annotation">ddi:Annotation</a></li>
             <li><a href="#ddi:CommandCode">ddi:CommandCode</a></li>
             <li><a href="#ddi:ContactInformation">ddi:ContactInformation</a></li>
             <li><a href="#ddi:Map">ddi:Map</a></li>
-            <li><a href="#ddi:CustomValueRelation">ddi:CustomValueRelation</a></li>
             <li><a href="#ddi:Date">ddi:Date</a></li>
             <li><a href="#ddi:Image">ddi:Image</a></li>
             <li><a href="#ddi:LabelForDisplay">ddi:LabelForDisplay</a></li>
             <li><a href="#ddi:ObjectName">ddi:ObjectName</a></li>
             <li><a href="#ddi:AgentAssociation">ddi:AgentAssociation</a></li>
             <li><a href="#ddi:Polygon">ddi:Polygon</a></li>
-            <li><a href="#ddi:StandardKeyValuePair">ddi:StandardKeyValuePair</a></li>
             <li><a href="#ddi:TypedString">ddi:TypedString</a></li>
-            <li><a href="#ddi:ViewpointRoleRelation">ddi:ViewpointRoleRelation</a></li>
-            <li><a href="#ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</a></li>
             <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
             <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
             <li><a href="#ddi:RepresentedVariable">ddi:RepresentedVariable</a></li>
@@ -1003,19 +877,17 @@ r:InternationalStringType"""</span>^^mark:
       <section>
         <h3 id="ddi:InternationalStructuredString">ddi:InternationalStructuredString</h3>
         <div>
-          <p>55 references:</p>
+          <p>53 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:BusinessProcessCondition">ddi:BusinessProcessCondition</a></li>
             <li><a href="#ddi:CommandCode">ddi:CommandCode</a></li>
             <li><a href="#ddi:Map">ddi:Map</a></li>
-            <li><a href="#ddi:DescribedRelationship">ddi:DescribedRelationship</a></li>
             <li><a href="#ddi:DynamicTextContent">ddi:DynamicTextContent</a></li>
             <li><a href="#ddi:Category">ddi:Category</a></li>
             <li><a href="#ddi:Concept">ddi:Concept</a></li>
             <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
             <li><a href="#ddi:ConceptSystemCorrespondence">ddi:ConceptSystemCorrespondence</a></li>
             <li><a href="#ddi:ConceptualVariable">ddi:ConceptualVariable</a></li>
-            <li><a href="#ddi:Population">ddi:Population</a></li>
             <li><a href="#ddi:Unit">ddi:Unit</a></li>
             <li><a href="#ddi:UnitType">ddi:UnitType</a></li>
             <li><a href="#ddi:Universe">ddi:Universe</a></li>
@@ -1500,7 +1372,7 @@ r:RangeValueType"""</span>^^mark:
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:SpatialCoordinate</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">coordinateValue</span> <span class="type">xsd:</span><span class="constant">string</span> *
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> *
   <span class="comment">// shexmi:comment """The value of the coordinate expressed as a string."""</span>;
   <span class="type">ddi:</span><span class="constant">coordinateType</span> @<span class="shape-name"><a href="#ddi:PointFormat"><span class="type">ddi:</span><span class="costant">PointFormat</span></a></span> *
   <span class="comment">// shexmi:comment """Identifies the type of point coordinate system using a controlled vocabulary. Point formats include decimal degree, degrees minutes seconds, decimal minutes, meters, and feet."""</span>;
@@ -1575,31 +1447,6 @@ r:PointType"""</span>^^mark:
 Used to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date."""</span>^^mark:
 
       <section>
-        <h3 id="ddi:StandardKeyValuePair">ddi:StandardKeyValuePair</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:StandardKeyValuePair</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">attributeKey</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-  <span class="comment">// shexmi:comment """This key (sometimes referred to as a name) expressed as a string. Supports the use of an external controlled vocabulary which is the recommended approach."""</span>;
-  <span class="type">ddi:</span><span class="constant">attributeValue</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-  <span class="comment">// shexmi:comment """The value assigned to the named Key expressed as a string. Supports the use of an external controlled vocabulary."""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-A basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.
-
-DDI 3.2 mapping
-=================
-r:StandardKeyValuePairType"""</span>^^mark:
-
-      <section>
         <h3 id="ddi:Statistic">ddi:Statistic</h3>
         <div>
           <p>1 reference:</p>
@@ -1615,10 +1462,10 @@ r:StandardKeyValuePairType"""</span>^^mark:
   <span class="comment">// shexmi:comment """Set to \"true\" if the statistic is weighted using the weight designated in VariableStatistics."""</span>;
   <span class="type">ddi:</span><span class="constant">computationBase</span> @<span class="shape-name"><a href="#ddi:ComputationBaseList"><span class="type">ddi:</span><span class="costant">ComputationBaseList</span></a></span> *
   <span class="comment">// shexmi:comment """Defines the cases included in determining the statistic. The options are total=all cases, valid and missing (invalid); validOnly=Only valid values, missing (invalid) are not included in the calculation; missingOnly=Only missing (invalid) cases included in the calculation."""</span>;
-  <span class="type">ddi:</span><span class="constant">decimalValue</span> <span class="type">xsd:</span><span class="constant">double</span> *
-  <span class="comment">// shexmi:comment """The value of the statistic expressed as a decimal"""</span>;
-  <span class="type">ddi:</span><span class="constant">doubleValue</span> <span class="type">xsd:</span><span class="constant">double</span> *
-  <span class="comment">// shexmi:comment """The value of the statistic expressed as a double."""</span>;
+  <span class="type">ddi:</span><span class="constant">typeOfNumericValue</span> <span class="type">xsd:</span><span class="constant">string</span> *
+  <span class="comment">// shexmi:comment """Indicate the type of numeric value as decimal, float, double"""</span>;
+  <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">double</span> *
+  <span class="comment">// shexmi:comment """The value of the statistic expressed as a decimal, float, or double."""</span>;
 }
 </pre>
       </div>
@@ -1671,10 +1518,10 @@ This is a generic type + string where property name and documentation should be 
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
             <li><a href="#ddi:ValueMapping">ddi:ValueMapping</a></li>
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
+            <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
             <li><a href="#ddi:Parameter">ddi:Parameter</a></li>
             <li><a href="#ddi:ClassificationItem">ddi:ClassificationItem</a></li>
-            <li><a href="#ddi:Code">ddi:Code</a></li>
+            <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
 
           </ul></div>
         </div>
@@ -1697,83 +1544,6 @@ DDI 3.2 mapping
 =================
 r:ValueType"""</span>^^mark:
 
-      <section>
-        <h3 id="ddi:ViewpointRoleRelation">ddi:ViewpointRoleRelation</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:ViewpointRoleRelation</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list"""</span>;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides semantic context for the relationship"""</span>;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name"><a href="#ddi:TotalityType"><span class="type">ddi:</span><span class="costant">TotalityType</span></a></span> *
-  <span class="comment">// shexmi:comment """Type of relation in terms of totality with respect to an associated collection."""</span>;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name"><a href="#ddi:InstanceVariable"><span class="type">ddi:</span><span class="costant">InstanceVariable</span></a></span> *
-  <span class="comment">// shexmi:comment """First member in a relationship."""</span>;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name"><a href="#ddi:InstanceVariable"><span class="type">ddi:</span><span class="costant">InstanceVariable</span></a></span> *
-  <span class="comment">// shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples."""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-Defines complex relationship between ViewpointRoles"""</span>^^mark:
-
-      <section>
-        <h3 id="ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:WorkflowStepRelation</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list"""</span>;
-  <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-  <span class="comment">// shexmi:comment """Provides semantic context for the relationship"""</span>;
-  <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name"><a href="#ddi:TotalityType"><span class="type">ddi:</span><span class="costant">TotalityType</span></a></span> *
-  <span class="comment">// shexmi:comment """Type of relation in terms of totality with respect to an associated collection."""</span>;
-  <span class="type">ddi:</span><span class="constant">hasTemporalRelationSpecification</span> @<span class="shape-name"><a href="#ddi:TemporalRelationSpecification"><span class="type">ddi:</span><span class="costant">TemporalRelationSpecification</span></a></span> *
-  <span class="comment">// shexmi:comment """Supports the use of Allan's Intervals for describing temporal relations. Allan's Intervals are specific types of analytic precedence relations and should be used to refine a RelationSpecification of analyticPrecedence."""</span>;
-  <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
-  <span class="comment">// shexmi:comment """First member in the relationship."""</span>;
-  <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
-  <span class="comment">// shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples."""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-Describes structured relations between WorkflowSteps"""</span>^^mark:
-
-      <section>
-        <h3 id="ddi:WorkflowStepSequenceIndicator">ddi:WorkflowStepSequenceIndicator</h3>
-        <div>
-          <p>no references</p>
-          
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:WorkflowStepSequenceIndicator</dfn></span> CLOSED {
-  <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> *
-  <span class="comment">// shexmi:comment """Provides an index for the member within an ordered array"""</span>;
-  <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
-  <span class="comment">// shexmi:comment """Member of the collection, restricted to a single instance"""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-Identify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess."""</span>^^mark:
-
 
     </section>
 
@@ -1788,7 +1558,7 @@ Identify WorkflowStepSequence's that are organized into a master sequence for ex
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:BooleanResponseDomain">ddi:BooleanResponseDomain</a></li>
             <li><a href="#ddi:ClassificationItem">ddi:ClassificationItem</a></li>
-            <li><a href="#ddi:Code">ddi:Code</a></li>
+            <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
             <li><a href="#ddi:EnumerationDomain">ddi:EnumerationDomain</a></li>
 
           </ul></div>
@@ -1821,12 +1591,11 @@ l:CategoryType"""</span>^^mark:
       <section>
         <h3 id="ddi:Concept">ddi:Concept</h3>
         <div>
-          <p>25 references:</p>
+          <p>24 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:Map">ddi:Map</a></li>
             <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
             <li><a href="#ddi:ConceptualVariable">ddi:ConceptualVariable</a></li>
-            <li><a href="#ddi:Population">ddi:Population</a></li>
             <li><a href="#ddi:UnitType">ddi:UnitType</a></li>
             <li><a href="#ddi:Universe">ddi:Universe</a></li>
             <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
@@ -1834,7 +1603,7 @@ l:CategoryType"""</span>^^mark:
             <li><a href="#ddi:PhysicalSegmentLayout">ddi:PhysicalSegmentLayout</a></li>
             <li><a href="#ddi:ControlledVocabulary">ddi:ControlledVocabulary</a></li>
             <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
+            <li><a href="#ddi:CustomItem">ddi:CustomItem</a></li>
             <li><a href="#ddi:Study">ddi:Study</a></li>
             <li><a href="#ddi:StudySeries">ddi:StudySeries</a></li>
             <li><a href="#ddi:DataPipeline">ddi:DataPipeline</a></li>
@@ -1922,7 +1691,7 @@ Concept"""</span>^^mark:
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name"><a href="#ddi:TotalityType"><span class="type">ddi:</span><span class="costant">TotalityType</span></a></span> *
     <span class="comment">// shexmi:comment """Type of relation in terms of totality with respect to an associated collection."""</span>;
     <span class="type">ddi:</span><span class="constant">hasMemberRelation</span> CLOSED {
-      <span class="type">ddi:</span><span class="constant">hasRelationSepcification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
+      <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
       <span class="comment">// shexmi:comment """RelationSpecification Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list"""</span>;
       <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
       <span class="comment">// shexmi:comment """Provides semantic context for the relationship"""</span>;
@@ -2081,12 +1850,11 @@ Variable"""</span>^^mark:
       <section>
         <h3 id="ddi:InstanceVariable">ddi:InstanceVariable</h3>
         <div>
-          <p>6 references:</p>
+          <p>5 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:InstanceVariableIndicator">ddi:InstanceVariableIndicator</a></li>
-            <li><a href="#ddi:ViewpointRoleRelation">ddi:ViewpointRoleRelation</a></li>
             <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
+            <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
             <li><a href="#ddi:Study">ddi:Study</a></li>
             <li><a href="#ddi:ValueMapping">ddi:ValueMapping</a></li>
 
@@ -2153,16 +1921,12 @@ Instance Variable"""</span>^^mark:
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:Population</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Concept"><span class="type">ddi:</span><span class="costant">Concept</span></a></span> {
-  <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name"><a href="#ddi:InternationalStructuredString"><span class="type">ddi:</span><span class="costant">InternationalStructuredString</span></a></span> *
-  <span class="comment">// shexmi:comment """A short natural language account of the characteristics of the object."""</span>;
+<span class="shape-name"><dfn>ddi:Population</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Universe"><span class="type">ddi:</span><span class="costant">Universe</span></a></span> {
   <span class="type">ddi:</span><span class="constant">timePeriodOfPopulation</span> @<span class="shape-name"><a href="#ddi:DateRange"><span class="type">ddi:</span><span class="costant">DateRange</span></a></span> *
   <span class="comment">// shexmi:comment """The time period associated with the Population"""</span>;
   <span class="type">ddi:</span><span class="constant">composedOf</span> @<span class="shape-name"><a href="#ddi:Unit"><span class="type">ddi:</span><span class="costant">Unit</span></a></span> *
   <span class="comment">// shexmi:comment """Units in the Population """</span>
   ;
-  <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name"><a href="#ddi:Concept"><span class="type">ddi:</span><span class="costant">Concept</span></a></span> *
-  <span class="comment">// shexmi:comment """Reference to the Concept that is being used"""</span>;
   <span class="type">ddi:</span><span class="constant">narrowsUniverse</span> @<span class="shape-name"><a href="#ddi:Universe"><span class="type">ddi:</span><span class="costant">Universe</span></a></span> *
   <span class="comment">// shexmi:comment """Reference to a Universe that the Population narrows"""</span>;
   <span class="type">ddi:</span><span class="constant">geographyOfPopulation</span> @<span class="shape-name"><a href="#ddi:GeographicUnit"><span class="type">ddi:</span><span class="costant">GeographicUnit</span></a></span> *
@@ -2196,7 +1960,7 @@ Population"""</span>^^mark:
           <p>5 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
+            <li><a href="#ddi:CustomItem">ddi:CustomItem</a></li>
             <li><a href="#ddi:InstanceMeasurement">ddi:InstanceMeasurement</a></li>
             <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
             <li><a href="#ddi:ResponseDomain">ddi:ResponseDomain</a></li>
@@ -2219,7 +1983,7 @@ Population"""</span>^^mark:
     <span class="comment">// shexmi:comment """Any subtype of an enumeration domain enumerating the set of valid values."""</span>;
   } *
   <span class="comment">// shexmi:comment """The substantive representation (SubstantiveValueDomain) of the variable. This is equivalent to the relationship \"Measures\" in GSIM although GSIM makes no distinction between substantive and sentinel values"""</span>;
-  <span class="type">ddi:</span><span class="constant">measures</span> @<span class="shape-name"><a href="#ddi:Universe"><span class="type">ddi:</span><span class="costant">Universe</span></a></span> *
+  <span class="type">ddi:</span><span class="constant">drawsFrom</span> @<span class="shape-name"><a href="#ddi:Universe"><span class="type">ddi:</span><span class="costant">Universe</span></a></span> *
   <span class="comment">// shexmi:comment """The defined class of people, entities, events, or objects to be measured."""</span>;
   <span class="type">ddi:</span><span class="constant">basedOnConceptualVariable</span> @<span class="shape-name"><a href="#ddi:ConceptualVariable"><span class="type">ddi:</span><span class="costant">ConceptualVariable</span></a></span> *
   <span class="comment">// shexmi:comment """The ConceptualVariable that can be shared by a set of multiple RepresentedVariables. Indicates comparability in  ConceptualDomain and UnitType. """</span>;
@@ -2422,7 +2186,7 @@ Unit Type"""</span>^^mark:
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:Universe</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Concept"><span class="type">ddi:</span><span class="costant">Concept</span></a></span> {
   <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">xsd:</span><span class="constant">boolean</span> *
-  <span class="comment">// shexmi:comment """The default value is \"true\". The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\"."""</span>;
+  <span class="comment">// shexmi:comment """Default value is True. The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\"."""</span>;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name"><a href="#ddi:InternationalStructuredString"><span class="type">ddi:</span><span class="costant">InternationalStructuredString</span></a></span> *
   <span class="comment">// shexmi:comment """A short natural language account of the characteristics of the object."""</span>;
   <span class="type">ddi:</span><span class="constant">narrowsUnitType</span> @<span class="shape-name"><a href="#ddi:UnitType"><span class="type">ddi:</span><span class="costant">UnitType</span></a></span> *
@@ -2954,7 +2718,7 @@ Country--State--County"""</span>^^mark:
       <span class="comment">// shexmi:comment """Value of the category to which the statistics apply"""</span>;
       <span class="type">ddi:</span><span class="constant">filterValue</span> @<span class="shape-name"><a href="#ddi:ValueString"><span class="type">ddi:</span><span class="costant">ValueString</span></a></span> *
       <span class="comment">// shexmi:comment """The value of the filter variable to which the category statistic is restricted"""</span>;
-      <span class="type">ddi:</span><span class="constant">forCodeItem</span> @<span class="shape-name"><a href="#ddi:CodeIndicator"><span class="type">ddi:</span><span class="costant">CodeIndicator</span></a></span> *
+      <span class="type">ddi:</span><span class="constant">forCodeItem</span> @<span class="shape-name"><a href="#ddi:Designation"><span class="type">ddi:</span><span class="costant">Designation</span></a></span> *
       <span class="comment">// shexmi:comment """For categorical representations the CodeItem describing the value (signifier) and category (signified) may be identified."""</span>;
     } *
     <span class="comment">// shexmi:comment """Statistics that provides a category specific values, filtered or unfiltered, weighted or unweighted, expressed as an xs:decimal or xs:double"""</span>;
@@ -3293,7 +3057,7 @@ This is the classic rectangular data table used by most statistical packages, wi
   <span class="type">ddi:</span><span class="constant">physicalDataType</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
   <span class="comment">// shexmi:comment """The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number. From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.  The normalized value of this property becomes the datatype annotation for the described column. ” """</span>;
   <span class="type">ddi:</span><span class="constant">defaultDecimalSeparator</span> <span class="type">ddi:</span><span class="constant">Char</span> *
-  <span class="comment">// shexmi:comment """Default value is \".\". The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """</span>;
+  <span class="comment">// shexmi:comment """Default value is . (period). The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """</span>;
   <span class="type">ddi:</span><span class="constant">defaultDigitGroupSeparator</span> <span class="type">ddi:</span><span class="constant">Char</span> *
   <span class="comment">// shexmi:comment """Default value is null. A string separating groups of digits (for readability). In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 groupChar: “A string whose value is used to group digits within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """</span>;
   <span class="type">ddi:</span><span class="constant">numberPattern</span> <span class="type">xsd:</span><span class="constant">string</span> *
@@ -3424,7 +3188,16 @@ The specification of a controlled vocabulary defines a set of values and their d
   <span class="type">ddi:</span><span class="constant">contains</span> CLOSED {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> *
     <span class="comment">// shexmi:comment """Index value of member in an ordered array"""</span>;
-    <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name"><a href="#ddi:CustomValue"><span class="type">ddi:</span><span class="costant">CustomValue</span></a></span> *
+    <span class="type">ddi:</span><span class="constant">member</span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Identifiable"><span class="type">ddi:</span><span class="costant">Identifiable</span></a></span> {
+      <span class="type">ddi:</span><span class="constant">value</span> @<span class="shape-name"><a href="#ddi:ValueString"><span class="type">ddi:</span><span class="costant">ValueString</span></a></span> *
+      <span class="comment">// shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue."""</span>;
+      <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> *
+      <span class="comment">// shexmi:comment """The unique String identifying the value"""</span>;
+      <span class="type">ddi:</span><span class="constant">correspondsTo</span> @<span class="shape-name"><a href="#ddi:CustomItem"><span class="type">ddi:</span><span class="costant">CustomItem</span></a></span> *
+      <span class="comment">// shexmi:comment """The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation"""</span>;
+      <span class="type">ddi:</span><span class="constant">comparesTo</span> @<span class="shape-name"><a href="#ddi:InstanceVariable"><span class="type">ddi:</span><span class="costant">InstanceVariable</span></a></span> *
+      <span class="comment">// shexmi:comment """This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc."""</span>;
+    } *
     <span class="comment">// shexmi:comment """Restricts member target class to CustomValue"""</span>;
   } *
   <span class="comment">// shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """</span>;
@@ -3460,7 +3233,7 @@ The specification of a controlled vocabulary defines a set of values and their d
       <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name"><a href="#ddi:TotalityType"><span class="type">ddi:</span><span class="costant">TotalityType</span></a></span> *
       <span class="comment">// shexmi:comment """Type of relation in terms of totality with respect to an associated collection."""</span>;
       <span class="type">ddi:</span><span class="constant">hasMemberRelation</span> CLOSED {
-        <span class="type">ddi:</span><span class="constant">hasRelationSepcification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
+        <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
         <span class="comment">// shexmi:comment """The type of relationship between the two CustomItems. The verb in the sentence describing the relationship between the source (subject) and the target (object)."""</span>;
         <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
         <span class="comment">// shexmi:comment """Provides semantic context for the relationship"""</span>;
@@ -3497,10 +3270,9 @@ The set of openEHR protocol information to be attached to a blood pressure Captu
       <section>
         <h3 id="ddi:CustomItem">ddi:CustomItem</h3>
         <div>
-          <p>2 references:</p>
+          <p>1 reference:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
 
           </ul></div>
         </div>
@@ -3537,41 +3309,6 @@ BloodPressureCuffSize - the size of a blood pressure cuff specified for a partic
 Explanatory notes
 ===================
 This definition will be referenced by a CustomValue when recording a key,value instance"""</span>^^mark:
-
-      <section>
-        <h3 id="ddi:CustomValue">ddi:CustomValue</h3>
-        <div>
-          <p>2 references:</p>
-          <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:CustomValueRelation">ddi:CustomValueRelation</a></li>
-            <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
-
-          </ul></div>
-        </div>
-        <div class="example wrapper">
-        <pre class="nohighlight schema shexc tryable">
-<span class="shape-name"><dfn>ddi:CustomValue</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Identifiable"><span class="type">ddi:</span><span class="costant">Identifiable</span></a></span> {
-  <span class="type">ddi:</span><span class="constant">value</span> @<span class="shape-name"><a href="#ddi:ValueString"><span class="type">ddi:</span><span class="costant">ValueString</span></a></span> *
-  <span class="comment">// shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue."""</span>;
-  <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> *
-  <span class="comment">// shexmi:comment """The unique String identifying the value"""</span>;
-  <span class="type">ddi:</span><span class="constant">correspondsTo</span> @<span class="shape-name"><a href="#ddi:CustomItem"><span class="type">ddi:</span><span class="costant">CustomItem</span></a></span> *
-  <span class="comment">// shexmi:comment """The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation"""</span>;
-  <span class="type">ddi:</span><span class="constant">comparesTo</span> @<span class="shape-name"><a href="#ddi:InstanceVariable"><span class="type">ddi:</span><span class="costant">InstanceVariable</span></a></span> *
-  <span class="comment">// shexmi:comment """This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc."""</span>;
-}
-</pre>
-      </div>
-      </section>
-<span class="comment">// shexmi:comment """Definition
-============
-An instance of a  key, value pair for a  particular  key.
-
-Examples
-==========
-OMBBurden,\"High\"
-
-openEHRBPposition, \"upper arm\""""</span>^^mark:
 
       <section>
         <h3 id="ddi:VocabularyEntry">ddi:VocabularyEntry</h3>
@@ -3716,9 +3453,8 @@ This is a summary of the methodology of sampling providing both an overview of p
   <span class="comment">// shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text."""</span>;
   <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name"><a href="#ddi:ExternalMaterial"><span class="type">ddi:</span><span class="costant">ExternalMaterial</span></a></span> *
   <span class="comment">// shexmi:comment """Description and link to external material discussing this Sampling Process"""</span>;
-  <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
-  <span class="comment">// shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow"""</span>
-  ;
+  <span class="type">ddi:</span><span class="constant">isSpecifiedBy</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
+  <span class="comment">// shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow"""</span>;
   <span class="type">ddi:</span><span class="constant">hasResults</span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Result"><span class="type">ddi:</span><span class="costant">Result</span></a></span> {
     <span class="type">ddi:</span><span class="constant">sizeOfSample</span> <span class="type">xsd:</span><span class="constant">integer</span> *
     <span class="comment">// shexmi:comment """The overall size of the sample"""</span>;
@@ -3793,9 +3529,8 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     <span class="comment">// shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit"""</span>;
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name"><a href="#ddi:ObjectName"><span class="type">ddi:</span><span class="costant">ObjectName</span></a></span> *
     <span class="comment">// shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage."""</span>;
-    <span class="type">ddi:</span><span class="constant">organizedBy</span> @<span class="shape-name"><a href="#ddi:WorkflowControlStep"><span class="type">ddi:</span><span class="costant">WorkflowControlStep</span></a></span> *
-    <span class="comment">// shexmi:comment """The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process."""</span>
-    ;
+    <span class="type">ddi:</span><span class="constant">isSpecifiedBy</span> @<span class="shape-name"><a href="#ddi:WorkflowControlStep"><span class="type">ddi:</span><span class="costant">WorkflowControlStep</span></a></span> *
+    <span class="comment">// shexmi:comment """The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process."""</span>;
     <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name"><a href="#ddi:AlgorithmOverview"><span class="type">ddi:</span><span class="costant">AlgorithmOverview</span></a></span> *
     <span class="comment">// shexmi:comment """An implementation and/or execution of an algorithm which is associated with the design of the process."""</span>;
   } *
@@ -4245,6 +3980,46 @@ A simple ordered or unordered sequence of studies can be described via the \"con
       </section>
 
       <section>
+        <h3 id="ddi:RelationSpecification">ddi:RelationSpecification</h3>
+        <div>
+          <p>17 references:</p>
+          <div class="left-scroll"><ul class="referees">
+            <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
+            <li><a href="#ddi:GeographicUnitClassification">ddi:GeographicUnitClassification</a></li>
+            <li><a href="#ddi:GeographicUnitTypeClassification">ddi:GeographicUnitTypeClassification</a></li>
+            <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
+            <li><a href="#ddi:PhysicalRecordSegment">ddi:PhysicalRecordSegment</a></li>
+            <li><a href="#ddi:PhysicalSegmentLayout">ddi:PhysicalSegmentLayout</a></li>
+            <li><a href="#ddi:ControlledVocabulary">ddi:ControlledVocabulary</a></li>
+            <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
+            <li><a href="#ddi:Study">ddi:Study</a></li>
+            <li><a href="#ddi:StudySeries">ddi:StudySeries</a></li>
+            <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
+            <li><a href="#ddi:DataStoreLibrary">ddi:DataStoreLibrary</a></li>
+            <li><a href="#ddi:ClassificationFamily">ddi:ClassificationFamily</a></li>
+            <li><a href="#ddi:ClassificationIndex">ddi:ClassificationIndex</a></li>
+            <li><a href="#ddi:ClassificationSeries">ddi:ClassificationSeries</a></li>
+            <li><a href="#ddi:EnumerationDomain">ddi:EnumerationDomain</a></li>
+            <li><a href="#ddi:StatisticalClassification">ddi:StatisticalClassification</a></li>
+
+          </ul></div>
+        </div>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name"><dfn>ddi:RelationSpecification</dfn></span> [
+  <span class="type">ddi:</span><span class="constant">Unordered</span>
+  <span class="type">ddi:</span><span class="constant">List</span>
+  <span class="type">ddi:</span><span class="constant">ParentChild</span>
+  <span class="type">ddi:</span><span class="constant">WholePart</span>
+  <span class="type">ddi:</span><span class="constant">AcyclicPrecedence</span>
+  <span class="type">ddi:</span><span class="constant">Equivalence</span>
+  <span class="type">ddi:</span><span class="constant">GeneralSpecific</span>
+]
+</pre>
+      </div>
+      </section>
+
+      <section>
         <h3 id="ddi:SexSpecificationType">ddi:SexSpecificationType</h3>
         <div>
           <p>1 reference:</p>
@@ -4397,9 +4172,8 @@ A simple ordered or unordered sequence of studies can be described via the \"con
       <section>
         <h3 id="ddi:TemporalRelationSpecification">ddi:TemporalRelationSpecification</h3>
         <div>
-          <p>2 references:</p>
+          <p>1 reference:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</a></li>
             <li><a href="#ddi:TemporalRelationControlStep">ddi:TemporalRelationControlStep</a></li>
 
           </ul></div>
@@ -4443,11 +4217,8 @@ A simple ordered or unordered sequence of studies can be described via the \"con
       <section>
         <h3 id="ddi:TotalityType">ddi:TotalityType</h3>
         <div>
-          <p>20 references:</p>
+          <p>17 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:CustomValueRelation">ddi:CustomValueRelation</a></li>
-            <li><a href="#ddi:ViewpointRoleRelation">ddi:ViewpointRoleRelation</a></li>
-            <li><a href="#ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</a></li>
             <li><a href="#ddi:ConceptSystem">ddi:ConceptSystem</a></li>
             <li><a href="#ddi:GeographicUnitClassification">ddi:GeographicUnitClassification</a></li>
             <li><a href="#ddi:GeographicUnitTypeClassification">ddi:GeographicUnitTypeClassification</a></li>
@@ -4775,7 +4546,7 @@ Annotation associated with a specific class is the annotation of the metadata cl
     } *
     <span class="comment">// shexmi:comment """Defines the segment of textual content used by the parent object. Can identify a set of lines and or characters used to define the segment"""</span>;
     <span class="type">ddi:</span><span class="constant">usesImageArea</span> CLOSED {
-      <span class="type">ddi:</span><span class="constant">coordinates</span> <span class="type">xsd:</span><span class="constant">string</span> *
+      <span class="type">ddi:</span><span class="constant">content</span> <span class="type">xsd:</span><span class="constant">string</span> *
       <span class="comment">// shexmi:comment """A comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r)."""</span>;
       <span class="type">ddi:</span><span class="constant">shape</span> @<span class="shape-name"><a href="#ddi:ShapeCoded"><span class="type">ddi:</span><span class="costant">ShapeCoded</span></a></span> *
       <span class="comment">// shexmi:comment """A fixed set of valid responses includes Rectangle, Circle, and Polygon."""</span>;
@@ -4924,7 +4695,7 @@ d:ComputationItemType"""</span>^^mark:
 <span class="shape-name"><dfn>ddi:ConditionalControlStep</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:WorkflowControlStep"><span class="type">ddi:</span><span class="costant">WorkflowControlStep</span></a></span> {
   <span class="type">ddi:</span><span class="constant">condition</span> @<span class="shape-name"><a href="#ddi:CommandCode"><span class="type">ddi:</span><span class="costant">CommandCode</span></a></span> *
   <span class="comment">// shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false"""</span>;
-  <span class="type">ddi:</span><span class="constant">executesSequence</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
+  <span class="type">ddi:</span><span class="constant">executes</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
   <span class="comment">// shexmi:comment """The Workflow Sequence is executed depending on the result of the condition evaluation. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false. Specialization of contains in Control Construct."""</span>
   ;
 }
@@ -4952,12 +4723,12 @@ If-then-else and iterative structures."""</span>^^mark:
   <span class="type">ddi:</span><span class="constant">elseIf</span> CLOSED {
     <span class="type">ddi:</span><span class="constant">condition</span> @<span class="shape-name"><a href="#ddi:CommandCode"><span class="type">ddi:</span><span class="costant">CommandCode</span></a></span> *
     <span class="comment">// shexmi:comment """The condition to verify if the parent IfThenElse condition is false."""</span>;
-    <span class="type">ddi:</span><span class="constant">thenWorkflowStepCollection</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
-    <span class="comment">// shexmi:comment """The WorkflowStepCollection to process if the condition is true"""</span>;
+    <span class="type">ddi:</span><span class="constant">executes</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
+    <span class="comment">// shexmi:comment """The WorkflowStepSequence to execute if the condition is true"""</span>;
   } *
   <span class="comment">// shexmi:comment """The condition to check if the IfThenElse condition is false. """</span>;
-  <span class="type">ddi:</span><span class="constant">elseContains</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
-  <span class="comment">// shexmi:comment """Optional sequence of Process Steps that are triggered when the condition is false."""</span>
+  <span class="type">ddi:</span><span class="constant">elseExecutes</span> @<span class="shape-name"><a href="#ddi:WorkflowStepSequence"><span class="type">ddi:</span><span class="costant">WorkflowStepSequence</span></a></span> *
+  <span class="comment">// shexmi:comment """Optional sequence of Process Steps that are triggered for execution when the condition is false."""</span>
   ;
 }
 </pre>
@@ -5041,15 +4812,7 @@ d:LoopType"""</span>^^mark:
       </section>
 <span class="comment">// shexmi:comment """Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -5057,7 +4820,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema."""</span>^^mark:
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" SDTL as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema."""</span>^^mark:
 
       <section>
         <h3 id="ddi:Parameter">ddi:Parameter</h3>
@@ -5170,8 +4941,6 @@ d:RepeatWhileType"""</span>^^mark:
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:Split</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:TemporalRelationControlStep"><span class="type">ddi:</span><span class="costant">TemporalRelationControlStep</span></a></span> {
-  <span class="type">ddi:</span><span class="constant">executeConcurrently</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
-  <span class="comment">// shexmi:comment """A WorkflowStep that is to be processed concurrently with other WorkflowSteps indicated."""</span>;
 }
 </pre>
       </div>
@@ -5193,8 +4962,6 @@ Supports parallel processing that does not require completion to exit."""</span>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:SplitJoin</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:TemporalRelationControlStep"><span class="type">ddi:</span><span class="costant">TemporalRelationControlStep</span></a></span> {
-  <span class="type">ddi:</span><span class="constant">executeConcurrently</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
-  <span class="comment">// shexmi:comment """The WorkflowStep that is processed concurrently with other indicated WorkflowSteps"""</span>;
 }
 </pre>
       </div>
@@ -5247,6 +5014,9 @@ When creating a specific subtype identify the workflow steps included in a struc
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 ABSTRACT <span class="shape-name"><dfn>ddi:WorkflowControlStep</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> {
+  <span class="type">ddi:</span><span class="constant">executes</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
+  <span class="comment">// shexmi:comment """The WorkflowSteps executed by the control mechanism"""</span>
+  ;
 }
 </pre>
       </div>
@@ -5281,9 +5051,8 @@ A WorkflowStepSequence is a subtype of WorkflowControlStep which defines a seque
   <span class="comment">// shexmi:comment """Explanation of the ways in which the pattern is employed. Supports  the use of multiple languages and  structured text.  """</span>;
   <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name"><a href="#ddi:AlgorithmOverview"><span class="type">ddi:</span><span class="costant">AlgorithmOverview</span></a></span> *
   <span class="comment">// shexmi:comment """The algorithms implemented by the process. May be expressed by AlgorithmOverview or any subclass"""</span>;
-  <span class="type">ddi:</span><span class="constant">organizedBy</span> @<span class="shape-name"><a href="#ddi:WorkflowControlStep"><span class="type">ddi:</span><span class="costant">WorkflowControlStep</span></a></span> *
-  <span class="comment">// shexmi:comment """Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process."""</span>
-  ;
+  <span class="type">ddi:</span><span class="constant">isSpecifiedBy</span> @<span class="shape-name"><a href="#ddi:WorkflowControlStep"><span class="type">ddi:</span><span class="costant">WorkflowControlStep</span></a></span> *
+  <span class="comment">// shexmi:comment """Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process."""</span>;
 }
 </pre>
       </div>
@@ -5299,11 +5068,9 @@ Overall description of steps taken when ingesting a dataset into an archive; A S
       <section>
         <h3 id="ddi:WorkflowStep">ddi:WorkflowStep</h3>
         <div>
-          <p>4 references:</p>
+          <p>2 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:WorkflowStepRelation">ddi:WorkflowStepRelation</a></li>
-            <li><a href="#ddi:Split">ddi:Split</a></li>
-            <li><a href="#ddi:SplitJoin">ddi:SplitJoin</a></li>
+            <li><a href="#ddi:WorkflowControlStep">ddi:WorkflowControlStep</a></li>
             <li><a href="#ddi:WorkflowStepSequence">ddi:WorkflowStepSequence</a></li>
 
           </ul></div>
@@ -5365,9 +5132,8 @@ Process Step"""</span>^^mark:
       <section>
         <h3 id="ddi:WorkflowStepSequence">ddi:WorkflowStepSequence</h3>
         <div>
-          <p>4 references:</p>
+          <p>3 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:WorkflowStepSequenceIndicator">ddi:WorkflowStepSequenceIndicator</a></li>
             <li><a href="#ddi:SamplingProcedure">ddi:SamplingProcedure</a></li>
             <li><a href="#ddi:ConditionalControlStep">ddi:ConditionalControlStep</a></li>
             <li><a href="#ddi:IfThenElse">ddi:IfThenElse</a></li>
@@ -5383,7 +5149,7 @@ Process Step"""</span>^^mark:
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> *
     <span class="comment">// shexmi:comment """Index value of WorkflowStep in an ordered array"""</span>;
     <span class="type">ddi:</span><span class="constant">indexedWorkflowStep</span> @<span class="shape-name"><a href="#ddi:WorkflowStep"><span class="type">ddi:</span><span class="costant">WorkflowStep</span></a></span> *
-    <span class="comment">// shexmi:comment """Restricts member target class to  WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes"""</span>;
+    <span class="comment">// shexmi:comment """The subtype of a WorkflowStep occuring at the indexed position within the array. """</span>;
   } *
   <span class="comment">// shexmi:comment """The Workflow Steps included in the Collection with an index for position within ordered array. """</span>;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name"><a href="#ddi:ObjectName"><span class="type">ddi:</span><span class="costant">ObjectName</span></a></span> *
@@ -5400,7 +5166,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -5409,9 +5175,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship \"executes\" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -5819,7 +5589,14 @@ Provides an abstract base so that current and future forms of data capture can u
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:CodeListResponseDomain</dfn></span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:ResponseDomain"><span class="type">ddi:</span><span class="costant">ResponseDomain</span></a></span> {
   <span class="type">ddi:</span><span class="constant">usesCodeList</span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:EnumerationDomain"><span class="type">ddi:</span><span class="costant">EnumerationDomain</span></a></span> {
-    <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name"><a href="#ddi:CodeIndicator"><span class="type">ddi:</span><span class="costant">CodeIndicator</span></a></span> *
+    <span class="type">ddi:</span><span class="constant">contains</span> CLOSED {
+      <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> *
+      <span class="comment">// shexmi:comment """Provides an index for the member within an ordered array"""</span>;
+      <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> *
+      <span class="comment">// shexmi:comment """Indicates the level within which the CodeItem resides"""</span>;
+      <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name"><a href="#ddi:Code"><span class="type">ddi:</span><span class="costant">Code</span></a></span> *
+      <span class="comment">// shexmi:comment """The member containing the designation of the CodeItem"""</span>;
+    } *
     <span class="comment">// shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array"""</span>;
     <span class="type">ddi:</span><span class="constant">isStructuredBy</span> CLOSED EXTENDS <span class="shape-name"><a href="#ddi:Identifiable"><span class="type">ddi:</span><span class="costant">Identifiable</span></a></span> {
       <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name"><a href="#ddi:RelationSpecification"><span class="type">ddi:</span><span class="costant">RelationSpecification</span></a></span> *
@@ -6060,7 +5837,7 @@ InstrumentComponent acts as a substitution head (abstract) for semantically mean
   <span class="type">ddi:</span><span class="constant">unit</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
   <span class="comment">// shexmi:comment """An optional unit of measurement.  Examples include units from the International System of Units (SI) such as meter, seconds, mole, kilograms. Other examples include miles, tons, pints."""</span>;
   <span class="type">ddi:</span><span class="constant">usesNumberRange</span> CLOSED {
-    <span class="type">ddi:</span><span class="constant">label</span> @<span class="shape-name"><a href="#ddi:LabelForDisplay"><span class="type">ddi:</span><span class="costant">LabelForDisplay</span></a></span> *
+    <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name"><a href="#ddi:LabelForDisplay"><span class="type">ddi:</span><span class="costant">LabelForDisplay</span></a></span> *
     <span class="comment">// shexmi:comment """A display label for the number range. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations."""</span>;
     <span class="type">ddi:</span><span class="constant">highCode</span> @<span class="shape-name"><a href="#ddi:NumberRangeValue"><span class="type">ddi:</span><span class="costant">NumberRangeValue</span></a></span> *
     <span class="comment">// shexmi:comment """High or top value on the range expressed as an xs:decimal within an isInclusive Boolean flag."""</span>;
@@ -6272,9 +6049,8 @@ Used to identify objects for purposes of internal and/or external referencing. E
       <section>
         <h3 id="ddi:Identifiable">ddi:Identifiable</h3>
         <div>
-          <p>2 references:</p>
+          <p>1 reference:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:DescribedRelationship">ddi:DescribedRelationship</a></li>
             <li><a href="#ddi:Identifiable">ddi:Identifiable</a></li>
 
           </ul></div>
@@ -6503,8 +6279,6 @@ Data Point"""</span>^^mark:
         ;
       } *
       <span class="comment">// shexmi:comment """A UnitDataRecord may have multiple ViewPoints, each of which assigns among roles identifier, measure, and attribute to the InstanceVariables associated with each Datapoint"""</span>;
-      <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name"><a href="#ddi:Concept"><span class="type">ddi:</span><span class="costant">Concept</span></a></span> *
-      <span class="comment">// shexmi:comment """The conceptual basis for the collection of members."""</span>;
     } *
     <span class="comment">// shexmi:comment """Map related record types, which are Collections of Instance Variables. Realization of structures in Symmetric Relation.
   """</span>;
@@ -7313,9 +7087,8 @@ Classification Series"""</span>^^mark:
       <section>
         <h3 id="ddi:Code">ddi:Code</h3>
         <div>
-          <p>2 references:</p>
+          <p>1 reference:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:CodeIndicator">ddi:CodeIndicator</a></li>
             <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
 
           </ul></div>
@@ -7403,8 +7176,11 @@ Correspondence Table"""</span>^^mark:
       <section>
         <h3 id="ddi:Designation">ddi:Designation</h3>
         <div>
-          <p>no references</p>
-          
+          <p>1 reference:</p>
+          <div class="left-scroll"><ul class="referees">
+            <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
+
+          </ul></div>
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
@@ -7796,7 +7572,7 @@ The logical expression should conform to the expression syntax of VTL. https://s
         <div>
           <p>2 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:CustomValue">ddi:CustomValue</a></li>
+            <li><a href="#ddi:CustomItem">ddi:CustomItem</a></li>
             <li><a href="#ddi:Parameter">ddi:Parameter</a></li>
 
           </ul></div>

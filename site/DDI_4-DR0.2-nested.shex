@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2018-07-30T12:17:31.703Z
+# shexToOwl 2018-09-21T09:42:19.463Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -8,17 +8,6 @@ PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>
 PREFIX mark: <https://github.com/commonmark/commonmark.js>
 
 # START ddi:StructuredDataTypes Package
-
-ddi:RelationSpecification [
-  ddi:Unordered
-  ddi:List
-  ddi:ParentChild
-  ddi:WholePart
-  ddi:AcyclicPrecedence
-  ddi:Equivalence
-  ddi:GeneralSpecfic
-]
-
 
 ddi:AgentAssociation CLOSED {
   ddi:agentName CLOSED EXTENDS ddi:InternationalString {
@@ -141,19 +130,6 @@ ddi:BusinessProcessCondition CLOSED {
 // shexmi:comment """Definition
 ============
 A BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance."""^^mark:
-
-ddi:CodeIndicator CLOSED {
-  ddi:index xsd:integer *
-  // shexmi:comment """Provides an index for the member within an ordered array""";
-  ddi:isInLevel xsd:integer *
-  // shexmi:comment """Indicates the level within which the CodeItem resides""";
-  ddi:member @ddi:Code *
-  // shexmi:comment """The member containing the designation of the CodeItem""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-A CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure."""^^mark:
 
 ddi:CommandCode CLOSED {
   ddi:description @ddi:InternationalStructuredString *
@@ -325,23 +301,6 @@ DDI 3.2 mapping
 =================
 cm:CorrespondenceType"""^^mark:
 
-ddi:CustomValueRelation CLOSED {
-  ddi:hasRelationSpecification @ddi:RelationSpecification *
-  // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
-  ddi:semantic @ddi:ExternalControlledVocabularyEntry *
-  // shexmi:comment """Provides semantic context for the relationship""";
-  ddi:totality @ddi:TotalityType *
-  // shexmi:comment """Type of relation in terms of totality with respect to an associated collection.""";
-  ddi:source @ddi:CustomValue *
-  // shexmi:comment """The source has been restricted to a CustomValue""";
-  ddi:target @ddi:CustomValue *
-  // shexmi:comment """The target object has been restricted to a single CustomValue""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-Defines the relation between CustomValues"""^^mark:
-
 ddi:Date CLOSED {
   ddi:isoDate ddi:IsoDateType *
   // shexmi:comment """Strongly recommend that ALL dates be expressed in an ISO format at a minimum. A single point in time expressed in an ISO standard structure. Note that while it supports an ISO date range structure this should be used in Date only when the single date is unclear i.e. occurring at some time between two dates. """;
@@ -382,21 +341,6 @@ Expresses a date/time range using a start date and end date (both with the struc
 DDI 3.2 mapping
 =================
 r:DateType"""^^mark:
-
-ddi:DescribedRelationship CLOSED {
-  ddi:rationale @ddi:InternationalStructuredString *
-  // shexmi:comment """Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text.  """;
-  ddi:relatedTo @ddi:Identifiable *
-  // shexmi:comment """Reference to the item within the DDI Instance to which this item is related.""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-Relationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.
-
-DDI 3.2 mapping
-=================
-r:RelationshipType"""^^mark:
 
 ddi:DoubleNumberRangeValue CLOSED {
   ddi:isInclusive xsd:boolean *
@@ -803,7 +747,7 @@ DDI 3.2 mapping
 r:RangeValueType"""^^mark:
 
 ddi:SpatialCoordinate CLOSED {
-  ddi:coordinateValue xsd:string *
+  ddi:content xsd:string *
   // shexmi:comment """The value of the coordinate expressed as a string.""";
   ddi:coordinateType @ddi:PointFormat *
   // shexmi:comment """Identifies the type of point coordinate system using a controlled vocabulary. Point formats include decimal degree, degrees minutes seconds, decimal minutes, meters, and feet.""";
@@ -847,30 +791,15 @@ ddi:SpatialRelationship CLOSED {
 ============
 Used to specify a relationship between one spatial object and another. Includes definition of the spatial object types being related, the spatial relation specification, and the event date."""^^mark:
 
-ddi:StandardKeyValuePair CLOSED {
-  ddi:attributeKey @ddi:ExternalControlledVocabularyEntry *
-  // shexmi:comment """This key (sometimes referred to as a name) expressed as a string. Supports the use of an external controlled vocabulary which is the recommended approach.""";
-  ddi:attributeValue @ddi:ExternalControlledVocabularyEntry *
-  // shexmi:comment """The value assigned to the named Key expressed as a string. Supports the use of an external controlled vocabulary.""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-A basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.
-
-DDI 3.2 mapping
-=================
-r:StandardKeyValuePairType"""^^mark:
-
 ddi:Statistic CLOSED {
   ddi:isWeighted xsd:boolean *
   // shexmi:comment """Set to \"true\" if the statistic is weighted using the weight designated in VariableStatistics.""";
   ddi:computationBase @ddi:ComputationBaseList *
   // shexmi:comment """Defines the cases included in determining the statistic. The options are total=all cases, valid and missing (invalid); validOnly=Only valid values, missing (invalid) are not included in the calculation; missingOnly=Only missing (invalid) cases included in the calculation.""";
-  ddi:decimalValue xsd:double *
-  // shexmi:comment """The value of the statistic expressed as a decimal""";
-  ddi:doubleValue xsd:double *
-  // shexmi:comment """The value of the statistic expressed as a double.""";
+  ddi:typeOfNumericValue xsd:string *
+  // shexmi:comment """Indicate the type of numeric value as decimal, float, double""";
+  ddi:content xsd:double *
+  // shexmi:comment """The value of the statistic expressed as a decimal, float, or double.""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
 // shexmi:comment """Definition
@@ -914,53 +843,6 @@ The Value expressed as an xs:string with the ability to preserve whitespace if c
 DDI 3.2 mapping
 =================
 r:ValueType"""^^mark:
-
-ddi:ViewpointRoleRelation CLOSED {
-  ddi:hasRelationSpecification @ddi:RelationSpecification *
-  // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
-  ddi:semantic @ddi:ExternalControlledVocabularyEntry *
-  // shexmi:comment """Provides semantic context for the relationship""";
-  ddi:totality @ddi:TotalityType *
-  // shexmi:comment """Type of relation in terms of totality with respect to an associated collection.""";
-  ddi:source @ddi:InstanceVariable *
-  // shexmi:comment """First member in a relationship.""";
-  ddi:target @ddi:InstanceVariable *
-  // shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples.""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-Defines complex relationship between ViewpointRoles"""^^mark:
-
-ddi:WorkflowStepRelation CLOSED {
-  ddi:hasRelationSpecification @ddi:RelationSpecification *
-  // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list""";
-  ddi:semantic @ddi:ExternalControlledVocabularyEntry *
-  // shexmi:comment """Provides semantic context for the relationship""";
-  ddi:totality @ddi:TotalityType *
-  // shexmi:comment """Type of relation in terms of totality with respect to an associated collection.""";
-  ddi:hasTemporalRelationSpecification @ddi:TemporalRelationSpecification *
-  // shexmi:comment """Supports the use of Allan's Intervals for describing temporal relations. Allan's Intervals are specific types of analytic precedence relations and should be used to refine a RelationSpecification of analyticPrecedence.""";
-  ddi:source @ddi:WorkflowStep *
-  // shexmi:comment """First member in the relationship.""";
-  ddi:target @ddi:WorkflowStep *
-  // shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples.""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-Describes structured relations between WorkflowSteps"""^^mark:
-
-ddi:WorkflowStepSequenceIndicator CLOSED {
-  ddi:index xsd:integer *
-  // shexmi:comment """Provides an index for the member within an ordered array""";
-  ddi:member @ddi:WorkflowStepSequence *
-  // shexmi:comment """Member of the collection, restricted to a single instance""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
-// shexmi:comment """Definition
-============
-Identify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess."""^^mark:
 
 
 # END ddi:StructuredDataTypes Package
@@ -1041,7 +923,7 @@ ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     ddi:totality @ddi:TotalityType *
     // shexmi:comment """Type of relation in terms of totality with respect to an associated collection.""";
     ddi:hasMemberRelation CLOSED {
-      ddi:hasRelationSepcification @ddi:RelationSpecification *
+      ddi:hasRelationSpecification @ddi:RelationSpecification *
       // shexmi:comment """RelationSpecification Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry *
       // shexmi:comment """Provides semantic context for the relationship""";
@@ -1203,16 +1085,12 @@ GSIM mapping
 ==============
 Instance Variable"""^^mark:
 
-ddi:Population CLOSED EXTENDS ddi:Concept {
-  ddi:descriptiveText @ddi:InternationalStructuredString *
-  // shexmi:comment """A short natural language account of the characteristics of the object.""";
+ddi:Population CLOSED EXTENDS ddi:Universe {
   ddi:timePeriodOfPopulation @ddi:DateRange *
   // shexmi:comment """The time period associated with the Population""";
   ddi:composedOf @ddi:Unit *
   // shexmi:comment """Units in the Population """
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:usesConcept @ddi:Concept *
-  // shexmi:comment """Reference to the Concept that is being used""";
   ddi:narrowsUniverse @ddi:Universe *
   // shexmi:comment """Reference to a Universe that the Population narrows""";
   ddi:geographyOfPopulation @ddi:GeographicUnit *
@@ -1252,7 +1130,7 @@ ddi:RepresentedVariable CLOSED EXTENDS ddi:ConceptualVariable {
     // shexmi:comment """Any subtype of an enumeration domain enumerating the set of valid values.""";
   } *
   // shexmi:comment """The substantive representation (SubstantiveValueDomain) of the variable. This is equivalent to the relationship \"Measures\" in GSIM although GSIM makes no distinction between substantive and sentinel values""";
-  ddi:measures @ddi:Universe *
+  ddi:drawsFrom @ddi:Universe *
   // shexmi:comment """The defined class of people, entities, events, or objects to be measured.""";
   ddi:basedOnConceptualVariable @ddi:ConceptualVariable *
   // shexmi:comment """The ConceptualVariable that can be shared by a set of multiple RepresentedVariables. Indicates comparability in  ConceptualDomain and UnitType. """;
@@ -1378,7 +1256,7 @@ Unit Type"""^^mark:
 
 ddi:Universe CLOSED EXTENDS ddi:Concept {
   ddi:isInclusive xsd:boolean *
-  // shexmi:comment """The default value is \"true\". The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".""";
+  // shexmi:comment """Default value is True. The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".""";
   ddi:descriptiveText @ddi:InternationalStructuredString *
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
   ddi:narrowsUnitType @ddi:UnitType *
@@ -1777,7 +1655,7 @@ ddi:PhysicalDataSet CLOSED EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Value of the category to which the statistics apply""";
       ddi:filterValue @ddi:ValueString *
       // shexmi:comment """The value of the filter variable to which the category statistic is restricted""";
-      ddi:forCodeItem @ddi:CodeIndicator *
+      ddi:forCodeItem @ddi:Designation *
       // shexmi:comment """For categorical representations the CodeItem describing the value (signifier) and category (signified) may be identified.""";
     } *
     // shexmi:comment """Statistics that provides a category specific values, filtered or unfiltered, weighted or unweighted, expressed as an xs:decimal or xs:double""";
@@ -2044,7 +1922,7 @@ ddi:ValueMapping CLOSED EXTENDS ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number. From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.  The normalized value of this property becomes the datatype annotation for the described column. ” """;
   ddi:defaultDecimalSeparator ddi:Char *
-  // shexmi:comment """Default value is \".\". The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """;
+  // shexmi:comment """Default value is . (period). The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """;
   ddi:defaultDigitGroupSeparator ddi:Char *
   // shexmi:comment """Default value is null. A string separating groups of digits (for readability). In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 groupChar: “A string whose value is used to group digits within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """;
   ddi:numberPattern xsd:string *
@@ -2153,7 +2031,16 @@ ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
   ddi:contains CLOSED {
     ddi:index xsd:integer *
     // shexmi:comment """Index value of member in an ordered array""";
-    ddi:member @ddi:CustomValue *
+    ddi:member CLOSED EXTENDS ddi:Identifiable {
+      ddi:value @ddi:ValueString *
+      // shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.""";
+      ddi:key xsd:string *
+      // shexmi:comment """The unique String identifying the value""";
+      ddi:correspondsTo @ddi:CustomItem *
+      // shexmi:comment """The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation""";
+      ddi:comparesTo @ddi:InstanceVariable *
+      // shexmi:comment """This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc.""";
+    } *
     // shexmi:comment """Restricts member target class to CustomValue""";
   } *
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
@@ -2189,7 +2076,7 @@ ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
       ddi:totality @ddi:TotalityType *
       // shexmi:comment """Type of relation in terms of totality with respect to an associated collection.""";
       ddi:hasMemberRelation CLOSED {
-        ddi:hasRelationSepcification @ddi:RelationSpecification *
+        ddi:hasRelationSpecification @ddi:RelationSpecification *
         // shexmi:comment """The type of relationship between the two CustomItems. The verb in the sentence describing the relationship between the source (subject) and the target (object).""";
         ddi:semantic @ddi:ExternalControlledVocabularyEntry *
         // shexmi:comment """Provides semantic context for the relationship""";
@@ -2250,27 +2137,6 @@ BloodPressureCuffSize - the size of a blood pressure cuff specified for a partic
 Explanatory notes
 ===================
 This definition will be referenced by a CustomValue when recording a key,value instance"""^^mark:
-
-ddi:CustomValue CLOSED EXTENDS ddi:Identifiable {
-  ddi:value @ddi:ValueString *
-  // shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.""";
-  ddi:key xsd:string *
-  // shexmi:comment """The unique String identifying the value""";
-  ddi:correspondsTo @ddi:CustomItem *
-  // shexmi:comment """The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation""";
-  ddi:comparesTo @ddi:InstanceVariable *
-  // shexmi:comment """This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc.""";
-}
-// shexmi:package "http://ddi-alliance.org/ns/#CustomMetadata"
-// shexmi:comment """Definition
-============
-An instance of a  key, value pair for a  particular  key.
-
-Examples
-==========
-OMBBurden,\"High\"
-
-openEHRBPposition, \"upper arm\""""^^mark:
 
 ddi:VocabularyEntry CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   ddi:entryTerm @ddi:InternationalStructuredString *
@@ -2362,9 +2228,8 @@ ddi:SamplingProcess CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:isDiscussedIn @ddi:ExternalMaterial *
   // shexmi:comment """Description and link to external material discussing this Sampling Process""";
-  ddi:hasProcessSequence @ddi:WorkflowStepSequence *
-  // shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow"""
-  // shexmi:partonomy shexmi:sharedAggregation;
+  ddi:isSpecifiedBy @ddi:WorkflowStepSequence *
+  // shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow""";
   ddi:hasResults CLOSED EXTENDS ddi:Result {
     ddi:sizeOfSample xsd:integer *
     // shexmi:comment """The overall size of the sample""";
@@ -2421,9 +2286,8 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit""";
     ddi:name @ddi:ObjectName *
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
-    ddi:organizedBy @ddi:WorkflowControlStep *
-    // shexmi:comment """The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process."""
-    // shexmi:partonomy shexmi:sharedAggregation;
+    ddi:isSpecifiedBy @ddi:WorkflowControlStep *
+    // shexmi:comment """The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process.""";
     ddi:implementsAlgorithm @ddi:AlgorithmOverview *
     // shexmi:comment """An implementation and/or execution of an algorithm which is associated with the design of the process.""";
   } *
@@ -2765,6 +2629,17 @@ ddi:PointFormat [
 ]
 
 
+ddi:RelationSpecification [
+  ddi:Unordered
+  ddi:List
+  ddi:ParentChild
+  ddi:WholePart
+  ddi:AcyclicPrecedence
+  ddi:Equivalence
+  ddi:GeneralSpecific
+]
+
+
 ddi:SexSpecificationType [
   ddi:Masculine
   ddi:Feminine
@@ -3034,7 +2909,7 @@ ddi:ExternalMaterial CLOSED EXTENDS ddi:Identifiable {
     } *
     // shexmi:comment """Defines the segment of textual content used by the parent object. Can identify a set of lines and or characters used to define the segment""";
     ddi:usesImageArea CLOSED {
-      ddi:coordinates xsd:string *
+      ddi:content xsd:string *
       // shexmi:comment """A comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r).""";
       ddi:shape @ddi:ShapeCoded *
       // shexmi:comment """A fixed set of valid responses includes Rectangle, Circle, and Polygon.""";
@@ -3134,7 +3009,7 @@ d:ComputationItemType"""^^mark:
 ddi:ConditionalControlStep CLOSED EXTENDS ddi:WorkflowControlStep {
   ddi:condition @ddi:CommandCode *
   // shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false""";
-  ddi:executesSequence @ddi:WorkflowStepSequence *
+  ddi:executes @ddi:WorkflowStepSequence *
   // shexmi:comment """The Workflow Sequence is executed depending on the result of the condition evaluation. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false. Specialization of contains in Control Construct."""
   // shexmi:partonomy shexmi:sharedAggregation;
 }
@@ -3152,12 +3027,12 @@ ddi:IfThenElse CLOSED EXTENDS ddi:ConditionalControlStep {
   ddi:elseIf CLOSED {
     ddi:condition @ddi:CommandCode *
     // shexmi:comment """The condition to verify if the parent IfThenElse condition is false.""";
-    ddi:thenWorkflowStepCollection @ddi:WorkflowStepSequence *
-    // shexmi:comment """The WorkflowStepCollection to process if the condition is true""";
+    ddi:executes @ddi:WorkflowStepSequence *
+    // shexmi:comment """The WorkflowStepSequence to execute if the condition is true""";
   } *
   // shexmi:comment """The condition to check if the IfThenElse condition is false. """;
-  ddi:elseContains @ddi:WorkflowStepSequence *
-  // shexmi:comment """Optional sequence of Process Steps that are triggered when the condition is false."""
+  ddi:elseExecutes @ddi:WorkflowStepSequence *
+  // shexmi:comment """Optional sequence of Process Steps that are triggered for execution when the condition is false."""
   // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
@@ -3219,15 +3094,7 @@ ddi:MetadataDrivenAction CLOSED EXTENDS ddi:Act {
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -3235,7 +3102,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema."""^^mark:
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" SDTL as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema."""^^mark:
 
 ddi:Parameter CLOSED {
   ddi:alias xsd:double *
@@ -3304,8 +3179,6 @@ DDI 3.2 mapping
 d:RepeatWhileType"""^^mark:
 
 ddi:Split CLOSED EXTENDS ddi:TemporalRelationControlStep {
-  ddi:executeConcurrently @ddi:WorkflowStep *
-  // shexmi:comment """A WorkflowStep that is to be processed concurrently with other WorkflowSteps indicated.""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3317,8 +3190,6 @@ Explanatory notes
 Supports parallel processing that does not require completion to exit."""^^mark:
 
 ddi:SplitJoin CLOSED EXTENDS ddi:TemporalRelationControlStep {
-  ddi:executeConcurrently @ddi:WorkflowStep *
-  // shexmi:comment """The WorkflowStep that is processed concurrently with other indicated WorkflowSteps""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3347,6 +3218,9 @@ Explanatory notes
 When creating a specific subtype identify the workflow steps included in a structure that is appropriate to the subtype. For example, Split contains a relationship \"executeConcurrently\"."""^^mark:
 
 ABSTRACT ddi:WorkflowControlStep CLOSED EXTENDS ddi:WorkflowStep {
+  ddi:executes @ddi:WorkflowStep *
+  // shexmi:comment """The WorkflowSteps executed by the control mechanism"""
+  // shexmi:partonomy shexmi:sharedAggregation;
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3368,9 +3242,8 @@ ddi:WorkflowProcess CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Explanation of the ways in which the pattern is employed. Supports  the use of multiple languages and  structured text.  """;
   ddi:implementsAlgorithm @ddi:AlgorithmOverview *
   // shexmi:comment """The algorithms implemented by the process. May be expressed by AlgorithmOverview or any subclass""";
-  ddi:organizedBy @ddi:WorkflowControlStep *
-  // shexmi:comment """Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process."""
-  // shexmi:partonomy shexmi:sharedAggregation;
+  ddi:isSpecifiedBy @ddi:WorkflowControlStep *
+  // shexmi:comment """Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process.""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3438,7 +3311,7 @@ ddi:WorkflowStepSequence CLOSED EXTENDS ddi:WorkflowControlStep {
     ddi:index xsd:integer *
     // shexmi:comment """Index value of WorkflowStep in an ordered array""";
     ddi:indexedWorkflowStep @ddi:WorkflowStep *
-    // shexmi:comment """Restricts member target class to  WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes""";
+    // shexmi:comment """The subtype of a WorkflowStep occuring at the indexed position within the array. """;
   } *
   // shexmi:comment """The Workflow Steps included in the Collection with an index for position within ordered array. """;
   ddi:name @ddi:ObjectName *
@@ -3453,7 +3326,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -3462,9 +3335,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship \"executes\" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -3755,7 +3632,14 @@ Provides an abstract base so that current and future forms of data capture can u
 
 ddi:CodeListResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
   ddi:usesCodeList CLOSED EXTENDS ddi:EnumerationDomain {
-    ddi:contains @ddi:CodeIndicator *
+    ddi:contains CLOSED {
+      ddi:index xsd:integer *
+      // shexmi:comment """Provides an index for the member within an ordered array""";
+      ddi:isInLevel xsd:integer *
+      // shexmi:comment """Indicates the level within which the CodeItem resides""";
+      ddi:member @ddi:Code *
+      // shexmi:comment """The member containing the designation of the CodeItem""";
+    } *
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
     ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification *
@@ -3918,7 +3802,7 @@ ddi:NumericResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
   ddi:unit @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """An optional unit of measurement.  Examples include units from the International System of Units (SI) such as meter, seconds, mole, kilograms. Other examples include miles, tons, pints.""";
   ddi:usesNumberRange CLOSED {
-    ddi:label @ddi:LabelForDisplay *
+    ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A display label for the number range. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
     ddi:highCode @ddi:NumberRangeValue *
     // shexmi:comment """High or top value on the range expressed as an xs:decimal within an isInclusive Boolean flag.""";
@@ -4248,8 +4132,6 @@ ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
         // shexmi:partonomy shexmi:compositeAggregation;
       } *
       // shexmi:comment """A UnitDataRecord may have multiple ViewPoints, each of which assigns among roles identifier, measure, and attribute to the InstanceVariables associated with each Datapoint""";
-      ddi:definingConcept @ddi:Concept *
-      // shexmi:comment """The conceptual basis for the collection of members.""";
     } *
     // shexmi:comment """Map related record types, which are Collections of Instance Variables. Realization of structures in Symmetric Relation.
   """;

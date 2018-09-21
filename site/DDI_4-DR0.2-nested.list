@@ -83,6 +83,10 @@
     "referrer": "http://ddi-alliance.org/ns/#ClassificationSeriesRelationStructure",
     "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
   },
+  "http://ddi-alliance.org/ns/#CodeIndicator": {
+    "referrer": "http://ddi-alliance.org/ns/#CodeList",
+    "predicate": "http://ddi-alliance.org/ns/#contains"
+  },
   "http://ddi-alliance.org/ns/#CodeRelation": {
     "referrer": "http://ddi-alliance.org/ns/#CodeRelationStructure",
     "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation"
@@ -130,6 +134,10 @@
   "http://ddi-alliance.org/ns/#CustomValueIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#CustomInstance",
     "predicate": "http://ddi-alliance.org/ns/#contains"
+  },
+  "http://ddi-alliance.org/ns/#CustomValue": {
+    "referrer": "http://ddi-alliance.org/ns/#CustomValueIndicator",
+    "predicate": "http://ddi-alliance.org/ns/#member"
   },
   "http://ddi-alliance.org/ns/#DataPointIndicator": {
     "referrer": "http://ddi-alliance.org/ns/#PhysicalRecordSegment",

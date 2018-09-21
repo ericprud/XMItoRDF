@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-07-30T12:17:33.585Z -->
+     shexToOwl 2018-09-21T09:42:20.961Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
     <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>
@@ -10,23 +10,6 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
 
     <!-- START ddi:StructuredDataTypes Package -->
-    <EquivalentClasses>
-        <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        <ObjectOneOf>
-            <NamedIndividual abbreviatedIRI="ddi:Unordered"/>
-            <NamedIndividual abbreviatedIRI="ddi:List"/>
-            <NamedIndividual abbreviatedIRI="ddi:ParentChild"/>
-            <NamedIndividual abbreviatedIRI="ddi:WholePart"/>
-            <NamedIndividual abbreviatedIRI="ddi:AcyclicPrecedence"/>
-            <NamedIndividual abbreviatedIRI="ddi:Equivalence"/>
-            <NamedIndividual abbreviatedIRI="ddi:GeneralSpecfic"/>
-        </ObjectOneOf>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-
     <Declaration>
         <Class abbreviatedIRI="ddi:AccessLocation"/>
     </Declaration>
@@ -1774,7 +1757,7 @@ Source target relationship between categories in a classification relation struc
         <Class abbreviatedIRI="ddi:CategoryStatistic"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:forCodeItem"/>
-            <Class abbreviatedIRI="ddi:CodeIndicator"/>
+            <Class abbreviatedIRI="ddi:Designation"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2783,20 +2766,20 @@ Member Indicator for use with member type Concept and all subtypes of Concept: C
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
             <Class abbreviatedIRI="ddi:RelationSpecification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptRelation"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -2877,7 +2860,7 @@ Specifies the relationship between concepts in a collection of concepts. Use con
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ConceptRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSepcification - RelationSpecification Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSpecification - RelationSpecification Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -3238,20 +3221,20 @@ Member Indicator for use with member type CustomItem</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
             <Class abbreviatedIRI="ddi:RelationSpecification"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:CustomItemRelation"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
+            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -3320,7 +3303,7 @@ Defines a relationship between CustomItems .</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:CustomItemRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSepcification - The type of relationship between the two CustomItems. The verb in the sentence describing the relationship between the source (subject) and the target (object).
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSpecification - The type of relationship between the two CustomItems. The verb in the sentence describing the relationship between the source (subject) and the target (object).
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -3404,122 +3387,6 @@ Member Indicator for use with member type CustomValue</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:CustomValueIndicator</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:member - Restricts member target class to CustomValue
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-            <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-            <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-            <Class abbreviatedIRI="ddi:TotalityType"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="ddi:CustomValue"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="ddi:CustomValue"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomValueRelation"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-Defines the relation between CustomValues</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSpecification - Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:semantic - Provides semantic context for the relationship
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:totality - Type of relation in terms of totality with respect to an associated collection.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:source - The source has been restricted to a CustomValue
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:CustomValueRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:target - The target object has been restricted to a single CustomValue
 </Literal>
     </AnnotationAssertion>
 
@@ -3962,69 +3829,6 @@ r:DateType</Literal>
     </AnnotationAssertion>
 
     <Declaration>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:rationale"/>
-            <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:rationale"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:relatedTo"/>
-            <Class abbreviatedIRI="ddi:Identifiable"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:relatedTo"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:relatedTo"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DescribedRelationship"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:DescribedRelationship</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-Relationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.
-
-DDI 3.2 mapping
-=================
-r:RelationshipType</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:DescribedRelationship</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:rationale - Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:DescribedRelationship</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:relatedTo - Reference to the item within the DDI Instance to which this item is related.
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
         <Class abbreviatedIRI="ddi:DoubleNumberRangeValue"/>
     </Declaration>
     <SubClassOf>
@@ -4361,14 +4165,14 @@ a:InstantMessagingType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ElseIfAction"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:thenWorkflowStepCollection"/>
+            <ObjectProperty abbreviatedIRI="ddi:executes"/>
             <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ElseIfAction"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:thenWorkflowStepCollection"/>
+            <ObjectProperty abbreviatedIRI="ddi:executes"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -4391,7 +4195,7 @@ An additional condition and resulting step to take if the condition in the paren
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ElseIfAction</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:thenWorkflowStepCollection - The WorkflowStepCollection to process if the condition is true
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executes - The WorkflowStepSequence to execute if the condition is true
 </Literal>
     </AnnotationAssertion>
 
@@ -5357,14 +5161,14 @@ r:ImageType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImageArea"/>
         <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:coordinates"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ImageArea"/>
         <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:coordinates"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
         </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -5389,7 +5193,7 @@ r:ImageType</Literal>
         <AbbreviatedIRI>ddi:ImageArea</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Defines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and Coordinates provides the information required to define it.
+Defines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and content provides the information required to define it in the form of a comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r).
 
 DDI 3.2 mapping
 =================
@@ -5398,7 +5202,7 @@ r:ImageAreaType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ImageArea</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:coordinates - A comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r).
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:content - A comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r).
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -7312,7 +7116,7 @@ r:HistoricalDateType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:NumberRange"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:label"/>
+            <ObjectProperty abbreviatedIRI="ddi:displayLabel"/>
             <Class abbreviatedIRI="ddi:LabelForDisplay"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -7437,7 +7241,7 @@ r:NumberRangeType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:NumberRange</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:label - A display label for the number range. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:displayLabel - A display label for the number range. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -8358,14 +8162,14 @@ r:SegmentType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialCoordinate"/>
         <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:coordinateValue"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SpatialCoordinate"/>
         <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:coordinateValue"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
         </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -8399,7 +8203,7 @@ r:SpatialCoordinateType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:SpatialCoordinate</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:coordinateValue - The value of the coordinate expressed as a string.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:content - The value of the coordinate expressed as a string.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -8653,63 +8457,6 @@ Used to specify a relationship between one spatial object and another. Includes 
     </AnnotationAssertion>
 
     <Declaration>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:attributeKey"/>
-            <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:attributeKey"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:attributeValue"/>
-            <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:attributeValue"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StandardKeyValuePair"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:StandardKeyValuePair</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.
-
-DDI 3.2 mapping
-=================
-r:StandardKeyValuePairType</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:StandardKeyValuePair</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:attributeKey - This key (sometimes referred to as a name) expressed as a string. Supports the use of an external controlled vocabulary which is the recommended approach.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:StandardKeyValuePair</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:attributeValue - The value assigned to the named Key expressed as a string. Supports the use of an external controlled vocabulary.
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
         <Class abbreviatedIRI="ddi:Statistic"/>
     </Declaration>
     <SubClassOf>
@@ -8741,27 +8488,27 @@ r:StandardKeyValuePairType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:decimalValue"/>
-            <Datatype abbreviatedIRI="xsd:double"/>
+            <DataProperty abbreviatedIRI="ddi:typeOfNumericValue"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:decimalValue"/>
+            <DataProperty abbreviatedIRI="ddi:typeOfNumericValue"/>
         </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:doubleValue"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
             <Datatype abbreviatedIRI="xsd:double"/>
         </DataAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Statistic"/>
         <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:doubleValue"/>
+            <DataProperty abbreviatedIRI="ddi:content"/>
         </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -8794,13 +8541,13 @@ pi:StatisticType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:Statistic</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:decimalValue - The value of the statistic expressed as a decimal
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:typeOfNumericValue - Indicate the type of numeric value as decimal, float, double
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:Statistic</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:doubleValue - The value of the statistic expressed as a double.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:content - The value of the statistic expressed as a decimal, float, or double.
 </Literal>
     </AnnotationAssertion>
 
@@ -10080,116 +9827,6 @@ r:VideoType</Literal>
     </AnnotationAssertion>
 
     <Declaration>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-            <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-            <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-            <Class abbreviatedIRI="ddi:TotalityType"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="ddi:InstanceVariable"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="ddi:InstanceVariable"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ViewpointRoleRelation"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-Defines complex relationship between ViewpointRoles</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSpecification - Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:semantic - Provides semantic context for the relationship
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:totality - Type of relation in terms of totality with respect to an associated collection.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:source - First member in a relationship.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ViewpointRoleRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:target - Second member in a relationship. Note that this can be realized as a collection to support tuples.
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
         <Class abbreviatedIRI="ddi:VocabularyEntryIndicator"/>
     </Declaration>
     <SubClassOf>
@@ -10540,7 +10177,7 @@ a:URLType</Literal>
         <AbbreviatedIRI>ddi:WorkflowStepOrder</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Member Indicator for use with member type WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes</Literal>
+Associates an sequence ordering number with any WorflowStep or sub-type,</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -10551,195 +10188,7 @@ Member Indicator for use with member type WorkflowStep, Act, and ConditionalCont
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:WorkflowStepOrder</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:indexedWorkflowStep - Restricts member target class to  WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-            <Class abbreviatedIRI="ddi:RelationSpecification"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasRelationSpecification"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-            <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:semantic"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-            <Class abbreviatedIRI="ddi:TotalityType"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:totality"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasTemporalRelationSpecification"/>
-            <Class abbreviatedIRI="ddi:TemporalRelationSpecification"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasTemporalRelationSpecification"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-            <Class abbreviatedIRI="ddi:WorkflowStep"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:source"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:target"/>
-            <Class abbreviatedIRI="ddi:WorkflowStep"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepRelation"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-Describes structured relations between WorkflowSteps</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasRelationSpecification - Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:semantic - Provides semantic context for the relationship
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:totality - Type of relation in terms of totality with respect to an associated collection.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasTemporalRelationSpecification - Supports the use of Allan's Intervals for describing temporal relations. Allan's Intervals are specific types of analytic precedence relations and should be used to refine a RelationSpecification of analyticPrecedence.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:source - First member in the relationship.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepRelation</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:target - Second member in a relationship. Note that this can be realized as a collection to support tuples.
-</Literal>
-    </AnnotationAssertion>
-
-    <Declaration>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <DataAllValuesFrom>
-            <DataProperty abbreviatedIRI="ddi:index"/>
-            <Datatype abbreviatedIRI="xsd:integer"/>
-        </DataAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="ddi:index"/>
-        </DataMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:member"/>
-            <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:member"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:member"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequenceIndicator"/>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepSequenceIndicator</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-Identify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepSequenceIndicator</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:index - Provides an index for the member within an ordered array
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:WorkflowStepSequenceIndicator</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:member - Member of the collection, restricted to a single instance
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:indexedWorkflowStep - The subtype of a WorkflowStep occuring at the indexed position within the array.
 </Literal>
     </AnnotationAssertion>
 
@@ -11637,12 +11086,6 @@ Variable</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:InstanceVariable"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:measures"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:InstanceVariable"/>
         <ObjectMaxCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="ddi:measures"/>
         </ObjectMaxCardinality>
@@ -11802,19 +11245,6 @@ Instance Variable</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Population"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:descriptiveText"/>
-            <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Population"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:descriptiveText"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Population"/>
-        <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:timePeriodOfPopulation"/>
             <Class abbreviatedIRI="ddi:DateRange"/>
         </ObjectAllValuesFrom>
@@ -11824,13 +11254,6 @@ Instance Variable</Literal>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:composedOf"/>
             <Class abbreviatedIRI="ddi:Unit"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Population"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:usesConcept"/>
-            <Class abbreviatedIRI="ddi:Concept"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -11855,7 +11278,7 @@ Instance Variable</Literal>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Population"/>
-        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:Universe"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -11881,12 +11304,6 @@ Population</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:Population</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:descriptiveText - A short natural language account of the characteristics of the object.
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:Population</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:timePeriodOfPopulation - The time period associated with the Population
 </Literal>
     </AnnotationAssertion>
@@ -11894,12 +11311,6 @@ Population</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:Population</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:composedOf - Units in the Population
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:Population</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:usesConcept - Reference to the Concept that is being used
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -11960,14 +11371,14 @@ Population</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:measures"/>
+            <ObjectProperty abbreviatedIRI="ddi:drawsFrom"/>
             <Class abbreviatedIRI="ddi:Universe"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:measures"/>
+            <ObjectProperty abbreviatedIRI="ddi:drawsFrom"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -12035,7 +11446,7 @@ l:RepresentedVariableType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:RepresentedVariable</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:measures - The defined class of people, entities, events, or objects to be measured.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:drawsFrom - The defined class of people, entities, events, or objects to be measured.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -12355,7 +11766,7 @@ Population</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:Universe</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isInclusive - The default value is "true". The description statement of a universe is generally stated in inclusive terms such as "All persons with university degree". Occasionally a universe is defined by what it excludes, i.e., "All persons except those with university degree". In this case the value would be changed to "false".
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isInclusive - Default value is True. The description statement of a universe is generally stated in inclusive terms such as "All persons with university degree". Occasionally a universe is defined by what it excludes, i.e., "All persons except those with university degree". In this case the value would be changed to "false".
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -13270,14 +12681,14 @@ Note that the algorithm may be implemented by multiple processes which are not l
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ProcessOverview"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
             <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ProcessOverview"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -13325,7 +12736,7 @@ In a descriptive document, Process Overview provides a means of presenting the r
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ProcessOverview</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:organizedBy - The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isSpecifiedBy - The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -15889,18 +15300,6 @@ This is the classic rectangular data table used by most statistical packages, wi
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ValueMapping"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:formatsDataPoint"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ValueMapping"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:formatsDataPoint"/>
-        </ObjectMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ValueMapping"/>
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="ddi:describesSegmentLocation"/>
             <Class abbreviatedIRI="ddi:PhysicalSegmentLocation"/>
@@ -15945,7 +15344,7 @@ The ValueMapping describes how the value of an InstanceVariable is physically ex
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ValueMapping</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:defaultDecimalSeparator - Default value is ".". The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.”
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:defaultDecimalSeparator - Default value is . (period). The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.”
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -17713,14 +17112,14 @@ This is a summary of the methodology of sampling providing both an overview of p
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcess"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:hasProcessSequence"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
             <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SamplingProcess"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:hasProcessSequence"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -17773,7 +17172,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:SamplingProcess</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:hasProcessSequence - The Process Sequence which initiate the process flow and describes the sequence of the process flow
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isSpecifiedBy - The Process Sequence which initiate the process flow and describes the sequence of the process flow
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -19064,6 +18463,23 @@ A simple ordered or unordered sequence of studies can be described via the "cont
     </SubClassOf>
 
     <EquivalentClasses>
+        <Class abbreviatedIRI="ddi:RelationSpecification"/>
+        <ObjectOneOf>
+            <NamedIndividual abbreviatedIRI="ddi:Unordered"/>
+            <NamedIndividual abbreviatedIRI="ddi:List"/>
+            <NamedIndividual abbreviatedIRI="ddi:ParentChild"/>
+            <NamedIndividual abbreviatedIRI="ddi:WholePart"/>
+            <NamedIndividual abbreviatedIRI="ddi:AcyclicPrecedence"/>
+            <NamedIndividual abbreviatedIRI="ddi:Equivalence"/>
+            <NamedIndividual abbreviatedIRI="ddi:GeneralSpecific"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RelationSpecification"/>
+        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
+    </SubClassOf>
+
+    <EquivalentClasses>
         <Class abbreviatedIRI="ddi:SexSpecificationType"/>
         <ObjectOneOf>
             <NamedIndividual abbreviatedIRI="ddi:Masculine"/>
@@ -20063,14 +19479,14 @@ d:ComputationItemType</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConditionalControlStep"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:executesSequence"/>
+            <ObjectProperty abbreviatedIRI="ddi:executes"/>
             <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConditionalControlStep"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:executesSequence"/>
+            <ObjectProperty abbreviatedIRI="ddi:executes"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -20098,7 +19514,7 @@ If-then-else and iterative structures.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:ConditionalControlStep</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executesSequence - The Workflow Sequence is executed depending on the result of the condition evaluation. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false. Specialization of contains in Control Construct.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executes - The Workflow Sequence is executed depending on the result of the condition evaluation. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false. Specialization of contains in Control Construct.
 </Literal>
     </AnnotationAssertion>
 
@@ -20115,14 +19531,14 @@ If-then-else and iterative structures.</Literal>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IfThenElse"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:elseContains"/>
+            <ObjectProperty abbreviatedIRI="ddi:elseExecutes"/>
             <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:IfThenElse"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:elseContains"/>
+            <ObjectProperty abbreviatedIRI="ddi:elseExecutes"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -20161,7 +19577,7 @@ d:IfThenElseType</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:IfThenElse</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:elseContains - Optional sequence of Process Steps that are triggered when the condition is false.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:elseExecutes - Optional sequence of Process Steps that are triggered for execution when the condition is false.
 </Literal>
     </AnnotationAssertion>
 
@@ -20285,15 +19701,7 @@ d:LoopType</Literal>
         <AbbreviatedIRI>ddi:MetadataDrivenAction</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -20301,7 +19709,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" SDTL as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -20599,13 +20015,6 @@ d:RepeatWhileType</Literal>
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Split"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:executeConcurrently"/>
-            <Class abbreviatedIRI="ddi:WorkflowStep"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Split"/>
         <Class abbreviatedIRI="ddi:TemporalRelationControlStep"/>
     </SubClassOf>
     <AnnotationAssertion>
@@ -20619,23 +20028,10 @@ Explanatory notes
 ===================
 Supports parallel processing that does not require completion to exit.</Literal>
     </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:Split</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executeConcurrently - A WorkflowStep that is to be processed concurrently with other WorkflowSteps indicated.
-</Literal>
-    </AnnotationAssertion>
 
     <Declaration>
         <Class abbreviatedIRI="ddi:SplitJoin"/>
     </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SplitJoin"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:executeConcurrently"/>
-            <Class abbreviatedIRI="ddi:WorkflowStep"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:SplitJoin"/>
         <Class abbreviatedIRI="ddi:TemporalRelationControlStep"/>
@@ -20654,12 +20050,6 @@ A GANTT chart where a number of processes running parallel to each other are all
 Explanatory notes
 ===================
 Supports parallel processing that requires completion of all included process steps to exit.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:SplitJoin</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executeConcurrently - The WorkflowStep that is processed concurrently with other indicated WorkflowSteps
-</Literal>
     </AnnotationAssertion>
 
     <Declaration>
@@ -20722,6 +20112,13 @@ When creating a specific subtype identify the workflow steps included in a struc
     </DisjointUnion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ddi:executes"/>
+            <Class abbreviatedIRI="ddi:WorkflowStep"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
         <Class abbreviatedIRI="ddi:WorkflowStep"/>
     </SubClassOf>
     <AnnotationAssertion>
@@ -20734,6 +20131,12 @@ A subtype of WorkflowStep which controls the ordering of Workflow Steps within a
 Examples
 ==========
 A WorkflowStepSequence is a subtype of WorkflowControlStep which defines a sequential order for included steps.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:WorkflowControlStep</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:executes - The WorkflowSteps executed by the control mechanism
+</Literal>
     </AnnotationAssertion>
 
     <Declaration>
@@ -20795,14 +20198,14 @@ A WorkflowStepSequence is a subtype of WorkflowControlStep which defines a seque
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowProcess"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
             <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:WorkflowProcess"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+            <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -20857,7 +20260,7 @@ Overall description of steps taken when ingesting a dataset into an archive; A S
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:WorkflowProcess</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:organizedBy - Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process.
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isSpecifiedBy - Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process.
 </Literal>
     </AnnotationAssertion>
 
@@ -21188,7 +20591,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -21197,9 +20600,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -23680,7 +23087,6 @@ r:TextDomainType</Literal>
         <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
         <Class abbreviatedIRI="ddi:ConceptualDomain"/>
         <Class abbreviatedIRI="ddi:ConceptualVariable"/>
-        <Class abbreviatedIRI="ddi:Population"/>
         <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         <Class abbreviatedIRI="ddi:InstanceVariable"/>
         <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
@@ -23688,6 +23094,7 @@ r:TextDomainType</Literal>
         <Class abbreviatedIRI="ddi:Unit"/>
         <Class abbreviatedIRI="ddi:UnitType"/>
         <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:Population"/>
         <Class abbreviatedIRI="ddi:VariableCollection"/>
         <Class abbreviatedIRI="ddi:StandardWeight"/>
         <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
@@ -23880,7 +23287,6 @@ Used to identify objects for purposes of internal and/or external referencing. E
         <Class abbreviatedIRI="ddi:ConceptSystemCorrespondence"/>
         <Class abbreviatedIRI="ddi:ConceptualDomain"/>
         <Class abbreviatedIRI="ddi:ConceptualVariable"/>
-        <Class abbreviatedIRI="ddi:Population"/>
         <Class abbreviatedIRI="ddi:RepresentedVariable"/>
         <Class abbreviatedIRI="ddi:InstanceVariable"/>
         <Class abbreviatedIRI="ddi:SentinelConceptualDomain"/>
@@ -23888,6 +23294,7 @@ Used to identify objects for purposes of internal and/or external referencing. E
         <Class abbreviatedIRI="ddi:Unit"/>
         <Class abbreviatedIRI="ddi:UnitType"/>
         <Class abbreviatedIRI="ddi:Universe"/>
+        <Class abbreviatedIRI="ddi:Population"/>
         <Class abbreviatedIRI="ddi:VariableCollection"/>
         <Class abbreviatedIRI="ddi:StandardWeight"/>
         <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
@@ -25101,17 +24508,10 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -25561,13 +24961,6 @@ A household-level LogicalRecord might contain an InstanceVariable called Househo
     </SubClassOf>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:UnitDataRecord"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI="ddi:definingConcept"/>
-            <Class abbreviatedIRI="ddi:Concept"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:UnitDataRecord"/>
         <Class abbreviatedIRI="ddi:LogicalRecord"/>
     </SubClassOf>
     <AnnotationAssertion>
@@ -25607,12 +25000,6 @@ Table Definition if the UnitDataRecord is a SimpleCollection, Information Model 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>ddi:UnitDataRecord</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:isViewedFrom - A UnitDataRecord may have multiple ViewPoints, each of which assigns among roles identifier, measure, and attribute to the InstanceVariables associated with each Datapoint
-</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:UnitDataRecord</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ddi:definingConcept - The conceptual basis for the collection of members.
 </Literal>
     </AnnotationAssertion>
 
@@ -30076,7 +29463,7 @@ Value Domain</Literal>
     </Declaration>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:forCodeItem"/>
-        <Class abbreviatedIRI="ddi:CodeIndicator"/>
+        <Class abbreviatedIRI="ddi:Designation"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -30165,14 +29552,6 @@ Value Domain</Literal>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:location"/>
         <Class abbreviatedIRI="ddi:InternationalString"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasRelationSepcification"/>
-        <Class abbreviatedIRI="ddi:RelationSpecification"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -30304,22 +29683,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:rationale"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:rationale"/>
-        <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:relatedTo"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:relatedTo"/>
-        <Class abbreviatedIRI="ddi:Identifiable"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <DataProperty abbreviatedIRI="ddi:isInclusive"/>
     </Declaration>
     <DataPropertyRange>
@@ -30400,10 +29763,10 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:thenWorkflowStepCollection"/>
+        <ObjectProperty abbreviatedIRI="ddi:executes"/>
     </Declaration>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:thenWorkflowStepCollection"/>
+        <ObjectProperty abbreviatedIRI="ddi:executes"/>
         <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
     </ObjectPropertyRange>
 
@@ -30463,13 +29826,7 @@ Value Domain</Literal>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
 
-    <Declaration>
-        <DataProperty abbreviatedIRI="ddi:content"/>
-    </Declaration>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="ddi:content"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#content with no common type -->
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:language"/>
@@ -30549,14 +29906,6 @@ Value Domain</Literal>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="ddi:languageOfImage"/>
         <Datatype abbreviatedIRI="xsd:language"/>
-    </DataPropertyRange>
-
-    <Declaration>
-        <DataProperty abbreviatedIRI="ddi:coordinates"/>
-    </Declaration>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="ddi:coordinates"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
 
     <Declaration>
@@ -30928,14 +30277,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:label"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:label"/>
-        <Class abbreviatedIRI="ddi:LabelForDisplay"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:highCode"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -31136,14 +30477,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <DataProperty abbreviatedIRI="ddi:coordinateValue"/>
-    </Declaration>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="ddi:coordinateValue"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:coordinateType"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -31200,22 +30533,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:attributeKey"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:attributeKey"/>
-        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:attributeValue"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:attributeValue"/>
-        <Class abbreviatedIRI="ddi:ExternalControlledVocabularyEntry"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <DataProperty abbreviatedIRI="ddi:isWeighted"/>
     </Declaration>
     <DataPropertyRange>
@@ -31230,6 +30547,14 @@ Value Domain</Literal>
         <ObjectProperty abbreviatedIRI="ddi:computationBase"/>
         <Class abbreviatedIRI="ddi:ComputationBaseList"/>
     </ObjectPropertyRange>
+
+    <Declaration>
+        <DataProperty abbreviatedIRI="ddi:typeOfNumericValue"/>
+    </Declaration>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="ddi:typeOfNumericValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:typeOfSummaryStatistic"/>
@@ -31365,14 +30690,6 @@ Value Domain</Literal>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:indexedWorkflowStep"/>
         <Class abbreviatedIRI="ddi:WorkflowStep"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasTemporalRelationSpecification"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasTemporalRelationSpecification"/>
-        <Class abbreviatedIRI="ddi:TemporalRelationSpecification"/>
     </ObjectPropertyRange>
 
     <!-- skipping http://ddi-alliance.org/ns/#hasMemberRelation with no common type -->
@@ -31514,7 +30831,7 @@ Value Domain</Literal>
     </Declaration>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:measures"/>
-        <Class abbreviatedIRI="ddi:Concept"/>
+        <Class abbreviatedIRI="ddi:Population"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -31611,6 +30928,14 @@ Value Domain</Literal>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:takesSubstantiveValuesFrom"/>
         <Class abbreviatedIRI="ddi:SubstantiveValueDomain"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:drawsFrom"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:drawsFrom"/>
+        <Class abbreviatedIRI="ddi:Universe"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -31766,6 +31091,14 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
+        <ObjectProperty abbreviatedIRI="ddi:rationale"/>
+    </Declaration>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="ddi:rationale"/>
+        <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
+    </ObjectPropertyRange>
+
+    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -31790,10 +31123,10 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+        <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
     </Declaration>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:organizedBy"/>
+        <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
         <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
     </ObjectPropertyRange>
 
@@ -32566,14 +31899,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasProcessSequence"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasProcessSequence"/>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:hasResults"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -33038,14 +32363,6 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:executesSequence"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:executesSequence"/>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:elseIf"/>
     </Declaration>
     <ObjectPropertyRange>
@@ -33054,10 +32371,10 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:elseContains"/>
+        <ObjectProperty abbreviatedIRI="ddi:elseExecutes"/>
     </Declaration>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:elseContains"/>
+        <ObjectProperty abbreviatedIRI="ddi:elseExecutes"/>
         <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
     </ObjectPropertyRange>
 
@@ -33147,14 +32464,6 @@ Value Domain</Literal>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="ddi:valueRepresentation"/>
         <Class abbreviatedIRI="ddi:ValueDomain"/>
-    </ObjectPropertyRange>
-
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:executeConcurrently"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:executeConcurrently"/>
-        <Class abbreviatedIRI="ddi:WorkflowStep"/>
     </ObjectPropertyRange>
 
     <Declaration>
@@ -34350,6 +33659,99 @@ Value Domain</Literal>
     </ObjectPropertyRange>
 
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Utility_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Workflows_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Discovery_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Identification_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Agents_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:Representations_Package"/>
+        <Class abbreviatedIRI="ddi:ddi4_model"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:DescriptiveCodebookView"/>
         <Class abbreviatedIRI="ddi:Views"/>
     </SubClassOf>
@@ -35090,17 +34492,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -36267,25 +35662,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:SamplingView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:SamplingView"/>
     </SubClassOf>
@@ -36339,6 +35715,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
@@ -37138,7 +36529,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -37147,9 +36538,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -38320,17 +37715,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -38387,15 +37775,7 @@ d:LoopType</Literal>
         <AbbreviatedIRI>ddi:MetadataDrivenAction</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -38403,7 +37783,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" SDTL as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
@@ -38727,7 +38115,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -38736,9 +38124,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -39257,17 +38649,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -39857,6 +39242,35 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:Code</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.
+
+Examples
+==========
+The letter M might stand for the category Male in the CodeList called Gender.
+
+Explanatory notes
+===================
+A Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. 
+
+It should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.
+
+DDI 3.2 mapping
+=================
+l:CodeType
+
+GSIM mapping
+==============
+Code</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
     </SubClassOf>
@@ -39881,6 +39295,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Concept"/>
@@ -40632,25 +40061,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
     </SubClassOf>
@@ -41298,6 +40708,26 @@ DDI 3.2 mapping
 l:CategoryType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CategoryRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of categories within a collection. Allows for the specification of complex relationships among categories.
+
+Examples
+==========
+The category of student might be described as having sub-types of primary school student and high school student.
+
+Explanatory notes
+===================
+The CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. 
+This is a kind of a ConceptRelationStructure restricted to categories (which are concepts).</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -41313,25 +40743,6 @@ Examples
 "Male" and "Female" categories in a CategorySet named "Gender"
 
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
@@ -41404,6 +40815,21 @@ DDI 3.2 mapping
 d:CodeDomainType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -41450,6 +40876,52 @@ c:ConceptType
 GSIM mapping
 ==============
 Concept</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.
+
+Examples
+==========
+A concept of vacation might be described as having sub-types of beach vacation and mountain vacation.
+
+Explanatory notes
+===================
+The ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptSystem</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A set of Concepts structured by the relations among them. [GSIM 1.1] 
+
+Examples
+==========
+1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  
+
+Explanatory notes
+===================
+Note that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.
+
+DDI 3.2 mapping
+=================
+c:ConceptSchemeType
+
+GSIM mapping
+==============
+Concept System</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
@@ -42095,7 +41567,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -42104,9 +41576,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -43123,17 +42599,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -44300,25 +43769,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:SamplingView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:SamplingView"/>
     </SubClassOf>
@@ -44372,6 +43822,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:SamplingView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
@@ -45171,7 +44636,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -45180,9 +44645,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -46353,17 +45822,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -46420,15 +45882,7 @@ d:LoopType</Literal>
         <AbbreviatedIRI>ddi:MetadataDrivenAction</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
 ============
-Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.
-
-In ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.
-
-In ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
-
-In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
-
-MetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+MetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.
 
 Examples
 ==========
@@ -46436,7 +45890,15 @@ Some data management systems present users with a menu of actions they can use i
 
 Explanatory notes
 ===================
-We would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
+Whereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.
+
+In a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.
+
+In the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.
+
+MetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain "extensions". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.
+
+Note that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to "evolve" SDTL as needed without changing our model. Instead, as our language "evolves", we one have to update its schema.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:MethodologyOverview"/>
@@ -46760,7 +46222,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -46769,9 +46231,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -47290,17 +46756,10 @@ Instance Variable</Literal>
 A realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.
 
 
-Examples
-==========
-The HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.
-
-The openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.
-
 Explanatory notes
 ===================
 For a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. 
 
-In terms of ISO-11404 an InstanceVariableRelationStructure is able to create "aggregate datatypes". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a "datatype generator".
 
 Synonyms
 ==========
@@ -47890,6 +47349,35 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:Code"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:Code</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A type of Designation that relates a representation expressed as a string with or without meaningful white space to a specific classification. For use in a Code List. The representation property (Value) is expressed as it would be found in a data file. Multiple representations may relate to the same Category but should be expressed as separate Codes.
+
+Examples
+==========
+The letter M might stand for the category Male in the CodeList called Gender.
+
+Explanatory notes
+===================
+A Code is a kind of Designation, in particular it is the assignment of an alphanumeric string to stand in place of a category. 
+
+It should not be confused with a ClassificationItem which is a placeholder for a position in a StatisticalClassification. It contains a Designation, for which Code is a kind; a Category; and other things. For example, in 2012 NAICS (North American Industry Classification System) one Classification Item has the Code 23 and the Category construction.
+
+DDI 3.2 mapping
+=================
+l:CodeType
+
+GSIM mapping
+==============
+Code</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CodeList"/>
         <Class abbreviatedIRI="ddi:ConceptualContentView"/>
     </SubClassOf>
@@ -47914,6 +47402,21 @@ l:CodeListType
 GSIM mapping
 ==============
 Code List</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:ConceptualContentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Concept"/>
@@ -48665,25 +48168,6 @@ Examples
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:CustomMetadataView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
         <Class abbreviatedIRI="ddi:CustomMetadataView"/>
     </SubClassOf>
@@ -49331,6 +48815,26 @@ DDI 3.2 mapping
 l:CategoryType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CategoryRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CategoryRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of categories within a collection. Allows for the specification of complex relationships among categories.
+
+Examples
+==========
+The category of student might be described as having sub-types of primary school student and high school student.
+
+Explanatory notes
+===================
+The CategoryRelationStructure employs a set of CategoryRelations to describe the relationship among concepts. Each CategoryRelation is a one to many description of connections between categories. Together they might commonly describe relationships as complex as a hierarchy. 
+This is a kind of a ConceptRelationStructure restricted to categories (which are concepts).</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:CategorySet"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -49346,25 +48850,6 @@ Examples
 "Male" and "Female" categories in a CategorySet named "Gender"
 
 A CategorySet for an occupational classification system like ISCO-08 could use a ClassificationRelationStructure to describe a hierarchy (Chief Executives and Administrative and Commercial Managers as subtypes of Managers) without an associated Code List.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:ClassificationItemRelationStructure"/>
-        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:ClassificationItemRelationStructure</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
-============
-A complex RelationStructure for use with statistical classification
-
-Examples
-==========
-A ClassificationRelationStructure for ISCO-08 would describe each of the major classifications as a parent of its sub-classifications.   1 Managers, for example would be listed as a parent of four sub groups: 11 Chief Executives, Senior Officials and Legislators;  12 Chief Executives, Senior Officials and Legislators;  13 Production and Specialized Services Managers; and  14 Hospitality, Retail and Other Services Managers. 
-
-Explanatory notes
-===================
-The ClassificationItemRelationStructure has a set of ClassificationItemRelations which are basically adjacency lists. A source ClassificationItem has a described relationship to a target list of ClassificationItem. The semantic might be, for example, "parentOf", or "contains", etc..</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:Code"/>
@@ -49437,6 +48922,21 @@ DDI 3.2 mapping
 d:CodeDomainType</Literal>
     </AnnotationAssertion>
     <SubClassOf>
+        <Class abbreviatedIRI="ddi:CodeRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:CodeRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of codes within a codelist. Allows for the specification of complex relationships among codes.
+
+Explanatory notes
+===================
+The CodeRelationStructure employs a set of CodeRelations to describe the relationship among concepts. Each CodeRelation is a one to many description of connections between codes. Together they might commonly describe relationships as complex as a hierarchy.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
         <Class abbreviatedIRI="ddi:ComputationAction"/>
         <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
     </SubClassOf>
@@ -49483,6 +48983,52 @@ c:ConceptType
 GSIM mapping
 ==============
 Concept</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptRelationStructure"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptRelationStructure</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+Relation structure of concepts within a collection. Allows for the specification of complex relationships among concepts.
+
+Examples
+==========
+A concept of vacation might be described as having sub-types of beach vacation and mountain vacation.
+
+Explanatory notes
+===================
+The ConceptRelationStructure employs a set of ConceptRelations to describe the relationship among concepts. Each ConceptRelation is a one to many description of connections between concepts. Together they can describe relationships as complex as a hierarchy or even a complete cyclical network as in a concept map.</Literal>
+    </AnnotationAssertion>
+    <SubClassOf>
+        <Class abbreviatedIRI="ddi:ConceptSystem"/>
+        <Class abbreviatedIRI="ddi:DataCaptureInstrumentView"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ddi:ConceptSystem</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition
+============
+A set of Concepts structured by the relations among them. [GSIM 1.1] 
+
+Examples
+==========
+1) Concept of Sex: Male, Female, Other 2) Concept of Household Relationship: Household Head, Spouse of Household Head, Child of Household Head, Unrelated Household Member, etc.  
+
+Explanatory notes
+===================
+Note that this structure can be used to structure Concept, Classification, Universe, Population, Unit Type and any other class that extends from Concept.
+
+DDI 3.2 mapping
+=================
+c:ConceptSchemeType
+
+GSIM mapping
+==============
+Concept System</Literal>
     </AnnotationAssertion>
     <SubClassOf>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
@@ -50128,7 +49674,7 @@ A WorkflowStepSequence controls the order of WorkflowSteps by defining a simple 
 
 WorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .
 
-Members in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
+WorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.
 
 
 Examples
@@ -50137,9 +49683,13 @@ A WorkflowStepSequence can be used to describe the flow of questions in a questi
 
 A WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.
 
+
+
 Explanatory notes
 ===================
 If more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.
+The relationship "executes" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. 
+
 
 DDI 3.2 mapping
 =================
@@ -50322,99 +49872,6 @@ Explanatory notes
 ===================
 related to org:Organization which is described as "Represents a collection of people organized together into a community or other..."</Literal>
     </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StructuredDataTypes_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Conceptual_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SimpleCodebook_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SimpleMethodologyOverview_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:GeographicClassification_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:CustomMetadata_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:SamplingMethodology_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:StudyRelated_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:BusinessWorkflow_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Utility_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Workflows_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Methodologies_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Discovery_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:DataCapture_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Identification_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:LogicalDataDescription_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
-    </AnnotationAssertion>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Agents_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:Representations_Package"/>
-        <Class abbreviatedIRI="ddi:ddi4_model"/>
-    </SubClassOf>
 
 </Ontology>
 

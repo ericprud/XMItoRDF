@@ -2,33 +2,6 @@
   "type": "Schema",
   "shapes": [
     {
-      "id": "http://ddi-alliance.org/ns/#RelationSpecification",
-      "type": "NodeConstraint",
-      "values": [
-        "http://ddi-alliance.org/ns/#Unordered",
-        "http://ddi-alliance.org/ns/#List",
-        "http://ddi-alliance.org/ns/#ParentChild",
-        "http://ddi-alliance.org/ns/#WholePart",
-        "http://ddi-alliance.org/ns/#AcyclicPrecedence",
-        "http://ddi-alliance.org/ns/#Equivalence",
-        "http://ddi-alliance.org/ns/#GeneralSpecfic"
-      ],
-      "annotations": [
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-          "object": "http://lion.ddialliance.org/ddiobjects/relationspecification"
-        },
-        {
-          "type": "Annotation",
-          "predicate": "http://www.w3.org/ns/shex-xmi#package",
-          "object": {
-            "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-          }
-        }
-      ]
-    },
-    {
       "id": "http://ddi-alliance.org/ns/#AgentAssociation",
       "type": "ShapeDecl",
       "abstract": false,
@@ -972,114 +945,6 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nA BusinessProcess precondition or post condition which describes the condition which must be met to begin (pre) or exit (post) a process. It may use a specified LogicalRecord. The Logical Record has SQL that describes it, rejectionCriteria against which its adequacy may be tested and an optional annotation that describes its provenance.\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#CodeIndicator",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#index",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-              },
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/index"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides an index for the member within an ordered array",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#isInLevel",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-              },
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/isinlevel"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Indicates the level within which the CodeItem resides",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#member",
-              "valueExpr": "http://ddi-alliance.org/ns/#Code",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/member"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The member containing the designation of the CodeItem",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/codeindicator"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nA CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure.\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -2717,152 +2582,6 @@
       }
     },
     {
-      "id": "http://ddi-alliance.org/ns/#CustomValueRelation",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
-              "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#semantic",
-              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/semantic"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides semantic context for the relationship",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#totality",
-              "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/totality"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Type of relation in terms of totality with respect to an associated collection.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#source",
-              "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/source"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The source has been restricted to a CustomValue",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#target",
-              "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
-              "min": 0,
-              "max": -1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/target"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The target object has been restricted to a single CustomValue",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/customvaluerelation"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nDefines the relation between CustomValues\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "http://ddi-alliance.org/ns/#Date",
       "type": "ShapeDecl",
       "abstract": false,
@@ -3115,86 +2834,6 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nExpresses a date/time range using a start date and end date (both with the structure of Date and supporting the use of ISO and non-ISO date structures). Use in all locations where a range of dates is required, i.e. validFor, embargoPeriod, collectionPeriod, etc.\n\nDDI 3.2 mapping\n=================\nr:DateType\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#DescribedRelationship",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#rationale",
-              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/rationale"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Explanation of the reasons for relating the external material to the identified object. Supports the use of multiple languages and structured text.  ",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#relatedTo",
-              "valueExpr": "http://ddi-alliance.org/ns/#Identifiable",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/relatedto"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Reference to the item within the DDI Instance to which this item is related.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/describedrelationship"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nRelationship specification between this item and the item to which it is related. Provides a reference to any identifiable object and a description of the relationship.\n\nDDI 3.2 mapping\n=================\nr:RelationshipType\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -5360,7 +4999,7 @@
           "expressions": [
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#coordinateValue",
+              "predicate": "http://ddi-alliance.org/ns/#content",
               "valueExpr": {
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -5371,7 +5010,7 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/coordinatevalue"
+                  "object": "http://lion.ddialliance.org/ddiobjects/content"
                 },
                 {
                   "type": "Annotation",
@@ -5636,86 +5275,6 @@
       }
     },
     {
-      "id": "http://ddi-alliance.org/ns/#StandardKeyValuePair",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#attributeKey",
-              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/attributekey"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "This key (sometimes referred to as a name) expressed as a string. Supports the use of an external controlled vocabulary which is the recommended approach.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#attributeValue",
-              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/attributevalue"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The value assigned to the named Key expressed as a string. Supports the use of an external controlled vocabulary.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/standardkeyvaluepair"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nA basic data representation for computing systems and applications expressed as a tuple (attribute key, value). Attribute keys may or may not be unique.\n\nDDI 3.2 mapping\n=================\nr:StandardKeyValuePairType\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "http://ddi-alliance.org/ns/#Statistic",
       "type": "ShapeDecl",
       "abstract": false,
@@ -5774,10 +5333,10 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#decimalValue",
+              "predicate": "http://ddi-alliance.org/ns/#typeOfNumericValue",
               "valueExpr": {
                 "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#double"
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
               },
               "min": 0,
               "max": 1,
@@ -5785,13 +5344,13 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/decimalvalue"
+                  "object": "http://lion.ddialliance.org/ddiobjects/typeofnumericvalue"
                 },
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                   "object": {
-                    "value": "The value of the statistic expressed as a decimal",
+                    "value": "Indicate the type of numeric value as decimal, float, double",
                     "type": "https://github.com/commonmark/commonmark.js"
                   }
                 }
@@ -5799,7 +5358,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#doubleValue",
+              "predicate": "http://ddi-alliance.org/ns/#content",
               "valueExpr": {
                 "type": "NodeConstraint",
                 "datatype": "http://www.w3.org/2001/XMLSchema#double"
@@ -5810,13 +5369,13 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/doublevalue"
+                  "object": "http://lion.ddialliance.org/ddiobjects/content"
                 },
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                   "object": {
-                    "value": "The value of the statistic expressed as a double.",
+                    "value": "The value of the statistic expressed as a decimal, float, or double.",
                     "type": "https://github.com/commonmark/commonmark.js"
                   }
                 }
@@ -6008,403 +5567,6 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nThe Value expressed as an xs:string with the ability to preserve whitespace if critical to the understanding of the content. \n\nDDI 3.2 mapping\n=================\nr:ValueType\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#ViewpointRoleRelation",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
-              "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#semantic",
-              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/semantic"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides semantic context for the relationship",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#totality",
-              "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/totality"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Type of relation in terms of totality with respect to an associated collection.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#source",
-              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/source"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "First member in a relationship.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#target",
-              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 0,
-              "max": -1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/target"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Second member in a relationship. Note that this can be realized as a collection to support tuples.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/viewpointrolerelation"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nDefines complex relationship between ViewpointRoles\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#WorkflowStepRelation",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
-              "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#semantic",
-              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/semantic"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides semantic context for the relationship",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#totality",
-              "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/totality"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Type of relation in terms of totality with respect to an associated collection.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#hasTemporalRelationSpecification",
-              "valueExpr": "http://ddi-alliance.org/ns/#TemporalRelationSpecification",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/hastemporalrelationspecification"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Supports the use of Allan's Intervals for describing temporal relations. Allan's Intervals are specific types of analytic precedence relations and should be used to refine a RelationSpecification of analyticPrecedence.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#source",
-              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/source"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "First member in the relationship.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#target",
-              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
-              "min": 0,
-              "max": -1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/target"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Second member in a relationship. Note that this can be realized as a collection to support tuples.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/workflowsteprelation"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nDescribes structured relations between WorkflowSteps\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#WorkflowStepSequenceIndicator",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#index",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-              },
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/index"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Provides an index for the member within an ordered array",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#member",
-              "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/member"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Member of the collection, restricted to a single instance",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/workflowstepsequenceindicator"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nIdentify WorkflowStepSequence's that are organized into a master sequence for executing a WorkflowProcess.\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -6864,7 +6026,7 @@
                           "expressions": [
                             {
                               "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#hasRelationSepcification",
+                              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
                               "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
                               "min": 1,
                               "max": 1,
@@ -6872,7 +6034,7 @@
                                 {
                                   "type": "Annotation",
                                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationsepcification"
+                                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
                                 },
                                 {
                                   "type": "Annotation",
@@ -7592,7 +6754,7 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#measures",
               "valueExpr": "http://ddi-alliance.org/ns/#Population",
-              "min": 1,
+              "min": 0,
               "max": 1,
               "annotations": [
                 {
@@ -7753,34 +6915,12 @@
       "shapeExpr": {
         "type": "Shape",
         "extends": [
-          "http://ddi-alliance.org/ns/#Concept"
+          "http://ddi-alliance.org/ns/#Universe"
         ],
         "closed": true,
         "expression": {
           "type": "EachOf",
           "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#descriptiveText",
-              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/descriptivetext"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "A short natural language account of the characteristics of the object.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#timePeriodOfPopulation",
@@ -7828,28 +6968,6 @@
                   "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
                   "object": {
                     "value": "shexmi:sharedAggregation"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#usesConcept",
-              "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-              "min": 0,
-              "max": -1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/usesconcept"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "Reference to the Concept that is being used",
-                    "type": "https://github.com/commonmark/commonmark.js"
                   }
                 }
               ]
@@ -8114,7 +7232,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#measures",
+              "predicate": "http://ddi-alliance.org/ns/#drawsFrom",
               "valueExpr": "http://ddi-alliance.org/ns/#Universe",
               "min": 0,
               "max": 1,
@@ -8122,7 +7240,7 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/measures"
+                  "object": "http://lion.ddialliance.org/ddiobjects/drawsfrom"
                 },
                 {
                   "type": "Annotation",
@@ -8514,7 +7632,7 @@
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                   "object": {
-                    "value": "The default value is \"true\". The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".",
+                    "value": "Default value is True. The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".",
                     "type": "https://github.com/commonmark/commonmark.js"
                   }
                 }
@@ -12097,7 +11215,7 @@
                             {
                               "type": "TripleConstraint",
                               "predicate": "http://ddi-alliance.org/ns/#forCodeItem",
-                              "valueExpr": "http://ddi-alliance.org/ns/#CodeIndicator",
+                              "valueExpr": "http://ddi-alliance.org/ns/#Designation",
                               "min": 0,
                               "max": 1,
                               "annotations": [
@@ -14353,7 +13471,7 @@
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                   "object": {
-                    "value": "Default value is \".\". The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” ",
+                    "value": "Default value is . (period). The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” ",
                     "type": "https://github.com/commonmark/commonmark.js"
                   }
                 }
@@ -14629,8 +13747,8 @@
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#formatsDataPoint",
               "valueExpr": "http://ddi-alliance.org/ns/#DataPoint",
-              "min": 1,
-              "max": 1,
+              "min": 0,
+              "max": -1,
               "annotations": [
                 {
                   "type": "Annotation",
@@ -15411,7 +14529,131 @@
                     {
                       "type": "TripleConstraint",
                       "predicate": "http://ddi-alliance.org/ns/#member",
-                      "valueExpr": "http://ddi-alliance.org/ns/#CustomValue",
+                      "valueExpr": {
+                        "type": "Shape",
+                        "extends": [
+                          "http://ddi-alliance.org/ns/#Identifiable"
+                        ],
+                        "closed": true,
+                        "expression": {
+                          "type": "EachOf",
+                          "expressions": [
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#value",
+                              "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/value"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#key",
+                              "valueExpr": {
+                                "type": "NodeConstraint",
+                                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                              },
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/key"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "The unique String identifying the value",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
+                              "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
+                              "min": 1,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/correspondsto"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#comparesTo",
+                              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/comparesto"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc.",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "annotations": [
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                            "object": "http://lion.ddialliance.org/ddiobjects/customvalue"
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                            "object": {
+                              "value": "http://ddi-alliance.org/ns/#CustomMetadata"
+                            }
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                            "object": {
+                              "value": "\nDefinition\n============\nAn instance of a  key, value pair for a  particular  key.\n\nExamples\n==========\nOMBBurden,\"High\"\n\nopenEHRBPposition, \"upper arm\"\n\n",
+                              "type": "https://github.com/commonmark/commonmark.js"
+                            }
+                          }
+                        ]
+                      },
                       "min": 1,
                       "max": 1,
                       "annotations": [
@@ -15855,7 +15097,7 @@
                                   "expressions": [
                                     {
                                       "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#hasRelationSepcification",
+                                      "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
                                       "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
                                       "min": 1,
                                       "max": 1,
@@ -15863,7 +15105,7 @@
                                         {
                                           "type": "Annotation",
                                           "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/hasrelationsepcification"
+                                          "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
                                         },
                                         {
                                           "type": "Annotation",
@@ -16336,136 +15578,6 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nA custom item description. This allows the definition of an item which is a member of a CustomStructure.\nIt defines the minimum and maximum number of occurrences and representation of a CustomValue.\n\nExamples\n==========\nDegreeOfBurden for a question as required by the U.S. OMB.\n\nBloodPressureCuffSize - the size of a blood pressure cuff specified for a particular protocol.\n\nExplanatory notes\n===================\nThis definition will be referenced by a CustomValue when recording a key,value instance\n\n",
-              "type": "https://github.com/commonmark/commonmark.js"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "http://ddi-alliance.org/ns/#CustomValue",
-      "type": "ShapeDecl",
-      "abstract": false,
-      "shapeExpr": {
-        "type": "Shape",
-        "extends": [
-          "http://ddi-alliance.org/ns/#Identifiable"
-        ],
-        "closed": true,
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#value",
-              "valueExpr": "http://ddi-alliance.org/ns/#ValueString",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/value"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#key",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#string"
-              },
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/key"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The unique String identifying the value",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#correspondsTo",
-              "valueExpr": "http://ddi-alliance.org/ns/#CustomItem",
-              "min": 1,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/correspondsto"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "The CustomItem which defines the key for this key,value pair, It also defines a ValueRepresentation",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#comparesTo",
-              "valueExpr": "http://ddi-alliance.org/ns/#InstanceVariable",
-              "min": 0,
-              "max": 1,
-              "annotations": [
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/comparesto"
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                  "object": {
-                    "value": "This optional relationship indicates an InstanceVariable compatible with the value associated with this key. Custom metadata might be reused as data and data might be used as metadata. This mechanism could enable these transformations. The related InstanceVariable could also carry information about units of measurement, missing values etc.",
-                    "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "annotations": [
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-            "object": "http://lion.ddialliance.org/ddiobjects/customvalue"
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-            "object": {
-              "value": "http://ddi-alliance.org/ns/#CustomMetadata"
-            }
-          },
-          {
-            "type": "Annotation",
-            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-            "object": {
-              "value": "\nDefinition\n============\nAn instance of a  key, value pair for a  particular  key.\n\nExamples\n==========\nOMBBurden,\"High\"\n\nopenEHRBPposition, \"upper arm\"\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -17178,7 +16290,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#hasProcessSequence",
+              "predicate": "http://ddi-alliance.org/ns/#isSpecifiedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
               "max": 1,
@@ -17186,7 +16298,7 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/hasprocesssequence"
+                  "object": "http://lion.ddialliance.org/ddiobjects/isspecifiedby"
                 },
                 {
                   "type": "Annotation",
@@ -17194,13 +16306,6 @@
                   "object": {
                     "value": "The Process Sequence which initiate the process flow and describes the sequence of the process flow",
                     "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
-                  "object": {
-                    "value": "shexmi:sharedAggregation"
                   }
                 }
               ]
@@ -17693,7 +16798,7 @@
                     },
                     {
                       "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#organizedBy",
+                      "predicate": "http://ddi-alliance.org/ns/#isSpecifiedBy",
                       "valueExpr": "http://ddi-alliance.org/ns/#WorkflowControlStep",
                       "min": 0,
                       "max": 1,
@@ -17701,7 +16806,7 @@
                         {
                           "type": "Annotation",
                           "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/organizedby"
+                          "object": "http://lion.ddialliance.org/ddiobjects/isspecifiedby"
                         },
                         {
                           "type": "Annotation",
@@ -17709,13 +16814,6 @@
                           "object": {
                             "value": "The Process Control Step which describes the organization of the process flow. This could be realizes as a sequence, a temporal relationship, or conditional control step. It should provide a clear entry and exit point(s) for the process.",
                             "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
-                          "object": {
-                            "value": "shexmi:sharedAggregation"
                           }
                         }
                       ]
@@ -21169,6 +20267,33 @@
       ]
     },
     {
+      "id": "http://ddi-alliance.org/ns/#RelationSpecification",
+      "type": "NodeConstraint",
+      "values": [
+        "http://ddi-alliance.org/ns/#Unordered",
+        "http://ddi-alliance.org/ns/#List",
+        "http://ddi-alliance.org/ns/#ParentChild",
+        "http://ddi-alliance.org/ns/#WholePart",
+        "http://ddi-alliance.org/ns/#AcyclicPrecedence",
+        "http://ddi-alliance.org/ns/#Equivalence",
+        "http://ddi-alliance.org/ns/#GeneralSpecific"
+      ],
+      "annotations": [
+        {
+          "type": "Annotation",
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+          "object": "http://lion.ddialliance.org/ddiobjects/relationspecification"
+        },
+        {
+          "type": "Annotation",
+          "predicate": "http://www.w3.org/ns/shex-xmi#package",
+          "object": {
+            "value": "http://ddi-alliance.org/ns/#Enumerations"
+          }
+        }
+      ]
+    },
+    {
       "id": "http://ddi-alliance.org/ns/#SexSpecificationType",
       "type": "NodeConstraint",
       "values": [
@@ -22976,7 +22101,7 @@
                           "expressions": [
                             {
                               "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#coordinates",
+                              "predicate": "http://ddi-alliance.org/ns/#content",
                               "valueExpr": {
                                 "type": "NodeConstraint",
                                 "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -22987,7 +22112,7 @@
                                 {
                                   "type": "Annotation",
                                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/coordinates"
+                                  "object": "http://lion.ddialliance.org/ddiobjects/content"
                                 },
                                 {
                                   "type": "Annotation",
@@ -23040,7 +22165,7 @@
                             "type": "Annotation",
                             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                             "object": {
-                              "value": "\nDefinition\n============\nDefines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and Coordinates provides the information required to define it.\n\nDDI 3.2 mapping\n=================\nr:ImageAreaType\n\n",
+                              "value": "\nDefinition\n============\nDefines the shape and area of an image used as part of a location representation. The shape is defined as a Rectangle, Circle, or Polygon and content provides the information required to define it in the form of a comma-delimited list of x,y coordinates, listed as a set of adjacent points for rectangles and polygons, and as a center-point and a radius for circles (x,y,r).\n\nDDI 3.2 mapping\n=================\nr:ImageAreaType\n\n",
                               "type": "https://github.com/commonmark/commonmark.js"
                             }
                           }
@@ -23468,7 +22593,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#executesSequence",
+              "predicate": "http://ddi-alliance.org/ns/#executes",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
               "max": 1,
@@ -23476,7 +22601,7 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/executessequence"
+                  "object": "http://lion.ddialliance.org/ddiobjects/executes"
                 },
                 {
                   "type": "Annotation",
@@ -23567,7 +22692,7 @@
                     },
                     {
                       "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#thenWorkflowStepCollection",
+                      "predicate": "http://ddi-alliance.org/ns/#executes",
                       "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
                       "min": 0,
                       "max": 1,
@@ -23575,13 +22700,13 @@
                         {
                           "type": "Annotation",
                           "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/thenworkflowstepcollection"
+                          "object": "http://lion.ddialliance.org/ddiobjects/executes"
                         },
                         {
                           "type": "Annotation",
                           "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                           "object": {
-                            "value": "The WorkflowStepCollection to process if the condition is true",
+                            "value": "The WorkflowStepSequence to execute if the condition is true",
                             "type": "https://github.com/commonmark/commonmark.js"
                           }
                         }
@@ -23632,7 +22757,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#elseContains",
+              "predicate": "http://ddi-alliance.org/ns/#elseExecutes",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStepSequence",
               "min": 0,
               "max": 1,
@@ -23640,13 +22765,13 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/elsecontains"
+                  "object": "http://lion.ddialliance.org/ddiobjects/elseexecutes"
                 },
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                   "object": {
-                    "value": "Optional sequence of Process Steps that are triggered when the condition is false.",
+                    "value": "Optional sequence of Process Steps that are triggered for execution when the condition is false.",
                     "type": "https://github.com/commonmark/commonmark.js"
                   }
                 },
@@ -23866,7 +22991,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nWhereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by ETL (Extract Transform Load) platforms along with ComputationActions.\n\nIn ETLs the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary.\n\nIn ETLs users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.\n\nIn the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.\n\nMetadataDrivenActions represent this dialog in a Standard Data Transformation Language (SDTL) called Variable Transformation Language (VTL). To be more precise MetaDataDrivenAction uses VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.\n\nExamples\n==========\nSome data management systems present users with a menu of actions they can use in a sequence to perform a specific task. The system engages the user in a dialog driven by an action template. The dialog completes the template which the system then uses to perform the action. The user doesn't write any code.\n\nExplanatory notes\n===================\nWe would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" the Standard Data Transformation Language (SDTL) as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema.\n\n",
+              "value": "\nDefinition\n============\nMetadataDrivenActions are Acts in which their logic is defined by validation and transformation rules expressed in some standard rule language.\n\nExamples\n==========\nSome data management systems present users with a menu of actions they can use in a sequence to perform a specific task. The system engages the user in a dialog driven by an action template. The dialog completes the template which the system then uses to perform the action. The user doesn't write any code.\n\nExplanatory notes\n===================\nWhereas ComputationActions are used in statistical packages like SPSS, Stata, SAS and R to perform data management and data transformations, MetadataDrivenActions are used by data pipelines, e.g. ETL (Extract Transform Load) platforms, along with ComputationActions.\n\nIn a data pipeline the user is presented with a menu of MetadataDrivenActions that are captured here in an external controlled vocabulary. Users enter into a dialog with the platform through which they customize the MetadataDrivenAction. The user writes no code. The dialog is saved.\n\nIn the course of this dialog the user might specify a data source, specify which variables to keep or drop, rename variables, specify join specifics, create a value map between two variables and so forth.\n\nMetadataDrivenActions represent this dialog in some standard rule language, e.g. Structured Data Transformation Language (SDTL) , Validation and Transformation Language (VTL), etc.. In fact,  MetaDataDrivenAction can use VTL with certain \"extensions\". Together they form quasi-VTL. quasi-VTL in turn conforms to a known schema. Using this schema users can render the quasi-VTL as XHTML and record it in the MetadataDrivenAction quasiVTL property. quasiVTL supports structured text.\n\nNote that we would like NOT to create specific subtypes of MetadataDrivenAction -- one for each transformation. In fact there are a dozen or more such actions that will be captured in the MetadataDrivenAction types external controlled vocabulary. As an alternative, users can optionally write structured text based on a known schema. In this approach we are able to \"evolve\" SDTL as needed without changing our model. Instead, as our language \"evolves\", we one have to update its schema.\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -24225,28 +23350,6 @@
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
         "closed": true,
-        "expression": {
-          "type": "TripleConstraint",
-          "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
-          "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
-          "min": 0,
-          "max": -1,
-          "annotations": [
-            {
-              "type": "Annotation",
-              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-              "object": "http://lion.ddialliance.org/ddiobjects/executeconcurrently"
-            },
-            {
-              "type": "Annotation",
-              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-              "object": {
-                "value": "A WorkflowStep that is to be processed concurrently with other WorkflowSteps indicated.",
-                "type": "https://github.com/commonmark/commonmark.js"
-              }
-            }
-          ]
-        },
         "annotations": [
           {
             "type": "Annotation",
@@ -24281,28 +23384,6 @@
           "http://ddi-alliance.org/ns/#TemporalRelationControlStep"
         ],
         "closed": true,
-        "expression": {
-          "type": "TripleConstraint",
-          "predicate": "http://ddi-alliance.org/ns/#executeConcurrently",
-          "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
-          "min": 0,
-          "max": -1,
-          "annotations": [
-            {
-              "type": "Annotation",
-              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-              "object": "http://lion.ddialliance.org/ddiobjects/executeconcurrently"
-            },
-            {
-              "type": "Annotation",
-              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-              "object": {
-                "value": "The WorkflowStep that is processed concurrently with other indicated WorkflowSteps",
-                "type": "https://github.com/commonmark/commonmark.js"
-              }
-            }
-          ]
-        },
         "annotations": [
           {
             "type": "Annotation",
@@ -24393,6 +23474,35 @@
           "http://ddi-alliance.org/ns/#WorkflowStep"
         ],
         "closed": true,
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://ddi-alliance.org/ns/#executes",
+          "valueExpr": "http://ddi-alliance.org/ns/#WorkflowStep",
+          "min": 0,
+          "max": -1,
+          "annotations": [
+            {
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+              "object": "http://lion.ddialliance.org/ddiobjects/executes"
+            },
+            {
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+              "object": {
+                "value": "The WorkflowSteps executed by the control mechanism",
+                "type": "https://github.com/commonmark/commonmark.js"
+              }
+            },
+            {
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
+              "object": {
+                "value": "shexmi:sharedAggregation"
+              }
+            }
+          ]
+        },
         "annotations": [
           {
             "type": "Annotation",
@@ -24542,7 +23652,7 @@
             },
             {
               "type": "TripleConstraint",
-              "predicate": "http://ddi-alliance.org/ns/#organizedBy",
+              "predicate": "http://ddi-alliance.org/ns/#isSpecifiedBy",
               "valueExpr": "http://ddi-alliance.org/ns/#WorkflowControlStep",
               "min": 0,
               "max": 1,
@@ -24550,7 +23660,7 @@
                 {
                   "type": "Annotation",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                  "object": "http://lion.ddialliance.org/ddiobjects/organizedby"
+                  "object": "http://lion.ddialliance.org/ddiobjects/isspecifiedby"
                 },
                 {
                   "type": "Annotation",
@@ -24558,13 +23668,6 @@
                   "object": {
                     "value": "Points to the WorkflowControlStep subtype which defines the starting point for initiating the set of process steps contained in the process.",
                     "type": "https://github.com/commonmark/commonmark.js"
-                  }
-                },
-                {
-                  "type": "Annotation",
-                  "predicate": "http://www.w3.org/ns/shex-xmi#partonomy",
-                  "object": {
-                    "value": "shexmi:sharedAggregation"
                   }
                 }
               ]
@@ -25052,7 +24155,7 @@
                           "type": "Annotation",
                           "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                           "object": {
-                            "value": "Restricts member target class to  WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes",
+                            "value": "The subtype of a WorkflowStep occuring at the indexed position within the array. ",
                             "type": "https://github.com/commonmark/commonmark.js"
                           }
                         }
@@ -25077,7 +24180,7 @@
                     "type": "Annotation",
                     "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                     "object": {
-                      "value": "\nDefinition\n============\nMember Indicator for use with member type WorkflowStep, Act, and ConditionalControlConstruct or any of their subtypes\n\n",
+                      "value": "\nDefinition\n============\nAssociates an sequence ordering number with any WorflowStep or sub-type,\n\n",
                       "type": "https://github.com/commonmark/commonmark.js"
                     }
                   }
@@ -25164,7 +24267,7 @@
             "type": "Annotation",
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
-              "value": "\nDefinition\n============\nA WorkflowStepSequence controls the order of WorkflowSteps by defining a simple sequence.\n\nWorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .\n\nMembers in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.\n\n\nExamples\n==========\nA WorkflowStepSequence can be used to describe the flow of questions in a questionnaire. \n\nA WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.\n\nExplanatory notes\n===================\nIf more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.\n\nDDI 3.2 mapping\n=================\nd:SequenceType\n\n",
+              "value": "\nDefinition\n============\nA WorkflowStepSequence controls the order of WorkflowSteps by defining a simple sequence.\n\nWorkflowSteps that may be used in a WorkflowStepSequence may be of many subtypes, covering simple or computational acts, conditional steps such as an IfThenElse, temporally defined ordering controls such as Split and SplitJoin, or others designed for various specializations of the WorkflowProcess. .\n\nWorkflowSteps in a WorkflowStepSequence exchange variables and values by way of output parameters, input parameters and their bindings.\n\n\nExamples\n==========\nA WorkflowStepSequence can be used to describe the flow of questions in a questionnaire. \n\nA WorkflowStepSequence can be used to decompose a BusinessProcess like data integration or anonymization into a series of steps.\n\n\n\nExplanatory notes\n===================\nIf more complex temporal or graph ordering is required use the subtype StructuredWorkflowSteps.\nThe relationship \"executes\" in this instance of a WorkflowControlStep is an optional means of noting the set of WorkflowSteps managed by the sequence. Sequencing is done using orderedStep. This is currently an anomoly that should be resolved in future discussion application of transformation rules from UML model. \n\n\nDDI 3.2 mapping\n=================\nd:SequenceType\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
@@ -27159,7 +26262,109 @@
                     {
                       "type": "TripleConstraint",
                       "predicate": "http://ddi-alliance.org/ns/#contains",
-                      "valueExpr": "http://ddi-alliance.org/ns/#CodeIndicator",
+                      "valueExpr": {
+                        "type": "Shape",
+                        "closed": true,
+                        "expression": {
+                          "type": "EachOf",
+                          "expressions": [
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#index",
+                              "valueExpr": {
+                                "type": "NodeConstraint",
+                                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                              },
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/index"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Provides an index for the member within an ordered array",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#isInLevel",
+                              "valueExpr": {
+                                "type": "NodeConstraint",
+                                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                              },
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/isinlevel"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Indicates the level within which the CodeItem resides",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#member",
+                              "valueExpr": "http://ddi-alliance.org/ns/#Code",
+                              "min": 1,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/member"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "The member containing the designation of the CodeItem",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "annotations": [
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                            "object": "http://lion.ddialliance.org/ddiobjects/codeindicator"
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                            "object": {
+                              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
+                            }
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                            "object": {
+                              "value": "\nDefinition\n============\nA CodeIndicator realizes and extends a MemberIndicator which provides a Code with an index indicating order and a level reference providing the level location of the Code within a hierarchical structure.\n\n",
+                              "type": "https://github.com/commonmark/commonmark.js"
+                            }
+                          }
+                        ]
+                      },
                       "min": 0,
                       "max": -1,
                       "annotations": [
@@ -28345,7 +27550,7 @@
                   "expressions": [
                     {
                       "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#label",
+                      "predicate": "http://ddi-alliance.org/ns/#displayLabel",
                       "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
                       "min": 0,
                       "max": -1,
@@ -28353,7 +27558,7 @@
                         {
                           "type": "Annotation",
                           "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/label"
+                          "object": "http://lion.ddialliance.org/ddiobjects/displaylabel"
                         },
                         {
                           "type": "Annotation",
@@ -30949,7 +30154,7 @@
                                     "type": "Annotation",
                                     "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                                     "object": {
-                                      "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.\n\n\nExamples\n==========\nThe HL7 FHIR (Fast Healthcare Interoperability Resources) EHR is a non-homogeneous, hierarchical, recursive aggregate datatype.\n\nThe openEHR archetypes that are one component in an EHR are non-homogeneous, hierarchical, non-recursive aggregate datatypes.\n\nExplanatory notes\n===================\nFor a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. \n\nIn terms of ISO-11404 an InstanceVariableRelationStructure is able to create \"aggregate datatypes\". These aggregate datatypes may be homogeneous if all the component datatypes are the same datatype or non-homogeneous. Aggregate datatypes may be hierarchical or not and they may be recursive or not. Under IS0-11404 the InstanceVariableRelationStructure qualifies as a \"datatype generator\".\n\nSynonyms\n==========\nAn information model, a struct in C, a nested object in JSON\n\n",
+                                      "value": "\nDefinition\n============\nA realization of RelationStructure that is used to describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.\n\n\nExplanatory notes\n===================\nFor a simple sequence the order can be defined by the index values of the LogicalRecord's InstanceVariableIndicators that a UnitDataRecord inherits. Alternatively, the InstanceVariableRelationStructure can be used by a UnitDataRecord to describe a StructuredCollection as needed. \n\n\nSynonyms\n==========\nAn information model, a struct in C, a nested object in JSON\n\n",
                                       "type": "https://github.com/commonmark/commonmark.js"
                                     }
                                   }
@@ -31194,28 +30399,6 @@
                                   "predicate": "http://www.w3.org/ns/shex-xmi#comment",
                                   "object": {
                                     "value": "A UnitDataRecord may have multiple ViewPoints, each of which assigns among roles identifier, measure, and attribute to the InstanceVariables associated with each Datapoint",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#definingConcept",
-                              "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-                              "min": 0,
-                              "max": -1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/definingconcept"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "The conceptual basis for the collection of members.",
                                     "type": "https://github.com/commonmark/commonmark.js"
                                   }
                                 }
