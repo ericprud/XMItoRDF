@@ -36,5 +36,17 @@ ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   ...
 }
 ```
+This can be rendered as a nested tree:
+<table class="shapeExpr"><tbody>
+  <tr><td><a class="native" href="#ConceptSystem">ConceptSystem</a></td><td><span class="extends up">⇩</span><a href="#AnnotatedIdentifiable" class="extends up"><a class="native" href="#AnnotatedIdentifiable">AnnotatedIdentifiable</a></a></td><td></td></tr>
+  <tr><td>├<span class="arrows">▻</span><a class="native">...</a></td><td></td><td></td></tr>
+  <tr><td>├<span class="arrows">▻</span><a class="native" href="#contains" title="MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array">contains</a></td><td></td><td>*</td></tr>
+  <!-- tr class="annotation"><td class="lines">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;</td><td class="comment">Index value of member in an ordered array</td></tr -->
+  <tr><td>│&nbsp;&nbsp;&nbsp;├<span class="arrows">▭</span><a class="native" href="#index" title="Index value of member in an ordered array">index</a></td><td><span class="pname"><span class="prefix">xsd:</span><span class="localname">integer</span></span></td><td>?</td></tr>
+  <!-- tr class="annotation"><td class="lines">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;</td><td class="comment">Restricts member target class to Concept or subtype of Concept</td></tr -->
+  <tr><td>│&nbsp;&nbsp;&nbsp;└<span class="arrows">▻</span><a class="native" href="#member" title="Restricts member target class to Concept or subtype of Concept">member</a></td><td><a class="native" href="#Concept">Concept</a></td><td></td></tr>
+  <tr><td>└<span class="arrows">▻</span><a class="native">...</a></td><td></td><td></td></tr>
+</tbody></table>
+
 The [build script](https://github.com/ericprud/XMItoRDF/blob/modular/site/ddiPSM#L163) maintains a [list of nestable shapes](https://github.com/ericprud/XMItoRDF/blob/modular/site/DDI_4-DR0.2-nested.list#L102-L105).
 
