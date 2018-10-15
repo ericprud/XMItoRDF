@@ -10,7 +10,7 @@ PREFIX mark: <https://github.com/commonmark/commonmark.js>
 # START ddi:StructuredDataTypes Package
 
 ddi:AgentAssociation CLOSED {
-  ddi:agentName CLOSED EXTENDS ddi:InternationalString {
+  ddi:agentName CLOSED EXTENDS @ddi:InternationalString {
     ddi:affiliation xsd:string *
     // shexmi:comment """The affiliation of this person to an organization. This is generally an organization or sub-organization name and should be related to the specific role within which the individual is being listed.""";
   } *
@@ -61,7 +61,7 @@ ddi:Annotation CLOSED {
   // shexmi:comment """The agent responsible for the version. May have an associated role.""";
   ddi:summary @ddi:InternationalString *
   // shexmi:comment """A summary description (abstract) of the annotated object.""";
-  ddi:relatedResource CLOSED EXTENDS ddi:InternationalIdentifier {
+  ddi:relatedResource CLOSED EXTENDS @ddi:InternationalIdentifier {
     ddi:typeOfRelatedResource @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """The type of relationship between the annotated object and the related resource. Standard usage may include: describesDate, isDescribedBy,  isFormatOf, isPartOf, isReferencedBy, isReplacedBy, isRequiredBy, isVersionOf, references, replaces, requires, etc.""";
   } *
@@ -70,9 +70,9 @@ ddi:Annotation CLOSED {
   // shexmi:comment """A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.""";
   ddi:rights @ddi:InternationalString *
   // shexmi:comment """Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.""";
-  ddi:recordCreationDate ddi:IsoDateType *
+  ddi:recordCreationDate @ddi:IsoDateType *
   // shexmi:comment """Date the record was created""";
-  ddi:recordLastRevisionDate ddi:IsoDateType *
+  ddi:recordLastRevisionDate @ddi:IsoDateType *
   // shexmi:comment """Date the record was last revised""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
@@ -84,7 +84,7 @@ DDI 3.2 mapping
 =================
 r:CitationType"""^^mark:
 
-ddi:AnnotationDate CLOSED EXTENDS ddi:Date {
+ddi:AnnotationDate CLOSED EXTENDS @ddi:Date {
   ddi:typeOfDate @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Use to specify the type of date. This may reflect the refinements of dc:date such as dateAccepted, dateCopyrighted, dateSubmitted, etc.""";
 }
@@ -160,7 +160,7 @@ DDI 3.2 mapping
 =================
 r:CommandCodeType"""^^mark:
 
-ddi:ConditionalText CLOSED EXTENDS ddi:DynamicTextContent {
+ddi:ConditionalText CLOSED EXTENDS @ddi:DynamicTextContent {
   ddi:expression @ddi:CommandCode *
   // shexmi:comment """The condition on which the associated text varies expressed by a command code. For example, a command that inserts an age by calculating the difference between today’s date and a previously defined date of birth.""";
 }
@@ -267,7 +267,7 @@ DDI 3.2 mapping
 =================
 a:ContactInformationType"""^^mark:
 
-ddi:ContentDateOffset CLOSED EXTENDS ddi:ExternalControlledVocabularyEntry {
+ddi:ContentDateOffset CLOSED EXTENDS @ddi:ExternalControlledVocabularyEntry {
   ddi:numberOfUnits xsd:double *
   // shexmi:comment """The number of units to off-set the date for this item expressed as a decimal.""";
   ddi:isNegativeOffset xsd:boolean *
@@ -302,7 +302,7 @@ DDI 3.2 mapping
 cm:CorrespondenceType"""^^mark:
 
 ddi:Date CLOSED {
-  ddi:isoDate ddi:IsoDateType *
+  ddi:isoDate @ddi:IsoDateType *
   // shexmi:comment """Strongly recommend that ALL dates be expressed in an ISO format at a minimum. A single point in time expressed in an ISO standard structure. Note that while it supports an ISO date range structure this should be used in Date only when the single date is unclear i.e. occurring at some time between two dates. """;
   ddi:nonIsoDate CLOSED {
     ddi:dateContent xsd:string *
@@ -427,7 +427,7 @@ DDI 3.2 mapping
 =================
 r:CodeValueType"""^^mark:
 
-ddi:FixedText CLOSED EXTENDS ddi:LanguageSpecificStructuredStringType {
+ddi:FixedText CLOSED EXTENDS @ddi:LanguageSpecificStructuredStringType {
   ddi:whiteSpace @ddi:WhiteSpaceRule *
   // shexmi:comment """The default setting states that leading and trailing white space will be removed and multiple adjacent white spaces will be treated as a single white space. If the existance of any of these white spaces is critical to the understanding of the content, change the value of this attribute to \"preserve\".""";
 }
@@ -521,7 +521,7 @@ DDI 3.2 mapping
 =================
 r:StructuredStringType"""^^mark:
 
-ddi:LabelForDisplay CLOSED EXTENDS ddi:InternationalStructuredString {
+ddi:LabelForDisplay CLOSED EXTENDS @ddi:InternationalStructuredString {
   ddi:locationVariant @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Indicate the locality specification for content that is specific to a geographic area. May be a country code, sub-country code, or area name.""";
   ddi:validDates @ddi:DateRange *
@@ -563,7 +563,7 @@ DDI 3.2 mapping
 =================
 r:StringType"""^^mark:
 
-ddi:LanguageSpecificStructuredStringType CLOSED EXTENDS ddi:LanguageSpecificStringType {
+ddi:LanguageSpecificStructuredStringType CLOSED EXTENDS @ddi:LanguageSpecificStringType {
   ddi:isPlainText xsd:boolean *
   // shexmi:comment """Indicates that the content is to be treated as plain text (no formatting). You may use DDIProfile to fix the value of this attribute to 'true' in cases where you wish to indicate that your system treats all content should be treated as plain text.""";
   ddi:structureUsed @ddi:StringStructureType *
@@ -588,7 +588,7 @@ DDI 3.2 mapping
 =================
 r:ContentType"""^^mark:
 
-ddi:LiteralText CLOSED EXTENDS ddi:DynamicTextContent {
+ddi:LiteralText CLOSED EXTENDS @ddi:DynamicTextContent {
   ddi:text @ddi:LanguageSpecificStructuredStringType *
   // shexmi:comment """The value of the static text string. Supports the optional use of XHTML formatting tags within the string structure. If the content of a literal text contains more than one language, i.e. \"What is your understanding of the German word 'Gesundheit'?\", the foreign language element should be placed in a separate LiteralText component with the appropriate xmlang value and, in this case, isTranslatable set to \"false\". If the existence of white space is critical to the understanding of the content (such as inclusion of a leading or trailing white space), set the attribute of Text xml:space to \"preserve\".""";
 }
@@ -605,7 +605,7 @@ DDI 3.2 mapping
 =================
 d:LiteralTextType"""^^mark:
 
-ddi:LocationName CLOSED EXTENDS ddi:ObjectName {
+ddi:LocationName CLOSED EXTENDS @ddi:ObjectName {
   ddi:effectiveDates @ddi:DateRange *
   // shexmi:comment """The time period for which this name is accurate and in use.""";
 }
@@ -733,7 +733,7 @@ DDI 3.2 mapping
 =================
 r:PolygonType"""^^mark:
 
-ddi:RangeValue CLOSED EXTENDS ddi:ValueString {
+ddi:RangeValue CLOSED EXTENDS @ddi:ValueString {
   ddi:included xsd:boolean *
   // shexmi:comment """Set to \"true\" if the value is included in the range.""";
 }
@@ -849,7 +849,7 @@ r:ValueType"""^^mark:
 
 # START ddi:Conceptual Package
 
-ddi:Category CLOSED EXTENDS ddi:Concept {
+ddi:Category CLOSED EXTENDS @ddi:Concept {
   ddi:descriptiveText @ddi:InternationalStructuredString *
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
 }
@@ -870,7 +870,7 @@ DDI 3.2 mapping
 =================
 l:CategoryType"""^^mark:
 
-ddi:Concept CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Concept CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
   ddi:definition @ddi:InternationalStructuredString *
@@ -899,7 +899,7 @@ GSIM mapping
 ==============
 Concept"""^^mark:
 
-ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystem CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -915,7 +915,7 @@ ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -961,7 +961,7 @@ GSIM mapping
 ==============
 Concept System"""^^mark:
 
-ddi:ConceptSystemCorrespondence CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystemCorrespondence CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the CollectionCorrespondence. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
   ddi:purpose @ddi:InternationalStructuredString *
@@ -986,7 +986,7 @@ Explanatory notes
 ===================
 Describes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies."""^^mark:
 
-ABSTRACT ddi:ConceptualDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ConceptualDomain CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:describedConceptualDomain @ddi:ValueAndConceptDescription *
@@ -1007,7 +1007,7 @@ Explanatory notes
 ===================
 Intent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept."""^^mark:
 
-ddi:ConceptualVariable CLOSED EXTENDS ddi:Concept {
+ddi:ConceptualVariable CLOSED EXTENDS @ddi:Concept {
   ddi:descriptiveText @ddi:InternationalStructuredString *
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
   ddi:usesConcept @ddi:Concept *
@@ -1042,7 +1042,7 @@ GSIM mapping
 ==============
 Variable"""^^mark:
 
-ddi:InstanceVariable CLOSED EXTENDS ddi:RepresentedVariable {
+ddi:InstanceVariable CLOSED EXTENDS @ddi:RepresentedVariable {
   ddi:variableFunction @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Immutable characteristics of the variable such as, geographic designator, weight, temporal designation, etc.""";
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry *
@@ -1085,7 +1085,7 @@ GSIM mapping
 ==============
 Instance Variable"""^^mark:
 
-ddi:Population CLOSED EXTENDS ddi:Universe {
+ddi:Population CLOSED EXTENDS @ddi:Universe {
   ddi:timePeriodOfPopulation @ddi:DateRange *
   // shexmi:comment """The time period associated with the Population""";
   ddi:composedOf @ddi:Unit *
@@ -1116,12 +1116,12 @@ GSIM mapping
 ==============
 Population"""^^mark:
 
-ddi:RepresentedVariable CLOSED EXTENDS ddi:ConceptualVariable {
+ddi:RepresentedVariable CLOSED EXTENDS @ddi:ConceptualVariable {
   ddi:unitOfMeasurement xsd:string *
   // shexmi:comment """The unit in which the data values are measured (kg, pound, euro).""";
   ddi:hasIntendedDataType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The data type intended to be used by this variable. Supports the optional use of an external controlled vocabulary.""";
-  ddi:takesSubstantiveValuesFrom CLOSED EXTENDS ddi:ValueDomain {
+  ddi:takesSubstantiveValuesFrom CLOSED EXTENDS @ddi:ValueDomain {
     ddi:takesConceptsFrom @ddi:SubstantiveConceptualDomain *
     // shexmi:comment """Corresponding conceptual definition given by an SubstantiveConceptualDomain.""";
     ddi:describedValueDomain @ddi:ValueAndConceptDescription *
@@ -1155,7 +1155,7 @@ DDI 3.2 mapping
 =================
 l:RepresentedVariableType"""^^mark:
 
-ddi:SentinelConceptualDomain CLOSED EXTENDS ddi:ConceptualDomain {
+ddi:SentinelConceptualDomain CLOSED EXTENDS @ddi:ConceptualDomain {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Conceptual"
 // shexmi:comment """Definition
@@ -1172,7 +1172,7 @@ Synonyms
 ==========
 missing categories"""^^mark:
 
-ddi:SubstantiveConceptualDomain CLOSED EXTENDS ddi:ConceptualDomain {
+ddi:SubstantiveConceptualDomain CLOSED EXTENDS @ddi:ConceptualDomain {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Conceptual"
 // shexmi:comment """Definition
@@ -1194,7 +1194,7 @@ GSIM mapping
 ==============
 Conceptual Domain"""^^mark:
 
-ddi:Unit CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Unit CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -1225,7 +1225,7 @@ GSIM mapping
 ==============
 Unit"""^^mark:
 
-ddi:UnitType CLOSED EXTENDS ddi:Concept {
+ddi:UnitType CLOSED EXTENDS @ddi:Concept {
   ddi:descriptiveText @ddi:InternationalStructuredString *
   // shexmi:comment """A short natural language account of the characteristics of the object.""";
   ddi:usesConcept @ddi:Concept *
@@ -1254,7 +1254,7 @@ GSIM mapping
 ==============
 Unit Type"""^^mark:
 
-ddi:Universe CLOSED EXTENDS ddi:Concept {
+ddi:Universe CLOSED EXTENDS @ddi:Concept {
   ddi:isInclusive xsd:boolean *
   // shexmi:comment """Default value is True. The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".""";
   ddi:descriptiveText @ddi:InternationalStructuredString *
@@ -1296,7 +1296,7 @@ Population"""^^mark:
 
 # START ddi:SimpleMethodologyOverview Package
 
-ddi:AlgorithmOverview CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:AlgorithmOverview CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subjectOfAlgorithm @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """A term identifying the subject of the algorithm being described. Supports the use of a controlled vocabulary""";
   ddi:overview @ddi:InternationalStructuredString *
@@ -1313,14 +1313,14 @@ Explanatory notes
 ===================
 This would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation."""^^mark:
 
-ddi:DesignOverview CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DesignOverview CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subectOfDesign @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """A term describing the subject of the design. Supports the use of an external controlled vocabulary""";
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:isDescribedIn @ddi:ExternalMaterial *
   // shexmi:comment """An external document or other source that provides descriptive information on the object.""";
-  ddi:assumesPrecondition CLOSED EXTENDS ddi:BusinessFunction {
+  ddi:assumesPrecondition CLOSED EXTENDS @ddi:BusinessFunction {
     ddi:isDiscussedIn @ddi:ExternalMaterial *
     // shexmi:comment """Identifies material discussing the precondition. The material may be in DDI or other format.""";
     ddi:basedOnPriorResult @ddi:Result *
@@ -1345,7 +1345,7 @@ Explanatory notes
 ===================
 Allows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View."""^^mark:
 
-ddi:MethodologyOverview CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:MethodologyOverview CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subjectOfMethodology @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """A term describing the subject of the Methodology. Supports the use of a controlled vocabulary""";
   ddi:name @ddi:ObjectName *
@@ -1401,14 +1401,14 @@ ddi:IsoDateType xsd:string
 
 # START ddi:GeographicClassification Package
 
-ddi:GeographicUnit CLOSED EXTENDS ddi:Unit {
+ddi:GeographicUnit CLOSED EXTENDS @ddi:Unit {
   ddi:geographicTime @ddi:DateRange *
   // shexmi:comment """The period for which the Geographic Unit is valid. Note that the geographic extent, name, or composition change within the valid period of this unit.""";
   ddi:supercedes @ddi:SpatialRelationship *
   // shexmi:comment """The Geographic Unit supercedes (follows immediately in time) the described geographic unit. Repeat for multiple geographic units.""";
   ddi:precedes @ddi:SpatialRelationship *
   // shexmi:comment """The Geographic Unit is superceded by (precedes immediately in time) the described geographic unit. Repeat for multiple geographic units.""";
-  ddi:hasGeographicExtent CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasGeographicExtent CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:boundingPolygon @ddi:Polygon *
     // shexmi:comment """A description of the boundaries of the polygon either in-line or by a reference to an external file containing the boundaries. Repeatable to describe non-contiguous areas such as islands or Native American Reservations in some parts of the United States.""";
     ddi:excludingPolygon @ddi:Polygon *
@@ -1457,7 +1457,7 @@ DDI 3.2 mapping
 =================
 r:GeographicLocationType"""^^mark:
 
-ddi:GeographicUnitClassification CLOSED EXTENDS ddi:EnumerationDomain {
+ddi:GeographicUnitClassification CLOSED EXTENDS @ddi:EnumerationDomain {
   ddi:contains CLOSED {
     ddi:index xsd:integer *
     // shexmi:comment """Index number expressed as an integer. The position of the member in an ordered array. Optional for unordered Collections.""";
@@ -1481,7 +1481,7 @@ ddi:GeographicUnitClassification CLOSED EXTENDS ddi:EnumerationDomain {
   // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
   ddi:references @ddi:ConceptSystem *
   // shexmi:comment """May reference an existing concept system generally of Geographic Unit""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -1519,7 +1519,7 @@ ddi:GeographicUnitClassification CLOSED EXTENDS ddi:EnumerationDomain {
 ============
 Describes the classification of specific geographic units into a classification system. As a subtype of Code List it can be used directly for the description of a value domain."""^^mark:
 
-ddi:GeographicUnitTypeClassification CLOSED EXTENDS ddi:EnumerationDomain {
+ddi:GeographicUnitTypeClassification CLOSED EXTENDS @ddi:EnumerationDomain {
   ddi:contains CLOSED {
     ddi:index xsd:integer *
     // shexmi:comment """Index number expressed as an integer. The position of the member in an ordered array. Optional for unordered Collections.""";
@@ -1543,7 +1543,7 @@ ddi:GeographicUnitTypeClassification CLOSED EXTENDS ddi:EnumerationDomain {
   // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
   ddi:references @ddi:ConceptSystem *
   // shexmi:comment """May reference an existing concept system generally of Geographic Unit Types""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -1592,7 +1592,7 @@ Country--State--County"""^^mark:
 
 # START ddi:FormatDescription Package
 
-ddi:PhysicalDataSet CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:PhysicalDataSet CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:physicalFileName xsd:string *
@@ -1614,7 +1614,7 @@ ddi:PhysicalDataSet CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An explanation of the purpose of the physical dataset""";
   ddi:formatsDataStore @ddi:DataStore *
   // shexmi:comment """Data Store physically represented by the Structure Description. """;
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -1636,7 +1636,7 @@ ddi:PhysicalDataSet CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Member relations that comprise the relation structure""";
   } *
   // shexmi:comment """Description of a complex structure for the Collection. A collection may be structured in more than one way for different uses.""";
-  ddi:hasVariableStatistics CLOSED EXTENDS ddi:Identifiable {
+  ddi:hasVariableStatistics CLOSED EXTENDS @ddi:Identifiable {
     ddi:totalResponses xsd:integer *
     // shexmi:comment """The total number of responses to this variable. This element is especially useful if the number of responses does not match added case counts. It may also be used to sum the frequencies for variable categories.""";
     ddi:hasSummaryStatistic CLOSED {
@@ -1661,7 +1661,7 @@ ddi:PhysicalDataSet CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Statistics that provides a category specific values, filtered or unfiltered, weighted or unweighted, expressed as an xs:decimal or xs:double""";
     ddi:forInstanceVariable @ddi:InstanceVariable *
     // shexmi:comment """Reference to the variable to which the statistics apply.""";
-    ddi:usesStandardWeight CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:usesStandardWeight CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:standardWeightValue xsd:double *
       // shexmi:comment """Provides the standard weight used for weighted analysis of data expressed as an xs:float. This element is referenced by the variable and/or statistics calculated using the standard weight.""";
     } *
@@ -1693,7 +1693,7 @@ DDI 3.2 mapping
 =================
 p:PhysicalDataProductType"""^^mark:
 
-ddi:PhysicalRecordSegment CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:PhysicalRecordSegment CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:physicalFileName xsd:string *
   // shexmi:comment """Use when each physical segment is stored in its own file.""";
   ddi:contains CLOSED {
@@ -1711,7 +1711,7 @@ ddi:PhysicalRecordSegment CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A record segment may represent a specific population or sub-population within a larger set of segments. Allows for the identification of this filter for membership in the segment.""";
   ddi:mapTo @ddi:LogicalRecord *
   // shexmi:comment """Every DataRecord has at o..n PhysicalRecordSegments, It is possible to describe a PhysicalDataProduct and its RecordRecordSegment(s) without reference to a DataRecord""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -1754,7 +1754,7 @@ DDI 3.2 mapping
 =================
 p:PhysicalRecordSegmentType"""^^mark:
 
-ABSTRACT ddi:PhysicalSegmentLayout CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLayout CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:isDelimited xsd:boolean *
   // shexmi:comment """Indicates that the data are in a delimited format. If not set to true, is FixedWitdh must be set to true. """;
   ddi:delimiter xsd:string *
@@ -1816,7 +1816,7 @@ ABSTRACT ddi:PhysicalSegmentLayout CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
   ddi:formatsLogicalRecord @ddi:LogicalRecord *
   // shexmi:comment """Logical Record physically represented by the Physical Layout.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:criteria @ddi:InternationalStructuredString *
     // shexmi:comment """Intensional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
     ddi:hasRelationSpecification @ddi:RelationSpecification *
@@ -1856,7 +1856,7 @@ Explanatory notes
 ===================
 A PhysicalLayout is a physical description (e.g. UnitSegmentLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical interrelationship of each related ValueMapping and associated Instance Variable."""^^mark:
 
-ABSTRACT ddi:PhysicalSegmentLocation CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLocation CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#FormatDescription"
 // shexmi:comment """Definition
@@ -1871,7 +1871,7 @@ Explanatory notes
 ===================
 While this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve."""^^mark:
 
-ddi:SegmentByText CLOSED EXTENDS ddi:PhysicalSegmentLocation {
+ddi:SegmentByText CLOSED EXTENDS @ddi:PhysicalSegmentLocation {
   ddi:startLine xsd:integer *
   // shexmi:comment """The line number, where 1 is the first line, on which to begin counting characters. If missing this defaults to 1 (the first line).""";
   ddi:endLine xsd:integer *
@@ -1897,7 +1897,7 @@ The segment beginning at line 3, character 4 and ending at line 27 character 13.
 Alternatively the segment beginning at character 257 and ending at character 1350 of the whole body of text.
 StartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12."""^^mark:
 
-ddi:UnitSegmentLayout CLOSED EXTENDS ddi:PhysicalSegmentLayout {
+ddi:UnitSegmentLayout CLOSED EXTENDS @ddi:PhysicalSegmentLayout {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#FormatDescription"
 // shexmi:comment """Definition
@@ -1918,7 +1918,7 @@ Explanatory notes
 ===================
 This is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable."""^^mark:
 
-ddi:ValueMapping CLOSED EXTENDS ddi:Identifiable {
+ddi:ValueMapping CLOSED EXTENDS @ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number. From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.  The normalized value of this property becomes the datatype annotation for the described column. ” """;
   ddi:defaultDecimalSeparator ddi:Char *
@@ -1969,7 +1969,7 @@ The ValueMapping describes how the value of an InstanceVariable is physically ex
 
 # START ddi:CustomMetadata Package
 
-ddi:ControlledVocabulary CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ControlledVocabulary CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -1985,7 +1985,7 @@ ddi:ControlledVocabulary CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:criteria @ddi:InternationalStructuredString *
     // shexmi:comment """Intentional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
     ddi:displayLabel @ddi:LabelForDisplay *
@@ -2021,7 +2021,7 @@ ddi:ControlledVocabulary CLOSED EXTENDS ddi:AnnotatedIdentifiable {
 ============
 The specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries."""^^mark:
 
-ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
+ddi:CustomInstance CLOSED EXTENDS @ddi:Identifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """see Collection""";
   ddi:purpose @ddi:InternationalStructuredString *
@@ -2031,7 +2031,7 @@ ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
   ddi:contains CLOSED {
     ddi:index xsd:integer *
     // shexmi:comment """Index value of member in an ordered array""";
-    ddi:member CLOSED EXTENDS ddi:Identifiable {
+    ddi:member CLOSED EXTENDS @ddi:Identifiable {
       ddi:value @ddi:ValueString *
       // shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.""";
       ddi:key xsd:string *
@@ -2046,7 +2046,7 @@ ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false. """;
-  ddi:correspondsTo CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:correspondsTo CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:type @ddi:CollectionType *
     // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
     ddi:name @ddi:ObjectName *
@@ -2062,7 +2062,7 @@ ddi:CustomInstance CLOSED EXTENDS ddi:Identifiable {
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
     ddi:isOrdered xsd:boolean *
     // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:isStructuredBy CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:criteria @ddi:InternationalStructuredString *
       // shexmi:comment """Intentional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
       ddi:displayLabel @ddi:LabelForDisplay *
@@ -2108,7 +2108,7 @@ A set of OMB required information about a question.
 
 The set of openEHR protocol information to be attached to a blood pressure Capture"""^^mark:
 
-ddi:CustomItem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:CustomItem CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:maxOccurs xsd:integer *
   // shexmi:comment """The maximum number of occurrences of an associated CustomValue""";
   ddi:minOccurs xsd:integer *
@@ -2138,7 +2138,7 @@ Explanatory notes
 ===================
 This definition will be referenced by a CustomValue when recording a key,value instance"""^^mark:
 
-ddi:VocabularyEntry CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:VocabularyEntry CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:entryTerm @ddi:InternationalStructuredString *
   // shexmi:comment """the term being defined""";
   ddi:definition @ddi:InternationalStructuredString *
@@ -2158,7 +2158,7 @@ aunt - The female sibling of a parent"""^^mark:
 
 # START ddi:SamplingMethodology Package
 
-ddi:SamplingAlgorithm CLOSED EXTENDS ddi:AlgorithmOverview {
+ddi:SamplingAlgorithm CLOSED EXTENDS @ddi:AlgorithmOverview {
   ddi:codifiedExpressionOfAlgorithm @ddi:CommandCode *
   // shexmi:comment """The algorithm expressed as algebraic or computer code.""";
 }
@@ -2171,11 +2171,11 @@ Examples
 ==========
 Random Sample; Stratified Random Sample"""^^mark:
 
-ddi:SamplingProcedure CLOSED EXTENDS ddi:MethodologyOverview {
-  ddi:hasDesign CLOSED EXTENDS ddi:DesignOverview {
+ddi:SamplingProcedure CLOSED EXTENDS @ddi:MethodologyOverview {
+  ddi:hasDesign CLOSED EXTENDS @ddi:DesignOverview {
     ddi:expressesAlgorithm @ddi:SamplingAlgorithm *
     // shexmi:comment """Is an expression of this Sampling Algorithm""";
-    ddi:specifiesGoal CLOSED EXTENDS ddi:Goal {
+    ddi:specifiesGoal CLOSED EXTENDS @ddi:Goal {
       ddi:overallTargetSampleSize xsd:integer *
       // shexmi:comment """The goal for the overall size of the sample expressed as an integer.""";
       ddi:overallTargetSamplePercent xsd:double *
@@ -2223,14 +2223,14 @@ Explanatory notes
 ===================
 This is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample."""^^mark:
 
-ddi:SamplingProcess CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:SamplingProcess CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:isDiscussedIn @ddi:ExternalMaterial *
   // shexmi:comment """Description and link to external material discussing this Sampling Process""";
   ddi:isSpecifiedBy @ddi:WorkflowStepSequence *
   // shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow""";
-  ddi:hasResults CLOSED EXTENDS ddi:Result {
+  ddi:hasResults CLOSED EXTENDS @ddi:Result {
     ddi:sizeOfSample xsd:integer *
     // shexmi:comment """The overall size of the sample""";
     ddi:strataName xsd:string *
@@ -2262,7 +2262,7 @@ A Stratification of a stage into multiple subsets. Each stratified group will be
 
 # START ddi:StudyRelated Package
 
-ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Study CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:kindOfData @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Describes, with a string or a term from a controlled vocabulary, the kind of data documented in the logical product(s) of a study unit. Examples include survey data, census/enumeration data, administrative data, measurement data, assessment data, demographic data, voting data, etc.""";
   ddi:overview @ddi:InternationalStructuredString *
@@ -2281,7 +2281,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The defined classes of Units related to the data,  Examples: 1. Canadian adults (not limited to those residing in Canada) 2. Computer companies 3. Universities""";
   ddi:hasDesign @ddi:DesignOverview *
   // shexmi:comment """The design for the Study""";
-  ddi:hasProcess CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasProcess CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString *
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit""";
     ddi:name @ddi:ObjectName *
@@ -2292,7 +2292,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """An implementation and/or execution of an algorithm which is associated with the design of the process.""";
   } *
   // shexmi:comment """Overview of the Process employed in the Study""";
-  ddi:hasInstrument CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasInstrument CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
     ddi:typeOfInstrument @ddi:ExternalControlledVocabularyEntry *
@@ -2303,7 +2303,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
     ddi:usage @ddi:InternationalStructuredString *
     // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-    ddi:usesConceptualInstrument CLOSED EXTENDS ddi:WorkflowProcess {
+    ddi:usesConceptualInstrument CLOSED EXTENDS @ddi:WorkflowProcess {
       ddi:displayLabel @ddi:LabelForDisplay *
       // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
       ddi:name @ddi:ObjectName *
@@ -2320,7 +2320,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:partonomy shexmi:sharedAggregation;
   } *
   // shexmi:comment """The implemented instruments used in capturing the data. The ImplentedInstrument designates the mode of delivery, a relation to an external representation of the instrument, and reference to the conceptual instrument that contains more detailed information on the content of the instrument.""";
-  ddi:hasEmbargo CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasEmbargo CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
     ddi:embargoDates @ddi:DateRange *
@@ -2339,7 +2339,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Information about the individual, agency and/or grant(s) which funded the described entity. """;
   ddi:hasAuthorizationSource @ddi:AuthorizationSource *
   // shexmi:comment """The authorizing agency and allows for the full text of the authorization (law, regulation, or other form of authorization).""";
-  ddi:hasQualityStatement CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasQualityStatement CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:name @ddi:ObjectName *
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
     ddi:displayLabel @ddi:LabelForDisplay *
@@ -2350,8 +2350,8 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Explanation of the reasons some decision was made or some object exists. Supports the use of multiple languages and structured text.""";
     ddi:usage @ddi:InternationalStructuredString *
     // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-    ddi:usesStandard CLOSED EXTENDS ddi:AnnotatedIdentifiable {
-      ddi:compliance CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:usesStandard CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+      ddi:compliance CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
         ddi:externalComplianceCode @ddi:ExternalControlledVocabularyEntry *
         // shexmi:comment """Specification of a code which relates to an area of coverage of the standard. Supports the use of an external controlled vocabulary.""";
         ddi:usage @ddi:InternationalStructuredString *
@@ -2368,7 +2368,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Identifies the external standard used and describes the level of compliance with the standard in terms specific aspects of the standard's content.""";
   } *
   // shexmi:comment """A statement of quality which may be related to an external standard or contain a simple statement of internal quality goals or expectations.""";
-  ddi:hasBudget CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasBudget CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString *
     // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text. """;
     ddi:name @ddi:ObjectName *
@@ -2379,7 +2379,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A description of the budget for the Study""";
   ddi:hasInstanceVariable @ddi:InstanceVariable *
   // shexmi:comment """A variable describing actual instances of data as recorded in the study. An example might be self reported gender, with categories of male encoded as \"0\"  and female encoded as \"1\", with missing values recorded as  \"-9\" for refused and \"-8\" as \"not asked\", recorded (physically) as an integer.""";
-  ddi:hasExPostEvaluation CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasExPostEvaluation CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:typeOfEvaluation @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """Brief identification of the type of evaluation. Supports the use of an external controlled vocabulary.""";
     ddi:evaluationProcess @ddi:InternationalStructuredString *
@@ -2400,7 +2400,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A relationship to a description of a simple overview, in which case the AlgorithmOverView class should be the target. """;
   ddi:hasConcept @ddi:Concept *
   // shexmi:comment """A Study may relate to multiple concepts. These may also be denoted by keywords in an Annotation.""";
-  ddi:hasVariableCollection CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasVariableCollection CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:type @ddi:CollectionType *
     // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
     ddi:name @ddi:ObjectName *
@@ -2422,7 +2422,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
     ddi:isOrdered xsd:boolean *
     // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification *
       // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -2449,7 +2449,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """The conceptual basis for the collection of members.""";
   } *
   // shexmi:comment """A Study may relate to a multiple collections of variables which may be defined by type, subject, use, source, etc.""";
-  ddi:hasAgentListing CLOSED EXTENDS ddi:Identifiable {
+  ddi:hasAgentListing CLOSED EXTENDS @ddi:Identifiable {
     ddi:type @ddi:CollectionType *
     // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
     ddi:name @ddi:ObjectName *
@@ -2465,7 +2465,7 @@ ddi:Study CLOSED EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
     ddi:isOrdered xsd:boolean *
     // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
       ddi:effectiveDates @ddi:DateRange *
       // shexmi:comment """The effective start and end date of the relationship""";
       ddi:privacy @ddi:ExternalControlledVocabularyEntry *
@@ -2519,7 +2519,7 @@ DDI 3.2 mapping
 =================
 s:StudyUnitType"""^^mark:
 
-ddi:StudyControl CLOSED EXTENDS ddi:Act {
+ddi:StudyControl CLOSED EXTENDS @ddi:Act {
   ddi:hasStudy @ddi:Study *
   // shexmi:comment """Study that is the target of the StudyControl""";
 }
@@ -2528,7 +2528,7 @@ ddi:StudyControl CLOSED EXTENDS ddi:Act {
 ============
 StudyControl references a Study. StudyControl enables the representation of a research protocol at the Study level. [If the only purpose of the object is to carry a Study, it should be seriously considered for melting with another object. Modeling rules state that any object needs to have a reality of its own. Carrying another object is not a reality. If I misunderstood, please clarify the description instead]"""^^mark:
 
-ddi:StudySeries CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:StudySeries CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """The name of the series as a whole""";
   ddi:overview @ddi:InternationalStructuredString *
@@ -2546,7 +2546,7 @@ ddi:StudySeries CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -2753,7 +2753,7 @@ ddi:WhiteSpaceRule [
 
 # START ddi:BusinessWorkflow Package
 
-ddi:BusinessAlgorithm CLOSED EXTENDS ddi:AlgorithmOverview {
+ddi:BusinessAlgorithm CLOSED EXTENDS @ddi:AlgorithmOverview {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#BusinessWorkflow"
 // shexmi:comment """Definition
@@ -2765,7 +2765,7 @@ Examples
 ==========
 There are several well-established algorithms for performing data anonymization including \"local suppression\", \"global attribute generalization\" and \"k-Anonymization with suppression\" which is a specific combination of the two. An anonymizing business process might implement one of these algorithms."""^^mark:
 
-ddi:DataPipeline CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataPipeline CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -2775,7 +2775,7 @@ ddi:DataPipeline CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contains CLOSED {
     ddi:index xsd:integer *
     // shexmi:comment """Provides an index for the member within an ordered array""";
-    ddi:member CLOSED EXTENDS ddi:WorkflowProcess {
+    ddi:member CLOSED EXTENDS @ddi:WorkflowProcess {
       ddi:standardModelUsed @ddi:PairedExternalControlledVocabularyEntry *
       // shexmi:comment """If a standard process model such as The Generic Statistical Business Process Model (GSBPN), the Generic Longitudinal Business Process Model (GLBPM), Open Archive Information System model (OAIS), etc. has been related to this business process, the model and step or sub-step is noted here using the Paired External Controlled Vocabulary Entry. Enter the name of the model in \"term\" and the step, sub-step, or specific portion of the model in \"extent\".""";
       ddi:preCondition @ddi:BusinessProcessCondition *
@@ -2819,7 +2819,7 @@ Traversal, Data Lifecycle"""^^mark:
 ddi:DDI4Version xsd:string
 
 
-ddi:DocumentInformation CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DocumentInformation CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:contentCoverage CLOSED {
     ddi:typeOfContent @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """Uses a controlled vocabulary entry to classify the description provided.""";
@@ -2853,7 +2853,7 @@ Explanatory notes
 ===================
 Annotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance."""^^mark:
 
-ddi:ExternalMaterial CLOSED EXTENDS ddi:Identifiable {
+ddi:ExternalMaterial CLOSED EXTENDS @ddi:Identifiable {
   ddi:typeOfMaterial @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Designation of the type of material being described. Supports the use of a controlled vocabulary.""";
   ddi:descriptiveText @ddi:InternationalStructuredString *
@@ -2938,7 +2938,7 @@ DDI 3.2 mapping
 =================
 r:OtherMaterialType"""^^mark:
 
-ddi:FundingInformation CLOSED EXTENDS ddi:Identifiable {
+ddi:FundingInformation CLOSED EXTENDS @ddi:Identifiable {
   ddi:funderRole @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Role of the funding organization or individual. Supports the use of a controlled vocabulary.""";
   ddi:grantNumber xsd:string *
@@ -2967,7 +2967,7 @@ r:FundingInformationType"""^^mark:
 
 # START ddi:Workflows Package
 
-ABSTRACT ddi:Act CLOSED EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:Act CLOSED EXTENDS @ddi:WorkflowStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -2983,7 +2983,7 @@ Explanatory notes
 ===================
 Act is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth."""^^mark:
 
-ddi:ComputationAction CLOSED EXTENDS ddi:Act {
+ddi:ComputationAction CLOSED EXTENDS @ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString *
   // shexmi:comment """Describes the transformation activity""";
   ddi:usesCommandCode @ddi:CommandCode *
@@ -3006,7 +3006,7 @@ DDI 3.2 mapping
 =================
 d:ComputationItemType"""^^mark:
 
-ddi:ConditionalControlStep CLOSED EXTENDS ddi:WorkflowControlStep {
+ddi:ConditionalControlStep CLOSED EXTENDS @ddi:WorkflowControlStep {
   ddi:condition @ddi:CommandCode *
   // shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false""";
   ddi:executes @ddi:WorkflowStepSequence *
@@ -3023,7 +3023,7 @@ Examples
 ==========
 If-then-else and iterative structures."""^^mark:
 
-ddi:IfThenElse CLOSED EXTENDS ddi:ConditionalControlStep {
+ddi:IfThenElse CLOSED EXTENDS @ddi:ConditionalControlStep {
   ddi:elseIf CLOSED {
     ddi:condition @ddi:CommandCode *
     // shexmi:comment """The condition to verify if the parent IfThenElse condition is false.""";
@@ -3056,7 +3056,7 @@ DDI 3.2 mapping
 =================
 d:IfThenElseType"""^^mark:
 
-ddi:Loop CLOSED EXTENDS ddi:ConditionalControlStep {
+ddi:Loop CLOSED EXTENDS @ddi:ConditionalControlStep {
   ddi:initialValue @ddi:CommandCode *
   // shexmi:comment """The command used to set the initial value for the process. Could be a simple value.""";
   ddi:stepValue @ddi:CommandCode *
@@ -3083,7 +3083,7 @@ DDI 3.2 mapping
 =================
 d:LoopType"""^^mark:
 
-ddi:MetadataDrivenAction CLOSED EXTENDS ddi:Act {
+ddi:MetadataDrivenAction CLOSED EXTENDS @ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString *
   // shexmi:comment """Describes the transformation activity""";
   ddi:typeOfMetadataDrivenAction @ddi:ExternalControlledVocabularyEntry *
@@ -3148,7 +3148,7 @@ Explanatory notes
 ===================
 When used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value."""^^mark:
 
-ddi:RepeatUntil CLOSED EXTENDS ddi:ConditionalControlStep {
+ddi:RepeatUntil CLOSED EXTENDS @ddi:ConditionalControlStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3163,7 +3163,7 @@ DDI 3.2 mapping
 =================
 d:RepeatUntilType"""^^mark:
 
-ddi:RepeatWhile CLOSED EXTENDS ddi:ConditionalControlStep {
+ddi:RepeatWhile CLOSED EXTENDS @ddi:ConditionalControlStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3178,7 +3178,7 @@ DDI 3.2 mapping
 =================
 d:RepeatWhileType"""^^mark:
 
-ddi:Split CLOSED EXTENDS ddi:TemporalRelationControlStep {
+ddi:Split CLOSED EXTENDS @ddi:TemporalRelationControlStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3189,7 +3189,7 @@ Explanatory notes
 ===================
 Supports parallel processing that does not require completion to exit."""^^mark:
 
-ddi:SplitJoin CLOSED EXTENDS ddi:TemporalRelationControlStep {
+ddi:SplitJoin CLOSED EXTENDS @ddi:TemporalRelationControlStep {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#Workflows"
 // shexmi:comment """Definition
@@ -3204,7 +3204,7 @@ Explanatory notes
 ===================
 Supports parallel processing that requires completion of all included process steps to exit."""^^mark:
 
-ABSTRACT ddi:TemporalRelationControlStep CLOSED EXTENDS ddi:WorkflowControlStep {
+ABSTRACT ddi:TemporalRelationControlStep CLOSED EXTENDS @ddi:WorkflowControlStep {
   ddi:typeOfTemporalRelationship @ddi:TemporalRelationSpecification *
   // shexmi:comment """Specify the type of temporal relationhship between identified WorkflowSteps using Allen's Interval definitions.""";
 }
@@ -3217,7 +3217,7 @@ Explanatory notes
 ===================
 When creating a specific subtype identify the workflow steps included in a structure that is appropriate to the subtype. For example, Split contains a relationship \"executeConcurrently\"."""^^mark:
 
-ABSTRACT ddi:WorkflowControlStep CLOSED EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:WorkflowControlStep CLOSED EXTENDS @ddi:WorkflowStep {
   ddi:executes @ddi:WorkflowStep *
   // shexmi:comment """The WorkflowSteps executed by the control mechanism"""
   // shexmi:partonomy shexmi:sharedAggregation;
@@ -3231,7 +3231,7 @@ Examples
 ==========
 A WorkflowStepSequence is a subtype of WorkflowControlStep which defines a sequential order for included steps."""^^mark:
 
-ddi:WorkflowProcess CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:WorkflowProcess CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -3254,7 +3254,7 @@ Examples
 ==========
 Overall description of steps taken when ingesting a dataset into an archive; A Sampling Process; A step or sub-step of the Generic Longitudinal Business Process Model (GLBPM)."""^^mark:
 
-ABSTRACT ddi:WorkflowStep CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:WorkflowStep CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -3267,7 +3267,7 @@ ABSTRACT ddi:WorkflowStep CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:hasInformationFlow @ddi:Binding *
   // shexmi:comment """Mapping of specific information flow within the workflow""";
-  ddi:isPerformedBy CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isPerformedBy CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:serviceInterface @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """Specifies how to communicate with the service.""";
     ddi:serviceLocation @ddi:ExternalControlledVocabularyEntry *
@@ -3304,7 +3304,7 @@ GSIM mapping
 ==============
 Process Step"""^^mark:
 
-ddi:WorkflowStepSequence CLOSED EXTENDS ddi:WorkflowControlStep {
+ddi:WorkflowStepSequence CLOSED EXTENDS @ddi:WorkflowControlStep {
   ddi:typeOfWorkflowStepSequence @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Provides the ability to \"type\" a sequence for classification or processing purposes. Supports the use of an external controlled vocabulary.""";
   ddi:orderedStep CLOSED {
@@ -3352,7 +3352,7 @@ d:SequenceType"""^^mark:
 
 # START ddi:Methodologies Package
 
-ABSTRACT ddi:BusinessFunction CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:BusinessFunction CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
 }
@@ -3373,7 +3373,7 @@ GSIM mapping
 ==============
 Business Function"""^^mark:
 
-ddi:Goal CLOSED EXTENDS ddi:BusinessFunction {
+ddi:Goal CLOSED EXTENDS @ddi:BusinessFunction {
   ddi:isDiscussedIn @ddi:ExternalMaterial *
   // shexmi:comment """Identifies material discussing the goal. The material may be in DDI or other format.""";
 }
@@ -3392,15 +3392,15 @@ GSIM mapping
 ==============
 Business Function"""^^mark:
 
-ABSTRACT ddi:Result CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Result CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:hasBinding @ddi:Binding *
   // shexmi:comment """Can bind data attached to parameters into, out of, and between processes.""";
-  ddi:hasAppliedUse CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasAppliedUse CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString *
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
-    ddi:hasGuide CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:hasGuide CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:overview @ddi:InternationalStructuredString *
       // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
       ddi:isDiscussedIn @ddi:ExternalMaterial *
@@ -3437,7 +3437,7 @@ The use of a weight resulting from a sampling process by an analyst within the c
 
 # START ddi:Discovery Package
 
-ddi:Access CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Access CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:purpose @ddi:InternationalStructuredString *
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text""";
   ddi:confidentialityStatement @ddi:InternationalStructuredString *
@@ -3481,7 +3481,7 @@ DDI 3.2 mapping
 =================
 a:AccessType"""^^mark:
 
-ddi:BoundingBox CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:BoundingBox CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:eastLongitude xsd:double *
   // shexmi:comment """The easternmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
   ddi:westLongitude xsd:double *
@@ -3508,11 +3508,11 @@ Synonyms
 ==========
 r:BoundingBox"""^^mark:
 
-ddi:Coverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Coverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """A generic description including temporal, topical, and spatial coverage that is the equivalent of dc:coverage (the refinement base of dcterms:spatial and dcterms:temporal. Use specific coverage content for detailed information. Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
-  ddi:hasTemporalCoverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
-    ddi:coverageDate CLOSED EXTENDS ddi:AnnotationDate {
+  ddi:hasTemporalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+    ddi:coverageDate CLOSED EXTENDS @ddi:AnnotationDate {
       ddi:subject @ddi:ExternalControlledVocabularyEntry *
       // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.""";
       ddi:keyword @ddi:ExternalControlledVocabularyEntry *
@@ -3522,7 +3522,7 @@ ddi:Coverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   } *
   // shexmi:comment """The dates and time periods described by the contents of the annotated object."""
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:hasTopicalCoverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasTopicalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:subject @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
     ddi:keyword @ddi:ExternalControlledVocabularyEntry *
@@ -3530,7 +3530,7 @@ ddi:Coverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   } *
   // shexmi:comment """The topics covered by the contents of the annotated object. These may be expressed by subject classification systems and structured or unstructured keywords."""
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:hasSpatialCoverage CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasSpatialCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:description @ddi:InternationalStructuredString *
     // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
     ddi:spatialAreaCode @ddi:ExternalControlledVocabularyEntry *
@@ -3577,7 +3577,7 @@ r:CoverageType"""^^mark:
 
 # START ddi:DataCapture Package
 
-ddi:BooleanResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
+ddi:BooleanResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
   ddi:forCategory @ddi:Category *
   // shexmi:comment """The category to which a boolean response is requested.""";
 }
@@ -3590,7 +3590,7 @@ Explanatory notes
 ===================
 Exactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)"""^^mark:
 
-ABSTRACT ddi:Capture CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Capture CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A name for the measurement. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -3630,8 +3630,8 @@ Explanatory notes
 ===================
 Provides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions)."""^^mark:
 
-ddi:CodeListResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
-  ddi:usesCodeList CLOSED EXTENDS ddi:EnumerationDomain {
+ddi:CodeListResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
+  ddi:usesCodeList CLOSED EXTENDS @ddi:EnumerationDomain {
     ddi:contains CLOSED {
       ddi:index xsd:integer *
       // shexmi:comment """Provides an index for the member within an ordered array""";
@@ -3641,7 +3641,7 @@ ddi:CodeListResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
       // shexmi:comment """The member containing the designation of the CodeItem""";
     } *
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-    ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification *
       // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list. Use if all relations within this relation structure are of the same specification.""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -3680,7 +3680,7 @@ DDI 3.2 mapping
 =================
 d:CodeDomainType"""^^mark:
 
-ddi:ExternalAid CLOSED EXTENDS ddi:ExternalMaterial {
+ddi:ExternalAid CLOSED EXTENDS @ddi:ExternalMaterial {
   ddi:stimulusType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """""";
 }
@@ -3697,8 +3697,8 @@ DDI 3.2 mapping
 =================
 r:OtherMaterialType"""^^mark:
 
-ddi:InstanceMeasurement CLOSED EXTENDS ddi:InstrumentComponent {
-  ddi:instantiates CLOSED EXTENDS ddi:Capture {
+ddi:InstanceMeasurement CLOSED EXTENDS @ddi:InstrumentComponent {
+  ddi:instantiates CLOSED EXTENDS @ddi:Capture {
     ddi:measurementType @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """The type of measurement performed""";
     ddi:hasRepresentedVariable @ddi:RepresentedVariable *
@@ -3711,10 +3711,10 @@ ddi:InstanceMeasurement CLOSED EXTENDS ddi:InstrumentComponent {
 ============
 An instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process."""^^mark:
 
-ddi:InstanceQuestion CLOSED EXTENDS ddi:InstrumentComponent {
+ddi:InstanceQuestion CLOSED EXTENDS @ddi:InstrumentComponent {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """The name of a question as used in an Instrument. Redefined to provide a more useful description. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
-  ddi:instantiates CLOSED EXTENDS ddi:Capture {
+  ddi:instantiates CLOSED EXTENDS @ddi:Capture {
     ddi:questionText @ddi:DynamicText *
     // shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.""";
     ddi:questionIntent @ddi:InternationalStructuredString *
@@ -3735,7 +3735,7 @@ Examples
 ==========
 “How old are you?”"""^^mark:
 
-ddi:Instruction CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Instruction CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:instructionText @ddi:DynamicText *
   // shexmi:comment """The content of the Instruction text provided using DynamicText. Note that when using Dynamic Text, the full InstructionText must be repeated for multi-language versions of the content. The InstructionText may also be repeated to provide a dynamic and plain text version of the instruction. This allows for accurate rendering of the instruction in a non-dynamic environment like print.""";
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -3758,7 +3758,7 @@ DDI 3.2 mapping
 =================
 d:InstructionType"""^^mark:
 
-ddi:InstrumentCode CLOSED EXTENDS ddi:InstrumentComponent {
+ddi:InstrumentCode CLOSED EXTENDS @ddi:InstrumentComponent {
   ddi:purposeOfCode @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The purpose of the code (e.g., quality control, edit check, checksums, compute filler text, compute values for use in administering the instrument)""";
   ddi:usesCommandCode @ddi:CommandCode *
@@ -3777,7 +3777,7 @@ DDI 3.2 mapping
 =================
 d:ComputationItemType"""^^mark:
 
-ABSTRACT ddi:InstrumentComponent CLOSED EXTENDS ddi:Act {
+ABSTRACT ddi:InstrumentComponent CLOSED EXTENDS @ddi:Act {
   ddi:hasInstruction @ddi:Instruction *
   // shexmi:comment """An instrument compoment can have zero to many instructions"""
   // shexmi:partonomy shexmi:sharedAggregation;
@@ -3796,7 +3796,7 @@ Explanatory notes
 ===================
 InstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument."""^^mark:
 
-ddi:NumericResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
+ddi:NumericResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
   ddi:numericTypeCode @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Identification of the numeric type such as integer, decimal, etc. supports the use of an external controlled vocabulary.""";
   ddi:unit @ddi:ExternalControlledVocabularyEntry *
@@ -3834,7 +3834,7 @@ DDI 3.2 mapping
 =================
 d:NumericDomainType"""^^mark:
 
-ddi:RankingResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
+ddi:RankingResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
 // shexmi:comment """Definition
@@ -3842,7 +3842,7 @@ ddi:RankingResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
 A response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. 
 Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
-ddi:ResponseDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ResponseDomain CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the domain. May be expressed in multiple languages.""";
   ddi:intendedRepresentation @ddi:RepresentedVariable *
@@ -3868,7 +3868,7 @@ Synonyms
 ==========
 GSIM & DDI: ResponseDomain"""^^mark:
 
-ddi:ScaleResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
+ddi:ScaleResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
 // shexmi:comment """Definition
@@ -3876,7 +3876,7 @@ ddi:ScaleResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
 A response domain capturing a scaled response, such as a Likert scale. 
 Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
-ddi:Statement CLOSED EXTENDS ddi:InstrumentComponent {
+ddi:Statement CLOSED EXTENDS @ddi:InstrumentComponent {
   ddi:statementText @ddi:DynamicText *
   // shexmi:comment """Structured human-readable text that allows for dynamic content. For example, the insertion of a name or gender specific pronoun. Repeat ONLY for capturing the same content in multiple languages.""";
   ddi:purposeOfStatement @ddi:ExternalControlledVocabularyEntry *
@@ -3903,7 +3903,7 @@ DDI 3.2 mapping
 =================
 d:StatementItemType"""^^mark:
 
-ddi:TextResponseDomain CLOSED EXTENDS ddi:ResponseDomain {
+ddi:TextResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
   ddi:maximumLength xsd:integer *
   // shexmi:comment """The maximum number of characters allowed.""";
   ddi:minimumLength xsd:integer *
@@ -3929,7 +3929,7 @@ r:TextDomainType"""^^mark:
 
 # START ddi:Identification Package
 
-ABSTRACT ddi:AnnotatedIdentifiable CLOSED EXTENDS ddi:Identifiable {
+ABSTRACT ddi:AnnotatedIdentifiable CLOSED EXTENDS @ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation *
   // shexmi:comment """Provides annotation information on the object to support citation and crediting of the creator(s) of the object.""";
   ddi:relatedMaterial @ddi:ExternalMaterial *
@@ -3956,7 +3956,7 @@ ABSTRACT ddi:Identifiable CLOSED {
     // shexmi:comment """RationaleCode is primarily for internal processing flags within an organization or system. Supports the use of an external controlled vocabulary.""";
   } *
   // shexmi:comment """The reason for making this version of the object.""";
-  ddi:versionDate ddi:IsoDateType *
+  ddi:versionDate @ddi:IsoDateType *
   // shexmi:comment """The date and time the object was changed. Supports standard ISO date and datetime formats.""";
   ddi:isUniversallyUnique xsd:boolean *
   // shexmi:comment """Default value is false. Usually the combination of agency and id (ignoring different versions) is unique. If isUniversallyUnique is set to true, it indicates that the id itself is universally unique (unique across systems and/or agencies) and therefore the agency part is not required to ensure uniqueness. """;
@@ -3991,10 +3991,10 @@ Used to identify objects for purposes of internal and/or external referencing. E
 
 # START ddi:LogicalDataDescription Package
 
-ddi:DataPoint CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataPoint CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:isDescribedBy @ddi:InstanceVariable *
   // shexmi:comment """The InstanceVariable delimits the values which can populate a DataPoint.""";
-  ddi:hasDatum CLOSED EXTENDS ddi:Designation {
+  ddi:hasDatum CLOSED EXTENDS @ddi:Designation {
     ddi:representation @ddi:ValueString *
     // shexmi:comment """Specification of the type of Signification""";
     ddi:isBoundedBy @ddi:InstanceVariable *
@@ -4020,7 +4020,7 @@ GSIM mapping
 ==============
 Data Point"""^^mark:
 
-ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataStore CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:characterSet xsd:string *
   // shexmi:comment """Default character set used in the Data Store.""";
   ddi:dataStoreType @ddi:ExternalControlledVocabularyEntry *
@@ -4044,7 +4044,7 @@ ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Data in the form of Data Records contained in the Data Store. Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4068,7 +4068,7 @@ ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Description of a complex structure for the Collection. A collection may be structured in more than one way for different uses.""";
   ddi:isInStudy @ddi:Study *
   // shexmi:comment """A Study has at most one DataStore. Many studies can have the same set of record types.""";
-  ddi:usesRecordRelation CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:usesRecordRelation CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A display label for the CollectionCorrespondence. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
     ddi:purpose @ddi:InternationalStructuredString *
@@ -4088,8 +4088,8 @@ ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Target Instance Variables if a directional relation is used""";
     } *
     // shexmi:comment """Correspondences between Instance Variables of different Logical Record Layout. """;
-    ddi:maps CLOSED EXTENDS ddi:LogicalRecord {
-      ddi:isStructuredBy CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:maps CLOSED EXTENDS @ddi:LogicalRecord {
+      ddi:isStructuredBy CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
         ddi:criteria @ddi:InternationalStructuredString *
         // shexmi:comment """Intensional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
         ddi:displayLabel @ddi:LabelForDisplay *
@@ -4117,16 +4117,16 @@ ddi:DataStore CLOSED EXTENDS ddi:AnnotatedIdentifiable {
         // shexmi:comment """Member relations of InstanceVariables that comprise the relation structure""";
       } *
       // shexmi:comment """Describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.""";
-      ddi:isViewedFrom CLOSED EXTENDS ddi:AnnotatedIdentifiable {
-        ddi:hasIdentifierRole CLOSED EXTENDS ddi:ViewpointRole {
+      ddi:isViewedFrom CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+        ddi:hasIdentifierRole CLOSED EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as identifiers"""
         // shexmi:partonomy shexmi:compositeAggregation;
-        ddi:hasMeasureRole CLOSED EXTENDS ddi:ViewpointRole {
+        ddi:hasMeasureRole CLOSED EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as measures"""
         // shexmi:partonomy shexmi:compositeAggregation;
-        ddi:hasAttributeRole CLOSED EXTENDS ddi:ViewpointRole {
+        ddi:hasAttributeRole CLOSED EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as attributes"""
         // shexmi:partonomy shexmi:compositeAggregation;
@@ -4165,7 +4165,7 @@ GSIM mapping
 ==============
 Data Set"""^^mark:
 
-ddi:DataStoreLibrary CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataStoreLibrary CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4181,7 +4181,7 @@ ddi:DataStoreLibrary CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The DataStores in the Catalog. Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4237,7 +4237,7 @@ Synonyms
 ==========
 Structured metadata archive"""^^mark:
 
-ABSTRACT ddi:LogicalRecord CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:LogicalRecord CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4282,7 +4282,7 @@ GSIM mapping
 ==============
 Data Structure"""^^mark:
 
-ABSTRACT ddi:ViewpointRole CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ViewpointRole CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -4312,7 +4312,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
 
 # START ddi:Agents Package
 
-ABSTRACT ddi:Agent CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Agent CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:hasAgentId CLOSED {
     ddi:agentIdValue xsd:string *
     // shexmi:comment """The identifier for the agent.""";
@@ -4322,7 +4322,7 @@ ABSTRACT ddi:Agent CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An identifier within a specified system for specifying an agent""";
   ddi:purpose @ddi:InternationalStructuredString *
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
-  ddi:image CLOSED EXTENDS ddi:Image {
+  ddi:image CLOSED EXTENDS @ddi:Image {
     ddi:effectiveDates @ddi:DateRange *
     // shexmi:comment """The period for which this image is effective/valid.""";
     ddi:privacy @ddi:ExternalControlledVocabularyEntry *
@@ -4348,7 +4348,7 @@ Synonyms
 ==========
 Agent"""^^mark:
 
-ddi:Individual CLOSED EXTENDS ddi:Agent {
+ddi:Individual CLOSED EXTENDS @ddi:Agent {
   ddi:hasIndividualName CLOSED {
     ddi:prefix xsd:string *
     // shexmi:comment """Title that precedes the name of the individual, such as Ms., or Dr.""";
@@ -4396,7 +4396,7 @@ Explanatory notes
 ===================
 A set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization)."""^^mark:
 
-ddi:Machine CLOSED EXTENDS ddi:Agent {
+ddi:Machine CLOSED EXTENDS @ddi:Agent {
   ddi:typeOfMachine @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The kind of machine used - software, web service, physical machine, from a controlled vocabulary""";
   ddi:name @ddi:ObjectName *
@@ -4430,8 +4430,8 @@ Explanatory notes
 ===================
 May be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine."""^^mark:
 
-ddi:Organization CLOSED EXTENDS ddi:Agent {
-  ddi:hasOrganizationName CLOSED EXTENDS ddi:ObjectName {
+ddi:Organization CLOSED EXTENDS @ddi:Agent {
+  ddi:hasOrganizationName CLOSED EXTENDS @ddi:ObjectName {
     ddi:abbreviation @ddi:InternationalString *
     // shexmi:comment """An abbreviation or acronym for the name. This may be expressed in multiple languages. It is assumed that if only a single language is provided that it may be used in any of the other languages within which the name itself is expressed.""";
     ddi:typeOfOrganizationName @ddi:ExternalControlledVocabularyEntry *
@@ -4465,7 +4465,7 @@ related to org:Organization which is described as \"Represents a collection of p
 
 # START ddi:Representations Package
 
-ddi:AuthorizationSource CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:AuthorizationSource CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:statementOfAuthorization @ddi:InternationalStructuredString *
   // shexmi:comment """Text of the authorization (law, mandate, approved business case).""";
   ddi:legalMandate @ddi:InternationalString *
@@ -4499,7 +4499,7 @@ DDI 3.2 mapping
 =================
 r:AuthorizationSourceType"""^^mark:
 
-ddi:ClassificationFamily CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationFamily CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4517,7 +4517,7 @@ ddi:ClassificationFamily CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
   ddi:hasClassificationIndex @ddi:ClassificationIndex *
   // shexmi:comment """ClassificationIndexes associated to the ClassificationFamily.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4559,7 +4559,7 @@ GSIM mapping
 ==============
 Classification Family"""^^mark:
 
-ddi:ClassificationIndex CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationIndex CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:releaseDate @ddi:Date *
   // shexmi:comment """Date when the current version of the Classification Index was released.""";
   ddi:availableLanguage xsd:language *
@@ -4586,7 +4586,7 @@ ddi:ClassificationIndex CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasPublication @ddi:ExternalMaterial *
   // shexmi:comment """A list of the publications in which the Classification Index has been published."""
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:isStructuredBy CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4633,7 +4633,7 @@ GSIM mapping
 ==============
 Classification Index"""^^mark:
 
-ddi:ClassificationIndexEntry CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationIndexEntry CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:entry @ddi:InternationalString *
   // shexmi:comment """Text describing the type of object/unit or object property.""";
   ddi:validDates @ddi:DateRange *
@@ -4650,7 +4650,7 @@ GSIM mapping
 ==============
 Classification Index Entry"""^^mark:
 
-ddi:ClassificationItem CLOSED EXTENDS ddi:Designation {
+ddi:ClassificationItem CLOSED EXTENDS @ddi:Designation {
   ddi:isValid xsd:boolean *
   // shexmi:comment """Indicates whether or not the item is currently valid. If updates are allowed in the Statistical Classification, an item may be restricted in its validity, i.e. it may become valid or invalid after the Statistical Classification has been released. """;
   ddi:isGenerated xsd:boolean *
@@ -4697,7 +4697,7 @@ GSIM mapping
 ==============
 Classification Item"""^^mark:
 
-ddi:ClassificationSeries CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationSeries CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:context @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """ClassificationSeries can be designed in a specific context. Supports the use of and External Controlled Vocabulary.""";
   ddi:objectsOrUnitsClassified @ddi:ExternalControlledVocabularyEntry *
@@ -4721,7 +4721,7 @@ ddi:ClassificationSeries CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4762,7 +4762,7 @@ GSIM mapping
 ==============
 Classification Series"""^^mark:
 
-ddi:Code CLOSED EXTENDS ddi:Designation {
+ddi:Code CLOSED EXTENDS @ddi:Designation {
   ddi:representation @ddi:ValueString *
   // shexmi:comment """The value as expressed in the data file. """;
   ddi:denotes @ddi:Category *
@@ -4791,7 +4791,7 @@ GSIM mapping
 ==============
 Code"""^^mark:
 
-ddi:CorrespondenceTable CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:CorrespondenceTable CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:effectiveDates @ddi:DateRange *
   // shexmi:comment """Effective period of validity of the CorrespondenceTable. The correspondence table expresses the relationships between the two NodeSets as they existed on the period specified in the table.""";
   ddi:correspondence @ddi:Map *
@@ -4828,7 +4828,7 @@ GSIM mapping
 ==============
 Correspondence Table"""^^mark:
 
-ABSTRACT ddi:Designation CLOSED EXTENDS ddi:Identifiable {
+ABSTRACT ddi:Designation CLOSED EXTENDS @ddi:Identifiable {
   ddi:denotes @ddi:Concept *
   // shexmi:comment """The concept denoted by the designation. """;
 }
@@ -4849,7 +4849,7 @@ GSIM mapping
 ==============
 Designation"""^^mark:
 
-ABSTRACT ddi:EnumerationDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:EnumerationDomain CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType *
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -4858,7 +4858,7 @@ ABSTRACT ddi:EnumerationDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
   ddi:isOrdered xsd:boolean *
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-  ddi:references CLOSED EXTENDS ddi:ConceptSystem {
+  ddi:references CLOSED EXTENDS @ddi:ConceptSystem {
     ddi:contains CLOSED {
       ddi:index xsd:integer *
       // shexmi:comment """Index value of member in an ordered array""";
@@ -4866,7 +4866,7 @@ ABSTRACT ddi:EnumerationDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Restricts member target class to Concept or subtype of Concept""";
     } *
     // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-    ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification *
       // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list. Use if all relations within this relation structure are of the same specification.""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -4902,7 +4902,7 @@ ABSTRACT ddi:EnumerationDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
 ============
 An abstract base to allow all codifications (CodeList, StatisticalClassification, etc.) to be used as enumerated value representations."""^^mark:
 
-ddi:LevelStructure CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:LevelStructure CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
   ddi:usage @ddi:InternationalStructuredString *
@@ -4947,7 +4947,7 @@ GSIM mapping
 ==============
 Level"""^^mark:
 
-ddi:SentinelValueDomain CLOSED EXTENDS ddi:ValueDomain {
+ddi:SentinelValueDomain CLOSED EXTENDS @ddi:ValueDomain {
   ddi:platformType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The type of platform under which sentinel codes will be used. Statistical software platforms use different sets of codes to indicate missing values. The external controlled vocabulary should list platform tpes and a description of the allowed missing value types. A sample list would be: • BlankString - A Blank string indicates missing. Comparison is based on lexical order.  • EmptyString - An empty string indicates missing. Use in comparisons returns missing.   • Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.   • SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value   • SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)   • StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value  • Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate.  """;
   ddi:takesConceptsFrom @ddi:SentinelConceptualDomain *
@@ -4999,7 +4999,7 @@ GSIM mapping
 ==============
 Enumerated Value Domain"""^^mark:
 
-ddi:StatisticalClassification CLOSED EXTENDS ddi:EnumerationDomain {
+ddi:StatisticalClassification CLOSED EXTENDS @ddi:EnumerationDomain {
   ddi:releaseDate @ddi:Date *
   // shexmi:comment """Date the Statistical Classification was released""";
   ddi:validDates @ddi:DateRange *
@@ -5049,7 +5049,7 @@ ddi:StatisticalClassification CLOSED EXTENDS ddi:EnumerationDomain {
 """;
   ddi:successor @ddi:StatisticalClassification *
   // shexmi:comment """Statistical Classification that supersedes the actual Statistical Classification (for those Statistical Classifications that are versions or updates), """;
-  ddi:isStructuredBy CLOSED EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification *
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry *
@@ -5087,7 +5087,7 @@ GSIM mapping
 ==============
 Statistical Classification"""^^mark:
 
-ddi:ValueAndConceptDescription CLOSED EXTENDS ddi:Identifiable {
+ddi:ValueAndConceptDescription CLOSED EXTENDS @ddi:Identifiable {
   ddi:description @ddi:InternationalStructuredString *
   // shexmi:comment """A formal description of the set of values.""";
   ddi:logicalExpression @ddi:ExternalControlledVocabularyEntry *
@@ -5137,7 +5137,7 @@ Some Conceptual Domains might be described with just a narrative. Others, though
 In ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.
 The logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096"""^^mark:
 
-ABSTRACT ddi:ValueDomain CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ValueDomain CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the object. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
   ddi:recommendedDataType @ddi:ExternalControlledVocabularyEntry *
