@@ -7731,6 +7731,606 @@
       }
     },
     {
+      "id": "http://ddi-alliance.org/ns/#VariableCollection",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
+        ],
+        "closed": true,
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#type",
+              "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/type"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#name",
+              "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/name"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#purpose",
+              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/purpose"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#displayLabel",
+              "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/displaylabel"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. ",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#usage",
+              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/usage"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#groupingSemantic",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/groupingsemantic"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A semantic term defining the factor used for defining this group",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#contains",
+              "valueExpr": {
+                "type": "Shape",
+                "closed": true,
+                "expression": {
+                  "type": "EachOf",
+                  "expressions": [
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#index",
+                      "valueExpr": {
+                        "type": "NodeConstraint",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                      },
+                      "min": 0,
+                      "max": 1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/index"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Index value of member in an ordered array",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#member",
+                      "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
+                      "min": 1,
+                      "max": 1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/member"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Restricts member target class to ConceptualVariable, RepresentedVariable, and InstanceVariable",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "annotations": [
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                    "object": "http://lion.ddialliance.org/ddiobjects/variableindicator"
+                  },
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                    "object": {
+                      "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
+                    }
+                  },
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                    "object": {
+                      "value": "\nDefinition\n============\nMember Indicator for use with member type ConceptualVariable, RepresentedVariable, and InstanceVariable\n\n",
+                      "type": "https://github.com/commonmark/commonmark.js"
+                    }
+                  }
+                ]
+              },
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/contains"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Allows for the identification of the member and optionally provides an index for the member within an ordered array",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#isOrdered",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/isordered"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "If members are ordered set to true, if unordered set to false.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
+              "valueExpr": {
+                "type": "Shape",
+                "extends": [
+                  "http://ddi-alliance.org/ns/#Identifiable"
+                ],
+                "closed": true,
+                "expression": {
+                  "type": "EachOf",
+                  "expressions": [
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
+                      "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
+                      "min": 0,
+                      "max": 1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#semantic",
+                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+                      "min": 0,
+                      "max": 1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/semantic"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Provides semantic context for the relationship",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#totality",
+                      "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
+                      "min": 0,
+                      "max": 1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/totality"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Type of relation in terms of totality with respect to an associated collection. ",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
+                      "valueExpr": {
+                        "type": "Shape",
+                        "closed": true,
+                        "expression": {
+                          "type": "EachOf",
+                          "expressions": [
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
+                              "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
+                              "min": 1,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#semantic",
+                              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/semantic"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Provides semantic context for the relationship",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#totality",
+                              "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
+                              "min": 0,
+                              "max": 1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/totality"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Type of relation in terms of totality with respect to an associated collection. ",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#source",
+                              "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
+                              "min": 0,
+                              "max": -1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/source"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "First member in a relationship.\n",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "TripleConstraint",
+                              "predicate": "http://ddi-alliance.org/ns/#target",
+                              "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
+                              "min": 0,
+                              "max": -1,
+                              "annotations": [
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                                  "object": "http://lion.ddialliance.org/ddiobjects/target"
+                                },
+                                {
+                                  "type": "Annotation",
+                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                                  "object": {
+                                    "value": "Second member in a relationship. Note that this can be realized as a collection to support tuples. ",
+                                    "type": "https://github.com/commonmark/commonmark.js"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "annotations": [
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                            "object": "http://lion.ddialliance.org/ddiobjects/variablerelation"
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                            "object": {
+                              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
+                            }
+                          },
+                          {
+                            "type": "Annotation",
+                            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                            "object": {
+                              "value": "\nDefinition\n============\nOrdered relations between any Variables in the Variable Cascade (Conceptual, Represented, Instance)\n\n",
+                              "type": "https://github.com/commonmark/commonmark.js"
+                            }
+                          }
+                        ]
+                      },
+                      "min": 0,
+                      "max": -1,
+                      "annotations": [
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                          "object": "http://lion.ddialliance.org/ddiobjects/hasmemberrelation"
+                        },
+                        {
+                          "type": "Annotation",
+                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                          "object": {
+                            "value": "Member relations that comprise the relation structure",
+                            "type": "https://github.com/commonmark/commonmark.js"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "annotations": [
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                    "object": "http://lion.ddialliance.org/ddiobjects/variablerelationstructure"
+                  },
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                    "object": {
+                      "value": "http://ddi-alliance.org/ns/#Conceptual"
+                    }
+                  },
+                  {
+                    "type": "Annotation",
+                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                    "object": {
+                      "value": "\nDefinition\n============\nRelationStructure for use with any mixture of Variables in the Variable Cascade (Conceptual, Represented, Instance).\n\nExplanatory notes\n===================\nA VariableCollection can be described as a simple list, or as having a more complex structure. All of the \"administrative\" variables for a study might be described as just a simple list without a VariableRelationStructure. If, however, the administrative variables needed to be described in subgroups, a VariableRelationStructure could be employed.\n\n",
+                      "type": "https://github.com/commonmark/commonmark.js"
+                    }
+                  }
+                ]
+              },
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/isstructuredby"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "This supplies information for linking disparate records in a dataset. RecordRelations describe corresponding InstanceVariables between record types.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#definingConcept",
+              "valueExpr": "http://ddi-alliance.org/ns/#Concept",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/definingconcept"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The conceptual basis for the collection of members.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/variablecollection"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#Conceptual"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nA collection (group) of any type of Variable within the Variable Cascade (Conceptual, Represented, Instance) for purposes of management, conceptualization or anything other than organizing a logical record or physical layout.\n\nExamples\n==========\nVariables within a specific section of a study, Variables related to a specific subject or keyword. Variables at a specified level of development or review.\n\nExplanatory notes\n===================\nA simple ordered or unordered list of variables can be described via a set of VariableIndicator parameters. An optional VariableRelationStructure can describe a more complex structure for the collection. We might, for example, use the VariableRelationStructure to group variables by content within a Study or across a StudySeries.\n\nDDI 3.2 mapping\n=================\nl:VariableGroupType\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "http://ddi-alliance.org/ns/#AlgorithmOverview",
       "type": "ShapeDecl",
       "abstract": false,
@@ -18237,601 +18837,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection",
-              "valueExpr": {
-                "type": "Shape",
-                "extends": [
-                  "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
-                ],
-                "closed": true,
-                "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#type",
-                      "valueExpr": "http://ddi-alliance.org/ns/#CollectionType",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/type"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#name",
-                      "valueExpr": "http://ddi-alliance.org/ns/#ObjectName",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/name"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#purpose",
-                      "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/purpose"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#displayLabel",
-                      "valueExpr": "http://ddi-alliance.org/ns/#LabelForDisplay",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/displaylabel"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. ",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#usage",
-                      "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/usage"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#groupingSemantic",
-                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/groupingsemantic"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A semantic term defining the factor used for defining this group",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#contains",
-                      "valueExpr": {
-                        "type": "Shape",
-                        "closed": true,
-                        "expression": {
-                          "type": "EachOf",
-                          "expressions": [
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#index",
-                              "valueExpr": {
-                                "type": "NodeConstraint",
-                                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-                              },
-                              "min": 0,
-                              "max": 1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/index"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Index value of member in an ordered array",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#member",
-                              "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
-                              "min": 1,
-                              "max": 1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/member"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Restricts member target class to ConceptualVariable, RepresentedVariable, and InstanceVariable",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        "annotations": [
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                            "object": "http://lion.ddialliance.org/ddiobjects/variableindicator"
-                          },
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                            "object": {
-                              "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-                            }
-                          },
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                            "object": {
-                              "value": "\nDefinition\n============\nMember Indicator for use with member type ConceptualVariable, RepresentedVariable, and InstanceVariable\n\n",
-                              "type": "https://github.com/commonmark/commonmark.js"
-                            }
-                          }
-                        ]
-                      },
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/contains"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Allows for the identification of the member and optionally provides an index for the member within an ordered array",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#isOrdered",
-                      "valueExpr": {
-                        "type": "NodeConstraint",
-                        "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-                      },
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/isordered"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "If members are ordered set to true, if unordered set to false.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#isStructuredBy",
-                      "valueExpr": {
-                        "type": "Shape",
-                        "extends": [
-                          "http://ddi-alliance.org/ns/#Identifiable"
-                        ],
-                        "closed": true,
-                        "expression": {
-                          "type": "EachOf",
-                          "expressions": [
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
-                              "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-                              "min": 0,
-                              "max": 1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#semantic",
-                              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                              "min": 0,
-                              "max": 1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/semantic"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Provides semantic context for the relationship",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#totality",
-                              "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-                              "min": 0,
-                              "max": 1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/totality"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Type of relation in terms of totality with respect to an associated collection. ",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "type": "TripleConstraint",
-                              "predicate": "http://ddi-alliance.org/ns/#hasMemberRelation",
-                              "valueExpr": {
-                                "type": "Shape",
-                                "closed": true,
-                                "expression": {
-                                  "type": "EachOf",
-                                  "expressions": [
-                                    {
-                                      "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#hasRelationSpecification",
-                                      "valueExpr": "http://ddi-alliance.org/ns/#RelationSpecification",
-                                      "min": 1,
-                                      "max": 1,
-                                      "annotations": [
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/hasrelationspecification"
-                                        },
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                          "object": {
-                                            "value": "Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list",
-                                            "type": "https://github.com/commonmark/commonmark.js"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#semantic",
-                                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                                      "min": 0,
-                                      "max": 1,
-                                      "annotations": [
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/semantic"
-                                        },
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                          "object": {
-                                            "value": "Provides semantic context for the relationship",
-                                            "type": "https://github.com/commonmark/commonmark.js"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#totality",
-                                      "valueExpr": "http://ddi-alliance.org/ns/#TotalityType",
-                                      "min": 0,
-                                      "max": 1,
-                                      "annotations": [
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/totality"
-                                        },
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                          "object": {
-                                            "value": "Type of relation in terms of totality with respect to an associated collection. ",
-                                            "type": "https://github.com/commonmark/commonmark.js"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#source",
-                                      "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
-                                      "min": 0,
-                                      "max": -1,
-                                      "annotations": [
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/source"
-                                        },
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                          "object": {
-                                            "value": "First member in a relationship.\n",
-                                            "type": "https://github.com/commonmark/commonmark.js"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "TripleConstraint",
-                                      "predicate": "http://ddi-alliance.org/ns/#target",
-                                      "valueExpr": "http://ddi-alliance.org/ns/#ConceptualVariable",
-                                      "min": 0,
-                                      "max": -1,
-                                      "annotations": [
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                          "object": "http://lion.ddialliance.org/ddiobjects/target"
-                                        },
-                                        {
-                                          "type": "Annotation",
-                                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                          "object": {
-                                            "value": "Second member in a relationship. Note that this can be realized as a collection to support tuples. ",
-                                            "type": "https://github.com/commonmark/commonmark.js"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                "annotations": [
-                                  {
-                                    "type": "Annotation",
-                                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                    "object": "http://lion.ddialliance.org/ddiobjects/variablerelation"
-                                  },
-                                  {
-                                    "type": "Annotation",
-                                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                                    "object": {
-                                      "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-                                    }
-                                  },
-                                  {
-                                    "type": "Annotation",
-                                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                    "object": {
-                                      "value": "\nDefinition\n============\nOrdered relations between any Variables in the Variable Cascade (Conceptual, Represented, Instance)\n\n",
-                                      "type": "https://github.com/commonmark/commonmark.js"
-                                    }
-                                  }
-                                ]
-                              },
-                              "min": 0,
-                              "max": -1,
-                              "annotations": [
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                                  "object": "http://lion.ddialliance.org/ddiobjects/hasmemberrelation"
-                                },
-                                {
-                                  "type": "Annotation",
-                                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                                  "object": {
-                                    "value": "Member relations that comprise the relation structure",
-                                    "type": "https://github.com/commonmark/commonmark.js"
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        "annotations": [
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                            "object": "http://lion.ddialliance.org/ddiobjects/variablerelationstructure"
-                          },
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                            "object": {
-                              "value": "http://ddi-alliance.org/ns/#Conceptual"
-                            }
-                          },
-                          {
-                            "type": "Annotation",
-                            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                            "object": {
-                              "value": "\nDefinition\n============\nRelationStructure for use with any mixture of Variables in the Variable Cascade (Conceptual, Represented, Instance).\n\nExplanatory notes\n===================\nA VariableCollection can be described as a simple list, or as having a more complex structure. All of the \"administrative\" variables for a study might be described as just a simple list without a VariableRelationStructure. If, however, the administrative variables needed to be described in subgroups, a VariableRelationStructure could be employed.\n\n",
-                              "type": "https://github.com/commonmark/commonmark.js"
-                            }
-                          }
-                        ]
-                      },
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/isstructuredby"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "This supplies information for linking disparate records in a dataset. RecordRelations describe corresponding InstanceVariables between record types.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#definingConcept",
-                      "valueExpr": "http://ddi-alliance.org/ns/#Concept",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/definingconcept"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The conceptual basis for the collection of members.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "annotations": [
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                    "object": "http://lion.ddialliance.org/ddiobjects/variablecollection"
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                    "object": {
-                      "value": "http://ddi-alliance.org/ns/#Conceptual"
-                    }
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                    "object": {
-                      "value": "\nDefinition\n============\nA collection (group) of any type of Variable within the Variable Cascade (Conceptual, Represented, Instance) for purposes of management, conceptualization or anything other than organizing a logical record or physical layout.\n\nExamples\n==========\nVariables within a specific section of a study, Variables related to a specific subject or keyword. Variables at a specified level of development or review.\n\nExplanatory notes\n===================\nA simple ordered or unordered list of variables can be described via a set of VariableIndicator parameters. An optional VariableRelationStructure can describe a more complex structure for the collection. We might, for example, use the VariableRelationStructure to group variables by content within a Study or across a StudySeries.\n\nDDI 3.2 mapping\n=================\nl:VariableGroupType\n\n",
-                      "type": "https://github.com/commonmark/commonmark.js"
-                    }
-                  }
-                ]
-              },
+              "valueExpr": "http://ddi-alliance.org/ns/#VariableCollection",
               "min": 0,
               "max": -1,
               "annotations": [
@@ -25339,134 +25345,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage",
-              "valueExpr": {
-                "type": "Shape",
-                "extends": [
-                  "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
-                ],
-                "closed": true,
-                "expression": {
-                  "type": "TripleConstraint",
-                  "predicate": "http://ddi-alliance.org/ns/#coverageDate",
-                  "valueExpr": {
-                    "type": "Shape",
-                    "extends": [
-                      "http://ddi-alliance.org/ns/#AnnotationDate"
-                    ],
-                    "closed": true,
-                    "expression": {
-                      "type": "EachOf",
-                      "expressions": [
-                        {
-                          "type": "TripleConstraint",
-                          "predicate": "http://ddi-alliance.org/ns/#subject",
-                          "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                          "min": 0,
-                          "max": -1,
-                          "annotations": [
-                            {
-                              "type": "Annotation",
-                              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                              "object": "http://lion.ddialliance.org/ddiobjects/subject"
-                            },
-                            {
-                              "type": "Annotation",
-                              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                              "object": {
-                                "value": "If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.",
-                                "type": "https://github.com/commonmark/commonmark.js"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "TripleConstraint",
-                          "predicate": "http://ddi-alliance.org/ns/#keyword",
-                          "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                          "min": 0,
-                          "max": -1,
-                          "annotations": [
-                            {
-                              "type": "Annotation",
-                              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                              "object": "http://lion.ddialliance.org/ddiobjects/keyword"
-                            },
-                            {
-                              "type": "Annotation",
-                              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                              "object": {
-                                "value": "If the date is for a subset of data only such as a referent date for residence 5 years ago, use keyword to specify the coverage of the data this date applies to. May be repeated to reflect multiple keywords.",
-                                "type": "https://github.com/commonmark/commonmark.js"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "annotations": [
-                      {
-                        "type": "Annotation",
-                        "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                        "object": "http://lion.ddialliance.org/ddiobjects/referencedate"
-                      },
-                      {
-                        "type": "Annotation",
-                        "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                        "object": {
-                          "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
-                        }
-                      },
-                      {
-                        "type": "Annotation",
-                        "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                        "object": {
-                          "value": "\nDefinition\n============\nThe date covered by the annotated object. In addition to specifying a type of date (e.g. collection period, census year, etc.) the date or time span may be associated with a particular subject or keyword. This allows for the expression of a referent date associated with specific subjects or keywords. \n\nExamples\n==========\nA set of date items on income and labor force status may have a referent date for the year prior to the collection date. To express a duration the preference is for Start and End dates expressing two time points separated by a \"/\". \n\nExplanatory notes\n===================\nNote that if needed you may use Start and Duration or Duration and End. These options may not be recognizable by all systems.\n\nDDI 3.2 mapping\n=================\nr:ReferenceDateType\n\n",
-                          "type": "https://github.com/commonmark/commonmark.js"
-                        }
-                      }
-                    ]
-                  },
-                  "min": 0,
-                  "max": -1,
-                  "annotations": [
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                      "object": "http://lion.ddialliance.org/ddiobjects/coveragedate"
-                    },
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                      "object": {
-                        "value": "A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).",
-                        "type": "https://github.com/commonmark/commonmark.js"
-                      }
-                    }
-                  ]
-                },
-                "annotations": [
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                    "object": "http://lion.ddialliance.org/ddiobjects/temporalcoverage"
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                    "object": {
-                      "value": "http://ddi-alliance.org/ns/#Discovery"
-                    }
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                    "object": {
-                      "value": "\nDefinition\n============\nDescribes the temporal coverage of the annotated object by specifying dates and optionally associating them with Subject and Keyword. The date itself may be expressed as either and ISO and/or NonISO date. Dates may be catagorized by use of optional typeOfDate using and external controlled vocabulary entry.\n\nExplanatory notes\n===================\nThe association of subjects or keywords with the date periods allows for describing the meaning of the temporal period. A survey, for example might be administered in one time period, but ask questions about the preceding decade. Temporal coverage might then include the data collection coverage as well as the referenced time period.\n\n",
-                      "type": "https://github.com/commonmark/commonmark.js"
-                    }
-                  }
-                ]
-              },
+              "valueExpr": "http://ddi-alliance.org/ns/#TemporalCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -25495,84 +25374,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage",
-              "valueExpr": {
-                "type": "Shape",
-                "extends": [
-                  "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
-                ],
-                "closed": true,
-                "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#subject",
-                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/subject"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. ",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#keyword",
-                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/keyword"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "annotations": [
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                    "object": "http://lion.ddialliance.org/ddiobjects/topicalcoverage"
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                    "object": {
-                      "value": "http://ddi-alliance.org/ns/#Discovery"
-                    }
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                    "object": {
-                      "value": "\nDefinition\n============\nDescribes the topical coverage of the module using Subject and Keyword. Subjects are members of structured classification systems such as formal subject headings in libraries. Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.\n\nDDI 3.2 mapping\n=================\nr:TopicalCoverageType\n\n",
-                      "type": "https://github.com/commonmark/commonmark.js"
-                    }
-                  }
-                ]
-              },
+              "valueExpr": "http://ddi-alliance.org/ns/#TopicalCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -25601,260 +25403,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage",
-              "valueExpr": {
-                "type": "Shape",
-                "extends": [
-                  "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
-                ],
-                "closed": true,
-                "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#description",
-                      "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/description"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A textual description of the spatial coverage to support general searches.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#spatialAreaCode",
-                      "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/spatialareacode"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Supports the use of a standardized code such as ISO 3166-1,  the Getty Thesaurus of Geographic Names, FIPS-5, etc. ",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#spatialObject",
-                      "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectType",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/spatialobject"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "Indicates the most discrete spatial object type identified for a single case. Note that data can be collected at a geographic point (address) and reported as such in a protected file, and then aggregated to a polygon for a public file.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#hasBoundingBox",
-                      "valueExpr": "http://ddi-alliance.org/ns/#BoundingBox",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/hasboundingbox"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The north and south latitudes and east and west longitudes that define the spatial coverage area.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitTypeClassification",
-                      "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/usesgeographicunittypeclassification"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A classification which describes the geographic unit types and relationships used within this coverage.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitClassification",
-                      "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/usesgeographicunitclassification"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "A classification which describes the geographic units (specific locations) and relationships used within this coverage.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnitType",
-                      "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/includesgeographicunittype"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The geographic unit types used within this coverage.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnit",
-                      "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/includesgeographicunit"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The geographic units used within this coverage.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#highestGeographicUnitTypeCovered",
-                      "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/highestgeographicunittypecovered"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The unit type describing the highest or broadest geographic unit type that can be assembled within this coverage. In some cases with multiple hierarchies there may be multiple geographic unit types assembled.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#lowestGeographicUnitTypeCovered",
-                      "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/lowestgeographicunittypecovered"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The lowest geographic unit type identified within this coverage. Repeat if multiple geographic hierarchies are used and there is no single lowest level that can be used to compile geographic areas into higher levels. For example a file that has one hierarchy using State-County-CensusTract/BNA and also data identified for Place which cannot be constructed directly from Census Tracts as they may cross Place boundaries.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "annotations": [
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                    "object": "http://lion.ddialliance.org/ddiobjects/spatialcoverage"
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                    "object": {
-                      "value": "http://ddi-alliance.org/ns/#Discovery"
-                    }
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                    "object": {
-                      "value": "\nDefinition\n============\nA description of spatial coverage (geographic coverage) of the annotated object. Spatial coverage is described using a number of objects that support searching by a wide range of systems (geospatial coordinates, geographic classification systems, and general systems using dcterms:spatial).\n\nExamples\n==========\nA country, a neighborhood, the inside of a polygon on the surface of the earth, along a street, at a particular intersection, or perhaps even in a certain orbit around the planet Mars. For a data set within a study this may be used to define the geographic restriction of the data set within the geographic coverage of the study (eg. The study may cover all of Sweden but the spatial coverage of the data set is Stockholm). \n\nExplanatory notes\n===================\nDifferent systems support different approaches to descriptions of geographic or spatial coverage. Dublin Core has a descriptive text field that is the equivalent of SpatialCoverage/description. Geographers need to understand the spatial objects available (spatialObject, highest and lowest level geography, geographic units and unit types) so they know the building blocks they have to create a map. Spatial search engines do a first pass search by a simple bounding box (the north and south latitudes and east and west longitudes that define the spatial coverage area). Spatial Coverage provides basic support for all of these uses.\n\nSynonyms\n==========\nr:SpatialCoverage, place\n\n",
-                      "type": "https://github.com/commonmark/commonmark.js"
-                    }
-                  }
-                ]
-              },
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialCoverage",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -25900,6 +25449,481 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nCoverage information for an annotated object. Includes coverage information for temporal, topical, and spatial coverage. \n\nExamples\n==========\nA survey might have ask people about motels they stayed in (topical coverage) in the year 2015 (temporal coverage), while they were travelling in Kansas (spatial coverage). This is different than the temporal, and spatial attributes of the population studied – (international travelers to the US surveyed in 2017).\n\nExplanatory notes\n===================\nCoverage is a container for the more specific temporal, spatial, and topical coverages to which it refers.\n\nDDI 3.2 mapping\n=================\nr:CoverageType\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://ddi-alliance.org/ns/#SpatialCoverage",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
+        ],
+        "closed": true,
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#description",
+              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/description"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A textual description of the spatial coverage to support general searches.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#spatialAreaCode",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/spatialareacode"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Supports the use of a standardized code such as ISO 3166-1,  the Getty Thesaurus of Geographic Names, FIPS-5, etc. ",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#spatialObject",
+              "valueExpr": "http://ddi-alliance.org/ns/#SpatialObjectType",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/spatialobject"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "Indicates the most discrete spatial object type identified for a single case. Note that data can be collected at a geographic point (address) and reported as such in a protected file, and then aggregated to a polygon for a public file.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#hasBoundingBox",
+              "valueExpr": "http://ddi-alliance.org/ns/#BoundingBox",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/hasboundingbox"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The north and south latitudes and east and west longitudes that define the spatial coverage area.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitTypeClassification",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitTypeClassification",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/usesgeographicunittypeclassification"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A classification which describes the geographic unit types and relationships used within this coverage.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#usesGeographicUnitClassification",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnitClassification",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/usesgeographicunitclassification"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A classification which describes the geographic units (specific locations) and relationships used within this coverage.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnitType",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/includesgeographicunittype"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The geographic unit types used within this coverage.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#includesGeographicUnit",
+              "valueExpr": "http://ddi-alliance.org/ns/#GeographicUnit",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/includesgeographicunit"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The geographic units used within this coverage.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#highestGeographicUnitTypeCovered",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/highestgeographicunittypecovered"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The unit type describing the highest or broadest geographic unit type that can be assembled within this coverage. In some cases with multiple hierarchies there may be multiple geographic unit types assembled.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#lowestGeographicUnitTypeCovered",
+              "valueExpr": "http://ddi-alliance.org/ns/#UnitType",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/lowestgeographicunittypecovered"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The lowest geographic unit type identified within this coverage. Repeat if multiple geographic hierarchies are used and there is no single lowest level that can be used to compile geographic areas into higher levels. For example a file that has one hierarchy using State-County-CensusTract/BNA and also data identified for Place which cannot be constructed directly from Census Tracts as they may cross Place boundaries.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/spatialcoverage"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#Discovery"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nA description of spatial coverage (geographic coverage) of the annotated object. Spatial coverage is described using a number of objects that support searching by a wide range of systems (geospatial coordinates, geographic classification systems, and general systems using dcterms:spatial).\n\nExamples\n==========\nA country, a neighborhood, the inside of a polygon on the surface of the earth, along a street, at a particular intersection, or perhaps even in a certain orbit around the planet Mars. For a data set within a study this may be used to define the geographic restriction of the data set within the geographic coverage of the study (eg. The study may cover all of Sweden but the spatial coverage of the data set is Stockholm). \n\nExplanatory notes\n===================\nDifferent systems support different approaches to descriptions of geographic or spatial coverage. Dublin Core has a descriptive text field that is the equivalent of SpatialCoverage/description. Geographers need to understand the spatial objects available (spatialObject, highest and lowest level geography, geographic units and unit types) so they know the building blocks they have to create a map. Spatial search engines do a first pass search by a simple bounding box (the north and south latitudes and east and west longitudes that define the spatial coverage area). Spatial Coverage provides basic support for all of these uses.\n\nSynonyms\n==========\nr:SpatialCoverage, place\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://ddi-alliance.org/ns/#TemporalCoverage",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
+        ],
+        "closed": true,
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://ddi-alliance.org/ns/#coverageDate",
+          "valueExpr": {
+            "type": "Shape",
+            "extends": [
+              "http://ddi-alliance.org/ns/#AnnotationDate"
+            ],
+            "closed": true,
+            "expression": {
+              "type": "EachOf",
+              "expressions": [
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://ddi-alliance.org/ns/#subject",
+                  "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+                  "min": 0,
+                  "max": -1,
+                  "annotations": [
+                    {
+                      "type": "Annotation",
+                      "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                      "object": "http://lion.ddialliance.org/ddiobjects/subject"
+                    },
+                    {
+                      "type": "Annotation",
+                      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                      "object": {
+                        "value": "If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.",
+                        "type": "https://github.com/commonmark/commonmark.js"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://ddi-alliance.org/ns/#keyword",
+                  "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+                  "min": 0,
+                  "max": -1,
+                  "annotations": [
+                    {
+                      "type": "Annotation",
+                      "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                      "object": "http://lion.ddialliance.org/ddiobjects/keyword"
+                    },
+                    {
+                      "type": "Annotation",
+                      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                      "object": {
+                        "value": "If the date is for a subset of data only such as a referent date for residence 5 years ago, use keyword to specify the coverage of the data this date applies to. May be repeated to reflect multiple keywords.",
+                        "type": "https://github.com/commonmark/commonmark.js"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "annotations": [
+              {
+                "type": "Annotation",
+                "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                "object": "http://lion.ddialliance.org/ddiobjects/referencedate"
+              },
+              {
+                "type": "Annotation",
+                "predicate": "http://www.w3.org/ns/shex-xmi#package",
+                "object": {
+                  "value": "http://ddi-alliance.org/ns/#StructuredDataTypes"
+                }
+              },
+              {
+                "type": "Annotation",
+                "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                "object": {
+                  "value": "\nDefinition\n============\nThe date covered by the annotated object. In addition to specifying a type of date (e.g. collection period, census year, etc.) the date or time span may be associated with a particular subject or keyword. This allows for the expression of a referent date associated with specific subjects or keywords. \n\nExamples\n==========\nA set of date items on income and labor force status may have a referent date for the year prior to the collection date. To express a duration the preference is for Start and End dates expressing two time points separated by a \"/\". \n\nExplanatory notes\n===================\nNote that if needed you may use Start and Duration or Duration and End. These options may not be recognizable by all systems.\n\nDDI 3.2 mapping\n=================\nr:ReferenceDateType\n\n",
+                  "type": "https://github.com/commonmark/commonmark.js"
+                }
+              }
+            ]
+          },
+          "min": 0,
+          "max": -1,
+          "annotations": [
+            {
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+              "object": "http://lion.ddialliance.org/ddiobjects/coveragedate"
+            },
+            {
+              "type": "Annotation",
+              "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+              "object": {
+                "value": "A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).",
+                "type": "https://github.com/commonmark/commonmark.js"
+              }
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/temporalcoverage"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#Discovery"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nDescribes the temporal coverage of the annotated object by specifying dates and optionally associating them with Subject and Keyword. The date itself may be expressed as either and ISO and/or NonISO date. Dates may be catagorized by use of optional typeOfDate using and external controlled vocabulary entry.\n\nExplanatory notes\n===================\nThe association of subjects or keywords with the date periods allows for describing the meaning of the temporal period. A survey, for example might be administered in one time period, but ask questions about the preceding decade. Temporal coverage might then include the data collection coverage as well as the referenced time period.\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://ddi-alliance.org/ns/#TopicalCoverage",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://ddi-alliance.org/ns/#AnnotatedIdentifiable"
+        ],
+        "closed": true,
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#subject",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/subject"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. ",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#keyword",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/keyword"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/topicalcoverage"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#Discovery"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nDescribes the topical coverage of the module using Subject and Keyword. Subjects are members of structured classification systems such as formal subject headings in libraries. Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.\n\nDDI 3.2 mapping\n=================\nr:TopicalCoverageType\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }
