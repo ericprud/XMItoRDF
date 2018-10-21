@@ -156,7 +156,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -165,7 +165,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Lead" ;
@@ -182,7 +182,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -191,7 +191,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Lead" ;
@@ -200,7 +200,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Digital Preservation Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Lead" ;
@@ -225,7 +225,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -234,7 +234,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -251,7 +251,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Author" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -260,7 +260,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Study Investigator Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Equal" ;
@@ -277,7 +277,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Data Collection Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Lead" ;
@@ -294,7 +294,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ddi:role [
         ddi:term [
           ddi:content "cro:Archivist Role" ;
-          ddi:uri "https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png" ;
+          ddi:uri <https://github.com/openrif/contribution-ontology/blob/master/diagrams/ContributionRoleHierarchy.png> ;
         ] ;
         ddi:extent [
           ddi:content "Lead" ;
@@ -579,7 +579,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       ] ;
     ] ;
     ddi:website [
-      ddi:uri "http://aes.anu.edu.au" ;
+      ddi:uri <http://aes.anu.edu.au> ;
     ] ;
   ] ;
   .
@@ -777,7 +777,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubVDElectoralDivisions:1> ;
   ddi:takesPlatformSpecificSentinelValues <URN:DDI:int.example:IdSenMinus1:1> ;
@@ -795,7 +795,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IDSubUniqueID:1> ;
   .
@@ -812,7 +812,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IDSubMode:1> ;
   .
@@ -829,7 +829,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubDateComp:1> ;
   .
@@ -846,7 +846,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubState:1> ;
   .
@@ -863,7 +863,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubDivision:1> ;
   .
@@ -880,7 +880,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubA4:1> ;
   ddi:takesPlatformSpecificSentinelValues <URN:DDI:int.example:IdSenMinus1:1> ;
@@ -900,7 +900,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:unitOfMeasurement "year" ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IDSubG1Age:1> ;
   ddi:takesPlatformSpecificSentinelValues <URN:DDI:int.example:IdSenMinus1:1> ;
@@ -919,7 +919,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubXg5:1> ;
   ddi:sourceCapture <URN:DDI:int.example:IdQuestXg5:1> ;
@@ -937,7 +937,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubWeight:1> ;
   ddi:variableFunction [
@@ -957,7 +957,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#string" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#string> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubPartyAby:1> ;
   ddi:sourceCapture <URN:DDI:int.example:IDMeasPartyAby:1> ;
@@ -975,7 +975,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ] ;
   ddi:hasIntendedDataType [
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:takesSubstantiveValuesFrom <URN:DDI:int.example:IdSubSwingn:1> ;
   ddi:sourceCapture <URN:DDI:int.example:IDMeasSwingn:1> ;
@@ -1117,7 +1117,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <URN:DDI:int.example:IDcodesElectoralDivis:1> ;
   .
@@ -1287,7 +1287,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IDRangeUniqueID:1> ;
   .
@@ -1312,7 +1312,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <URN:DDI:int.example:IdCodesMode:1> ;
   .
@@ -1372,7 +1372,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IdValCharDate:1> ;
   .
@@ -1398,7 +1398,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <URN:DDI:int.example:IdCodesState:1> ;
   .
@@ -1604,7 +1604,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "string" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IdValDivision:1> ;
   .
@@ -1627,7 +1627,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <URN:DDI:int.example:IDcodesNotMuch:1> ;
   .
@@ -1729,7 +1729,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#integer" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#integer> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IDValsG1Age:1> ;
   .
@@ -1758,7 +1758,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <http://www.abs.gov.au/ANZSCO> ;
   .
@@ -1769,7 +1769,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "double" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/#double" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/#double> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IDValsWeight:1> ;
   .
@@ -1795,7 +1795,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:enumeratedValueDomain <URN:DDI:int.example:IdCodesPartyAby:1> ;
   .
@@ -2001,7 +2001,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ddi:version "1" ;
   ddi:recommendedDataType [
     ddi:content "integer" ;
-    ddi:uri "https://www.w3.org/TR/xmlschema-2/" ;
+    ddi:uri <https://www.w3.org/TR/xmlschema-2/> ;
   ] ;
   ddi:describedValueDomain <URN:DDI:int.example:IdValsSwingn:1> ;
   .
@@ -2061,7 +2061,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IdQuestXg5" ;
   ddi:version "1" ;
   ddi:captureSource [
-    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+    ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial <URN:DDI:int.example:IdExternalXg5:1> ;
   .
@@ -2075,7 +2075,7 @@ If you have never worked for pay, please skip this section and go to Section H""
                 http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
                 See Note in Related Materials for further information on derivation of variables.""" ;
   ] ;
-  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   .
 
 <#urn:ddi:int.example:IDMeasSwingn:1_RepresentedMeasurement>
@@ -2083,7 +2083,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:id "IDMeasSwingn" ;
   ddi:version "1" ;
   ddi:captureSource [
-    ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+    ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   ] ;
   ddi:relatedMaterial <URN:DDI:int.example:IdExternalSwingn:1> ;
   .
@@ -2097,7 +2097,7 @@ If you have never worked for pay, please skip this section and go to Section H""
                 http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm
                 See Note in Related Materials for further information on derivation of variables.""" ;
   ] ;
-  ddi:uri "http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm" ;
+  ddi:uri <http://results.aec.gov.au/17496/Website/HouseDownloadsMenu-17496-csv.htm> ;
   .
 
 <#urn:ddi:int.example:IdUnitType:1_UnitType>
@@ -2306,7 +2306,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "3.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2329,7 +2329,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "8.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2352,7 +2352,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "1.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2376,7 +2376,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ] ;
   ddi:format [
     ddi:content "MM-dd-yyyy" ;
-    ddi:uri "https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#formats-for-dates-and-times" ;
+    ddi:uri <https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#formats-for-dates-and-times> ;
   ] ;
   .
 
@@ -2396,7 +2396,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "1.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2437,7 +2437,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "2.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2460,7 +2460,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "2.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2483,7 +2483,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 0 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "4.0" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2506,7 +2506,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 15 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "17.15" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -2547,7 +2547,7 @@ If you have never worked for pay, please skip this section and go to Section H""
     ddi:content "numeric string" ;
   ] ;
   ddi:decimalPositions 13 ;
-  ddi:defaultDecimalSeparator "."^^ddi:Char ;
+  ddi:defaultDecimalSeparator "." ;
   ddi:format [
     ddi:content "17.13" ;
     ddi:controlledVocabularyName "SPSS Numeric" ;
@@ -3834,7 +3834,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_1" ;
   ddi:version "1" ;
-  ddi:uri "https://www.ada.edu.au/ada/01259" ;
+  ddi:uri <https://www.ada.edu.au/ada/01259> ;
   ddi:descriptiveText [
     ddi:languageSpecificStructuredString """This study metadata describesa subset of the complete Australian Election Study, 2013. 
                     The subset was created at Dagstuhl event 16433, October 23 – 28 , 2016. 
@@ -3847,21 +3847,21 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_2" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2> ;
   .
 
 <#urn:ddi:int.example:ExtMat_3:1_ExternalMaterial>
   ddi:agency "int.example" ;
   ddi:id "ExtMat_3" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2> ;
   .
 
 <#urn:ddi:int.example:ExtMat_4:1_ExternalMaterial>
   ddi:agency "int.example" ;
   ddi:id "ExtMat_4" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/aes_2013_01259Subset.csv?api=v2> ;
   ddi:typeOfMaterial [
     ddi:content "Original.Subset" ;
   ] ;
@@ -3874,7 +3874,7 @@ If you have never worked for pay, please skip this section and go to Section H""
   ddi:agency "int.example" ;
   ddi:id "ExtMat_5" ;
   ddi:version "1" ;
-  ddi:uri "https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2" ;
+  ddi:uri <https://ddi-alliance.atlassian.net/wiki/download/attachments/112427055/ADA.CODEBOOK.01259Highlighted2017_11_08.pdf?api=v2> ;
   ddi:typeOfMaterial [
     ddi:content "Source" ;
   ] ;
