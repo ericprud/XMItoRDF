@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2018-09-21T09:42:19.463Z
+# shexToOwl 2018-10-21T04:20:41.424Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -70,9 +70,9 @@ ddi:Annotation CLOSED {
   // shexmi:comment """A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.""";
   ddi:rights @ddi:InternationalString *
   // shexmi:comment """Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.""";
-  ddi:recordCreationDate @ddi:IsoDateType *
+  ddi:recordCreationDate ddi:IsoDateType *
   // shexmi:comment """Date the record was created""";
-  ddi:recordLastRevisionDate @ddi:IsoDateType *
+  ddi:recordLastRevisionDate ddi:IsoDateType *
   // shexmi:comment """Date the record was last revised""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
@@ -302,7 +302,7 @@ DDI 3.2 mapping
 cm:CorrespondenceType"""^^mark:
 
 ddi:Date CLOSED {
-  ddi:isoDate @ddi:IsoDateType *
+  ddi:isoDate ddi:IsoDateType *
   // shexmi:comment """Strongly recommend that ALL dates be expressed in an ISO format at a minimum. A single point in time expressed in an ISO standard structure. Note that while it supports an ISO date range structure this should be used in Date only when the single date is unclear i.e. occurring at some time between two dates. """;
   ddi:nonIsoDate CLOSED {
     ddi:dateContent xsd:string *
@@ -1290,6 +1290,71 @@ c:UniverseType
 GSIM mapping
 ==============
 Population"""^^mark:
+
+ddi:VariableCollection CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:type @ddi:CollectionType *
+  // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
+  ddi:name @ddi:ObjectName *
+  // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
+  ddi:purpose @ddi:InternationalStructuredString *
+  // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
+  ddi:displayLabel @ddi:LabelForDisplay *
+  // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
+  ddi:usage @ddi:InternationalStructuredString *
+  // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
+  ddi:groupingSemantic @ddi:ExternalControlledVocabularyEntry *
+  // shexmi:comment """A semantic term defining the factor used for defining this group""";
+  ddi:contains CLOSED {
+    ddi:index xsd:integer *
+    // shexmi:comment """Index value of member in an ordered array""";
+    ddi:member @ddi:ConceptualVariable *
+    // shexmi:comment """Restricts member target class to ConceptualVariable, RepresentedVariable, and InstanceVariable""";
+  } *
+  // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
+  ddi:isOrdered xsd:boolean *
+  // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
+  ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
+    ddi:hasRelationSpecification @ddi:RelationSpecification *
+    // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
+    ddi:semantic @ddi:ExternalControlledVocabularyEntry *
+    // shexmi:comment """Provides semantic context for the relationship""";
+    ddi:totality @ddi:TotalityType *
+    // shexmi:comment """Type of relation in terms of totality with respect to an associated collection. """;
+    ddi:hasMemberRelation CLOSED {
+      ddi:hasRelationSpecification @ddi:RelationSpecification *
+      // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
+      ddi:semantic @ddi:ExternalControlledVocabularyEntry *
+      // shexmi:comment """Provides semantic context for the relationship""";
+      ddi:totality @ddi:TotalityType *
+      // shexmi:comment """Type of relation in terms of totality with respect to an associated collection. """;
+      ddi:source @ddi:ConceptualVariable *
+      // shexmi:comment """First member in a relationship.
+    """;
+      ddi:target @ddi:ConceptualVariable *
+      // shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples. """;
+    } *
+    // shexmi:comment """Member relations that comprise the relation structure""";
+  } *
+  // shexmi:comment """This supplies information for linking disparate records in a dataset. RecordRelations describe corresponding InstanceVariables between record types.""";
+  ddi:definingConcept @ddi:Concept *
+  // shexmi:comment """The conceptual basis for the collection of members.""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#Conceptual"
+// shexmi:comment """Definition
+============
+A collection (group) of any type of Variable within the Variable Cascade (Conceptual, Represented, Instance) for purposes of management, conceptualization or anything other than organizing a logical record or physical layout.
+
+Examples
+==========
+Variables within a specific section of a study, Variables related to a specific subject or keyword. Variables at a specified level of development or review.
+
+Explanatory notes
+===================
+A simple ordered or unordered list of variables can be described via a set of VariableIndicator parameters. An optional VariableRelationStructure can describe a more complex structure for the collection. We might, for example, use the VariableRelationStructure to group variables by content within a Study or across a StudySeries.
+
+DDI 3.2 mapping
+=================
+l:VariableGroupType"""^^mark:
 
 
 # END ddi:Conceptual Package
@@ -2400,54 +2465,7 @@ ddi:Study CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   // shexmi:comment """A relationship to a description of a simple overview, in which case the AlgorithmOverView class should be the target. """;
   ddi:hasConcept @ddi:Concept *
   // shexmi:comment """A Study may relate to multiple concepts. These may also be denoted by keywords in an Annotation.""";
-  ddi:hasVariableCollection CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
-    ddi:type @ddi:CollectionType *
-    // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
-    ddi:name @ddi:ObjectName *
-    // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
-    ddi:purpose @ddi:InternationalStructuredString *
-    // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
-    ddi:displayLabel @ddi:LabelForDisplay *
-    // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
-    ddi:usage @ddi:InternationalStructuredString *
-    // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-    ddi:groupingSemantic @ddi:ExternalControlledVocabularyEntry *
-    // shexmi:comment """A semantic term defining the factor used for defining this group""";
-    ddi:contains CLOSED {
-      ddi:index xsd:integer *
-      // shexmi:comment """Index value of member in an ordered array""";
-      ddi:member @ddi:ConceptualVariable *
-      // shexmi:comment """Restricts member target class to ConceptualVariable, RepresentedVariable, and InstanceVariable""";
-    } *
-    // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-    ddi:isOrdered xsd:boolean *
-    // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy CLOSED EXTENDS @ddi:Identifiable {
-      ddi:hasRelationSpecification @ddi:RelationSpecification *
-      // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
-      ddi:semantic @ddi:ExternalControlledVocabularyEntry *
-      // shexmi:comment """Provides semantic context for the relationship""";
-      ddi:totality @ddi:TotalityType *
-      // shexmi:comment """Type of relation in terms of totality with respect to an associated collection. """;
-      ddi:hasMemberRelation CLOSED {
-        ddi:hasRelationSpecification @ddi:RelationSpecification *
-        // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
-        ddi:semantic @ddi:ExternalControlledVocabularyEntry *
-        // shexmi:comment """Provides semantic context for the relationship""";
-        ddi:totality @ddi:TotalityType *
-        // shexmi:comment """Type of relation in terms of totality with respect to an associated collection. """;
-        ddi:source @ddi:ConceptualVariable *
-        // shexmi:comment """First member in a relationship.
-      """;
-        ddi:target @ddi:ConceptualVariable *
-        // shexmi:comment """Second member in a relationship. Note that this can be realized as a collection to support tuples. """;
-      } *
-      // shexmi:comment """Member relations that comprise the relation structure""";
-    } *
-    // shexmi:comment """This supplies information for linking disparate records in a dataset. RecordRelations describe corresponding InstanceVariables between record types.""";
-    ddi:definingConcept @ddi:Concept *
-    // shexmi:comment """The conceptual basis for the collection of members.""";
-  } *
+  ddi:hasVariableCollection @ddi:VariableCollection *
   // shexmi:comment """A Study may relate to a multiple collections of variables which may be defined by type, subject, use, source, etc.""";
   ddi:hasAgentListing CLOSED EXTENDS @ddi:Identifiable {
     ddi:type @ddi:CollectionType *
@@ -3511,47 +3529,13 @@ r:BoundingBox"""^^mark:
 ddi:Coverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString *
   // shexmi:comment """A generic description including temporal, topical, and spatial coverage that is the equivalent of dc:coverage (the refinement base of dcterms:spatial and dcterms:temporal. Use specific coverage content for detailed information. Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
-  ddi:hasTemporalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
-    ddi:coverageDate CLOSED EXTENDS @ddi:AnnotationDate {
-      ddi:subject @ddi:ExternalControlledVocabularyEntry *
-      // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.""";
-      ddi:keyword @ddi:ExternalControlledVocabularyEntry *
-      // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use keyword to specify the coverage of the data this date applies to. May be repeated to reflect multiple keywords.""";
-    } *
-    // shexmi:comment """A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).""";
-  } *
+  ddi:hasTemporalCoverage @ddi:TemporalCoverage *
   // shexmi:comment """The dates and time periods described by the contents of the annotated object."""
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:hasTopicalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
-    ddi:subject @ddi:ExternalControlledVocabularyEntry *
-    // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
-    ddi:keyword @ddi:ExternalControlledVocabularyEntry *
-    // shexmi:comment """A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.""";
-  } *
+  ddi:hasTopicalCoverage @ddi:TopicalCoverage *
   // shexmi:comment """The topics covered by the contents of the annotated object. These may be expressed by subject classification systems and structured or unstructured keywords."""
   // shexmi:partonomy shexmi:sharedAggregation;
-  ddi:hasSpatialCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
-    ddi:description @ddi:InternationalStructuredString *
-    // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
-    ddi:spatialAreaCode @ddi:ExternalControlledVocabularyEntry *
-    // shexmi:comment """Supports the use of a standardized code such as ISO 3166-1,  the Getty Thesaurus of Geographic Names, FIPS-5, etc. """;
-    ddi:spatialObject @ddi:SpatialObjectType *
-    // shexmi:comment """Indicates the most discrete spatial object type identified for a single case. Note that data can be collected at a geographic point (address) and reported as such in a protected file, and then aggregated to a polygon for a public file.""";
-    ddi:hasBoundingBox @ddi:BoundingBox *
-    // shexmi:comment """The north and south latitudes and east and west longitudes that define the spatial coverage area.""";
-    ddi:usesGeographicUnitTypeClassification @ddi:GeographicUnitTypeClassification *
-    // shexmi:comment """A classification which describes the geographic unit types and relationships used within this coverage.""";
-    ddi:usesGeographicUnitClassification @ddi:GeographicUnitClassification *
-    // shexmi:comment """A classification which describes the geographic units (specific locations) and relationships used within this coverage.""";
-    ddi:includesGeographicUnitType @ddi:UnitType *
-    // shexmi:comment """The geographic unit types used within this coverage.""";
-    ddi:includesGeographicUnit @ddi:GeographicUnit *
-    // shexmi:comment """The geographic units used within this coverage.""";
-    ddi:highestGeographicUnitTypeCovered @ddi:UnitType *
-    // shexmi:comment """The unit type describing the highest or broadest geographic unit type that can be assembled within this coverage. In some cases with multiple hierarchies there may be multiple geographic unit types assembled.""";
-    ddi:lowestGeographicUnitTypeCovered @ddi:UnitType *
-    // shexmi:comment """The lowest geographic unit type identified within this coverage. Repeat if multiple geographic hierarchies are used and there is no single lowest level that can be used to compile geographic areas into higher levels. For example a file that has one hierarchy using State-County-CensusTract/BNA and also data identified for Place which cannot be constructed directly from Census Tracts as they may cross Place boundaries.""";
-  } *
+  ddi:hasSpatialCoverage @ddi:SpatialCoverage *
   // shexmi:comment """Description of the spatial (geographic) coverage of the contents of the annotated object."""
   // shexmi:partonomy shexmi:sharedAggregation;
 }
@@ -3571,6 +3555,78 @@ Coverage is a container for the more specific temporal, spatial, and topical cov
 DDI 3.2 mapping
 =================
 r:CoverageType"""^^mark:
+
+ddi:SpatialCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:description @ddi:InternationalStructuredString *
+  // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
+  ddi:spatialAreaCode @ddi:ExternalControlledVocabularyEntry *
+  // shexmi:comment """Supports the use of a standardized code such as ISO 3166-1,  the Getty Thesaurus of Geographic Names, FIPS-5, etc. """;
+  ddi:spatialObject @ddi:SpatialObjectType *
+  // shexmi:comment """Indicates the most discrete spatial object type identified for a single case. Note that data can be collected at a geographic point (address) and reported as such in a protected file, and then aggregated to a polygon for a public file.""";
+  ddi:hasBoundingBox @ddi:BoundingBox *
+  // shexmi:comment """The north and south latitudes and east and west longitudes that define the spatial coverage area.""";
+  ddi:usesGeographicUnitTypeClassification @ddi:GeographicUnitTypeClassification *
+  // shexmi:comment """A classification which describes the geographic unit types and relationships used within this coverage.""";
+  ddi:usesGeographicUnitClassification @ddi:GeographicUnitClassification *
+  // shexmi:comment """A classification which describes the geographic units (specific locations) and relationships used within this coverage.""";
+  ddi:includesGeographicUnitType @ddi:UnitType *
+  // shexmi:comment """The geographic unit types used within this coverage.""";
+  ddi:includesGeographicUnit @ddi:GeographicUnit *
+  // shexmi:comment """The geographic units used within this coverage.""";
+  ddi:highestGeographicUnitTypeCovered @ddi:UnitType *
+  // shexmi:comment """The unit type describing the highest or broadest geographic unit type that can be assembled within this coverage. In some cases with multiple hierarchies there may be multiple geographic unit types assembled.""";
+  ddi:lowestGeographicUnitTypeCovered @ddi:UnitType *
+  // shexmi:comment """The lowest geographic unit type identified within this coverage. Repeat if multiple geographic hierarchies are used and there is no single lowest level that can be used to compile geographic areas into higher levels. For example a file that has one hierarchy using State-County-CensusTract/BNA and also data identified for Place which cannot be constructed directly from Census Tracts as they may cross Place boundaries.""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#Discovery"
+// shexmi:comment """Definition
+============
+A description of spatial coverage (geographic coverage) of the annotated object. Spatial coverage is described using a number of objects that support searching by a wide range of systems (geospatial coordinates, geographic classification systems, and general systems using dcterms:spatial).
+
+Examples
+==========
+A country, a neighborhood, the inside of a polygon on the surface of the earth, along a street, at a particular intersection, or perhaps even in a certain orbit around the planet Mars. For a data set within a study this may be used to define the geographic restriction of the data set within the geographic coverage of the study (eg. The study may cover all of Sweden but the spatial coverage of the data set is Stockholm). 
+
+Explanatory notes
+===================
+Different systems support different approaches to descriptions of geographic or spatial coverage. Dublin Core has a descriptive text field that is the equivalent of SpatialCoverage/description. Geographers need to understand the spatial objects available (spatialObject, highest and lowest level geography, geographic units and unit types) so they know the building blocks they have to create a map. Spatial search engines do a first pass search by a simple bounding box (the north and south latitudes and east and west longitudes that define the spatial coverage area). Spatial Coverage provides basic support for all of these uses.
+
+Synonyms
+==========
+r:SpatialCoverage, place"""^^mark:
+
+ddi:TemporalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:coverageDate CLOSED EXTENDS @ddi:AnnotationDate {
+    ddi:subject @ddi:ExternalControlledVocabularyEntry *
+    // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.""";
+    ddi:keyword @ddi:ExternalControlledVocabularyEntry *
+    // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use keyword to specify the coverage of the data this date applies to. May be repeated to reflect multiple keywords.""";
+  } *
+  // shexmi:comment """A date referencing a specific aspect of temporal coverage. The date may be typed to reflect coverage date, collection date, referent date, etc. Subject and Keywords may be associated with the date to specify a specific set of topical information (i.e. Residence associated with a date 5 years prior to the collection date).""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#Discovery"
+// shexmi:comment """Definition
+============
+Describes the temporal coverage of the annotated object by specifying dates and optionally associating them with Subject and Keyword. The date itself may be expressed as either and ISO and/or NonISO date. Dates may be catagorized by use of optional typeOfDate using and external controlled vocabulary entry.
+
+Explanatory notes
+===================
+The association of subjects or keywords with the date periods allows for describing the meaning of the temporal period. A survey, for example might be administered in one time period, but ask questions about the preceding decade. Temporal coverage might then include the data collection coverage as well as the referenced time period."""^^mark:
+
+ddi:TopicalCoverage CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:subject @ddi:ExternalControlledVocabularyEntry *
+  // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
+  ddi:keyword @ddi:ExternalControlledVocabularyEntry *
+  // shexmi:comment """A keyword that describes the topical coverage of the content of the annotated object.  Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.  Uses and InternationalCodeValue and may indicate the language of the code used.""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#Discovery"
+// shexmi:comment """Definition
+============
+Describes the topical coverage of the module using Subject and Keyword. Subjects are members of structured classification systems such as formal subject headings in libraries. Keywords may be structured (e.g. TheSoz thesauri) or unstructured and reflect the terminology found in the document and other related (broader or similar) terms.
+
+DDI 3.2 mapping
+=================
+r:TopicalCoverageType"""^^mark:
 
 
 # END ddi:Discovery Package
@@ -3956,7 +4012,7 @@ ABSTRACT ddi:Identifiable CLOSED {
     // shexmi:comment """RationaleCode is primarily for internal processing flags within an organization or system. Supports the use of an external controlled vocabulary.""";
   } *
   // shexmi:comment """The reason for making this version of the object.""";
-  ddi:versionDate @ddi:IsoDateType *
+  ddi:versionDate ddi:IsoDateType *
   // shexmi:comment """The date and time the object was changed. Supports standard ISO date and datetime formats.""";
   ddi:isUniversallyUnique xsd:boolean *
   // shexmi:comment """Default value is false. Usually the combination of agency and id (ignoring different versions) is unique. If isUniversallyUnique is set to true, it indicates that the id itself is universally unique (unique across systems and/or agencies) and therefore the agency part is not required to ensure uniqueness. """;

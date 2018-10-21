@@ -339,10 +339,6 @@
     "referrer": "http://ddi-alliance.org/ns/#RepresentedVariable",
     "predicate": "http://ddi-alliance.org/ns/#takesSubstantiveValuesFrom"
   },
-  "http://ddi-alliance.org/ns/#VariableCollection": {
-    "referrer": "http://ddi-alliance.org/ns/#Study",
-    "predicate": "http://ddi-alliance.org/ns/#hasVariableCollection"
-  },
   "http://ddi-alliance.org/ns/#VariableRelationStructure": {
     "referrer": "http://ddi-alliance.org/ns/#VariableCollection",
     "predicate": "http://ddi-alliance.org/ns/#isStructuredBy"
@@ -462,18 +458,6 @@
   "http://ddi-alliance.org/ns/#Guide": {
     "referrer": "http://ddi-alliance.org/ns/#AppliedUse",
     "predicate": "http://ddi-alliance.org/ns/#hasGuide"
-  },
-  "http://ddi-alliance.org/ns/#TemporalCoverage": {
-    "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasTemporalCoverage"
-  },
-  "http://ddi-alliance.org/ns/#TopicalCoverage": {
-    "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasTopicalCoverage"
-  },
-  "http://ddi-alliance.org/ns/#SpatialCoverage": {
-    "referrer": "http://ddi-alliance.org/ns/#Coverage",
-    "predicate": "http://ddi-alliance.org/ns/#hasSpatialCoverage"
   },
   "http://ddi-alliance.org/ns/#CodeList": {
     "referrer": "http://ddi-alliance.org/ns/#CodeListResponseDomain",

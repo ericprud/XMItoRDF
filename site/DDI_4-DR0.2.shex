@@ -1,5 +1,5 @@
 # DDI_4-DR0.2.shexj
-# shexToOwl 2018-09-21T09:42:16.560Z
+# shexToOwl 2018-10-21T04:20:40.726Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -171,9 +171,9 @@ ddi:Annotation CLOSED {
   // shexmi:comment """A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.""";
   ddi:rights @ddi:InternationalString *
   // shexmi:comment """Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.""";
-  ddi:recordCreationDate @ddi:IsoDateType *
+  ddi:recordCreationDate ddi:IsoDateType *
   // shexmi:comment """Date the record was created""";
-  ddi:recordLastRevisionDate @ddi:IsoDateType *
+  ddi:recordLastRevisionDate ddi:IsoDateType *
   // shexmi:comment """Date the record was last revised""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
@@ -715,7 +715,7 @@ ddi:DataStoreRelation CLOSED {
 Defines the complex relationship between 2 or more DataStores in a DataLibrary"""^^mark:
 
 ddi:Date CLOSED {
-  ddi:isoDate @ddi:IsoDateType *
+  ddi:isoDate ddi:IsoDateType *
   // shexmi:comment """Strongly recommend that ALL dates be expressed in an ISO format at a minimum. A single point in time expressed in an ISO standard structure. Note that while it supports an ISO date range structure this should be used in Date only when the single date is unclear i.e. occurring at some time between two dates. """;
   ddi:nonIsoDate @ddi:NonIsoDateType *
   // shexmi:comment """A simple date expressed in a non-ISO date format, including a specification of the date format and calendar used.""";
@@ -5331,7 +5331,7 @@ ABSTRACT ddi:Identifiable CLOSED {
   // shexmi:comment """Contributor who has the ownership and responsibility for the current version. """;
   ddi:versionRationale @ddi:RationaleDefinition *
   // shexmi:comment """The reason for making this version of the object.""";
-  ddi:versionDate @ddi:IsoDateType *
+  ddi:versionDate ddi:IsoDateType *
   // shexmi:comment """The date and time the object was changed. Supports standard ISO date and datetime formats.""";
   ddi:isUniversallyUnique xsd:boolean *
   // shexmi:comment """Default value is false. Usually the combination of agency and id (ignoring different versions) is unique. If isUniversallyUnique is set to true, it indicates that the id itself is universally unique (unique across systems and/or agencies) and therefore the agency part is not required to ensure uniqueness. """;

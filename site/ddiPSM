@@ -5,7 +5,8 @@ var CLI = require("command-line-args")([
     { name: "help", alias: "h", type: Boolean },
     { name: "out",  alias: "o", type: String, description: "file prefix for json, owl, and shex" },
     { name: "xmi",  alias: "i", type: String, description: "input XMI file" },
-    { name: "nestShapes",       type: Boolean, description: "nest inner shapes with no coreferences", defaultOption:  false }
+    { name: "nestShapes",       type: Boolean, description: "nest inner shapes with no coreferences", defaultOption:  false },
+    { name: "noNest",           type: String, description: "don't nest shapes matching this pattern", multiple: false }
 ]);
 function abort (msg) {
   console.error(msg);
@@ -161,13 +162,18 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   if (CLI.nestShapes) {
     let compiled = ShEx.Util.ShExJtoAS(shexj)
     let renamed = ShEx.Util.nestShapes(shexj, {
+
+      // rename: false tells nestShape to physically nest them in the ShExJ
+      // rather than just give them BNODE names.  This means that transform
+      // won't be called. it's still here in case we need it again.
       rename: false,
       transform: function (id, shapeExpr) {
         if (!id.startsWith(DDI)) {
           throw Error('transformation target "' + id + '" doesn\'t start  with "' + DDI + '"')
         }
         return '_:' + id.substr(DDI.length)
-      }
+      },
+      noNestPattern: CLI.noNest
     }) // .map(l => l.substr(DDI.length))
     let listFile = CLI.out + '-nested.list'
     let nested = ShEx.Util.AStoShExJ(compiled)

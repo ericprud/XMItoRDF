@@ -6,7 +6,7 @@ VALIDATE ?= ~/checkouts/shexSpec/shex.js/bin/validate
 all: DDI_4-DR0.2.shex DDI_4-DR0.2-nested.shex DDI_4-DR0.2-nested.html DDI_4-DR0.2-nested.js DDI_4-DR0.2-OWL.xml # DDI_4-DR0.2.shexj DDI_4-DR0.2.json
 
 DDI_4-DR0.2.shexj DDI_4-DR0.2-nested.shexj DDI_4-DR0.2.json: ../doc/DDI4_PIM_canonical.xmi ddiPSM ../node_modules/uml-model/uml-model.js ../node_modules/canonical-uml-xmi-parser/canonical-uml-xmi-parser.js
-	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2 --nestShapes
+	$(DEBUG) ./ddiPSM --xmi $< --out DDI_4-DR0.2 --nestShapes --noNest='SpatialCoverage|TemporalCoverage|TopicalCoverage|VariableCollection'
 
 DDI_4-DR0.2-nested.js: DDI_4-DR0.2-nested.shexj
 	(echo -n 'DDIschema = ' && cat $<) > $@
