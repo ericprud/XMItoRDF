@@ -171,9 +171,9 @@ ddi:Annotation CLOSED {
   // shexmi:comment """A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.""";
   ddi:rights @ddi:InternationalString *
   // shexmi:comment """Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.""";
-  ddi:recordCreationDate ddi:IsoDateType *
+  ddi:recordCreationDate @ddi:IsoDateType *
   // shexmi:comment """Date the record was created""";
-  ddi:recordLastRevisionDate ddi:IsoDateType *
+  ddi:recordLastRevisionDate @ddi:IsoDateType *
   // shexmi:comment """Date the record was last revised""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#StructuredDataTypes"
@@ -715,7 +715,7 @@ ddi:DataStoreRelation CLOSED {
 Defines the complex relationship between 2 or more DataStores in a DataLibrary"""^^mark:
 
 ddi:Date CLOSED {
-  ddi:isoDate ddi:IsoDateType *
+  ddi:isoDate @ddi:IsoDateType *
   // shexmi:comment """Strongly recommend that ALL dates be expressed in an ISO format at a minimum. A single point in time expressed in an ISO standard structure. Note that while it supports an ISO date range structure this should be used in Date only when the single date is unclear i.e. occurring at some time between two dates. """;
   ddi:nonIsoDate @ddi:NonIsoDateType *
   // shexmi:comment """A simple date expressed in a non-ISO date format, including a specification of the date format and calendar used.""";
@@ -3255,9 +3255,9 @@ This is the classic rectangular data table used by most statistical packages, wi
 ddi:ValueMapping CLOSED EXTENDS @ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number. From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.  The normalized value of this property becomes the datatype annotation for the described column. ” """;
-  ddi:defaultDecimalSeparator ddi:Char *
+  ddi:defaultDecimalSeparator @ddi:Char *
   // shexmi:comment """Default value is . (period). The string separating the integer part from the fractional part of a decimal or real number. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 decimalChar: “A string whose value is used to represent a decimal point within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """;
-  ddi:defaultDigitGroupSeparator ddi:Char *
+  ddi:defaultDigitGroupSeparator @ddi:Char *
   // shexmi:comment """Default value is null. A string separating groups of digits (for readability). In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 groupChar: “A string whose value is used to group digits within the number. If the supplied value is not a string, implementations MUST issue a warning and proceed as if the property had not been specified.” """;
   ddi:numberPattern xsd:string *
   // shexmi:comment """A pattern description of the format of a numeric value. In W3C part of the datatype format From https://www.w3.org/TR/tabular-metadata/ tabular 6.4.2 pattern: “A number format pattern as defined in [UAX35] http://www.unicode.org/reports/tr35/tr35-31/tr35-numbers.html#Number_Format_Patterns . Implementations MUST recognise number format patterns containing the symbols 0, #, the specified decimalChar (or \".\" if unspecified), the specified groupChar (or \",\" if unspecified), E, +, % and ‰. Implementations MAY additionally recognise number format patterns containing other special pattern characters defined in [UAX35]. If the supplied value is not a string, or if it contains an invalid number format pattern or uses special pattern characters that the implementation does not recognise, implementations MUST issue a warning and proceed as if the property had not been specified.   f the datatype format annotation is a single string, this is interpreted in the same way as if it were an object with a pattern property whose value is that string. If the groupChar is specified, but no pattern is supplied, when parsing the string value of a cell against this format specification, implementations MUST recognise and parse numbers that consist of:  an optional + or - sign, …  Implementations MAY also recognise numeric values that are in any of the standard-decimal, standard-percent or standard-scientific formats listed in the Unicode Common Locale Data Repository. …” """;
@@ -4155,7 +4155,7 @@ ddi:DocumentInformation CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   // shexmi:comment """Default value is False. Indicates that the metadata instance will not be changed without versioning, and is a stable target for referencing.""";
   ddi:hasPrimaryContent xsd:string *
   // shexmi:comment """A whitespace-delimited list of the DDI URN identifiers of the objects contained in an XML instance or RDF graph which could be considered the primary objects or entry points. In a Codebook View, for example, the top-level Codebook object, fo example. In some views, such as the Agents View, there my be more than one primary object (Individuals, Organizations, and Machines in this case).""";
-  ddi:ofType ddi:DDI4Version *
+  ddi:ofType @ddi:DDI4Version *
   // shexmi:comment """Automatically brings in the version number for of DDI 4""";
   ddi:hasDocumentCoverage @ddi:Coverage *
   // shexmi:comment """Describes the coverage of the document as a whole.""";
@@ -5331,7 +5331,7 @@ ABSTRACT ddi:Identifiable CLOSED {
   // shexmi:comment """Contributor who has the ownership and responsibility for the current version. """;
   ddi:versionRationale @ddi:RationaleDefinition *
   // shexmi:comment """The reason for making this version of the object.""";
-  ddi:versionDate ddi:IsoDateType *
+  ddi:versionDate @ddi:IsoDateType *
   // shexmi:comment """The date and time the object was changed. Supports standard ISO date and datetime formats.""";
   ddi:isUniversallyUnique xsd:boolean *
   // shexmi:comment """Default value is false. Usually the combination of agency and id (ignoring different versions) is unique. If isUniversallyUnique is set to true, it indicates that the id itself is universally unique (unique across systems and/or agencies) and therefore the agency part is not required to ensure uniqueness. """;
