@@ -1,0 +1,10 @@
+[
+  {
+    "schemaLabel": "DDI nested",
+    "schemaURL": "DDI_4-DR0.2-nested.shex",
+    "dataLabel": "simple fixed map",
+    "dataURL": "https://rawgit.com/ericprud/XMItoRDF/modular/site/AustralianElectionStudySubset.ttl",
+    "queryMapURL": "AustralianElectionStudySubset.shm",
+    "status": "conformant"
+  }
+]
