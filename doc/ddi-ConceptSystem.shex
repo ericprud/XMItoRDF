@@ -5,7 +5,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX shexmi: <http://www.w3.org/ns/shex-xmi#>
 PREFIX mark: <https://github.com/commonmark/commonmark.js>
 
-ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystem EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ? // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName * // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
   ddi:purpose @ddi:InternationalStructuredString ? // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
@@ -14,7 +14,7 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
     ddi:member @ddi:Concept *;
   } * // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?;
-  ddi:isStructuredBy  EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy  EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification ;
       ddi:semantic @ddi:ExternalControlledVocabularyEntry ?;
       ddi:totality @ddi:TotalityType ?;
@@ -50,7 +50,7 @@ GSIM mapping
 Concept System
 """^^mark:
 
-ddi:Concept EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Concept EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *;
   ddi:definition @ddi:InternationalStructuredString ?;
 } // shexmi:package "Conceptual"
@@ -75,7 +75,7 @@ GSIM mapping
 Concept
 """^^mark:
 
-ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
+ABSTRACT ddi:AnnotatedIdentifiable EXTENDS @ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation ?;
   ddi:relatedMaterial @ddi:ExternalMaterial *;
 } // shexmi:package "Identification"
@@ -248,7 +248,7 @@ ddi:Annotation {
   ddi:versionIdentification xsd:string ?;
   ddi:versioningAgent @ddi:AgentAssociation *;
   ddi:abstract @ddi:InternationalString ?;
-  ddi:relatedResource EXTENDS ddi:InternationalIdentifier {
+  ddi:relatedResource EXTENDS @ddi:InternationalIdentifier {
     ddi:typeOfRelatedResource @ddi:ExternalControlledVocabularyEntry *;
   } *;
   ddi:provenance @ddi:InternationalString *;
@@ -266,7 +266,7 @@ r:citationtype
 									"""^^mark:
 
 ddi:AgentAssociation {
-  ddi:agentName EXTENDS ddi:InternationalString {
+  ddi:agentName EXTENDS @ddi:InternationalString {
     ddi:affiliation xsd:string ?;
   } ?;
   ddi:role @ddi:PairedExternalControlledVocabularyEntry *;
@@ -282,7 +282,7 @@ ddi 3.2 mapping
 r:contributortype
 									"""^^mark:
 
-ddi:AnnotationDate EXTENDS ddi:Date {
+ddi:AnnotationDate EXTENDS @ddi:Date {
   ddi:typeOfDate @ddi:ExternalControlledVocabularyEntry *;
 } // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/annotationdate> // shexmi:package "complexdatatypes" // shexmi:comment """
 definition
@@ -375,7 +375,7 @@ ddi 3.2 mapping
 r:datetype
 									"""^^mark:
 
-ddi:ExternalMaterial EXTENDS ddi:Identifiable {
+ddi:ExternalMaterial EXTENDS @ddi:Identifiable {
   ddi:typeOfMaterial @ddi:ExternalControlledVocabularyEntry ?;
   ddi:descriptiveText @ddi:InternationalStructuredString ?;
   ddi:uri xsd:anyURI *;
@@ -431,13 +431,13 @@ ddi 3.2 mapping
 r:othermaterialtype
 									"""^^mark:
 
-ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Agent EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:hasAgentId {
     ddi:agentIdValue xsd:string ;
     ddi:agentIdType xsd:string ;
   } *;
   ddi:purpose @ddi:InternationalStructuredString ?;
-  ddi:image EXTENDS ddi:Image {
+  ddi:image EXTENDS @ddi:Image {
     ddi:effectiveDates @ddi:DateRange ?;
     ddi:privacy @ddi:ExternalControlledVocabularyEntry ?;
   } *;
