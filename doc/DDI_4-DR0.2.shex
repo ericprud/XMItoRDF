@@ -24,7 +24,7 @@ ddi:RelationSpecification [
 
 
 ddi:AgentAssociation {
-  ddi:agentName EXTENDS ddi:InternationalString {
+  ddi:agentName EXTENDS @ddi:InternationalString {
     ddi:affiliation xsd:string ?
     // shexmi:comment """The affiliation of this person to an organization. This is generally an organization or sub-organization name and should be related to the specific role within which the individual is being listed.""";
   } ?
@@ -82,7 +82,7 @@ ddi:Annotation {
   // shexmi:comment """The agent responsible for the version. May have an associated role.""";
   ddi:summary @ddi:InternationalString ?
   // shexmi:comment """A summary description (abstract) of the annotated object.""";
-  ddi:relatedResource EXTENDS ddi:InternationalIdentifier {
+  ddi:relatedResource EXTENDS @ddi:InternationalIdentifier {
     ddi:typeOfRelatedResource @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """The type of relationship between the annotated object and the related resource. Standard usage may include: describesDate, isDescribedBy,  isFormatOf, isPartOf, isReferencedBy, isReplacedBy, isRequiredBy, isVersionOf, references, replaces, requires, etc.""";
   } *
@@ -106,7 +106,7 @@ DDI 3.2 mapping
 =================
 r:CitationType"""^^mark:
 
-ddi:AnnotationDate EXTENDS ddi:Date {
+ddi:AnnotationDate EXTENDS @ddi:Date {
   ddi:typeOfDate @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Use to specify the type of date. This may reflect the refinements of dc:date such as dateAccepted, dateCopyrighted, dateSubmitted, etc.""";
 }
@@ -252,7 +252,7 @@ r:CommandCodeType"""^^mark:
 
 
 
-ddi:ConditionalText EXTENDS ddi:DynamicTextContent {
+ddi:ConditionalText EXTENDS @ddi:DynamicTextContent {
   ddi:expression @ddi:CommandCode ?
   // shexmi:comment """The condition on which the associated text varies expressed by a command code. For example, a command that inserts an age by calculating the difference between today’s date and a previously defined date of birth.""";
 }
@@ -361,7 +361,7 @@ DDI 3.2 mapping
 =================
 a:ContactInformationType"""^^mark:
 
-ddi:ContentDateOffset EXTENDS ddi:ExternalControlledVocabularyEntry {
+ddi:ContentDateOffset EXTENDS @ddi:ExternalControlledVocabularyEntry {
   ddi:numberOfUnits xsd:double ?
   // shexmi:comment """The number of units to off-set the date for this item expressed as a decimal.""";
   ddi:isNegativeOffset xsd:boolean ?
@@ -693,7 +693,7 @@ DDI 3.2 mapping
 =================
 r:StructuredStringType"""^^mark:
 
-ddi:LabelForDisplay EXTENDS ddi:InternationalStructuredString {
+ddi:LabelForDisplay EXTENDS @ddi:InternationalStructuredString {
   ddi:locationVariant @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """Indicate the locality specification for content that is specific to a geographic area. May be a country code, sub-country code, or area name.""";
   ddi:validDates @ddi:DateRange ?
@@ -743,8 +743,8 @@ r:ContentType"""^^mark:
 
 
 
-ddi:LiteralText EXTENDS ddi:DynamicTextContent {
-  ddi:text EXTENDS ddi:LanguageSpecificStructuredStringType {
+ddi:LiteralText EXTENDS @ddi:DynamicTextContent {
+  ddi:text EXTENDS @ddi:LanguageSpecificStructuredStringType {
     ddi:whiteSpace @ddi:WhiteSpaceRule ?
     // shexmi:comment """The default setting states that leading and trailing white space will be removed and multiple adjacent white spaces will be treated as a single white space. If the existance of any of these white spaces is critical to the understanding of the content, change the value of this attribute to \"preserve\".""";
   } ?
@@ -762,7 +762,7 @@ d:LiteralTextType"""^^mark:
 
 
 
-ddi:LocationName EXTENDS ddi:ObjectName {
+ddi:LocationName EXTENDS @ddi:ObjectName {
   ddi:effectiveDates @ddi:DateRange ?
   // shexmi:comment """The time period for which this name is accurate and in use.""";
 }
@@ -912,7 +912,7 @@ r:PolygonType"""^^mark:
 
 
 
-ddi:RangeValue EXTENDS ddi:ValueString {
+ddi:RangeValue EXTENDS @ddi:ValueString {
   ddi:included xsd:boolean ?
   // shexmi:comment """Set to \"true\" if the value is included in the range.""";
 }
@@ -1115,7 +1115,7 @@ Defines complex relationship between ViewpointRoles"""^^mark:
 
 
 # START Conceptual Package
-ddi:Category EXTENDS ddi:Concept {
+ddi:Category EXTENDS @ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
@@ -1143,7 +1143,7 @@ l:CategoryType"""^^mark:
 
 
 
-ddi:Concept EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Concept EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
   ddi:definition @ddi:InternationalStructuredString ?
@@ -1173,7 +1173,7 @@ Concept"""^^mark:
 
 
 
-ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystem EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -1189,7 +1189,7 @@ ddi:ConceptSystem EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -1237,7 +1237,7 @@ GSIM mapping
 ==============
 Concept System"""^^mark:
 
-ddi:ConceptSystemCorrespondence EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystemCorrespondence EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the CollectionCorrespondence. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
   ddi:purpose @ddi:InternationalStructuredString ?
@@ -1264,7 +1264,7 @@ Explanatory notes
 ===================
 Describes correspondence with one or more Maps which identify a source and target concept and defines their commonality and difference using descriptive text and controlled vocabularies."""^^mark:
 
-ABSTRACT ddi:ConceptualDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ConceptualDomain EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:describedConceptualDomain @ddi:ValueAndConceptDescription *
@@ -1286,7 +1286,7 @@ Explanatory notes
 ===================
 Intent of a Conceptual Domain is defining a set of concepts used to measure a broader concept. For effective use they should be discrete (non-overlapping) and provide exhaustive coverage of the broader concept."""^^mark:
 
-ddi:ConceptualVariable EXTENDS ddi:Concept {
+ddi:ConceptualVariable EXTENDS @ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
@@ -1324,7 +1324,7 @@ GSIM mapping
 ==============
 Variable"""^^mark:
 
-ddi:InstanceVariable EXTENDS ddi:RepresentedVariable {
+ddi:InstanceVariable EXTENDS @ddi:RepresentedVariable {
   ddi:variableRole @ddi:InternationalStructuredString ?
   // shexmi:comment """An Instance Variable can take different roles, e.g. Identifier, Measure and Attribute. Note that DataStructure takes care of the ordering of Identifiers.""";
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry ?
@@ -1368,7 +1368,7 @@ GSIM mapping
 ==============
 Instance Variable"""^^mark:
 
-ddi:Population EXTENDS ddi:Concept {
+ddi:Population EXTENDS @ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
@@ -1406,12 +1406,12 @@ GSIM mapping
 ==============
 Population"""^^mark:
 
-ddi:RepresentedVariable EXTENDS ddi:ConceptualVariable {
+ddi:RepresentedVariable EXTENDS @ddi:ConceptualVariable {
   ddi:unitOfMeasurement xsd:string ?
   // shexmi:comment """The unit in which the data values are measured (kg, pound, euro).""";
   ddi:hasIntendedDataType @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """The data type intended to be used by this variable. Supports the optional use of an external controlled vocabulary.""";
-  ddi:takesSubstantiveValuesFrom EXTENDS ddi:ValueDomain {
+  ddi:takesSubstantiveValuesFrom EXTENDS @ddi:ValueDomain {
     ddi:takesConceptsFrom @ddi:SubstantiveConceptualDomain *
     // shexmi:comment """Corresponding conceptual definition given by an SubstantiveConceptualDomain.""";
     ddi:describedValueDomain @ddi:ValueAndConceptDescription *
@@ -1446,7 +1446,7 @@ DDI 3.2 mapping
 =================
 l:RepresentedVariableType"""^^mark:
 
-ddi:SentinelConceptualDomain EXTENDS ddi:ConceptualDomain {
+ddi:SentinelConceptualDomain EXTENDS @ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/sentinelconceptualdomain>
 // shexmi:package "Conceptual"
@@ -1464,7 +1464,7 @@ Synonyms
 ==========
 missing categories"""^^mark:
 
-ddi:SubstantiveConceptualDomain EXTENDS ddi:ConceptualDomain {
+ddi:SubstantiveConceptualDomain EXTENDS @ddi:ConceptualDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/substantiveconceptualdomain>
 // shexmi:package "Conceptual"
@@ -1487,7 +1487,7 @@ GSIM mapping
 ==============
 Conceptual Domain"""^^mark:
 
-ddi:Unit EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Unit EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -1517,7 +1517,7 @@ GSIM mapping
 ==============
 Unit"""^^mark:
 
-ddi:UnitType EXTENDS ddi:Concept {
+ddi:UnitType EXTENDS @ddi:Concept {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
@@ -1550,7 +1550,7 @@ GSIM mapping
 ==============
 Unit Type"""^^mark:
 
-ddi:Universe EXTENDS ddi:Concept {
+ddi:Universe EXTENDS @ddi:Concept {
   ddi:isInclusive xsd:boolean ?
   // shexmi:comment """The default value is \"true\". The description statement of a universe is generally stated in inclusive terms such as \"All persons with university degree\". Occasionally a universe is defined by what it excludes, i.e., \"All persons except those with university degree\". In this case the value would be changed to \"false\".""";
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -1604,7 +1604,7 @@ Population"""^^mark:
 
 
 # START SimpleMethodologyOverview Package
-ddi:AlgorithmOverview EXTENDS ddi:AnnotatedIdentifiable {
+ddi:AlgorithmOverview EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subjectOfAlgorithm @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """A term identifying the subject of the algorithm being described. Supports the use of a controlled vocabulary""";
   ddi:overview @ddi:InternationalStructuredString ?
@@ -1622,14 +1622,14 @@ Explanatory notes
 ===================
 This would most commonly be used in a Codebook along with a MethodologyOverview and a DesignOverview.The underlying properties of the algorithm or method rather than the specifics of any particular implementation. In short a description of the method in its simplest and most general representation."""^^mark:
 
-ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DesignOverview EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subectOfDesign @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """A term describing the subject of the design. Supports the use of an external controlled vocabulary""";
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:isDescribedIn @ddi:ExternalMaterial *
   // shexmi:comment """An external document or other source that provides descriptive information on the object.""";
-  ddi:assumesPrecondition EXTENDS ddi:BusinessFunction {
+  ddi:assumesPrecondition EXTENDS @ddi:BusinessFunction {
     ddi:isDiscussedIn @ddi:ExternalMaterial *
     // shexmi:comment """Identifies material discussing the precondition. The material may be in DDI or other format.""";
     ddi:basedOnPriorResult @ddi:Result *
@@ -1656,7 +1656,7 @@ Explanatory notes
 ===================
 Allows for the use of any realized Process. The methodology, design, and algorithm of a specific realized process should be used if available. The use of a generic Process such as a WorkflowProcess containing an Act would be appropriate here. Restriction would be done by inclusion of the appropriate realized process class(es) in a Functional View."""^^mark:
 
-ddi:MethodologyOverview EXTENDS ddi:AnnotatedIdentifiable {
+ddi:MethodologyOverview EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:subjectOfMethodology @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """A term describing the subject of the Methodology. Supports the use of a controlled vocabulary""";
   ddi:name @ddi:ObjectName *
@@ -1704,14 +1704,14 @@ Note that the algorithm may be implemented by multiple processes which are not l
 # START GeographicClassification Package
 
 
-ddi:GeographicUnit EXTENDS ddi:Unit {
+ddi:GeographicUnit EXTENDS @ddi:Unit {
   ddi:geographicTime @ddi:DateRange ?
   // shexmi:comment """The period for which the Geographic Unit is valid. Note that the geographic extent, name, or composition change within the valid period of this unit.""";
   ddi:supercedes @ddi:SpatialRelationship *
   // shexmi:comment """The Geographic Unit supercedes (follows immediately in time) the described geographic unit. Repeat for multiple geographic units.""";
   ddi:precedes @ddi:SpatialRelationship *
   // shexmi:comment """The Geographic Unit is superceded by (precedes immediately in time) the described geographic unit. Repeat for multiple geographic units.""";
-  ddi:hasGeographicExtent EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasGeographicExtent EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:boundingPolygon @ddi:Polygon *
     // shexmi:comment """A description of the boundaries of the polygon either in-line or by a reference to an external file containing the boundaries. Repeatable to describe non-contiguous areas such as islands or Native American Reservations in some parts of the United States.""";
     ddi:excludingPolygon @ddi:Polygon *
@@ -1761,7 +1761,7 @@ DDI 3.2 mapping
 =================
 r:GeographicLocationType"""^^mark:
 
-ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
+ddi:GeographicUnitClassification EXTENDS @ddi:CodeList {
   ddi:contains {
     ddi:index xsd:integer ?
     // shexmi:comment """Index number expressed as an integer. The position of the member in an ordered array. Optional for unordered Collections.""";
@@ -1785,7 +1785,7 @@ ddi:GeographicUnitClassification EXTENDS ddi:CodeList {
   // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
   ddi:references @ddi:ConceptSystem *
   // shexmi:comment """May reference an existing concept system generally of Geographic Unit""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -1826,7 +1826,7 @@ Describes the classification of specific geographic units into a classification 
 
 
 
-ddi:GeographicUnitTypeClassification EXTENDS ddi:CodeList {
+ddi:GeographicUnitTypeClassification EXTENDS @ddi:CodeList {
   ddi:contains {
     ddi:index xsd:integer ?
     // shexmi:comment """Index number expressed as an integer. The position of the member in an ordered array. Optional for unordered Collections.""";
@@ -1850,7 +1850,7 @@ ddi:GeographicUnitTypeClassification EXTENDS ddi:CodeList {
   // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
   ddi:references @ddi:ConceptSystem *
   // shexmi:comment """May reference an existing concept system generally of Geographic Unit Types""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -1904,7 +1904,7 @@ Country--State--County"""^^mark:
 
 
 
-ddi:SamplingAlgorithm EXTENDS ddi:AlgorithmOverview {
+ddi:SamplingAlgorithm EXTENDS @ddi:AlgorithmOverview {
   ddi:codifiedExpressionOfAlgorithm @ddi:CommandCode ?
   // shexmi:comment """The algorithm expressed as algebraic or computer code.""";
 }
@@ -1922,11 +1922,11 @@ Random Sample; Stratified Random Sample"""^^mark:
 
 
 
-ddi:SamplingProcedure EXTENDS ddi:MethodologyOverview {
-  ddi:hasDesign EXTENDS ddi:DesignOverview {
+ddi:SamplingProcedure EXTENDS @ddi:MethodologyOverview {
+  ddi:hasDesign EXTENDS @ddi:DesignOverview {
     ddi:expressesAlgorithm @ddi:SamplingAlgorithm *
     // shexmi:comment """Is an expression of this Sampling Algorithm""";
-    ddi:specifiesGoal EXTENDS ddi:Goal {
+    ddi:specifiesGoal EXTENDS @ddi:Goal {
       ddi:overallTargetSampleSize xsd:integer ?
       // shexmi:comment """The goal for the overall size of the sample expressed as an integer.""";
       ddi:overallTargetSamplePercent xsd:double ?
@@ -1977,7 +1977,7 @@ Explanatory notes
 ===================
 This is a summary of the methodology of sampling providing both an overview of purpose and use of a particular sampling approach and optionally providing specific details regarding the algorithm, design, and process of selecting a sample."""^^mark:
 
-ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
+ddi:SamplingProcess EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:isDiscussedIn @ddi:ExternalMaterial *
@@ -1985,7 +1985,7 @@ ddi:SamplingProcess EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasProcessSequence @ddi:WorkflowStepSequence ?
   // shexmi:comment """The Process Sequence which initiate the process flow and describes the sequence of the process flow"""
   // shexmi:partonomy "shexmi:sharedAggregation";
-  ddi:hasResults EXTENDS ddi:Result {
+  ddi:hasResults EXTENDS @ddi:Result {
     ddi:sizeOfSample xsd:integer ?
     // shexmi:comment """The overall size of the sample""";
     ddi:strataName xsd:string ?
@@ -2164,7 +2164,7 @@ ddi:WhiteSpaceRule [
 
 
 # START CustomMetadata Package
-ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ControlledVocabulary EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -2180,7 +2180,7 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isStructuredBy EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:criteria @ddi:InternationalStructuredString ?
     // shexmi:comment """Intentional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
     ddi:displayLabel @ddi:LabelForDisplay *
@@ -2218,7 +2218,7 @@ ddi:ControlledVocabulary EXTENDS ddi:AnnotatedIdentifiable {
 ============
 The specification of a controlled vocabulary defines a set of values and their definitions together with the order relationships among those entries."""^^mark:
 
-ddi:CustomInstance EXTENDS ddi:Identifiable {
+ddi:CustomInstance EXTENDS @ddi:Identifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """see Collection""";
   ddi:purpose @ddi:InternationalStructuredString ?
@@ -2234,7 +2234,7 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false. """;
-  ddi:correspondsTo EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:correspondsTo EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:type @ddi:CollectionType ?
     // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
     ddi:name @ddi:ObjectName *
@@ -2250,7 +2250,7 @@ ddi:CustomInstance EXTENDS ddi:Identifiable {
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
     ddi:isOrdered xsd:boolean ?
     // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:isStructuredBy EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:criteria @ddi:InternationalStructuredString ?
       // shexmi:comment """Intentional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
       ddi:displayLabel @ddi:LabelForDisplay *
@@ -2298,7 +2298,7 @@ A set of OMB required information about a question.
 
 The set of openEHR protocol information to be attached to a blood pressure Capture"""^^mark:
 
-ddi:CustomItem EXTENDS ddi:AnnotatedIdentifiable {
+ddi:CustomItem EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:maxOccurs xsd:integer ?
   // shexmi:comment """The maximum number of occurrences of an associated CustomValue""";
   ddi:minOccurs xsd:integer ?
@@ -2333,7 +2333,7 @@ This definition will be referenced by a CustomValue when recording a key,value i
 
 
 
-ddi:CustomValue EXTENDS ddi:Identifiable {
+ddi:CustomValue EXTENDS @ddi:Identifiable {
   ddi:value @ddi:ValueString ?
   // shexmi:comment """the value associated with a particular key expressed as a string. The ultimate value representation is defined by the corresponding CustomValue.""";
   ddi:key xsd:string ?
@@ -2355,7 +2355,7 @@ OMBBurden,\"High\"
 
 openEHRBPposition, \"upper arm\""""^^mark:
 
-ddi:VocabularyEntry EXTENDS ddi:AnnotatedIdentifiable {
+ddi:VocabularyEntry EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:entryTerm @ddi:InternationalStructuredString ?
   // shexmi:comment """the term being defined""";
   ddi:definition @ddi:InternationalStructuredString ?
@@ -2378,7 +2378,7 @@ aunt - The female sibling of a parent"""^^mark:
 # START FormatDescription Package
 
 
-ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
+ddi:PhysicalDataSet EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:physicalFileName xsd:string ?
@@ -2400,7 +2400,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An explanation of the purpose of the physical dataset""";
   ddi:formatsDataStore @ddi:DataStore *
   // shexmi:comment """Data Store physically represented by the Structure Description. """;
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -2423,7 +2423,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
   } *
   // shexmi:comment """Description of a complex structure for the Collection. A collection may be structured in more than one way for different uses."""
   // shexmi:partonomy "shexmi:sharedAggregation";
-  ddi:hasVariableStatistics EXTENDS ddi:Identifiable {
+  ddi:hasVariableStatistics EXTENDS @ddi:Identifiable {
     ddi:totalResponses xsd:integer ?
     // shexmi:comment """The total number of responses to this variable. This element is especially useful if the number of responses does not match added case counts. It may also be used to sum the frequencies for variable categories.""";
     ddi:hasSummaryStatistic {
@@ -2448,7 +2448,7 @@ ddi:PhysicalDataSet EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Statistics that provides a category specific values, filtered or unfiltered, weighted or unweighted, expressed as an xs:decimal or xs:double""";
     ddi:forInstanceVariable @ddi:InstanceVariable *
     // shexmi:comment """Reference to the variable to which the statistics apply.""";
-    ddi:usesStandardWeight EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:usesStandardWeight EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:standardWeightValue xsd:double ?
       // shexmi:comment """Provides the standard weight used for weighted analysis of data expressed as an xs:float. This element is referenced by the variable and/or statistics calculated using the standard weight.""";
     } *
@@ -2485,7 +2485,7 @@ p:PhysicalDataProductType"""^^mark:
 
 
 
-ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
+ddi:PhysicalRecordSegment EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:physicalFileName xsd:string ?
   // shexmi:comment """Use when each physical segment is stored in its own file.""";
   ddi:contains {
@@ -2503,7 +2503,7 @@ ddi:PhysicalRecordSegment EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A record segment may represent a specific population or sub-population within a larger set of segments. Allows for the identification of this filter for membership in the segment.""";
   ddi:mapTo @ddi:LogicalRecord *
   // shexmi:comment """Every DataRecord has at o..n PhysicalRecordSegments, It is possible to describe a PhysicalDataProduct and its RecordRecordSegment(s) without reference to a DataRecord""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -2548,7 +2548,7 @@ DDI 3.2 mapping
 =================
 p:PhysicalRecordSegmentType"""^^mark:
 
-ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLayout EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:isDelimited xsd:boolean
   // shexmi:comment """Indicates that the data are in a delimited format. If not set to true, is FixedWitdh must be set to true. """;
   ddi:delimiter xsd:string ?
@@ -2610,7 +2610,7 @@ ABSTRACT ddi:PhysicalSegmentLayout EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
   ddi:formatsLogicalRecord @ddi:LogicalRecord *
   // shexmi:comment """Logical Record physically represented by the Physical Layout.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:criteria @ddi:InternationalStructuredString ?
     // shexmi:comment """Intensional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
@@ -2652,7 +2652,7 @@ Explanatory notes
 ===================
 A PhysicalLayout is a physical description (EventLayout, UnitSegmentLayout, or CubeLayout) of the associated Logical Record Layout consisting of a Collection of Value Mappings describing the physical representation of each related Instance Variable."""^^mark:
 
-ABSTRACT ddi:PhysicalSegmentLocation EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:PhysicalSegmentLocation EXTENDS @ddi:AnnotatedIdentifiable {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation>
 // shexmi:package "FormatDescription"
@@ -2668,7 +2668,7 @@ Explanatory notes
 ===================
 While this has no properties or relationships of its own, it is useful as a target of relationships where its extensions may serve."""^^mark:
 
-ddi:SegmentByText EXTENDS ddi:PhysicalSegmentLocation {
+ddi:SegmentByText EXTENDS @ddi:PhysicalSegmentLocation {
   ddi:startLine xsd:integer ?
   // shexmi:comment """The line number, where 1 is the first line, on which to begin counting characters. If missing this defaults to 1 (the first line).""";
   ddi:endLine xsd:integer ?
@@ -2695,7 +2695,7 @@ The segment beginning at line 3, character 4 and ending at line 27 character 13.
 Alternatively the segment beginning at character 257 and ending at character 1350 of the whole body of text.
 StartLine of 10, endLine of 12, startCharacterPosition of 1, endCharacterPosition of 0 means all of lines 10,11, and 12."""^^mark:
 
-ddi:UnitSegmentLayout EXTENDS ddi:PhysicalSegmentLayout {
+ddi:UnitSegmentLayout EXTENDS @ddi:PhysicalSegmentLayout {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/unitsegmentlayout>
 // shexmi:package "FormatDescription"
@@ -2717,7 +2717,7 @@ Explanatory notes
 ===================
 This is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable."""^^mark:
 
-ddi:ValueMapping EXTENDS ddi:Identifiable {
+ddi:ValueMapping EXTENDS @ddi:Identifiable {
   ddi:physicalDataType @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """The base datatype of the physical representation. An integer InstanceVariable might, for example, be stored as a floating point number. From https://www.w3.org/TR/tabular-metadata/ Inherited 5.7 datatype: “An atomic property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. If the value of this property is a string, it MUST be the name of one of the built-in datatypes defined in section 5.11.1 Built-in Datatypes and this value is normalized to an object whose base property is the original string value. If it is an object then it describes a more specialized datatype. If a cell contains a sequence (i.e. the separator property is specified and not null) then this property specifies the datatype of each value within that sequence. See 5.11 Datatypes and Parsing Cells in [tabular-data-model] for more details.  The normalized value of this property becomes the datatype annotation for the described column. ” """;
   ddi:defaultDecimalSeparator ddi:OneCharString ?
@@ -2779,7 +2779,7 @@ The ValueMapping describes how the value of an InstanceVariable is physically ex
 
 
 
-ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Study EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:kindOfData @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Describes, with a string or a term from a controlled vocabulary, the kind of data documented in the logical product(s) of a study unit. Examples include survey data, census/enumeration data, administrative data, measurement data, assessment data, demographic data, voting data, etc.""";
   ddi:overview @ddi:InternationalStructuredString ?
@@ -2798,7 +2798,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The defined classes of Units related to the data,  Examples: 1. Canadian adults (not limited to those residing in Canada) 2. Computer companies 3. Universities""";
   ddi:hasDesign @ddi:DesignOverview *
   // shexmi:comment """The design for the Study""";
-  ddi:hasProcess EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasProcess EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString ?
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text. Edit""";
     ddi:hasProcessSequence . ?
@@ -2808,7 +2808,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """An implementation and/or execution of an algorithm which is associated with the design of the process.""";
   } *
   // shexmi:comment """Overview of the Process employed in the Study""";
-  ddi:hasInstrument EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasInstrument EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
     ddi:typeOfInstrument @ddi:ExternalControlledVocabularyEntry ?
@@ -2819,7 +2819,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
     ddi:usage @ddi:InternationalStructuredString *
     // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-    ddi:usesConceptualInstrument EXTENDS ddi:WorkflowProcess {
+    ddi:usesConceptualInstrument EXTENDS @ddi:WorkflowProcess {
       ddi:displayLabel @ddi:LabelForDisplay *
       // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
       ddi:name @ddi:ObjectName *
@@ -2836,7 +2836,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:partonomy "shexmi:sharedAggregation";
   } *
   // shexmi:comment """The implemented instruments used in capturing the data. The ImplentedInstrument designates the mode of delivery, a relation to an external representation of the instrument, and reference to the conceptual instrument that contains more detailed information on the content of the instrument.""";
-  ddi:hasEmbargo EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasEmbargo EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text. """;
     ddi:embargoDates @ddi:DateRange ?
@@ -2855,7 +2855,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Information about the individual, agency and/or grant(s) which funded the described entity. """;
   ddi:hasAuthorizationSource @ddi:AuthorizationSource *
   // shexmi:comment """The authorizing agency and allows for the full text of the authorization (law, regulation, or other form of authorization).""";
-  ddi:hasQualityStatement EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasQualityStatement EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:name @ddi:ObjectName *
     // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
     ddi:displayLabel @ddi:LabelForDisplay *
@@ -2866,8 +2866,8 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Explanation of the reasons some decision was made or some object exists. Supports the use of multiple languages and structured text.""";
     ddi:usage @ddi:InternationalStructuredString ?
     // shexmi:comment """Explanation of the ways in which some decision or object is employed. Supports the use of multiple languages and structured text.""";
-    ddi:usesStandard EXTENDS ddi:AnnotatedIdentifiable {
-      ddi:compliance EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:usesStandard EXTENDS @ddi:AnnotatedIdentifiable {
+      ddi:compliance EXTENDS @ddi:AnnotatedIdentifiable {
         ddi:externalComplianceCode @ddi:ExternalControlledVocabularyEntry ?
         // shexmi:comment """Specification of a code which relates to an area of coverage of the standard. Supports the use of an external controlled vocabulary.""";
         ddi:usage @ddi:InternationalStructuredString ?
@@ -2885,7 +2885,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Identifies the external standard used and describes the level of compliance with the standard in terms specific aspects of the standard's content.""";
   } *
   // shexmi:comment """A statement of quality which may be related to an external standard or contain a simple statement of internal quality goals or expectations.""";
-  ddi:hasBudget EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasBudget EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString ?
     // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text. """;
     ddi:name @ddi:ObjectName *
@@ -2896,7 +2896,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A description of the budget for the Study""";
   ddi:hasInstanceVariable @ddi:InstanceVariable *
   // shexmi:comment """A variable describing actual instances of data as recorded in the study. An example might be self reported gender, with categories of male encoded as \"0\"  and female encoded as \"1\", with missing values recorded as  \"-9\" for refused and \"-8\" as \"not asked\", recorded (physically) as an integer.""";
-  ddi:hasExPostEvaluation EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasExPostEvaluation EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:typeOfEvaluation @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """Brief identification of the type of evaluation. Supports the use of an external controlled vocabulary.""";
     ddi:evaluationProcess @ddi:InternationalStructuredString *
@@ -2917,7 +2917,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """A relationship to a description of a simple overview, in which case the AlgorithmOverView class should be the target. """;
   ddi:hasConcept @ddi:Concept *
   // shexmi:comment """A Study may relate to multiple concepts. These may also be denoted by keywords in an Annotation.""";
-  ddi:hasVariableCollection EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasVariableCollection EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:type @ddi:CollectionType ?
     // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
     ddi:name @ddi:ObjectName *
@@ -2939,7 +2939,7 @@ ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
     ddi:isOrdered xsd:boolean ?
     // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-    ddi:isStructuredBy EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification ?
       // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -2986,7 +2986,7 @@ DDI 3.2 mapping
 =================
 s:StudyUnitType"""^^mark:
 
-ddi:StudyControl EXTENDS ddi:Act {
+ddi:StudyControl EXTENDS @ddi:Act {
   ddi:hasStudy @ddi:Study *
   // shexmi:comment """Study that is the target of the StudyControl""";
 }
@@ -2998,7 +2998,7 @@ StudyControl references a Study. StudyControl enables the representation of a re
 
 
 
-ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
+ddi:StudySeries EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """The name of the series as a whole""";
   ddi:overview @ddi:InternationalStructuredString ?
@@ -3016,7 +3016,7 @@ ddi:StudySeries EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -3061,7 +3061,7 @@ A simple ordered or unordered sequence of studies can be described via the \"con
 
 
 # START BusinessWorkflow Package
-ddi:BusinessAlgorithm EXTENDS ddi:AlgorithmOverview {
+ddi:BusinessAlgorithm EXTENDS @ddi:AlgorithmOverview {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/businessalgorithm>
 // shexmi:package "BusinessWorkflow"
@@ -3076,7 +3076,7 @@ There are several well-established algorithms for performing data anonymization 
 
 
 
-ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataPipeline EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -3086,7 +3086,7 @@ ddi:DataPipeline EXTENDS ddi:AnnotatedIdentifiable {
   ddi:contains {
     ddi:index xsd:integer ?
     // shexmi:comment """Provides an index for the member within an ordered array""";
-    ddi:member EXTENDS ddi:WorkflowProcess {
+    ddi:member EXTENDS @ddi:WorkflowProcess {
       ddi:standardModelUsed @ddi:PairedExternalControlledVocabularyEntry *
       // shexmi:comment """If a standard process model such as The Generic Statistical Business Process Model (GSBPN), the Generic Longitudinal Business Process Model (GLBPM), Open Archive Information System model (OAIS), etc. has been related to this business process, the model and step or sub-step is noted here using the Paired External Controlled Vocabulary Entry. Enter the name of the model in \"term\" and the step, sub-step, or specific portion of the model in \"extent\".""";
       ddi:preCondition @ddi:BusinessProcessCondition *
@@ -3126,7 +3126,7 @@ Traversal, Data Lifecycle"""^^mark:
 
 
 # START Workflows Package
-ABSTRACT ddi:Act EXTENDS ddi:WorkflowStep {
+ABSTRACT ddi:Act EXTENDS @ddi:WorkflowStep {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/act>
 // shexmi:package "Workflows"
@@ -3143,7 +3143,7 @@ Explanatory notes
 ===================
 Act is named after the act in the HL7 RIM. This act can take many forms including an observation, a procedure, a referral, a prescription, a consent and so forth."""^^mark:
 
-ddi:ComputationAction EXTENDS ddi:Act {
+ddi:ComputationAction EXTENDS @ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString ?
   // shexmi:comment """Describes the transformation activity""";
   ddi:usesCommandCode @ddi:CommandCode ?
@@ -3167,7 +3167,7 @@ DDI 3.2 mapping
 =================
 d:ComputationItemType"""^^mark:
 
-ddi:ConditionalControlConstruct EXTENDS ddi:WorkflowStep {
+ddi:ConditionalControlConstruct EXTENDS @ddi:WorkflowStep {
   ddi:condition @ddi:CommandCode ?
   // shexmi:comment """Condition to be evaluated to determine whether or not to execute the Workflow Sequence in contains. It can be an expression and/or programmatic code. The specialized sub-classes determine whether the Sequence is executed when the condition is true or false""";
   ddi:containsSubSequence @ddi:WorkflowStepSequence ?
@@ -3185,7 +3185,7 @@ Examples
 ==========
 If-then-else and iterative structures."""^^mark:
 
-ddi:IfThenElse EXTENDS ddi:ConditionalControlConstruct {
+ddi:IfThenElse EXTENDS @ddi:ConditionalControlConstruct {
   ddi:elseIf {
     ddi:condition @ddi:CommandCode ?
     // shexmi:comment """The condition to verify if the parent IfThenElse condition is false.""";
@@ -3219,7 +3219,7 @@ DDI 3.2 mapping
 =================
 d:IfThenElseType"""^^mark:
 
-ddi:Loop EXTENDS ddi:ConditionalControlConstruct {
+ddi:Loop EXTENDS @ddi:ConditionalControlConstruct {
   ddi:initialValue @ddi:CommandCode ?
   // shexmi:comment """The command used to set the initial value for the process. Could be a simple value.""";
   ddi:stepValue @ddi:CommandCode ?
@@ -3247,7 +3247,7 @@ DDI 3.2 mapping
 =================
 d:LoopType"""^^mark:
 
-ddi:MetadataDrivenAction EXTENDS ddi:Act {
+ddi:MetadataDrivenAction EXTENDS @ddi:Act {
   ddi:activityDescription @ddi:InternationalStructuredString ?
   // shexmi:comment """Describes the transformation activity""";
   ddi:typeOfMetadataDrivenAction @ddi:ExternalControlledVocabularyEntry ?
@@ -3314,7 +3314,7 @@ Explanatory notes
 ===================
 When used as an hasInputParameter it defines a value being used by Process Step as a direct input or as an alias value within an equation. When used as an hasOutputParameter it defines itself as the value of the variable, capture, or explicit value of the parent class or as a specific value in a computation output by assigning the related Alias and/or defining the item within an array. Providing a defaultValue ensures that when bound to another Parameter that some value will be passed or received. A Value Domain expressed as a SubstantiveValueDomain or a SentinalValueDomain may be designated to define the datatype and range( of the expected value."""^^mark:
 
-ddi:RepeatUntil EXTENDS ddi:ConditionalControlConstruct {
+ddi:RepeatUntil EXTENDS @ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatuntil>
 // shexmi:package "Workflows"
@@ -3330,7 +3330,7 @@ DDI 3.2 mapping
 =================
 d:RepeatUntilType"""^^mark:
 
-ddi:RepeatWhile EXTENDS ddi:ConditionalControlConstruct {
+ddi:RepeatWhile EXTENDS @ddi:ConditionalControlConstruct {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/repeatwhile>
 // shexmi:package "Workflows"
@@ -3346,7 +3346,7 @@ DDI 3.2 mapping
 =================
 d:RepeatWhileType"""^^mark:
 
-ddi:Split EXTENDS ddi:WorkflowStep {
+ddi:Split EXTENDS @ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *
   // shexmi:comment """A WorkflowStep that is to be processed concurrently with other WorkflowSteps indicated.""";
 }
@@ -3360,7 +3360,7 @@ Explanatory notes
 ===================
 Supports parallel processing that does not require completion to exit."""^^mark:
 
-ddi:SplitJoin EXTENDS ddi:WorkflowStep {
+ddi:SplitJoin EXTENDS @ddi:WorkflowStep {
   ddi:executeConcurrently @ddi:WorkflowStep *
   // shexmi:comment """The WorkflowStep that is processed concurrently with other indicated WorkflowSteps""";
 }
@@ -3378,8 +3378,8 @@ Explanatory notes
 ===================
 Supports parallel processing that requires completion of all included process steps to exit."""^^mark:
 
-ddi:StructuredWorkflowSteps EXTENDS ddi:WorkflowStepSequence {
-  ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
+ddi:StructuredWorkflowSteps EXTENDS @ddi:WorkflowStepSequence {
+  ddi:isStructuredBy EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list. Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -3417,7 +3417,7 @@ Examples
 ==========
 Data Integration might combine multiple data source and make multiple data products. This sequence would have several starting points and terminate in multiple endpoints."""^^mark:
 
-ddi:WorkflowMasterSequence EXTENDS ddi:WorkflowStepSequence {
+ddi:WorkflowMasterSequence EXTENDS @ddi:WorkflowStepSequence {
   ddi:contains {
     ddi:index xsd:integer ?
     // shexmi:comment """Provides an index for the member within an ordered array""";
@@ -3441,7 +3441,7 @@ Explanatory notes
 ===================
 A WorkflowMasterSequence is a SimpleCollection that is normally ordered. It allows for blocks WorkflowSteps expressed as a WorkflowStepSequence to be ordered sequentially thereby creating a master sequence that is identified by the WorkflowProcess as the overall ordering for the process."""^^mark:
 
-ddi:WorkflowProcess EXTENDS ddi:AnnotatedIdentifiable {
+ddi:WorkflowProcess EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -3468,7 +3468,7 @@ Overall description of steps taken when ingesting a dataset into an archive; A S
 
 
 
-ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:WorkflowStep EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A structured display label providing a fully human readable display for the identification of the object. Supports the use of multiple languages and structured text.""";
   ddi:name @ddi:ObjectName *
@@ -3481,7 +3481,7 @@ ABSTRACT ddi:WorkflowStep EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
   ddi:hasInformationFlow @ddi:Binding *
   // shexmi:comment """Mapping of specific information flow within the workflow""";
-  ddi:isPerformedBy EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isPerformedBy EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:serviceInterface @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """Specifies how to communicate with the service.""";
     ddi:serviceLocation @ddi:ExternalControlledVocabularyEntry ?
@@ -3521,7 +3521,7 @@ Process Step"""^^mark:
 
 
 
-ddi:WorkflowStepSequence EXTENDS ddi:AnnotatedIdentifiable {
+ddi:WorkflowStepSequence EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:typeOfWorkflowStepSequence @ddi:ExternalControlledVocabularyEntry *
   // shexmi:comment """Provides the ability to \"type\" a sequence for classification or processing purposes. Supports the use of an external controlled vocabulary.""";
   ddi:type @ddi:CollectionType ?
@@ -3573,7 +3573,7 @@ d:SequenceType"""^^mark:
 ddi:DDI4Version xsd:string
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/ddi4version>
 
-ddi:DocumentInformation EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DocumentInformation EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:contentCoverage {
     ddi:typeOfContent @ddi:ExternalControlledVocabularyEntry ?
     // shexmi:comment """Uses a controlled vocabulary entry to classify the description provided.""";
@@ -3608,7 +3608,7 @@ Explanatory notes
 ===================
 Annotation associated with a specific class is the annotation of the metadata class itself, such as the Study, InstanceVariable, Concept, etc. The annotation associated with Document Information is to refer to the Document itself. Note that not all DDI instances are intended to be persistent documents. For those that are DocumentInformation provides a consistent set of discovery level information on the content of the whole rather than specific parts of the instance."""^^mark:
 
-ddi:ExternalMaterial EXTENDS ddi:Identifiable {
+ddi:ExternalMaterial EXTENDS @ddi:Identifiable {
   ddi:typeOfMaterial @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """Designation of the type of material being described. Supports the use of a controlled vocabulary.""";
   ddi:descriptiveText @ddi:InternationalStructuredString ?
@@ -3694,7 +3694,7 @@ DDI 3.2 mapping
 =================
 r:OtherMaterialType"""^^mark:
 
-ddi:FundingInformation EXTENDS ddi:Identifiable {
+ddi:FundingInformation EXTENDS @ddi:Identifiable {
   ddi:funderRole @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """Role of the funding organization or individual. Supports the use of a controlled vocabulary.""";
   ddi:grantNumber xsd:string *
@@ -3722,7 +3722,7 @@ r:FundingInformationType"""^^mark:
 
 
 # START Representations Package
-ddi:AuthorizationSource EXTENDS ddi:AnnotatedIdentifiable {
+ddi:AuthorizationSource EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:statementOfAuthorization @ddi:InternationalStructuredString ?
   // shexmi:comment """Text of the authorization (law, mandate, approved business case).""";
   ddi:legalMandate @ddi:InternationalString ?
@@ -3757,7 +3757,7 @@ DDI 3.2 mapping
 =================
 r:AuthorizationSourceType"""^^mark:
 
-ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationFamily EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -3775,7 +3775,7 @@ ddi:ClassificationFamily EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
   ddi:hasClassificationIndex @ddi:ClassificationIndex *
   // shexmi:comment """ClassificationIndexes associated to the ClassificationFamily.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -3818,7 +3818,7 @@ GSIM mapping
 ==============
 Classification Family"""^^mark:
 
-ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationIndex EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:releaseDate @ddi:Date ?
   // shexmi:comment """Date when the current version of the Classification Index was released.""";
   ddi:availableLanguage ddi:LanguageSpecification ?
@@ -3845,7 +3845,7 @@ ddi:ClassificationIndex EXTENDS ddi:AnnotatedIdentifiable {
   ddi:hasPublication @ddi:ExternalMaterial *
   // shexmi:comment """A list of the publications in which the Classification Index has been published."""
   // shexmi:partonomy "shexmi:sharedAggregation";
-  ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:isStructuredBy EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -3896,7 +3896,7 @@ GSIM mapping
 ==============
 Classification Index"""^^mark:
 
-ddi:ClassificationIndexEntry EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationIndexEntry EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:entry @ddi:InternationalString ?
   // shexmi:comment """Text describing the type of object/unit or object property.""";
   ddi:validDates @ddi:DateRange ?
@@ -3914,7 +3914,7 @@ GSIM mapping
 ==============
 Classification Index Entry"""^^mark:
 
-ddi:ClassificationItem EXTENDS ddi:Code {
+ddi:ClassificationItem EXTENDS @ddi:Code {
   ddi:isValid xsd:boolean ?
   // shexmi:comment """Indicates whether or not the item is currently valid. If updates are allowed in the Statistical Classification, an item may be restricted in its validity, i.e. it may become valid or invalid after the Statistical Classification has been released. """;
   ddi:isGenerated xsd:boolean ?
@@ -3960,7 +3960,7 @@ Classification Item"""^^mark:
 
 
 
-ddi:ClassificationSeries EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ClassificationSeries EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:context @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """ClassificationSeries can be designed in a specific context. Supports the use of and External Controlled Vocabulary.""";
   ddi:objectsOrUnitsClassified @ddi:ExternalControlledVocabularyEntry ?
@@ -3984,7 +3984,7 @@ ddi:ClassificationSeries EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -4028,7 +4028,7 @@ Classification Series"""^^mark:
 
 
 
-ddi:Code EXTENDS ddi:Designation {
+ddi:Code EXTENDS @ddi:Designation {
   ddi:representation @ddi:ValueString
   // shexmi:comment """The value as expressed in the data file. """;
   ddi:denotes @ddi:Category *
@@ -4058,7 +4058,7 @@ GSIM mapping
 ==============
 Code"""^^mark:
 
-ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
+ddi:CodeList EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -4069,7 +4069,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-  ddi:references EXTENDS ddi:ConceptSystem {
+  ddi:references EXTENDS @ddi:ConceptSystem {
     ddi:contains {
       ddi:index xsd:integer ?
       // shexmi:comment """Index value of member in an ordered array""";
@@ -4077,7 +4077,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Restricts member target class to Concept or subtype of Concept""";
     } *
     // shexmi:comment """MemberIndicator Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
-    ddi:isStructuredBy EXTENDS ddi:Identifiable {
+    ddi:isStructuredBy EXTENDS @ddi:Identifiable {
       ddi:hasRelationSpecification @ddi:RelationSpecification
       // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list. Use if all relations within this relation structure are of the same specification.""";
       ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -4090,7 +4090,7 @@ ddi:CodeList EXTENDS ddi:AnnotatedIdentifiable {
     // shexmi:comment """A structure containing specific relationships between members of the collection.""";
   } *
   // shexmi:comment """CategorySet associated with the CodeList.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an ennumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -4130,7 +4130,7 @@ GSIM mapping
 ==============
 Code List"""^^mark:
 
-ddi:CorrespondenceTable EXTENDS ddi:AnnotatedIdentifiable {
+ddi:CorrespondenceTable EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:effectiveDates @ddi:DateRange ?
   // shexmi:comment """Effective period of validity of the CorrespondenceTable. The correspondence table expresses the relationships between the two NodeSets as they existed on the period specified in the table.""";
   ddi:correspondence @ddi:Map *
@@ -4168,7 +4168,7 @@ GSIM mapping
 ==============
 Correspondence Table"""^^mark:
 
-ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
+ABSTRACT ddi:Designation EXTENDS @ddi:Identifiable {
   ddi:representation . ?
   // shexmi:comment """A perceivable object used to denote a signified, i.e. a concept in this case.""";
   ddi:denotes @ddi:Concept *
@@ -4194,7 +4194,7 @@ Designation"""^^mark:
 
 
 
-ddi:LevelStructure EXTENDS ddi:AnnotatedIdentifiable {
+ddi:LevelStructure EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
   ddi:usage @ddi:InternationalStructuredString ?
@@ -4240,7 +4240,7 @@ GSIM mapping
 ==============
 Level"""^^mark:
 
-ddi:SentinelValueDomain EXTENDS ddi:ValueDomain {
+ddi:SentinelValueDomain EXTENDS @ddi:ValueDomain {
   ddi:platformType @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """The type of platform under which sentinel codes will be used. Statistical software platforms use different sets of codes to indicate missing values. The external controlled vocabulary should list platform tpes and a description of the allowed missing value types. A sample list would be: • BlankString - A Blank string indicates missing. Comparison is based on lexical order.  • EmptyString - An empty string indicates missing. Use in comparisons returns missing.   • Rstyle - Codes drawn from  NA and the IEEE 754 values of  NaN  -Inf   +Inf.   Comparisons return NA.   • SASNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z    Sentinel code treated as less than any substantive value   • SPSSstyle - System missing (a dot) a set of individual values drawn from the same datatype as the SubstantiveValueDomain, and a range of values  drawn from the same datatype as the SubstantiveValueDomain.  Comparisons return system missing.  Some functions substitute with valid values (e.g. SUM replaces missing values with 0)   • StataNumeric - codes drawn from . ._ .A .B .C .D .E .F .G .H .I .J .K .L .M .N .O .P .Q .R .S .T .U .V .W .X .Y .Z  Sentinel code treated as greater than any substantive value  • Unrestricted - No restrictions on codes for sentinel values. Use in comparisons is indeterminate.  """;
   ddi:takesConceptsFrom @ddi:SentinelConceptualDomain *
@@ -4293,7 +4293,7 @@ GSIM mapping
 ==============
 Enumerated Value Domain"""^^mark:
 
-ddi:StatisticalClassification EXTENDS ddi:CodeList {
+ddi:StatisticalClassification EXTENDS @ddi:CodeList {
   ddi:releaseDate @ddi:Date ?
   // shexmi:comment """Date the Statistical Classification was released""";
   ddi:validDates @ddi:DateRange ?
@@ -4362,7 +4362,7 @@ Statistical Classification"""^^mark:
 
 
 
-ddi:ValueAndConceptDescription EXTENDS ddi:Identifiable {
+ddi:ValueAndConceptDescription EXTENDS @ddi:Identifiable {
   ddi:description @ddi:InternationalStructuredString ?
   // shexmi:comment """A formal description of the set of values.""";
   ddi:logicalExpression @ddi:ExternalControlledVocabularyEntry ?
@@ -4413,7 +4413,7 @@ Some Conceptual Domains might be described with just a narrative. Others, though
 In ISO 11404 a value domain may be described either through enumeration or description, or both. This class provides the facility for that description. It may be just a text description, but a description through a logical expression is machine actionable and might, for example, be rendered as an integrity constraint. If both text and a logical expression are provided the logical expression is to be taken as the canonical description.
 The logical expression should conform to the expression syntax of VTL. https://sdmx.org/?page_id=5096"""^^mark:
 
-ABSTRACT ddi:ValueDomain EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ValueDomain EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *
   // shexmi:comment """A display label for the object. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
   ddi:recommendedDataType @ddi:ExternalControlledVocabularyEntry *
@@ -4450,10 +4450,10 @@ Value Domain"""^^mark:
 # START LogicalDataDescription Package
 
 
-ddi:DataPoint EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataPoint EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:isDescribedBy @ddi:InstanceVariable *
   // shexmi:comment """The InstanceVariable delimits the values which can populate a DataPoint.""";
-  ddi:hasDatum EXTENDS ddi:Designation {
+  ddi:hasDatum EXTENDS @ddi:Designation {
     ddi:representation @ddi:ValueString
     // shexmi:comment """Specification of the type of Signification""";
     ddi:isBoundedBy @ddi:InstanceVariable *
@@ -4480,7 +4480,7 @@ GSIM mapping
 ==============
 Data Point"""^^mark:
 
-ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataStore EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:characterSet xsd:string ?
   // shexmi:comment """Default character set used in the Data Store.""";
   ddi:dataStoreType @ddi:ExternalControlledVocabularyEntry ?
@@ -4504,7 +4504,7 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Data in the form of Data Records contained in the Data Store. Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -4528,7 +4528,7 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """Description of a complex structure for the Collection. A collection may be structured in more than one way for different uses.""";
   ddi:isInStudy @ddi:Study ?
   // shexmi:comment """A Study has at most one DataStore. Many studies can have the same set of record types.""";
-  ddi:usesRecordRelation EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:usesRecordRelation EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:displayLabel @ddi:LabelForDisplay *
     // shexmi:comment """A display label for the CollectionCorrespondence. May be expressed in multiple languages. Repeat for labels with different content, for example, labels with differing length limitations.""";
     ddi:purpose @ddi:InternationalStructuredString ?
@@ -4548,8 +4548,8 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
       // shexmi:comment """Target Instance Variables if a directional relation is used""";
     } *
     // shexmi:comment """Correspondences between Instance Variables of different Logical Record Layout. """;
-    ddi:maps EXTENDS ddi:LogicalRecord {
-      ddi:isStructuredBy EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:maps EXTENDS @ddi:LogicalRecord {
+      ddi:isStructuredBy EXTENDS @ddi:AnnotatedIdentifiable {
         ddi:criteria @ddi:InternationalStructuredString ?
         // shexmi:comment """Intensional definition of the order criteria (e.g. alphabetical, numerical, increasing, decreasing, etc.)""";
         ddi:displayLabel @ddi:LabelForDisplay *
@@ -4577,16 +4577,16 @@ ddi:DataStore EXTENDS ddi:AnnotatedIdentifiable {
         // shexmi:comment """Member relations of InstanceVariables that comprise the relation structure""";
       } *
       // shexmi:comment """Describe the order of InstanceVariables in a record for those cases where the variables have a more complicated logical order than a simple sequence.""";
-      ddi:isViewedFrom EXTENDS ddi:AnnotatedIdentifiable {
-        ddi:hasIdentifierRole EXTENDS ddi:ViewpointRole {
+      ddi:isViewedFrom EXTENDS @ddi:AnnotatedIdentifiable {
+        ddi:hasIdentifierRole EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as identifiers"""
         // shexmi:partonomy "shexmi:compositeAggregation";
-        ddi:hasMeasureRole EXTENDS ddi:ViewpointRole {
+        ddi:hasMeasureRole EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as measures"""
         // shexmi:partonomy "shexmi:compositeAggregation";
-        ddi:hasAttributeRole EXTENDS ddi:ViewpointRole {
+        ddi:hasAttributeRole EXTENDS @ddi:ViewpointRole {
         } *
         // shexmi:comment """The InstanceVaribles functioning as attributes"""
         // shexmi:partonomy "shexmi:compositeAggregation";
@@ -4628,7 +4628,7 @@ GSIM mapping
 ==============
 Data Set"""^^mark:
 
-ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
+ddi:DataStoreLibrary EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4644,7 +4644,7 @@ ddi:DataStoreLibrary EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """The DataStores in the Catalog. Allows for the identification of the member and optionally provides an index for the member within an ordered array """;
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:hasRelationSpecification @ddi:RelationSpecification ?
     // shexmi:comment """Provides information on reflexivity, transitivity, and symmetry of relationship using a descriptive term from an enumeration list.  Use if all relations within this relation structure are of the same specification.""";
     ddi:semantic @ddi:ExternalControlledVocabularyEntry ?
@@ -4709,7 +4709,7 @@ Structured metadata archive"""^^mark:
 
 
 
-ABSTRACT ddi:LogicalRecord EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:LogicalRecord EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -4765,7 +4765,7 @@ Data Structure"""^^mark:
 
 
 
-ABSTRACT ddi:ViewpointRole EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:ViewpointRole EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates""";
   ddi:name @ddi:ObjectName *
@@ -4794,7 +4794,7 @@ See the Viewpoint documentation for an in depth discussion of the uses of Viewpo
 
 
 # START DataCapture Package
-ddi:BooleanResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:BooleanResponseDomain EXTENDS @ddi:ResponseDomain {
   ddi:forCategory @ddi:Category *
   // shexmi:comment """The category to which a boolean response is requested.""";
 }
@@ -4808,7 +4808,7 @@ Explanatory notes
 ===================
 Exactly what is captured may be dependent upon the Implemented Instrument, however the response being captured is either there or not there (ON/OFF, True/False)"""^^mark:
 
-ABSTRACT ddi:Capture EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Capture EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """A name for the measurement. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage. """;
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -4849,7 +4849,7 @@ Explanatory notes
 ===================
 Provides an abstract base so that current and future forms of data capture can use this as an extension base and be freely mixed and matched within conceptual instruments as needed such as capturing a GPS point (using a RepresentedMeasurement) when administering a questionnaire (using RepresentedQuestions)."""^^mark:
 
-ddi:CodeListResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:CodeListResponseDomain EXTENDS @ddi:ResponseDomain {
   ddi:usesCodeList @ddi:CodeList *
   // shexmi:comment """The CodeList which includes the response options to list.
 """;
@@ -4870,7 +4870,7 @@ d:CodeDomainType"""^^mark:
 
 
 
-ddi:ExternalAid EXTENDS ddi:ExternalMaterial {
+ddi:ExternalAid EXTENDS @ddi:ExternalMaterial {
   ddi:stimulusType @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """""";
 }
@@ -4890,8 +4890,8 @@ r:OtherMaterialType"""^^mark:
 
 
 
-ddi:InstanceMeasurement EXTENDS ddi:InstrumentComponent {
-  ddi:instantiates EXTENDS ddi:Capture {
+ddi:InstanceMeasurement EXTENDS @ddi:InstrumentComponent {
+  ddi:instantiates EXTENDS @ddi:Capture {
     ddi:measurementType @ddi:ExternalControlledVocabularyEntry ?
     // shexmi:comment """The type of measurement performed""";
     ddi:hasRepresentedVariable @ddi:RepresentedVariable *
@@ -4905,10 +4905,10 @@ ddi:InstanceMeasurement EXTENDS ddi:InstrumentComponent {
 ============
 An instance measurement instantiates a represented measurement, so that it can be used as an Act in the Process Steps that define a data capture process."""^^mark:
 
-ddi:InstanceQuestion EXTENDS ddi:InstrumentComponent {
+ddi:InstanceQuestion EXTENDS @ddi:InstrumentComponent {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """The name of a question as used in an Instrument. Redefined to provide a more useful description. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
-  ddi:instantiates EXTENDS ddi:Capture {
+  ddi:instantiates EXTENDS @ddi:Capture {
     ddi:questionText @ddi:DynamicText *
     // shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.""";
     ddi:questionIntent @ddi:InternationalStructuredString ?
@@ -4930,7 +4930,7 @@ Examples
 ==========
 “How old are you?”"""^^mark:
 
-ddi:Instruction EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Instruction EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:instructionText @ddi:DynamicText *
   // shexmi:comment """The content of the Instruction text provided using DynamicText. Note that when using Dynamic Text, the full InstructionText must be repeated for multi-language versions of the content. The InstructionText may also be repeated to provide a dynamic and plain text version of the instruction. This allows for accurate rendering of the instruction in a non-dynamic environment like print.""";
   ddi:displayLabel @ddi:LabelForDisplay *
@@ -4954,7 +4954,7 @@ DDI 3.2 mapping
 =================
 d:InstructionType"""^^mark:
 
-ddi:InstrumentCode EXTENDS ddi:InstrumentComponent {
+ddi:InstrumentCode EXTENDS @ddi:InstrumentComponent {
   ddi:purposeOfCode @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """The purpose of the code (e.g., quality control, edit check, checksums, compute filler text, compute values for use in administering the instrument)""";
   ddi:usesCommandCode @ddi:CommandCode ?
@@ -4974,7 +4974,7 @@ DDI 3.2 mapping
 =================
 d:ComputationItemType"""^^mark:
 
-ABSTRACT ddi:InstrumentComponent EXTENDS ddi:Act {
+ABSTRACT ddi:InstrumentComponent EXTENDS @ddi:Act {
   ddi:hasInstructions @ddi:Instruction *
   // shexmi:comment """An instrument compoment can have zero to many instructions"""
   // shexmi:partonomy "shexmi:sharedAggregation";
@@ -4994,7 +4994,7 @@ Explanatory notes
 ===================
 InstrumentComponent acts as a substitution head (abstract) for semantically meaningful for objects that extend it and exist in an instrument."""^^mark:
 
-ddi:NumericResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:NumericResponseDomain EXTENDS @ddi:ResponseDomain {
   ddi:numericTypeCode @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """Identification of the numeric type such as integer, decimal, etc. supports the use of an external controlled vocabulary.""";
   ddi:unit @ddi:ExternalControlledVocabularyEntry ?
@@ -5033,7 +5033,7 @@ DDI 3.2 mapping
 =================
 d:NumericDomainType"""^^mark:
 
-ddi:RankingResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:RankingResponseDomain EXTENDS @ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/rankingresponsedomain>
 // shexmi:package "DataCapture"
@@ -5046,7 +5046,7 @@ Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
 
 
-ddi:ResponseDomain EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ResponseDomain EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay ?
   // shexmi:comment """A display label for the domain. May be expressed in multiple languages.""";
   ddi:intendedRepresentation @ddi:RepresentedVariable *
@@ -5073,7 +5073,7 @@ Synonyms
 ==========
 GSIM & DDI: ResponseDomain"""^^mark:
 
-ddi:ScaleResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:ScaleResponseDomain EXTENDS @ddi:ResponseDomain {
 }
 // rdfs:definedBy <http://lion.ddialliance.org/ddiobjects/scaleresponsedomain>
 // shexmi:package "DataCapture"
@@ -5082,7 +5082,7 @@ ddi:ScaleResponseDomain EXTENDS ddi:ResponseDomain {
 A response domain capturing a scaled response, such as a Likert scale. 
 Note: This item still must be modeled and is incomplete at this time."""^^mark:
 
-ddi:Statement EXTENDS ddi:InstrumentComponent {
+ddi:Statement EXTENDS @ddi:InstrumentComponent {
   ddi:statementText @ddi:DynamicText *
   // shexmi:comment """Structured human-readable text that allows for dynamic content. For example, the insertion of a name or gender specific pronoun. Repeat ONLY for capturing the same content in multiple languages.""";
   ddi:purposeOfStatement @ddi:ExternalControlledVocabularyEntry ?
@@ -5110,7 +5110,7 @@ DDI 3.2 mapping
 =================
 d:StatementItemType"""^^mark:
 
-ddi:TextResponseDomain EXTENDS ddi:ResponseDomain {
+ddi:TextResponseDomain EXTENDS @ddi:ResponseDomain {
   ddi:maximumLength xsd:integer ?
   // shexmi:comment """The maximum number of characters allowed.""";
   ddi:minimumLength xsd:integer ?
@@ -5135,7 +5135,7 @@ r:TextDomainType"""^^mark:
 
 
 # START Discovery Package
-ddi:Access EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Access EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:purpose @ddi:InternationalStructuredString ?
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text""";
   ddi:confidentialityStatement @ddi:InternationalStructuredString ?
@@ -5180,7 +5180,7 @@ DDI 3.2 mapping
 =================
 a:AccessType"""^^mark:
 
-ddi:BoundingBox EXTENDS ddi:AnnotatedIdentifiable {
+ddi:BoundingBox EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:eastLongitude xsd:double
   // shexmi:comment """The easternmost coordinate expressed as a decimal between the values of -180 and 180 degrees """;
   ddi:westLongitude xsd:double
@@ -5208,11 +5208,11 @@ Synonyms
 ==========
 r:BoundingBox"""^^mark:
 
-ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Coverage EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """A generic description including temporal, topical, and spatial coverage that is the equivalent of dc:coverage (the refinement base of dcterms:spatial and dcterms:temporal. Use specific coverage content for detailed information. Short natural language account of the information obtained from the combination of properties and relationships associated with an object. Supports the use of multiple languages and structured text.""";
-  ddi:hasTemporalCoverage EXTENDS ddi:AnnotatedIdentifiable {
-    ddi:coverageDate EXTENDS ddi:AnnotationDate {
+  ddi:hasTemporalCoverage EXTENDS @ddi:AnnotatedIdentifiable {
+    ddi:coverageDate EXTENDS @ddi:AnnotationDate {
       ddi:subject @ddi:ExternalControlledVocabularyEntry *
       // shexmi:comment """If the date is for a subset of data only such as a referent date for residence 5 years ago, use Subject to specify the coverage of the data this date applies to. May be repeated to reflect multiple subjects.""";
       ddi:keyword @ddi:ExternalControlledVocabularyEntry *
@@ -5222,7 +5222,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
   } ?
   // shexmi:comment """The dates and time periods described by the contents of the annotated object."""
   // shexmi:partonomy "shexmi:sharedAggregation";
-  ddi:hasTopicalCoverage EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasTopicalCoverage EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:subject @ddi:ExternalControlledVocabularyEntry *
     // shexmi:comment """A subject that describes the topical coverage of the content of the annotated object. Subjects are members of structured classification systems such as formal subject headings in libraries. Uses and InternationalCodeValue and may indicate the language of the code used. """;
     ddi:keyword @ddi:ExternalControlledVocabularyEntry *
@@ -5230,7 +5230,7 @@ ddi:Coverage EXTENDS ddi:AnnotatedIdentifiable {
   } ?
   // shexmi:comment """The topics covered by the contents of the annotated object. These may be expressed by subject classification systems and structured or unstructured keywords."""
   // shexmi:partonomy "shexmi:sharedAggregation";
-  ddi:hasSpatialCoverage EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasSpatialCoverage EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:description @ddi:InternationalStructuredString ?
     // shexmi:comment """A textual description of the spatial coverage to support general searches.""";
     ddi:spatialAreaCode @ddi:ExternalControlledVocabularyEntry *
@@ -5283,7 +5283,7 @@ r:CoverageType"""^^mark:
 
 
 # START Identification Package
-ABSTRACT ddi:AnnotatedIdentifiable EXTENDS ddi:Identifiable {
+ABSTRACT ddi:AnnotatedIdentifiable EXTENDS @ddi:Identifiable {
   ddi:hasAnnotation @ddi:Annotation ?
   // shexmi:comment """Provides annotation information on the object to support citation and crediting of the creator(s) of the object.""";
   ddi:relatedMaterial @ddi:ExternalMaterial *
@@ -5342,7 +5342,7 @@ Used to identify objects for purposes of internal and/or external referencing. E
 # START Methodologies Package
 
 
-ABSTRACT ddi:BusinessFunction EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:BusinessFunction EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
 }
@@ -5364,7 +5364,7 @@ GSIM mapping
 ==============
 Business Function"""^^mark:
 
-ddi:Goal EXTENDS ddi:BusinessFunction {
+ddi:Goal EXTENDS @ddi:BusinessFunction {
   ddi:isDiscussedIn @ddi:ExternalMaterial *
   // shexmi:comment """Identifies material discussing the goal. The material may be in DDI or other format.""";
 }
@@ -5388,15 +5388,15 @@ Business Function"""^^mark:
 
 
 
-ABSTRACT ddi:Result EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Result EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:overview @ddi:InternationalStructuredString ?
   // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
   ddi:hasBinding @ddi:Binding *
   // shexmi:comment """Can bind data attached to parameters into, out of, and between processes.""";
-  ddi:hasAppliedUse EXTENDS ddi:AnnotatedIdentifiable {
+  ddi:hasAppliedUse EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:overview @ddi:InternationalStructuredString ?
     // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
-    ddi:hasGuide EXTENDS ddi:AnnotatedIdentifiable {
+    ddi:hasGuide EXTENDS @ddi:AnnotatedIdentifiable {
       ddi:overview @ddi:InternationalStructuredString ?
       // shexmi:comment """Provides a high level overview or summary of the class. Can be used to inform end-users or as part of an executive summary. Supports the use of multiple languages and structured text.""";
       ddi:isDiscussedIn @ddi:ExternalMaterial *
@@ -5431,7 +5431,7 @@ The use of a weight resulting from a sampling process by an analyst within the c
 
 
 # START Agents Package
-ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
+ABSTRACT ddi:Agent EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:hasAgentId {
     ddi:agentIdValue xsd:string
     // shexmi:comment """The identifier for the agent.""";
@@ -5441,7 +5441,7 @@ ABSTRACT ddi:Agent EXTENDS ddi:AnnotatedIdentifiable {
   // shexmi:comment """An identifier within a specified system for specifying an agent""";
   ddi:purpose @ddi:InternationalStructuredString ?
   // shexmi:comment """Explanation of the intent of some decision or object. Supports the use of multiple languages and structured text.""";
-  ddi:image EXTENDS ddi:Image {
+  ddi:image EXTENDS @ddi:Image {
     ddi:effectiveDates @ddi:DateRange ?
     // shexmi:comment """The period for which this image is effective/valid.""";
     ddi:privacy @ddi:ExternalControlledVocabularyEntry ?
@@ -5468,7 +5468,7 @@ Synonyms
 ==========
 Agent"""^^mark:
 
-ddi:AgentListing EXTENDS ddi:Identifiable {
+ddi:AgentListing EXTENDS @ddi:Identifiable {
   ddi:type @ddi:CollectionType ?
   // shexmi:comment """Whether the collection is a bag or a set: a bag is a collection with duplicates allowed, a set is a collection without duplicates.""";
   ddi:name @ddi:ObjectName *
@@ -5484,7 +5484,7 @@ ddi:AgentListing EXTENDS ddi:Identifiable {
   // shexmi:comment """Allows for the identification of the member and optionally provides an index for the member within an ordered array""";
   ddi:isOrdered xsd:boolean ?
   // shexmi:comment """If members are ordered set to true, if unordered set to false.""";
-  ddi:isStructuredBy EXTENDS ddi:Identifiable {
+  ddi:isStructuredBy EXTENDS @ddi:Identifiable {
     ddi:effectiveDates @ddi:DateRange ?
     // shexmi:comment """The effective start and end date of the relationship""";
     ddi:privacy @ddi:ExternalControlledVocabularyEntry ?
@@ -5536,7 +5536,7 @@ Relationships between agents are fluid and reflect effective dates of the relati
 
 
 
-ddi:Individual EXTENDS ddi:Agent {
+ddi:Individual EXTENDS @ddi:Agent {
   ddi:hasIndividualName {
     ddi:prefix xsd:string ?
     // shexmi:comment """Title that precedes the name of the individual, such as Ms., or Dr.""";
@@ -5585,7 +5585,7 @@ Explanatory notes
 ===================
 A set of information describing an individual and means of unique identification and/or contact. Information may be repeated and provided effective date ranges to retain a history of the individual within a metadata record. Actions and relationships are specified by the use of the Individual as the target of a relationship (Creator) or within a collection of Agents in an AgentListing (employee of an Organization)."""^^mark:
 
-ddi:Machine EXTENDS ddi:Agent {
+ddi:Machine EXTENDS @ddi:Agent {
   ddi:typeOfMachine @ddi:ExternalControlledVocabularyEntry ?
   // shexmi:comment """The kind of machine used - software, web service, physical machine, from a controlled vocabulary""";
   ddi:name @ddi:ObjectName *
@@ -5620,8 +5620,8 @@ Explanatory notes
 ===================
 May be used as the target to describe how an action was performed. Relevent to data capture and data processing or wherever a role is performed by a Machine."""^^mark:
 
-ddi:Organization EXTENDS ddi:Agent {
-  ddi:hasOrganizationName EXTENDS ddi:ObjectName {
+ddi:Organization EXTENDS @ddi:Agent {
+  ddi:hasOrganizationName EXTENDS @ddi:ObjectName {
     ddi:abbreviation @ddi:InternationalString ?
     // shexmi:comment """An abbreviation or acronym for the name. This may be expressed in multiple languages. It is assumed that if only a single language is provided that it may be used in any of the other languages within which the name itself is expressed.""";
     ddi:typeOfOrganizationName @ddi:ExternalControlledVocabularyEntry ?

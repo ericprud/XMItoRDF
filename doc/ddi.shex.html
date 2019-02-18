@@ -177,7 +177,7 @@
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name">ddi:<dfn>AgentAssociation</dfn></span> {
-  <span class="type">ddi:</span><span class="constant">agentName</span> EXTENDS <span class="shape-name">ddi:<a>InternationalString</a></span> {
+  <span class="type">ddi:</span><span class="constant">agentName</span> EXTENDS @<span class="shape-name">ddi:<a>InternationalString</a></span> {
     <span class="type">ddi:</span><span class="constant">affiliation</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   } ?;
   <span class="type">ddi:</span><span class="constant">role</span> @<span class="shape-name">ddi:<a>PairedExternalControlledVocabularyEntry</a></span> *;
@@ -220,7 +220,7 @@
   <span class="type">ddi:</span><span class="constant">versionIdentification</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">versioningAgent</span> @<span class="shape-name">ddi:<a>AgentAssociation</a></span> *;
   <span class="type">ddi:</span><span class="constant">summary</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">relatedResource</span> EXTENDS <span class="shape-name">ddi:<a>InternationalIdentifier</a></span> {
+  <span class="type">ddi:</span><span class="constant">relatedResource</span> EXTENDS @<span class="shape-name">ddi:<a>InternationalIdentifier</a></span> {
     <span class="type">ddi:</span><span class="constant">typeOfRelatedResource</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">provenance</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
@@ -242,7 +242,7 @@
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AnnotationDate</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Date</a></span> {
+<span class="shape-name">ddi:<dfn>AnnotationDate</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Date</a></span> {
   <span class="type">ddi:</span><span class="constant">typeOfDate</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/annotationdate"></a></pre>
       </div>
@@ -407,7 +407,7 @@
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ConditionalText</dfn></span> EXTENDS <span class="shape-name">ddi:<a>DynamicTextContent</a></span> {
+<span class="shape-name">ddi:<dfn>ConditionalText</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>DynamicTextContent</a></span> {
   <span class="type">ddi:</span><span class="constant">expression</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conditionaltext"></a></pre>
       </div>
@@ -483,7 +483,7 @@
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ContentDateOffset</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> {
+<span class="shape-name">ddi:<dfn>ContentDateOffset</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> {
   <span class="type">ddi:</span><span class="constant">numberOfUnits</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
   <span class="type">ddi:</span><span class="constant">isNegativeOffset</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/contentdateoffset"></a></pre>
@@ -1164,7 +1164,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LabelForDisplay</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InternationalStructuredString</a></span> {
+<span class="shape-name">ddi:<dfn>LabelForDisplay</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> {
   <span class="type">ddi:</span><span class="constant">locationVariant</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">maxLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -1209,8 +1209,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LiteralText</dfn></span> EXTENDS <span class="shape-name">ddi:<a>DynamicTextContent</a></span> {
-  <span class="type">ddi:</span><span class="constant">text</span> EXTENDS <span class="shape-name">ddi:<a>LanguageSpecificStructuredStringType</a></span> {
+<span class="shape-name">ddi:<dfn>LiteralText</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>DynamicTextContent</a></span> {
+  <span class="type">ddi:</span><span class="constant">text</span> EXTENDS @<span class="shape-name">ddi:<a>LanguageSpecificStructuredStringType</a></span> {
     <span class="type">ddi:</span><span class="constant">whiteSpace</span> @<span class="shape-name">ddi:<a>WhiteSpaceRule</a></span> ?;
   } ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/literaltext"></a></pre>
@@ -1227,7 +1227,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LocationName</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ObjectName</a></span> {
+<span class="shape-name">ddi:<dfn>LocationName</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ObjectName</a></span> {
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/locationname"></a></pre>
       </div>
@@ -1395,7 +1395,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>RangeValue</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ValueString</a></span> {
+<span class="shape-name">ddi:<dfn>RangeValue</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ValueString</a></span> {
   <span class="type">ddi:</span><span class="constant">included</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/rangevalue"></a></pre>
       </div>
@@ -1629,7 +1629,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Category</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
+<span class="shape-name">ddi:<dfn>Category</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/category"></a></pre>
@@ -1687,7 +1687,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Concept</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Concept</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">definition</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/concept"></a></pre>
@@ -1710,7 +1710,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ConceptSystem</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ConceptSystem</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -1719,7 +1719,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -1744,7 +1744,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ConceptSystemCorrespondence</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ConceptSystemCorrespondence</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -1762,7 +1762,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>DynamicTextContent</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">describedConceptualDomain</span> @<span class="shape-name">ddi:<a>ValueAndConceptDescription</a></span> *;
   <span class="type">ddi:</span><span class="constant">enumeratedConceptualDomain</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
@@ -1785,7 +1785,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ConceptualVariable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
+<span class="shape-name">ddi:<dfn>ConceptualVariable</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
@@ -1820,7 +1820,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>InstanceVariable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>RepresentedVariable</a></span> {
+<span class="shape-name">ddi:<dfn>InstanceVariable</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> {
   <span class="type">ddi:</span><span class="constant">variableRole</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">physicalDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">platformType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -1849,7 +1849,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Population</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
+<span class="shape-name">ddi:<dfn>Population</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">timePeriodOfPopulation</span> @<span class="shape-name">ddi:<a>DateRange</a></span> *;
@@ -1876,10 +1876,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>RepresentedVariable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConceptualVariable</a></span> {
+<span class="shape-name">ddi:<dfn>RepresentedVariable</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConceptualVariable</a></span> {
   <span class="type">ddi:</span><span class="constant">unitOfMeasurement</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">hasIntendedDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">takesSubstantiveValuesFrom</span> EXTENDS <span class="shape-name">ddi:<a>ValueDomain</a></span> {
+  <span class="type">ddi:</span><span class="constant">takesSubstantiveValuesFrom</span> EXTENDS @<span class="shape-name">ddi:<a>ValueDomain</a></span> {
     <span class="type">ddi:</span><span class="constant">takesConceptsFrom</span> @<span class="shape-name">ddi:<a>SubstantiveConceptualDomain</a></span> *;
     <span class="type">ddi:</span><span class="constant">describedValueDomain</span> @<span class="shape-name">ddi:<a>ValueAndConceptDescription</a></span> *;
     <span class="type">ddi:</span><span class="constant">enumeratedValueDomain</span> @<span class="shape-name">ddi:<a>CodeList</a></span> *;
@@ -1903,7 +1903,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SentinelConceptualDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConceptualDomain</a></span> {
+<span class="shape-name">ddi:<dfn>SentinelConceptualDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConceptualDomain</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/sentinelconceptualdomain"></a></pre>
       </div>
       </section>
@@ -1920,7 +1920,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SubstantiveConceptualDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConceptualDomain</a></span> {
+<span class="shape-name">ddi:<dfn>SubstantiveConceptualDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConceptualDomain</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/substantiveconceptualdomain"></a></pre>
       </div>
       </section>
@@ -1936,7 +1936,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Unit</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Unit</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasUnitType</span> @<span class="shape-name">ddi:<a>UnitType</a></span> *;
@@ -1969,7 +1969,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>UnitType</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
+<span class="shape-name">ddi:<dfn>UnitType</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> ?;
@@ -1991,7 +1991,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Universe</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Concept</a></span> {
+<span class="shape-name">ddi:<dfn>Universe</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Concept</a></span> {
   <span class="type">ddi:</span><span class="constant">isInclusive</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2034,7 +2034,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AlgorithmOverview</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>AlgorithmOverview</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">subjectOfAlgorithm</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">isDescribedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
@@ -2054,7 +2054,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DesignOverview</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DesignOverview</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">subectOfDesign</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">isDescribedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
@@ -2078,7 +2078,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>MethodologyOverview</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>MethodologyOverview</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">subjectOfMethodology</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2117,11 +2117,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>GeographicUnit</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Unit</a></span> {
+<span class="shape-name">ddi:<dfn>GeographicUnit</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Unit</a></span> {
   <span class="type">ddi:</span><span class="constant">geographicTime</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">supercedes</span> @<span class="shape-name">ddi:<a>SpatialRelationship</a></span> *;
   <span class="type">ddi:</span><span class="constant">precedes</span> @<span class="shape-name">ddi:<a>SpatialRelationship</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasGeographicExtent</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasGeographicExtent</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">boundingPolygon</span> @<span class="shape-name">ddi:<a>Polygon</a></span> *;
     <span class="type">ddi:</span><span class="constant">excludingPolygon</span> @<span class="shape-name">ddi:<a>Polygon</a></span> *;
     <span class="type">ddi:</span><span class="constant">geographicTime</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
@@ -2158,7 +2158,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>GeographicUnitClassification</dfn></span> EXTENDS <span class="shape-name">ddi:<a>CodeList</a></span> {
+<span class="shape-name">ddi:<dfn>GeographicUnitClassification</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>CodeList</a></span> {
   <span class="type">ddi:</span><span class="constant">contains</span> {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
     <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -2171,7 +2171,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -2208,7 +2208,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>GeographicUnitTypeClassification</dfn></span> EXTENDS <span class="shape-name">ddi:<a>CodeList</a></span> {
+<span class="shape-name">ddi:<dfn>GeographicUnitTypeClassification</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>CodeList</a></span> {
   <span class="type">ddi:</span><span class="constant">contains</span> {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
     <span class="type">ddi:</span><span class="constant">isInLevel</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -2221,7 +2221,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">references</span> @<span class="shape-name">ddi:<a>ConceptSystem</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -2267,7 +2267,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SamplingAlgorithm</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AlgorithmOverview</a></span> {
+<span class="shape-name">ddi:<dfn>SamplingAlgorithm</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> {
   <span class="type">ddi:</span><span class="constant">codifiedExpressionOfAlgorithm</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/samplingalgorithm"></a></pre>
       </div>
@@ -2289,10 +2289,10 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SamplingProcedure</dfn></span> EXTENDS <span class="shape-name">ddi:<a>MethodologyOverview</a></span> {
-  <span class="type">ddi:</span><span class="constant">hasDesign</span> EXTENDS <span class="shape-name">ddi:<a>DesignOverview</a></span> {
+<span class="shape-name">ddi:<dfn>SamplingProcedure</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>MethodologyOverview</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasDesign</span> EXTENDS @<span class="shape-name">ddi:<a>DesignOverview</a></span> {
     <span class="type">ddi:</span><span class="constant">expressesAlgorithm</span> @<span class="shape-name">ddi:<a>SamplingAlgorithm</a></span> *;
-    <span class="type">ddi:</span><span class="constant">specifiesGoal</span> EXTENDS <span class="shape-name">ddi:<a>Goal</a></span> {
+    <span class="type">ddi:</span><span class="constant">specifiesGoal</span> EXTENDS @<span class="shape-name">ddi:<a>Goal</a></span> {
       <span class="type">ddi:</span><span class="constant">overallTargetSampleSize</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
       <span class="type">ddi:</span><span class="constant">overallTargetSamplePercent</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
       <span class="type">ddi:</span><span class="constant">targetSampleSize</span> {
@@ -2324,11 +2324,11 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SamplingProcess</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>SamplingProcess</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasResults</span> EXTENDS <span class="shape-name">ddi:<a>Result</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasResults</span> EXTENDS @<span class="shape-name">ddi:<a>Result</a></span> {
     <span class="type">ddi:</span><span class="constant">sizeOfSample</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
     <span class="type">ddi:</span><span class="constant">strataName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
     <span class="type">ddi:</span><span class="constant">sampleDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
@@ -2801,7 +2801,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ControlledVocabulary</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ControlledVocabulary</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2810,7 +2810,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>VocabularyEntry</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">criteria</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
     <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2838,7 +2838,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CustomInstance</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>CustomInstance</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
@@ -2847,7 +2847,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CustomValue</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">correspondsTo</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">correspondsTo</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
     <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2856,7 +2856,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
       <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>CustomItem</a></span> *;
     } *;
     <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
       <span class="type">ddi:</span><span class="constant">criteria</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
       <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
       <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -2892,7 +2892,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CustomItem</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>CustomItem</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">maxOccurs</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">minOccurs</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
@@ -2920,7 +2920,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CustomValue</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>CustomValue</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">value</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">key</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">correspondsTo</span> @<span class="shape-name">ddi:<a>CustomItem</a></span> *;
@@ -2942,7 +2942,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>VocabularyEntry</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>VocabularyEntry</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">entryTerm</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">definition</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/vocabularyentry"></a></pre>
@@ -2966,7 +2966,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>PhysicalDataSet</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>PhysicalDataSet</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">numberOfSegments</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -2978,7 +2978,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">formatsDataStore</span> @<span class="shape-name">ddi:<a>DataStore</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -2990,7 +2990,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
       <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>PhysicalRecordSegment</a></span> *;
     } *;
   } *;
-  <span class="type">ddi:</span><span class="constant">hasVariableStatistics</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasVariableStatistics</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">totalResponses</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
     <span class="type">ddi:</span><span class="constant">hasSummaryStatistic</span> {
       <span class="type">ddi:</span><span class="constant">typeOfSummaryStatistic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -3004,7 +3004,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
       <span class="type">ddi:</span><span class="constant">forCodeItem</span> @<span class="shape-name">ddi:<a>CodeIndicator</a></span> *;
     } *;
     <span class="type">ddi:</span><span class="constant">forInstanceVariable</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-    <span class="type">ddi:</span><span class="constant">usesStandardWeight</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">usesStandardWeight</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
       <span class="type">ddi:</span><span class="constant">standardWeightValue</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
     } *;
     <span class="type">ddi:</span><span class="constant">applicableWeightVariable</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
@@ -3032,7 +3032,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>PhysicalRecordSegment</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>PhysicalRecordSegment</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">physicalFileName</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -3042,7 +3042,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
   <span class="type">ddi:</span><span class="constant">hasPhysicalLayout</span> @<span class="shape-name">ddi:<a>PhysicalSegmentLayout</a></span> *;
   <span class="type">ddi:</span><span class="constant">representsPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> *;
   <span class="type">ddi:</span><span class="constant">mapTo</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -3070,7 +3070,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ConceptualDomain</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">isDelimited</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
   <span class="type">ddi:</span><span class="constant">delimiter</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">isFixedWidth</span> <span class="type">xsd:</span><span class="constant">boolean</span> ;
@@ -3102,7 +3102,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EX
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">formatsLogicalRecord</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">criteria</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -3131,7 +3131,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLayout</dfn></span> EX
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/physicalsegmentlocation"></a></pre>
       </div>
       </section>
@@ -3144,7 +3144,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SegmentByText</dfn></span> EXTENDS <span class="shape-name">ddi:<a>PhysicalSegmentLocation</a></span> {
+<span class="shape-name">ddi:<dfn>SegmentByText</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>PhysicalSegmentLocation</a></span> {
   <span class="type">ddi:</span><span class="constant">startLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">endLine</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">startCharacterPosition</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
@@ -3162,7 +3162,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>UnitSegmentLayout</dfn></span> EXTENDS <span class="shape-name">ddi:<a>PhysicalSegmentLayout</a></span> {
+<span class="shape-name">ddi:<dfn>UnitSegmentLayout</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>PhysicalSegmentLayout</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/unitsegmentlayout"></a></pre>
       </div>
       </section>
@@ -3180,7 +3180,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ValueMapping</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ValueMapping</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">physicalDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">defaultDecimalSeparator</span> <span class="type">ddi:</span><span class="constant">OneCharString</span> ?;
   <span class="type">ddi:</span><span class="constant">defaultDigitGroupSeparator</span> <span class="type">ddi:</span><span class="constant">OneCharString</span> ?;
@@ -3233,7 +3233,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Study</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Study</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">kindOfData</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">bibliographicCitation</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3243,18 +3243,18 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">hasPopulation</span> @<span class="shape-name">ddi:<a>Population</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasUniverse</span> @<span class="shape-name">ddi:<a>Universe</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasDesign</span> @<span class="shape-name">ddi:<a>DesignOverview</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasProcess</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasProcess</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">hasProcessSequence</span> @<span class="shape-name">ddi:<a>ProcessSequence</a></span> ?;
     <span class="type">ddi:</span><span class="constant">implementsAlgorithm</span> @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> *;
   } *;
-  <span class="type">ddi:</span><span class="constant">hasInstrument</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasInstrument</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
     <span class="type">ddi:</span><span class="constant">typeOfInstrument</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> *;
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
     <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
-    <span class="type">ddi:</span><span class="constant">usesConceptualInstrument</span> EXTENDS <span class="shape-name">ddi:<a>WorkflowProcess</a></span> {
+    <span class="type">ddi:</span><span class="constant">usesConceptualInstrument</span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowProcess</a></span> {
       <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
       <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
       <span class="type">ddi:</span><span class="constant">description</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3262,7 +3262,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
       <span class="type">ddi:</span><span class="constant">organizes</span> @<span class="shape-name">ddi:<a>Capture</a></span> *;
     } ?;
   } *;
-  <span class="type">ddi:</span><span class="constant">hasEmbargo</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasEmbargo</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
     <span class="type">ddi:</span><span class="constant">embargoDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
     <span class="type">ddi:</span><span class="constant">rationale</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3272,14 +3272,14 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">accessInformation</span> @<span class="shape-name">ddi:<a>Access</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasFundingInformation</span> @<span class="shape-name">ddi:<a>FundingInformation</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAuthorizationSource</span> @<span class="shape-name">ddi:<a>AuthorizationSource</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasQualityStatement</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasQualityStatement</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
     <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
     <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">rationale</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-    <span class="type">ddi:</span><span class="constant">usesStandard</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-      <span class="type">ddi:</span><span class="constant">compliance</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">usesStandard</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+      <span class="type">ddi:</span><span class="constant">compliance</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
         <span class="type">ddi:</span><span class="constant">externalComplianceCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
         <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
         <span class="type">ddi:</span><span class="constant">complianceConceptReference</span> @<span class="shape-name">ddi:<a>Concept</a></span> ?;
@@ -3287,13 +3287,13 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
       <span class="type">ddi:</span><span class="constant">standardUsed</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
     } *;
   } *;
-  <span class="type">ddi:</span><span class="constant">hasBudget</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasBudget</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
     <span class="type">ddi:</span><span class="constant">budgetDocument</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">hasInstanceVariable</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasExPostEvaluation</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasExPostEvaluation</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">typeOfEvaluation</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
     <span class="type">ddi:</span><span class="constant">evaluationProcess</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
     <span class="type">ddi:</span><span class="constant">outcomes</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
@@ -3304,7 +3304,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
   <span class="type">ddi:</span><span class="constant">hasMethodology</span> @<span class="shape-name">ddi:<a>MethodologyOverview</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAlgorithm</span> @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasVariableCollection</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasVariableCollection</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
     <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
     <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3316,7 +3316,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
       <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>ConceptualVariable</a></span> *;
     } *;
     <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
       <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
       <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
       <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -3342,7 +3342,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>StudyControl</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Act</a></span> {
+<span class="shape-name">ddi:<dfn>StudyControl</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Act</a></span> {
   <span class="type">ddi:</span><span class="constant">hasStudy</span> @<span class="shape-name">ddi:<a>Study</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/studycontrol"></a></pre>
       </div>
@@ -3362,7 +3362,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>StudySeries</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>StudySeries</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
@@ -3372,7 +3372,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Study</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -3402,7 +3402,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>BusinessAlgorithm</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AlgorithmOverview</a></span> {
+<span class="shape-name">ddi:<dfn>BusinessAlgorithm</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AlgorithmOverview</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/businessalgorithm"></a></pre>
       </div>
       </section>
@@ -3417,13 +3417,13 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DataPipeline</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DataPipeline</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
-    <span class="type">ddi:</span><span class="constant">member</span> EXTENDS <span class="shape-name">ddi:<a>WorkflowProcess</a></span> {
+    <span class="type">ddi:</span><span class="constant">member</span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowProcess</a></span> {
       <span class="type">ddi:</span><span class="constant">standardModelUsed</span> @<span class="shape-name">ddi:<a>PairedExternalControlledVocabularyEntry</a></span> *;
       <span class="type">ddi:</span><span class="constant">preCondition</span> @<span class="shape-name">ddi:<a>BusinessProcessCondition</a></span> *;
       <span class="type">ddi:</span><span class="constant">postCondition</span> @<span class="shape-name">ddi:<a>BusinessProcessCondition</a></span> *;
@@ -3452,7 +3452,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>PhysicalSegmentLocation</dfn></span> 
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStep</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStep</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/act"></a></pre>
       </div>
       </section>
@@ -3465,7 +3465,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ComputationAction</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Act</a></span> {
+<span class="shape-name">ddi:<dfn>ComputationAction</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Act</a></span> {
   <span class="type">ddi:</span><span class="constant">activityDescription</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesCommandCode</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfComputation</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
@@ -3481,7 +3481,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ConditionalControlConstruct</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStep</a></span> {
+<span class="shape-name">ddi:<dfn>ConditionalControlConstruct</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStep</a></span> {
   <span class="type">ddi:</span><span class="constant">condition</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
   <span class="type">ddi:</span><span class="constant">containsSubSequence</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/conditionalcontrolconstruct"></a></pre>
@@ -3496,7 +3496,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>IfThenElse</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
+<span class="shape-name">ddi:<dfn>IfThenElse</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
   <span class="type">ddi:</span><span class="constant">elseIf</span> {
     <span class="type">ddi:</span><span class="constant">condition</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
     <span class="type">ddi:</span><span class="constant">thenWorkflowStepCollection</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
@@ -3514,7 +3514,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Loop</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
+<span class="shape-name">ddi:<dfn>Loop</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
   <span class="type">ddi:</span><span class="constant">initialValue</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
   <span class="type">ddi:</span><span class="constant">stepValue</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/loop"></a></pre>
@@ -3529,7 +3529,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>MetadataDrivenAction</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Act</a></span> {
+<span class="shape-name">ddi:<dfn>MetadataDrivenAction</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Act</a></span> {
   <span class="type">ddi:</span><span class="constant">activityDescription</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">typeOfMetadataDrivenAction</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">quasiVTL</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3581,7 +3581,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>RepeatUntil</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
+<span class="shape-name">ddi:<dfn>RepeatUntil</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/repeatuntil"></a></pre>
       </div>
       </section>
@@ -3594,7 +3594,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>RepeatWhile</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
+<span class="shape-name">ddi:<dfn>RepeatWhile</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ConditionalControlConstruct</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/repeatwhile"></a></pre>
       </div>
       </section>
@@ -3607,7 +3607,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Split</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStep</a></span> {
+<span class="shape-name">ddi:<dfn>Split</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStep</a></span> {
   <span class="type">ddi:</span><span class="constant">executeConcurrently</span> @<span class="shape-name">ddi:<a>WorkflowStep</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/split"></a></pre>
       </div>
@@ -3621,7 +3621,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SplitJoin</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStep</a></span> {
+<span class="shape-name">ddi:<dfn>SplitJoin</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStep</a></span> {
   <span class="type">ddi:</span><span class="constant">executeConcurrently</span> @<span class="shape-name">ddi:<a>WorkflowStep</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/splitjoin"></a></pre>
       </div>
@@ -3635,8 +3635,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>StructuredWorkflowSteps</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> {
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>StructuredWorkflowSteps</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -3662,7 +3662,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>WorkflowMasterSequence</dfn></span> EXTENDS <span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> {
+<span class="shape-name">ddi:<dfn>WorkflowMasterSequence</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> {
   <span class="type">ddi:</span><span class="constant">contains</span> {
     <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>WorkflowStepSequence</a></span> *;
@@ -3682,7 +3682,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>WorkflowProcess</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>WorkflowProcess</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3710,14 +3710,14 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Act</dfn></span> EXTENDS <span class=
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasInformationFlow</span> @<span class="shape-name">ddi:<a>Binding</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isPerformedBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isPerformedBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">serviceInterface</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
     <span class="type">ddi:</span><span class="constant">serviceLocation</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">estimatedDuration</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
@@ -3747,7 +3747,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>WorkflowStepSequence</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>WorkflowStepSequence</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">typeOfWorkflowStepSequence</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> {
@@ -3790,7 +3790,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DocumentInformation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DocumentInformation</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">contentCoverage</span> {
     <span class="type">ddi:</span><span class="constant">typeOfContent</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3834,7 +3834,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ExternalMaterial</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ExternalMaterial</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">typeOfMaterial</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">descriptiveText</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">uri</span> <span class="type">ddi:</span><span class="constant">anyURI</span> *;
@@ -3887,7 +3887,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>FundingInformation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>FundingInformation</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">funderRole</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">grantNumber</span> <span class="type">xsd:</span><span class="constant">string</span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3913,7 +3913,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AuthorizationSource</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>AuthorizationSource</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">statementOfAuthorization</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">legalMandate</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">authorizationDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
@@ -3931,7 +3931,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ClassificationFamily</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ClassificationFamily</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -3941,7 +3941,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">hasClassificationIndex</span> @<span class="shape-name">ddi:<a>ClassificationIndex</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -3970,7 +3970,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ClassificationIndex</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ClassificationIndex</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">releaseDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">availableLanguage</span> <span class="type">ddi:</span><span class="constant">LanguageSpecification</span> ?;
   <span class="type">ddi:</span><span class="constant">corrections</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> *;
@@ -3984,7 +3984,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">hasPublication</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -4016,7 +4016,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ClassificationIndexEntry</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ClassificationIndexEntry</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">entry</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">codingInstruction</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
@@ -4036,7 +4036,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ClassificationItem</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Code</a></span> {
+<span class="shape-name">ddi:<dfn>ClassificationItem</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Code</a></span> {
   <span class="type">ddi:</span><span class="constant">isValid</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">isGenerated</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
   <span class="type">ddi:</span><span class="constant">explanatoryNotes</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> *;
@@ -4066,7 +4066,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ClassificationSeries</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ClassificationSeries</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">context</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">objectsOrUnitsClassified</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">subject</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
@@ -4079,7 +4079,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -4111,7 +4111,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Code</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Designation</a></span> {
+<span class="shape-name">ddi:<dfn>Code</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Designation</a></span> {
   <span class="type">ddi:</span><span class="constant">representation</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ;
   <span class="type">ddi:</span><span class="constant">denotes</span> @<span class="shape-name">ddi:<a>Category</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/code"></a></pre>
@@ -4131,25 +4131,25 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CodeList</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>CodeList</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">contains</span> @<span class="shape-name">ddi:<a>CodeIndicator</a></span> *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">references</span> EXTENDS <span class="shape-name">ddi:<a>ConceptSystem</a></span> {
+  <span class="type">ddi:</span><span class="constant">references</span> EXTENDS @<span class="shape-name">ddi:<a>ConceptSystem</a></span> {
     <span class="type">ddi:</span><span class="constant">contains</span> {
       <span class="type">ddi:</span><span class="constant">index</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
       <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Category</a></span> *;
     } *;
-    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
       <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
       <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
       <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ;
       <span class="type">ddi:</span><span class="constant">hasMemberRelation</span> @<span class="shape-name">ddi:<a>CategoryRelation</a></span> *;
     } *;
   } *;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -4170,7 +4170,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CorrespondenceTable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>CorrespondenceTable</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">correspondence</span> @<span class="shape-name">ddi:<a>Map</a></span> *;
   <span class="type">ddi:</span><span class="constant">maps</span> @<span class="shape-name">ddi:<a>StatisticalClassification</a></span> *;
@@ -4192,7 +4192,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>WorkflowStep</dfn></span> EXTENDS <sp
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">representation</span> @<span class="shape-name">ddi:<a>Signifier</a></span> ?;
   <span class="type">ddi:</span><span class="constant">denotes</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/designation"></a></pre>
@@ -4214,7 +4214,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>LevelStructure</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>LevelStructure</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">containsLevel</span> {
@@ -4239,7 +4239,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>SentinelValueDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ValueDomain</a></span> {
+<span class="shape-name">ddi:<dfn>SentinelValueDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ValueDomain</a></span> {
   <span class="type">ddi:</span><span class="constant">platformType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">takesConceptsFrom</span> @<span class="shape-name">ddi:<a>SentinelConceptualDomain</a></span> *;
   <span class="type">ddi:</span><span class="constant">describedValueDomain</span> @<span class="shape-name">ddi:<a>ValueAndConceptDescription</a></span> *;
@@ -4265,7 +4265,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>StatisticalClassification</dfn></span> EXTENDS <span class="shape-name">ddi:<a>CodeList</a></span> {
+<span class="shape-name">ddi:<dfn>StatisticalClassification</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>CodeList</a></span> {
   <span class="type">ddi:</span><span class="constant">releaseDate</span> @<span class="shape-name">ddi:<a>Date</a></span> ?;
   <span class="type">ddi:</span><span class="constant">validDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
   <span class="type">ddi:</span><span class="constant">isCurrent</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
@@ -4310,7 +4310,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ValueAndConceptDescription</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ValueAndConceptDescription</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">description</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">logicalExpression</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">regularExpression</span> @<span class="shape-name">ddi:<a>TypedString</a></span> ?;
@@ -4336,7 +4336,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Designation</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">recommendedDataType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/valuedomain"></a></pre>
@@ -4364,9 +4364,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DataPoint</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DataPoint</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">isDescribedBy</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasDatum</span> EXTENDS <span class="shape-name">ddi:<a>Designation</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasDatum</span> EXTENDS @<span class="shape-name">ddi:<a>Designation</a></span> {
     <span class="type">ddi:</span><span class="constant">representation</span> @<span class="shape-name">ddi:<a>ValueString</a></span> ;
     <span class="type">ddi:</span><span class="constant">isBoundedBy</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
   } ?;
@@ -4388,7 +4388,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DataStore</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DataStore</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">characterSet</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
   <span class="type">ddi:</span><span class="constant">dataStoreType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
@@ -4401,7 +4401,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>LogicalRecord</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -4414,7 +4414,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
     } *;
   } *;
   <span class="type">ddi:</span><span class="constant">isInStudy</span> @<span class="shape-name">ddi:<a>Study</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">usesRecordRelation</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">usesRecordRelation</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
     <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4425,8 +4425,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
       <span class="type">ddi:</span><span class="constant">source</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
       <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
     } *;
-    <span class="type">ddi:</span><span class="constant">maps</span> EXTENDS <span class="shape-name">ddi:<a>LogicalRecord</a></span> {
-      <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">maps</span> EXTENDS @<span class="shape-name">ddi:<a>LogicalRecord</a></span> {
+      <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
         <span class="type">ddi:</span><span class="constant">criteria</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
         <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
         <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4441,12 +4441,12 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
           <span class="type">ddi:</span><span class="constant">target</span> @<span class="shape-name">ddi:<a>InstanceVariable</a></span> *;
         } *;
       } *;
-      <span class="type">ddi:</span><span class="constant">isViewedFrom</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-        <span class="type">ddi:</span><span class="constant">hasIdentifierRole</span> EXTENDS <span class="shape-name">ddi:<a>ViewpointRole</a></span> {
+      <span class="type">ddi:</span><span class="constant">isViewedFrom</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+        <span class="type">ddi:</span><span class="constant">hasIdentifierRole</span> EXTENDS @<span class="shape-name">ddi:<a>ViewpointRole</a></span> {
         } *;
-        <span class="type">ddi:</span><span class="constant">hasMeasureRole</span> EXTENDS <span class="shape-name">ddi:<a>ViewpointRole</a></span> {
+        <span class="type">ddi:</span><span class="constant">hasMeasureRole</span> EXTENDS @<span class="shape-name">ddi:<a>ViewpointRole</a></span> {
         } *;
-        <span class="type">ddi:</span><span class="constant">hasAttributeRole</span> EXTENDS <span class="shape-name">ddi:<a>ViewpointRole</a></span> {
+        <span class="type">ddi:</span><span class="constant">hasAttributeRole</span> EXTENDS @<span class="shape-name">ddi:<a>ViewpointRole</a></span> {
         } *;
       } *;
       <span class="type">ddi:</span><span class="constant">definingConcept</span> @<span class="shape-name">ddi:<a>Concept</a></span> *;
@@ -4465,7 +4465,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>DataStoreLibrary</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>DataStoreLibrary</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4474,7 +4474,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>DataStore</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">hasRelationSpecification</span> @<span class="shape-name">ddi:<a>RelationSpecification</a></span> ?;
     <span class="type">ddi:</span><span class="constant">semantic</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">totality</span> @<span class="shape-name">ddi:<a>TotalityType</a></span> ?;
@@ -4516,7 +4516,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ValueDomain</dfn></span> EXTENDS <spa
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4545,7 +4545,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>LogicalRecord</dfn></span> EXTENDS <s
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>ViewpointRole</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>ViewpointRole</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4569,7 +4569,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ViewpointRole</dfn></span> EXTENDS <s
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>BooleanResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>BooleanResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
   <span class="type">ddi:</span><span class="constant">forCategory</span> @<span class="shape-name">ddi:<a>Category</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/booleanresponsedomain"></a></pre>
       </div>
@@ -4587,7 +4587,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>ViewpointRole</dfn></span> EXTENDS <s
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">usage</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -4610,7 +4610,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>CodeListResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>CodeListResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
   <span class="type">ddi:</span><span class="constant">usesCodeList</span> @<span class="shape-name">ddi:<a>CodeList</a></span> *;
   <span class="type">ddi:</span><span class="constant">specifyOtherResponseDomain</span> @<span class="shape-name">ddi:<a>ResponseDomain</a></span> *;
   <span class="type">ddi:</span><span class="constant">specifyOtherCorrespondingCode</span> @<span class="shape-name">ddi:<a>Code</a></span> *;
@@ -4632,7 +4632,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ExternalAid</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ExternalMaterial</a></span> {
+<span class="shape-name">ddi:<dfn>ExternalAid</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> {
   <span class="type">ddi:</span><span class="constant">stimulusType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/externalaid"></a></pre>
       </div>
@@ -4648,8 +4648,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>InstanceMeasurement</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
-  <span class="type">ddi:</span><span class="constant">instantiates</span> EXTENDS <span class="shape-name">ddi:<a>Capture</a></span> {
+<span class="shape-name">ddi:<dfn>InstanceMeasurement</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
+  <span class="type">ddi:</span><span class="constant">instantiates</span> EXTENDS @<span class="shape-name">ddi:<a>Capture</a></span> {
     <span class="type">ddi:</span><span class="constant">measurementType</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">hasRepresentedVariable</span> @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> *;
   } *;
@@ -4665,9 +4665,9 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>InstanceQuestion</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
+<span class="shape-name">ddi:<dfn>InstanceQuestion</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
-  <span class="type">ddi:</span><span class="constant">instantiates</span> EXTENDS <span class="shape-name">ddi:<a>Capture</a></span> {
+  <span class="type">ddi:</span><span class="constant">instantiates</span> EXTENDS @<span class="shape-name">ddi:<a>Capture</a></span> {
     <span class="type">ddi:</span><span class="constant">questionText</span> @<span class="shape-name">ddi:<a>DynamicText</a></span> *;
     <span class="type">ddi:</span><span class="constant">questionIntent</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">estimatedResponseTimeInSeconds</span> <span class="type">umld:</span><span class="constant">Real</span> ?;
@@ -4689,7 +4689,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Instruction</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Instruction</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">instructionText</span> @<span class="shape-name">ddi:<a>DynamicText</a></span> *;
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> *;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
@@ -4706,7 +4706,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>InstrumentCode</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
+<span class="shape-name">ddi:<dfn>InstrumentCode</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
   <span class="type">ddi:</span><span class="constant">purposeOfCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesCommandCode</span> @<span class="shape-name">ddi:<a>CommandCode</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/instrumentcode"></a></pre>
@@ -4721,7 +4721,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Capture</dfn></span> EXTENDS <span cl
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Act</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Act</a></span> {
   <span class="type">ddi:</span><span class="constant">hasInstructions</span> @<span class="shape-name">ddi:<a>Instruction</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasExternalAids</span> @<span class="shape-name">ddi:<a>ExternalAid</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/instrumentcomponent"></a></pre>
@@ -4736,7 +4736,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>NumericResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>NumericResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
   <span class="type">ddi:</span><span class="constant">numericTypeCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">unit</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">usesNumberRange</span> {
@@ -4761,7 +4761,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>RankingResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>RankingResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/rankingresponsedomain"></a></pre>
       </div>
       </section>
@@ -4782,7 +4782,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>ResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">displayLabel</span> @<span class="shape-name">ddi:<a>LabelForDisplay</a></span> ?;
   <span class="type">ddi:</span><span class="constant">intendedRepresentation</span> @<span class="shape-name">ddi:<a>RepresentedVariable</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasOutputParameter</span> @<span class="shape-name">ddi:<a>Parameter</a></span> *;
@@ -4798,7 +4798,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>ScaleResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>ScaleResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/scaleresponsedomain"></a></pre>
       </div>
       </section>
@@ -4811,7 +4811,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Statement</dfn></span> EXTENDS <span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
+<span class="shape-name">ddi:<dfn>Statement</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>InstrumentComponent</a></span> {
   <span class="type">ddi:</span><span class="constant">statementText</span> @<span class="shape-name">ddi:<a>DynamicText</a></span> *;
   <span class="type">ddi:</span><span class="constant">purposeOfStatement</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/statement"></a></pre>
@@ -4826,7 +4826,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>TextResponseDomain</dfn></span> EXTENDS <span class="shape-name">ddi:<a>ResponseDomain</a></span> {
+<span class="shape-name">ddi:<dfn>TextResponseDomain</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>ResponseDomain</a></span> {
   <span class="type">ddi:</span><span class="constant">maximumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">minimumLength</span> <span class="type">xsd:</span><span class="constant">integer</span> ?;
   <span class="type">ddi:</span><span class="constant">regularExpression</span> @<span class="shape-name">ddi:<a>TypedString</a></span> ?;
@@ -4853,7 +4853,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Access</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Access</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">confidentialityStatement</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">accessPermission</span> {
@@ -4885,7 +4885,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>BoundingBox</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>BoundingBox</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">eastLongitude</span> <span class="type">umld:</span><span class="constant">Real</span> ;
   <span class="type">ddi:</span><span class="constant">westLongitude</span> <span class="type">umld:</span><span class="constant">Real</span> ;
   <span class="type">ddi:</span><span class="constant">northLatitude</span> <span class="type">umld:</span><span class="constant">Real</span> ;
@@ -4906,19 +4906,19 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Coverage</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+<span class="shape-name">ddi:<dfn>Coverage</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">hasTemporalCoverage</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
-    <span class="type">ddi:</span><span class="constant">coverageDate</span> EXTENDS <span class="shape-name">ddi:<a>AnnotationDate</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasTemporalCoverage</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">coverageDate</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotationDate</a></span> {
       <span class="type">ddi:</span><span class="constant">subject</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
       <span class="type">ddi:</span><span class="constant">keyword</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
     } *;
   } ?;
-  <span class="type">ddi:</span><span class="constant">hasTopicalCoverage</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasTopicalCoverage</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">subject</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
     <span class="type">ddi:</span><span class="constant">keyword</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
   } ?;
-  <span class="type">ddi:</span><span class="constant">hasSpatialCoverage</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasSpatialCoverage</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">description</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">spatialAreaCode</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> *;
     <span class="type">ddi:</span><span class="constant">spatialObject</span> @<span class="shape-name">ddi:<a>SpatialObjectType</a></span> ?;
@@ -4956,7 +4956,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>InstrumentComponent</dfn></span> EXTE
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>AnnotatedIdentifiable</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>AnnotatedIdentifiable</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">hasAnnotation</span> @<span class="shape-name">ddi:<a>Annotation</a></span> ?;
   <span class="type">ddi:</span><span class="constant">relatedMaterial</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/annotatedidentifiable"></a></pre>
@@ -5013,7 +5013,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Identifiable</dfn></span> {
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>BusinessFunction</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>BusinessFunction</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/businessfunction"></a></pre>
       </div>
@@ -5032,7 +5032,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>BusinessFunction</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Goal</dfn></span> EXTENDS <span class="shape-name">ddi:<a>BusinessFunction</a></span> {
+<span class="shape-name">ddi:<dfn>Goal</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>BusinessFunction</a></span> {
   <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/goal"></a></pre>
       </div>
@@ -5052,7 +5052,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>BusinessFunction</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Precondition</dfn></span> EXTENDS <span class="shape-name">ddi:<a>BusinessFunction</a></span> {
+<span class="shape-name">ddi:<dfn>Precondition</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>BusinessFunction</a></span> {
   <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
   <span class="type">ddi:</span><span class="constant">basedOnPriorResult</span> @<span class="shape-name">ddi:<a>Result</a></span> *;
 }<a class="tryit" href="http://lion.ddialliance.org/ddiobjects/precondition"></a></pre>
@@ -5070,12 +5070,12 @@ ABSTRACT <span class="shape-name">ddi:<dfn>BusinessFunction</dfn></span> EXTENDS
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>Result</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>Result</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
   <span class="type">ddi:</span><span class="constant">hasBinding</span> @<span class="shape-name">ddi:<a>Binding</a></span> *;
-  <span class="type">ddi:</span><span class="constant">hasAppliedUse</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasAppliedUse</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-    <span class="type">ddi:</span><span class="constant">hasGuide</span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+    <span class="type">ddi:</span><span class="constant">hasGuide</span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
       <span class="type">ddi:</span><span class="constant">overview</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
       <span class="type">ddi:</span><span class="constant">isDiscussedIn</span> @<span class="shape-name">ddi:<a>ExternalMaterial</a></span> *;
     } *;
@@ -5123,13 +5123,13 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Result</dfn></span> EXTENDS <span cla
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
+ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>AnnotatedIdentifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">hasAgentId</span> {
     <span class="type">ddi:</span><span class="constant">agentIdValue</span> <span class="type">xsd:</span><span class="constant">string</span> ;
     <span class="type">ddi:</span><span class="constant">agentIdType</span> <span class="type">xsd:</span><span class="constant">string</span> ;
   } *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
-  <span class="type">ddi:</span><span class="constant">image</span> EXTENDS <span class="shape-name">ddi:<a>Image</a></span> {
+  <span class="type">ddi:</span><span class="constant">image</span> EXTENDS @<span class="shape-name">ddi:<a>Image</a></span> {
     <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
     <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   } *;
@@ -5145,7 +5145,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>AgentListing</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+<span class="shape-name">ddi:<dfn>AgentListing</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
   <span class="type">ddi:</span><span class="constant">type</span> @<span class="shape-name">ddi:<a>CollectionType</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -5154,7 +5154,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
     <span class="type">ddi:</span><span class="constant">member</span> @<span class="shape-name">ddi:<a>Agent</a></span> *;
   } *;
   <span class="type">ddi:</span><span class="constant">isOrdered</span> <span class="type">xsd:</span><span class="constant">boolean</span> ?;
-  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS <span class="shape-name">ddi:<a>Identifiable</a></span> {
+  <span class="type">ddi:</span><span class="constant">isStructuredBy</span> EXTENDS @<span class="shape-name">ddi:<a>Identifiable</a></span> {
     <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;
     <span class="type">ddi:</span><span class="constant">privacy</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">purpose</span> @<span class="shape-name">ddi:<a>InternationalStructuredString</a></span> ?;
@@ -5186,7 +5186,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Individual</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Agent</a></span> {
+<span class="shape-name">ddi:<dfn>Individual</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Agent</a></span> {
   <span class="type">ddi:</span><span class="constant">hasIndividualName</span> {
     <span class="type">ddi:</span><span class="constant">prefix</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
     <span class="type">ddi:</span><span class="constant">firstGiven</span> <span class="type">xsd:</span><span class="constant">string</span> ?;
@@ -5216,7 +5216,7 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Machine</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Agent</a></span> {
+<span class="shape-name">ddi:<dfn>Machine</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Agent</a></span> {
   <span class="type">ddi:</span><span class="constant">typeOfMachine</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name">ddi:<a>ObjectName</a></span> *;
   <span class="type">ddi:</span><span class="constant">hasAccessLocation</span> {
@@ -5244,8 +5244,8 @@ ABSTRACT <span class="shape-name">ddi:<dfn>Agent</dfn></span> EXTENDS <span clas
         </div>
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
-<span class="shape-name">ddi:<dfn>Organization</dfn></span> EXTENDS <span class="shape-name">ddi:<a>Agent</a></span> {
-  <span class="type">ddi:</span><span class="constant">hasOrganizationName</span> EXTENDS <span class="shape-name">ddi:<a>ObjectName</a></span> {
+<span class="shape-name">ddi:<dfn>Organization</dfn></span> EXTENDS @<span class="shape-name">ddi:<a>Agent</a></span> {
+  <span class="type">ddi:</span><span class="constant">hasOrganizationName</span> EXTENDS @<span class="shape-name">ddi:<a>ObjectName</a></span> {
     <span class="type">ddi:</span><span class="constant">abbreviation</span> @<span class="shape-name">ddi:<a>InternationalString</a></span> ?;
     <span class="type">ddi:</span><span class="constant">typeOfOrganizationName</span> @<span class="shape-name">ddi:<a>ExternalControlledVocabularyEntry</a></span> ?;
     <span class="type">ddi:</span><span class="constant">effectiveDates</span> @<span class="shape-name">ddi:<a>DateRange</a></span> ?;

@@ -9216,7 +9216,7 @@ ${rec.isAbstract ? 'ABSTRACT ' : ''}<span class="shape-name">ddi:<dfn>${rec.name
         classRecord.superClasses.map(
           su => model.classes[su].name
         ).map(
-          name => ' EXTENDS ' + markup.reference(name)
+          name => ' EXTENDS @' + markup.reference(name)
         ).join('') +
         ' {\n' +
         classRecord.properties
