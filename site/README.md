@@ -17,7 +17,7 @@ In ShEx, these can be defined as in-line shapes; ShEx renderers can represent th
 For instance, in DDI/UML, a `ConceptSystemIndicator` is used only for the `ConceptSystem`'s *contains* property.
 In ShEx, this would look like (see [in situ single reference](https://github.com/ericprud/XMItoRDF/blob/modular/site/DDI_4-DR0.2.shex#L2209-L2210)):
 ```
-ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystem CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ...
   ddi:contains @ddi:ConceptIndicator *
   ...
@@ -25,7 +25,7 @@ ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
 ```
 With nesting, single-reference shapes like `ddi:ConceptIndicator` can be expressed inline a la (see [in situ nested reference](https://github.com/ericprud/XMItoRDF/blob/modular/site/DDI_4-DR0.2-nested.shex#L909-L914)):
 ```
-ddi:ConceptSystem CLOSED EXTENDS ddi:AnnotatedIdentifiable {
+ddi:ConceptSystem CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ...
   ddi:contains CLOSED {
     ddi:index xsd:integer *
