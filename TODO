@@ -21,8 +21,8 @@ unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-ProcessPattern-ProcessSequen
 unresolved datatype in ShExC: DDI4_PIM-ClassLibrary-SignificationPattern-Signifier for Designation / representation
 
 [[
-ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:assumesPrecondition EXTENDS ddi:BusinessFunction {
+ddi:DesignOverview EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:assumesPrecondition EXTENDS @ddi:BusinessFunction {
     ddi:isDiscussedIn @ddi:ExternalMaterial *;
     ddi:basedOnPriorResult @ddi:Result *;
   } *;
@@ -30,15 +30,15 @@ ddi:DesignOverview EXTENDS ddi:AnnotatedIdentifiable {
 ]] loses valuable docs on ddi:Precondition
 
 [[
-ddi:Study EXTENDS ddi:AnnotatedIdentifiable {
-  ddi:hasProcess EXTENDS ddi:AnnotatedIdentifiable {
+ddi:Study EXTENDS @ddi:AnnotatedIdentifiable {
+  ddi:hasProcess EXTENDS @ddi:AnnotatedIdentifiable {
     ddi:implementsAlgorithm @ddi:AlgorithmOverview *;
   } *;
 }
 ]] was reduced to '.'
 
 [[
-ABSTRACT ddi:Designation EXTENDS ddi:Identifiable {
+ABSTRACT ddi:Designation EXTENDS @ddi:Identifiable {
   ddi:denotes @ddi:Concept *;
 }
 ]] was reduced to '.'
