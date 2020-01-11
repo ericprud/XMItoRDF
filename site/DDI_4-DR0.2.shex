@@ -1,5 +1,5 @@
 # DDI_4-DR0.2.shexj
-# shexToOwl 2018-10-21T04:20:40.726Z
+# shexToOwl 2020-01-11T18:29:20.568Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>

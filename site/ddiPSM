@@ -1,20 +1,46 @@
 #!/usr/bin/env node
 
+const CircularJSON = require("circular-json");
+
+const Path = require('path');
+const CommandLineOptions = [
+  { name: "help", alias: "h", type: Boolean },
+  { name: "out",  alias: "o", type: String, description: "file prefix for json, owl, and shex" },
+  { name: "xmi",  alias: "i", type: String, description: "input XMI file" },
+  { name: "nestShapes",       type: Boolean, description: "nest inner shapes with no coreferences", defaultOption:  false },
+  { name: "noNest",           type: String, description: "don't nest shapes matching this pattern", multiple: false }
+];
 // Generate command line interface
-var CLI = require("command-line-args")([
-    { name: "help", alias: "h", type: Boolean },
-    { name: "out",  alias: "o", type: String, description: "file prefix for json, owl, and shex" },
-    { name: "xmi",  alias: "i", type: String, description: "input XMI file" },
-    { name: "nestShapes",       type: Boolean, description: "nest inner shapes with no coreferences", defaultOption:  false },
-    { name: "noNest",           type: String, description: "don't nest shapes matching this pattern", multiple: false }
-]);
+const CLI = require("command-line-args")(CommandLineOptions);
+const CliDir = Path.relative("", Path.resolve(__dirname, "./ddiPSM")) + Path.sep;
 function abort (msg) {
   console.error(msg);
-  console.error(CLI.getUsage({
-    title: "ddiPSM",
-    description: "DDI-specific tweaks for UML Model",
-    footer: "Project home: [underline]{https://github.com/shexSpec/shex.js}"
-  }));
+  console.error(require('command-line-usage')([
+    {
+      header: 'ddiPSM',
+      content: 'DDI-specific tweaks for UML Model'
+    },
+    {
+      header: 'ddiPSM',
+      content: [
+        "./site/ddiPSM"
+      ]
+    },
+    {
+      header: 'Options',
+      optionList: CommandLineOptions
+    },
+    {
+      header: 'Examples',
+      content: [
+        {l: 'validate local files',
+         r: require("util").format('  validate -x %s1dotOr2dot.shex -s http://a.example/S1 -d %sp2p3.ttl -n x', CliDir, CliDir)}
+      ]
+    },
+    {
+      content: "Project home: " + require('chalk').underline("https://github.com/ericprud/XMItoRDF")
+    }
+                                              ]));
   process.exit(1);
 }
 
@@ -62,7 +88,7 @@ const normalizeType = function (type) {
 const fs = require('fs')
 const UmlModel = require('uml-model')()
 const CanonXmiParser = require('canonical-uml-xmi-parser')
-const ShEx = require('shex')
+const ShEx = require('@shexjs/core')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,
   viewPattern: /Functional999Views/,

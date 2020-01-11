@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- DDI_4-DR0.2.shexj
-     shexToOwl 2018-09-21T09:42:20.961Z -->
+     shexToOwl 2020-01-11T18:29:21.903Z -->
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      ontologyIRI="http://ddi-alliance.org/ns/ddi4">
     <Prefix name="package" IRI="http://lion.ddialliance.org/ddiobjects/"/>
@@ -29082,13 +29082,7 @@ Value Domain</Literal>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:member"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:member"/>
-        <Class abbreviatedIRI="ddi:Identifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#member with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:semantic"/>
@@ -29114,21 +29108,9 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:TotalityType"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:source"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:source"/>
-        <Class abbreviatedIRI="ddi:Identifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#source with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:target"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:target"/>
-        <Class abbreviatedIRI="ddi:Identifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#target with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:title"/>
@@ -29762,13 +29744,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:CommandCode"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:executes"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:executes"/>
-        <Class abbreviatedIRI="ddi:WorkflowStepSequence"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#executes with no common type -->
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:internetEmail"/>
@@ -30696,13 +30672,7 @@ Value Domain</Literal>
 
     <!-- skipping http://ddi-alliance.org/ns/#contains with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:isStructuredBy"/>
-        <Class abbreviatedIRI="ddi:Identifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#isStructuredBy with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:name"/>
@@ -30746,13 +30716,7 @@ Value Domain</Literal>
 
     <!-- skipping http://ddi-alliance.org/ns/#correspondence with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:maps"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:maps"/>
-        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#maps with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:describedConceptualDomain"/>
@@ -31058,29 +31022,11 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:Precondition"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:specifiesGoal"/>
-        <Class abbreviatedIRI="ddi:Goal"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#specifiesGoal with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:expressesAlgorithm"/>
-        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#expressesAlgorithm with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:implementedBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:implementedBy"/>
-        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#implementedBy with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:subjectOfMethodology"/>
@@ -31098,45 +31044,15 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:InternationalStructuredString"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasDesign"/>
-        <Class abbreviatedIRI="ddi:DesignOverview"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#hasDesign with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:isExpressedBy"/>
-        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#isExpressedBy with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:componentMethodology"/>
-        <Class abbreviatedIRI="ddi:MethodologyOverview"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#componentMethodology with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:isSpecifiedBy"/>
-        <Class abbreviatedIRI="ddi:WorkflowControlStep"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#isSpecifiedBy with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:implementsAlgorithm"/>
-        <Class abbreviatedIRI="ddi:AlgorithmOverview"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#implementsAlgorithm with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:boundingPolygon"/>
@@ -31250,13 +31166,7 @@ Value Domain</Literal>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:references"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:references"/>
-        <Class abbreviatedIRI="ddi:ConceptSystem"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#references with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:isMaintainedBy"/>
@@ -31266,29 +31176,11 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:Organization"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:variantOf"/>
-        <Class abbreviatedIRI="ddi:EnumerationDomain"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#variantOf with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:replaces"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:replaces"/>
-        <Class abbreviatedIRI="ddi:EnumerationDomain"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#replaces with no common type -->
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:isReplacedBy"/>
-        <Class abbreviatedIRI="ddi:EnumerationDomain"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#isReplacedBy with no common type -->
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:physicalFileName"/>
@@ -31642,13 +31534,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:PhysicalSegmentLocation"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:correspondsTo"/>
-        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#correspondsTo with no common type -->
 
     <Declaration>
         <DataProperty abbreviatedIRI="ddi:maxOccurs"/>
@@ -31690,13 +31576,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:Concept"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:comparesTo"/>
-        <Class abbreviatedIRI="ddi:RepresentedVariable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#comparesTo with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:value"/>
@@ -31882,13 +31762,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:TargetSample"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:hasProcess"/>
-        <Class abbreviatedIRI="ddi:AnnotatedIdentifiable"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#hasProcess with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:isDiscussedIn"/>
@@ -32890,13 +32764,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:ConceptualInstrument"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:instantiates"/>
-        <Class abbreviatedIRI="ddi:Capture"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#instantiates with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:instructionText"/>
@@ -33450,13 +33318,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:ClassificationItem"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:denotes"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:denotes"/>
-        <Class abbreviatedIRI="ddi:Category"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#denotes with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:objectsOrUnitsClassified"/>
@@ -33514,13 +33376,7 @@ Value Domain</Literal>
         <Class abbreviatedIRI="ddi:DateRange"/>
     </ObjectPropertyRange>
 
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
-    </Declaration>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="ddi:takesConceptsFrom"/>
-        <Class abbreviatedIRI="ddi:ConceptualDomain"/>
-    </ObjectPropertyRange>
+    <!-- skipping http://ddi-alliance.org/ns/#takesConceptsFrom with no common type -->
 
     <Declaration>
         <ObjectProperty abbreviatedIRI="ddi:describedValueDomain"/>
