@@ -142,10 +142,14 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     let idx = p.elements.indexOf(d)
     p.elements.splice(idx, 1)
   })
-  model.getClasses()
-    .find(c => c.name === 'DocumentInformation')
-    .properties.find(p => p.name === 'hasPrimaryContent')
-    .type = fakeExternalDatatype(XSD + 'string')
+
+  // The old DocumentInformation/hasPrimeryContent was a PrimitiveTypes.xmi#UnlimitedNatural for some reason.
+  model.getClasses() // @@ delete this
+    .filter(c => c.name === 'DocumentInformation').forEach(
+      di =>
+        di.properties.find(p => p.name === 'hasPrimaryContent')
+        .type = fakeExternalDatatype(XSD + 'string'))
+
   let pz = model.getProperties()
   Object.keys(pz)
     .filter(k => k.substr(0,1) === k.substr(0,1).toUpperCase())

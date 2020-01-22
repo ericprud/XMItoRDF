@@ -5,7 +5,7 @@
   "source": {
     "method": "xmi-to-json",
     "resource": "../doc/DDI4_PIM_canonical.xmi",
-    "timestamp": "2020-01-11T18:29:19.024Z"
+    "timestamp": "2020-01-22T08:29:27.790Z"
   },
   "elements": [
     {
