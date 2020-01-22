@@ -467,14 +467,6 @@
     "referrer": "http://ddi-alliance.org/ns/#ImplementedInstrument",
     "predicate": "http://ddi-alliance.org/ns/#usesConceptualInstrument"
   },
-  "http://ddi-alliance.org/ns/#RepresentedMeasurement": {
-    "referrer": "http://ddi-alliance.org/ns/#InstanceMeasurement",
-    "predicate": "http://ddi-alliance.org/ns/#instantiates"
-  },
-  "http://ddi-alliance.org/ns/#RepresentedQuestion": {
-    "referrer": "http://ddi-alliance.org/ns/#InstanceQuestion",
-    "predicate": "http://ddi-alliance.org/ns/#instantiates"
-  },
   "http://ddi-alliance.org/ns/#AttributeRole": {
     "referrer": "http://ddi-alliance.org/ns/#UnitDataViewpoint",
     "predicate": "http://ddi-alliance.org/ns/#hasAttributeRole"

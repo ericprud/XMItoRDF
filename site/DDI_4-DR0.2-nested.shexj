@@ -26873,84 +26873,7 @@
         "expression": {
           "type": "TripleConstraint",
           "predicate": "http://ddi-alliance.org/ns/#instantiates",
-          "valueExpr": {
-            "type": "Shape",
-            "closed": true,
-            "extends": [
-              "http://ddi-alliance.org/ns/#Capture"
-            ],
-            "expression": {
-              "type": "EachOf",
-              "expressions": [
-                {
-                  "type": "TripleConstraint",
-                  "predicate": "http://ddi-alliance.org/ns/#measurementType",
-                  "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
-                  "min": 0,
-                  "max": 1,
-                  "annotations": [
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                      "object": "http://lion.ddialliance.org/ddiobjects/measurementtype"
-                    },
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                      "object": {
-                        "value": "The type of measurement performed",
-                        "type": "https://github.com/commonmark/commonmark.js"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "TripleConstraint",
-                  "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
-                  "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
-                  "min": 0,
-                  "max": 1,
-                  "annotations": [
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                      "object": "http://lion.ddialliance.org/ddiobjects/hasrepresentedvariable"
-                    },
-                    {
-                      "type": "Annotation",
-                      "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                      "object": {
-                        "value": "An optional link to a represented variable which can be used by each instance variable created by a use of this measure.",
-                        "type": "https://github.com/commonmark/commonmark.js"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "annotations": [
-              {
-                "type": "Annotation",
-                "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                "object": "http://lion.ddialliance.org/ddiobjects/representedmeasurement"
-              },
-              {
-                "type": "Annotation",
-                "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                "object": {
-                  "value": "http://ddi-alliance.org/ns/#DataCapture"
-                }
-              },
-              {
-                "type": "Annotation",
-                "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                "object": {
-                  "value": "\nDefinition\n============\nThe description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.\n\nExamples\n==========\nA measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current\n\nExplanatory notes\n===================\nNon-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies.\n\n",
-                  "type": "https://github.com/commonmark/commonmark.js"
-                }
-              }
-            ]
-          },
+          "valueExpr": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
           "min": 0,
           "max": 1,
           "annotations": [
@@ -27031,131 +26954,7 @@
             {
               "type": "TripleConstraint",
               "predicate": "http://ddi-alliance.org/ns/#instantiates",
-              "valueExpr": {
-                "type": "Shape",
-                "closed": true,
-                "extends": [
-                  "http://ddi-alliance.org/ns/#Capture"
-                ],
-                "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#questionText",
-                      "valueExpr": "http://ddi-alliance.org/ns/#DynamicText",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/questiontext"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#questionIntent",
-                      "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/questionintent"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "The purpose or intent of the question.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#estimatedResponseTimeInSeconds",
-                      "valueExpr": {
-                        "type": "NodeConstraint",
-                        "datatype": "http://www.w3.org/2001/XMLSchema#double"
-                      },
-                      "min": 0,
-                      "max": 1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/estimatedresponsetimeinseconds"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TripleConstraint",
-                      "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
-                      "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
-                      "min": 0,
-                      "max": -1,
-                      "annotations": [
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                          "object": "http://lion.ddialliance.org/ddiobjects/hasrepresentedvariable"
-                        },
-                        {
-                          "type": "Annotation",
-                          "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                          "object": {
-                            "value": "An optional link to a represented variable which can be used by each instance variable created by a use of this question.",
-                            "type": "https://github.com/commonmark/commonmark.js"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "annotations": [
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
-                    "object": "http://lion.ddialliance.org/ddiobjects/representedquestion"
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#package",
-                    "object": {
-                      "value": "http://ddi-alliance.org/ns/#DataCapture"
-                    }
-                  },
-                  {
-                    "type": "Annotation",
-                    "predicate": "http://www.w3.org/ns/shex-xmi#comment",
-                    "object": {
-                      "value": "\nDefinition\n============\nThe description of a reusable question, that can be used as a template that describes the components of a question\n\nExamples\n==========\nA question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)\n\nExplanatory notes\n===================\nA question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.\n\nDDI 3.2 mapping\n=================\nd:QuestionItemType\n\n",
-                      "type": "https://github.com/commonmark/commonmark.js"
-                    }
-                  }
-                ]
-              },
+              "valueExpr": "http://ddi-alliance.org/ns/#RepresentedQuestion",
               "min": 0,
               "max": 1,
               "annotations": [
@@ -27855,6 +27654,219 @@
             "predicate": "http://www.w3.org/ns/shex-xmi#comment",
             "object": {
               "value": "\nDefinition\n============\nA response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. \nNote: This item still must be modeled and is incomplete at this time.\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://ddi-alliance.org/ns/#RepresentedMeasurement",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "closed": true,
+        "extends": [
+          "http://ddi-alliance.org/ns/#Capture"
+        ],
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#measurementType",
+              "valueExpr": "http://ddi-alliance.org/ns/#ExternalControlledVocabularyEntry",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/measurementtype"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The type of measurement performed",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
+              "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/hasrepresentedvariable"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "An optional link to a represented variable which can be used by each instance variable created by a use of this measure.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/representedmeasurement"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#DataCapture"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nThe description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.\n\nExamples\n==========\nA measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current\n\nExplanatory notes\n===================\nNon-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies.\n\n",
+              "type": "https://github.com/commonmark/commonmark.js"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://ddi-alliance.org/ns/#RepresentedQuestion",
+      "type": "ShapeDecl",
+      "abstract": false,
+      "shapeExpr": {
+        "type": "Shape",
+        "closed": true,
+        "extends": [
+          "http://ddi-alliance.org/ns/#Capture"
+        ],
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#questionText",
+              "valueExpr": "http://ddi-alliance.org/ns/#DynamicText",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/questiontext"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#questionIntent",
+              "valueExpr": "http://ddi-alliance.org/ns/#InternationalStructuredString",
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/questionintent"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "The purpose or intent of the question.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#estimatedResponseTimeInSeconds",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#double"
+              },
+              "min": 0,
+              "max": 1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/estimatedresponsetimeinseconds"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ddi-alliance.org/ns/#hasRepresentedVariable",
+              "valueExpr": "http://ddi-alliance.org/ns/#RepresentedVariable",
+              "min": 0,
+              "max": -1,
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+                  "object": "http://lion.ddialliance.org/ddiobjects/hasrepresentedvariable"
+                },
+                {
+                  "type": "Annotation",
+                  "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+                  "object": {
+                    "value": "An optional link to a represented variable which can be used by each instance variable created by a use of this question.",
+                    "type": "https://github.com/commonmark/commonmark.js"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/2000/01/rdf-schema#definedBy",
+            "object": "http://lion.ddialliance.org/ddiobjects/representedquestion"
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#package",
+            "object": {
+              "value": "http://ddi-alliance.org/ns/#DataCapture"
+            }
+          },
+          {
+            "type": "Annotation",
+            "predicate": "http://www.w3.org/ns/shex-xmi#comment",
+            "object": {
+              "value": "\nDefinition\n============\nThe description of a reusable question, that can be used as a template that describes the components of a question\n\nExamples\n==========\nA question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)\n\nExplanatory notes\n===================\nA question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.\n\nDDI 3.2 mapping\n=================\nd:QuestionItemType\n\n",
               "type": "https://github.com/commonmark/commonmark.js"
             }
           }

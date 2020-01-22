@@ -561,8 +561,8 @@ r:DoubleNumberRangeValueType"""</span>^^mark:
         <div>
           <p>3 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
             <li><a href="#ddi:Instruction">ddi:Instruction</a></li>
+            <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
             <li><a href="#ddi:Statement">ddi:Statement</a></li>
 
           </ul></div>
@@ -630,7 +630,7 @@ d:TextContentType"""</span>^^mark:
       <section>
         <h3 id="ddi:ExternalControlledVocabularyEntry">ddi:ExternalControlledVocabularyEntry</h3>
         <div>
-          <p>56 references:</p>
+          <p>57 references:</p>
           <div class="left-scroll"><ul class="referees">
             <li><a href="#ddi:Annotation">ddi:Annotation</a></li>
             <li><a href="#ddi:CommandCode">ddi:CommandCode</a></li>
@@ -668,11 +668,12 @@ d:TextContentType"""</span>^^mark:
             <li><a href="#ddi:WorkflowStep">ddi:WorkflowStep</a></li>
             <li><a href="#ddi:WorkflowStepSequence">ddi:WorkflowStepSequence</a></li>
             <li><a href="#ddi:Coverage">ddi:Coverage</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
             <li><a href="#ddi:ExternalAid">ddi:ExternalAid</a></li>
-            <li><a href="#ddi:InstanceMeasurement">ddi:InstanceMeasurement</a></li>
             <li><a href="#ddi:InstrumentCode">ddi:InstrumentCode</a></li>
             <li><a href="#ddi:NumericResponseDomain">ddi:NumericResponseDomain</a></li>
+            <li><a href="#ddi:InstanceMeasurement">ddi:InstanceMeasurement</a></li>
             <li><a href="#ddi:Statement">ddi:Statement</a></li>
             <li><a href="#ddi:Identifiable">ddi:Identifiable</a></li>
             <li><a href="#ddi:DataStoreLibrary">ddi:DataStoreLibrary</a></li>
@@ -917,7 +918,7 @@ r:InternationalStringType"""</span>^^mark:
             <li><a href="#ddi:Result">ddi:Result</a></li>
             <li><a href="#ddi:Access">ddi:Access</a></li>
             <li><a href="#ddi:Coverage">ddi:Coverage</a></li>
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
             <li><a href="#ddi:DataStoreLibrary">ddi:DataStoreLibrary</a></li>
             <li><a href="#ddi:LogicalRecord">ddi:LogicalRecord</a></li>
@@ -968,7 +969,7 @@ r:StructuredStringType"""</span>^^mark:
             <li><a href="#ddi:ControlledVocabulary">ddi:ControlledVocabulary</a></li>
             <li><a href="#ddi:CustomInstance">ddi:CustomInstance</a></li>
             <li><a href="#ddi:WorkflowStep">ddi:WorkflowStep</a></li>
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:Instruction">ddi:Instruction</a></li>
             <li><a href="#ddi:NumericResponseDomain">ddi:NumericResponseDomain</a></li>
             <li><a href="#ddi:ResponseDomain">ddi:ResponseDomain</a></li>
@@ -1234,7 +1235,7 @@ r:NumberRangeValueType"""</span>^^mark:
             <li><a href="#ddi:DesignOverview">ddi:DesignOverview</a></li>
             <li><a href="#ddi:WorkflowStep">ddi:WorkflowStep</a></li>
             <li><a href="#ddi:WorkflowStepSequence">ddi:WorkflowStepSequence</a></li>
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
             <li><a href="#ddi:Instruction">ddi:Instruction</a></li>
             <li><a href="#ddi:PhysicalDataSet">ddi:PhysicalDataSet</a></li>
@@ -1607,7 +1608,7 @@ l:CategoryType"""</span>^^mark:
             <li><a href="#ddi:CustomItem">ddi:CustomItem</a></li>
             <li><a href="#ddi:StudySeries">ddi:StudySeries</a></li>
             <li><a href="#ddi:DataPipeline">ddi:DataPipeline</a></li>
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:DataStoreLibrary">ddi:DataStoreLibrary</a></li>
             <li><a href="#ddi:LogicalRecord">ddi:LogicalRecord</a></li>
             <li><a href="#ddi:ViewpointRole">ddi:ViewpointRole</a></li>
@@ -5752,7 +5753,7 @@ d:CodeDomainType"""</span>^^mark:
         <div>
           <p>2 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:InstrumentComponent">ddi:InstrumentComponent</a></li>
 
           </ul></div>
@@ -5787,12 +5788,7 @@ r:OtherMaterialType"""</span>^^mark:
         <div class="example wrapper">
         <pre class="nohighlight schema shexc tryable">
 <span class="shape-name"><dfn>ddi:InstanceMeasurement</dfn></span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:InstrumentComponent"><span class="type">ddi:</span><span class="costant">InstrumentComponent</span></a></span> {
-  <span class="type">ddi:</span><span class="constant">instantiates</span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:Capture"><span class="type">ddi:</span><span class="costant">Capture</span></a></span> {
-    <span class="type">ddi:</span><span class="constant">measurementType</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
-    <span class="comment">// shexmi:comment """The type of measurement performed"""</span>;
-    <span class="type">ddi:</span><span class="constant">hasRepresentedVariable</span> @<span class="shape-name"><a href="#ddi:RepresentedVariable"><span class="type">ddi:</span><span class="costant">RepresentedVariable</span></a></span> *
-    <span class="comment">// shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this measure."""</span>;
-  } *
+  <span class="type">ddi:</span><span class="constant">instantiates</span> @<span class="shape-name"><a href="#ddi:RepresentedMeasurement"><span class="type">ddi:</span><span class="costant">RepresentedMeasurement</span></a></span> *
   <span class="comment">// shexmi:comment """The measurement being instantiated in the data collection process"""</span>;
 }
 </pre>
@@ -5813,16 +5809,7 @@ An instance measurement instantiates a represented measurement, so that it can b
 <span class="shape-name"><dfn>ddi:InstanceQuestion</dfn></span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:InstrumentComponent"><span class="type">ddi:</span><span class="costant">InstrumentComponent</span></a></span> {
   <span class="type">ddi:</span><span class="constant">name</span> @<span class="shape-name"><a href="#ddi:ObjectName"><span class="type">ddi:</span><span class="costant">ObjectName</span></a></span> *
   <span class="comment">// shexmi:comment """The name of a question as used in an Instrument. Redefined to provide a more useful description. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage."""</span>;
-  <span class="type">ddi:</span><span class="constant">instantiates</span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:Capture"><span class="type">ddi:</span><span class="costant">Capture</span></a></span> {
-    <span class="type">ddi:</span><span class="constant">questionText</span> @<span class="shape-name"><a href="#ddi:DynamicText"><span class="type">ddi:</span><span class="costant">DynamicText</span></a></span> *
-    <span class="comment">// shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content."""</span>;
-    <span class="type">ddi:</span><span class="constant">questionIntent</span> @<span class="shape-name"><a href="#ddi:InternationalStructuredString"><span class="type">ddi:</span><span class="costant">InternationalStructuredString</span></a></span> *
-    <span class="comment">// shexmi:comment """The purpose or intent of the question."""</span>;
-    <span class="type">ddi:</span><span class="constant">estimatedResponseTimeInSeconds</span> <span class="type">xsd:</span><span class="constant">double</span> *
-    <span class="comment">// shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time."""</span>;
-    <span class="type">ddi:</span><span class="constant">hasRepresentedVariable</span> @<span class="shape-name"><a href="#ddi:RepresentedVariable"><span class="type">ddi:</span><span class="costant">RepresentedVariable</span></a></span> *
-    <span class="comment">// shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this question."""</span>;
-  } *
+  <span class="type">ddi:</span><span class="constant">instantiates</span> @<span class="shape-name"><a href="#ddi:RepresentedQuestion"><span class="type">ddi:</span><span class="costant">RepresentedQuestion</span></a></span> *
   <span class="comment">// shexmi:comment """The question being used."""</span>;
 }
 </pre>
@@ -5841,7 +5828,7 @@ Examples
         <div>
           <p>2 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:InstrumentComponent">ddi:InstrumentComponent</a></li>
 
           </ul></div>
@@ -5998,11 +5985,83 @@ A response domain capturing a ranking response which supports a \"ranking\" or \
 Note: This item still must be modeled and is incomplete at this time."""</span>^^mark:
 
       <section>
+        <h3 id="ddi:RepresentedMeasurement">ddi:RepresentedMeasurement</h3>
+        <div>
+          <p>1 reference:</p>
+          <div class="left-scroll"><ul class="referees">
+            <li><a href="#ddi:InstanceMeasurement">ddi:InstanceMeasurement</a></li>
+
+          </ul></div>
+        </div>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name"><dfn>ddi:RepresentedMeasurement</dfn></span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:Capture"><span class="type">ddi:</span><span class="costant">Capture</span></a></span> {
+  <span class="type">ddi:</span><span class="constant">measurementType</span> @<span class="shape-name"><a href="#ddi:ExternalControlledVocabularyEntry"><span class="type">ddi:</span><span class="costant">ExternalControlledVocabularyEntry</span></a></span> *
+  <span class="comment">// shexmi:comment """The type of measurement performed"""</span>;
+  <span class="type">ddi:</span><span class="constant">hasRepresentedVariable</span> @<span class="shape-name"><a href="#ddi:RepresentedVariable"><span class="type">ddi:</span><span class="costant">RepresentedVariable</span></a></span> *
+  <span class="comment">// shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this measure."""</span>;
+}
+</pre>
+      </div>
+      </section>
+<span class="comment">// shexmi:comment """Definition
+============
+The description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.
+
+Examples
+==========
+A measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current
+
+Explanatory notes
+===================
+Non-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies."""</span>^^mark:
+
+      <section>
+        <h3 id="ddi:RepresentedQuestion">ddi:RepresentedQuestion</h3>
+        <div>
+          <p>1 reference:</p>
+          <div class="left-scroll"><ul class="referees">
+            <li><a href="#ddi:InstanceQuestion">ddi:InstanceQuestion</a></li>
+
+          </ul></div>
+        </div>
+        <div class="example wrapper">
+        <pre class="nohighlight schema shexc tryable">
+<span class="shape-name"><dfn>ddi:RepresentedQuestion</dfn></span> CLOSED EXTENDS @<span class="shape-name"><a href="#ddi:Capture"><span class="type">ddi:</span><span class="costant">Capture</span></a></span> {
+  <span class="type">ddi:</span><span class="constant">questionText</span> @<span class="shape-name"><a href="#ddi:DynamicText"><span class="type">ddi:</span><span class="costant">DynamicText</span></a></span> *
+  <span class="comment">// shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content."""</span>;
+  <span class="type">ddi:</span><span class="constant">questionIntent</span> @<span class="shape-name"><a href="#ddi:InternationalStructuredString"><span class="type">ddi:</span><span class="costant">InternationalStructuredString</span></a></span> *
+  <span class="comment">// shexmi:comment """The purpose or intent of the question."""</span>;
+  <span class="type">ddi:</span><span class="constant">estimatedResponseTimeInSeconds</span> <span class="type">xsd:</span><span class="constant">double</span> *
+  <span class="comment">// shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time."""</span>;
+  <span class="type">ddi:</span><span class="constant">hasRepresentedVariable</span> @<span class="shape-name"><a href="#ddi:RepresentedVariable"><span class="type">ddi:</span><span class="costant">RepresentedVariable</span></a></span> *
+  <span class="comment">// shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this question."""</span>;
+}
+</pre>
+      </div>
+      </section>
+<span class="comment">// shexmi:comment """Definition
+============
+The description of a reusable question, that can be used as a template that describes the components of a question
+
+Examples
+==========
+A question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)
+
+Explanatory notes
+===================
+A question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.
+
+DDI 3.2 mapping
+=================
+d:QuestionItemType"""</span>^^mark:
+
+      <section>
         <h3 id="ddi:ResponseDomain">ddi:ResponseDomain</h3>
         <div>
           <p>2 references:</p>
           <div class="left-scroll"><ul class="referees">
-            <li><a href="#ddi:InstanceVariable">ddi:InstanceVariable</a></li>
+            <li><a href="#ddi:Capture">ddi:Capture</a></li>
             <li><a href="#ddi:CodeListResponseDomain">ddi:CodeListResponseDomain</a></li>
 
           </ul></div>

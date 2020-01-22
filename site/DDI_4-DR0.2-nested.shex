@@ -1,5 +1,5 @@
 # DDI_4-DR0.2-nested.shexj
-# shexToOwl 2020-01-22T08:29:29.826Z
+# shexToOwl 2020-01-22T10:40:40.931Z
 PREFIX ddi: <http://ddi-alliance.org/ns/#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -3754,12 +3754,7 @@ DDI 3.2 mapping
 r:OtherMaterialType"""^^mark:
 
 ddi:InstanceMeasurement CLOSED EXTENDS @ddi:InstrumentComponent {
-  ddi:instantiates CLOSED EXTENDS @ddi:Capture {
-    ddi:measurementType @ddi:ExternalControlledVocabularyEntry *
-    // shexmi:comment """The type of measurement performed""";
-    ddi:hasRepresentedVariable @ddi:RepresentedVariable *
-    // shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this measure.""";
-  } *
+  ddi:instantiates @ddi:RepresentedMeasurement *
   // shexmi:comment """The measurement being instantiated in the data collection process""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
@@ -3770,16 +3765,7 @@ An instance measurement instantiates a represented measurement, so that it can b
 ddi:InstanceQuestion CLOSED EXTENDS @ddi:InstrumentComponent {
   ddi:name @ddi:ObjectName *
   // shexmi:comment """The name of a question as used in an Instrument. Redefined to provide a more useful description. A linguistic signifier. Human understandable name (word, phrase, or mnemonic) that reflects the ISO/IEC 11179-5 naming principles. If more than one name is provided provide a context to differentiate usage.""";
-  ddi:instantiates CLOSED EXTENDS @ddi:Capture {
-    ddi:questionText @ddi:DynamicText *
-    // shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.""";
-    ddi:questionIntent @ddi:InternationalStructuredString *
-    // shexmi:comment """The purpose or intent of the question.""";
-    ddi:estimatedResponseTimeInSeconds xsd:double *
-    // shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.""";
-    ddi:hasRepresentedVariable @ddi:RepresentedVariable *
-    // shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this question.""";
-  } *
+  ddi:instantiates @ddi:RepresentedQuestion *
   // shexmi:comment """The question being used.""";
 }
 // shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
@@ -3897,6 +3883,52 @@ ddi:RankingResponseDomain CLOSED EXTENDS @ddi:ResponseDomain {
 ============
 A response domain capturing a ranking response which supports a \"ranking\" or \"Ordering\" of provided categories. 
 Note: This item still must be modeled and is incomplete at this time."""^^mark:
+
+ddi:RepresentedMeasurement CLOSED EXTENDS @ddi:Capture {
+  ddi:measurementType @ddi:ExternalControlledVocabularyEntry *
+  // shexmi:comment """The type of measurement performed""";
+  ddi:hasRepresentedVariable @ddi:RepresentedVariable *
+  // shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this measure.""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
+// shexmi:comment """Definition
+============
+The description of a reusable non-question measurement that can be used as a template that describes the components of a measurement. A type code can be used to describe the type of measure that was used.
+
+Examples
+==========
+A measure providing a geographic point; A blood pressure protocol; A protocol for measuring an ocean current
+
+Explanatory notes
+===================
+Non-question measurements often involve the use of specific machines or protocols to ensure consistency and comparability of the measure. The RepresentedMeasurement allows the reusable format and protocol to be housed in a repository for use by multiple studies or repeated studies."""^^mark:
+
+ddi:RepresentedQuestion CLOSED EXTENDS @ddi:Capture {
+  ddi:questionText @ddi:DynamicText *
+  // shexmi:comment """The text of the question which may be literal or dynamic (altered to personalize the question text) in terms of content.""";
+  ddi:questionIntent @ddi:InternationalStructuredString *
+  // shexmi:comment """The purpose or intent of the question.""";
+  ddi:estimatedResponseTimeInSeconds xsd:double *
+  // shexmi:comment """An estimation of the number of seconds required to respond to the question. Used for estimating overall questionnaire completion time.""";
+  ddi:hasRepresentedVariable @ddi:RepresentedVariable *
+  // shexmi:comment """An optional link to a represented variable which can be used by each instance variable created by a use of this question.""";
+}
+// shexmi:package "http://ddi-alliance.org/ns/#DataCapture"
+// shexmi:comment """Definition
+============
+The description of a reusable question, that can be used as a template that describes the components of a question
+
+Examples
+==========
+A question in a question bank such as the content and format for a question on Race for all survey/censuses fielded by U.S. agencies as prescribed by the U.S. Office of Management and Budget (OMB)
+
+Explanatory notes
+===================
+A question that is repeated across waves of a panel study can be reused and also allow reference to a RepresentedVariable. A question that has been tested for consistency of response and is used by multiple studies.
+
+DDI 3.2 mapping
+=================
+d:QuestionItemType"""^^mark:
 
 ddi:ResponseDomain CLOSED EXTENDS @ddi:AnnotatedIdentifiable {
   ddi:displayLabel @ddi:LabelForDisplay *

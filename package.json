@@ -14,6 +14,7 @@
   "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
   "license": "MIT",
   "dependencies": {
+    "@shexjs/cli": "^1.0.0-alpha.9",
     "@shexjs/loader": "^1.0.0-alpha.9",
     "@shexjs/parser": "^1.0.0-alpha.9",
     "canonical-uml-xmi-parser": "^0.1.1",

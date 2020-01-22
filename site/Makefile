@@ -5,7 +5,7 @@ XMI = ../doc/DDI4_PIM_canonical.xmi
 OUT = DDI_4-DR0.2
 # XMI = ../doc/DDI_Core_-_Master_2019-12-11_v2_CX.xmi
 # OUT = DDICore_40_PIM
-VALIDATE ?= ~/checkouts/shexSpec/shex.js/bin/validate
+VALIDATE ?= ../node_modules/.bin/shex-validate -q
 
 # Remember to \-escape '#'s in the prefixes.
 CORE_PREFIXES = \
@@ -28,7 +28,7 @@ clean:
 	rm -f $(OUT).shex $(OUT)-nested.shex $(OUT)-nested.html $(OUT)-nested.js $(OUT)-OWL.xml
 
 $(OUT).shexj $(OUT)-nested.shexj $(OUT).json: $(XMI) ddiPSM ../node_modules/uml-model/uml-model.js ../node_modules/canonical-uml-xmi-parser/canonical-uml-xmi-parser.js
-	$(DEBUG) ./ddiPSM --xmi $< --out $(OUT) --nestShapes --noNest='SpatialCoverage|TemporalCoverage|TopicalCoverage|VariableCollection'
+	$(DEBUG) ./ddiPSM --xmi $< --out $(OUT) --nestShapes --noNest='SpatialCoverage|TemporalCoverage|TopicalCoverage|VariableCollection|Represented(Measurement|Question)'
 
 $(OUT)-nested.js: $(OUT)-nested.shexj
 	(echo -n 'DDIschema = ' && cat $<) > $@
