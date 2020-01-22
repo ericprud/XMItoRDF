@@ -1,11 +1,26 @@
 # DDI_Core_-_Master_2019-12-19_CX.json: ../doc/DDI_Core_-_Master_2019-12-19_CX.xmi
 # 	../bin/xmiToJson $< > $@
 
-XMI = ../doc/DDI4_PIM_canonical.xmi ddiPSM
+XMI = ../doc/DDI4_PIM_canonical.xmi
 OUT = DDI_4-DR0.2
 # XMI = ../doc/DDI_Core_-_Master_2019-12-11_v2_CX.xmi
 # OUT = DDICore_40_PIM
 VALIDATE ?= ~/checkouts/shexSpec/shex.js/bin/validate
+
+# Remember to \-escape '#'s in the prefixes.
+CORE_PREFIXES = \
+	  --prefix "ddi: http://ddi-alliance.org/ns/\#" \
+	  --prefix "owl: http://www.w3.org/2002/07/owl\#" \
+	  --prefix "xsd: http://www.w3.org/2001/XMLSchema\#" \
+	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema\#"
+
+SHEX_PREFIXES = $(CORE_PREFIXES) \
+	  --prefix "shexmi: http://www.w3.org/ns/shex-xmi\#" \
+	  --prefix "mark: https://github.com/commonmark/commonmark.js"
+
+OWL_PREFIXES =  \
+	  --prefix "package: http://lion.ddialliance.org/ddiobjects/" \
+	  $(CORE_PREFIXES)
 
 all: $(OUT).shex $(OUT)-nested.shex $(OUT)-nested.html $(OUT)-nested.js $(OUT)-OWL.xml # $(OUT).shexj $(OUT).json
 
@@ -19,40 +34,17 @@ $(OUT)-nested.js: $(OUT)-nested.shexj
 	(echo -n 'DDIschema = ' && cat $<) > $@
 
 $(OUT)-OWL.xml: $(OUT).shexj ../bin/shexTo ../lib/ShExTo.js $(OUT)-packagesAndViews-OWL.xml
-	$(DEBUG) ../bin/shexTo --to owl --json $< \
-	  --prefix "package: http://lion.ddialliance.org/ddiobjects/" \
-	  --prefix "ddi: http://ddi-alliance.org/ns/#" \
-	  --prefix "owl: http://www.w3.org/2002/07/owl#" \
-	  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
-	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
+	$(DEBUG) ../bin/shexTo --to owl --json $< $(OWL_PREFIXES) \
 	  --append $(OUT)-packagesAndViews-OWL.xml > $@
 
 $(OUT).shex: $(OUT).shexj ../bin/shexTo ../lib/ShExTo.js
-	$(DEBUG) ../bin/shexTo --to shexc --json $< \
-	  --prefix "ddi: http://ddi-alliance.org/ns/#" \
-	  --prefix "owl: http://www.w3.org/2002/07/owl#" \
-	  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
-	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
-	  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
-	  --prefix "mark: https://github.com/commonmark/commonmark.js" > $@
+	$(DEBUG) ../bin/shexTo --to shexc --json $< $(SHEX_PREFIXES) > $@
 
 $(OUT)-nested.shex: $(OUT)-nested.shexj ../bin/shexTo ../lib/ShExTo.js
-	$(DEBUG) ../bin/shexTo --to shexc --json $< \
-	  --prefix "ddi: http://ddi-alliance.org/ns/#" \
-	  --prefix "owl: http://www.w3.org/2002/07/owl#" \
-	  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
-	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
-	  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
-	  --prefix "mark: https://github.com/commonmark/commonmark.js" > $@
+	$(DEBUG) ../bin/shexTo --to shexc --json $< $(SHEX_PREFIXES) > $@
 
 $(OUT)-nested.html: $(OUT)-nested.shexj ../bin/shexTo ../lib/ShExTo.js
-	$(DEBUG) ../bin/shexTo --to shexh --json $< \
-	  --prefix "ddi: http://ddi-alliance.org/ns/#" \
-	  --prefix "owl: http://www.w3.org/2002/07/owl#" \
-	  --prefix "xsd: http://www.w3.org/2001/XMLSchema#" \
-	  --prefix "rdfs: http://www.w3.org/2000/01/rdf-schema#" \
-	  --prefix "shexmi: http://www.w3.org/ns/shex-xmi#" \
-	  --prefix "mark: https://github.com/commonmark/commonmark.js" > $@
+	$(DEBUG) ../bin/shexTo --to shexh --json $< $(SHEX_PREFIXES) > $@
 
 DI: $(OUT)-nested.shex
 	$(VALIDATE) -d AustralianElectionStudySubset.ttl -x $(OUT)-nested.shex --map '[{ "node": "#urn:ddi:int.example:IdDDIMetadata:1_DocumentInformation" , "shape": "http://ddi-alliance.org/ns/#DocumentInformation" }]'
