@@ -57,10 +57,10 @@ const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
 const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
 const SHEXMI = 'http://www.w3.org/ns/shex-xmi#'
 const DDI = 'http://ddi-alliance.org/ns/#'
-const normalizeType = function (type) {
-  if (!type) {
-    return type // pass undefined on
-  }
+const normalizeDatatype = function (type, id, classId) {
+  if (!type)
+    return // many properties don't have a datatype
+
   if (type === 'xs:language') {
     return XSD + 'language'
   }
@@ -91,15 +91,23 @@ const CanonXmiParser = require('canonical-uml-xmi-parser')
 const ShEx = require('@shexjs/core')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,
-  viewPattern: /Functional999Views/,
-  normalizeType: normalizeType,
+  viewPattern999: /FunctionalViews/,
+  normalizeDatatype: normalizeDatatype,
   nameMap: {
     // 'Views (Exported from Drupal)': 'Views',
     // 'Class Model (Exported from Drupal)': 'ddi4_model',
     'ClassLibrary': 'ddi4_model', // minimize diffs
     'FunctionalViews': 'Views',
   },
-  checkPropertyNameCase: true
+  normalizeProperty: function (name, id, classId) {
+    if (name.substr(0,1) === name.substr(0,1).toUpperCase())
+      console.warn('unexpected initial capital in property name ' + name + ' in element ' + id + ' in class ' + classId)
+    return name // leave it with a capital.
+  },
+  expectCardinalities: function (id, attrName, deflt) {
+    console.warn('expected ' + attrName + ' in ' + id + ' -- defaulting to ' + deflt)
+    return deflt
+  }
 })
 
 let source = {

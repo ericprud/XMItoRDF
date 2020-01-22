@@ -1,10 +1,10 @@
 # DDI_Core_-_Master_2019-12-19_CX.json: ../doc/DDI_Core_-_Master_2019-12-19_CX.xmi
 # 	../bin/xmiToJson $< > $@
 
-XMI = ../doc/DDI4_PIM_canonical.xmi
-OUT = DDI_4-DR0.2
-# XMI = ../doc/DDI_Core_-_Master_2019-12-11_v2_CX.xmi
-# OUT = DDICore_40_PIM
+# XMI = ../doc/DDI4_PIM_canonical.xmi
+# OUT = DDI_4-DR0.2
+XMI = ../doc/DDI_Core_-_Master_2019-12-11_v2_CX.xmi
+OUT = DDICore_40_PIM
 VALIDATE ?= ../node_modules/.bin/shex-validate -q
 
 # Remember to \-escape '#'s in the prefixes.
