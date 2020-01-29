@@ -3,7 +3,7 @@
 
 # XMI = ../doc/DDI4_PIM_canonical.xmi
 # OUT = DDI_4-DR0.2
-XMI = ../doc/DDI_Core_-_Master_2019-12-11_v2_CX.xmi
+XMI = ../doc/DDI_Core_-_Master_2019-12-19_v2_CX.xmi
 OUT = DDICore_40_PIM
 VALIDATE ?= ../node_modules/.bin/shex-validate -q
 
