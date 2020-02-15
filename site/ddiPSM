@@ -107,7 +107,8 @@ const UmlParser = CanonXmiParser({
   expectCardinalities: function (id, attrName, deflt) {
     console.warn('expected ' + attrName + ' in ' + id + ' -- defaulting to ' + deflt)
     return deflt
-  }
+  },
+  useAssocationNameForReference: true
 })
 
 let source = {
@@ -235,6 +236,8 @@ function prependDDI (suffix, elt) {
 function addDDIannotations (elt) {
   // ShEx 2.0 doesn't allow annotations on NodeConstraints.
   if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+  if (!elt.name)
+    throw Error(`element ${elt.id} has no name property`);
   let ret = [{
     "type": "Annotation",
     "predicate": RDFS + "definedBy",
