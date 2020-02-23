@@ -31,10 +31,6 @@
         <Class abbreviatedIRI="ddi:DataDescription_Package"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
-        <Class abbreviatedIRI="ddi:Classes"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
@@ -47,19 +43,11 @@
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
-        <Class abbreviatedIRI="ddi:Classes"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Representations_Package"/>
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:NewEnumerations_Package"/>
-        <Class abbreviatedIRI="ddi:DataTypes"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:NewStructuredDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <SubClassOf>
@@ -67,12 +55,12 @@
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:XMLSchemaDataTypes_Package"/>
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
+        <AbbreviatedIRI>ddi:XMLSchemaDataTypes_Package</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
     </AnnotationAssertion>
     <SubClassOf>
@@ -108,10 +96,6 @@
         <Class abbreviatedIRI="ddi:DataDescription_Package"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
-        <Class abbreviatedIRI="ddi:Classes"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:FormatDescription_Package"/>
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
@@ -124,19 +108,11 @@
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:RegularExpressions_Package"/>
-        <Class abbreviatedIRI="ddi:Classes"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI="ddi:Representations_Package"/>
         <Class abbreviatedIRI="ddi:Classes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:NewEnumerations_Package"/>
-        <Class abbreviatedIRI="ddi:DataTypes"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ddi:NewStructuredDataTypes_Package"/>
+        <Class abbreviatedIRI="ddi:Enumerations_Package"/>
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <SubClassOf>
@@ -144,11 +120,11 @@
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="ddi:XMLSchemaDatatypes_Package"/>
+        <Class abbreviatedIRI="ddi:XMLSchemaDataTypes_Package"/>
         <Class abbreviatedIRI="ddi:DataTypes"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>ddi:XMLSchemaDatatypes_Package</AbbreviatedIRI>
+        <AbbreviatedIRI>ddi:XMLSchemaDataTypes_Package</AbbreviatedIRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This package comprehends XML Schema datatypes which are used in the DDI model.</Literal>
     </AnnotationAssertion>
