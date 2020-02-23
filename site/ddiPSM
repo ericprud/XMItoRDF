@@ -57,11 +57,11 @@ const UMLP = 'http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#'
 const RDFS = 'http://www.w3.org/2000/01/rdf-schema#'
 const SHEXMI = 'http://www.w3.org/ns/shex-xmi#'
 const DDI = 'http://ddi-alliance.org/ns/#'
-const normalizeDatatype = function (type, id, classId) {
-  if (!type)
-    return // many properties don't have a datatype
+const normalizePrimitiveType = function (primitiveType, id, classId) {
+  if (!primitiveType)
+    return // many properties don't have a primitiveType
 
-  if (type === 'xs:language') {
+  if (primitiveType === 'xs:language') {
     return XSD + 'language'
   }
   let dtList = [
@@ -75,14 +75,14 @@ const normalizeDatatype = function (type, id, classId) {
     (acc, elt) => objSet(acc, elt.from, elt.to),
     {}
   )
-  if (type in dtMap) {
-    return dtMap[type]
+  if (primitiveType in dtMap) {
+    return dtMap[primitiveType]
   }
-  if (type.startsWith(UMLP)) {
-    throw Error('unknown datatype ' + type)
-    // return UMLD + type.substr(UMLP.length)
+  if (primitiveType.startsWith(UMLP)) {
+    throw Error('unknown primitiveType ' + primitiveType)
+    // return UMLD + primitiveType.substr(UMLP.length)
   }
-  return type
+  return primitiveType
 }
 
 const fs = require('fs')
@@ -92,7 +92,7 @@ const ShEx = require('@shexjs/core')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,
   viewPattern999: /FunctionalViews/,
-  normalizeDatatype: normalizeDatatype,
+  normalizePrimitiveType: normalizePrimitiveType,
   nameMap: {
     // 'Views (Exported from Drupal)': 'Views',
     // 'Class Model (Exported from Drupal)': 'ddi4_model',
@@ -138,12 +138,9 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   )
 
   // Switch to XSD datatypes.
-  let xsdTypeFixups = {
-    'DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-anyURI': XSD + 'anyURI',
-    'DDI4_PIM-ClassLibrary-XMLSchemaDatatypes-language': XSD + 'language'
-  }
-  model.list('Datatype').filter(d => Object.keys(xsdTypeFixups).indexOf(d.id) !== -1).forEach(d => {
-    d.name = xsdTypeFixups[d.id]
+  const transformMe = "DDICore_40_PIM-DataTypes-XMLSchemaDataTypes-XSD"
+  model.list('PrimitiveType').filter(d => d.id.startsWith(transformMe)).forEach(d => {
+    d.name = XSD + d.id.substr(transformMe.length)
     d.external = true
 
     // Remove d from its containing Package so d doesn't show up in the ShEx.
@@ -157,7 +154,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
     .filter(c => c.name === 'DocumentInformation').forEach(
       di =>
         di.properties.find(p => p.name === 'hasPrimaryContent')
-        .type = fakeExternalDatatype(XSD + 'string'))
+        .type = fakeExternalPrimitiveType(XSD + 'string'))
 
   let pz = model.getProperties()
   Object.keys(pz)
@@ -235,7 +232,7 @@ function prependDDI (suffix, elt) {
 
 function addDDIannotations (elt) {
   // ShEx 2.0 doesn't allow annotations on NodeConstraints.
-  if (elt.type === 'Enumeration' || elt.type === 'Datatype') { return [] }
+  if (elt.type === 'Enumeration' || elt.type === 'PrimitiveType') { return [] }
   if (!elt.name)
     throw Error(`element ${elt.id} has no name property`);
   let ret = [{
@@ -341,9 +338,9 @@ function encodeCharData (text) {
     .replace(/>/g, '&gt;')
 }
 
-function fakeExternalDatatype (type) {
+function fakeExternalPrimitiveType (type) {
   return {
-    rtti: 'Datatype',
+    rtti: 'PrimitiveType',
     id: type,
     name: type,
     external: true,
