@@ -3,7 +3,7 @@
 // shexToOwl http://tracker.example/schemas/Issue.shex
 
 const fs = require('fs')
-let ShExLoader = require('@shexjs/loader')
+let ShExNode = require('@shexjs/node')({rdfjs: require('n3')})
 let ShExToOwl = require('../lib/ShExTo')
 const ontologyIRI = "http://ddi-alliance.org/ns/ddi4"
 
@@ -46,7 +46,7 @@ let source = {
   timestamp: new Date().toISOString()
 }
 
-ShExLoader.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
+ShExNode.load(CLI.shex, CLI.json, [], []).then(function (loaded) {
   let errors = {}
   let formatTransformer = ShExToOwl(loaded.schema, {
     source,

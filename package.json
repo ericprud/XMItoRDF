@@ -14,9 +14,10 @@
   "author": "Eric Prud'hommeaux <eric.npm@w3.org> (http://www.w3.org/People/Eric/)",
   "license": "MIT",
   "dependencies": {
-    "@shexjs/cli": "^1.0.0-alpha.10",
-    "@shexjs/loader": "^1.0.0-alpha.10",
-    "@shexjs/parser": "^1.0.0-alpha.10",
+    "@shexjs/cli": "file:../../shexSpec/shex.js/packages/shex-cli",
+    "@shexjs/node": "file:../../shexSpec/shex.js/packages/shex-node",
+    "@shexjs/parser": "file:../../shexSpec/shex.js/packages/shex-parser",
+    "@shexjs/util": "file:../../shexSpec/shex.js/packages/shex-util",
     "canonical-uml-xmi-parser": "^0.2.1",
     "chai": "^4.2.0",
     "circular-json": "^0.5.9",
@@ -25,7 +26,9 @@
     "hierarchy-closure": "^1.2.1",
     "marked": "^0.8.0",
     "mocha": "^7.0.0",
-    "request-promise": "^4.2.5"
+    "n3": "^1.6.3",
+    "request-promise": "^4.2.5",
+    "uml-model": "^0.1.2"
   },
   "devDependencies": {
     "jest": "^24.9.0",

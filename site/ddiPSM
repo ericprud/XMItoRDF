@@ -88,7 +88,7 @@ const normalizePrimitiveType = function (primitiveType, id, classId) {
 const fs = require('fs')
 const UmlModel = require('uml-model')()
 const CanonXmiParser = require('canonical-uml-xmi-parser')
-const ShEx = require('@shexjs/core')
+const ShExUtil = require('@shexjs/util')
 const UmlParser = CanonXmiParser({
   umlModel: UmlModel,
   viewPattern999: /FunctionalViews/,
@@ -195,9 +195,9 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
   fs.writeFileSync(CLI.out + '-packagesAndViews-OWL.xml',
                    packageHierarchy(model), { encoding: 'utf-8' })
 
-  if (CLI.nestShapes) {
-    let compiled = ShEx.Util.ShExJtoAS(shexj)
-    let renamed = ShEx.Util.nestShapes(shexj, {
+  if (CLI.nestShapes) {debugger
+    let compiled = ShExUtil.ShExJtoAS(shexj)
+    let renamed = ShExUtil.nestShapes(shexj, {
 
       // rename: false tells nestShape to physically nest them in the ShExJ
       // rather than just give them BNODE names.  This means that transform
@@ -212,7 +212,7 @@ UmlParser.parseXMI(fs.readFileSync(CLI.xmi, 'UTF-8'), source, (err, xmiGraph) =>
       noNestPattern: CLI.noNest
     }) // .map(l => l.substr(DDI.length))
     let listFile = CLI.out + '-nested.list'
-    let nested = ShEx.Util.AStoShExJ(compiled)
+    let nested = ShExUtil.AStoShExJ(compiled)
 
     // nested ShExJ model
     fs.writeFileSync(CLI.out + '-nested.shexj',
