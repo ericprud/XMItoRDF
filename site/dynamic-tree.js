@@ -8,7 +8,7 @@ DDIschema.prefixes = {
   mark: 'https://github.com/commonmark/commonmark.js'
 }
 $('#schema').append(
-  ShExHTML(window.$, marked).asTree(DDIschema, 'http://ddi-alliance.org/ns/#')
+  ShExHTML(window.$, marked.parse).asTree(DDIschema, 'http://ddi-alliance.org/ns/#')
 )
 
 function ShExJtoAS (schema) {
